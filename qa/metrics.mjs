@@ -1,3 +1,4 @@
+import { makeBuzzProbe, organicMaterial } from './buzz.mjs';
 import { activeRms, PEAK_LIMIT_DB, targetRmsDb } from '../engine/render.ts';
 import { dbToGain, gainToDb } from '../engine/dsp.ts';
 
@@ -68,7 +69,9 @@ const bitReverse = Uint16Array.from({ length: FFT_SIZE }, (_, index) => {
 const cos = Float64Array.from({ length: HOP }, (_, i) => Math.cos(-2 * Math.PI * i / FFT_SIZE));
 const sin = Float64Array.from({ length: HOP }, (_, i) => Math.sin(-2 * Math.PI * i / FFT_SIZE));
 
-export function spectrum(samples, rate) {
+export function spectrum(samples, rate, organic = false) {
+  const probe = organic ? makeBuzzProbe(rate, FFT_SIZE) : null;
+  const power = probe ? new Float64Array(HOP) : null;
   const re = new Float64Array(FFT_SIZE);
   const im = new Float64Array(FFT_SIZE);
   let total = 0;
@@ -96,12 +99,14 @@ export function spectrum(samples, rate) {
     for (let bin = 1; bin < HOP; bin++) {
       const hz = (bin * rate) / FFT_SIZE;
       const energy = re[bin] ** 2 + im[bin] ** 2;
+      if (power) power[bin] = energy;
       total += energy;
       if (hz < 120) sub += energy;
       if (hz > 4000) high += energy;
     }
+    if (probe) probe.frame(power, start);
   }
-  return { sub: total ? sub / total : 0, high: total ? high / total : 0 };
+  return { buzz: probe?.result(), sub: total ? sub / total : 0, high: total ? high / total : 0 };
 }
 
 export function inspect(samples, recipe, rate) {
@@ -111,7 +116,7 @@ export function inspect(samples, recipe, rate) {
   const rmsDb = gainToDb(activeRms(samples, rate));
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
   const onsetMs = firstOnset(samples, Math.max(maximum * 0.02, dbToGain(-60))) / rate * 1000;
-  const bands = spectrum(samples, rate);
+  const bands = spectrum(samples, rate, organicMaterial(recipe));
   const defaults = [
     ...(['explosion', 'thunder'].some((tag) => recipe.tags.includes(tag)) ? [{ band: 'sub', minShare: 0.15 }] : []),
     ...(['ricochet', 'metal'].some((tag) => recipe.tags.includes(tag)) ? [{ band: 'high', minShare: 0.08 }] : []),
@@ -121,6 +126,7 @@ export function inspect(samples, recipe, rate) {
     band, minShare, measuredShare: round(bands[band]), pass: bands[band] >= minShare,
   }));
   return {
+    stationaryBuzz: bands.buzz ?? null,
     peak: { pass: peakDb <= PEAK_LIMIT_DB, dbfs: round(peakDb), maxDbfs: PEAK_LIMIT_DB },
     loudness: { pass: Math.abs(rmsDb - target) <= 1.25, activeRmsDbfs: round(rmsDb), targetDbfs: target, toleranceDb: 1.25 },
     onset: recipe.loopable ? null : { pass: onsetMs < 5, ms: Number.isFinite(onsetMs) ? round(onsetMs) : null, maxMsExclusive: 5 },

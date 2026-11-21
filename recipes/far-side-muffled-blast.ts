@@ -1,7 +1,10 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-firecracker.ts';
+import foley1 from './_recordings/atlas-stone.ts';
 import { destruction } from "./_shared/destruction-effects.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
-export default {
+const original = {
   id: "far-side-muffled-blast", name: "Far-Side Muffled Blast", category: "Impacts",
   tags: ["explosion", "distant", "occluded", "muffled"],
   loopable: false, durationSec: 1.08, targetRmsDbfs: -22,
@@ -16,3 +19,8 @@ export default {
     }, params.weight);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.4, gain: 0.63, cutoff: 630, speed: 0.77 },
+  { clip: foley1, at: 0.08, span: 0.65, gain: 0.19, cutoff: 1000, speed: 0.86 },
+]);

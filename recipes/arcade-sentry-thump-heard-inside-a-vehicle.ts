@@ -1,9 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-field.ts';
+import foley1 from './_recordings/atlas-scrap.ts';
 import { mix } from '../engine/dsp.ts';
 import { arenaReport } from './_shared/arena-reports.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "arcade-sentry-thump-heard-inside-a-vehicle",
   name: "Arcade sentry thump heard inside a vehicle",
   category: "Weapons",
@@ -26,3 +29,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.38, gain: 1.13, cutoff: 1130, speed: 0.91 },
+  { clip: foley1, at: 0.022, span: 0.62, gain: 0.23, cutoff: 1600, speed: 0.85 },
+]);

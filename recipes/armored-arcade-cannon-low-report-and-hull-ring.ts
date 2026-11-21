@@ -1,9 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-firecracker.ts';
+import foley1 from './_recordings/atlas-scrap.ts';
 import { mix } from '../engine/dsp.ts';
 import { arenaReport } from './_shared/arena-reports.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "armored-arcade-cannon-low-report-and-hull-ring",
   name: "Armored arcade cannon low report and hull ring",
   category: "Weapons",
@@ -27,3 +30,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.42, gain: 0.63, cutoff: 3500, speed: 0.77 },
+  { clip: foley1, at: 0.055, span: 0.62, gain: 0.24, cutoff: 6700, speed: 0.85 },
+]);

@@ -1,0 +1,26 @@
+import type { SoundRecipe } from '../engine/types.ts';
+import { propulsion } from './_shared/propulsion.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import idle from './_recordings/motorcycle-throttle-rev.ts';
+import loaded from './_recordings/motorcycle-road-pass.ts';
+
+export default {
+  id: 'four-cylinder-sportbike-helmet-muffled-ride-loop',
+  name: 'Four-cylinder sportbike helmet muffled ride loop',
+  category: 'Vehicles & Engines',
+  tags: ["vehicle", "piston", "engine", "cabin", "four", "cylinder", "sportbike", "helmet", "muffled", "ride", "loop"],
+  loopable: true,
+  durationSec: 2.44,
+  targetRmsDbfs: -28,
+  mixRole: 'vehicle',
+  params: {
+    rpm: { label: 'Normalized shaft speed', min: 0, max: 1, default: .5 },
+    intensity: { label: 'Power demand', min: 0, max: 1, default: .55 },
+  },
+  ...sceneCredits(idle, loaded),
+  render(ctx, { seed, params }) {
+    return propulsion(ctx, seed, params.intensity, params.rpm, 'cabin', {
+      kind: 'piston', pulseHz: [52, 442], timbre: 0.96, idleWindow: [0.19, 0.65], powerWindow: [0.2, 0.84],
+    }, idle, loaded);
+  },
+} satisfies SoundRecipe;

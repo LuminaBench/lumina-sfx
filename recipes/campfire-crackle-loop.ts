@@ -1,7 +1,12 @@
+import { fieldWeather } from './_shared/weather-field.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import source from './_recordings/atlas-fire.ts';
+import wash from './_recordings/atlas-inferno.ts';
+import detail from './_recordings/atlas-fire.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { biquad, layer, noise, punch, renderSamples, TAU } from '../engine/dsp.ts';
 
-export default {
+const original = {
   id: 'campfire-crackle-loop', name: "Campfire Crackle", category: 'Weather & Ambience',
   tags: ["campfire","fire","embers","crackle","loop"], loopable: true, durationSec: 7,
   params: { sparks: { label: 'Sparks', min: 0, max: 1, default: 0.61 } },
@@ -22,5 +27,17 @@ export default {
       ]), size);
     }
     return sound;
+  },
+} satisfies SoundRecipe;
+
+export default {
+  ...original,
+  ...sceneCredits(source, wash, detail),
+  render(ctx, opts) {
+    const old = original.render(ctx, opts);
+    const field = fieldWeather(ctx, opts.seed, opts.params.sparks, {
+      base: source, wash, detail, bodyHz: 5650, detailHz: 7600, spacing: 1.29, depth: 0.44, space: "open",
+    }, "scattered");
+    return field.map((v, i) => v * .81 + old[i] * .16);
   },
 } satisfies SoundRecipe;

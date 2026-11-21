@@ -1,7 +1,9 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-field.ts';
 import { arenaReport } from "./_shared/arena-reports.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
-export default {
+const original = {
   id: "arcade-scatter-blast", name: "Arcade Scatter Blast", category: "Weapons",
   tags: ["game", "report", "scatter", "close"],
   loopable: false, durationSec: 0.32, targetRmsDbfs: -18,
@@ -12,3 +14,7 @@ export default {
     }, params.body);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.22, gain: 1.13, cutoff: 7750, speed: 0.91 },
+]);

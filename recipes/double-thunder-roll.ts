@@ -1,12 +1,27 @@
 import type { SoundRecipe } from '../engine/types.ts';
-import { thunderPass } from './_shared/weather-textures.ts';
+import { thunderChannel } from './_shared/weather-field.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import source from './_recordings/atlas-thunder-left.ts';
+import wash from './_recordings/atlas-thunder-right.ts';
+import detail from './_recordings/atlas-thunder-roll.ts';
+
+const path = { space: "basin", cutoff: 4900, rolls: [0.012, 0.44, 1.68, 2.24, 4.62], decay: 3.4, width: 0.19 } as const;
 
 export default {
-  id: "double-thunder-roll", name: "Double Thunder Roll", category: 'Weather & Ambience',
-  tags: ["thunder","lightning","double","storm"], loopable: false, durationSec: 8.8,
+  id: "double-thunder-roll", name: "Double Thunder Roll", category: "Weather & Ambience",
+  tags: ["thunder", "lightning", "storm", "stereo", "basin"], loopable: false, durationSec: 8.8,
+  mixRole: "impact", targetRmsDbfs: -20,
   params: { distance: { label: "Distance", min: 0, max: 1, default: 0.38 } },
-  spectrum: [{ band: 'sub', minShare: 0.34 }],
-  render(ctx, { params }) {
-    return thunderPass(ctx, 0.15 + params.distance * 0.58, true);
+  ...sceneCredits(source, wash, detail),
+  renderStereo(ctx, { seed, params }) {
+    return [
+      thunderChannel(ctx, seed, params.distance, path, source, detail, -1),
+      thunderChannel(ctx, seed, params.distance, path, wash, detail, 1),
+    ];
+  },
+  render(ctx, { seed, params }) {
+    const left = thunderChannel(ctx, seed, params.distance, path, source, detail, -1);
+    const right = thunderChannel(ctx, seed, params.distance, path, wash, detail, 1);
+    return left.map((v, i) => .5 * (v + right[i]));
   },
 } satisfies SoundRecipe;

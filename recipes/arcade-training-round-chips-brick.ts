@@ -1,7 +1,10 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-pistol.ts';
+import foley1 from './_recordings/atlas-stone.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "arcade-training-round-chips-brick",
   name: "Arcade training round chips brick",
   category: "Weapons",
@@ -20,3 +23,8 @@ export default {
     ]);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.19, gain: 0.65, cutoff: 11300, speed: 1.01 },
+  { clip: foley1, at: 0.067, span: 0.35, gain: 0.54, cutoff: 7100, speed: 0.86 },
+]);

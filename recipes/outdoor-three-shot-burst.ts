@@ -1,7 +1,9 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-field.ts';
 import { arenaReport } from "./_shared/arena-reports.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
-export default {
+const original = {
   id: "outdoor-three-shot-burst", name: "Outdoor Three-Shot Burst", category: "Weapons",
   tags: ["game", "report", "outdoor", "field", "burst"],
   loopable: false, durationSec: 0.51, targetRmsDbfs: -18,
@@ -12,3 +14,9 @@ export default {
     }, params.body);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.17, gain: 1.13, cutoff: 8700, speed: 0.91 },
+  { clip: foley0, at: 0.079, span: 0.17, gain: 1.13, cutoff: 8700, speed: 0.91 },
+  { clip: foley0, at: 0.177, span: 0.17, gain: 1.13, cutoff: 8700, speed: 0.91 },
+]);

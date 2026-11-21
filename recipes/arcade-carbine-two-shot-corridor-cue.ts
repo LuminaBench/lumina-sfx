@@ -1,9 +1,11 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-rifle.ts';
 import { mix } from '../engine/dsp.ts';
 import { arenaReport } from './_shared/arena-reports.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "arcade-carbine-two-shot-corridor-cue",
   name: "Arcade carbine two-shot corridor cue",
   category: "Weapons",
@@ -25,3 +27,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.19, gain: 1.16, cutoff: 10800, speed: 0.98 },
+  { clip: foley0, at: 0.117, span: 0.22, gain: 0.95, cutoff: 10800, speed: 0.98 },
+]);

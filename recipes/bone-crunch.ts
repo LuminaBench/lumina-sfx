@@ -1,8 +1,11 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/field-cabbage-chop.ts';
+import foley1 from './_recordings/harvest-egg-crack.ts';
 import { biquad, layer } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { brush, foleyGrain, softContact } from './_shared/foley.ts';
 
-export default {
+const original = {
   id: 'bone-crunch', name: 'Bone Crunch', category: 'Impacts',
   tags: ['bone', 'crunch', 'break', 'impact'], loopable: false, durationSec: 0.58,
   mixRole: 'foley',
@@ -43,3 +46,8 @@ export default {
     return sound.map(air);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.145, gain: 0.93, cutoff: 6400, speed: 0.89 },
+  { clip: foley1, at: 0.038, span: 0.124, gain: 0.42, cutoff: 8100, speed: 0.91 },
+]);

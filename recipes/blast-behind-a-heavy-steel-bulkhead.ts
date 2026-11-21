@@ -1,9 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-firecracker.ts';
+import foley1 from './_recordings/atlas-scrap.ts';
 import { mix } from '../engine/dsp.ts';
 import { destruction } from './_shared/destruction-effects.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "blast-behind-a-heavy-steel-bulkhead",
   name: "Blast behind a Heavy Steel Bulkhead",
   category: "Impacts",
@@ -26,3 +29,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.32, gain: 0.81, cutoff: 880, speed: 0.77 },
+  { clip: foley1, at: 0.043, span: 0.62, gain: 0.47, cutoff: 1530, speed: 0.85 },
+]);

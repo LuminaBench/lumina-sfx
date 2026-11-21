@@ -1,0 +1,26 @@
+import type { SoundRecipe } from '../engine/types.ts';
+import { propulsion } from './_shared/propulsion.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import idle from './_recordings/demo-turbine-idle.ts';
+import loaded from './_recordings/demo-fighter-rise.ts';
+
+export default {
+  id: 'interceptor-turbofan-augmented-exhaust-roar-loop',
+  name: 'Interceptor turbofan augmented exhaust roar loop',
+  category: 'Aircraft',
+  tags: ["aircraft", "jet", "engine", "load", "interceptor", "turbofan", "augmented", "exhaust", "roar", "loop"],
+  loopable: true,
+  durationSec: 3.9,
+  targetRmsDbfs: -21,
+  mixRole: 'vehicle',
+  params: {
+    rpm: { label: 'Normalized shaft speed', min: 0, max: 1, default: .5 },
+    intensity: { label: 'Power demand', min: 0, max: 1, default: .55 },
+  },
+  ...sceneCredits(idle, loaded),
+  render(ctx, { seed, params }) {
+    return propulsion(ctx, seed, params.intensity, params.rpm, 'load', {
+      kind: 'jet', pulseHz: [180, 760], timbre: 0.91, idleWindow: [0.23, 0.93], powerWindow: [0.22, 0.91],
+    }, idle, loaded);
+  },
+} satisfies SoundRecipe;

@@ -1,5 +1,5 @@
 import { clamp, rng } from './dsp.ts';
-import { DEFAULT_SEED, renderSound, SAMPLE_RATE } from './render.ts';
+import { DEFAULT_SEED, renderChannels, SAMPLE_RATE } from './render.ts';
 import type { LevelProfile, SoundRecipe } from './types.ts';
 
 interface Voice {
@@ -121,9 +121,9 @@ export class SfxPlayer {
   private buffer(slot: number): AudioBuffer {
     let result = this.variants[slot];
     if (result) return result;
-    const samples = renderSound(this.recipe, { seed: DEFAULT_SEED + slot * 8191, params: this.params, level: this.level });
-    result = this.context.createBuffer(1, samples.length, SAMPLE_RATE);
-    result.getChannelData(0).set(samples);
+    const channels = renderChannels(this.recipe, { seed: DEFAULT_SEED + slot * 8191, params: this.params, level: this.level });
+    result = this.context.createBuffer(channels.length, channels[0].length, SAMPLE_RATE);
+    for (const [side, samples] of channels.entries()) result.getChannelData(side).set(samples);
     this.variants[slot] = result;
     return result;
   }

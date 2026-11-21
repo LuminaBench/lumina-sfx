@@ -12,6 +12,6 @@ For continuous loops, generate signal through every requested frame including th
 
 ## Checks and handoff
 
-Run `npm run --silent qa -- <ticket-id> --extremes` and `npm run typecheck`. Use failed diagnostic values to fix the recipe and rerun. The WAV is in `qa/output/<ticket-id>.wav`. Listen if playback is available and report any remaining auditory judgment for the reviewer.
+Run `npm run --silent qa -- <ticket-id> --extremes` and `npm run typecheck`. Use failed diagnostic values to fix the recipe and rerun. Read the `wav` path from the report. For reassigned QA work, read `qa/output/rework/*.json` first. Each pending ticket names the seed, control setting, suspected frequency and start time of stationary buzz. Inspect that region, repair the recipe or replace the offending layer with a credited recording, and rerun the same QA settings to clear the ticket. Listen if playback is available and report any remaining auditory judgment for the reviewer.
 
 Return the recipe ID, files changed, QA pass count, and the reason for any design change or remaining concern. Include the preview WAV path and the most relevant metric from QA. The coordinator integrates each recipe, reruns the full suite, and updates the catalog and marks QA-passing candidates `review` with their collection.

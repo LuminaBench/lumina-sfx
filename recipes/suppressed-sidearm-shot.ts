@@ -1,8 +1,11 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-pistol.ts';
+import foley1 from './_recordings/clarity-slide.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { layer } from '../engine/dsp.ts';
 import { contact, discharge } from './_shared/mechanical.ts';
 
-export default {
+const original = {
   id: "suppressed-sidearm-shot", name: "Suppressed Sidearm Shot", category: 'Weapons',
   tags: ["pistol","sidearm","gunshot","suppressed","mechanical"], loopable: false, durationSec: 0.39,
   params: { action: { label: "Action", min: 0, max: 1, default: 0.61 } },
@@ -12,3 +15,8 @@ export default {
     return sound;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.073, gain: 0.78, cutoff: 1270, speed: 1.01 },
+  { clip: foley1, at: 0.019, span: 0.092, gain: 0.8, cutoff: 6500, speed: 1.06 },
+]);

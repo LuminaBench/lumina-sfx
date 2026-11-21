@@ -1,0 +1,166 @@
+{
+  "defaults": {
+    "car": "track-gt",
+    "boat": "speedboat",
+    "jet": "interceptor"
+  },
+  "assets": {
+    "supercar_gt": "track-gt",
+    "aurelia_track_coupe": "track-gt",
+    "mistral_midship_spyder": "track-gt",
+    "vesper_hybrid_berlinetta": "hybrid",
+    "ardent_v12_arrow": "v12",
+    "kairo_twin_turbo_gt": "straight-six",
+    "cobalt_mid_engine_sport": "club",
+    "apex_sport_sedan": "club",
+    "heritage_fastback": "v8",
+    "titan_v8_performance_pickup": "v8",
+    "muscle_drift": "v8",
+    "kintsugi_rotary_coupe": "rotary",
+    "frontier_raptor_utility": "pickup",
+    "terra_expedition_cruiser": "pickup",
+    "offroad_suv": "pickup",
+    "halcyon_grand_estate_suv": "diesel-suv",
+    "bastion_all_terrain_wagon": "diesel-suv",
+    "metropolitan_patrol_saloon": "sedan",
+    "atlas_long_haul_tractor": "road-tractor",
+    "aurora_widebody_airliner": "airliner",
+    "meridian_narrowbody_jetliner": "airliner",
+    "stratos_executive_jet": "airliner",
+    "spectre_stealth_demonstrator": "interceptor",
+    "vector_multirole_jet": "interceptor",
+    "prairie_close_support_aircraft": "interceptor",
+    "jet_interceptor": "interceptor",
+    "sentinel_utility_rotorcraft": "rotorcraft",
+    "lifeline_rescue_helicopter": "rotorcraft",
+    "breakwater_offshore_racer": "speedboat",
+    "speedboat_interceptor": "speedboat",
+    "pelagic_grand_yacht": "inboard",
+    "seaguard_patrol_cutter": "patrol-boat",
+    "tide_runner_personal_watercraft": "watercraft",
+    "meridian_container_carrier": "freighter"
+  },
+  "profiles": {
+    "track-gt": {
+      "mode": "car",
+      "idle": "v10-inspired-gt-pit-lane-idle-loop",
+      "power": "v10-inspired-gt-wide-open-exhaust-loop"
+    },
+    "hybrid": {
+      "mode": "car",
+      "idle": "hybrid-performance-berlinetta-pit-lane-idle-loop",
+      "power": "hybrid-performance-berlinetta-wide-open-exhaust-loop"
+    },
+    "v12": {
+      "mode": "car",
+      "idle": "v12-inspired-touring-coupe-pit-lane-idle-loop",
+      "power": "v12-inspired-touring-coupe-wide-open-exhaust-loop"
+    },
+    "v8": {
+      "mode": "car",
+      "idle": "crossplane-v8-muscle-coupe-pit-lane-idle-loop",
+      "power": "crossplane-v8-muscle-coupe-wide-open-exhaust-loop"
+    },
+    "straight-six": {
+      "mode": "car",
+      "idle": "turbo-straight-six-rally-car-pit-lane-idle-loop",
+      "power": "turbo-straight-six-rally-car-wide-open-exhaust-loop"
+    },
+    "club": {
+      "mode": "car",
+      "idle": "club-racer-hatchback-pit-lane-idle-loop",
+      "power": "club-racer-hatchback-wide-open-exhaust-loop"
+    },
+    "rotary": {
+      "mode": "car",
+      "idle": "rotary-inspired-sports-coupe-pit-lane-idle-loop",
+      "power": "rotary-inspired-sports-coupe-wide-open-exhaust-loop"
+    },
+    "sedan": {
+      "mode": "car",
+      "idle": "commuter-sedan-curb-idle-loop",
+      "power": "commuter-sedan-uphill-motor-load-loop"
+    },
+    "pickup": {
+      "mode": "car",
+      "idle": "farm-diesel-pickup-loading-bay-idle-loop",
+      "power": "farm-diesel-pickup-trailer-grade-pull-loop"
+    },
+    "road-tractor": {
+      "mode": "car",
+      "idle": "long-haul-road-tractor-loading-bay-idle-loop",
+      "power": "long-haul-road-tractor-trailer-grade-pull-loop"
+    },
+    "diesel-suv": {
+      "mode": "car",
+      "idle": "cabover-delivery-diesel-loading-bay-idle-loop",
+      "power": "cabover-delivery-diesel-trailer-grade-pull-loop"
+    },
+    "interceptor": {
+      "mode": "jet",
+      "idle": "interceptor-turbofan-ramp-idle-loop",
+      "power": "interceptor-turbofan-augmented-exhaust-roar-loop"
+    },
+    "airliner": {
+      "mode": "jet",
+      "idle": "passenger-turbofan-apron-idle-loop",
+      "power": "passenger-turbofan-takeoff-thrust-loop"
+    },
+    "rotorcraft": {
+      "mode": "jet",
+      "idle": "rescue-helicopter-ground-idle-rotor-loop",
+      "power": "rescue-helicopter-loaded-collective-chop-loop"
+    },
+    "speedboat": {
+      "mode": "boat",
+      "idle": "twin-outboard-speedboat-mooring-idle-loop",
+      "power": "twin-outboard-speedboat-planing-throttle-loop"
+    },
+    "inboard": {
+      "mode": "boat",
+      "idle": "harbor-launch-inboard-mooring-idle-loop",
+      "power": "harbor-launch-inboard-planing-throttle-loop"
+    },
+    "watercraft": {
+      "mode": "boat",
+      "idle": "personal-watercraft-impeller-mooring-idle-loop",
+      "power": "personal-watercraft-impeller-planing-throttle-loop"
+    },
+    "freighter": {
+      "mode": "boat",
+      "idle": "displacement-cargo-vessel-harbor-idle-machinery-loop",
+      "power": "displacement-cargo-vessel-loaded-shaft-propulsion-loop"
+    },
+    "patrol-boat": {
+      "mode": "boat",
+      "idle": "steel-patrol-cutter-harbor-idle-machinery-loop",
+      "power": "steel-patrol-cutter-loaded-shaft-propulsion-loop"
+    }
+  },
+  "weather": {
+    "golden": "coastal-walkway-breeze-loop",
+    "noon": "midsummer-orchard-at-noon-loop",
+    "storm": "heavy-storm-rain-loop",
+    "night": "marsh-frogs-night-loop",
+    "alpine": "alpine-treeline-by-day-loop",
+    "miami-golden-hour": "coastal-walkway-breeze-loop",
+    "tropical-clear-noon": "wave-wash-on-a-shingle-berm-gentle-laps-loop",
+    "heavy-north-atlantic-storm": "heavy-storm-rain-loop",
+    "neon-wet-midnight": "rain-on-a-stone-courtyard-loop"
+  },
+  "cues": {
+    "car": "car-engine-idle-loop",
+    "boat": "working-motorboat-steady-offshore-loop",
+    "jet": "jet-warm-idle-on-ramp-loop",
+    "skid": "dry-asphalt-tire-breaks-loose",
+    "rain": "light-rain-loop",
+    "explosion": "vehicle-hull-explosion-with-loose-panels",
+    "wetSkid": "wet-asphalt-slide-throws-a-fan-of-spray",
+    "gravelSkid": "gravel-handbrake-slide-scattering-stones",
+    "shift": "race-gearbox-dog-ring-upshift",
+    "hullSlap": "speedboat-chine-slaps-cross-chop",
+    "waterExplosion": "shoreline-explosion-heavy-water-crown",
+    "sonicBoom": "supersonic-boom-above-coastal-cliffs",
+    "thunder": "close-lightning-thunder"
+  }
+}

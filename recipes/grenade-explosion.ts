@@ -1,10 +1,13 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-firecracker.ts';
+import foley1 from './_recordings/atlas-stone.ts';
 import { renderRecording } from '../engine/recording.ts';
 import recording from './_recordings/response-street-pressure.ts';
 import { layer, mix, punch } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { pressure, rumble, scatter } from './_shared/acoustics.ts';
 
-export default {
+const original = {
   id: 'grenade-explosion', name: 'Grenade Explosion', category: 'Weapons',
   tags: ['grenade', 'explosion', 'debris', 'sub-bass'], loopable: false, durationSec: 2.65,
   recording: recording.credit,
@@ -36,3 +39,8 @@ export default {
     return sound;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.24, gain: 0.37, cutoff: 10100, speed: 0.77 },
+  { clip: foley1, at: 0.175, span: 0.65, gain: 0.14, cutoff: 7100, speed: 0.86 },
+]);

@@ -1,10 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-stone.ts';
 import { mix } from '../engine/dsp.ts';
 import { destruction } from './_shared/destruction-effects.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/response-street-pressure.ts';
 
-export default {
+const original = {
   id: "close-alley-explosion-concrete-debris",
   name: "Close alley explosion concrete debris",
   category: "Impacts",
@@ -30,3 +32,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0.153, span: 0.65, gain: 0.3, cutoff: 7100, speed: 0.86 },
+  { clip: foley0, at: 0.58, span: 0.24, gain: 0.12, cutoff: 3550, speed: 0.86 },
+]);

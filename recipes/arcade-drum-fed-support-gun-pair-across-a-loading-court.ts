@@ -1,0 +1,19 @@
+import type { SoundRecipe } from '../engine/types.ts';
+import { cinematicCut } from './_shared/cinematic-field.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import source from './_recordings/clarity-field.ts';
+import wash from './_recordings/response-metal-pressure.ts';
+import detail from './_recordings/atlas-brass.ts';
+
+export default {
+  id: "arcade-drum-fed-support-gun-pair-across-a-loading-court", name: "Arcade drum-fed support gun — pair across a loading court", category: "Weapons",
+  tags: ["weapon", "gunshot", "report", "arcade", "drum", "fed", "support", "gun", "passage", "field-foley"], loopable: false, durationSec: 1.26,
+  mixRole: "impact", targetRmsDbfs: -19,
+  params: { force: { label: "Force", min: 0, max: 1, default: 0.58 } },
+  ...sceneCredits(source, wash, detail),
+  render(ctx, { seed, params }) {
+    return cinematicCut(ctx, seed, params.force, {
+      kind: "report", space: "passage", at: [0, 0.13], color: 7544, mass: 0.71, edge: 0.71, scatter: 2, panDepth: 0.47,
+    }, source, wash, detail);
+  },
+} satisfies SoundRecipe;

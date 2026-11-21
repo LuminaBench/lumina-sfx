@@ -1,8 +1,10 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-rifle.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { layer } from '../engine/dsp.ts';
 import { contact, discharge } from './_shared/mechanical.ts';
 
-export default {
+const original = {
   id: "compact-carbine-shot", name: "Compact Carbine Shot", category: 'Weapons',
   tags: ["carbine","rifle","gunshot","snap"], loopable: false, durationSec: 0.55,
   params: { bite: { label: "Bite", min: 0, max: 1, default: 0.66 } },
@@ -12,3 +14,7 @@ export default {
     return sound;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.15, gain: 1.16, cutoff: 10800, speed: 1.07 },
+]);

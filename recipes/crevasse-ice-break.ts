@@ -1,7 +1,10 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/milestone-ice.ts';
+import foley1 from './_recordings/atlas-stone.ts';
 import { destruction } from "./_shared/destruction-effects.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
-export default {
+const original = {
   id: "crevasse-ice-break", name: "Crevasse Ice Break", category: "Impacts",
   tags: ["ice", "explosion", "cryo", "cracks", "debris"],
   loopable: false, durationSec: 1.03, targetRmsDbfs: -18,
@@ -17,3 +20,8 @@ export default {
     }, params.weight);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.39, gain: 0.71, cutoff: 8900, speed: 0.87 },
+  { clip: foley1, at: 0.22, span: 0.65, gain: 0.19, cutoff: 4200, speed: 0.86 },
+]);

@@ -1,7 +1,12 @@
+import { fieldWeather } from './_shared/weather-field.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import source from './_recordings/demo-sheltered-wind.ts';
+import wash from './_recordings/demo-film-wind.ts';
+import detail from './_recordings/field-farm-air.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { biquad, noise, renderSamples, TAU } from '../engine/dsp.ts';
 
-export default {
+const original = {
   id: 'howling-wind-loop', name: "Eerie Howling Wind", category: 'Weather & Ambience',
   tags: ["wind","howl","eerie","ambience","loop"], loopable: true, durationSec: 8,
   params: { howl: { label: 'Howl', min: 0, max: 1, default: 0.71 } },
@@ -20,5 +25,17 @@ export default {
       return 0.95 * bottom(wind2()) + (2.7 * throat(air) + 0.8 * whistle(air)) * (0.54 + gust)
         + params.howl * gust * (0.36 * a + 0.18 * b);
     });
+  },
+} satisfies SoundRecipe;
+
+export default {
+  ...original,
+  ...sceneCredits(source, wash, detail),
+  render(ctx, opts) {
+    const old = original.render(ctx, opts);
+    const field = fieldWeather(ctx, opts.seed, opts.params.howl, {
+      base: source, wash, detail, bodyHz: 3650, detailHz: 4900, spacing: 2.01, depth: 0.68, space: "open",
+    }, "steady");
+    return field.map((v, i) => v * .81 + old[i] * .16);
   },
 } satisfies SoundRecipe;

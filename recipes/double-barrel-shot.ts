@@ -1,8 +1,11 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-field.ts';
+import foley1 from './_recordings/clarity-rifle.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { layer } from '../engine/dsp.ts';
 import { discharge } from './_shared/mechanical.ts';
 
-export default {
+const original = {
   id: "double-barrel-shot", name: "Double-Barrel Shot", category: 'Weapons',
   tags: ["shotgun","gunshot","double-barrel","heavy"], loopable: false, durationSec: 0.89,
   params: { weight: { label: "Weight", min: 0, max: 1, default: 0.66 } },
@@ -12,3 +15,8 @@ export default {
     return sound;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.38, gain: 1.13, cutoff: 8700, speed: 0.91 },
+  { clip: foley1, at: 0.016, span: 0.24, gain: 0.46, cutoff: 10800, speed: 0.83 },
+]);

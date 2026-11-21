@@ -1,10 +1,13 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/dry-branch-snap.ts';
+import foley1 from './_recordings/slatted-crate-settle.ts';
 import { mix } from '../engine/dsp.ts';
 import { destruction } from './_shared/destruction-effects.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/response-air-pressure.ts';
 
-export default {
+const original = {
   id: "wooden-shed-explosion-splinter-fall",
   name: "Wooden shed explosion splinter fall",
   category: "Impacts",
@@ -31,3 +34,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0.085, span: 0.24, gain: 0.34, cutoff: 9850, speed: 0.8 },
+  { clip: foley1, at: 0.29, span: 0.49, gain: 0.24, cutoff: 5800, speed: 0.89 },
+]);

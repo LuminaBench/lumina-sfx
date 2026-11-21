@@ -1,7 +1,9 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-pistol.ts';
 import { arenaReport } from "./_shared/arena-reports.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
-export default {
+const original = {
   id: "alley-double-report", name: "Alley Double Report", category: "Weapons",
   tags: ["game", "report", "alley", "urban", "double", "echo"],
   loopable: false, durationSec: 0.64, targetRmsDbfs: -18,
@@ -12,3 +14,8 @@ export default {
     }, params.body);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.19, gain: 1.1, cutoff: 11300, speed: 1.01 },
+  { clip: foley0, at: 0.154, span: 0.19, gain: 0.91, cutoff: 11300, speed: 1.01 },
+]);

@@ -56,5 +56,6 @@ export interface SoundRecipe {
   readonly recording?: RecordingCredit;
   readonly additionalRecordings?: readonly RecordingCredit[];
   readonly spectrum?: readonly SpectralExpectation[];
+  renderStereo?(ctx: RenderContext, opts: ResolvedOptions): readonly [Float32Array, Float32Array];
   render(ctx: RenderContext, opts: ResolvedOptions): Float32Array;
 }

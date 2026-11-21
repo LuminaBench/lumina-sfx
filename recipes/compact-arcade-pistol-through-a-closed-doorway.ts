@@ -1,9 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-pistol.ts';
+import foley1 from './_recordings/book-cover-shut.ts';
 import { mix } from '../engine/dsp.ts';
 import { arenaReport } from './_shared/arena-reports.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "compact-arcade-pistol-through-a-closed-doorway",
   name: "Compact arcade pistol through a closed doorway",
   category: "Weapons",
@@ -25,3 +28,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.19, gain: 1.1, cutoff: 1330, speed: 1.01 },
+  { clip: foley1, at: 0.016, span: 0.12, gain: 0.24, cutoff: 980, speed: 0.89 },
+]);

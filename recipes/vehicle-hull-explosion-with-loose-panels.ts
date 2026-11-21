@@ -1,3 +1,5 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-scrap.ts';
 import { mix } from '../engine/dsp.ts';
 import { destruction } from './_shared/destruction-effects.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
@@ -5,7 +7,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/response-metal-pressure.ts';
 import source2 from './_recordings/motion-clank-close.ts';
 
-export default {
+const original = {
   id: "vehicle-hull-explosion-with-loose-panels",
   name: "Vehicle hull explosion with loose panels",
   category: "Impacts",
@@ -32,3 +34,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0.1, span: 0.62, gain: 0.33, cutoff: 6700, speed: 0.85 },
+  { clip: foley0, at: 0.65, span: 0.62, gain: 0.12, cutoff: 3500, speed: 0.85 },
+]);

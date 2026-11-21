@@ -1,7 +1,8 @@
-import { mix } from '../engine/dsp.ts';
-import { atmosphere, scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/demo-turbine-idle.ts';
+import { propulsion } from './_shared/propulsion.ts';
+import { sceneCredits } from './_shared/material-scenes.ts';
+import idle from './_recordings/demo-turbine-idle.ts';
+import loaded from './_recordings/demo-fighter-taxi.ts';
 
 export default {
   id: "jet-warm-idle-on-ramp-loop",
@@ -13,15 +14,10 @@ export default {
   targetRmsDbfs: -26,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },
   mixRole: "vehicle",
-  ...sceneCredits(source),
+  ...sceneCredits(idle, loaded),
   render(ctx, { params, seed }) {
-    const bed = atmosphere(ctx, {
-      body: 430, edge: 1460, drift: .147, density: 1.11, material: "air", texture: .13,
-    }, params.intensity);
-    const detail = scene(ctx, seed, params.intensity, [
-      ['clip', source, 0, 8.075, 1, .45, 9000, 0, 0],
-    ]);
-    mix(bed, detail);
-    return bed;
+    return propulsion(ctx, seed, params.intensity, .50, 'idle', {
+      kind: 'jet', pulseHz: [174, 720], timbre: .83, idleWindow: [.12, .87], powerWindow: [.19, .78],
+    }, idle, loaded);
   },
 } satisfies SoundRecipe;

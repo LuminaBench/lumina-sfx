@@ -1,7 +1,10 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-firecracker.ts';
+import foley1 from './_recordings/spade-turn-loam.ts';
 import { destruction } from "./_shared/destruction-effects.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
-export default {
+const original = {
   id: "dirt-mound-eruption", name: "Dirt Mound Eruption", category: "Impacts",
   tags: ["explosion", "dirt", "soil", "earth", "eruption"],
   loopable: false, durationSec: 1.14, targetRmsDbfs: -18,
@@ -16,3 +19,8 @@ export default {
     }, params.weight);
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.42, gain: 0.63, cutoff: 2600, speed: 0.77 },
+  { clip: foley1, at: 0.096, span: 0.55, gain: 0.33, cutoff: 4800, speed: 0.89 },
+]);

@@ -1,9 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/atlas-firecracker.ts';
+import foley1 from './_recordings/atlas-scrap.ts';
 import { mix } from '../engine/dsp.ts';
 import { airTransient } from './_shared/air-transients.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "supersonic-boom-heard-from-cockpit-cabin",
   name: "Supersonic boom heard from cockpit cabin",
   category: "Aircraft",
@@ -27,3 +30,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.42, gain: 0.66, cutoff: 1350, speed: 0.77 },
+  { clip: foley1, at: 0.025, span: 0.15, gain: 0.26, cutoff: 2010, speed: 0.85 },
+]);

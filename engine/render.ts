@@ -1,5 +1,5 @@
 import { clamp, closeLoop, dbToGain, rng } from './dsp.ts';
-import { balanceLevels, resolveMixRole } from './levels.ts';
+import { balanceLevels, balanceSettings, resolveMixRole } from './levels.ts';
 import type { RenderOptions, SoundRecipe } from './types.ts';
 
 export const SAMPLE_RATE = 44_100;
@@ -81,7 +81,7 @@ function master(input: Float32Array, sampleRate: number, rmsDbfs: number): Float
   return output;
 }
 
-export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array {
+function renderContext(recipe: SoundRecipe, opts: RenderOptions, sampleRate: number) {
   if (!Number.isInteger(sampleRate) || sampleRate < 8000 || sampleRate > 192000) {
     throw new RangeError('Sample rate must be an integer from 8000 to 192000 Hz');
   }
@@ -96,7 +96,12 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
   }));
   const seed = Number.isFinite(opts.seed) ? opts.seed! >>> 0 : DEFAULT_SEED;
   const ctx = { sampleRate, frames: frames + overlap, random: rng(seed) };
-  const raw = recipe.render(ctx, { seed, params });
+  return { ctx, resolved: { seed, params }, frames, overlap };
+}
+
+export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array {
+  const { ctx, resolved, frames, overlap } = renderContext(recipe, opts, sampleRate);
+  const raw = recipe.render(ctx, resolved);
   if (!(raw instanceof Float32Array) || raw.length !== ctx.frames) {
     throw new Error(`${recipe.id}: render must return exactly ${ctx.frames} Float32 samples`);
   }
@@ -104,4 +109,44 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
   const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate);
   const output = master(prepared, sampleRate, target);
   return opts.level === 'balanced' ? balanceLevels(output, sampleRate, resolveMixRole(recipe)) : output;
+}
+
+// One clock, trim and gain for the pair keeps arrivals and stereo perspective intact.
+export function renderChannels(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array[] {
+  if (!recipe.renderStereo) return [renderSound(recipe, opts, sampleRate)];
+  const { ctx, resolved, frames, overlap } = renderContext(recipe, opts, sampleRate);
+  const raw = recipe.renderStereo(ctx, resolved);
+  if (raw.length !== 2 || raw.some(c => !(c instanceof Float32Array) || c.length !== ctx.frames)) {
+    throw new Error(recipe.id + ': stereo renderer must return two equal-length channels');
+  }
+  let peak = 0;
+  for (const c of raw) for (const x of c) {
+    if (!Number.isFinite(x)) throw new Error('Non-finite stereo sample');
+    peak = Math.max(peak, Math.abs(x));
+  }
+  let onset = 0;
+  while (onset < frames && Math.max(Math.abs(raw[0][onset]), Math.abs(raw[1][onset])) < peak * 0.02) onset++;
+  const trim = Math.max(0, onset - Math.round(sampleRate * 0.001));
+  const channels = raw.map(c => {
+    if (recipe.loopable) return closeLoop(c, frames, overlap);
+    const shot = new Float32Array(frames);
+    shot.set(c.subarray(trim));
+    taper(shot, sampleRate);
+    return shot;
+  });
+  const interleaved = new Float32Array(frames*2);
+  for (let i = 0; i < frames; i++) {
+    interleaved[i*2] = channels[0][i];
+    interleaved[i*2+1] = channels[1][i];
+  }
+  const linked = master(interleaved, sampleRate*2, targetRmsDb(recipe.loopable, recipe.targetRmsDbfs));
+  for (const [side, c] of channels.entries()) {
+    for (let i = 0; i < frames; i++) c[i] = linked[i*2+side];
+  }
+  if (opts.level === 'balanced') {
+    const gainDb = Math.min(...channels.map(c => balanceSettings(c, sampleRate, resolveMixRole(recipe)).gainDb));
+    const gain = dbToGain(gainDb);
+    for (const c of channels) for (let i = 0; i < frames; i++) c[i] *= gain;
+  }
+  return channels;
 }

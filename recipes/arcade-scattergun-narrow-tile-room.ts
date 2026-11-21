@@ -1,9 +1,12 @@
+import { withImpactFoley } from './_shared/recorded-impact.ts';
+import foley0 from './_recordings/clarity-field.ts';
+import foley1 from './_recordings/clarity-rifle.ts';
 import { mix } from '../engine/dsp.ts';
 import { arenaReport } from './_shared/arena-reports.ts';
 import { scene } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 
-export default {
+const original = {
   id: "arcade-scattergun-narrow-tile-room",
   name: "Arcade scattergun narrow tile room",
   category: "Weapons",
@@ -26,3 +29,8 @@ export default {
     return bed;
   },
 } satisfies SoundRecipe;
+
+export default withImpactFoley(original, [
+  { clip: foley0, at: 0, span: 0.38, gain: 1.13, cutoff: 8700, speed: 0.91 },
+  { clip: foley1, at: 0.031, span: 0.31, gain: 0.32, cutoff: 5250, speed: 0.98 },
+]);
