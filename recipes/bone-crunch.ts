@@ -3,8 +3,9 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { brush, foleyGrain, softContact } from './_shared/foley.ts';
 
 export default {
-  id: 'bone-crunch', name: 'Bone Crunch', category: 'Zombies & Combat',
+  id: 'bone-crunch', name: 'Bone Crunch', category: 'Impacts',
   tags: ['bone', 'crunch', 'break', 'impact'], loopable: false, durationSec: 0.58,
+  mixRole: 'foley',
   params: { splinter: { label: 'Splinter', min: 0, max: 1, default: 0.72 } },
   render(ctx, { params }) {
     const sound = new Float32Array(ctx.frames);

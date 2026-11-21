@@ -1,6 +1,6 @@
 ---
 name: lumina-sfx
-description: Find, install, generate, and remix procedural sound effects and verified public-domain recordings for indie games and web apps. Use for Sounds-as-Code, Web Audio API playback, TypeScript DSP, PCM WAV export, planting and harvest sounds, livestock and farm habitats, footsteps, weather, game combat SFX, impacts, vehicles and engines, interface alerts, fantasy and sci-fi effects, and rapid listening review.
+description: Find, install, generate, and remix procedural sound effects and verified public-domain recordings for indie games and web apps. Use for Sounds-as-Code, Web Audio API, TypeScript DSP, PCM WAV export, menu clicks and selection, hitmarkers and elimination confirms, warning alarms, missile launch and flyby sounds, sonic booms, explosions, prop reloads, vehicles and engines, weather, footsteps, and farming.
 ---
 
 # Lumina SFX
@@ -14,11 +14,16 @@ Read [catalog.json](catalog.json) or run the search script from the skill direct
 ```sh
 node scripts/search.mjs rain --loop --json
 node scripts/search.mjs --category Weapons
+node scripts/search.mjs kill confirm --json
+node scripts/search.mjs --collection "Alerts · Warnings from hardware"
+node scripts/search.mjs supersonic whistle --json
 node scripts/search.mjs --collection "Maritime · Motors and deck" --loop
 node scripts/search.mjs tank gravel --loop --json
 ```
 
 For vehicles with changing states, look for a start or departure cue, a steady loop, and a separate stop or settling cue. Add cabin, tread, wake, and contact layers as the scene needs them. The [vehicle and combat cue guide](tasks/MOTION_COMBAT.md) lists collection names and recipe IDs that work together.
+
+For gameplay feedback, map menu focus, selection, and confirmation to their own events. Play hit feedback on a hit and the elimination confirm on a credited elimination. Give the elimination cue priority when both fire on the same frame. Choose warning patterns by urgency and launch, whistle pass, sonic boom, and explosion by where the listener is in the scene. See [event audio](references/event-audio.md) for example recipe IDs and integration guidance.
 
 From the recipient project, invoke the installer by its absolute path in this skill. Select recipe IDs directly. The installer copies the small runtime, selected recipe files, and their transitive TypeScript dependencies. It supports repeat installs and reports conflicting local edits.
 
@@ -58,6 +63,6 @@ If cues vary too much in the game mix, audition and export with **Balanced level
 
 Run `npm run demo` and open [Quick review](http://127.0.0.1:5173/#review). Choose a collection to hear a short related batch. Press Y or N, or use the Yes and No buttons. The next pending cue plays after each decision. Space replays the current cue. Use Soundboard for search, WAV export, and written feedback.
 
-Use Gemini 4 Neon through Antigravity as a helper when authoring, revising, or reviewing Lumina sounds. Give it relevant public references and measured diagnostics. Use [the listening review guide](references/listening-review.md) when expanding a family, preparing a batch, or calibrating new sounds from [saved user decisions](tasks/feedback.json).
+Use Gemini 4 Neon through Antigravity for external sound-design consultation when needed. Give it relevant public references and measured diagnostics. Use [the listening review guide](references/listening-review.md) when expanding a family, preparing a batch, or calibrating new sounds from [saved user decisions](tasks/feedback.json).
 
 See the [1,000-sound release](tasks/MILESTONE_1000.md), [demo expansion and level calibration](tasks/DEMO_EXPANSION.md), and the [queue](tasks/queue.json) for individual tickets.

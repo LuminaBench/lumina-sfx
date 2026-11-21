@@ -2,8 +2,9 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { biquad, envelope, noise, renderSamples } from '../engine/dsp.ts';
 
 export default {
-  id: 'melee-swing', name: "Melee Swing", category: 'Zombies & Combat',
+  id: 'melee-swing', name: "Melee Swing", category: 'Weapons',
   tags: ["melee","swing","whoosh","air"], loopable: false, durationSec: 0.43,
+  mixRole: 'foley',
   params: { speed: { label: 'Speed', min: 0, max: 1, default: 0.67 } },
   render(ctx, { params }) {
     const air = noise(ctx.random, 'pink');

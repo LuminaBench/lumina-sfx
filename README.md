@@ -2,7 +2,7 @@
 
 An Agent Skill and TypeScript sound effects engine for games and web apps. The library includes original DSP and source-credited public-domain recordings. Browser preview and offline WAV rendering use the same seeded PCM pipeline.
 
-The library contains **1,108 sound recipes**. Browse the [vehicle and combat audio release](tasks/MOTION_COMBAT.md), the [first 1,000 cues](tasks/MILESTONE_1000.md), or run `npm run search -- --collection "Maritime · Motors and deck"` to find sounds by theme.
+The library contains **1,213 sound recipes**. Browse the [game feedback, warnings, and flight cues](references/event-audio.md), the [vehicle and combat audio release](tasks/MOTION_COMBAT.md), or the [first 1,000 cues](tasks/MILESTONE_1000.md).
 
 ## Run the studio
 
@@ -19,7 +19,7 @@ Soundboard lets you search, audition, and export recipe WAVs. Space replays the 
 
 Use **Balanced levels** for audition or export when cues need to sit more consistently together. The optional playback profile leaves room for ambience, detail, and foreground impact. See the [calibration guide](tasks/DEMO_EXPANSION.md#level-calibration).
 
-The Lumina Zombies tab plays weapons, weather, footsteps, and creature effects in the same audio mix. Select the rifle to access auto-fire and live RPM. Use WASD or the arrow keys to walk.
+The Combat Range plays weapons, explosions, flight effects, menu clicks, warnings, eliminations, footsteps, and weather in the same mix. Select the rifle to access auto-fire and live RPM. Use WASD or the arrow keys to walk.
 
 ## QA and integration
 

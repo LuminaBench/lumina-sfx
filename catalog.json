@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "count": 1108,
+  "count": 1213,
   "sounds": [
     {
       "id": "a-sudden-burst-of-rain",
@@ -65,30 +65,6 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/action-lever-cycle.ts"
-    },
-    {
-      "id": "aggressive-zombie-snarl",
-      "name": "Aggressive Zombie Snarl",
-      "category": "Zombies & Combat",
-      "tags": [
-        "zombie",
-        "snarl",
-        "growl",
-        "angry",
-        "vocal",
-        "attack"
-      ],
-      "loopable": false,
-      "durationSec": 0.88,
-      "params": {
-        "rage": {
-          "label": "Rage",
-          "min": 0,
-          "max": 1,
-          "default": 0.81
-        }
-      },
-      "file": "recipes/aggressive-zombie-snarl.ts"
     },
     {
       "id": "air-pulse-prop-seal-vents-and-cools",
@@ -776,6 +752,40 @@
       "file": "recipes/anchored-sailboat-stern-cabin-swell-loop.ts"
     },
     {
+      "id": "antique-powder-report",
+      "name": "Antique powder report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "antique",
+        "powder",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.68,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/antique-powder-report.ts"
+    },
+    {
       "id": "apartment-door-close",
       "name": "Apartment Door Close",
       "category": "Props & Interactions",
@@ -910,6 +920,41 @@
       "file": "recipes/apple-falls-in-orchard.ts"
     },
     {
+      "id": "appliance-timer-warning-single-beep",
+      "name": "Appliance timer warning single beep",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "appliance",
+        "timer",
+        "warning",
+        "single",
+        "beep",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 0.29,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Microwave Beeps",
+        "author": "joe_anderson22",
+        "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/appliance-timer-warning-single-beep.ts"
+    },
+    {
       "id": "arcade-cannon-reservoir-discharge",
       "name": "Arcade Cannon Reservoir Discharge",
       "category": "Impacts",
@@ -1017,6 +1062,44 @@
       "file": "recipes/arcade-cracker-pop.ts"
     },
     {
+      "id": "arcade-elimination-glass-grit-seal",
+      "name": "Arcade elimination glass grit seal",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "arcade",
+        "elimination",
+        "glass",
+        "grit",
+        "seal",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "kill"
+      ],
+      "loopable": false,
+      "durationSec": 0.291,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-elimination-glass-grit-seal.ts"
+    },
+    {
       "id": "arcade-glass-cluster-scattering",
       "name": "Arcade Glass Cluster Scattering",
       "category": "Impacts",
@@ -1087,6 +1170,187 @@
       "file": "recipes/arcade-hand-cannon-street-corner-reflection.ts"
     },
     {
+      "id": "arcade-heavy-revolver-close-steel-report",
+      "name": "Arcade heavy revolver close steel report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "arcade",
+        "heavy",
+        "revolver",
+        "close",
+        "steel",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-heavy-revolver-close-steel-report.ts"
+    },
+    {
+      "id": "arcade-kill-confirm-dry-ceramic-stamp",
+      "name": "Arcade kill confirm dry ceramic stamp",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "arcade",
+        "kill",
+        "confirm",
+        "dry",
+        "ceramic",
+        "stamp",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination"
+      ],
+      "loopable": false,
+      "durationSec": 0.217,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22.5,
+      "mixRole": "interface",
+      "file": "recipes/arcade-kill-confirm-dry-ceramic-stamp.ts"
+    },
+    {
+      "id": "arcade-kill-confirm-padded-bass-punch",
+      "name": "Arcade kill confirm padded bass punch",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "arcade",
+        "kill",
+        "confirm",
+        "padded",
+        "bass",
+        "punch",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination"
+      ],
+      "loopable": false,
+      "durationSec": 0.223,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "interface",
+      "file": "recipes/arcade-kill-confirm-padded-bass-punch.ts"
+    },
+    {
+      "id": "arcade-kill-confirm-ratchet-double-click",
+      "name": "Arcade kill confirm ratchet double click",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "arcade",
+        "kill",
+        "confirm",
+        "ratchet",
+        "double",
+        "click",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination"
+      ],
+      "loopable": false,
+      "durationSec": 0.259,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/arcade-kill-confirm-ratchet-double-click.ts"
+    },
+    {
+      "id": "arcade-kill-confirm-tuned-air-break",
+      "name": "Arcade kill confirm tuned air break",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "arcade",
+        "kill",
+        "confirm",
+        "tuned",
+        "air",
+        "break",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination"
+      ],
+      "loopable": false,
+      "durationSec": 0.269,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "interface",
+      "file": "recipes/arcade-kill-confirm-tuned-air-break.ts"
+    },
+    {
       "id": "arcade-marksman-long-canyon-echo",
       "name": "Arcade marksman long canyon echo",
       "category": "Weapons",
@@ -1114,6 +1378,114 @@
       "targetRmsDbfs": -23.5,
       "mixRole": "impact",
       "file": "recipes/arcade-marksman-long-canyon-echo.ts"
+    },
+    {
+      "id": "arcade-missile-compact-ignition-snap",
+      "name": "Arcade missile compact ignition snap",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "arcade",
+        "missile",
+        "compact",
+        "ignition",
+        "snap",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 0.79,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-missile-compact-ignition-snap.ts"
+    },
+    {
+      "id": "arcade-missile-long-bright-thrust-departure",
+      "name": "Arcade missile long bright thrust departure",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "arcade",
+        "missile",
+        "long",
+        "bright",
+        "thrust",
+        "departure",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 2.07,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "impact",
+      "recording": {
+        "title": "F16 takeoff 1.WAV",
+        "author": "Sandermotions",
+        "url": "https://freesound.org/people/Sandermotions/sounds/275990/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-missile-long-bright-thrust-departure.ts"
+    },
+    {
+      "id": "arcade-mounted-report-through-a-stairwell",
+      "name": "Arcade mounted report through a stairwell",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "arcade",
+        "mounted",
+        "report",
+        "stairwell",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.53,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-mounted-report-through-a-stairwell.ts"
     },
     {
       "id": "arcade-pulse-launcher-world-space-charge-release",
@@ -1147,6 +1519,80 @@
       "file": "recipes/arcade-pulse-launcher-world-space-charge-release.ts"
     },
     {
+      "id": "arcade-revolver-prop-cylinder-latches-shut",
+      "name": "Arcade revolver prop cylinder latches shut",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "arcade",
+        "revolver",
+        "prop",
+        "cylinder",
+        "latches",
+        "shut",
+        "reload",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.37,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-revolver-prop-cylinder-latches-shut.ts"
+    },
+    {
+      "id": "arcade-revolver-prop-cylinder-swings-open",
+      "name": "Arcade revolver prop cylinder swings open",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "arcade",
+        "revolver",
+        "prop",
+        "cylinder",
+        "swings",
+        "open",
+        "reload",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.61,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-revolver-prop-cylinder-swings-open.ts"
+    },
+    {
       "id": "arcade-ricochet-on-hanging-steel-panel",
       "name": "Arcade ricochet on hanging steel panel",
       "category": "Weapons",
@@ -1178,6 +1624,73 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/arcade-ricochet-on-hanging-steel-panel.ts"
+    },
+    {
+      "id": "arcade-rifle-gravel-pit-single-report",
+      "name": "Arcade rifle gravel pit single report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "arcade",
+        "rifle",
+        "gravel",
+        "pit",
+        "single",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.94,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-rifle-gravel-pit-single-report.ts"
+    },
+    {
+      "id": "arcade-rifle-report-heard-through-car-glass",
+      "name": "Arcade rifle report heard through car glass",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "arcade",
+        "rifle",
+        "report",
+        "heard",
+        "car",
+        "glass",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.72,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "impact",
+      "file": "recipes/arcade-rifle-report-heard-through-car-glass.ts"
     },
     {
       "id": "arcade-round-snaps-through-old-plywood",
@@ -1299,6 +1812,42 @@
       "file": "recipes/arcade-scattergun-distant-yard-echo.ts"
     },
     {
+      "id": "arcade-scattergun-exterior-short-barrel",
+      "name": "Arcade scattergun exterior short barrel",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "arcade",
+        "scattergun",
+        "exterior",
+        "short",
+        "barrel",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.74,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-scattergun-exterior-short-barrel.ts"
+    },
+    {
       "id": "arcade-scattergun-narrow-tile-room",
       "name": "Arcade scattergun narrow tile room",
       "category": "Weapons",
@@ -1358,6 +1907,36 @@
       "file": "recipes/arcade-sentry-thump-heard-inside-a-vehicle.ts"
     },
     {
+      "id": "arcade-sidearm-dry-paper-target-report",
+      "name": "Arcade sidearm dry paper target report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "arcade",
+        "sidearm",
+        "dry",
+        "paper",
+        "target",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.44,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "file": "recipes/arcade-sidearm-dry-paper-target-report.ts"
+    },
+    {
       "id": "arcade-sidearm-pop",
       "name": "Arcade Sidearm Pop",
       "category": "Weapons",
@@ -1406,6 +1985,42 @@
       "targetRmsDbfs": -26,
       "mixRole": "impact",
       "file": "recipes/arcade-training-round-chips-brick.ts"
+    },
+    {
+      "id": "armor-break-dry-crack-and-scrape",
+      "name": "Armor break dry crack and scrape",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "armor",
+        "break",
+        "dry",
+        "crack",
+        "scrape",
+        "event",
+        "combat",
+        "feedback"
+      ],
+      "loopable": false,
+      "durationSec": 0.341,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armor-break-dry-crack-and-scrape.ts"
     },
     {
       "id": "armor-plate-dropped-on-a-padded-mat",
@@ -1878,6 +2493,45 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/armored-suspension-pressure-bleed.ts"
+    },
+    {
+      "id": "armored-target-defeated-panel-latch",
+      "name": "Armored target defeated panel latch",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "armored",
+        "target",
+        "defeated",
+        "panel",
+        "latch",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination",
+        "kill"
+      ],
+      "loopable": false,
+      "durationSec": 0.309,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22.8,
+      "mixRole": "interface",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-target-defeated-panel-latch.ts"
     },
     {
       "id": "armored-track-tensioner-snaps-once",
@@ -3070,7 +3724,7 @@
     {
       "id": "bone-crunch",
       "name": "Bone Crunch",
-      "category": "Zombies & Combat",
+      "category": "Impacts",
       "tags": [
         "bone",
         "crunch",
@@ -3087,6 +3741,7 @@
           "default": 0.72
         }
       },
+      "mixRole": "foley",
       "file": "recipes/bone-crunch.ts"
     },
     {
@@ -5371,6 +6026,97 @@
       "file": "recipes/car-wiper-rain-loop.ts"
     },
     {
+      "id": "carbine-prop-reload-heavy-alloy-slot",
+      "name": "Carbine prop reload heavy alloy slot",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "carbine",
+        "prop",
+        "reload",
+        "heavy",
+        "alloy",
+        "slot",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.85,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/carbine-prop-reload-heavy-alloy-slot.ts"
+    },
+    {
+      "id": "carbine-prop-reload-quick-soft-polymer-seat",
+      "name": "Carbine prop reload quick soft polymer seat",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "carbine",
+        "prop",
+        "reload",
+        "quick",
+        "soft",
+        "polymer",
+        "seat",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.54,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/carbine-prop-reload-quick-soft-polymer-seat.ts"
+    },
+    {
       "id": "cardboard-box-crush",
       "name": "Cardboard Box Crush",
       "category": "Impacts",
@@ -5498,6 +6244,85 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/cat-meow.ts"
+    },
+    {
+      "id": "ceiling-detector-alert-isolated-pulse",
+      "name": "Ceiling detector alert isolated pulse",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "ceiling",
+        "detector",
+        "alert",
+        "isolated",
+        "pulse",
+        "warning",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 0.65,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Smoke alarm.wav",
+        "author": "jess90",
+        "url": "https://freesound.org/people/jess90/sounds/680073/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/ceiling-detector-alert-isolated-pulse.ts"
+    },
+    {
+      "id": "ceiling-detector-warning-three-pulses",
+      "name": "Ceiling detector warning three pulses",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "ceiling",
+        "detector",
+        "warning",
+        "three",
+        "pulses",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 3.12,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Smoke alarm.wav",
+        "author": "jess90",
+        "url": "https://freesound.org/people/jess90/sounds/680073/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/ceiling-detector-warning-three-pulses.ts"
     },
     {
       "id": "ceramic-mug-on-cork-set-down",
@@ -6438,6 +7263,41 @@
       "file": "recipes/clockwork-prop-wind-and-unlatch.ts"
     },
     {
+      "id": "close-alley-explosion-concrete-debris",
+      "name": "Close alley explosion concrete debris",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "close",
+        "alley",
+        "explosion",
+        "concrete",
+        "debris",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 2.79,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/close-alley-explosion-concrete-debris.ts"
+    },
+    {
       "id": "close-concussion-wave",
       "name": "Close Concussion Wave",
       "category": "Impacts",
@@ -6489,6 +7349,32 @@
         }
       ],
       "file": "recipes/close-lightning-thunder.ts"
+    },
+    {
+      "id": "close-supersonic-twin-pressure-crack",
+      "name": "Close supersonic twin pressure crack",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "close",
+        "supersonic",
+        "twin",
+        "pressure",
+        "crack"
+      ],
+      "loopable": false,
+      "durationSec": 1.31,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "file": "recipes/close-supersonic-twin-pressure-crack.ts"
     },
     {
       "id": "closing-an-iron-stove-damper",
@@ -7511,6 +8397,41 @@
       "file": "recipes/compact-carbine-shot.ts"
     },
     {
+      "id": "compact-crossover-seat-vibration-under-load-loop",
+      "name": "Compact crossover seat vibration under load loop",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "compact",
+        "crossover",
+        "seat",
+        "vibration",
+        "under",
+        "load",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 4.59,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Car Engine Start.wav",
+        "author": "tbsounddesigns",
+        "url": "https://freesound.org/people/tbsounddesigns/sounds/405322/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/compact-crossover-seat-vibration-under-load-loop.ts"
+    },
+    {
       "id": "compact-petrol-crossover-key-start",
       "name": "Compact petrol crossover key start",
       "category": "Vehicles & Engines",
@@ -7581,6 +8502,41 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/compact-petrol-crossover-steady-idle-loop.ts"
+    },
+    {
+      "id": "compact-sidearm-underpass-reflection",
+      "name": "Compact sidearm underpass reflection",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "compact",
+        "sidearm",
+        "underpass",
+        "reflection",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.92,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/compact-sidearm-underpass-reflection.ts"
     },
     {
       "id": "concrete-footstep",
@@ -7784,6 +8740,50 @@
       },
       "targetRmsDbfs": -23,
       "file": "recipes/countdown-beeps.ts"
+    },
+    {
+      "id": "countdown-timer-low-battery-warning",
+      "name": "Countdown timer low battery warning",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "countdown",
+        "timer",
+        "low",
+        "battery",
+        "warning",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 2.06,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27.5,
+      "mixRole": "interface",
+      "recording": {
+        "title": "microwave beep.wav",
+        "author": "photogtony",
+        "url": "https://freesound.org/people/photogtony/sounds/242006/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Microwave Beeps",
+          "author": "joe_anderson22",
+          "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/countdown-timer-low-battery-warning.ts"
     },
     {
       "id": "court-shoe-abrupt-heel-stop",
@@ -8109,6 +9109,37 @@
       },
       "targetRmsDbfs": -18,
       "file": "recipes/crevasse-ice-break.ts"
+    },
+    {
+      "id": "critical-hit-hard-ceramic-doublet",
+      "name": "Critical hit hard ceramic doublet",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "critical",
+        "hit",
+        "hard",
+        "ceramic",
+        "doublet",
+        "event",
+        "combat",
+        "feedback",
+        "hit-marker",
+        "hit-confirm"
+      ],
+      "loopable": false,
+      "durationSec": 0.169,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "interface",
+      "file": "recipes/critical-hit-hard-ceramic-doublet.ts"
     },
     {
       "id": "crouch-shift-on-leaf-litter",
@@ -8607,6 +9638,41 @@
         }
       ],
       "file": "recipes/deep-industrial-blast.ts"
+    },
+    {
+      "id": "deep-quarry-explosion-rock-slap",
+      "name": "Deep quarry explosion rock slap",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "deep",
+        "quarry",
+        "explosion",
+        "rock",
+        "slap",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 3.84,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22.8,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/deep-quarry-explosion-rock-slap.ts"
     },
     {
       "id": "deep-space-anomaly-wake",
@@ -9274,6 +10340,33 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/distant-runway-departure.ts"
+    },
+    {
+      "id": "distant-supersonic-boom-across-open-country",
+      "name": "Distant supersonic boom across open country",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "distant",
+        "supersonic",
+        "boom",
+        "across",
+        "open",
+        "country"
+      ],
+      "loopable": false,
+      "durationSec": 2.73,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "impact",
+      "file": "recipes/distant-supersonic-boom-across-open-country.ts"
     },
     {
       "id": "distant-thunder-across-a-lake",
@@ -11113,6 +12206,78 @@
       "file": "recipes/energy-cell-seating.ts"
     },
     {
+      "id": "energy-rifle-empty-cell-release",
+      "name": "Energy rifle empty cell release",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "energy",
+        "rifle",
+        "empty",
+        "cell",
+        "release",
+        "reload",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.55,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/energy-rifle-empty-cell-release.ts"
+    },
+    {
+      "id": "energy-rifle-hard-cell-reload-snap",
+      "name": "Energy rifle hard cell reload snap",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "energy",
+        "rifle",
+        "hard",
+        "cell",
+        "reload",
+        "snap",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.81,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "detail",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/energy-rifle-hard-cell-reload-snap.ts"
+    },
+    {
       "id": "energy-shield-block",
       "name": "Energy Shield Block",
       "category": "Sci-Fi & UI",
@@ -11501,6 +12666,73 @@
       "file": "recipes/ev-passing-through-a-parking-structure.ts"
     },
     {
+      "id": "explosion-behind-a-shut-metal-door",
+      "name": "Explosion behind a shut metal door",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "explosion",
+        "shut",
+        "door",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 2.12,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/explosion-behind-a-shut-metal-door.ts"
+    },
+    {
+      "id": "explosion-through-plate-glass-shower",
+      "name": "Explosion through plate glass shower",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "explosion",
+        "plate",
+        "glass",
+        "shower",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 2.35,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20.7,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Glass Break",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/221528/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/explosion-through-plate-glass-shower.ts"
+    },
+    {
       "id": "fabric-barrier-hit-by-arcade-projectile",
       "name": "Fabric Barrier Hit by Arcade Projectile",
       "category": "Impacts",
@@ -11531,6 +12763,87 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/fabric-barrier-hit-by-arcade-projectile.ts"
+    },
+    {
+      "id": "factory-crane-warning-single-close-buzzer",
+      "name": "Factory crane warning single close buzzer",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "factory",
+        "crane",
+        "warning",
+        "single",
+        "close",
+        "buzzer",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 1.28,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Factory Warning Buzzer",
+        "author": "qubodup",
+        "url": "https://freesound.org/people/qubodup/sounds/832414/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/factory-crane-warning-single-close-buzzer.ts"
+    },
+    {
+      "id": "factory-door-warning-two-unequal-buzzes",
+      "name": "Factory door warning two unequal buzzes",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "factory",
+        "door",
+        "warning",
+        "two",
+        "unequal",
+        "buzzes",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 1.61,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Factory Warning Buzzer",
+        "author": "qubodup",
+        "url": "https://freesound.org/people/qubodup/sounds/832414/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/factory-door-warning-two-unequal-buzzes.ts"
     },
     {
       "id": "far-side-muffled-blast",
@@ -11758,6 +13071,42 @@
         }
       ],
       "file": "recipes/farm-truck-low-gear-uphill-loop.ts"
+    },
+    {
+      "id": "fast-interceptor-broad-air-pass",
+      "name": "Fast interceptor broad air pass",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "fast",
+        "interceptor",
+        "broad",
+        "air",
+        "pass",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 1.77,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jet Flyby 1",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/168079/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/fast-interceptor-broad-air-pass.ts"
     },
     {
       "id": "fast-jet-climbout",
@@ -12109,6 +13458,79 @@
       "file": "recipes/fictional-arc-blade-emergency-power-down.ts"
     },
     {
+      "id": "fictional-launch-far-pad-over-open-water",
+      "name": "Fictional launch far pad over open water",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "fictional",
+        "launch",
+        "far",
+        "pad",
+        "open",
+        "water",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 3.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/fictional-launch-far-pad-over-open-water.ts"
+    },
+    {
+      "id": "fictional-launch-heard-through-cockpit-glass",
+      "name": "Fictional launch heard through cockpit glass",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "fictional",
+        "launch",
+        "heard",
+        "cockpit",
+        "glass",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 1.85,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "F16 fighter jet start up.aif",
+        "author": "ikbenraar",
+        "url": "https://freesound.org/people/ikbenraar/sounds/322178/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/fictional-launch-heard-through-cockpit-glass.ts"
+    },
+    {
       "id": "film-camera-advance-lever",
       "name": "Film Camera Advance Lever",
       "category": "Props & Interactions",
@@ -12197,6 +13619,38 @@
       "file": "recipes/fine-drizzle-loop.ts"
     },
     {
+      "id": "finisher-confirm-low-grate-snap",
+      "name": "Finisher confirm low grate snap",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "finisher",
+        "confirm",
+        "low",
+        "grate",
+        "snap",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination",
+        "kill"
+      ],
+      "loopable": false,
+      "durationSec": 0.392,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "interface",
+      "file": "recipes/finisher-confirm-low-grate-snap.ts"
+    },
+    {
       "id": "flash-blast-in-a-narrow-hall",
       "name": "Flash Blast in a Narrow Hall",
       "category": "Impacts",
@@ -12219,6 +13673,41 @@
       },
       "targetRmsDbfs": -21,
       "file": "recipes/flash-blast-in-a-narrow-hall.ts"
+    },
+    {
+      "id": "flash-charge-explosion-empty-corridor",
+      "name": "Flash charge explosion empty corridor",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "flash",
+        "charge",
+        "explosion",
+        "empty",
+        "corridor",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 1.62,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/flash-charge-explosion-empty-corridor.ts"
     },
     {
       "id": "flat-bottom-riverboat-changing-throttle",
@@ -12258,7 +13747,7 @@
     {
       "id": "flesh-impact",
       "name": "Flesh Impact Thud",
-      "category": "Zombies & Combat",
+      "category": "Impacts",
       "tags": [
         "flesh",
         "impact",
@@ -12276,6 +13765,7 @@
           "default": 0.68
         }
       },
+      "mixRole": "foley",
       "file": "recipes/flesh-impact.ts"
     },
     {
@@ -12693,6 +14183,51 @@
         }
       ],
       "file": "recipes/fuel-cap-twist-and-click.ts"
+    },
+    {
+      "id": "garage-door-ajar-panel-chime",
+      "name": "Garage door ajar panel chime",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "garage",
+        "door",
+        "ajar",
+        "panel",
+        "chime",
+        "warning",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 0.85,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Microwave Beeps",
+        "author": "joe_anderson22",
+        "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/garage-door-ajar-panel-chime.ts"
     },
     {
       "id": "garden-mist-trigger",
@@ -13503,6 +15038,69 @@
       "file": "recipes/grenade-explosion.ts"
     },
     {
+      "id": "ground-crew-jet-ignition-interior-wash",
+      "name": "Ground crew jet ignition interior wash",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "ground",
+        "crew",
+        "jet",
+        "ignition",
+        "interior",
+        "wash"
+      ],
+      "loopable": false,
+      "durationSec": 3.58,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "F16 fighter jet start up.aif",
+        "author": "ikbenraar",
+        "url": "https://freesound.org/people/ikbenraar/sounds/322178/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/ground-crew-jet-ignition-interior-wash.ts"
+    },
+    {
+      "id": "guided-arcade-propulsion-cuts-then-fades",
+      "name": "Guided arcade propulsion cuts then fades",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "guided",
+        "arcade",
+        "propulsion",
+        "cuts",
+        "fades",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 1.29,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "file": "recipes/guided-arcade-propulsion-cuts-then-fades.ts"
+    },
+    {
       "id": "gust-under-a-balcony",
       "name": "Gust under a Balcony",
       "category": "Weather & Ambience",
@@ -13853,6 +15451,48 @@
       "file": "recipes/handful-of-sand-on-stone.ts"
     },
     {
+      "id": "hangar-secondary-explosions-spaced-chain",
+      "name": "Hangar secondary explosions spaced chain",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "hangar",
+        "secondary",
+        "explosions",
+        "spaced",
+        "chain"
+      ],
+      "loopable": false,
+      "durationSec": 4.12,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+          "author": "CHallSmith",
+          "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/hangar-secondary-explosions-spaced-chain.ts"
+    },
+    {
       "id": "harbor-motor-through-hydrophone-loop",
       "name": "Harbor motor through hydrophone loop",
       "category": "Water & Fire",
@@ -14163,6 +15803,34 @@
       "file": "recipes/hayloft-above-the-yard-loop.ts"
     },
     {
+      "id": "headshot-feedback-single-bright-notch",
+      "name": "Headshot feedback single bright notch",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "headshot",
+        "feedback",
+        "single",
+        "bright",
+        "notch",
+        "event",
+        "combat"
+      ],
+      "loopable": false,
+      "durationSec": 0.169,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "interface",
+      "file": "recipes/headshot-feedback-single-bright-notch.ts"
+    },
+    {
       "id": "healing-spell-bloom",
       "name": "Healing Spell Bloom",
       "category": "Sci-Fi & UI",
@@ -14253,6 +15921,42 @@
       "file": "recipes/heavy-corn-leaves-in-a-breeze-loop.ts"
     },
     {
+      "id": "heavy-diesel-work-truck-outside-power-hold-loop",
+      "name": "Heavy diesel work truck outside power hold loop",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "heavy",
+        "diesel",
+        "work",
+        "truck",
+        "outside",
+        "power",
+        "hold",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.02,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Truck Revving Idling Engine Sound",
+        "author": "wesleywestmusic",
+        "url": "https://freesound.org/people/wesleywestmusic/sounds/680686/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/heavy-diesel-work-truck-outside-power-hold-loop.ts"
+    },
+    {
       "id": "heavy-duty-diesel-towing-pullaway",
       "name": "Heavy-duty diesel towing pullaway",
       "category": "Vehicles & Engines",
@@ -14287,6 +15991,51 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/heavy-duty-diesel-towing-pullaway.ts"
+    },
+    {
+      "id": "heavy-fictional-canister-swap-and-valve",
+      "name": "Heavy fictional canister swap and valve",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "heavy",
+        "fictional",
+        "canister",
+        "swap",
+        "valve",
+        "reload",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 1.07,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/heavy-fictional-canister-swap-and-valve.ts"
     },
     {
       "id": "heavy-guard-armor-plates-crouch-and-rise",
@@ -14361,6 +16110,39 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/heavy-helicopter-approach.ts"
+    },
+    {
+      "id": "heavy-jet-low-doppler-sweep",
+      "name": "Heavy jet low Doppler sweep",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "heavy",
+        "jet",
+        "low",
+        "doppler",
+        "sweep"
+      ],
+      "loopable": false,
+      "durationSec": 3.41,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jet Flyby 1",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/168079/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/heavy-jet-low-doppler-sweep.ts"
     },
     {
       "id": "heavy-metal-door-slam",
@@ -14619,6 +16401,49 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/heavy-truck-horn.ts"
+    },
+    {
+      "id": "heavy-truck-pneumatic-brake-seat",
+      "name": "Heavy truck pneumatic brake seat",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "heavy",
+        "truck",
+        "pneumatic",
+        "brake",
+        "seat",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.62,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "air_brakes_loud_fade_out.wav",
+        "author": "rabbydaw",
+        "url": "https://freesound.org/people/rabbydaw/sounds/504865/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/heavy-truck-pneumatic-brake-seat.ts"
     },
     {
       "id": "hedgerow-after-rain-loop",
@@ -15272,6 +17097,39 @@
       "file": "recipes/heritage-rail-coach-rolling-off-a-platform.ts"
     },
     {
+      "id": "high-altitude-jet-whistle-crossing",
+      "name": "High-altitude jet whistle crossing",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "high",
+        "altitude",
+        "jet",
+        "whistle",
+        "crossing"
+      ],
+      "loopable": false,
+      "durationSec": 3.7,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jet landing flyover.wav",
+        "author": "tbaucom",
+        "url": "https://freesound.org/people/tbaucom/sounds/648468/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/high-altitude-jet-whistle-crossing.ts"
+    },
+    {
       "id": "high-jet-contrail-distant-loop",
       "name": "High jet contrail distant loop",
       "category": "Aircraft",
@@ -15336,6 +17194,43 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/high-mountain-crest-air-loop.ts"
+    },
+    {
+      "id": "hitmarker-cloth-and-sharp-tick",
+      "name": "Hitmarker cloth and sharp tick",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "hitmarker",
+        "cloth",
+        "sharp",
+        "tick",
+        "event",
+        "combat",
+        "feedback",
+        "hit-marker",
+        "hit-confirm"
+      ],
+      "loopable": false,
+      "durationSec": 0.105,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/hitmarker-cloth-and-sharp-tick.ts"
     },
     {
       "id": "hologram-scan-ping",
@@ -15940,6 +17835,37 @@
       "file": "recipes/icy-crust-footstep.ts"
     },
     {
+      "id": "indoor-concussion-blast",
+      "name": "Indoor concussion blast",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "indoor",
+        "concussion",
+        "blast"
+      ],
+      "loopable": false,
+      "durationSec": 1.87,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/indoor-concussion-blast.ts"
+    },
+    {
       "id": "indoor-volleyball-damped-receive",
       "name": "Indoor Volleyball Damped Receive",
       "category": "Impacts",
@@ -16209,6 +18135,40 @@
       },
       "targetRmsDbfs": -30,
       "file": "recipes/inventory-item-place.ts"
+    },
+    {
+      "id": "inventory-slot-soft-snap",
+      "name": "Inventory slot soft snap",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "inventory",
+        "slot",
+        "soft",
+        "snap",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.197,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/inventory-slot-soft-snap.ts"
     },
     {
       "id": "inventory-stack-split",
@@ -16660,6 +18620,37 @@
       "file": "recipes/jet-interior-takeoff-rumble.ts"
     },
     {
+      "id": "jet-pass-overhead",
+      "name": "Jet pass overhead",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "jet",
+        "pass",
+        "overhead"
+      ],
+      "loopable": false,
+      "durationSec": 3.64,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jet Flyby 1",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/168079/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/jet-pass-overhead.ts"
+    },
+    {
       "id": "jet-taxi-past-the-ramp",
       "name": "Jet Taxi Past the Ramp",
       "category": "Aircraft",
@@ -16690,6 +18681,32 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/jet-taxi-past-the-ramp.ts"
+    },
+    {
+      "id": "jet-transonic-gust-and-pressure-buffet",
+      "name": "Jet transonic gust and pressure buffet",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "jet",
+        "transonic",
+        "gust",
+        "pressure",
+        "buffet"
+      ],
+      "loopable": false,
+      "durationSec": 2.12,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "vehicle",
+      "file": "recipes/jet-transonic-gust-and-pressure-buffet.ts"
     },
     {
       "id": "jet-turbine-ignition-from-ramp",
@@ -19059,9 +21076,53 @@
       "file": "recipes/mechanical-ui-click.ts"
     },
     {
+      "id": "mechanical-warning-bell-sharp-trip",
+      "name": "Mechanical warning bell sharp trip",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "mechanical",
+        "warning",
+        "bell",
+        "sharp",
+        "trip",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 1.17,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "interface",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/mechanical-warning-bell-sharp-trip.ts"
+    },
+    {
       "id": "melee-swing",
       "name": "Melee Swing",
-      "category": "Zombies & Combat",
+      "category": "Weapons",
       "tags": [
         "melee",
         "swing",
@@ -19078,6 +21139,7 @@
           "default": 0.67
         }
       },
+      "mixRole": "foley",
       "file": "recipes/melee-swing.ts"
     },
     {
@@ -19140,6 +21202,33 @@
       "file": "recipes/menu-blocked-double-tap.ts"
     },
     {
+      "id": "menu-cancel-felt-stop",
+      "name": "Menu cancel felt stop",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "menu",
+        "cancel",
+        "felt",
+        "stop",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.16,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "interface",
+      "file": "recipes/menu-cancel-felt-stop.ts"
+    },
+    {
       "id": "menu-cancel-release",
       "name": "Menu Cancel Release",
       "category": "Footsteps & UI",
@@ -19194,6 +21283,40 @@
       "file": "recipes/menu-confirm-pluck.ts"
     },
     {
+      "id": "menu-confirm-spring-detent",
+      "name": "Menu confirm spring detent",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "menu",
+        "confirm",
+        "spring",
+        "detent",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.174,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/menu-confirm-spring-detent.ts"
+    },
+    {
       "id": "menu-focus-tap",
       "name": "Menu Focus Tap",
       "category": "Footsteps & UI",
@@ -19221,6 +21344,74 @@
       "file": "recipes/menu-focus-tap.ts"
     },
     {
+      "id": "menu-option-focus-microswitch",
+      "name": "Menu option focus microswitch",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "menu",
+        "option",
+        "focus",
+        "microswitch",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.09,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/menu-option-focus-microswitch.ts"
+    },
+    {
+      "id": "menu-selection-firm-downclick",
+      "name": "Menu selection firm downclick",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "menu",
+        "selection",
+        "firm",
+        "downclick",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.143,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/menu-selection-firm-downclick.ts"
+    },
+    {
       "id": "menu-tab-snap",
       "name": "Menu Tab Snap",
       "category": "Footsteps & UI",
@@ -19246,6 +21437,74 @@
       },
       "targetRmsDbfs": -30,
       "file": "recipes/menu-tab-snap.ts"
+    },
+    {
+      "id": "menu-tab-switches-with-rocker",
+      "name": "Menu tab switches with rocker",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "menu",
+        "tab",
+        "switches",
+        "rocker",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.155,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/menu-tab-switches-with-rocker.ts"
+    },
+    {
+      "id": "menu-unavailable-double-contact",
+      "name": "Menu unavailable double contact",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "menu",
+        "unavailable",
+        "double",
+        "contact",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.185,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/menu-unavailable-double-contact.ts"
     },
     {
       "id": "mercedes-diesel-parked-exterior-loop",
@@ -19627,6 +21886,33 @@
         }
       ],
       "file": "recipes/millstone-first-turn.ts"
+    },
+    {
+      "id": "missile-pass-zip",
+      "name": "Missile pass zip",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "missile",
+        "pass",
+        "zip",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 0.52,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "file": "recipes/missile-pass-zip.ts"
     },
     {
       "id": "mixed-rubble-footstep",
@@ -21224,6 +23510,85 @@
       "file": "recipes/pallet-forks-slide-on-concrete.ts"
     },
     {
+      "id": "panel-advisory-warning-two-hardware-beeps",
+      "name": "Panel advisory warning two hardware beeps",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "panel",
+        "advisory",
+        "warning",
+        "two",
+        "hardware",
+        "beeps",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 0.68,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Microwave Beeps",
+        "author": "joe_anderson22",
+        "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/panel-advisory-warning-two-hardware-beeps.ts"
+    },
+    {
+      "id": "panel-closed-cloth-and-catch",
+      "name": "Panel closed cloth and catch",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "panel",
+        "closed",
+        "cloth",
+        "catch",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.247,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/panel-closed-cloth-and-catch.ts"
+    },
+    {
       "id": "paper-cutaway-before-and-after-swap",
       "name": "Paper Cutaway Before and After Swap",
       "category": "Sci-Fi & UI",
@@ -21630,6 +23995,38 @@
       "file": "recipes/parachute-pull-handle-snap.ts"
     },
     {
+      "id": "parking-lot-scrape",
+      "name": "Parking lot scrape",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "parking",
+        "lot",
+        "scrape",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.48,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Metal Chain Dragging across Messy Floor.wav",
+        "author": "VeronicaStratton",
+        "url": "https://freesound.org/people/VeronicaStratton/sounds/388489/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/parking-lot-scrape.ts"
+    },
+    {
       "id": "passenger-jet-fade-behind-terminal",
       "name": "Passenger Jet Fade behind Terminal",
       "category": "Aircraft",
@@ -21724,6 +24121,39 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/passenger-jet-overhead-pass.ts"
+    },
+    {
+      "id": "passenger-turboprop-cabin-power-settles",
+      "name": "Passenger turboprop cabin power settles",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "passenger",
+        "turboprop",
+        "cabin",
+        "power",
+        "settles"
+      ],
+      "loopable": false,
+      "durationSec": 5.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Fokker 50 Turboprop Aircraft Taxi and Takeoff.mp3",
+        "author": "Pack489",
+        "url": "https://freesound.org/people/Pack489/sounds/457131/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/passenger-turboprop-cabin-power-settles.ts"
     },
     {
       "id": "passenger-turboprop-cabin-takeoff-surge",
@@ -23056,6 +25486,41 @@
       "file": "recipes/pneumatic-dart-launch.ts"
     },
     {
+      "id": "pneumatic-launcher-practice-report",
+      "name": "Pneumatic launcher practice report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "pneumatic",
+        "launcher",
+        "practice",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/pneumatic-launcher-practice-report.ts"
+    },
+    {
       "id": "pocket-device-wake-tone",
       "name": "Pocket Device Wake Tone",
       "category": "Sci-Fi & UI",
@@ -23956,6 +26421,215 @@
       "file": "recipes/prop-aircraft-brake-and-fairing-settle.ts"
     },
     {
+      "id": "prop-launcher-brass-catches-in-a-pouch",
+      "name": "Prop launcher brass catches in a pouch",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "prop",
+        "launcher",
+        "brass",
+        "catches",
+        "pouch",
+        "reload",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.64,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/prop-launcher-brass-catches-in-a-pouch.ts"
+    },
+    {
+      "id": "prop-launcher-empty-chamber-spring-release",
+      "name": "Prop launcher empty chamber spring release",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "prop",
+        "launcher",
+        "empty",
+        "chamber",
+        "spring",
+        "release",
+        "reload",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.64,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Ratchet Wrench Fast Multiple",
+        "author": "Rudmer_Rotteveel",
+        "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/591529/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/prop-launcher-empty-chamber-spring-release.ts"
+    },
+    {
+      "id": "prop-sidearm-reload-heavy-magazine-catch",
+      "name": "Prop sidearm reload heavy magazine catch",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "prop",
+        "sidearm",
+        "reload",
+        "heavy",
+        "magazine",
+        "catch",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.79,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/prop-sidearm-reload-heavy-magazine-catch.ts"
+    },
+    {
+      "id": "prop-sidearm-reload-short-slider-and-seat",
+      "name": "Prop sidearm reload short slider and seat",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "prop",
+        "sidearm",
+        "reload",
+        "short",
+        "slider",
+        "seat",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.67,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "mechanism.mp3",
+          "author": "Rhulk",
+          "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/prop-sidearm-reload-short-slider-and-seat.ts"
+    },
+    {
+      "id": "propeller-flyby",
+      "name": "Propeller flyby",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "propeller",
+        "flyby"
+      ],
+      "loopable": false,
+      "durationSec": 3.54,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Propeller plane",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/515293/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/propeller-flyby.ts"
+    },
+    {
       "id": "prototype-warning-throb",
       "name": "Prototype Warning Throb",
       "category": "Sci-Fi & UI",
@@ -24747,6 +27421,52 @@
       "file": "recipes/quiet-text-reposition.ts"
     },
     {
+      "id": "radar-hard-lock-warning-dry-double-burst",
+      "name": "Radar hard lock warning dry double burst",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "radar",
+        "hard",
+        "lock",
+        "warning",
+        "dry",
+        "double",
+        "burst",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 0.63,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Microwave Beeps",
+        "author": "joe_anderson22",
+        "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Smoke alarm.wav",
+          "author": "jess90",
+          "url": "https://freesound.org/people/jess90/sounds/680073/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/radar-hard-lock-warning-dry-double-burst.ts"
+    },
+    {
       "id": "radar-warning-beep",
       "name": "Radar Warning Beep",
       "category": "Footsteps & UI",
@@ -24768,6 +27488,41 @@
         }
       },
       "file": "recipes/radar-warning-beep.ts"
+    },
+    {
+      "id": "radial-menu-detent-short-tick",
+      "name": "Radial menu detent short tick",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "radial",
+        "menu",
+        "detent",
+        "short",
+        "tick",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.064,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/radial-menu-detent-short-tick.ts"
     },
     {
       "id": "rail-cabin-rolling-loop",
@@ -25211,6 +27966,46 @@
         }
       ],
       "file": "recipes/raking-ash-out-of-a-hearth.ts"
+    },
+    {
+      "id": "rally-upshift",
+      "name": "Rally upshift",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "rally",
+        "upshift",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.94,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Acceleration of a Sports Car Engine like Ferrari or Lamborghini or Porsche",
+        "author": "florianreichelt",
+        "url": "https://freesound.org/people/florianreichelt/sounds/457560/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "V8 Supercar Acceleration",
+          "author": "FFKoenigsegg20012017",
+          "url": "https://freesound.org/people/FFKoenigsegg20012017/sounds/339137/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/rally-upshift.ts"
     },
     {
       "id": "rapid-wind-gusts-loop",
@@ -25933,6 +28728,49 @@
       "file": "recipes/regional-passenger-train-rolling-off-a-platform.ts"
     },
     {
+      "id": "relay-panel-brownout-warning",
+      "name": "Relay panel brownout warning",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "relay",
+        "panel",
+        "brownout",
+        "warning",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 0.74,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Factory Warning Buzzer",
+          "author": "qubodup",
+          "url": "https://freesound.org/people/qubodup/sounds/832414/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/relay-panel-brownout-warning.ts"
+    },
+    {
       "id": "reload-mag-rack",
       "name": "Reload · Mag In & Rack",
       "category": "Weapons",
@@ -26131,6 +28969,67 @@
         }
       ],
       "file": "recipes/reset-fence-latch.ts"
+    },
+    {
+      "id": "rifle-distant-report",
+      "name": "Rifle distant report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "rifle",
+        "distant",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.31,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "impact",
+      "file": "recipes/rifle-distant-report.ts"
+    },
+    {
+      "id": "road-diesel-short-loaded-drawdown",
+      "name": "Road diesel short loaded drawdown",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "road",
+        "diesel",
+        "short",
+        "loaded",
+        "drawdown",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 4.5,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Diesel engine idle and gas",
+        "author": "Iridiuss",
+        "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/road-diesel-short-loaded-drawdown.ts"
     },
     {
       "id": "road-vehicle-rolling-onto-wooden-bridge-loop",
@@ -26410,6 +29309,39 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/rock-pile-impact.ts"
+    },
+    {
+      "id": "rocket-launch-whoosh",
+      "name": "Rocket launch whoosh",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "rocket",
+        "launch",
+        "whoosh",
+        "projectile",
+        "flight"
+      ],
+      "loopable": false,
+      "durationSec": 2.48,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "F16 fighter jet start up.aif",
+        "author": "ikbenraar",
+        "url": "https://freesound.org/people/ikbenraar/sounds/322178/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/rocket-launch-whoosh.ts"
     },
     {
       "id": "rolling-a-pumpkin-out-of-the-patch",
@@ -28856,6 +31788,50 @@
       "file": "recipes/shingle-waterline-weight-transfer.ts"
     },
     {
+      "id": "shoreline-explosion-heavy-water-crown",
+      "name": "Shoreline explosion heavy water crown",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "shoreline",
+        "explosion",
+        "heavy",
+        "water",
+        "crown",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 3.75,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Water Splash",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/shoreline-explosion-heavy-water-crown.ts"
+    },
+    {
       "id": "short-zoom-out-whoosh",
       "name": "Short Zoom-out Whoosh",
       "category": "Sci-Fi & UI",
@@ -28878,6 +31854,85 @@
       "targetRmsDbfs": -27,
       "mixRole": "interface",
       "file": "recipes/short-zoom-out-whoosh.ts"
+    },
+    {
+      "id": "shotgun-indoor-report",
+      "name": "Shotgun indoor report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "shotgun",
+        "indoor",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.03,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -19.8,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/shotgun-indoor-report.ts"
+    },
+    {
+      "id": "shotgun-prop-reload-wood-pump-clack",
+      "name": "Shotgun prop reload wood pump clack",
+      "category": "Weapons",
+      "collection": "Combat audio · Action and reloads",
+      "tags": [
+        "shotgun",
+        "prop",
+        "reload",
+        "wood",
+        "pump",
+        "clack",
+        "mechanical",
+        "weapon"
+      ],
+      "loopable": false,
+      "durationSec": 0.86,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Ratchet Wrench Fast Multiple",
+        "author": "Rudmer_Rotteveel",
+        "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/591529/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "mechanism.mp3",
+          "author": "Rhulk",
+          "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/shotgun-prop-reload-wood-pump-clack.ts"
     },
     {
       "id": "shovel-dry-earth",
@@ -28941,6 +31996,41 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/shower-passing-away.ts"
+    },
+    {
+      "id": "sidearm-tight-indoor-report",
+      "name": "Sidearm tight indoor report",
+      "category": "Weapons",
+      "collection": "Combat audio · Reports by perspective",
+      "tags": [
+        "sidearm",
+        "tight",
+        "indoor",
+        "report",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.69,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/sidearm-tight-indoor-report.ts"
     },
     {
       "id": "sifting-compost-through-a-screen",
@@ -29347,6 +32437,58 @@
       },
       "targetRmsDbfs": -34,
       "file": "recipes/slider-detent-tick.ts"
+    },
+    {
+      "id": "slider-notched-dial-across-three-stops",
+      "name": "Slider notched dial across three stops",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "slider",
+        "notched",
+        "dial",
+        "across",
+        "three",
+        "stops",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.233,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30.5,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Normal click",
+          "author": "Breviceps",
+          "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/slider-notched-dial-across-three-stops.ts"
     },
     {
       "id": "slip-on-a-wet-barn-threshold",
@@ -30434,6 +33576,42 @@
       "file": "recipes/socket-tool-on-bench-pick-up.ts"
     },
     {
+      "id": "soft-earth-explosion-heavy-dirt-fall",
+      "name": "Soft earth explosion heavy dirt fall",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "soft",
+        "earth",
+        "explosion",
+        "heavy",
+        "dirt",
+        "fall",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 3.07,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/soft-earth-explosion-heavy-dirt-fall.ts"
+    },
+    {
       "id": "soft-indoor-football-low-kick-against-mat",
       "name": "Soft Indoor Football Low Kick against Mat",
       "category": "Impacts",
@@ -31444,6 +34622,38 @@
       "file": "recipes/station-maintenance-relay-loses-power.ts"
     },
     {
+      "id": "stealth-takedown-quiet-wood-token",
+      "name": "Stealth takedown quiet wood token",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Elimination and combat",
+      "tags": [
+        "stealth",
+        "takedown",
+        "quiet",
+        "wood",
+        "token",
+        "event",
+        "combat",
+        "feedback",
+        "kill-confirm",
+        "elimination",
+        "kill"
+      ],
+      "loopable": false,
+      "durationSec": 0.242,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "interface",
+      "file": "recipes/stealth-takedown-quiet-wood-token.ts"
+    },
+    {
       "id": "steel-drawer-open",
       "name": "Steel Drawer Open",
       "category": "Props & Interactions",
@@ -31780,6 +34990,37 @@
       "file": "recipes/streetcar-departure-through-a-junction.ts"
     },
     {
+      "id": "subway-distant-blast",
+      "name": "Subway distant blast",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "subway",
+        "distant",
+        "blast"
+      ],
+      "loopable": false,
+      "durationSec": 3.9,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/subway-distant-blast.ts"
+    },
+    {
       "id": "subway-passing-under-bridge",
       "name": "Subway Passing under Bridge",
       "category": "Vehicles & Engines",
@@ -31888,6 +35129,206 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/supercharged-coupe-cabin-load-rise.ts"
+    },
+    {
+      "id": "supersonic-boom-above-coastal-cliffs",
+      "name": "Supersonic boom above coastal cliffs",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "supersonic",
+        "boom",
+        "above",
+        "coastal",
+        "cliffs"
+      ],
+      "loopable": false,
+      "durationSec": 2.84,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "impact",
+      "file": "recipes/supersonic-boom-above-coastal-cliffs.ts"
+    },
+    {
+      "id": "supersonic-boom-heard-from-cockpit-cabin",
+      "name": "Supersonic boom heard from cockpit cabin",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "supersonic",
+        "boom",
+        "heard",
+        "cockpit",
+        "cabin"
+      ],
+      "loopable": false,
+      "durationSec": 1.83,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "file": "recipes/supersonic-boom-heard-from-cockpit-cabin.ts"
+    },
+    {
+      "id": "supersonic-boom-through-a-hangar-wall",
+      "name": "Supersonic boom through a hangar wall",
+      "category": "Aircraft",
+      "collection": "Flight · Supersonic and airframe",
+      "tags": [
+        "supersonic",
+        "boom",
+        "hangar",
+        "wall"
+      ],
+      "loopable": false,
+      "durationSec": 1.96,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "impact",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/supersonic-boom-through-a-hangar-wall.ts"
+    },
+    {
+      "id": "supersonic-missile-canyon-edge-pass",
+      "name": "Supersonic missile canyon edge pass",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "supersonic",
+        "missile",
+        "canyon",
+        "edge",
+        "pass",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 1.46,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "file": "recipes/supersonic-missile-canyon-edge-pass.ts"
+    },
+    {
+      "id": "supersonic-missile-close-needle-whistle",
+      "name": "Supersonic missile close needle whistle",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "supersonic",
+        "missile",
+        "close",
+        "needle",
+        "whistle",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 0.42,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "vehicle",
+      "file": "recipes/supersonic-missile-close-needle-whistle.ts"
+    },
+    {
+      "id": "supersonic-missile-distant-thin-whistle",
+      "name": "Supersonic missile distant thin whistle",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "supersonic",
+        "missile",
+        "distant",
+        "thin",
+        "whistle",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 0.89,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "vehicle",
+      "file": "recipes/supersonic-missile-distant-thin-whistle.ts"
+    },
+    {
+      "id": "supersonic-missile-overhead-ripping-pass",
+      "name": "Supersonic missile overhead ripping pass",
+      "category": "Missiles",
+      "collection": "Flight · Launch and flyby",
+      "tags": [
+        "supersonic",
+        "missile",
+        "overhead",
+        "ripping",
+        "pass",
+        "projectile",
+        "flight",
+        "whoosh"
+      ],
+      "loopable": false,
+      "durationSec": 0.81,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "file": "recipes/supersonic-missile-overhead-ripping-pass.ts"
     },
     {
       "id": "supersonic-style-fictional-jet-departure",
@@ -32370,6 +35811,41 @@
       "file": "recipes/tennis-ball-two-bounces-and-a-roll.ts"
     },
     {
+      "id": "terrain-proximity-warning-rough-buzz",
+      "name": "Terrain proximity warning rough buzz",
+      "category": "Sci-Fi & UI",
+      "collection": "Alerts · Warnings from hardware",
+      "tags": [
+        "terrain",
+        "proximity",
+        "warning",
+        "rough",
+        "buzz",
+        "alert",
+        "alarm"
+      ],
+      "loopable": false,
+      "durationSec": 1.13,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Factory Warning Buzzer",
+        "author": "qubodup",
+        "url": "https://freesound.org/people/qubodup/sounds/832414/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/terrain-proximity-warning-rough-buzz.ts"
+    },
+    {
       "id": "thin-arcade-energy-report-under-an-eave",
       "name": "Thin Arcade Energy Report under an Eave",
       "category": "Impacts",
@@ -32703,6 +36179,107 @@
       "file": "recipes/tire-clearing-sticky-mud.ts"
     },
     {
+      "id": "tire-skid-halt",
+      "name": "Tire skid halt",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "tire",
+        "skid",
+        "halt",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.42,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "abrupt stopping car on wet ground.aif",
+        "author": "Ermens",
+        "url": "https://freesound.org/people/Ermens/sounds/199525/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/tire-skid-halt.ts"
+    },
+    {
+      "id": "toggle-disabled-rubber-latch",
+      "name": "Toggle disabled rubber latch",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "toggle",
+        "disabled",
+        "rubber",
+        "latch",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.127,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/toggle-disabled-rubber-latch.ts"
+    },
+    {
+      "id": "toggle-enabled-crisp-upward-tick",
+      "name": "Toggle enabled crisp upward tick",
+      "category": "Footsteps & UI",
+      "collection": "Feedback · Menu and interaction",
+      "tags": [
+        "toggle",
+        "enabled",
+        "crisp",
+        "upward",
+        "tick",
+        "ui",
+        "interface"
+      ],
+      "loopable": false,
+      "durationSec": 0.119,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/toggle-enabled-crisp-upward-tick.ts"
+    },
+    {
       "id": "tossing-garden-cuttings-into-compost",
       "name": "Tossing Garden Cuttings into Compost",
       "category": "Farming",
@@ -32752,6 +36329,39 @@
       "file": "recipes/tossing-garden-cuttings-into-compost.ts"
     },
     {
+      "id": "tracked-bulldozer-reversing-machinery-loop",
+      "name": "Tracked bulldozer reversing machinery loop",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "tracked",
+        "bulldozer",
+        "reversing",
+        "machinery",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 6.15,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "construction equipment tracked.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/88422/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/tracked-bulldozer-reversing-machinery-loop.ts"
+    },
+    {
       "id": "tracked-earthmover-steady-steel-run-loop",
       "name": "Tracked earthmover steady steel run loop",
       "category": "Vehicles & Engines",
@@ -32784,6 +36394,49 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/tracked-earthmover-steady-steel-run-loop.ts"
+    },
+    {
+      "id": "tracked-vehicle-reverse-warning-and-track-settle",
+      "name": "Tracked vehicle reverse warning and track settle",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "tracked",
+        "vehicle",
+        "reverse",
+        "warning",
+        "track",
+        "settle"
+      ],
+      "loopable": false,
+      "durationSec": 2.38,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "construction equipment tracked.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/88422/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Microwave Beeps",
+          "author": "joe_anderson22",
+          "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/tracked-vehicle-reverse-warning-and-track-settle.ts"
     },
     {
       "id": "tractor-beam-grab",
@@ -33228,6 +36881,42 @@
         }
       ],
       "file": "recipes/tractor-rolling-slowly-on-soft-soil.ts"
+    },
+    {
+      "id": "trail-bike-light-throttle-surge-rider-perspective",
+      "name": "Trail bike light throttle surge rider perspective",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "trail",
+        "bike",
+        "light",
+        "throttle",
+        "surge",
+        "rider",
+        "perspective",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 4.22,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/trail-bike-light-throttle-surge-rider-perspective.ts"
     },
     {
       "id": "trail-mountain-bike-approaching-slowly-loop",
@@ -34000,6 +37689,53 @@
       "file": "recipes/truck-air-brake-release.ts"
     },
     {
+      "id": "truck-metal-collision",
+      "name": "Truck metal collision",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "truck",
+        "collision",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.39,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Car Crash (with Glass)",
+          "author": "magnuswaker",
+          "url": "https://freesound.org/people/magnuswaker/sounds/592388/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Big Metal Chain",
+          "author": "qubodup",
+          "url": "https://freesound.org/people/qubodup/sounds/199282/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/truck-metal-collision.ts"
+    },
+    {
       "id": "truck-tailgate-chain-lowered",
       "name": "Truck Tailgate Chain Lowered",
       "category": "Vehicles & Engines",
@@ -34528,6 +38264,41 @@
       "file": "recipes/two-foot-landing.ts"
     },
     {
+      "id": "two-stroke-moped-climbs-under-load",
+      "name": "Two-stroke moped climbs under load",
+      "category": "Vehicles & Engines",
+      "collection": "Vehicles · Load and close mechanisms",
+      "tags": [
+        "two",
+        "stroke",
+        "moped",
+        "climbs",
+        "under",
+        "load",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 5.21,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Gilera Runner 2007 revs backfire cold idle",
+        "author": "lovretta",
+        "url": "https://freesound.org/people/lovretta/sounds/140384/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/two-stroke-moped-climbs-under-load.ts"
+    },
+    {
       "id": "two-stroke-trail-bike-bog-and-recover",
       "name": "Two-stroke trail bike bog and recover",
       "category": "Vehicles & Engines",
@@ -34759,6 +38530,50 @@
         }
       ],
       "file": "recipes/van-sliding-door-closing-from-inside.ts"
+    },
+    {
+      "id": "vehicle-hull-explosion-with-loose-panels",
+      "name": "Vehicle hull explosion with loose panels",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "vehicle",
+        "hull",
+        "explosion",
+        "loose",
+        "panels",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 2.9,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Explosion in a can",
+        "author": "SamsterBirdies",
+        "url": "https://freesound.org/people/SamsterBirdies/sounds/587887/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "mechanism.mp3",
+          "author": "Rhulk",
+          "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/vehicle-hull-explosion-with-loose-panels.ts"
     },
     {
       "id": "vintage-runabout-approaching-slowly-loop",
@@ -35741,30 +39556,6 @@
         }
       ],
       "file": "recipes/wet-rope-coil-dropped-onto-boards.ts"
-    },
-    {
-      "id": "wet-zombie-groan",
-      "name": "Wet Zombie Groan",
-      "category": "Zombies & Combat",
-      "tags": [
-        "zombie",
-        "groan",
-        "growl",
-        "angry",
-        "vocal",
-        "wet"
-      ],
-      "loopable": false,
-      "durationSec": 1.44,
-      "params": {
-        "rot": {
-          "label": "Rot",
-          "min": 0,
-          "max": 1,
-          "default": 0.72
-        }
-      },
-      "file": "recipes/wet-zombie-groan.ts"
     },
     {
       "id": "wide-product-reveal-swell",
@@ -36895,6 +40686,41 @@
       "file": "recipes/wooden-rune-select.ts"
     },
     {
+      "id": "wooden-shed-explosion-splinter-fall",
+      "name": "Wooden shed explosion splinter fall",
+      "category": "Impacts",
+      "collection": "Destruction · Pressure and explosions",
+      "tags": [
+        "wooden",
+        "shed",
+        "explosion",
+        "splinter",
+        "fall",
+        "blast",
+        "boom"
+      ],
+      "loopable": false,
+      "durationSec": 2.58,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Cannon Fires, Take 3, Quarter Speed, Debris",
+        "author": "CHallSmith",
+        "url": "https://freesound.org/people/CHallSmith/sounds/870746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/wooden-shed-explosion-splinter-fall.ts"
+    },
+    {
       "id": "wooden-stairs-walk",
       "name": "Walking Up Wooden Stairs",
       "category": "Footsteps & UI",
@@ -37373,30 +41199,6 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/yamaha-125-two-stroke-steady-idle-loop.ts"
-    },
-    {
-      "id": "zombie-death-collapse",
-      "name": "Zombie Death Collapse",
-      "category": "Zombies & Combat",
-      "tags": [
-        "zombie",
-        "death",
-        "collapse",
-        "vocal",
-        "impact",
-        "gasp"
-      ],
-      "loopable": false,
-      "durationSec": 1.52,
-      "params": {
-        "mass": {
-          "label": "Mass",
-          "min": 0,
-          "max": 1,
-          "default": 0.72
-        }
-      },
-      "file": "recipes/zombie-death-collapse.ts"
     }
   ]
 }
