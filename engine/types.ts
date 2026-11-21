@@ -1,7 +1,10 @@
 export type Category =
   | 'Weapons' | 'Zombies & Combat' | 'Weather & Ambience' | 'Footsteps & UI'
   | 'Animals' | 'Vehicles & Engines' | 'Aircraft' | 'Missiles'
-  | 'Water & Fire' | 'Impacts' | 'Sci-Fi & UI';
+  | 'Water & Fire' | 'Impacts' | 'Sci-Fi & UI' | 'Farming' | 'Props & Interactions';
+
+export type LevelProfile = 'original' | 'balanced';
+export type MixRole = 'ambience' | 'detail' | 'foley' | 'interface' | 'voice' | 'vehicle' | 'impact';
 
 export interface SoundParameter {
   label: string;
@@ -24,11 +27,20 @@ export interface RenderContext {
 export interface RenderOptions {
   seed?: number;
   params?: Readonly<Record<string, number>>;
+  level?: LevelProfile;
 }
 
 export interface ResolvedOptions {
   readonly seed: number;
   readonly params: Readonly<Record<string, number>>;
+}
+
+export interface RecordingCredit {
+  readonly title: string;
+  readonly author: string;
+  readonly url: string;
+  readonly license: 'CC0-1.0' | 'Public Domain';
+  readonly verifiedOn: string;
 }
 
 export interface SoundRecipe {
@@ -39,6 +51,10 @@ export interface SoundRecipe {
   readonly loopable: boolean;
   readonly durationSec: number;
   readonly params: Readonly<Record<string, SoundParameter>>;
+  readonly targetRmsDbfs?: number;
+  readonly mixRole?: MixRole;
+  readonly recording?: RecordingCredit;
+  readonly additionalRecordings?: readonly RecordingCredit[];
   readonly spectrum?: readonly SpectralExpectation[];
   render(ctx: RenderContext, opts: ResolvedOptions): Float32Array;
 }

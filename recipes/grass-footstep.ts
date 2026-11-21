@@ -1,20 +1,33 @@
+import { biquad, layer } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import { layer, punch, reverb } from '../engine/dsp.ts';
-import { soleContact } from './_shared/surfaces.ts';
+import { brush, foleyGrain, softContact } from './_shared/foley.ts';
 
 export default {
-  id: 'grass-footstep', name: "Grass Footstep", category: 'Footsteps & UI',
-  tags: ["footstep","grass","outdoor","walk"], loopable: false, durationSec: 0.47,
+  id: 'grass-footstep', name: 'Grass Footstep', category: 'Footsteps & UI',
+  tags: ['footstep', 'grass', 'outdoor', 'walk'], loopable: false, durationSec: 0.47,
   params: { dryness: { label: 'Dryness', min: 0, max: 1, default: 0.55 } },
+  targetRmsDbfs: -31,
   render(ctx, { params }) {
-    const sound = soleContact(ctx, 93, 0.04, 0.31);
-    for (let i = 0; i < 12; i++) {
-      const at = i * 0.009 + ctx.random() * 0.014;
-      layer(ctx, sound, at, 0.16, (shot) => punch(shot, [
-        { color: 'pink', kind: 'bandpass', hz: 660 + ctx.random() * 1100, gain: 0.84, attack: 0.0018, decay: 0.033 },
-        { color: 'white', kind: 'bandpass', hz: 2030 + ctx.random() * 3300, gain: params.dryness * 0.83, attack: 0.002, decay: 0.023 },
-      ]), (0.23 + 0.5 * ctx.random()) * Math.exp(-at * 5));
+    const sound = new Float32Array(ctx.frames);
+    const bend = 0.052 + ctx.random() * 0.036;
+    const dry = params.dryness;
+    layer(ctx, sound, 0, 0.195, (tips) =>
+      brush(tips, 1070, 2410 + dry * 770, 0.014, 0.046, 0.22 + dry * 0.25), 0.54);
+    layer(ctx, sound, 0.009 + bend * 0.37, 0.135, (earth) =>
+      softContact(earth, { firmness: 0.06, texture: 0.025, length: 0.032 }), 0.21);
+    layer(ctx, sound, bend, 0.245, (blades) =>
+      brush(blades, 720 + 210 * dry, 2220 + dry * 680, 0.041, 0.059, 0.25 + 0.16 * dry), 0.44);
+    for (let i = 0; i < 10; i++) {
+      const t = ctx.random();
+      foleyGrain(ctx, sound, {
+        at: 0.011 + t * (0.092 + bend),
+        center: 800 + ctx.random() * 1190,
+        edge: 1740 + ctx.random() * 2740,
+        duration: 0.004 + ctx.random() * 0.006,
+        level: (0.026 + 0.11 * dry * ctx.random() ** 2) * (1 - 0.63 * t),
+      });
     }
-    return reverb(sound, ctx.sampleRate, 'outdoor', 0.11);
+    const edge = biquad('lowpass', 2280 + dry * 1470, 0.70, ctx.sampleRate);
+    return sound.map(edge);
   },
 } satisfies SoundRecipe;

@@ -7,7 +7,8 @@ export default {
   params: { snap: { label: 'Snap', min: 0, max: 1, default: 0.72 } },
   render(ctx, { params }) {
     return discharge(ctx, {
-      crack: 1.06 + 0.92 * params.snap, body: 1.04, bass: 148, decay: 0.043, grit: 0.16, space: 0.28,
+      span: 0.00089, low: 820, high: 3300, edge: 0.83 + params.snap * 0.46,
+      weight: 0.64, tail: 0.23, presence: 0.72,
     });
   },
 } satisfies SoundRecipe;

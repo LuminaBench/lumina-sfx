@@ -109,7 +109,7 @@ export function inspect(samples, recipe, rate) {
   for (const sample of samples) maximum = Math.max(maximum, Math.abs(sample));
   const peakDb = gainToDb(maximum);
   const rmsDb = gainToDb(activeRms(samples, rate));
-  const target = targetRmsDb(recipe.loopable);
+  const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
   const onsetMs = firstOnset(samples, Math.max(maximum * 0.02, dbToGain(-60))) / rate * 1000;
   const bands = spectrum(samples, rate);
   const defaults = [
@@ -129,5 +129,24 @@ export function inspect(samples, recipe, rate) {
       pass: spectralChecks.every((item) => item.pass),
       subBelow120HzShare: round(bands.sub), highAbove4kHzShare: round(bands.high), expectations: spectralChecks,
     },
+  };
+}
+
+export function inspectBalanced(samples, recipe, rate, settings, measured) {
+  const onsetMs = firstOnset(samples, Math.max(dbToGain(measured.peakDbfs) * 0.02, dbToGain(-60 + settings.gainDb))) / rate * 1000;
+  const loop = recipe.loopable ? checkLoop(samples, rate) : null;
+  const deltaDb = measured.activeDb - settings.activeDb;
+  const pass = measured.peakDbfs <= settings.ceilingDbfs + 0.01 &&
+    Math.abs(deltaDb - settings.gainDb) < 0.10 &&
+    (recipe.loopable ? loop.pass : onsetMs < 5);
+  return {
+    pass,
+    role: settings.role,
+    peakDbfs: round(measured.peakDbfs),
+    ceilingDbfs: settings.ceilingDbfs,
+    activeDb: round(measured.activeDb),
+    gainDb: round(settings.gainDb),
+    onsetMs: recipe.loopable || !Number.isFinite(onsetMs) ? null : round(onsetMs),
+    loop,
   };
 }

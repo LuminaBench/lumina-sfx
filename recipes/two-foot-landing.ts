@@ -1,0 +1,14 @@
+import { renderRecording } from '../engine/recording.ts';
+import type { SoundRecipe } from '../engine/types.ts';
+import recording from './_recordings/two-foot-landing.ts';
+
+export default {
+  id: 'two-foot-landing', name: 'Two-Foot Landing', category: 'Footsteps & UI',
+  tags: ['movement', 'land', 'jump', 'two', 'feet', 'footwear', 'thump', 'foley', 'cc0'],
+  loopable: false, durationSec: 0.269, targetRmsDbfs: -22,
+  params: { pace: { label: 'Pace', min: 0, max: 1, default: 0.5 } },
+  recording: recording.credit,
+  render(ctx, { seed, params }) {
+    return renderRecording(ctx, recording, { seed, speed: 0.97 + 0.06 * params.pace, cutoffHz: 10200 });
+  },
+} satisfies SoundRecipe;

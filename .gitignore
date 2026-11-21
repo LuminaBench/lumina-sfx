@@ -3,3 +3,4 @@ dist/
 qa/output/
 .DS_Store
 tasks/.feedback-*
+tasks/feedback.json

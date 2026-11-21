@@ -1,24 +1,31 @@
+import { layer, mix, punch } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import { envelope, layer, mix, punch, reverb, sweep, tone, waveshape } from '../engine/dsp.ts';
+import { pressure, rumble, scatter } from './_shared/acoustics.ts';
 
 export default {
-  id: 'grenade-explosion', name: "Grenade Explosion", category: 'Weapons',
-  tags: ["grenade","explosion","debris","sub-bass"], loopable: false, durationSec: 1.95,
+  id: 'grenade-explosion', name: 'Grenade Explosion', category: 'Weapons',
+  tags: ['grenade', 'explosion', 'debris', 'sub-bass'], loopable: false, durationSec: 2.65,
   params: { debris: { label: 'Debris', min: 0, max: 1, default: 0.69 } },
   spectrum: [{ band: 'sub', minShare: 0.24 }],
   render(ctx, { params }) {
-    const sound = punch(ctx, [
-      { color: 'white', kind: 'highpass', hz: 2200, gain: 1.56, attack: 0.0004, decay: 0.033 },
-      { color: 'pink', kind: 'bandpass', hz: 330, q: 0.65, gain: 2.81, attack: 0.003, decay: 0.19 },
-      { color: 'brown', kind: 'lowpass', hz: 112, gain: 2.15, attack: 0.006, decay: 0.37 },
-    ]);
-    mix(sound, tone(ctx, (t) => sweep(114, 37, 0.095, t), (t) => 1.65 * envelope(t, 0.004, 0.28)));
-    for (let i = 0; i < 13; i++) {
-      const at = 0.06 + ctx.random() ** 2 * 0.77;
-      layer(ctx, sound, at, 0.13, (shot) => punch(shot, [
-        { color: 'white', kind: 'bandpass', hz: 1800 + ctx.random() * 6300, q: 2, gain: 1, attack: 0.001, decay: 0.028 },
-      ]), (0.21 + params.debris * 0.53) * Math.exp(-at * 2.8));
+    const sound = new Float32Array(ctx.frames);
+    const front = pressure({ ...ctx, frames: Math.round(0.105 * ctx.sampleRate) },
+      { span: 0.0042, low: 216, high: 2100, edge: 1.44, weight: 1.75 });
+    mix(sound, front);
+    scatter(ctx, sound, front, 0.73, 1.63, 3600);
+    layer(ctx, sound, 0.008, 1.05, (air) => rumble(air, 104, 0.022, 0.17, 1.02), 2.91);
+    layer(ctx, sound, 0.084, 1.45, (air) => rumble(air, 96, 0.054, 0.31, 0.74), 1.69);
+    layer(ctx, sound, 0.278, 1.69, (air) => rumble(air, 78, 0.12, 0.39, 0.67), 1.42);
+    layer(ctx, sound, 0.64, 1.85, (air) => rumble(air, 68, 0.18, 0.46, 0.47), 1.03);
+    for (let i = 0; i < 19; i++) {
+      const at = 0.037 + ((i + ctx.random()) / 19) ** 1.75 * 1.32;
+      const bright = 730 + ctx.random() ** 1.4 * 5100;
+      const weight = (0.45 + ctx.random() * 0.65) * Math.exp(-at * 3.3) * (0.20 + params.debris * 0.84);
+      layer(ctx, sound, at, 0.085, (chip) => punch(chip, [
+        { color: 'pink', kind: 'bandpass', hz: bright * 0.42, q: 1.02, gain: 0.85, attack: 0.0018, decay: 0.013 },
+        { color: 'white', kind: 'bandpass', hz: bright, q: 1.67, gain: 0.88, attack: 0.00028, decay: 0.008 },
+      ]), weight);
     }
-    return reverb(sound.map((x) => waveshape(x * 0.6, 1.5)), ctx.sampleRate, 'outdoor', 0.79);
+    return sound;
   },
 } satisfies SoundRecipe;

@@ -1,10 +1,17 @@
 import { clamp, closeLoop, dbToGain, rng } from './dsp.ts';
+import { balanceLevels, resolveMixRole } from './levels.ts';
 import type { RenderOptions, SoundRecipe } from './types.ts';
 
 export const SAMPLE_RATE = 44_100;
 export const PEAK_LIMIT_DB = -0.5;
 export const DEFAULT_SEED = 104729;
-export const targetRmsDb = (loop: boolean) => loop ? -21 : -18;
+export function targetRmsDb(loop: boolean, override?: number): number {
+  const target = override ?? (loop ? -21 : -18);
+  if (!Number.isFinite(target) || target > PEAK_LIMIT_DB) {
+    throw new RangeError('Active RMS target must be finite and at or below the peak ceiling');
+  }
+  return target;
+}
 
 // Gate quiet tail blocks so silence and reverb do not increase perceived level.
 export function activeRms(samples: Float32Array, sampleRate: number): number {
@@ -49,11 +56,11 @@ function prepareShot(raw: Float32Array, sampleRate: number): Float32Array {
   return shot;
 }
 
-function master(input: Float32Array, sampleRate: number, loop: boolean): Float32Array {
+function master(input: Float32Array, sampleRate: number, rmsDbfs: number): Float32Array {
   for (const sample of input) {
     if (!Number.isFinite(sample)) throw new Error('Recipe produced a non-finite sample');
   }
-  const target = dbToGain(targetRmsDb(loop));
+  const target = dbToGain(rmsDbfs);
   const preRms = activeRms(input, sampleRate);
   if (!preRms) return input;
   const ceiling = dbToGain(PEAK_LIMIT_DB - 0.08);
@@ -93,5 +100,8 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
   if (!(raw instanceof Float32Array) || raw.length !== ctx.frames) {
     throw new Error(`${recipe.id}: render must return exactly ${ctx.frames} Float32 samples`);
   }
-  return master(recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate), sampleRate, recipe.loopable);
+  const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
+  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate);
+  const output = master(prepared, sampleRate, target);
+  return opts.level === 'balanced' ? balanceLevels(output, sampleRate, resolveMixRole(recipe)) : output;
 }
