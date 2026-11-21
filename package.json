@@ -1,0 +1,22 @@
+{
+  "name": "lumina-sfx-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "qa": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/run.mjs",
+    "catalog": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/build-catalog.mjs",
+    "search": "node scripts/search.mjs",
+    "demo": "vite --config demo/vite.config.ts",
+    "build": "npm run typecheck && vite build --config demo/vite.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0"
+  }
+}

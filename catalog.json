@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 1,
+  "count": 25,
+  "sounds": [
+    {
+      "id": "aggressive-zombie-snarl",
+      "name": "Aggressive Zombie Snarl",
+      "category": "Zombies & Combat",
+      "tags": [
+        "zombie",
+        "snarl",
+        "vocal",
+        "attack"
+      ],
+      "loopable": false,
+      "durationSec": 0.88,
+      "params": {
+        "rage": {
+          "label": "Rage",
+          "min": 0,
+          "max": 1,
+          "default": 0.81
+        }
+      },
+      "file": "recipes/aggressive-zombie-snarl.ts"
+    },
+    {
+      "id": "assault-rifle",
+      "name": "Assault Rifle",
+      "category": "Weapons",
+      "tags": [
+        "rifle",
+        "gunshot",
+        "automatic",
+        "burst"
+      ],
+      "loopable": false,
+      "durationSec": 0.51,
+      "params": {
+        "bite": {
+          "label": "Bite",
+          "min": 0,
+          "max": 1,
+          "default": 0.65
+        }
+      },
+      "file": "recipes/assault-rifle.ts"
+    },
+    {
+      "id": "bone-crunch",
+      "name": "Bone Crunch",
+      "category": "Zombies & Combat",
+      "tags": [
+        "bone",
+        "crunch",
+        "break",
+        "impact"
+      ],
+      "loopable": false,
+      "durationSec": 0.58,
+      "params": {
+        "splinter": {
+          "label": "Splinter",
+          "min": 0,
+          "max": 1,
+          "default": 0.72
+        }
+      },
+      "file": "recipes/bone-crunch.ts"
+    },
+    {
+      "id": "bullet-whiz",
+      "name": "Bullet Whiz",
+      "category": "Weapons",
+      "tags": [
+        "bullet",
+        "whiz",
+        "flyby",
+        "doppler"
+      ],
+      "loopable": false,
+      "durationSec": 0.34,
+      "params": {
+        "speed": {
+          "label": "Speed",
+          "min": 0,
+          "max": 1,
+          "default": 0.67
+        }
+      },
+      "file": "recipes/bullet-whiz.ts"
+    },
+    {
+      "id": "campfire-crackle-loop",
+      "name": "Campfire Crackle",
+      "category": "Weather & Ambience",
+      "tags": [
+        "campfire",
+        "fire",
+        "embers",
+        "crackle",
+        "loop"
+      ],
+      "loopable": true,
+      "durationSec": 7,
+      "params": {
+        "sparks": {
+          "label": "Sparks",
+          "min": 0,
+          "max": 1,
+          "default": 0.61
+        }
+      },
+      "file": "recipes/campfire-crackle-loop.ts"
+    },
+    {
+      "id": "close-lightning-thunder",
+      "name": "Close Lightning & Thunder",
+      "category": "Weather & Ambience",
+      "tags": [
+        "lightning",
+        "thunder",
+        "storm",
+        "rumble",
+        "sub-bass"
+      ],
+      "loopable": false,
+      "durationSec": 3.45,
+      "params": {
+        "distance": {
+          "label": "Distance",
+          "min": 0,
+          "max": 1,
+          "default": 0.27
+        }
+      },
+      "spectrum": [
+        {
+          "band": "sub",
+          "minShare": 0.45
+        }
+      ],
+      "file": "recipes/close-lightning-thunder.ts"
+    },
+    {
+      "id": "concrete-footstep",
+      "name": "Concrete Footstep",
+      "category": "Footsteps & UI",
+      "tags": [
+        "footstep",
+        "concrete",
+        "boot",
+        "walk"
+      ],
+      "loopable": false,
+      "durationSec": 0.43,
+      "params": {
+        "heel": {
+          "label": "Heel",
+          "min": 0,
+          "max": 1,
+          "default": 0.67
+        }
+      },
+      "file": "recipes/concrete-footstep.ts"
+    },
+    {
+      "id": "flesh-impact",
+      "name": "Flesh Impact Thud",
+      "category": "Zombies & Combat",
+      "tags": [
+        "flesh",
+        "impact",
+        "thud",
+        "wet",
+        "hit"
+      ],
+      "loopable": false,
+      "durationSec": 0.48,
+      "params": {
+        "wetness": {
+          "label": "Wetness",
+          "min": 0,
+          "max": 1,
+          "default": 0.68
+        }
+      },
+      "file": "recipes/flesh-impact.ts"
+    },
+    {
+      "id": "grass-footstep",
+      "name": "Grass Footstep",
+      "category": "Footsteps & UI",
+      "tags": [
+        "footstep",
+        "grass",
+        "outdoor",
+        "walk"
+      ],
+      "loopable": false,
+      "durationSec": 0.47,
+      "params": {
+        "dryness": {
+          "label": "Dryness",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "file": "recipes/grass-footstep.ts"
+    },
+    {
+      "id": "gravel-footstep",
+      "name": "Gravel Footstep",
+      "category": "Footsteps & UI",
+      "tags": [
+        "footstep",
+        "gravel",
+        "stone",
+        "walk",
+        "crunch"
+      ],
+      "loopable": false,
+      "durationSec": 0.52,
+      "params": {
+        "coarseness": {
+          "label": "Coarseness",
+          "min": 0,
+          "max": 1,
+          "default": 0.72
+        }
+      },
+      "file": "recipes/gravel-footstep.ts"
+    },
+    {
+      "id": "grenade-explosion",
+      "name": "Grenade Explosion",
+      "category": "Weapons",
+      "tags": [
+        "grenade",
+        "explosion",
+        "debris",
+        "sub-bass"
+      ],
+      "loopable": false,
+      "durationSec": 1.95,
+      "params": {
+        "debris": {
+          "label": "Debris",
+          "min": 0,
+          "max": 1,
+          "default": 0.69
+        }
+      },
+      "spectrum": [
+        {
+          "band": "sub",
+          "minShare": 0.24
+        }
+      ],
+      "file": "recipes/grenade-explosion.ts"
+    },
+    {
+      "id": "heavy-storm-rain-loop",
+      "name": "Heavy Storm Rain",
+      "category": "Weather & Ambience",
+      "tags": [
+        "rain",
+        "storm",
+        "weather",
+        "downpour",
+        "loop"
+      ],
+      "loopable": true,
+      "durationSec": 7,
+      "params": {
+        "gusts": {
+          "label": "Gusts",
+          "min": 0,
+          "max": 1,
+          "default": 0.74
+        }
+      },
+      "file": "recipes/heavy-storm-rain-loop.ts"
+    },
+    {
+      "id": "howling-wind-loop",
+      "name": "Eerie Howling Wind",
+      "category": "Weather & Ambience",
+      "tags": [
+        "wind",
+        "howl",
+        "eerie",
+        "ambience",
+        "loop"
+      ],
+      "loopable": true,
+      "durationSec": 8,
+      "params": {
+        "howl": {
+          "label": "Howl",
+          "min": 0,
+          "max": 1,
+          "default": 0.71
+        }
+      },
+      "file": "recipes/howling-wind-loop.ts"
+    },
+    {
+      "id": "light-rain-loop",
+      "name": "Light Rain",
+      "category": "Weather & Ambience",
+      "tags": [
+        "rain",
+        "weather",
+        "drizzle",
+        "loop"
+      ],
+      "loopable": true,
+      "durationSec": 6,
+      "params": {
+        "drops": {
+          "label": "Drops",
+          "min": 0,
+          "max": 1,
+          "default": 0.62
+        }
+      },
+      "file": "recipes/light-rain-loop.ts"
+    },
+    {
+      "id": "low-health-heartbeat-loop",
+      "name": "Low-Health Heartbeat",
+      "category": "Footsteps & UI",
+      "tags": [
+        "heartbeat",
+        "health",
+        "pulse",
+        "ui",
+        "loop"
+      ],
+      "loopable": true,
+      "durationSec": 3.2,
+      "params": {
+        "urgency": {
+          "label": "Urgency",
+          "min": 0,
+          "max": 1,
+          "default": 0.72
+        }
+      },
+      "file": "recipes/low-health-heartbeat-loop.ts"
+    },
+    {
+      "id": "mechanical-ui-click",
+      "name": "Mechanical UI Click",
+      "category": "Footsteps & UI",
+      "tags": [
+        "click",
+        "ui",
+        "switch",
+        "button",
+        "mechanical"
+      ],
+      "loopable": false,
+      "durationSec": 0.18,
+      "params": {
+        "snap": {
+          "label": "Snap",
+          "min": 0,
+          "max": 1,
+          "default": 0.77
+        }
+      },
+      "file": "recipes/mechanical-ui-click.ts"
+    },
+    {
+      "id": "melee-swing",
+      "name": "Melee Swing",
+      "category": "Zombies & Combat",
+      "tags": [
+        "melee",
+        "swing",
+        "whoosh",
+        "air"
+      ],
+      "loopable": false,
+      "durationSec": 0.43,
+      "params": {
+        "speed": {
+          "label": "Speed",
+          "min": 0,
+          "max": 1,
+          "default": 0.67
+        }
+      },
+      "file": "recipes/melee-swing.ts"
+    },
+    {
+      "id": "metal-ricochet",
+      "name": "Metal Ricochet Ping",
+      "category": "Weapons",
+      "tags": [
+        "ricochet",
+        "metal",
+        "ping",
+        "spark"
+      ],
+      "loopable": false,
+      "durationSec": 0.57,
+      "params": {
+        "ring": {
+          "label": "Ring",
+          "min": 0,
+          "max": 1,
+          "default": 0.73
+        }
+      },
+      "spectrum": [
+        {
+          "band": "high",
+          "minShare": 0.24
+        }
+      ],
+      "file": "recipes/metal-ricochet.ts"
+    },
+    {
+      "id": "pistol-9mm",
+      "name": "9mm Pistol",
+      "category": "Weapons",
+      "tags": [
+        "pistol",
+        "gunshot",
+        "sidearm",
+        "short"
+      ],
+      "loopable": false,
+      "durationSec": 0.43,
+      "params": {
+        "snap": {
+          "label": "Snap",
+          "min": 0,
+          "max": 1,
+          "default": 0.72
+        }
+      },
+      "file": "recipes/pistol-9mm.ts"
+    },
+    {
+      "id": "pump-shotgun",
+      "name": "Heavy Pump Shotgun",
+      "category": "Weapons",
+      "tags": [
+        "shotgun",
+        "gunshot",
+        "heavy",
+        "buckshot"
+      ],
+      "loopable": false,
+      "durationSec": 0.92,
+      "params": {
+        "weight": {
+          "label": "Weight",
+          "min": 0,
+          "max": 1,
+          "default": 0.78
+        }
+      },
+      "file": "recipes/pump-shotgun.ts"
+    },
+    {
+      "id": "radar-warning-beep",
+      "name": "Radar Warning Beep",
+      "category": "Footsteps & UI",
+      "tags": [
+        "radar",
+        "warning",
+        "beep",
+        "ui",
+        "sci-fi"
+      ],
+      "loopable": false,
+      "durationSec": 0.57,
+      "params": {
+        "alert": {
+          "label": "Alert",
+          "min": 0,
+          "max": 1,
+          "default": 0.65
+        }
+      },
+      "file": "recipes/radar-warning-beep.ts"
+    },
+    {
+      "id": "reload-mag-rack",
+      "name": "Reload · Mag In & Rack",
+      "category": "Weapons",
+      "tags": [
+        "reload",
+        "magazine",
+        "rack",
+        "mechanical"
+      ],
+      "loopable": false,
+      "durationSec": 0.92,
+      "params": {
+        "weight": {
+          "label": "Weight",
+          "min": 0,
+          "max": 1,
+          "default": 0.6
+        }
+      },
+      "file": "recipes/reload-mag-rack.ts"
+    },
+    {
+      "id": "shell-casing-drop",
+      "name": "Shell Casing Drop",
+      "category": "Weapons",
+      "tags": [
+        "casing",
+        "shell",
+        "metal",
+        "bounce"
+      ],
+      "loopable": false,
+      "durationSec": 0.66,
+      "params": {
+        "ring": {
+          "label": "Ring",
+          "min": 0,
+          "max": 1,
+          "default": 0.6
+        }
+      },
+      "spectrum": [
+        {
+          "band": "high",
+          "minShare": 0.12
+        }
+      ],
+      "file": "recipes/shell-casing-drop.ts"
+    },
+    {
+      "id": "wet-zombie-groan",
+      "name": "Wet Zombie Groan",
+      "category": "Zombies & Combat",
+      "tags": [
+        "zombie",
+        "groan",
+        "vocal",
+        "wet"
+      ],
+      "loopable": false,
+      "durationSec": 1.44,
+      "params": {
+        "rot": {
+          "label": "Rot",
+          "min": 0,
+          "max": 1,
+          "default": 0.72
+        }
+      },
+      "file": "recipes/wet-zombie-groan.ts"
+    },
+    {
+      "id": "zombie-death-collapse",
+      "name": "Zombie Death Collapse",
+      "category": "Zombies & Combat",
+      "tags": [
+        "zombie",
+        "death",
+        "collapse",
+        "vocal",
+        "impact"
+      ],
+      "loopable": false,
+      "durationSec": 1.52,
+      "params": {
+        "mass": {
+          "label": "Mass",
+          "min": 0,
+          "max": 1,
+          "default": 0.72
+        }
+      },
+      "file": "recipes/zombie-death-collapse.ts"
+    }
+  ]
+}

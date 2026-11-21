@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "tickets": [
+    {
+      "id": "cat-hiss-yowl",
+      "category": "Animals",
+      "status": "ready",
+      "durationSec": 0.8,
+      "loopable": false,
+      "brief": "Start with a fast air hiss, then a short pitch-rising yowl shaped by narrow formants. Give the hiss and vowel distinct envelopes.",
+      "blueprint": "aggressive-zombie-snarl",
+      "acceptance": "Hiss reads before the yowl. Keep both layers audible at low playback levels."
+    },
+    {
+      "id": "raven-caw",
+      "category": "Animals",
+      "status": "ready",
+      "durationSec": 0.82,
+      "loopable": false,
+      "brief": "Synthesize two irregular rough caws with a bent pitch, a throaty buzz, and an audible breath release.",
+      "blueprint": "wet-zombie-groan",
+      "acceptance": "The calls have uneven spacing and the second call is shorter."
+    },
+    {
+      "id": "wolf-pack-howl",
+      "category": "Animals",
+      "status": "ready",
+      "durationSec": 3.6,
+      "loopable": false,
+      "brief": "Layer two divergent howls with a slow rise, moving formants, and outdoor reflections.",
+      "blueprint": "wet-zombie-groan",
+      "acceptance": "Two distinct pitches emerge with several hundred milliseconds of offset."
+    },
+    {
+      "id": "diesel-idle-loop",
+      "category": "Vehicles & Engines",
+      "status": "ready",
+      "durationSec": 4,
+      "loopable": true,
+      "brief": "Build a periodic low diesel chug with asymmetric pulses, valve tick, and a stable noise floor. Expose load.",
+      "blueprint": "low-health-heartbeat-loop",
+      "acceptance": "Four repeat variants retain a stable cadence and the boundary passes QA."
+    },
+    {
+      "id": "electric-motor-loop",
+      "category": "Vehicles & Engines",
+      "status": "ready",
+      "durationSec": 3.2,
+      "loopable": true,
+      "brief": "Blend a smooth motor fundamental, shifting electrical harmonics, and a quiet fan. Expose load.",
+      "blueprint": "howling-wind-loop",
+      "acceptance": "The tonal motor and broadband fan stay distinct and loop without a click."
+    },
+    {
+      "id": "rally-upshift",
+      "category": "Vehicles & Engines",
+      "status": "ready",
+      "durationSec": 1.45,
+      "loopable": false,
+      "brief": "Sweep engine harmonics upward, cut torque briefly, and resume on a lower pitch before accelerating.",
+      "blueprint": "assault-rifle",
+      "acceptance": "A clear change in pitch and intensity marks the shift."
+    },
+    {
+      "id": "propeller-flyby",
+      "category": "Aircraft",
+      "status": "ready",
+      "durationSec": 3.2,
+      "loopable": false,
+      "brief": "Shape a propeller buzz and turbulent air with a continuous descending Doppler contour and distance envelope.",
+      "blueprint": "bullet-whiz",
+      "acceptance": "The approach and departure have different pitch and brightness."
+    },
+    {
+      "id": "helicopter-hover-loop",
+      "category": "Aircraft",
+      "status": "ready",
+      "durationSec": 4.8,
+      "loopable": true,
+      "brief": "Layer cyclic rotor pressure pulses, tail-rotor buzz, and air wash. Expose rotor intensity.",
+      "blueprint": "heavy-storm-rain-loop",
+      "acceptance": "Blade cadence stays steady through repeated wraps."
+    },
+    {
+      "id": "jet-pass-overhead",
+      "category": "Aircraft",
+      "status": "ready",
+      "durationSec": 3.8,
+      "loopable": false,
+      "brief": "Layer low fan harmonics, turbine hiss, and broad pressure, with the brightest layer near the pass.",
+      "blueprint": "bullet-whiz",
+      "acceptance": "The broadband tail outlasts the peak turbine tone."
+    },
+    {
+      "id": "rocket-launch-whoosh",
+      "category": "Missiles",
+      "status": "ready",
+      "durationSec": 1.7,
+      "loopable": false,
+      "brief": "Give the fictional launch cue a sharp ignition, a saturated noise plume, and a receding tail.",
+      "blueprint": "grenade-explosion",
+      "acceptance": "Noise evolves continuously after ignition and the cue has a readable release."
+    },
+    {
+      "id": "missile-pass-zip",
+      "category": "Missiles",
+      "status": "ready",
+      "durationSec": 0.87,
+      "loopable": false,
+      "brief": "Design a game flyby cue with a steep bending whistle and a brief air shock.",
+      "blueprint": "bullet-whiz",
+      "acceptance": "A fast pitch bend is audible and the shock avoids masking the trailing zip."
+    },
+    {
+      "id": "water-splash-shallow",
+      "category": "Water & Fire",
+      "status": "ready",
+      "durationSec": 0.96,
+      "loopable": false,
+      "brief": "Create a weighty splash, two clusters of high droplet ticks, and a gurglier finish.",
+      "blueprint": "light-rain-loop",
+      "acceptance": "A single initial splash resolves into irregular droplets."
+    },
+    {
+      "id": "creek-flow-loop",
+      "category": "Water & Fire",
+      "status": "ready",
+      "durationSec": 7,
+      "loopable": true,
+      "brief": "Combine several filtered currents with sparse pitched bubble pops, exposing flow.",
+      "blueprint": "light-rain-loop",
+      "acceptance": "Overlapping bands stay audible beneath bubble events without a rhythmic seam."
+    },
+    {
+      "id": "torch-ignition",
+      "category": "Water & Fire",
+      "status": "ready",
+      "durationSec": 0.78,
+      "loopable": false,
+      "brief": "Build a short strike cue and a soft, bigger ignition whoosh with ember sparks.",
+      "blueprint": "campfire-crackle-loop",
+      "acceptance": "The strike and ignition register as separate events."
+    },
+    {
+      "id": "glass-window-shatter",
+      "category": "Impacts",
+      "status": "ready",
+      "durationSec": 1.1,
+      "loopable": false,
+      "brief": "Layer a bright impact, a breaking cascade, and increasingly sparse glasslike chimes.",
+      "blueprint": "bone-crunch",
+      "acceptance": "At least 14% of spectral energy sits above 4 kHz and the debris decays naturally."
+    },
+    {
+      "id": "wood-crate-break",
+      "category": "Impacts",
+      "status": "ready",
+      "durationSec": 0.93,
+      "loopable": false,
+      "brief": "Mix a low hollow crate resonance and a staggered cluster of woody cracks and debris.",
+      "blueprint": "bone-crunch",
+      "acceptance": "A low knock leads sharp woody cracks with audible irregular spacing."
+    },
+    {
+      "id": "steel-door-slam",
+      "category": "Impacts",
+      "status": "ready",
+      "durationSec": 1.25,
+      "loopable": false,
+      "brief": "Layer panel modes, a stop against the frame, and short latch rattle with room reflections.",
+      "blueprint": "reload-mag-rack",
+      "acceptance": "A compact onset leads a metallic ring. Target at least 8% of energy above 4 kHz."
+    },
+    {
+      "id": "shield-recharge",
+      "category": "Sci-Fi & UI",
+      "status": "ready",
+      "durationSec": 1.35,
+      "loopable": false,
+      "brief": "Design an accelerating filtered pulse that climbs into a short consonant lock cue.",
+      "blueprint": "radar-warning-beep",
+      "acceptance": "The buildup and completion are distinct at low volume."
+    },
+    {
+      "id": "inventory-denied",
+      "category": "Sci-Fi & UI",
+      "status": "ready",
+      "durationSec": 0.38,
+      "loopable": false,
+      "brief": "Design two short descending digital pulses with rounded edges and slight inharmonic detail.",
+      "blueprint": "radar-warning-beep",
+      "acceptance": "Two distinct pulses stay readable in a busy mix."
+    },
+    {
+      "id": "teleport-arrival",
+      "category": "Sci-Fi & UI",
+      "status": "ready",
+      "durationSec": 1.4,
+      "loopable": false,
+      "brief": "Combine a folded pitch sweep, a bright arrival chord, and a short dynamically filtered scatter.",
+      "blueprint": "mechanical-ui-click",
+      "acceptance": "A clear arrival transient separates the rising motion from the scatter tail."
+    }
+  ]
+}
