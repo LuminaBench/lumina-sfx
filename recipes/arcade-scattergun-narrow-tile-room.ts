@@ -20,6 +20,7 @@ export default {
     }, params.intensity);
     const detail = scene(ctx, seed, params.intensity, [
       ["contact", "iron", .021, .095, .17, 600, .001],
+      ["brush", "stone", .066, .23, .31, 1150, .005],
     ]);
     mix(bed, detail);
     return bed;

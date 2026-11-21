@@ -1,6 +1,6 @@
 import { biquad, layer, mix, punch, reverb, tone, envelope, sweep } from '../../engine/dsp.ts';
 import type { RenderContext } from '../../engine/types.ts';
-import { pressure } from './acoustics.ts';
+import { pressure, rumble } from './acoustics.ts';
 import { contact, scrape } from './mechanical.ts';
 
 type Perspective = 'close' | 'hall' | 'alley' | 'field' | 'behind' | 'overlook' | 'canyon';
@@ -29,6 +29,8 @@ export function arenaReport(ctx: RenderContext, spec: Report, body: number): Flo
   const sound = new Float32Array(ctx.frames);
   const { sampleRate } = ctx;
   const { cutoff, echoes } = spaces[spec.space];
+  // A nearby wall darkens the reflected field while the direct crack stays bright.
+  const directCutoff = spec.space === 'hall' ? 8700 : spec.space === 'alley' ? 7500 : cutoff;
   for (const [index, cue] of (spec.hits ?? [0]).entries()) {
     const at = cue + (index === 0 ? 0 : (ctx.random() - 0.5) * 0.008);
     const mass = 0.88 + body * 0.30;
@@ -38,8 +40,12 @@ export function arenaReport(ctx: RenderContext, spec: Report, body: number): Flo
       span: spec.span * mass, low: spec.body / mass, high: spec.crack,
       weight: mass, edge: spec.edge * (0.96 + ctx.random() * 0.11),
     });
-    const filtered = core.map(biquad('lowpass', cutoff, 0.73, sampleRate));
+    const filtered = core.map(biquad('lowpass', directCutoff, 0.73, sampleRate));
     mix(sound, filtered, force, Math.round(at * sampleRate));
+    const bodyDecay = 0.011 + spec.span * 1.75;
+    layer(ctx, sound, at + 0.002, bodyDecay * 5, part =>
+      rumble(part, Math.min(cutoff * 0.4, spec.body * 2.1), 0.0025, bodyDecay, 0.46),
+    force * mass * 0.69);
     for (const [delay, gain] of echoes) {
       const wet = filtered.map(biquad('lowpass', cutoff / (1.29 + delay * 2.8), 0.66, sampleRate));
       mix(sound, wet, gain * force, Math.round((at + delay * (0.94 + 0.12 * ctx.random())) * sampleRate));

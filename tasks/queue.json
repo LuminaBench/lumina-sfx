@@ -1926,7 +1926,8 @@
       "durationSec": 0.16,
       "loopable": false,
       "brief": "Arcade Sidearm Pop",
-      "acceptance": "Compact and crisp arcade pop with little tail."
+      "acceptance": "Compact and crisp arcade pop with little tail.",
+      "revision": 2
     },
     {
       "id": "arcade-scatter-blast",
@@ -1936,7 +1937,8 @@
       "durationSec": 0.32,
       "loopable": false,
       "brief": "Arcade Scatter Blast",
-      "acceptance": "Wide rough onset with a clustered impact and no extended echo."
+      "acceptance": "Wide rough onset with a clustered impact and no extended echo.",
+      "revision": 2
     },
     {
       "id": "hallway-report",
@@ -1946,7 +1948,8 @@
       "durationSec": 0.33,
       "loopable": false,
       "brief": "Hallway Report",
-      "acceptance": "A bright initial crack followed by tight reflections in a narrow hard room."
+      "acceptance": "A bright initial crack followed by tight reflections in a narrow hard room.",
+      "revision": 2
     },
     {
       "id": "alley-double-report",
@@ -1956,7 +1959,8 @@
       "durationSec": 0.64,
       "loopable": false,
       "brief": "Alley Double Report",
-      "acceptance": "Two crisp game reports and staggered hard-wall echoes."
+      "acceptance": "Two crisp game reports and staggered hard-wall echoes.",
+      "revision": 2
     },
     {
       "id": "outdoor-three-shot-burst",
@@ -1966,7 +1970,8 @@
       "durationSec": 0.51,
       "loopable": false,
       "brief": "Outdoor Three-Shot Burst",
-      "acceptance": "Three distinct arcade pops with air between them and light outdoor reflections."
+      "acceptance": "Three distinct arcade pops with air between them and light outdoor reflections.",
+      "revision": 2
     },
     {
       "id": "muffled-report-behind-wall",
@@ -1976,7 +1981,8 @@
       "durationSec": 0.47,
       "loopable": false,
       "brief": "Muffled Report Behind a Wall",
-      "acceptance": "A low, filtered bump through an adjoining room with short air reflections."
+      "acceptance": "A low, filtered bump through an adjoining room with short air reflections.",
+      "revision": 2
     },
     {
       "id": "long-valley-report",
@@ -1986,7 +1992,8 @@
       "durationSec": 0.72,
       "loopable": false,
       "brief": "Long Valley Report",
-      "acceptance": "Soft distant report with sparse staggered valley tails."
+      "acceptance": "Soft distant report with sparse staggered valley tails.",
+      "revision": 2
     },
     {
       "id": "canyon-single-report",
@@ -1996,7 +2003,8 @@
       "durationSec": 0.91,
       "loopable": false,
       "brief": "Canyon Single Report",
-      "acceptance": "One distinct snap answered by wide secondary echoes."
+      "acceptance": "One distinct snap answered by wide secondary echoes.",
+      "revision": 2
     },
     {
       "id": "pneumatic-dart-launch",
@@ -2066,7 +2074,8 @@
       "durationSec": 0.23,
       "loopable": false,
       "brief": "Arcade Cracker Pop",
-      "acceptance": "A tightly gated crack, short punch and a handful of dry particles."
+      "acceptance": "A tightly gated crack, short punch and a handful of dry particles.",
+      "revision": 2
     },
     {
       "id": "close-concussion-wave",
@@ -2076,7 +2085,8 @@
       "durationSec": 0.57,
       "loopable": false,
       "brief": "Close Concussion Wave",
-      "acceptance": "Broad pressure wave and short low body with a narrow dry attack."
+      "acceptance": "Broad pressure wave and short low body with a narrow dry attack.",
+      "revision": 2
     },
     {
       "id": "masonry-dust-blast",
@@ -2086,7 +2096,8 @@
       "durationSec": 1.18,
       "loopable": false,
       "brief": "Masonry Dust Blast",
-      "acceptance": "Chunky release with rough stone fragments, light powder scatter, and an outdoor tail."
+      "acceptance": "Chunky release with rough stone fragments, light powder scatter, and an outdoor tail.",
+      "revision": 2
     },
     {
       "id": "glass-wall-collapse",
@@ -2107,7 +2118,8 @@
       "durationSec": 1.14,
       "loopable": false,
       "brief": "Dirt Mound Eruption",
-      "acceptance": "Dull initial heave and softer dirt falling back in separate clumps."
+      "acceptance": "Dull initial heave and softer dirt falling back in separate clumps.",
+      "revision": 2
     },
     {
       "id": "steel-drum-burst",
@@ -2117,7 +2129,8 @@
       "durationSec": 0.75,
       "loopable": false,
       "brief": "Steel Drum Burst",
-      "acceptance": "Tight pressure pop into brittle shell debris in a reflective enclosure."
+      "acceptance": "Tight pressure pop into brittle shell debris in a reflective enclosure.",
+      "revision": 2
     },
     {
       "id": "far-side-muffled-blast",
@@ -2127,7 +2140,8 @@
       "durationSec": 1.08,
       "loopable": false,
       "brief": "Far-Side Muffled Blast",
-      "acceptance": "Low, distant ground roll with a short softened front."
+      "acceptance": "Low, distant ground roll with a short softened front.",
+      "revision": 2
     },
     {
       "id": "crevasse-ice-break",
@@ -2137,7 +2151,8 @@
       "durationSec": 1.03,
       "loopable": false,
       "brief": "Crevasse Ice Break",
-      "acceptance": "Brittle shears, deeper crack, then scattered crystalline debris."
+      "acceptance": "Brittle shears, deeper crack, then scattered crystalline debris.",
+      "revision": 2
     },
     {
       "id": "shallow-water-burst",
@@ -2147,7 +2162,8 @@
       "durationSec": 0.83,
       "loopable": false,
       "brief": "Shallow Water Burst",
-      "acceptance": "Rounded initial pressure with a wet granular reentry and no metallic tail."
+      "acceptance": "Rounded initial pressure with a wet granular reentry and no metallic tail.",
+      "revision": 2
     },
     {
       "id": "wooden-gate-collapse",
@@ -2157,7 +2173,8 @@
       "durationSec": 1.06,
       "loopable": false,
       "brief": "Wooden Gate Collapse",
-      "acceptance": "A hard break followed by splinters and two heavier pieces landing."
+      "acceptance": "A hard break followed by splinters and two heavier pieces landing.",
+      "revision": 2
     },
     {
       "id": "gravity-implosion-pop",
@@ -5626,7 +5643,8 @@
       "loopable": false,
       "brief": "Stone Archway Concussion",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "One foreground thump scatters several close hard reflections."
+      "acceptance": "One foreground thump scatters several close hard reflections.",
+      "revision": 2
     },
     {
       "id": "blast-behind-a-wooden-barricade",
@@ -5637,7 +5655,8 @@
       "loopable": false,
       "brief": "Blast Behind a Wooden Barricade",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Muted body followed by independent loose timber pieces."
+      "acceptance": "Muted body followed by independent loose timber pieces.",
+      "revision": 2
     },
     {
       "id": "blast-beneath-a-metal-catwalk",
@@ -5648,7 +5667,8 @@
       "loopable": false,
       "brief": "Blast Beneath a Metal Catwalk",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Weighty impact followed by a rolling grid rattle."
+      "acceptance": "Weighty impact followed by a rolling grid rattle.",
+      "revision": 2
     },
     {
       "id": "flash-blast-in-a-narrow-hall",
@@ -5659,7 +5679,8 @@
       "loopable": false,
       "brief": "Flash Blast in a Narrow Hall",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Brisk bright foreground burst with a dense short tail."
+      "acceptance": "Brisk bright foreground burst with a dense short tail.",
+      "revision": 2
     },
     {
       "id": "blast-behind-a-heavy-steel-bulkhead",
@@ -5670,7 +5691,8 @@
       "loopable": false,
       "brief": "Blast behind a Heavy Steel Bulkhead",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Damped low motion followed by thin metal vibration."
+      "acceptance": "Damped low motion followed by thin metal vibration.",
+      "revision": 2
     },
     {
       "id": "single-blast-through-a-cave-mouth",
@@ -5681,7 +5703,8 @@
       "loopable": false,
       "brief": "Single Blast through a Cave Mouth",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "A strong direct tail meets a spaced stone reflection."
+      "acceptance": "A strong direct tail meets a spaced stone reflection.",
+      "revision": 2
     },
     {
       "id": "blast-across-a-rainy-rooftop",
@@ -5692,7 +5715,8 @@
       "loopable": false,
       "brief": "Blast across a Rainy Rooftop",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Short impact blends into a separate wet debris layer."
+      "acceptance": "Short impact blends into a separate wet debris layer.",
+      "revision": 2
     },
     {
       "id": "blast-from-inside-a-vehicle-cabin",
@@ -5703,7 +5727,8 @@
       "loopable": false,
       "brief": "Blast from inside a Vehicle Cabin",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Interior resonance against a restricted high attack."
+      "acceptance": "Interior resonance against a restricted high attack.",
+      "revision": 2
     },
     {
       "id": "debris-falling-after-a-distant-blast",
@@ -5714,7 +5739,8 @@
       "loopable": false,
       "brief": "Debris Falling after a Distant Blast",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Small impacts arrive with no dominating initial burst."
+      "acceptance": "Small impacts arrive with no dominating initial burst.",
+      "revision": 2
     },
     {
       "id": "dust-burst-from-a-broken-wall",
@@ -5725,7 +5751,8 @@
       "loopable": false,
       "brief": "Dust Burst from a Broken Wall",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Deep breakup releases soft scattered surface powder."
+      "acceptance": "Deep breakup releases soft scattered surface powder.",
+      "revision": 2
     },
     {
       "id": "small-tank-like-arcade-hull-rupture",
@@ -5736,7 +5763,8 @@
       "loopable": false,
       "brief": "Small Tank-like Arcade Hull Rupture",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "An original bass hit followed by short springy panel moves."
+      "acceptance": "An original bass hit followed by short springy panel moves.",
+      "revision": 2
     },
     {
       "id": "heavy-arcade-energy-report",
@@ -5747,7 +5775,8 @@
       "loopable": false,
       "brief": "Heavy Arcade Energy Report",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Hard transient and sharply damped descending energy body."
+      "acceptance": "Hard transient and sharply damped descending energy body.",
+      "revision": 2
     },
     {
       "id": "thin-arcade-energy-report-under-an-eave",
@@ -5769,7 +5798,8 @@
       "loopable": false,
       "brief": "Arcade Cannon Reservoir Discharge",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Two-part release through one falling low resonant tail."
+      "acceptance": "Two-part release through one falling low resonant tail.",
+      "revision": 2
     },
     {
       "id": "clipped-energy-shot-in-a-tunnel",
@@ -5868,7 +5898,8 @@
       "loopable": false,
       "brief": "Stone Rubble Slide after Collapse",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "Uneven large movement followed by progressively smaller particles."
+      "acceptance": "Uneven large movement followed by progressively smaller particles.",
+      "revision": 2
     },
     {
       "id": "arcade-glass-cluster-scattering",
@@ -11465,7 +11496,7 @@
       "blueprint": "wooden-dinghy-at-a-dock-waterline-loop",
       "acceptance": "Underwater texture and a passing motor in the midrange.",
       "brief": "Harbor motor through hydrophone loop",
-      "durationSec": 6.0,
+      "durationSec": 6,
       "mixRole": "ambience",
       "status": "released",
       "loopable": true

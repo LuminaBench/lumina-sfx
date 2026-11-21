@@ -8,6 +8,7 @@
   },
   "scripts": {
     "qa": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/run.mjs",
+    "compare": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/compare.mjs",
     "catalog": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/build-catalog.mjs",
     "search": "node scripts/search.mjs",
     "demo": "vite --config demo/vite.config.ts",

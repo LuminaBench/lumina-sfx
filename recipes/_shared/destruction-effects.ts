@@ -1,4 +1,4 @@
-import { biquad, envelope, layer, mix, noise, renderSamples, reverb, sweep, tone } from '../../engine/dsp.ts';
+import { biquad, envelope, layer, mix, noise, renderSamples, reverb, tone } from '../../engine/dsp.ts';
 import type { RenderContext } from '../../engine/types.ts';
 import { pressure, rumble } from './acoustics.ts';
 import { foleyGrain } from './foley.ts';
@@ -35,8 +35,19 @@ export function destruction(ctx: RenderContext, spec: Destruction, weight: numbe
     layer(ctx, sound, burst.at, burst.width * 12, (part) => pressure(part, {
       span: burst.width, low: 112 / mass, high: cutoff, edge: burst.bite, weight: burst.weight,
     }), 1);
-    layer(ctx, sound, burst.at, burst.bloom * 5.5, part => tone(part, t => sweep(99 / mass, 42 / mass, burst.width * 2.5, t),
-      t => envelope(t, 0.0023 + burst.width * 0.5, burst.bloom)), burst.weight * 0.48);
+    // Keep the pressure front sharp. Two damped bands carry the uneven low roll.
+    layer(ctx, sound, burst.at + 0.004, burst.bloom * 5.5, part => {
+      const air = noise(part.random, 'brown');
+      const floor = biquad('highpass', 28, 0.7, part.sampleRate);
+      const low = biquad('lowpass', (67 + 16 * part.random()) / mass, 0.95, part.sampleRate);
+      const chest = biquad('bandpass', 145 / mass, 0.74, part.sampleRate);
+      return renderSamples(part, time => {
+        const grain = floor(air());
+        const heavy = low(grain) * envelope(time, 0.009, burst.bloom * 1.28);
+        const early = chest(grain) * envelope(time, 0.004, burst.bloom * 0.43);
+        return heavy * 3.8 + early * 1.45;
+      });
+    }, burst.weight);
     layer(ctx, sound, burst.at + burst.width * 0.82, burst.bloom * 6.2,
       part => rumble(part, 195 / mass, 0.014 + burst.width, burst.bloom * 1.28, 0.60 + burst.bite * 0.29),
       burst.weight * 2.1);

@@ -2590,6 +2590,13 @@
           "default": 0.65
         }
       },
+      "recording": {
+        "title": "Rifle Gun Shot AK47. close recording in a shooting range.",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/136399/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "file": "recipes/assault-rifle.ts"
     },
     {
@@ -15029,6 +15036,13 @@
           "default": 0.69
         }
       },
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "spectrum": [
         {
           "band": "sub",
@@ -24883,6 +24897,13 @@
           "default": 0.72
         }
       },
+      "recording": {
+        "title": "Baretta_22_ pistol _shots_1",
+        "author": "TheGreenEyedGhost",
+        "url": "https://freesound.org/people/TheGreenEyedGhost/sounds/707777/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "file": "recipes/pistol-9mm.ts"
     },
     {
@@ -26970,6 +26991,13 @@
           "default": 0.78
         }
       },
+      "recording": {
+        "title": "Two close range shots.wav",
+        "author": "moosegravy",
+        "url": "https://freesound.org/people/moosegravy/sounds/435405/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "file": "recipes/pump-shotgun.ts"
     },
     {
@@ -28791,6 +28819,13 @@
           "default": 0.6
         }
       },
+      "recording": {
+        "title": "Pump Action Shotgun Reload",
+        "author": "AugustSandberg",
+        "url": "https://freesound.org/people/AugustSandberg/sounds/508746/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "file": "recipes/reload-mag-rack.ts"
     },
     {
@@ -28995,6 +29030,13 @@
       },
       "targetRmsDbfs": -26,
       "mixRole": "impact",
+      "recording": {
+        "title": "Distant Gunfire",
+        "author": "iainmccurdy",
+        "url": "https://freesound.org/people/iainmccurdy/sounds/842326/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "file": "recipes/rifle-distant-report.ts"
     },
     {

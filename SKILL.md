@@ -59,6 +59,12 @@ If cues vary too much in the game mix, audition and export with **Balanced level
 4. Run `npm run --silent qa -- <id> --extremes` for JSON diagnostics and the preview WAV in `qa/output/`. QA renders four seeds at default parameters. The flag adds minimum and maximum settings. Use `--collection "Farm · Harvest"` in place of the ID to check a published review batch. Add an explicit `spectrum` expectation when a sound relies on a frequency band.
 5. Run `npm run catalog` after adding or changing metadata. For a leased queue ticket, follow the reporting guidance in [tasks/WORKER_PROMPT.md](tasks/WORKER_PROMPT.md).
 
+## Compare revisions locally
+
+For a close player shot, start with `pistol-9mm`, `pump-shotgun`, or `assault-rifle`. Keep the player instance across triggers to cycle variations. Use `rifle-distant-report` for offscreen fire. For explosions, search by the listener's surroundings and debris material before choosing a cue.
+
+Run `npm run compare -- <baseline-commit> <sound-id> [sound-id ...]` in the studio checkout. Open `qa/output/compare.html` locally for a randomized, level-matched A/B audition of the same seed. Use Quick review to save Yes/No decisions.
+
 ## Review a batch
 
 Run `npm run demo` and open [Quick review](http://127.0.0.1:5173/#review). Choose a collection to hear a short related batch. Press Y or N, or use the Yes and No buttons. The next pending cue plays after each decision. Space replays the current cue. Use Soundboard for search, WAV export, and written feedback.

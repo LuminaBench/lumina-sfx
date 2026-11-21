@@ -1,12 +1,15 @@
-import { biquad, layer } from '../engine/dsp.ts';
+import { renderRecording } from '../engine/recording.ts';
+import recording from './_recordings/clarity-slide.ts';
+import { biquad, layer, mix } from '../engine/dsp.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import { contact, scrape } from './_shared/mechanical.ts';
 
 export default {
   id: 'reload-mag-rack', name: 'Reload · Mag In & Rack', category: 'Weapons',
   tags: ['reload', 'magazine', 'rack', 'mechanical', 'foley'], loopable: false, durationSec: 0.92,
+  recording: recording.credit,
   params: { weight: { label: 'Weight', min: 0, max: 1, default: 0.6 } },
-  render(ctx, { params }) {
+  render(ctx, { params, seed }) {
     const sound = new Float32Array(ctx.frames);
     const gripOffset = ctx.random() * 0.013;
     const slideOffset = 0.013 * (ctx.random() - 0.5);
@@ -29,6 +32,11 @@ export default {
     layer(ctx, sound, 0.557 + slideOffset, 0.137, (detail) => scrape(detail, 635, 0.119, 0.41), 0.38);
     const damp = biquad('lowpass', 710, 0.71, ctx.sampleRate);
     const detail = biquad('highpass', 3100, 0.71, ctx.sampleRate);
-    return sound.map((sample) => sample - 0.38 * damp(sample) + 0.92 * detail(sample));
+    const shaped = sound.map((sample) => sample - 0.38 * damp(sample) + 0.92 * detail(sample));
+    const take = renderRecording(ctx, recording, {
+      seed, speed: 0.99 + ctx.random() * 0.045, cutoffHz: 5300 + params.weight * 3700,
+    });
+    mix(shaped, take, 1.8, Math.round(ctx.sampleRate * 0.29));
+    return shaped;
   },
 } satisfies SoundRecipe;
