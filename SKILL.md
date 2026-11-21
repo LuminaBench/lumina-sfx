@@ -14,8 +14,11 @@ Read [catalog.json](catalog.json) or run the search script from the skill direct
 ```sh
 node scripts/search.mjs rain --loop --json
 node scripts/search.mjs --category Weapons
-node scripts/search.mjs --collection "Water · Boats and shore" --loop
+node scripts/search.mjs --collection "Maritime · Motors and deck" --loop
+node scripts/search.mjs tank gravel --loop --json
 ```
+
+For vehicles with changing states, look for a start or departure cue, a steady loop, and a separate stop or settling cue. Add cabin, tread, wake, and contact layers as the scene needs them. The [vehicle and combat cue guide](tasks/MOTION_COMBAT.md) lists collection names and recipe IDs that work together.
 
 From the recipient project, invoke the installer by its absolute path in this skill. Select recipe IDs directly. The installer copies the small runtime, selected recipe files, and their transitive TypeScript dependencies. It supports repeat installs and reports conflicting local edits.
 

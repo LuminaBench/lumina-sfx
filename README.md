@@ -2,7 +2,7 @@
 
 An Agent Skill and TypeScript sound effects engine for games and web apps. The library includes original DSP and source-credited public-domain recordings. Browser preview and offline WAV rendering use the same seeded PCM pipeline.
 
-The library contains **1,000 sound recipes**. See the [release collections](tasks/MILESTONE_1000.md) or use `npm run search -- --collection "Water · Boats and shore"` to find sounds by theme.
+The library contains **1,108 sound recipes**. Browse the [vehicle and combat audio release](tasks/MOTION_COMBAT.md), the [first 1,000 cues](tasks/MILESTONE_1000.md), or run `npm run search -- --collection "Maritime · Motors and deck"` to find sounds by theme.
 
 ## Run the studio
 

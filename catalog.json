@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "count": 1000,
+  "count": 1108,
   "sounds": [
     {
       "id": "a-sudden-burst-of-rain",
@@ -89,6 +89,74 @@
         }
       },
       "file": "recipes/aggressive-zombie-snarl.ts"
+    },
+    {
+      "id": "air-pulse-prop-seal-vents-and-cools",
+      "name": "Air-pulse prop seal vents and cools",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "air",
+        "pulse",
+        "prop",
+        "seal",
+        "vents",
+        "cools"
+      ],
+      "loopable": false,
+      "durationSec": 1.3,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "detail",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/air-pulse-prop-seal-vents-and-cools.ts"
+    },
+    {
+      "id": "airframe-compartment-lock-bar-seats",
+      "name": "Airframe compartment lock bar seats",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "airframe",
+        "compartment",
+        "lock",
+        "bar",
+        "seats",
+        "flight"
+      ],
+      "loopable": false,
+      "durationSec": 0.77,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/airframe-compartment-lock-bar-seats.ts"
     },
     {
       "id": "airing-a-grain-shed-loop",
@@ -629,6 +697,85 @@
       "file": "recipes/amber-guidance-console-loses-power.ts"
     },
     {
+      "id": "anchor-links-jump-over-bow-roller",
+      "name": "Anchor links jump over bow roller",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "anchor",
+        "links",
+        "jump",
+        "bow",
+        "roller",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 1.76,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Big Metal Chain",
+        "author": "qubodup",
+        "url": "https://freesound.org/people/qubodup/sounds/199282/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/anchor-links-jump-over-bow-roller.ts"
+    },
+    {
+      "id": "anchored-sailboat-stern-cabin-swell-loop",
+      "name": "Anchored sailboat stern-cabin swell loop",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "anchored",
+        "sailboat",
+        "stern",
+        "cabin",
+        "swell",
+        "boat",
+        "marine"
+      ],
+      "loopable": true,
+      "durationSec": 6.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -34,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Anchored boat rolling_Below deck recording.wav",
+        "author": "KaleidacousticsAudio",
+        "url": "https://freesound.org/people/KaleidacousticsAudio/sounds/627067/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/anchored-sailboat-stern-cabin-swell-loop.ts"
+    },
+    {
       "id": "apartment-door-close",
       "name": "Apartment Door Close",
       "category": "Props & Interactions",
@@ -787,6 +934,65 @@
       "file": "recipes/arcade-cannon-reservoir-discharge.ts"
     },
     {
+      "id": "arcade-carbine-dry-courtyard-trio",
+      "name": "Arcade carbine dry courtyard trio",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "carbine",
+        "dry",
+        "courtyard",
+        "trio",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.89,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "file": "recipes/arcade-carbine-dry-courtyard-trio.ts"
+    },
+    {
+      "id": "arcade-carbine-two-shot-corridor-cue",
+      "name": "Arcade carbine two-shot corridor cue",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "carbine",
+        "two",
+        "shot",
+        "corridor",
+        "cue",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.77,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -21.5,
+      "mixRole": "impact",
+      "file": "recipes/arcade-carbine-two-shot-corridor-cue.ts"
+    },
+    {
       "id": "arcade-cracker-pop",
       "name": "Arcade Cracker Pop",
       "category": "Impacts",
@@ -851,6 +1057,195 @@
       "file": "recipes/arcade-glass-cluster-scattering.ts"
     },
     {
+      "id": "arcade-hand-cannon-street-corner-reflection",
+      "name": "Arcade hand cannon street corner reflection",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "hand",
+        "cannon",
+        "street",
+        "corner",
+        "reflection",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.92,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20.5,
+      "mixRole": "impact",
+      "file": "recipes/arcade-hand-cannon-street-corner-reflection.ts"
+    },
+    {
+      "id": "arcade-marksman-long-canyon-echo",
+      "name": "Arcade marksman long canyon echo",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "marksman",
+        "long",
+        "canyon",
+        "echo",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.89,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "impact",
+      "file": "recipes/arcade-marksman-long-canyon-echo.ts"
+    },
+    {
+      "id": "arcade-pulse-launcher-world-space-charge-release",
+      "name": "Arcade pulse launcher world-space charge release",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "pulse",
+        "launcher",
+        "world",
+        "space",
+        "charge",
+        "release",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.63,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "file": "recipes/arcade-pulse-launcher-world-space-charge-release.ts"
+    },
+    {
+      "id": "arcade-ricochet-on-hanging-steel-panel",
+      "name": "Arcade ricochet on hanging steel panel",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "arcade",
+        "ricochet",
+        "hanging",
+        "steel",
+        "panel"
+      ],
+      "loopable": false,
+      "durationSec": 0.94,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-ricochet-on-hanging-steel-panel.ts"
+    },
+    {
+      "id": "arcade-round-snaps-through-old-plywood",
+      "name": "Arcade round snaps through old plywood",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "arcade",
+        "round",
+        "snaps",
+        "old",
+        "plywood"
+      ],
+      "loopable": false,
+      "durationSec": 0.63,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Wrench Clanking",
+        "author": "magnuswaker",
+        "url": "https://freesound.org/people/magnuswaker/sounds/530074/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-round-snaps-through-old-plywood.ts"
+    },
+    {
+      "id": "arcade-round-zip-into-soft-riverbank",
+      "name": "Arcade round zip into soft riverbank",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "arcade",
+        "round",
+        "zip",
+        "soft",
+        "riverbank"
+      ],
+      "loopable": false,
+      "durationSec": 0.7,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Water Splash",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/arcade-round-zip-into-soft-riverbank.ts"
+    },
+    {
       "id": "arcade-scatter-blast",
       "name": "Arcade Scatter Blast",
       "category": "Weapons",
@@ -875,6 +1270,94 @@
       "file": "recipes/arcade-scatter-blast.ts"
     },
     {
+      "id": "arcade-scattergun-distant-yard-echo",
+      "name": "Arcade scattergun distant yard echo",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "scattergun",
+        "distant",
+        "yard",
+        "echo",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.31,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "impact",
+      "file": "recipes/arcade-scattergun-distant-yard-echo.ts"
+    },
+    {
+      "id": "arcade-scattergun-narrow-tile-room",
+      "name": "Arcade scattergun narrow tile room",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "scattergun",
+        "narrow",
+        "tile",
+        "room",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.98,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -19.5,
+      "mixRole": "impact",
+      "file": "recipes/arcade-scattergun-narrow-tile-room.ts"
+    },
+    {
+      "id": "arcade-sentry-thump-heard-inside-a-vehicle",
+      "name": "Arcade sentry thump heard inside a vehicle",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "arcade",
+        "sentry",
+        "thump",
+        "heard",
+        "inside",
+        "vehicle",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.9,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "impact",
+      "file": "recipes/arcade-sentry-thump-heard-inside-a-vehicle.ts"
+    },
+    {
       "id": "arcade-sidearm-pop",
       "name": "Arcade Sidearm Pop",
       "category": "Weapons",
@@ -897,6 +1380,32 @@
       },
       "targetRmsDbfs": -18,
       "file": "recipes/arcade-sidearm-pop.ts"
+    },
+    {
+      "id": "arcade-training-round-chips-brick",
+      "name": "Arcade training round chips brick",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "arcade",
+        "training",
+        "round",
+        "chips",
+        "brick"
+      ],
+      "loopable": false,
+      "durationSec": 0.77,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "impact",
+      "file": "recipes/arcade-training-round-chips-brick.ts"
     },
     {
       "id": "armor-plate-dropped-on-a-padded-mat",
@@ -929,6 +1438,483 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/armor-plate-dropped-on-a-padded-mat.ts"
+    },
+    {
+      "id": "armored-arcade-cannon-low-report-and-hull-ring",
+      "name": "Armored arcade cannon low report and hull ring",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "armored",
+        "arcade",
+        "cannon",
+        "low",
+        "report",
+        "hull",
+        "ring",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 1.5,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "file": "recipes/armored-arcade-cannon-low-report-and-hull-ring.ts"
+    },
+    {
+      "id": "armored-crawler-brakes-and-hull-settles",
+      "name": "Armored crawler brakes and hull settles",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "crawler",
+        "brakes",
+        "hull",
+        "settles",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.42,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Tank Tread",
+          "author": "77Pacer",
+          "url": "https://freesound.org/people/77Pacer/sounds/425271/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/armored-crawler-brakes-and-hull-settles.ts"
+    },
+    {
+      "id": "armored-crawler-gravel-creep-loop",
+      "name": "Armored crawler gravel creep loop",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "crawler",
+        "gravel",
+        "creep",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-crawler-gravel-creep-loop.ts"
+    },
+    {
+      "id": "armored-crawler-metal-deck-loop",
+      "name": "Armored crawler metal deck loop",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "crawler",
+        "deck",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 4.95,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Big Metal Chain",
+          "author": "qubodup",
+          "url": "https://freesound.org/people/qubodup/sounds/199282/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/armored-crawler-metal-deck-loop.ts"
+    },
+    {
+      "id": "armored-crawler-shallow-mud-loop",
+      "name": "Armored crawler shallow mud loop",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "crawler",
+        "shallow",
+        "mud",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-crawler-shallow-mud-loop.ts"
+    },
+    {
+      "id": "armored-crawler-slow-pivot-on-stone",
+      "name": "Armored crawler slow pivot on stone",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "crawler",
+        "slow",
+        "pivot",
+        "stone",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.73,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Metal Chain Dragging across Messy Floor.wav",
+          "author": "VeronicaStratton",
+          "url": "https://freesound.org/people/VeronicaStratton/sounds/388489/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/armored-crawler-slow-pivot-on-stone.ts"
+    },
+    {
+      "id": "armored-drive-sprocket-under-strain",
+      "name": "Armored drive sprocket under strain",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "drive",
+        "sprocket",
+        "under",
+        "strain",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.13,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Tank Tread",
+        "author": "77Pacer",
+        "url": "https://freesound.org/people/77Pacer/sounds/425271/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Big Metal Chain",
+          "author": "qubodup",
+          "url": "https://freesound.org/people/qubodup/sounds/199282/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/armored-drive-sprocket-under-strain.ts"
+    },
+    {
+      "id": "armored-elevation-motor-free-play",
+      "name": "Armored elevation motor free play",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "elevation",
+        "motor",
+        "free",
+        "play",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.88,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-elevation-motor-free-play.ts"
+    },
+    {
+      "id": "armored-hatch-latch-dogs-engage",
+      "name": "Armored hatch latch dogs engage",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "hatch",
+        "latch",
+        "dogs",
+        "engage",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 0.88,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Metal_Hatch_Small_Fumble_Close_01",
+        "author": "Rudmer_Rotteveel",
+        "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/718442/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "mechanism.mp3",
+          "author": "Rhulk",
+          "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/armored-hatch-latch-dogs-engage.ts"
+    },
+    {
+      "id": "armored-interior-floorplate-shiver-loop",
+      "name": "Armored interior floorplate shiver loop",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "interior",
+        "floorplate",
+        "shiver",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 4.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-interior-floorplate-shiver-loop.ts"
+    },
+    {
+      "id": "armored-suspension-pressure-bleed",
+      "name": "Armored suspension pressure bleed",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "suspension",
+        "pressure",
+        "bleed",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.77,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-suspension-pressure-bleed.ts"
+    },
+    {
+      "id": "armored-track-tensioner-snaps-once",
+      "name": "Armored track tensioner snaps once",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "armored",
+        "track",
+        "tensioner",
+        "snaps",
+        "once",
+        "tank",
+        "tracked",
+        "armoured",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 0.69,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/armored-track-tensioner-snaps-once.ts"
     },
     {
       "id": "assault-rifle",
@@ -1885,6 +2871,40 @@
       },
       "targetRmsDbfs": -23,
       "file": "recipes/blink-teleport.ts"
+    },
+    {
+      "id": "boat-deck-locker-latch-drops",
+      "name": "Boat deck locker latch drops",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "boat",
+        "deck",
+        "locker",
+        "latch",
+        "drops",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 0.71,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/boat-deck-locker-latch-drops.ts"
     },
     {
       "id": "body-weight-set-on-a-wooden-bench",
@@ -4710,6 +5730,89 @@
       "file": "recipes/ceramic-tile-footstep.ts"
     },
     {
+      "id": "cessna-152-grass-taxi-inside-cabin-loop",
+      "name": "Cessna 152 grass taxi inside cabin loop",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "cessna",
+        "152",
+        "grass",
+        "taxi",
+        "inside",
+        "cabin",
+        "flight",
+        "plane",
+        "aircraft"
+      ],
+      "loopable": true,
+      "durationSec": 6.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "PLANE_CESSNA152_STARTING_TAXING_GRASS.wav",
+        "author": "keng-wai-chane-chick-te",
+        "url": "https://freesound.org/people/keng-wai-chane-chick-te/sounds/443290/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/cessna-152-grass-taxi-inside-cabin-loop.ts"
+    },
+    {
+      "id": "cessna-cabin-intercom-switch-and-seat-shift",
+      "name": "Cessna cabin intercom switch and seat shift",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "cessna",
+        "cabin",
+        "intercom",
+        "switch",
+        "seat",
+        "shift",
+        "flight",
+        "plane",
+        "aircraft"
+      ],
+      "loopable": false,
+      "durationSec": 0.83,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "detail",
+      "recording": {
+        "title": "PLANE_CESSNA152_STARTING_TAXING_GRASS.wav",
+        "author": "keng-wai-chane-chick-te",
+        "url": "https://freesound.org/people/keng-wai-chane-chick-te/sounds/443290/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/cessna-cabin-intercom-switch-and-seat-shift.ts"
+    },
+    {
       "id": "chain-pulled-slowly-through-a-ring",
       "name": "Chain Pulled Slowly through a Ring",
       "category": "Impacts",
@@ -5303,6 +6406,38 @@
       "file": "recipes/clipping-a-ripe-tomato-truss.ts"
     },
     {
+      "id": "clockwork-prop-wind-and-unlatch",
+      "name": "Clockwork prop wind and unlatch",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "clockwork",
+        "prop",
+        "wind",
+        "unlatch"
+      ],
+      "loopable": false,
+      "durationSec": 1.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Ratchet Wrench Fast Multiple",
+        "author": "Rudmer_Rotteveel",
+        "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/591529/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/clockwork-prop-wind-and-unlatch.ts"
+    },
+    {
       "id": "close-concussion-wave",
       "name": "Close Concussion Wave",
       "category": "Impacts",
@@ -5703,6 +6838,49 @@
         }
       ],
       "file": "recipes/coastal-walkway-breeze-loop.ts"
+    },
+    {
+      "id": "cockpit-headset-switch-and-cup-shift",
+      "name": "Cockpit headset switch and cup shift",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "cockpit",
+        "headset",
+        "switch",
+        "cup",
+        "shift",
+        "flight"
+      ],
+      "loopable": false,
+      "durationSec": 0.61,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/cockpit-headset-switch-and-cup-shift.ts"
     },
     {
       "id": "coin-pickup-chime",
@@ -6192,6 +7370,64 @@
       "file": "recipes/commuter-turboprop-start-from-outside.ts"
     },
     {
+      "id": "compact-arcade-pistol-dry-snap",
+      "name": "Compact arcade pistol dry snap",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "compact",
+        "arcade",
+        "pistol",
+        "dry",
+        "snap",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.39,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "file": "recipes/compact-arcade-pistol-dry-snap.ts"
+    },
+    {
+      "id": "compact-arcade-pistol-through-a-closed-doorway",
+      "name": "Compact arcade pistol through a closed doorway",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "compact",
+        "arcade",
+        "pistol",
+        "closed",
+        "doorway",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.61,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "impact",
+      "file": "recipes/compact-arcade-pistol-through-a-closed-doorway.ts"
+    },
+    {
       "id": "compact-blast",
       "name": "Compact Blast",
       "category": "Impacts",
@@ -6273,6 +7509,78 @@
         }
       },
       "file": "recipes/compact-carbine-shot.ts"
+    },
+    {
+      "id": "compact-petrol-crossover-key-start",
+      "name": "Compact petrol crossover key start",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "compact",
+        "petrol",
+        "crossover",
+        "key",
+        "start",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Car Engine Start.wav",
+        "author": "tbsounddesigns",
+        "url": "https://freesound.org/people/tbsounddesigns/sounds/405322/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/compact-petrol-crossover-key-start.ts"
+    },
+    {
+      "id": "compact-petrol-crossover-steady-idle-loop",
+      "name": "Compact petrol crossover steady idle loop",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "compact",
+        "petrol",
+        "crossover",
+        "steady",
+        "idle",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.5,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Car Engine Start.wav",
+        "author": "tbsounddesigns",
+        "url": "https://freesound.org/people/tbsounddesigns/sounds/405322/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/compact-petrol-crossover-steady-idle-loop.ts"
     },
     {
       "id": "concrete-footstep",
@@ -7349,6 +8657,41 @@
       "file": "recipes/delicate-logo-close.ts"
     },
     {
+      "id": "delivery-ev-inverter-pullaway",
+      "name": "Delivery EV inverter pullaway",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "delivery",
+        "ev",
+        "inverter",
+        "pullaway",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Electric car start-up and drive away",
+        "author": "evsecrets",
+        "url": "https://freesound.org/people/evsecrets/sounds/324119/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/delivery-ev-inverter-pullaway.ts"
+    },
+    {
       "id": "demo-capture-complete",
       "name": "Demo Capture Complete",
       "category": "Sci-Fi & UI",
@@ -7671,6 +9014,112 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/diesel-truck-ignition.ts"
+    },
+    {
+      "id": "diesel-v6-left-bank-clatter-loop",
+      "name": "Diesel V6 left bank clatter loop",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "diesel",
+        "v6",
+        "left",
+        "bank",
+        "clatter",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "dv6_idle.wav",
+        "author": "Mihacappy",
+        "url": "https://freesound.org/people/Mihacappy/sounds/819132/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/diesel-v6-left-bank-clatter-loop.ts"
+    },
+    {
+      "id": "diesel-v6-under-open-hood-loop",
+      "name": "Diesel V6 under open hood loop",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "diesel",
+        "v6",
+        "under",
+        "open",
+        "hood",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "dv6_idle_outside.wav",
+        "author": "Mihacappy",
+        "url": "https://freesound.org/people/Mihacappy/sounds/819134/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/diesel-v6-under-open-hood-loop.ts"
+    },
+    {
+      "id": "dirt-bike-chain-guide-chatter-loop",
+      "name": "Dirt bike chain guide chatter loop",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "dirt",
+        "bike",
+        "chain",
+        "guide",
+        "chatter",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 3.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Metal Chain Dragging across Messy Floor.wav",
+        "author": "VeronicaStratton",
+        "url": "https://freesound.org/people/VeronicaStratton/sounds/388489/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/dirt-bike-chain-guide-chatter-loop.ts"
     },
     {
       "id": "dirt-mound-eruption",
@@ -8560,6 +10009,40 @@
       "file": "recipes/dry-vine-brush.ts"
     },
     {
+      "id": "ducati-twin-cold-starter-catch",
+      "name": "Ducati twin cold starter catch",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "ducati",
+        "twin",
+        "cold",
+        "starter",
+        "catch",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.45,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Motorcycle - Ducati",
+        "author": "Vrymaa",
+        "url": "https://freesound.org/people/Vrymaa/sounds/737755/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/ducati-twin-cold-starter-catch.ts"
+    },
+    {
       "id": "duck-dabbling-in-shallow-water",
       "name": "Duck Dabbling in Shallow Water",
       "category": "Animals",
@@ -8670,6 +10153,49 @@
       },
       "targetRmsDbfs": -22,
       "file": "recipes/duck-quacks.ts"
+    },
+    {
+      "id": "ducted-fan-scout-lifts-into-transit",
+      "name": "Ducted fan scout lifts into transit",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "ducted",
+        "fan",
+        "scout",
+        "lifts",
+        "transit",
+        "flight"
+      ],
+      "loopable": false,
+      "durationSec": 3.73,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Quadrocopter Take-Off And Landing",
+        "author": "Alcappuccino",
+        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Drone taking off and landing",
+          "author": "hoshisato",
+          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/ducted-fan-scout-lifts-into-transit.ts"
     },
     {
       "id": "dust-burst-from-a-broken-wall",
@@ -8866,6 +10392,40 @@
       },
       "targetRmsDbfs": -24,
       "file": "recipes/electric-car-reverse.ts"
+    },
+    {
+      "id": "electric-hydrofoil-rises-on-lift",
+      "name": "Electric hydrofoil rises on lift",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "electric",
+        "hydrofoil",
+        "rises",
+        "lift",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 3.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "water splash",
+        "author": "audiosmedia",
+        "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/electric-hydrofoil-rises-on-lift.ts"
     },
     {
       "id": "electric-metro-arriving-under-a-roof",
@@ -9215,6 +10775,43 @@
       "file": "recipes/electric-mirror-folding.ts"
     },
     {
+      "id": "electric-taxi-low-speed-cabin-coast-loop",
+      "name": "Electric taxi low-speed cabin coast loop",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "electric",
+        "taxi",
+        "low",
+        "speed",
+        "cabin",
+        "coast",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Electric car start-up and drive away",
+        "author": "evsecrets",
+        "url": "https://freesound.org/people/evsecrets/sounds/324119/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/electric-taxi-low-speed-cabin-coast-loop.ts"
+    },
+    {
       "id": "electrical-arc-loop",
       "name": "Electrical Arc Loop",
       "category": "Sci-Fi & UI",
@@ -9562,6 +11159,83 @@
       },
       "targetRmsDbfs": -21,
       "file": "recipes/energy-shield-collapse.ts"
+    },
+    {
+      "id": "energy-shield-direct-body-impact",
+      "name": "Energy shield direct body impact",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "energy",
+        "shield",
+        "direct",
+        "body",
+        "impact"
+      ],
+      "loopable": false,
+      "durationSec": 0.81,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "impact",
+      "file": "recipes/energy-shield-direct-body-impact.ts"
+    },
+    {
+      "id": "energy-shield-light-grazing-contact",
+      "name": "Energy shield light grazing contact",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "energy",
+        "shield",
+        "light",
+        "grazing",
+        "contact"
+      ],
+      "loopable": false,
+      "durationSec": 0.57,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "impact",
+      "file": "recipes/energy-shield-light-grazing-contact.ts"
+    },
+    {
+      "id": "energy-shield-overload-collapse",
+      "name": "Energy shield overload collapse",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "energy",
+        "shield",
+        "overload",
+        "collapse"
+      ],
+      "loopable": false,
+      "durationSec": 1.67,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -22.5,
+      "mixRole": "impact",
+      "file": "recipes/energy-shield-overload-collapse.ts"
     },
     {
       "id": "engine-camera-cut-from-interior-to-exterior",
@@ -10408,6 +12082,33 @@
       "file": "recipes/ferry-landing-at-a-slip-waterline-loop.ts"
     },
     {
+      "id": "fictional-arc-blade-emergency-power-down",
+      "name": "Fictional arc blade emergency power down",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "fictional",
+        "arc",
+        "blade",
+        "emergency",
+        "power",
+        "down"
+      ],
+      "loopable": false,
+      "durationSec": 1.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "vehicle",
+      "file": "recipes/fictional-arc-blade-emergency-power-down.ts"
+    },
+    {
       "id": "film-camera-advance-lever",
       "name": "Film Camera Advance Lever",
       "category": "Props & Interactions",
@@ -10518,6 +12219,41 @@
       },
       "targetRmsDbfs": -21,
       "file": "recipes/flash-blast-in-a-narrow-hall.ts"
+    },
+    {
+      "id": "flat-bottom-riverboat-changing-throttle",
+      "name": "Flat-bottom riverboat changing throttle",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "flat",
+        "bottom",
+        "riverboat",
+        "changing",
+        "throttle",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 5.51,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "River boat with outboard engine (at changing speeds)",
+        "author": "nomadas",
+        "url": "https://freesound.org/people/nomadas/sounds/690160/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/flat-bottom-riverboat-changing-throttle.ts"
     },
     {
       "id": "flesh-impact",
@@ -10686,6 +12422,72 @@
         }
       ],
       "file": "recipes/foot-placed-on-a-cart-step.ts"
+    },
+    {
+      "id": "forklift-lift-under-a-pallet",
+      "name": "Forklift lift under a pallet",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "forklift",
+        "lift",
+        "under",
+        "pallet",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Industrial forklift hydraulics",
+        "author": "peridactyloptrix",
+        "url": "https://freesound.org/people/peridactyloptrix/sounds/221925/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/forklift-lift-under-a-pallet.ts"
+    },
+    {
+      "id": "forklift-valve-spool-shuts-off",
+      "name": "Forklift valve spool shuts off",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "forklift",
+        "valve",
+        "spool",
+        "shuts",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 0.9,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/forklift-valve-spool-shuts-off.ts"
     },
     {
       "id": "freefall-through-a-crosswind-loop",
@@ -11097,6 +12899,42 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/glass-elevator-interior-air-loop.ts"
+    },
+    {
+      "id": "glass-fiber-hull-idling-against-chop-loop",
+      "name": "Glass-fiber hull idling against chop loop",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "glass",
+        "fiber",
+        "hull",
+        "idling",
+        "against",
+        "chop",
+        "boat",
+        "marine"
+      ],
+      "loopable": true,
+      "durationSec": 5.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "water splash",
+        "author": "audiosmedia",
+        "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/glass-fiber-hull-idling-against-chop-loop.ts"
     },
     {
       "id": "glass-jars-nudged-on-a-shelf",
@@ -12015,6 +13853,73 @@
       "file": "recipes/handful-of-sand-on-stone.ts"
     },
     {
+      "id": "harbor-motor-through-hydrophone-loop",
+      "name": "Harbor motor through hydrophone loop",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "harbor",
+        "motor",
+        "hydrophone",
+        "boat",
+        "marine"
+      ],
+      "loopable": true,
+      "durationSec": 6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "140816_Brela_HarborSub2.wav",
+        "author": "blaukreuz",
+        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/harbor-motor-through-hydrophone-loop.ts"
+    },
+    {
+      "id": "hard-shell-energy-cell-cracks-loose",
+      "name": "Hard-shell energy cell cracks loose",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "hard",
+        "shell",
+        "energy",
+        "cell",
+        "cracks",
+        "loose"
+      ],
+      "loopable": false,
+      "durationSec": 0.66,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/hard-shell-energy-cell-cracks-loose.ts"
+    },
+    {
       "id": "hardware-mains-relay-power-off",
       "name": "Hardware Mains Relay Power Off",
       "category": "Sci-Fi & UI",
@@ -12348,6 +14253,85 @@
       "file": "recipes/heavy-corn-leaves-in-a-breeze-loop.ts"
     },
     {
+      "id": "heavy-duty-diesel-towing-pullaway",
+      "name": "Heavy-duty diesel towing pullaway",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "heavy",
+        "duty",
+        "diesel",
+        "towing",
+        "pullaway",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 5.5,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Truck Revving Idling Engine Sound",
+        "author": "wesleywestmusic",
+        "url": "https://freesound.org/people/wesleywestmusic/sounds/680686/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/heavy-duty-diesel-towing-pullaway.ts"
+    },
+    {
+      "id": "heavy-guard-armor-plates-crouch-and-rise",
+      "name": "Heavy guard armor plates crouch and rise",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "heavy",
+        "guard",
+        "armor",
+        "plates",
+        "crouch",
+        "rise"
+      ],
+      "loopable": false,
+      "durationSec": 1.42,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Big Metal Chain",
+        "author": "qubodup",
+        "url": "https://freesound.org/people/qubodup/sounds/199282/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/heavy-guard-armor-plates-crouch-and-rise.ts"
+    },
+    {
       "id": "heavy-helicopter-approach",
       "name": "Heavy Helicopter Approach",
       "category": "Aircraft",
@@ -12560,6 +14544,51 @@
       "file": "recipes/heavy-storm-rain-loop.ts"
     },
     {
+      "id": "heavy-truck-gearbox-taking-load",
+      "name": "Heavy truck gearbox taking load",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "heavy",
+        "truck",
+        "gearbox",
+        "taking",
+        "load",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Diesel engine idle and gas",
+        "author": "Iridiuss",
+        "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "dv6_idle_outside.wav",
+          "author": "Mihacappy",
+          "url": "https://freesound.org/people/Mihacappy/sounds/819134/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/heavy-truck-gearbox-taking-load.ts"
+    },
+    {
       "id": "heavy-truck-horn",
       "name": "Heavy Truck Horn",
       "category": "Vehicles & Engines",
@@ -12724,6 +14753,41 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/helicopter-tail-away-over-water.ts"
+    },
+    {
+      "id": "helicopter-tail-rotor-high-blade-flutter-loop",
+      "name": "Helicopter tail rotor high blade flutter loop",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "helicopter",
+        "tail",
+        "rotor",
+        "high",
+        "blade",
+        "flutter",
+        "flight"
+      ],
+      "loopable": true,
+      "durationSec": 5.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Helicopter Flyby",
+        "author": "m_cel",
+        "url": "https://freesound.org/people/m_cel/sounds/534855/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/helicopter-tail-rotor-high-blade-flutter-loop.ts"
     },
     {
       "id": "hen-pecking-grain",
@@ -13208,6 +15272,39 @@
       "file": "recipes/heritage-rail-coach-rolling-off-a-platform.ts"
     },
     {
+      "id": "high-jet-contrail-distant-loop",
+      "name": "High jet contrail distant loop",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "high",
+        "jet",
+        "contrail",
+        "distant",
+        "flight"
+      ],
+      "loopable": true,
+      "durationSec": 6.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -35,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Jet landing flyover.wav",
+        "author": "tbaucom",
+        "url": "https://freesound.org/people/tbaucom/sounds/648468/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/high-jet-contrail-distant-loop.ts"
+    },
+    {
       "id": "high-mountain-crest-air-loop",
       "name": "High Mountain Crest Air",
       "category": "Weather & Ambience",
@@ -13263,6 +15360,78 @@
       },
       "targetRmsDbfs": -23,
       "file": "recipes/hologram-scan-ping.ts"
+    },
+    {
+      "id": "honda-250-trail-bike-mid-speed-rider-loop",
+      "name": "Honda 250 trail bike mid-speed rider loop",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "honda",
+        "250",
+        "trail",
+        "bike",
+        "mid",
+        "speed",
+        "rider",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 4.07,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/honda-250-trail-bike-mid-speed-rider-loop.ts"
+    },
+    {
+      "id": "honda-250-trail-bike-rider-start-and-roll",
+      "name": "Honda 250 trail bike rider start and roll",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "honda",
+        "250",
+        "trail",
+        "bike",
+        "rider",
+        "start",
+        "roll",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 4.33,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/honda-250-trail-bike-rider-start-and-roll.ts"
     },
     {
       "id": "hoof-shift-straw",
@@ -13834,6 +16003,40 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/indoor-volleyball-short-floor-bounce.ts"
+    },
+    {
+      "id": "industrial-forklift-key-start-close",
+      "name": "Industrial forklift key start close",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "industrial",
+        "forklift",
+        "key",
+        "start",
+        "close",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.15,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Forklift_Engine_Start_2.wav",
+        "author": "mickyman5000",
+        "url": "https://freesound.org/people/mickyman5000/sounds/340630/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/industrial-forklift-key-start-close.ts"
     },
     {
       "id": "industrial-warning-pulse-loop",
@@ -15454,6 +17657,50 @@
       "file": "recipes/lifting-a-row-cover.ts"
     },
     {
+      "id": "light-aircraft-cockpit-loose-canopy-chatter",
+      "name": "Light aircraft cockpit loose canopy chatter",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "light",
+        "aircraft",
+        "cockpit",
+        "loose",
+        "canopy",
+        "chatter",
+        "flight"
+      ],
+      "loopable": false,
+      "durationSec": 2.42,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Propeller plane",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/515293/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "mechanism.mp3",
+          "author": "Rhulk",
+          "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/light-aircraft-cockpit-loose-canopy-chatter.ts"
+    },
+    {
       "id": "light-blade-swish",
       "name": "Light Blade Swish",
       "category": "Impacts",
@@ -15484,6 +17731,77 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/light-blade-swish.ts"
+    },
+    {
+      "id": "light-prop-plane-distant-circuit-loop",
+      "name": "Light prop plane distant circuit loop",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "light",
+        "prop",
+        "plane",
+        "distant",
+        "circuit",
+        "flight",
+        "aircraft"
+      ],
+      "loopable": true,
+      "durationSec": 5.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -34,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Propeller plane",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/515293/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/light-prop-plane-distant-circuit-loop.ts"
+    },
+    {
+      "id": "light-prop-plane-low-crossing-profile",
+      "name": "Light prop plane low crossing profile",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "light",
+        "prop",
+        "plane",
+        "low",
+        "crossing",
+        "profile",
+        "flight",
+        "aircraft"
+      ],
+      "loopable": false,
+      "durationSec": 4.3,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Propeller plane",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/515293/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/light-prop-plane-low-crossing-profile.ts"
     },
     {
       "id": "light-propeller-plane-cockpit-loop",
@@ -15626,6 +17944,39 @@
         }
       },
       "file": "recipes/light-revolver-shot.ts"
+    },
+    {
+      "id": "light-scout-armor-plate-rustle",
+      "name": "Light scout armor plate rustle",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "light",
+        "scout",
+        "armor",
+        "plate",
+        "rustle"
+      ],
+      "loopable": false,
+      "durationSec": 0.87,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/light-scout-armor-plate-rustle.ts"
     },
     {
       "id": "lightning-heard-through-a-cellar",
@@ -16446,6 +18797,39 @@
       "file": "recipes/magnetic-rail-ping.ts"
     },
     {
+      "id": "magnetic-sheath-heavy-blade-draw",
+      "name": "Magnetic sheath heavy blade draw",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "magnetic",
+        "sheath",
+        "heavy",
+        "blade",
+        "draw"
+      ],
+      "loopable": false,
+      "durationSec": 1.11,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Skates on Ice.wav",
+        "author": "Rehanjo",
+        "url": "https://freesound.org/people/Rehanjo/sounds/593623/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/magnetic-sheath-heavy-blade-draw.ts"
+    },
+    {
       "id": "mana-depleted-note",
       "name": "Mana Depleted Note",
       "category": "Sci-Fi & UI",
@@ -16469,6 +18853,41 @@
       },
       "targetRmsDbfs": -23,
       "file": "recipes/mana-depleted-note.ts"
+    },
+    {
+      "id": "marina-mooring-line-strains-and-relaxes",
+      "name": "Marina mooring line strains and relaxes",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "marina",
+        "mooring",
+        "line",
+        "strains",
+        "relaxes",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 1.58,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Leather",
+        "author": "Vendarro",
+        "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/marina-mooring-line-strains-and-relaxes.ts"
     },
     {
       "id": "marsh-frogs-night-loop",
@@ -16827,6 +19246,41 @@
       },
       "targetRmsDbfs": -30,
       "file": "recipes/menu-tab-snap.ts"
+    },
+    {
+      "id": "mercedes-diesel-parked-exterior-loop",
+      "name": "Mercedes diesel parked exterior loop",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "mercedes",
+        "diesel",
+        "parked",
+        "exterior",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.7,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Diesel engine idle and gas",
+        "author": "Iridiuss",
+        "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/mercedes-diesel-parked-exterior-loop.ts"
     },
     {
       "id": "metal-deck-footstep",
@@ -17217,6 +19671,40 @@
       "file": "recipes/mixed-rubble-footstep.ts"
     },
     {
+      "id": "mobile-crane-hydraulic-tension-hold-loop",
+      "name": "Mobile crane hydraulic tension hold loop",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "mobile",
+        "crane",
+        "hydraulic",
+        "tension",
+        "hold",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 3.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/mobile-crane-hydraulic-tension-hold-loop.ts"
+    },
+    {
       "id": "modular-battery-slot-seat",
       "name": "Modular Battery Slot Seat",
       "category": "Sci-Fi & UI",
@@ -17246,6 +19734,114 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/modular-battery-slot-seat.ts"
+    },
+    {
+      "id": "modular-prop-empty-cradle-latch",
+      "name": "Modular prop empty cradle latch",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "modular",
+        "prop",
+        "empty",
+        "cradle",
+        "latch"
+      ],
+      "loopable": false,
+      "durationSec": 0.47,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/modular-prop-empty-cradle-latch.ts"
+    },
+    {
+      "id": "modular-prop-insert-and-retention-click",
+      "name": "Modular prop insert and retention click",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "modular",
+        "prop",
+        "insert",
+        "retention",
+        "click"
+      ],
+      "loopable": false,
+      "durationSec": 0.78,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Wrench Clanking",
+        "author": "magnuswaker",
+        "url": "https://freesound.org/people/magnuswaker/sounds/530074/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "mechanism.mp3",
+          "author": "Rhulk",
+          "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/modular-prop-insert-and-retention-click.ts"
+    },
+    {
+      "id": "moped-courtyard-rev-and-let-off",
+      "name": "Moped courtyard rev and let-off",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "moped",
+        "courtyard",
+        "rev",
+        "let",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 4.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Gilera Runner 2007 revs backfire cold idle",
+        "author": "lovretta",
+        "url": "https://freesound.org/people/lovretta/sounds/140384/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/moped-courtyard-rev-and-let-off.ts"
     },
     {
       "id": "mortar-trowel-smear",
@@ -18297,6 +20893,83 @@
       "file": "recipes/orchard-shears-snip.ts"
     },
     {
+      "id": "outboard-aerated-wake-layer-loop",
+      "name": "Outboard aerated wake layer loop",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "outboard",
+        "aerated",
+        "wake",
+        "layer",
+        "boat",
+        "marine"
+      ],
+      "loopable": true,
+      "durationSec": 4.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
+        "author": "kyles",
+        "url": "https://freesound.org/people/kyles/sounds/637203/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/outboard-aerated-wake-layer-loop.ts"
+    },
+    {
+      "id": "outboard-primer-cranks-and-catches",
+      "name": "Outboard primer cranks and catches",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "outboard",
+        "primer",
+        "cranks",
+        "catches",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 4.18,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
+        "author": "kyles",
+        "url": "https://freesound.org/people/kyles/sounds/637203/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/outboard-primer-cranks-and-catches.ts"
+    },
+    {
       "id": "outdoor-three-shot-burst",
       "name": "Outdoor Three-Shot Burst",
       "category": "Weapons",
@@ -18444,6 +21117,48 @@
       "file": "recipes/padded-knee-lift-off-a-mat.ts"
     },
     {
+      "id": "padded-sling-strap-and-swivel-creak",
+      "name": "Padded sling strap and swivel creak",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "padded",
+        "sling",
+        "strap",
+        "swivel",
+        "creak"
+      ],
+      "loopable": false,
+      "durationSec": 1.03,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Leather",
+        "author": "Vendarro",
+        "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/padded-sling-strap-and-swivel-creak.ts"
+    },
+    {
       "id": "paddock-gate-swing",
       "name": "Paddock Gate Swing",
       "category": "Farming",
@@ -18474,6 +21189,39 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/paddock-gate-swing.ts"
+    },
+    {
+      "id": "pallet-forks-slide-on-concrete",
+      "name": "Pallet forks slide on concrete",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "pallet",
+        "forks",
+        "slide",
+        "concrete",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "detail",
+      "recording": {
+        "title": "Metal Chain Dragging across Messy Floor.wav",
+        "author": "VeronicaStratton",
+        "url": "https://freesound.org/people/VeronicaStratton/sounds/388489/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/pallet-forks-slide-on-concrete.ts"
     },
     {
       "id": "paper-cutaway-before-and-after-swap",
@@ -18978,6 +21726,42 @@
       "file": "recipes/passenger-jet-overhead-pass.ts"
     },
     {
+      "id": "passenger-turboprop-cabin-takeoff-surge",
+      "name": "Passenger turboprop cabin takeoff surge",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "passenger",
+        "turboprop",
+        "cabin",
+        "takeoff",
+        "surge",
+        "flight",
+        "plane",
+        "aircraft"
+      ],
+      "loopable": false,
+      "durationSec": 6.22,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Fokker 50 Turboprop Aircraft Taxi and Takeoff.mp3",
+        "author": "Pack489",
+        "url": "https://freesound.org/people/Pack489/sounds/457131/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/passenger-turboprop-cabin-takeoff-surge.ts"
+    },
+    {
       "id": "pasture-breeze-stalks-loop",
       "name": "Pasture Breeze in Tall Stalks",
       "category": "Weather & Ambience",
@@ -19085,6 +21869,163 @@
         }
       ],
       "file": "recipes/pencil-case-zipper-pull.ts"
+    },
+    {
+      "id": "personal-watercraft-approaches-the-dock",
+      "name": "Personal watercraft approaches the dock",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "personal",
+        "watercraft",
+        "approaches",
+        "dock",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 4.62,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jetski.wav",
+        "author": "wjauch",
+        "url": "https://freesound.org/people/wjauch/sounds/212441/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/personal-watercraft-approaches-the-dock.ts"
+    },
+    {
+      "id": "personal-watercraft-retreat-on-open-water",
+      "name": "Personal watercraft retreat on open water",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "personal",
+        "watercraft",
+        "retreat",
+        "open",
+        "water",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 6.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jetski.wav",
+        "author": "wjauch",
+        "url": "https://freesound.org/people/wjauch/sounds/212441/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/personal-watercraft-retreat-on-open-water.ts"
+    },
+    {
+      "id": "personal-watercraft-wash-against-the-dock",
+      "name": "Personal watercraft wash against the dock",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "personal",
+        "watercraft",
+        "wash",
+        "against",
+        "dock",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 2.5,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Jetski.wav",
+        "author": "wjauch",
+        "url": "https://freesound.org/people/wjauch/sounds/212441/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Water Splash",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/personal-watercraft-wash-against-the-dock.ts"
+    },
+    {
+      "id": "petrol-cold-start-inside-concrete-garage",
+      "name": "Petrol cold start inside concrete garage",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "petrol",
+        "cold",
+        "start",
+        "inside",
+        "concrete",
+        "garage",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "sfx-car-start-1.wav",
+        "author": "davilca",
+        "url": "https://freesound.org/people/davilca/sounds/161578/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/petrol-cold-start-inside-concrete-garage.ts"
     },
     {
       "id": "phone-notification-pop",
@@ -19458,6 +22399,41 @@
       "file": "recipes/piglet-calling-to-the-litter.ts"
     },
     {
+      "id": "pilot-perspective-turbine-winding-down",
+      "name": "Pilot perspective turbine winding down",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "pilot",
+        "perspective",
+        "turbine",
+        "winding",
+        "down",
+        "flight",
+        "jet"
+      ],
+      "loopable": false,
+      "durationSec": 4.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "F16 fighter jet start up.aif",
+        "author": "ikbenraar",
+        "url": "https://freesound.org/people/ikbenraar/sounds/322178/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/pilot-perspective-turbine-winding-down.ts"
+    },
+    {
       "id": "pistol-9mm",
       "name": "9mm Pistol",
       "category": "Weapons",
@@ -19803,6 +22779,50 @@
       "file": "recipes/pixel-demo-focus-split-view-slide.ts"
     },
     {
+      "id": "planing-hull-bow-slap-to-spray",
+      "name": "Planing hull bow slap to spray",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "planing",
+        "hull",
+        "bow",
+        "slap",
+        "spray",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 2.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Water Splash",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Jetski.wav",
+          "author": "wjauch",
+          "url": "https://freesound.org/people/wjauch/sounds/212441/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "file": "recipes/planing-hull-bow-slap-to-spray.ts"
+    },
+    {
       "id": "plant-large-seeds",
       "name": "Large Seeds Dropped by Hand",
       "category": "Farming",
@@ -19980,6 +23000,36 @@
         }
       ],
       "file": "recipes/plucking-a-ripe-plum.ts"
+    },
+    {
+      "id": "pneumatic-arcade-dart-tool-airy-pop",
+      "name": "Pneumatic arcade dart tool airy pop",
+      "category": "Weapons",
+      "collection": "Combat audio · Arcade reports",
+      "tags": [
+        "pneumatic",
+        "arcade",
+        "dart",
+        "tool",
+        "airy",
+        "pop",
+        "gunshot",
+        "weapon",
+        "fictional"
+      ],
+      "loopable": false,
+      "durationSec": 0.54,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "detail",
+      "file": "recipes/pneumatic-arcade-dart-tool-airy-pop.ts"
     },
     {
       "id": "pneumatic-dart-launch",
@@ -20707,6 +23757,39 @@
       "file": "recipes/pressing-curds-in-a-mold.ts"
     },
     {
+      "id": "prism-emitter-focus-ring-click",
+      "name": "Prism emitter focus ring click",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "prism",
+        "emitter",
+        "focus",
+        "ring",
+        "click"
+      ],
+      "loopable": false,
+      "durationSec": 0.44,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/prism-emitter-focus-ring-click.ts"
+    },
+    {
       "id": "prism-laser-triple",
       "name": "Prism Laser Triple",
       "category": "Sci-Fi & UI",
@@ -20729,6 +23812,82 @@
       },
       "targetRmsDbfs": -20,
       "file": "recipes/prism-laser-triple.ts"
+    },
+    {
+      "id": "prism-repeater-capacitor-charge-loop",
+      "name": "Prism repeater capacitor charge loop",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "prism",
+        "repeater",
+        "capacitor",
+        "charge"
+      ],
+      "loopable": true,
+      "durationSec": 2.87,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "ambience",
+      "file": "recipes/prism-repeater-capacitor-charge-loop.ts"
+    },
+    {
+      "id": "prism-repeater-clear-energy-discharge",
+      "name": "Prism repeater clear energy discharge",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "prism",
+        "repeater",
+        "clear",
+        "energy",
+        "discharge"
+      ],
+      "loopable": false,
+      "durationSec": 0.97,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "impact",
+      "file": "recipes/prism-repeater-clear-energy-discharge.ts"
+    },
+    {
+      "id": "prism-repeater-depleted-fizzle",
+      "name": "Prism repeater depleted fizzle",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "prism",
+        "repeater",
+        "depleted",
+        "fizzle"
+      ],
+      "loopable": false,
+      "durationSec": 0.72,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "detail",
+      "file": "recipes/prism-repeater-depleted-fizzle.ts"
     },
     {
       "id": "projector-reel-running-loop",
@@ -20760,6 +23919,41 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/projector-reel-running-loop.ts"
+    },
+    {
+      "id": "prop-aircraft-brake-and-fairing-settle",
+      "name": "Prop aircraft brake and fairing settle",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "prop",
+        "aircraft",
+        "brake",
+        "fairing",
+        "settle",
+        "flight",
+        "plane"
+      ],
+      "loopable": false,
+      "durationSec": 1.55,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/prop-aircraft-brake-and-fairing-settle.ts"
     },
     {
       "id": "prototype-warning-throb",
@@ -24655,6 +27849,40 @@
       "file": "recipes/sci-fi-barricade-power-loss.ts"
     },
     {
+      "id": "scooter-center-stand-foot-and-return",
+      "name": "Scooter center stand foot and return",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "scooter",
+        "center",
+        "stand",
+        "foot",
+        "return",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 0.73,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27.5,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/scooter-center-stand-foot-and-return.ts"
+    },
+    {
       "id": "seat-rail-release-and-settle",
       "name": "Seat Rail Release and Settle",
       "category": "Vehicles & Engines",
@@ -25941,6 +29169,40 @@
       "file": "recipes/skateboard-deck-tail-tap.ts"
     },
     {
+      "id": "skiff-transom-following-wake-loop",
+      "name": "Skiff transom following wake loop",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "skiff",
+        "transom",
+        "following",
+        "wake",
+        "boat",
+        "marine"
+      ],
+      "loopable": true,
+      "durationSec": 5.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Sailboat Bow",
+        "author": "myLoop",
+        "url": "https://freesound.org/people/myLoop/sounds/852108/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/skiff-transom-following-wake-loop.ts"
+    },
+    {
       "id": "skimming-foam-from-a-pot",
       "name": "Skimming Foam from a Pot",
       "category": "Props & Interactions",
@@ -26347,6 +29609,42 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/small-coffee-grinder-motor-starts-against-beans.ts"
+    },
+    {
+      "id": "small-deck-pump-check-valve-burp",
+      "name": "Small deck pump check valve burp",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "small",
+        "deck",
+        "pump",
+        "check",
+        "valve",
+        "burp",
+        "boat",
+        "marine"
+      ],
+      "loopable": false,
+      "durationSec": 1.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "detail",
+      "recording": {
+        "title": "hydraulics.wav",
+        "author": "nuckan",
+        "url": "https://freesound.org/people/nuckan/sounds/212941/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/small-deck-pump-check-valve-burp.ts"
     },
     {
       "id": "small-drone-close-hover-loop",
@@ -27549,6 +30847,93 @@
       "file": "recipes/sparrow-chirps.ts"
     },
     {
+      "id": "spent-brass-prop-bounces-on-concrete",
+      "name": "Spent brass prop bounces on concrete",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "spent",
+        "brass",
+        "prop",
+        "bounces",
+        "concrete"
+      ],
+      "loopable": false,
+      "durationSec": 0.7,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "detail",
+      "recording": {
+        "title": "mechanism.mp3",
+        "author": "Rhulk",
+        "url": "https://freesound.org/people/Rhulk/sounds/245462/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/spent-brass-prop-bounces-on-concrete.ts"
+    },
+    {
+      "id": "spent-brass-prop-drops-into-grass",
+      "name": "Spent brass prop drops into grass",
+      "category": "Weapons",
+      "collection": "Combat audio · Mechanisms and gear",
+      "tags": [
+        "spent",
+        "brass",
+        "prop",
+        "drops",
+        "grass"
+      ],
+      "loopable": false,
+      "durationSec": 0.46,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -33,
+      "mixRole": "detail",
+      "file": "recipes/spent-brass-prop-drops-into-grass.ts"
+    },
+    {
+      "id": "spent-brass-prop-skitters-down-steel-stairs",
+      "name": "Spent brass prop skitters down steel stairs",
+      "category": "Weapons",
+      "collection": "Combat audio · Surfaces and energy",
+      "tags": [
+        "spent",
+        "brass",
+        "prop",
+        "skitters",
+        "down",
+        "steel",
+        "stairs"
+      ],
+      "loopable": false,
+      "durationSec": 1.16,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "detail",
+      "file": "recipes/spent-brass-prop-skitters-down-steel-stairs.ts"
+    },
+    {
       "id": "sports-car-distant-acceleration",
       "name": "Sports Car Distant Acceleration",
       "category": "Vehicles & Engines",
@@ -28317,6 +31702,43 @@
       "file": "recipes/stone-rubble-slide-after-collapse.ts"
     },
     {
+      "id": "straight-six-turbo-dyno-load-sweep",
+      "name": "Straight-six turbo dyno load sweep",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "straight",
+        "six",
+        "turbo",
+        "dyno",
+        "load",
+        "sweep",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.72,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Import car revs on Chassis Dyno with Turbo.wav",
+        "author": "editboy23",
+        "url": "https://freesound.org/people/editboy23/sounds/496171/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/straight-six-turbo-dyno-load-sweep.ts"
+    },
+    {
       "id": "streetcar-departure-through-a-junction",
       "name": "Streetcar Departure through a Junction",
       "category": "Vehicles & Engines",
@@ -28430,6 +31852,76 @@
         }
       ],
       "file": "recipes/summer-insects-at-a-creek-bank-loop.ts"
+    },
+    {
+      "id": "supercharged-coupe-cabin-load-rise",
+      "name": "Supercharged coupe cabin load rise",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "supercharged",
+        "coupe",
+        "cabin",
+        "load",
+        "rise",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "V8 Supercar Acceleration",
+        "author": "FFKoenigsegg20012017",
+        "url": "https://freesound.org/people/FFKoenigsegg20012017/sounds/339137/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/supercharged-coupe-cabin-load-rise.ts"
+    },
+    {
+      "id": "supersonic-style-fictional-jet-departure",
+      "name": "Supersonic-style fictional jet departure",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "supersonic",
+        "style",
+        "fictional",
+        "jet",
+        "departure",
+        "flight"
+      ],
+      "loopable": false,
+      "durationSec": 4.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Takeoff 1 (Distant)",
+        "author": "clif_creates",
+        "url": "https://freesound.org/people/clif_creates/sounds/251973/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/supersonic-style-fictional-jet-departure.ts"
     },
     {
       "id": "suppressed-sidearm-shot",
@@ -29258,6 +32750,40 @@
         }
       ],
       "file": "recipes/tossing-garden-cuttings-into-compost.ts"
+    },
+    {
+      "id": "tracked-earthmover-steady-steel-run-loop",
+      "name": "Tracked earthmover steady steel run loop",
+      "category": "Vehicles & Engines",
+      "collection": "Tracked · Movement and hull",
+      "tags": [
+        "tracked",
+        "earthmover",
+        "steady",
+        "steel",
+        "run",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.65,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "tracked vehicle.wav",
+        "author": "cognito%20perceptu",
+        "url": "https://freesound.org/people/cognito%20perceptu/sounds/121531/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/tracked-earthmover-steady-steel-run-loop.ts"
     },
     {
       "id": "tractor-beam-grab",
@@ -30639,6 +34165,77 @@
       "file": "recipes/trunk-strut-opening.ts"
     },
     {
+      "id": "tuned-coupe-coast-and-exhaust-burble",
+      "name": "Tuned coupe coast and exhaust burble",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "tuned",
+        "coupe",
+        "coast",
+        "exhaust",
+        "burble",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 2.9,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Acceleration of a Sports Car Engine like Ferrari or Lamborghini or Porsche",
+        "author": "florianreichelt",
+        "url": "https://freesound.org/people/florianreichelt/sounds/457560/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/tuned-coupe-coast-and-exhaust-burble.ts"
+    },
+    {
+      "id": "turbo-blow-off-curbside-pass",
+      "name": "Turbo blow-off curbside pass",
+      "category": "Vehicles & Engines",
+      "collection": "Powertrain · Road engines",
+      "tags": [
+        "turbo",
+        "blow",
+        "curbside",
+        "pass",
+        "car",
+        "engine",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 1.58,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Turbo Spooling and Blow Off.WAV",
+        "author": "EwanPenman11",
+        "url": "https://freesound.org/people/EwanPenman11/sounds/659544/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/turbo-blow-off-curbside-pass.ts"
+    },
+    {
       "id": "turboprop-banking-sweep",
       "name": "Turboprop Banking Sweep",
       "category": "Aircraft",
@@ -30820,6 +34417,41 @@
       "file": "recipes/turning-a-pottery-wheel-by-foot.ts"
     },
     {
+      "id": "twin-spool-turbine-warm-idle-loop",
+      "name": "Twin spool turbine warm idle loop",
+      "category": "Aircraft",
+      "collection": "Aviation · Flight and ground detail",
+      "tags": [
+        "twin",
+        "spool",
+        "turbine",
+        "warm",
+        "idle",
+        "flight",
+        "jet"
+      ],
+      "loopable": true,
+      "durationSec": 4.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "F16 fighter jet start up.aif",
+        "author": "ikbenraar",
+        "url": "https://freesound.org/people/ikbenraar/sounds/322178/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/twin-spool-turbine-warm-idle-loop.ts"
+    },
+    {
       "id": "twisting-a-preserving-jar-shut",
       "name": "Twisting a Preserving Jar Shut",
       "category": "Props & Interactions",
@@ -30894,6 +34526,41 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/two-foot-landing.ts"
+    },
+    {
+      "id": "two-stroke-trail-bike-bog-and-recover",
+      "name": "Two-stroke trail bike bog and recover",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "two",
+        "stroke",
+        "trail",
+        "bike",
+        "bog",
+        "recover",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Motocross bike starting and ticking over",
+        "author": "kristian321",
+        "url": "https://freesound.org/people/kristian321/sounds/175964/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/two-stroke-trail-bike-bog-and-recover.ts"
     },
     {
       "id": "unloaded-trailer-rattle-on-stone",
@@ -31016,6 +34683,40 @@
         "verifiedOn": "2026-11-21"
       },
       "file": "recipes/urgent-door-knock.ts"
+    },
+    {
+      "id": "utility-diesel-fan-slips-to-idle",
+      "name": "Utility diesel fan slips to idle",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "utility",
+        "diesel",
+        "fan",
+        "slips",
+        "idle",
+        "vehicle"
+      ],
+      "loopable": false,
+      "durationSec": 3.1,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "dv6_idle_outside.wav",
+        "author": "Mihacappy",
+        "url": "https://freesound.org/people/Mihacappy/sounds/819134/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/utility-diesel-fan-slips-to-idle.ts"
     },
     {
       "id": "van-sliding-door-closing-from-inside",
@@ -33277,6 +36978,40 @@
       "file": "recipes/working-a-spinning-wheel-treadle.ts"
     },
     {
+      "id": "working-motorboat-steady-offshore-loop",
+      "name": "Working motorboat steady offshore loop",
+      "category": "Water & Fire",
+      "collection": "Maritime · Motors and deck",
+      "tags": [
+        "working",
+        "motorboat",
+        "steady",
+        "offshore",
+        "boat",
+        "marine"
+      ],
+      "loopable": true,
+      "durationSec": 6.25,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/working-motorboat-steady-offshore-loop.ts"
+    },
+    {
       "id": "workshop-electric-utility-cart-approaching-slowly-loop",
       "name": "Workshop Electric Utility Cart Approaching Slowly",
       "category": "Vehicles & Engines",
@@ -33603,6 +37338,41 @@
         }
       ],
       "file": "recipes/wrought-iron-hook-against-stone.ts"
+    },
+    {
+      "id": "yamaha-125-two-stroke-steady-idle-loop",
+      "name": "Yamaha 125 two-stroke steady idle loop",
+      "category": "Vehicles & Engines",
+      "collection": "Utility · Motorcycles and plant",
+      "tags": [
+        "yamaha",
+        "125",
+        "two",
+        "stroke",
+        "steady",
+        "idle",
+        "vehicle"
+      ],
+      "loopable": true,
+      "durationSec": 5.55,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Motocross bike starting and ticking over",
+        "author": "kristian321",
+        "url": "https://freesound.org/people/kristian321/sounds/175964/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "file": "recipes/yamaha-125-two-stroke-steady-idle-loop.ts"
     },
     {
       "id": "zombie-death-collapse",
