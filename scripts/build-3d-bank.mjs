@@ -6,7 +6,6 @@ import { parseArgs } from 'node:util';
 import { renderSound } from '../engine/render.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { ROOT } from './recipes.mjs';
-import { studioVault } from './vault.mjs';
 
 const { values } = parseArgs({ options: {
   dest: { type: 'string' }, asset: { type: 'string', multiple: true }, 'catalog-3d': { type: 'string' }, help: { type: 'boolean' },
@@ -31,7 +30,7 @@ const profiles = Object.fromEntries([...used].map(key => [key, map.profiles[key]
 const renderIds = new Map(Object.entries(map.cues));
 for (const { idle, power } of Object.values(profiles)) for (const id of [idle, power]) renderIds.set(id, id);
 for (const id of Object.values(map.weather)) renderIds.set(id, id);
-const destination = resolve(values.dest || join(studioVault(), 'master-wav', 'lumina-3d-bank'));
+const destination = resolve(values.dest || join(ROOT, 'qa/output', 'master-wav', 'lumina-3d-bank'));
 await mkdir(destination, { recursive: true });
 const stage = await mkdtemp(join(destination, '.preparing-'));
 const manifest = { version: 2, defaults: map.defaults, assets, profiles, weather: map.weather, cues: {} };

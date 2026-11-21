@@ -6,14 +6,13 @@ import { createHash, randomUUID } from 'node:crypto';
 import { mkdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
-import { studioVault } from './vault.mjs';
 import { ROOT } from './recipes.mjs';
 
 const run = promisify(execFile);
 const studioEncoder = join(homedir(), '.local/share/lumina-sfx/tools/ffmpeg');
 const ffmpeg = process.env.FFMPEG_PATH || (existsSync(studioEncoder) ? studioEncoder : 'ffmpeg');
-const vault = studioVault();
-const bank = join(vault, 'opus-bank');
+const output = join(ROOT, 'qa/output');
+const bank = join(output, 'opus-bank');
 const report = JSON.parse(await readFile(process.argv[2] || join(ROOT, 'qa/output/report-extremes-both-levels.json')));
 const { sounds } = JSON.parse(await readFile(join(ROOT, 'catalog.json')));
 const approved = new Map(report.results.map(r => [r.id,r]));
@@ -28,7 +27,7 @@ const recordingCredits = Object.fromEntries(sounds.flatMap(s => creditsFor(s).ma
 const results = new Array(sounds.length);
 let cursor = 0;
 async function exportSound(sound) {
-  const master = join(vault, 'master-wav', sound.id + '.wav');
+  const master = join(output, 'master-wav', sound.id + '.wav');
   const bytes = await readFile(master);
   const channels = bytes.readUInt16LE(22), frames = Math.round(sound.durationSec*44100);
   if (bytes.readUInt32LE(24) !== 44100 || channels !== approved.get(sound.id).channels ||

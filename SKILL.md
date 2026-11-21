@@ -1,85 +1,98 @@
 ---
 name: lumina-sfx
-description: Find, install, generate, and remix procedural sound effects and verified public-domain recordings for indie games and web apps. Use for Sounds-as-Code, Web Audio API, TypeScript DSP, PCM WAV export, menu clicks and selection, hitmarkers and elimination confirms, warning alarms, missile launch and flyby sounds, sonic booms, explosions, prop reloads, vehicles and engines, weather, footsteps, and farming.
+description: Find, sculpt, layer, invent and QA game sound effects offline. Use for Web Audio playback, TypeScript Sounds-as-Code, custom WAVs, recorded Foley, engines and RPM, weather, footsteps, creature calls, explosions, weapon reports, reactive game feedback and tactile UI.
 ---
 
 # Lumina SFX
 
-The catalog indexes deterministic TypeScript recipes. Recipes produce mono or stereo PCM through CPU-only DSP and can include verified public-domain source audio. Everything needed to render a sound is in the recipe and its local imports.
+The skill ships 2,626 deterministic recipes, their credited recording excerpts, and a CPU-only TypeScript renderer. Search, selective installation, remixing, WAV rendering and QA require Node.js 22.12+ and the checkout. They work offline without installing npm packages. Run studio commands from the skill directory. Give `--dest` an absolute path inside the target game.
 
-## Find and install
+## 1. Search for the closest base
 
-Read [catalog.json](catalog.json) or run the search script from the skill directory. Search terms match names, ids, collections, categories, and tags. Use `--collection` for a themed group, `--loop` for seamless beds, and `--json` for structured results.
+Search by event, material, perspective and loop state. Read the selected entries' duration, channel count, recording credits, mix role, and native `params` ranges before choosing a base. The [catalog](catalog.json) also publishes the universal `macroControls` once at its root.
 
 ```sh
 node scripts/search.mjs rain --loop --json
-node scripts/search.mjs --category Weapons
-node scripts/search.mjs kill confirm --json
-node scripts/search.mjs --collection "Alerts · Warnings from hardware"
-node scripts/search.mjs supersonic whistle --json
-node scripts/search.mjs --collection "Maritime · Motors and deck" --loop
-node scripts/search.mjs tank gravel --loop --json
+node scripts/search.mjs elimination confirm --json
+node scripts/search.mjs --collection "Farm · Harvest" --json
+node scripts/install-sfx.mjs concrete-footstep light-rain-loop --dest /path/to/game/src/audio
 ```
 
-For vehicles with changing states, look for a start or departure cue, a steady loop, and a separate stop or settling cue. Add cabin, tread, wake, and contact layers as the scene needs them. The [vehicle and combat cue guide](tasks/MOTION_COMBAT.md) lists collection names and recipe IDs that work together.
+The installer copies the selected recipes, runtime and transitive recording imports. Repeat installs are idempotent. A conflicting local edit stops the install. If the game intentionally maintains a different runtime, choose a separate destination for the new sound family.
 
-For gameplay feedback, map menu focus, selection, and confirmation to their own events. Play hit feedback on a hit and the elimination confirm on a credited elimination. Give the elimination cue priority when both fire on the same frame. Choose warning patterns by urgency and launch, whistle pass, sonic boom, and explosion by where the listener is in the scene. See [event audio](references/event-audio.md) for example recipe IDs and integration guidance.
+For UI, map focus, selection, rejection and confirmation to separate events. Give a credited elimination priority over a simultaneous hit confirm. For vehicles, choose an idle loop, a loaded loop, and distinct actions or contacts. [Event audio](references/event-audio.md) · [Vehicle cues](tasks/MOTION_COMBAT.md)
 
-From the recipient project, invoke the installer by its absolute path in this skill. Select recipe IDs directly. The installer copies the small runtime, selected recipe files, and their transitive TypeScript dependencies. It supports repeat installs and reports conflicting local edits.
+## 2. Sculpt or remix for the game's world
+
+One base is enough to change a room, attack or scale. Layer up to three when the event has distinct audible parts. The first layer supplies the category, mix target and spectral expectations. Later layers supply supporting details. Each layer can set its own `macros` and native `params`. Top-level macros shape the combined sound. Gains are linear and offsets are in seconds. Keep one audible layer at offset zero. A stack of zero-offset loops remains a loop; other combinations produce one-shots.
+
+| Macro | Range and neutral | What changes |
+| --- | --- | --- |
+| `punch` | 0–1, neutral 0 | Accents fast attacks relative to the following body |
+| `size` | 0–1, neutral 0.5 | Tightens or reinforces low-frequency weight |
+| `distance` | 0–1, neutral 0 | Softens high frequencies and brings a delayed reflection into the mix |
+| `space` | `dry` (default), `small_room`, `hallway`, `outdoor`, `cavern` | Changes reflection timing, density and decay |
+| `grit` | 0–1, neutral 0 | Blends in a saturated signal |
+| `speed` | 0.25–4×, neutral 1 | Changes event pace and duration |
+| `pitchShift` | −24 to +24 semitones, neutral 0 | Transposes pitch independently of pace |
+
+For a heavier courtyard report or a short interior reflection, start with a single cue. Use the recipe's own DSP controls for the acoustic event and the macros for the setting. A subdued indoor cue might use a small room and low grit. A cartoon pickup can use positive pitch shift, a quicker speed and a dry finish.
 
 ```sh
-node /absolute/path/to/lumina-sfx/scripts/install-sfx.mjs  concrete-footstep light-rain-loop --dest ./src/lumina-sfx
+node scripts/remix.mjs long-rifle-shot --id gallery-report --space hallway --punch 0.55 --params '{"tail":0.4}' --dest /path/to/game/src/audio
 ```
 
-Use a TypeScript-aware bundler for browser apps. For Node.js 22.12+, use `--experimental-strip-types` when native TypeScript stripping needs explicit enabling. Import the recipe file directly so the target app pulls only the sounds it uses.
+For a layered event, save a JSON design. This example places a quieter metal return 90 ms after the initial report.
+
+```json
+{
+  "id": "gallery-report-and-ping",
+  "name": "Gallery report and metal return",
+  "layers": [
+    { "id": "long-rifle-shot", "params": { "tail": 0.4 } },
+    { "id": "metal-ricochet", "gain": 0.24, "offsetSec": 0.09 }
+  ],
+  "macros": { "space": "hallway", "punch": 0.55, "size": 0.62 }
+}
+```
+
+```sh
+node scripts/remix.mjs --spec /path/to/design.json --dest /path/to/game/src/audio
+```
+
+The CLI checks four seeds, the original and balanced profiles, peak, active loudness and onset or loop boundary before publishing the new recipe. Remixed one-shots have an audible onset in the first millisecond and retain a short de-click ramp. Add `--extremes` to check native control limits as well. A design with a specific spectral brief can set `spectrum`, for example `[{"band":"sub","minShare":0.2}]` for a bass-led cue. Failure returns JSON and a nonzero exit code. The generated TypeScript travels with the game and retains the recording credits.
+
+At runtime, pass `macros` to `new SfxPlayer`, `renderSound` or `renderChannels`. Call-site macro values override the recipe's saved defaults. Native DSP controls stay in `params`. A one-layer remix keeps its native control names; layered controls have names such as `layer1_tail`. Use `renderDurationSec(recipe, macros)` for the effective playback duration.
 
 ```ts
-import { SfxPlayer, encodeWav, renderSound } from './lumina-sfx/engine/index.ts';
-import step from './lumina-sfx/recipes/concrete-footstep.ts';
+import cue from './audio/recipes/gallery-report-and-ping.ts';
+import { SfxPlayer, encodeWav, renderChannels } from './audio/engine/index.ts';
 
-// Browser event handler, after a user gesture.
+// In a browser gesture handler, retain the player between triggers.
 await audioContext.resume();
-const footstep = new SfxPlayer(audioContext, step, { intensity: 0.85 });
-footstep.play();
-footstep.setIntensity(0.6);
+const player = new SfxPlayer(audioContext, cue, { level: 'balanced' });
+player.play();
 
-// Shared offline path. Write the buffer as bytes in Node or use it in a Blob in the browser.
-const wav = encodeWav(renderSound(step, { seed: 23, params: { heel: 0.8 } }));
+// In Node, write new Uint8Array(wav) to a file. In a browser, use a Blob.
+const wav = encodeWav(renderChannels(cue, { seed: 23, macros: { distance: 0.35 } }));
 ```
 
-For a pre-rendered asset, pass `renderChannels(recipe, {level: 'balanced'})` to `encodeWav` and write the resulting bytes to the game's asset directory. This preserves stereo on thunder and returns a single channel for mono recipes. Read the named parameter ranges from `catalog.json` before overriding them. Keep the recording credits with redistributed derivatives.
+## 3. Invent and QA
 
-For a weather slider, construct `new SfxBedBlend(audioContext, drizzleRecipe, downpourRecipe)`, call `play()` after a user gesture, and pass normalized slider values to `setIntensity(value)`. Both loop transports keep their positions during the crossfade. Use `stop()` when leaving the scene.
+When search produces no convincing base, choose one of the [eight synthesis patterns](references/recipes-guide.md). Write a default-exported `SoundRecipe` alongside the installed recipes. Its file imports only local primitives, recording modules and helpers. The [source inventory](sources/recordings.json) lists tracked PCM takes, provenance, sample rates and hashes. Optional source downloads belong in the ignored `sources/raw/` directory. After adding a recording module, refresh the inventory with `node --experimental-strip-types scripts/build-sources.mjs`.
 
-For playback, retain the player between triggers to cycle seeded buffers and apply pitch and filter micro-variation. Use `play({ vary: false })` to listen to the baseline seed. A loopable recipe loops by default. Use `stopAll()` to release active voices and stop repeat scheduling. Set cadence with `setRpm()` and use `startRepeating()` and `stopRepeating()`.
+For a game-owned recipe, pass the actual TypeScript file to QA. For a new studio recipe, use its ID and rebuild the catalog. Read each failure's seed, setting and measurement, then repair and rerun before wiring the sound to a game event.
 
-If cues vary too much in the game mix, audition and export with **Balanced levels**. The same profile is available through `new SfxPlayer(context, recipe, { level: 'balanced' })` and `renderSound(recipe, { level: 'balanced' })`. It adjusts levels by mix role with sample-peak headroom. The original render is the default.
+```sh
+npm run --silent qa -- --file /path/to/game/src/audio/recipes/gallery-report-and-ping.ts --both-levels --extremes
+npm run --silent qa -- concrete-footstep --extremes
+npm run catalog
+```
 
-## Create or remix a recipe
+## Playback, review and studio outputs
 
-1. Read a nearby [recipe](recipes/) and the [SoundRecipe contract](engine/types.ts). Add a file named `recipes/<id>.ts` that default-exports one recipe using `satisfies SoundRecipe`. Give it a descriptive name, search tags, a duration in seconds, and parameter ranges that change audible character.
-2. Return exactly `ctx.frames` mono samples in a `Float32Array`. Use `ctx.sampleRate` for time and filters, and `ctx.random()` for every random choice. Keep each voice self-contained. Use local relative `.ts` imports and keep the runtime dependency-free. For realistic cues, use [verified CC0 or public-domain recordings](references/listening-review.md#use-recorded-audio) where they improve recognition.
-3. Use the [DSP primitives](engine/dsp.ts) for noise bands, transient layers, modal resonators, formants, saturation, and reflections. For loops, synthesize through the extra continuation frames supplied by the renderer. Keep the bed active around the seam so the renderer can crossfade its head.
-4. Run `npm run --silent qa -- <id> --extremes` for JSON diagnostics and the preview WAV at the JSON result’s `wav` path. QA renders four seeds at default parameters. The flag adds minimum and maximum settings. Use `--collection "Farm · Harvest"` in place of the ID to check a published review batch. Add an explicit `spectrum` expectation when a sound relies on a frequency band.
-5. Run `npm run catalog` after adding or changing metadata. For a leased queue ticket, follow the reporting guidance in [tasks/WORKER_PROMPT.md](tasks/WORKER_PROMPT.md).
+Use `level: 'balanced'` for role-based game mix headroom. `play({vary:false})` replays a baseline seed. `setIntensity()` adjusts playback, and `startRepeating()` with `setRpm()` sets repeat cadence. For weather, `SfxBedBlend` crossfades two running loop transports. For the optional 3D bridge, run `npm run bank:3d -- --dest /path/to/game/public/audio` and use the [asset and weather map](references/3d-audio-map.json).
 
-## Compare revisions locally
+All studio outputs default to `qa/output/` in this checkout. QA reports contain the WAV paths. Use `npm run compare -- --highlights` for a local 20-pair blind listening reel, or `npm run compare -- <baseline-commit> <id> ...` for a custom comparison. Comparisons require the baseline in local Git history. The optional demo supports Y/N review after `npm ci`. [Listening guide](references/listening-review.md)
 
-For a close player shot, start with `pistol-9mm`, `pump-shotgun`, or `assault-rifle`. Keep the player instance across triggers to cycle variations. Use `rifle-distant-report` for offscreen fire. For explosions, search by the listener's surroundings and debris material before choosing a cue.
-
-Run `npm run compare -- <baseline-commit> <sound-id> [sound-id ...]` in the studio checkout. Open the local path printed by the command for a randomized, level-matched A/B audition of the same seed. Run `npm run compare -- --highlights` for the 20-pair release reel. Press Space to play both excerpts, 1 or 2 to replay either side, or click a preference to advance. Votes stay in that browser. Quick review supports Yes/No decisions on individual recipes.
-
-## Studio vault and 3D playback
-
-
-For a full bank, run `npm run --silent qa -- all --both-levels --extremes --jobs 4`, then `npm run bank`. The studio has a local FFmpeg encoder. Elsewhere, install FFmpeg on PATH or set `FFMPEG_PATH`. The bank manifest records each Opus filename, source frames, channel count, recording credits and hashes. Set the playback gain to `10 ** (entry.balancedGainDb / 20)` for the same role-based mix as the runtime’s balanced profile. Use the WAV master when the target runtime cannot preserve Opus gapless loop timing. Worker tickets for persistent harmonic buzz appear under `qa/output/rework/`.
-
-For a Lumina 3D game, build the audio bank with `node --experimental-strip-types scripts/build-3d-bank.mjs --dest /path/to/game/public/audio`. Use `--asset <asset-id>` to narrow the vehicle selection. Construct the 3D engine’s `SfxBridge('/audio/manifest.json')`, call `unlock()` in a user gesture, then `prepare(mode, {asset, preset})` and `update(mode, pose, {asset, preset, rain, boost})`. The [audio map](references/3d-audio-map.json) associates asset IDs with idle and loaded voices, weather and event cues.
-
-## Review a batch
-
-Run `npm run demo` and open [Quick review](http://127.0.0.1:5173/#review). Choose a collection to hear a short related batch. Press Y or N, or use the Yes and No buttons. The next pending cue plays after each decision. Space replays the current cue. Use Soundboard for search, WAV export, and written feedback.
-
-Use Gemini 4 Neon through Antigravity for external sound-design consultation when needed. Give it relevant public references and measured diagnostics. Use [the listening review guide](references/listening-review.md) when expanding a family, preparing a batch, or calibrating new sounds from [saved user decisions](tasks/feedback.json).
-
-See the [1,000-sound release](tasks/MILESTONE_1000.md), [demo expansion and level calibration](tasks/DEMO_EXPANSION.md), and the [queue](tasks/queue.json) for individual tickets.
+For a full compressed bank, run `npm run --silent qa -- all --both-levels --extremes --jobs 4` then `npm run bank` with a local FFmpeg encoder. The manifest in `qa/output/opus-bank/` records file hashes, credits and balanced gain. Use WAV when the recipient cannot preserve gapless Opus looping.

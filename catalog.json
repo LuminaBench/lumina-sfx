@@ -1,5 +1,47 @@
 {
   "schemaVersion": 1,
+  "macroControls": {
+    "punch": {
+      "min": 0,
+      "max": 1,
+      "default": 0
+    },
+    "size": {
+      "min": 0,
+      "max": 1,
+      "default": 0.5
+    },
+    "distance": {
+      "min": 0,
+      "max": 1,
+      "default": 0
+    },
+    "space": {
+      "values": [
+        "dry",
+        "small_room",
+        "hallway",
+        "outdoor",
+        "cavern"
+      ],
+      "default": "dry"
+    },
+    "grit": {
+      "min": 0,
+      "max": 1,
+      "default": 0
+    },
+    "speed": {
+      "min": 0.25,
+      "max": 4,
+      "default": 1
+    },
+    "pitchShift": {
+      "min": -24,
+      "max": 24,
+      "default": 0
+    }
+  },
   "count": 2626,
   "sounds": [
     {

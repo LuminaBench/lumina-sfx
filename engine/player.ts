@@ -1,6 +1,6 @@
 import { clamp, rng } from './dsp.ts';
 import { DEFAULT_SEED, renderChannels, SAMPLE_RATE } from './render.ts';
-import type { LevelProfile, SoundRecipe } from './types.ts';
+import type { DesignMacros, LevelProfile, SoundRecipe } from './types.ts';
 
 interface Voice {
   source: AudioBufferSourceNode;
@@ -12,6 +12,7 @@ interface Voice {
 }
 
 interface PlayerOptions {
+  macros?: Readonly<DesignMacros>;
   output?: AudioNode;
   variants?: number;
   params?: Readonly<Record<string, number>>;
@@ -33,6 +34,7 @@ export class SfxPlayer {
   private readonly context: AudioContext;
   private readonly recipe: SoundRecipe;
   private readonly output: AudioNode;
+  private readonly macros?: Readonly<DesignMacros>;
   private readonly params: PlayerOptions['params'];
   private readonly level: LevelProfile;
   private round = 0;
@@ -48,6 +50,7 @@ export class SfxPlayer {
     this.output = options.output ?? context.destination;
     this.variants = Array.from({ length: Math.round(clamp(options.variants ?? 4, 1, 16)) });
     this.params = options.params;
+    this.macros = options.macros;
     this.level = options.level ?? 'original';
     this.intensity = clamp(options.intensity ?? 0.8, 0, 1);
     this.rpm = clamp(options.rpm ?? 360, 30, 1800);
@@ -121,7 +124,7 @@ export class SfxPlayer {
   private buffer(slot: number): AudioBuffer {
     let result = this.variants[slot];
     if (result) return result;
-    const channels = renderChannels(this.recipe, { seed: DEFAULT_SEED + slot * 8191, params: this.params, level: this.level });
+    const channels = renderChannels(this.recipe, { seed: DEFAULT_SEED + slot * 8191, params: this.params, macros: this.macros, level: this.level });
     result = this.context.createBuffer(channels.length, channels[0].length, SAMPLE_RATE);
     for (const [side, samples] of channels.entries()) result.getChannelData(side).set(samples);
     this.variants[slot] = result;

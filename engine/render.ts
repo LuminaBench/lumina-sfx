@@ -1,3 +1,4 @@
+import { designedRecipe } from './sculpt.ts';
 import { clamp, closeLoop, dbToGain, rng } from './dsp.ts';
 import { balanceLevels, balanceSettings, resolveMixRole } from './levels.ts';
 import type { RenderOptions, SoundRecipe } from './types.ts';
@@ -45,11 +46,11 @@ function taper(samples: Float32Array, sampleRate: number): void {
   }
 }
 
-function prepareShot(raw: Float32Array, sampleRate: number): Float32Array {
+function prepareShot(raw: Float32Array, sampleRate: number, immediate = false): Float32Array {
   let peak = 0;
   for (const sample of raw) peak = Math.max(peak, Math.abs(sample));
   const onset = raw.findIndex((sample) => Math.abs(sample) >= peak * 0.02 && peak > 0);
-  const trim = Math.max(0, onset - Math.round(sampleRate * 0.001));
+  const trim = Math.max(0, onset - (immediate ? 0 : Math.round(sampleRate * 0.001)));
   const shot = new Float32Array(raw.length);
   shot.set(raw.subarray(trim));
   taper(shot, sampleRate);
@@ -100,13 +101,14 @@ function renderContext(recipe: SoundRecipe, opts: RenderOptions, sampleRate: num
 }
 
 export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array {
+  recipe = designedRecipe(recipe, opts.macros);
   const { ctx, resolved, frames, overlap } = renderContext(recipe, opts, sampleRate);
   const raw = recipe.render(ctx, resolved);
   if (!(raw instanceof Float32Array) || raw.length !== ctx.frames) {
     throw new Error(`${recipe.id}: render must return exactly ${ctx.frames} Float32 samples`);
   }
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
-  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate);
+  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate, recipe.immediateOnset);
   const output = master(prepared, sampleRate, target);
   return opts.level === 'balanced' ? balanceLevels(output, sampleRate, resolveMixRole(recipe)) : output;
 }
@@ -114,8 +116,9 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
 // One clock, trim and gain for the pair keeps arrivals and stereo perspective intact.
 export function renderChannels(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array[] {
   if (!recipe.renderStereo) return [renderSound(recipe, opts, sampleRate)];
+  recipe = designedRecipe(recipe, opts.macros);
   const { ctx, resolved, frames, overlap } = renderContext(recipe, opts, sampleRate);
-  const raw = recipe.renderStereo(ctx, resolved);
+  const raw = recipe.renderStereo!(ctx, resolved);
   if (raw.length !== 2 || raw.some(c => !(c instanceof Float32Array) || c.length !== ctx.frames)) {
     throw new Error(recipe.id + ': stereo renderer must return two equal-length channels');
   }
@@ -126,7 +129,7 @@ export function renderChannels(recipe: SoundRecipe, opts: RenderOptions = {}, sa
   }
   let onset = 0;
   while (onset < frames && Math.max(Math.abs(raw[0][onset]), Math.abs(raw[1][onset])) < peak * 0.02) onset++;
-  const trim = Math.max(0, onset - Math.round(sampleRate * 0.001));
+  const trim = Math.max(0, onset - (recipe.immediateOnset ? 0 : Math.round(sampleRate * 0.001)));
   const channels = raw.map(c => {
     if (recipe.loopable) return closeLoop(c, frames, overlap);
     const shot = new Float32Array(frames);

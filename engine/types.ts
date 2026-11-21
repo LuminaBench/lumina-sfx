@@ -24,7 +24,18 @@ export interface RenderContext {
   random(): number;
 }
 
+export interface DesignMacros {
+  punch?: number;
+  size?: number;
+  distance?: number;
+  space?: 'dry' | 'small_room' | 'hallway' | 'outdoor' | 'cavern';
+  grit?: number;
+  speed?: number;
+  pitchShift?: number;
+}
+
 export interface RenderOptions {
+  macros?: Readonly<DesignMacros>;
   seed?: number;
   params?: Readonly<Record<string, number>>;
   level?: LevelProfile;
@@ -44,6 +55,7 @@ export interface RecordingCredit {
 }
 
 export interface SoundRecipe {
+  readonly macros?: Readonly<DesignMacros>;
   readonly id: string;
   readonly name: string;
   readonly category: Category;
@@ -51,6 +63,7 @@ export interface SoundRecipe {
   readonly loopable: boolean;
   readonly durationSec: number;
   readonly params: Readonly<Record<string, SoundParameter>>;
+  readonly immediateOnset?: boolean;
   readonly targetRmsDbfs?: number;
   readonly mixRole?: MixRole;
   readonly recording?: RecordingCredit;

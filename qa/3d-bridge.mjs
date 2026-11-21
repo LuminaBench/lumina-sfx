@@ -5,7 +5,6 @@ import { readFile } from 'node:fs/promises';
 import { basename, dirname, join, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import { ROOT } from '../scripts/recipes.mjs';
-import { studioVault } from '../scripts/vault.mjs';
 
 const { values } = parseArgs({ options: {
   'studio-3d': { type: 'string' }, bank: { type: 'string' }, browser: { type: 'string' }, help: { type: 'boolean' },
@@ -15,7 +14,7 @@ if (values.help) {
   process.exit(0);
 }
 const studio = resolve(values['studio-3d'] || join(dirname(ROOT), 'lumina-3d-studio'));
-const bank = resolve(values.bank || join(studioVault(), 'master-wav', 'lumina-3d-bank'));
+const bank = resolve(values.bank || join(ROOT, 'qa/output', 'master-wav', 'lumina-3d-bank'));
 const source = stripTypeScriptTypes(await readFile(join(studio, 'engine/sfx-bridge.ts'), 'utf8'));
 const { chromium } = createRequire(join(studio, 'package.json'))('playwright');
 const manifest = JSON.parse(await readFile(join(bank, 'manifest.json'), 'utf8'));

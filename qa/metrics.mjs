@@ -116,6 +116,7 @@ export function inspect(samples, recipe, rate) {
   const rmsDb = gainToDb(activeRms(samples, rate));
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
   const onsetMs = firstOnset(samples, Math.max(maximum * 0.02, dbToGain(-60))) / rate * 1000;
+  const onsetLimit = recipe.immediateOnset ? 1 : 5;
   const bands = spectrum(samples, rate, organicMaterial(recipe));
   const defaults = [
     ...(['explosion', 'thunder'].some((tag) => recipe.tags.includes(tag)) ? [{ band: 'sub', minShare: 0.15 }] : []),
@@ -129,7 +130,7 @@ export function inspect(samples, recipe, rate) {
     stationaryBuzz: bands.buzz ?? null,
     peak: { pass: peakDb <= PEAK_LIMIT_DB, dbfs: round(peakDb), maxDbfs: PEAK_LIMIT_DB },
     loudness: { pass: Math.abs(rmsDb - target) <= 1.25, activeRmsDbfs: round(rmsDb), targetDbfs: target, toleranceDb: 1.25 },
-    onset: recipe.loopable ? null : { pass: onsetMs < 5, ms: Number.isFinite(onsetMs) ? round(onsetMs) : null, maxMsExclusive: 5 },
+    onset: recipe.loopable ? null : { pass: onsetMs < onsetLimit, ms: Number.isFinite(onsetMs) ? round(onsetMs) : null, maxMsExclusive: onsetLimit },
     loopBoundary: recipe.loopable ? checkLoop(samples, rate) : null,
     spectrum: {
       pass: spectralChecks.every((item) => item.pass),
@@ -144,7 +145,7 @@ export function inspectBalanced(samples, recipe, rate, settings, measured) {
   const deltaDb = measured.activeDb - settings.activeDb;
   const pass = measured.peakDbfs <= settings.ceilingDbfs + 0.01 &&
     Math.abs(deltaDb - settings.gainDb) < 0.10 &&
-    (recipe.loopable ? loop.pass : onsetMs < 5);
+    (recipe.loopable ? loop.pass : onsetMs < (recipe.immediateOnset ? 1 : 5));
   return {
     pass,
     role: settings.role,
