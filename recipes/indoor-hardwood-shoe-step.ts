@@ -1,4 +1,4 @@
-import { biquad, layer, TAU } from '../engine/dsp.ts';
+import { biquad, layer } from '../engine/dsp.ts';
 import { renderRecording } from '../engine/recording.ts';
 import type { SoundRecipe } from '../engine/types.ts';
 import contact from './_recordings/isolated-hardwood-footstep.ts';
@@ -14,9 +14,11 @@ export default {
     const weight = params.weight;
     const out = renderRecording(ctx, contact, { seed, speed: .91 + .08 * ctx.random(), cutoffHz: 5100 });
     const hz = 150 - 37 * weight + 9 * ctx.random();
+    const board = biquad('bandpass', hz, .85, ctx.sampleRate);
+    const edge = biquad('highpass', 2400, .72, ctx.sampleRate);
     for (let i = 0; i < out.length; i++) {
-      const t = i / ctx.sampleRate;
-      out[i] += .28 * (1 - Math.exp(-2100*t)) * Math.exp(-t/.023) * Math.sin(TAU * hz * t);
+      const heel = out[i];
+      out[i] += board(heel) * .55 + edge(heel) * .29;
     }
     layer(ctx, out, .078, .11, part => {
       const rubber = biquad('bandpass', 940 + 280 * weight, .75, part.sampleRate);

@@ -1,5 +1,5 @@
 import { editorContact } from './_shared/editor-contact.ts';
-import attack from './_recordings/isolated-milestone-key-single.ts';
+import attack from './_recordings/isolated-key-office.ts';
 
 export default editorContact(
   "office-membrane-keyboard-key-up", "Office membrane keyboard letter key release",

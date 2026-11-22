@@ -1,5 +1,5 @@
 import { editorContact } from './_shared/editor-contact.ts';
-import attack from './_recordings/isolated-milestone-key-single.ts';
+import attack from './_recordings/isolated-key-firm.ts';
 
 export default editorContact(
   "tactile-mechanical-keyboard-key-down", "Tactile mechanical keyboard letter key down",

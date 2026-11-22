@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
-import attack from './_recordings/isolated-wooden-chest-latch-release.ts';
+import attack from './_recordings/isolated-response-button.ts';
 
 export default {
   id: 'inventory-magnet-seat',
@@ -19,10 +19,10 @@ export default {
   ...sceneCredits(attack),
   render(ctx, { seed, params }) {
     return scene(ctx, seed, params.pressure, [
-      ['clip', attack, 0, 0.034, 0.48, 0, 5500, 0.0003, 0.004],
+      ['clip', attack, 0.061, 0.034, 0.86, 0, 7450, 0.0003, 0.004],
       ["brush", "cloth", 0, 0.075, 0.43, 830, 0.002],
       ["contact", "iron", 0.054, 0.038, 0.33, 1290, 0.0005],
       ["contact", "wood", 0.061, 0.112, 0.74, 520, 0.0007],
-    ]);
+    ], attack);
   },
 } satisfies SoundRecipe;

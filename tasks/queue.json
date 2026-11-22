@@ -26656,7 +26656,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.059,
       "loopable": false,
-      "brief": "Felt tick · settings focus"
+      "brief": "Felt tick · settings focus",
+      "revision": 2
     },
     {
       "id": "settings-tab-walnut-detent",
@@ -26665,7 +26666,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.137,
       "loopable": false,
-      "brief": "Walnut detent · switch settings tab"
+      "brief": "Walnut detent · switch settings tab",
+      "revision": 2
     },
     {
       "id": "settings-subtab-porcelain-tip",
@@ -26674,7 +26676,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.098,
       "loopable": false,
-      "brief": "Porcelain tip · select subtab"
+      "brief": "Porcelain tip · select subtab",
+      "revision": 2
     },
     {
       "id": "settings-back-suede-release",
@@ -26683,7 +26686,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.164,
       "loopable": false,
-      "brief": "Suede release · back to parent"
+      "brief": "Suede release · back to parent",
+      "revision": 2
     },
     {
       "id": "settings-toggle-engage-brass",
@@ -26692,7 +26696,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.123,
       "loopable": false,
-      "brief": "Brass rocker · toggle on"
+      "brief": "Brass rocker · toggle on",
+      "revision": 2
     },
     {
       "id": "settings-toggle-off-cork",
@@ -26701,7 +26706,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.12,
       "loopable": false,
-      "brief": "Cork stop · toggle off"
+      "brief": "Cork stop · toggle off",
+      "revision": 2
     },
     {
       "id": "settings-slider-knurled-index",
@@ -26710,7 +26716,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.049,
       "loopable": false,
-      "brief": "Knurled dial · slider step"
+      "brief": "Knurled dial · slider step",
+      "revision": 2
     },
     {
       "id": "settings-list-edge-felt-bumper",
@@ -26719,7 +26726,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.143,
       "loopable": false,
-      "brief": "Felt bumper · end of list"
+      "brief": "Felt bumper · end of list",
+      "revision": 2
     },
     {
       "id": "inventory-magnet-seat",
@@ -26728,7 +26736,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.189,
       "loopable": false,
-      "brief": "Magnetic seat · inventory drop"
+      "brief": "Magnetic seat · inventory drop",
+      "revision": 2
     },
     {
       "id": "settings-apply-overcentre-latch",
@@ -26737,7 +26746,8 @@
       "collection": "Tactile menus",
       "durationSec": 0.205,
       "loopable": false,
-      "brief": "Over-centre latch · apply changes"
+      "brief": "Over-centre latch · apply changes",
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-key-down",
@@ -26748,7 +26758,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-key-up",
@@ -26759,7 +26769,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-spacebar",
@@ -26770,7 +26780,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-return",
@@ -26781,7 +26791,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-backspace-pair",
@@ -26792,7 +26802,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-shortcut",
@@ -26803,7 +26813,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-typed-word",
@@ -26814,7 +26824,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linear-mechanical-keyboard-command-line",
@@ -26825,7 +26835,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-key-down",
@@ -26836,7 +26846,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-key-up",
@@ -26847,7 +26857,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-spacebar",
@@ -26858,7 +26868,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-return",
@@ -26869,7 +26879,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-backspace-pair",
@@ -26880,7 +26890,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-shortcut",
@@ -26891,7 +26901,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-typed-word",
@@ -26902,7 +26912,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tactile-mechanical-keyboard-command-line",
@@ -26913,7 +26923,7 @@
       "loopable": false,
       "brief": "Tactile mechanical keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-key-down",
@@ -26924,7 +26934,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-key-up",
@@ -26935,7 +26945,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-spacebar",
@@ -26946,7 +26956,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-return",
@@ -26957,7 +26967,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-backspace-pair",
@@ -26968,7 +26978,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-shortcut",
@@ -26979,7 +26989,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-typed-word",
@@ -26990,7 +27000,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "click-jacket-keyboard-command-line",
@@ -27001,7 +27011,7 @@
       "loopable": false,
       "brief": "Click-jacket mechanical keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-key-down",
@@ -27012,7 +27022,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-key-up",
@@ -27023,7 +27033,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-spacebar",
@@ -27034,7 +27044,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-return",
@@ -27045,7 +27055,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-backspace-pair",
@@ -27056,7 +27066,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-shortcut",
@@ -27067,7 +27077,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-typed-word",
@@ -27078,7 +27088,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silent-linear-keyboard-command-line",
@@ -27089,7 +27099,7 @@
       "loopable": false,
       "brief": "Damped linear keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-key-down",
@@ -27100,7 +27110,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-key-up",
@@ -27111,7 +27121,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-spacebar",
@@ -27122,7 +27132,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-return",
@@ -27133,7 +27143,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-backspace-pair",
@@ -27144,7 +27154,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-shortcut",
@@ -27155,7 +27165,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-typed-word",
@@ -27166,7 +27176,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "gasket-mount-keyboard-command-line",
@@ -27177,7 +27187,7 @@
       "loopable": false,
       "brief": "Gasket-mounted keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-key-down",
@@ -27188,7 +27198,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-key-up",
@@ -27199,7 +27209,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-spacebar",
@@ -27210,7 +27220,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-return",
@@ -27221,7 +27231,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-backspace-pair",
@@ -27232,7 +27242,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-shortcut",
@@ -27243,7 +27253,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-typed-word",
@@ -27254,7 +27264,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "aluminum-plate-keyboard-command-line",
@@ -27265,7 +27275,7 @@
       "loopable": false,
       "brief": "Aluminum-plate keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-key-down",
@@ -27276,7 +27286,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-key-up",
@@ -27287,7 +27297,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-spacebar",
@@ -27298,7 +27308,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-return",
@@ -27309,7 +27319,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-backspace-pair",
@@ -27320,7 +27330,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-shortcut",
@@ -27331,7 +27341,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-typed-word",
@@ -27342,7 +27352,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "laptop-scissor-keyboard-command-line",
@@ -27353,7 +27363,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-key-down",
@@ -27364,7 +27374,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-key-up",
@@ -27375,7 +27385,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-spacebar",
@@ -27386,7 +27396,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-return",
@@ -27397,7 +27407,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-backspace-pair",
@@ -27408,7 +27418,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-shortcut",
@@ -27419,7 +27429,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-typed-word",
@@ -27430,7 +27440,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "office-membrane-keyboard-command-line",
@@ -27441,7 +27451,7 @@
       "loopable": false,
       "brief": "Office membrane keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-key-down",
@@ -27452,7 +27462,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-key-up",
@@ -27463,7 +27473,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-spacebar",
@@ -27474,7 +27484,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-return",
@@ -27485,7 +27495,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-backspace-pair",
@@ -27496,7 +27506,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-shortcut",
@@ -27507,7 +27517,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-typed-word",
@@ -27518,7 +27528,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "chiclet-keyboard-command-line",
@@ -27529,7 +27539,7 @@
       "loopable": false,
       "brief": "Compact chiclet keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-key-down",
@@ -27540,7 +27550,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-key-up",
@@ -27551,7 +27561,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-spacebar",
@@ -27562,7 +27572,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-return",
@@ -27573,7 +27583,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-backspace-pair",
@@ -27584,7 +27594,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-shortcut",
@@ -27595,7 +27605,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-typed-word",
@@ -27606,7 +27616,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "vintage-spring-keyboard-command-line",
@@ -27617,7 +27627,7 @@
       "loopable": false,
       "brief": "Buckling-spring keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "desktop-mouse-press",
@@ -27628,7 +27638,7 @@
       "loopable": false,
       "brief": "Desktop mouse single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "desktop-mouse-release",
@@ -27639,7 +27649,7 @@
       "loopable": false,
       "brief": "Desktop mouse release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "desktop-mouse-double-click",
@@ -27650,7 +27660,7 @@
       "loopable": false,
       "brief": "Desktop mouse double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "desktop-mouse-press-and-hold",
@@ -27661,7 +27671,7 @@
       "loopable": false,
       "brief": "Desktop mouse press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "desktop-mouse-three-taps",
@@ -27672,7 +27682,7 @@
       "loopable": false,
       "brief": "Desktop mouse three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "quiet-mouse-press",
@@ -27683,7 +27693,7 @@
       "loopable": false,
       "brief": "Silent mouse single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "quiet-mouse-release",
@@ -27694,7 +27704,7 @@
       "loopable": false,
       "brief": "Silent mouse release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "quiet-mouse-double-click",
@@ -27705,7 +27715,7 @@
       "loopable": false,
       "brief": "Silent mouse double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "quiet-mouse-press-and-hold",
@@ -27716,7 +27726,7 @@
       "loopable": false,
       "brief": "Silent mouse press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "quiet-mouse-three-taps",
@@ -27727,7 +27737,7 @@
       "loopable": false,
       "brief": "Silent mouse three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "trackball-press",
@@ -27738,7 +27748,7 @@
       "loopable": false,
       "brief": "Trackball button single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "trackball-release",
@@ -27749,7 +27759,7 @@
       "loopable": false,
       "brief": "Trackball button release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "trackball-double-click",
@@ -27760,7 +27770,7 @@
       "loopable": false,
       "brief": "Trackball button double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "trackball-press-and-hold",
@@ -27771,7 +27781,7 @@
       "loopable": false,
       "brief": "Trackball button press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "trackball-three-taps",
@@ -27782,7 +27792,7 @@
       "loopable": false,
       "brief": "Trackball button three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-trackpad-press",
@@ -27793,7 +27803,7 @@
       "loopable": false,
       "brief": "Glass trackpad single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-trackpad-release",
@@ -27804,7 +27814,7 @@
       "loopable": false,
       "brief": "Glass trackpad release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-trackpad-double-click",
@@ -27815,7 +27825,7 @@
       "loopable": false,
       "brief": "Glass trackpad double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-trackpad-press-and-hold",
@@ -27826,7 +27836,7 @@
       "loopable": false,
       "brief": "Glass trackpad press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-trackpad-three-taps",
@@ -27837,7 +27847,7 @@
       "loopable": false,
       "brief": "Glass trackpad three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stylus-barrel-press",
@@ -27848,7 +27858,7 @@
       "loopable": false,
       "brief": "Stylus barrel button single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stylus-barrel-release",
@@ -27859,7 +27869,7 @@
       "loopable": false,
       "brief": "Stylus barrel button release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stylus-barrel-double-click",
@@ -27870,7 +27880,7 @@
       "loopable": false,
       "brief": "Stylus barrel button double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stylus-barrel-press-and-hold",
@@ -27881,7 +27891,7 @@
       "loopable": false,
       "brief": "Stylus barrel button press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stylus-barrel-three-taps",
@@ -27892,7 +27902,7 @@
       "loopable": false,
       "brief": "Stylus barrel button three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "presentation-remote-press",
@@ -27903,7 +27913,7 @@
       "loopable": false,
       "brief": "Presentation remote single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "presentation-remote-release",
@@ -27914,7 +27924,7 @@
       "loopable": false,
       "brief": "Presentation remote release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "presentation-remote-double-click",
@@ -27925,7 +27935,7 @@
       "loopable": false,
       "brief": "Presentation remote double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "presentation-remote-press-and-hold",
@@ -27936,7 +27946,7 @@
       "loopable": false,
       "brief": "Presentation remote press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "presentation-remote-three-taps",
@@ -27947,7 +27957,7 @@
       "loopable": false,
       "brief": "Presentation remote three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "editing-keypad-press",
@@ -27958,7 +27968,7 @@
       "loopable": false,
       "brief": "Editing keypad single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "editing-keypad-release",
@@ -27969,7 +27979,7 @@
       "loopable": false,
       "brief": "Editing keypad release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "editing-keypad-double-click",
@@ -27980,7 +27990,7 @@
       "loopable": false,
       "brief": "Editing keypad double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "editing-keypad-press-and-hold",
@@ -27991,7 +28001,7 @@
       "loopable": false,
       "brief": "Editing keypad press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "editing-keypad-three-taps",
@@ -28002,7 +28012,7 @@
       "loopable": false,
       "brief": "Editing keypad three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "camera-shutter-button-press",
@@ -28013,7 +28023,7 @@
       "loopable": false,
       "brief": "Camera shutter button single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "camera-shutter-button-release",
@@ -28024,7 +28034,7 @@
       "loopable": false,
       "brief": "Camera shutter button release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "camera-shutter-button-double-click",
@@ -28035,7 +28045,7 @@
       "loopable": false,
       "brief": "Camera shutter button double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "camera-shutter-button-press-and-hold",
@@ -28046,7 +28056,7 @@
       "loopable": false,
       "brief": "Camera shutter button press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "camera-shutter-button-three-taps",
@@ -28057,7 +28067,7 @@
       "loopable": false,
       "brief": "Camera shutter button three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-swipe-right",
@@ -28068,7 +28078,7 @@
       "loopable": false,
       "brief": "Silk rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-swipe-left",
@@ -28079,7 +28089,7 @@
       "loopable": false,
       "brief": "Silk leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-whip-cut",
@@ -28090,7 +28100,7 @@
       "loopable": false,
       "brief": "Silk whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-panel-reveal",
@@ -28101,7 +28111,7 @@
       "loopable": false,
       "brief": "Silk panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-pull-away",
@@ -28112,7 +28122,7 @@
       "loopable": false,
       "brief": "Silk pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-title-rise",
@@ -28123,7 +28133,7 @@
       "loopable": false,
       "brief": "Silk title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-match-cut",
@@ -28134,7 +28144,7 @@
       "loopable": false,
       "brief": "Silk match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "silk-page-wipe",
@@ -28145,7 +28155,7 @@
       "loopable": false,
       "brief": "Silk page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-swipe-right",
@@ -28156,7 +28166,7 @@
       "loopable": false,
       "brief": "Tracing paper rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-swipe-left",
@@ -28167,7 +28177,7 @@
       "loopable": false,
       "brief": "Tracing paper leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-whip-cut",
@@ -28178,7 +28188,7 @@
       "loopable": false,
       "brief": "Tracing paper whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-panel-reveal",
@@ -28189,7 +28199,7 @@
       "loopable": false,
       "brief": "Tracing paper panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-pull-away",
@@ -28200,7 +28210,7 @@
       "loopable": false,
       "brief": "Tracing paper pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-title-rise",
@@ -28211,7 +28221,7 @@
       "loopable": false,
       "brief": "Tracing paper title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-match-cut",
@@ -28222,7 +28232,7 @@
       "loopable": false,
       "brief": "Tracing paper match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "tracing-paper-page-wipe",
@@ -28233,7 +28243,7 @@
       "loopable": false,
       "brief": "Tracing paper page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-swipe-right",
@@ -28244,7 +28254,7 @@
       "loopable": false,
       "brief": "Velvet rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-swipe-left",
@@ -28255,7 +28265,7 @@
       "loopable": false,
       "brief": "Velvet leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-whip-cut",
@@ -28266,7 +28276,7 @@
       "loopable": false,
       "brief": "Velvet whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-panel-reveal",
@@ -28277,7 +28287,7 @@
       "loopable": false,
       "brief": "Velvet panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-pull-away",
@@ -28288,7 +28298,7 @@
       "loopable": false,
       "brief": "Velvet pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-title-rise",
@@ -28299,7 +28309,7 @@
       "loopable": false,
       "brief": "Velvet title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-match-cut",
@@ -28310,7 +28320,7 @@
       "loopable": false,
       "brief": "Velvet match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "velvet-page-wipe",
@@ -28321,7 +28331,7 @@
       "loopable": false,
       "brief": "Velvet page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-swipe-right",
@@ -28332,7 +28342,7 @@
       "loopable": false,
       "brief": "Celluloid rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-swipe-left",
@@ -28343,7 +28353,7 @@
       "loopable": false,
       "brief": "Celluloid leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-whip-cut",
@@ -28354,7 +28364,7 @@
       "loopable": false,
       "brief": "Celluloid whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-panel-reveal",
@@ -28365,7 +28375,7 @@
       "loopable": false,
       "brief": "Celluloid panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-pull-away",
@@ -28376,7 +28386,7 @@
       "loopable": false,
       "brief": "Celluloid pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-title-rise",
@@ -28387,7 +28397,7 @@
       "loopable": false,
       "brief": "Celluloid title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-match-cut",
@@ -28398,7 +28408,7 @@
       "loopable": false,
       "brief": "Celluloid match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "celluloid-page-wipe",
@@ -28409,7 +28419,7 @@
       "loopable": false,
       "brief": "Celluloid page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-swipe-right",
@@ -28420,7 +28430,7 @@
       "loopable": false,
       "brief": "Brushed metal rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-swipe-left",
@@ -28431,7 +28441,7 @@
       "loopable": false,
       "brief": "Brushed metal leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-whip-cut",
@@ -28442,7 +28452,7 @@
       "loopable": false,
       "brief": "Brushed metal whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-panel-reveal",
@@ -28453,7 +28463,7 @@
       "loopable": false,
       "brief": "Brushed metal panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-pull-away",
@@ -28464,7 +28474,7 @@
       "loopable": false,
       "brief": "Brushed metal pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-title-rise",
@@ -28475,7 +28485,7 @@
       "loopable": false,
       "brief": "Brushed metal title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-match-cut",
@@ -28486,7 +28496,7 @@
       "loopable": false,
       "brief": "Brushed metal match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "brushed-metal-page-wipe",
@@ -28497,7 +28507,7 @@
       "loopable": false,
       "brief": "Brushed metal page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-swipe-right",
@@ -28508,7 +28518,7 @@
       "loopable": false,
       "brief": "Glass edge rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-swipe-left",
@@ -28519,7 +28529,7 @@
       "loopable": false,
       "brief": "Glass edge leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-whip-cut",
@@ -28530,7 +28540,7 @@
       "loopable": false,
       "brief": "Glass edge whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-panel-reveal",
@@ -28541,7 +28551,7 @@
       "loopable": false,
       "brief": "Glass edge panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-pull-away",
@@ -28552,7 +28562,7 @@
       "loopable": false,
       "brief": "Glass edge pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-title-rise",
@@ -28563,7 +28573,7 @@
       "loopable": false,
       "brief": "Glass edge title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-match-cut",
@@ -28574,7 +28584,7 @@
       "loopable": false,
       "brief": "Glass edge match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "glass-edge-page-wipe",
@@ -28585,7 +28595,7 @@
       "loopable": false,
       "brief": "Glass edge page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-swipe-right",
@@ -28596,7 +28606,7 @@
       "loopable": false,
       "brief": "Soft air rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-swipe-left",
@@ -28607,7 +28617,7 @@
       "loopable": false,
       "brief": "Soft air leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-whip-cut",
@@ -28618,7 +28628,7 @@
       "loopable": false,
       "brief": "Soft air whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-panel-reveal",
@@ -28629,7 +28639,7 @@
       "loopable": false,
       "brief": "Soft air panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-pull-away",
@@ -28640,7 +28650,7 @@
       "loopable": false,
       "brief": "Soft air pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-title-rise",
@@ -28651,7 +28661,7 @@
       "loopable": false,
       "brief": "Soft air title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-match-cut",
@@ -28662,7 +28672,7 @@
       "loopable": false,
       "brief": "Soft air match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "soft-air-page-wipe",
@@ -28673,7 +28683,7 @@
       "loopable": false,
       "brief": "Soft air page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-swipe-right",
@@ -28684,7 +28694,7 @@
       "loopable": false,
       "brief": "Linen rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-swipe-left",
@@ -28695,7 +28705,7 @@
       "loopable": false,
       "brief": "Linen leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-whip-cut",
@@ -28706,7 +28716,7 @@
       "loopable": false,
       "brief": "Linen whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-panel-reveal",
@@ -28717,7 +28727,7 @@
       "loopable": false,
       "brief": "Linen panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-pull-away",
@@ -28728,7 +28738,7 @@
       "loopable": false,
       "brief": "Linen pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-title-rise",
@@ -28739,7 +28749,7 @@
       "loopable": false,
       "brief": "Linen title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-match-cut",
@@ -28750,7 +28760,7 @@
       "loopable": false,
       "brief": "Linen match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "linen-page-wipe",
@@ -28761,7 +28771,7 @@
       "loopable": false,
       "brief": "Linen page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-swipe-right",
@@ -28772,7 +28782,7 @@
       "loopable": false,
       "brief": "Low pass rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-swipe-left",
@@ -28783,7 +28793,7 @@
       "loopable": false,
       "brief": "Low pass leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-whip-cut",
@@ -28794,7 +28804,7 @@
       "loopable": false,
       "brief": "Low pass whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-panel-reveal",
@@ -28805,7 +28815,7 @@
       "loopable": false,
       "brief": "Low pass panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-pull-away",
@@ -28816,7 +28826,7 @@
       "loopable": false,
       "brief": "Low pass pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-title-rise",
@@ -28827,7 +28837,7 @@
       "loopable": false,
       "brief": "Low pass title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-match-cut",
@@ -28838,7 +28848,7 @@
       "loopable": false,
       "brief": "Low pass match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "low-pass-page-wipe",
@@ -28849,7 +28859,7 @@
       "loopable": false,
       "brief": "Low pass page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-swipe-right",
@@ -28860,7 +28870,7 @@
       "loopable": false,
       "brief": "Fine grain rightward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-swipe-left",
@@ -28871,7 +28881,7 @@
       "loopable": false,
       "brief": "Fine grain leftward swipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-whip-cut",
@@ -28882,7 +28892,7 @@
       "loopable": false,
       "brief": "Fine grain whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-panel-reveal",
@@ -28893,7 +28903,7 @@
       "loopable": false,
       "brief": "Fine grain panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-pull-away",
@@ -28904,7 +28914,7 @@
       "loopable": false,
       "brief": "Fine grain pull away",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-title-rise",
@@ -28915,7 +28925,7 @@
       "loopable": false,
       "brief": "Fine grain title rise",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-match-cut",
@@ -28926,7 +28936,7 @@
       "loopable": false,
       "brief": "Fine grain match cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fine-grain-page-wipe",
@@ -28937,7 +28947,7 @@
       "loopable": false,
       "brief": "Fine grain page wipe",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "indoor-hardwood-shoe-step",
@@ -28948,7 +28958,7 @@
       "loopable": false,
       "brief": "Dry indoor hardwood shoe contact",
       "acceptance": "One isolated action, suitable for close indoor use.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "indoor-floorboard-brief-flex",

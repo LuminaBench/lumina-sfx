@@ -1,6 +1,9 @@
 // Offline retrieval over the catalog. Keep exact search available for asset IDs and scripts.
 const stopWords = new Set('a an the of to for from with that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more'.split(' '));
 const vocabulary = {
+  thocky: 'thock', thocking: 'thock', leftward: 'left', rightward: 'right',
+  keystrokes: 'key', keycap: 'key', keycaps: 'key', keydown: 'press', keyup: 'release', enter: 'return',
+  crackling: 'crackle', crackles: 'crackle', thunderstorm: 'storm', presses: 'press', pressing: 'press',
   footsteps: 'footstep', steps: 'step', wooden: 'wood', hardwood: 'wood', floors: 'floor',
   ordinary: 'normal', standard: 'normal', regular: 'normal',
   keyboards: 'keyboard', keystroke: 'key', keypress: 'key', swipes: 'swipe', swiping: 'swipe', swoosh: 'whoosh', swooshes: 'whoosh', whooshes: 'whoosh',
@@ -21,7 +24,7 @@ function words(value) {
   return (value.toLowerCase().match(/[a-z0-9]+/g) ?? []).map(word => vocabulary[word] ?? word);
 }
 
-export function rankByIntent(sounds, query, exclude = '') {
+export function rankByIntent(sounds, query, exclude = '', explain = false) {
   const queryWords = words(query.replace(/\bon (?:a|an|the)\b/gi, ' '));
   const isMood = term => term === 'calm' || term === 'dramatic';
   const negators = new Set(['not', 'never', 'without', 'no']);
@@ -70,7 +73,9 @@ export function rankByIntent(sounds, query, exclude = '') {
       if (relevance) hits++;
     });
     const affinity = palette.filter(term => tags.has(term) || title.has(term)).length;
-    if (hits) scored.push({ sound, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
+    if (!hits) continue;
+    const result = explain ? { ...sound, missing: terms.filter(t => !title.has(t) && !tags.has(t) && !context.has(t)) } : sound;
+    scored.push({ sound: result, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
   }
   return scored.sort((a, b) => Number(b.exact) - Number(a.exact) || b.score - a.score ||
     a.sound.id.localeCompare(b.sound.id)).map(item => mood ? { ...item.sound, suggestedMood: mood } : item.sound);

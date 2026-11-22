@@ -39,7 +39,7 @@ function materialSound(ctx: RenderContext, material: Material, center: number, a
   });
 }
 
-export function scene(ctx: RenderContext, seed: number, force: number, events: readonly SceneEvent[]): Float32Array {
+export function scene(ctx: RenderContext, seed: number, force: number, events: readonly SceneEvent[], contactSource?: RecordedClip): Float32Array {
   const out = new Float32Array(ctx.frames);
   for (const event of events) {
     if (event[0] === 'clip') {
@@ -67,7 +67,18 @@ export function scene(ctx: RenderContext, seed: number, force: number, events: r
     } else if (event[0] === 'contact' || event[0] === 'brush') {
       const [type, material, time, duration, gain, center, attack] = event;
       const hz = center * (0.94 + ctx.random() * 0.08) * (0.93 + force * 0.14);
-      layer(ctx, out, time, duration, part => materialSound(part, material, hz, attack, type === 'brush'), gain);
+      layer(ctx, out, time, duration, part => {
+          if (!contactSource) return materialSound(part, material, hz, attack, type === 'brush');
+          const rub = type === 'brush';
+          const drive = renderRecording(part, contactSource, { seed, speed: rub ? .81 : 1.03 });
+          const caseMode = biquad('bandpass', hz, rub ? .65 : 1.25, part.sampleRate);
+          const edge = biquad('bandpass', hz * materials[material][1], .78, part.sampleRate);
+          return drive.map((sample, i) => {
+            const t = i / part.sampleRate;
+            const envelope = (1 - Math.exp(-t / Math.max(.0004, attack))) * Math.exp(-t / (duration * .42));
+            return envelope * (1.1 * caseMode(sample) + .24 * edge(sample));
+          });
+        }, gain);
     } else if (event[0] === 'tone' || event[0] === 'motor') {
       const [type, time, duration, gain, from, to, attack, color] = event;
       layer(ctx, out, time, duration, part => {

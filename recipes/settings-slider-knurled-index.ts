@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
-import attack from './_recordings/isolated-milestone-ratchet.ts';
+import attack from './_recordings/isolated-response-microclick.ts';
 
 export default {
   id: 'settings-slider-knurled-index',
@@ -19,9 +19,9 @@ export default {
   ...sceneCredits(attack),
   render(ctx, { seed, params }) {
     return scene(ctx, seed, params.pressure, [
-      ['clip', attack, 0, 0.034, 0.48, 0, 5600, 0.0003, 0.004],
+      ['clip', attack, 0, 0.034, 0.62, 0, 4200, 0.0003, 0.004],
       ["contact", "iron", 0.001, 0.031, 0.43, 1430, 0.0005],
       ["contact", "rubber", 0.005, 0.036, 0.46, 600, 0.0006],
-    ]);
+    ], attack);
   },
 } satisfies SoundRecipe;

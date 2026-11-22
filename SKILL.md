@@ -9,6 +9,8 @@ Run the studio commands from this skill's directory using Node.js 22.12+. Pass t
 
 ## 1. Search for the closest performance
 
+Choose the audible event before choosing layers. For a concrete brief, use `node scripts/choose.mjs "settings tab" --isolated`. Give it one short phrase per requested sound. Keep controller bindings, narrative motivation and delivery instructions separate from the audible description. A `single-cue` result is ready to audition. A `review` result shows words the catalog could not substantiate. Inspect those or invent the missing performance. For a fixed environment use `--scene`; a saved arrangement qualifies only when its source layers cover the requested cues without extras. For live actions, keep their triggers independent.
+
 Start with the game event, surface, perspective and foreground/background role. For everyday requests use `--intent "clicky switch settings tabs" --limit 3` to rank partial matches and synonyms. Optionally add `--exclude "arcade jingle"` to filter matching metadata words. Add `--designs` to find multi-layer JSON arrangements and pass the returned file to remix with `--spec`. Plain positional search requires all supplied words. Broaden the query if the first one returns nothing. Each catalog entry supplies an ID, duration, loop flag, tags, controls, and recording credits when relevant. Search also matches credited recording titles. For annotated cues, inspect `contains`, `perspective`, and `markers` to choose a specific moment in the performance.
 
 ```sh

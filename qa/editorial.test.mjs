@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
-import { renderChannels } from '../engine/render.ts';
+import { DEFAULT_SEED, renderChannels, renderSound } from '../engine/render.ts';
+import { spectrum } from './metrics.mjs';
 import { loadRecipes } from '../scripts/recipes.mjs';
 
 const ids = ['silk-swipe-left', 'silk-swipe-right', 'laptop-scissor-keyboard-key-down',
-  'laptop-scissor-keyboard-typed-word'];
+  'laptop-scissor-keyboard-typed-word','settings-slider-knurled-index','inventory-magnet-seat',
+  'gasket-mount-keyboard-key-down','glass-edge-pull-away'];
 const bank = new Map((await loadRecipes(new Set(ids))).map(r => [r.id, r]));
 const energy = pcm => pcm.reduce((sum, x) => sum + x*x, 0) / pcm.length;
 
@@ -35,3 +37,23 @@ for (const seed of [7, 818, 104729]) {
   assert.equal(contactCount('laptop-scissor-keyboard-typed-word', seed), 4);
 }
 console.log('Verified stereo travel, mirrored swipes, and single-key versus typed-word timing.');
+
+function audibleSpanMs(pcm) {
+  const total = pcm.reduce((sum,x) => sum+x*x, 0);
+  let sum = 0, start = 0;
+  for (let i=0; i<pcm.length; i++) {
+    sum += pcm[i] ** 2;
+    if (sum < total * .05) start = i;
+    if (sum >= total * .95) return (i-start)/44.1;
+  }
+  throw Error('Silent cue');
+}
+for (let take=0; take<4; take++) {
+  const opts = {seed:DEFAULT_SEED+8191*take};
+  const render = id => renderSound(bank.get(id), opts);
+  const peakMs = pcm => pcm.reduce((peak,v,i) => Math.abs(v)>Math.abs(pcm[peak]) ? i : peak,0)/44.1;
+  assert.ok(peakMs(render('settings-slider-knurled-index')) < 6, 'Slider must respond on contact');
+  assert.ok(Math.abs(peakMs(render('inventory-magnet-seat')) - 61) < 6, 'Snap must land at its seat marker');
+  assert.ok(audibleSpanMs(render('gasket-mount-keyboard-key-down')) > 16, 'Retain the damped case decay');
+  assert.ok(spectrum(render('glass-edge-pull-away'),44100).high < .68, 'Avoid sustained glass hiss');
+}

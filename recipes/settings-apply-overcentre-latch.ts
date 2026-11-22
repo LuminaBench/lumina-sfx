@@ -24,6 +24,6 @@ export default {
       ["brush", "rubber", 0.024, 0.047, 0.31, 640, 0.002],
       ["contact", "iron", 0.071, 0.046, 0.45, 1190, 0.0005],
       ["contact", "rubber", 0.077, 0.112, 0.75, 360, 0.0008],
-    ]);
+    ], attack);
   },
 } satisfies SoundRecipe;

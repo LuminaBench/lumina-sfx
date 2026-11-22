@@ -60,6 +60,8 @@ Build a cockpit dogfight, a drive on wet asphalt, or a dive beneath a boat. Sear
 Run these from the installed skill directory or a clone of this repository. Replace the example game paths with your own.
 
 ```sh
+node scripts/choose.mjs "thocky mechanical keyboard click" --isolated
+node scripts/choose.mjs "fire crackle" "distant thunder" --scene
 node scripts/search.mjs rain --loop
 node scripts/search.mjs moored hull --background-checked
 node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --space small_room --wetness 0.25 --format wav --dest /path/to/game/audio

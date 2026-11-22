@@ -1,4 +1,4 @@
-import { biquad, layer, TAU } from '../../engine/dsp.ts';
+import { biquad, layer } from '../../engine/dsp.ts';
 import { renderRecording, type RecordedClip } from '../../engine/recording.ts';
 import type { SoundRecipe } from '../../engine/types.ts';
 
@@ -34,20 +34,39 @@ export function editorContact(id: string, name: string, tags: string[], duration
         const decay = mechanism.decayMs * 0.001 * (release ? 0.6 : 1);
         const at = hit.at === 0 ? 0 : hit.at + (ctx.random() - 0.5) * Math.min(.009, hit.at * .09);
         layer(ctx, out, at, Math.max(.045, decay * 6), part => {
-          const sample = renderRecording(part, source, { seed: seed + index, speed: pitch,
-            cutoffHz: mechanism.cutoffHz * (.76 + .45 * params.pressure) });
-          const shell = biquad('lowpass', mechanism.cutoffHz, .68, part.sampleRate);
+          // Keyboard banks keep strikes in the first half and lighter returns in the second.
+          const isKey = tags.includes('keyboard');
+          const takeCount = isKey ? source.takes.length / 2 : source.takes.length;
+          const take = (seed + index) % takeCount + (isKey && release ? takeCount : 0);
+          const sample = renderRecording(part, source, { seed: take, speed: pitch,
+            cutoffHz: mechanism.cutoffHz * (.83 + .31 * params.pressure) });
           const hz = mechanism.bodyHz * pitch;
-          const plate = mechanism.plateHz ? biquad('bandpass', mechanism.plateHz, 1.2, part.sampleRate) : undefined;
+          const caseBody = biquad('bandpass', hz, .75 + decay * 65, part.sampleRate);
+          const keycap = biquad('bandpass', hz * 2.43, 1.1, part.sampleRate);
+          const spring = biquad('bandpass', hz * 4.61, 2.4, part.sampleRate);
+          const plate = mechanism.plateHz ? biquad('highpass', mechanism.plateHz * .64, .7, part.sampleRate) : undefined;
           for (let i = 0; i < sample.length; i++) {
-            const t = i / part.sampleRate;
-            const body = Math.sin(TAU * hz * t) * Math.exp(-t / decay);
-            const cap = .37 * Math.sin(TAU * hz * 2.63 * t) * Math.exp(-t / (decay * .46));
-            const wire = Math.sin(TAU * hz * 4.71 * t) * Math.exp(-t / (decay * .71));
-            const attack = 1 - Math.exp(-t * 4900);
-            const plateAttack = plate ? plate(part.random()*2-1) * .85 * Math.exp(-t/.007) : 0;
-            sample[i] = shell(plateAttack + sample[i] * mechanism.snap * (.6 + params.pressure) +
-              attack * (.31 * body + cap * .19 + wire * mechanism.rattle));
+            const dry = sample[i];
+            const clack = plate ? plate(dry) * (release ? .30 : .90) : 0;
+            sample[i] = dry * (.60 + .33 * mechanism.snap) + caseBody(dry) * (release ? .47 : 1.25)
+              + .32 * keycap(dry) + 2 * mechanism.rattle * spring(dry) + clack;
+            sample[i] = .65 * Math.tanh(sample[i] / .65);
+          }
+          if (isKey && !release) {
+            // Early, damped reflections through the case follow the recorded strike and fuse with it.
+            const warmth = biquad('lowpass', Math.min(2600, hz * 3.6), .68, part.sampleRate);
+            const body = sample.map(warmth);
+            let dryEnergy = 0, bodyEnergy = 0;
+            for (let i = 0; i < sample.length; i++) {
+              dryEnergy += sample[i] ** 2;
+              bodyEnergy += body[i] ** 2;
+            }
+            const coupling = Math.min(3.2, Math.sqrt(dryEnergy / Math.max(1e-12, bodyEnergy)));
+            const depth = coupling * Math.min(plate ? .72 : 1.1, decay * 54);
+            for (const [fraction, level] of [[.19,.59],[.43,-.48],[.72,.41],[1.03,.35],[1.37,-.26],[1.76,.20]]) {
+              const delay = Math.max(1, Math.round(decay * fraction * part.sampleRate));
+              for (let i=delay; i<sample.length; i++) sample[i] += depth * level * body[i-delay];
+            }
           }
           return sample;
         }, hit.weight * (.9 + .1 * ctx.random()));

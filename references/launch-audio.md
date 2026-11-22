@@ -29,3 +29,15 @@ For a fire in a thunderstorm, start with close crackle and one distant roll. The
 When a loop tagged wind or breeze is explicitly assigned the bed role after a foreground marked `focus`, the mixer defaults to 16 dB below that first focus. An explicit gain or `under` overrides that default. Wind can still be the foreground when the scene calls for it.
 
 `under` caps the stem's measured active level relative to an earlier named layer (or its one-based index). The renderer measures the selected take after gain, filters, fades and envelopes. It applies one downward trim across the whole stem, preserving its dynamics and stereo image. Already quiet stems keep their authored gain. This is a relationship across the cue; use an envelope for a specific gust timed to a picture cut. If the additional bed obscures either subject even at low gain, leave it out.
+
+## Pick and audition at the speed of the edit
+
+```sh
+node scripts/choose.mjs "thocky mechanical keyboard click" --isolated
+node scripts/choose.mjs "silk swipe left" "settings tab" --isolated
+node scripts/choose.mjs "fire crackle" "distant thunder" --scene
+```
+
+Each quoted phrase describes one audible requirement. In a fixed scene, the selector first looks for a single performance whose `contains` metadata covers every requested component. For example `"heel" "sole" --scene --isolated` selects one indoor step. Put material and direction in the same phrase as the gesture. A keyboard playing under narration still needs a keyboard cue; use gain and filtering to place it under the voice. The selector checks wording against catalog metadata. Its result is a shortlist decision, and an unmatched word is a reason to inspect the candidate.
+
+For a single tab change, compare the chosen cue solo and at the fastest repeat rate players can trigger. Keep one contact per state change. For a shot with both camera movement and a control seating, audition the contact alone first, then compare the version with the swipe at matched foreground level. Keep the second layer if it makes the movement or seating clearer. Align the swipe apex and contact marker to picture. Saved scenes have authored timing; independent game events still need independent triggers.

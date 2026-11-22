@@ -22,6 +22,6 @@ export default {
       ['clip', attack, 0, 0.034, 0.71, 0, 7100, 0.0003, 0.004],
       ["contact", "rubber", 0.002, 0.049, 0.42, 490, 0.0007],
       ["contact", "iron", 0.033, 0.083, 0.57, 1290, 0.0005],
-    ]);
+    ], attack);
   },
 } satisfies SoundRecipe;

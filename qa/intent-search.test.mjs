@@ -27,3 +27,13 @@ for (const template of templates) {
   assert.equal(renderDurationSec(recipe), template.durationSec);
 }
 console.log('Verified intent ranking, filtering, legacy IDs and all editable templates.');
+
+const choose = (...args) => JSON.parse(execFileSync(process.execPath, ['scripts/choose.mjs', ...args], { cwd: root }));
+assert.equal(choose('thocky mechanical keyboard click', '--isolated').cues[0].id, 'gasket-mount-keyboard-key-down');
+assert.equal(choose('settings tab', '--scene').decision, 'single-cue');
+assert.equal(choose('silk swipe left','settings tab','--isolated').decision, 'individual-cues');
+assert.equal(choose('fire crackle','distant thunder','--scene').scene.id, 'fireside-distant-thunder');
+assert.equal(choose('fire crackle','distant thunder','--isolated','--scene').scene, undefined);
+assert.equal(choose('ceramic jellyfish teleporter').decision, 'review');
+assert.deepEqual(choose('heel', 'sole', '--scene', '--isolated').cues.map(c => c.id), ['indoor-hardwood-shoe-step']);
+assert.equal(choose('heel', 'heel', '--scene', '--isolated').cues.length, 2);

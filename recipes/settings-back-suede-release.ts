@@ -23,6 +23,6 @@ export default {
       ["brush", "cloth", 0, 0.108, 0.47, 1080, 0.003],
       ["contact", "wood", 0.05, 0.085, 0.38, 410, 0.0008],
       ["brush", "cloth", 0.069, 0.082, 0.21, 480, 0.004],
-    ]);
+    ], attack);
   },
 } satisfies SoundRecipe;

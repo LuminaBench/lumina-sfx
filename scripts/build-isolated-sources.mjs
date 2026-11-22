@@ -25,10 +25,36 @@ function transient(take, sampleRate) {
 }
 const inputs = JSON.parse(await readFile(new URL('../sources/isolated-inputs.json', import.meta.url), 'utf8'));
 const check = process.argv.includes('--check');
-for (const name of [...inputs.stationaryTexture, ...inputs.transient]) {
-  const { default: clip } = await import(new URL(name + '.ts', folder));
+function windowTake(clip, [take, start, seconds], matchStrike) {
+  const pcm = Buffer.from(clip.takes[take], 'base64');
+  const offset = Math.round(start * clip.sampleRate);
+  const frames = Math.round(seconds * clip.sampleRate);
+  if (offset < 0 || frames < 2 || 2*(offset+frames) > pcm.length) throw Error('Window outside recording');
+  let lead = 0, gain = 1;
+  if (matchStrike) {
+    let peak = 0;
+    for (let i=0; i<frames; i++) peak = Math.max(peak, Math.abs(pcm.readInt16LE(2*(offset+i))));
+    while (lead < frames-1 && Math.abs(pcm.readInt16LE(2*(offset+lead))) < .12*peak) lead++;
+    lead = Math.max(0, lead - Math.round(.00035*clip.sampleRate));
+    const active = Math.min(frames - lead, Math.round(.025*clip.sampleRate));
+    let energy = 0;
+    for (let i=0; i<active; i++) energy += (pcm.readInt16LE(2*(offset+lead+i))/32768)**2;
+    gain = Math.min(5, .11/Math.max(.003, Math.sqrt(energy/active)));
+  }
+  const out = Buffer.alloc(frames * 2);
+  for (let i = 0; i < frames-lead; i++) {
+    const edge = Math.min(1, i / (.0004 * clip.sampleRate), (frames-lead-1-i) / (.006 * clip.sampleRate));
+    const value = pcm.readInt16LE(2*(i+offset+lead))/32768;
+    const shaped = matchStrike ? .82*Math.tanh(gain*value/.82) : value;
+    out.writeInt16LE(Math.round(32768*shaped*edge), 2*i);
+  }
+  return out.toString('base64');
+}
+for (const name of [...inputs.stationaryTexture, ...inputs.transient, ...Object.keys(inputs.windows)]) {
+  const window = inputs.windows[name];
+  const { default: clip } = await import(new URL((window?.source ?? name) + '.ts', folder));
   const transform = inputs.stationaryTexture.includes(name) ? stationaryTexture : transient;
-  const takes = clip.takes.map((t) => transform(t, clip.sampleRate));
+  const takes = window ? window.cuts.map(cut => windowTake(clip, cut, window.matchStrike)) : clip.takes.map((t) => transform(t, clip.sampleRate));
   const text =
     "// Derived offline by scripts/build-isolated-sources.mjs\nimport type { RecordedClip } from '../../engine/recording.ts';\nexport default " +
     JSON.stringify({ credit: clip.credit, sampleRate: clip.sampleRate, takes }, null, 2) +
