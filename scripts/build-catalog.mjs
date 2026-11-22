@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { createHash } from 'node:crypto';
+import { renderChannels, DEFAULT_SEED } from '../engine/render.ts';
+import { encodeWav } from '../engine/wav.ts';
 import { readFile, writeFile } from 'node:fs/promises';
 import { loadRecipes } from './recipes.mjs';
 import { checkIsolatedRecipes } from './install-files.mjs';
@@ -9,10 +12,28 @@ const recipes = await loadRecipes();
 if (!recipes.length) throw new Error('No recipes found');
 const { tickets } = JSON.parse(await readFile(new URL('../tasks/queue.json', import.meta.url), 'utf8'));
 const collections = new Map(tickets.map(({ id, collection }) => [id, collection]));
+const review = JSON.parse(await readFile(new URL('../qa/background-review.json', import.meta.url), 'utf8'));
+const reviewed = new Map([...review.sounds, ...review.relatedRepairs].map(entry => [entry.id, entry]));
+// A new seed response or a changed recording invalidates the badge even if the default master matches.
+function matchesReviewedAudio(recipe, fingerprint) {
+  if (!fingerprint) return undefined;
+  const hash = createHash('sha256');
+  for (const setting of ['default', 'min', 'max']) {
+    const params = Object.fromEntries(Object.entries(recipe.params).map(([key, spec]) => [key, spec[setting]]));
+    for (let index = 0; index < 4; index++) {
+      const seed = DEFAULT_SEED + index * 8191;
+      hash.update(Buffer.from(encodeWav(renderChannels(recipe, { seed, params }))));
+    }
+  }
+  return hash.digest('hex') === fingerprint || undefined;
+}
 const sounds = recipes.map(recipe => {
   const { id, name, category, tags, loopable, macros, params, targetRmsDbfs, mixRole, recording, additionalRecordings, spectrum, renderStereo } = recipe;
+  const entry = reviewed.get(id);
+  const current = matchesReviewedAudio(recipe, entry?.variantsSha256);
   return {
-    id, name, category, isolation: recipe.isolation, markers: recipe.markers, contains: recipe.contains, perspective: recipe.perspective, collection: collections.get(id), tags, loopable, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
+    id, name, category, isolation: recipe.isolation, backgroundChecked: current && !entry.auditionNote || undefined,
+    auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, contains: recipe.contains, perspective: recipe.perspective, collection: collections.get(id), tags, loopable, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
     additionalRecordings, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
   };
 });

@@ -1,0 +1,981 @@
+{
+  "method": "Four release seeds at default, minimum and maximum native parameters. Windowed YAMNet speech and keyboard screening, source tracing and targeted Whisper checks. Gemini 4 Neon reviewed spectrograms and the flagged cohort measurements. Screening has limited sensitivity to quiet backgrounds.",
+  "fingerprint": "SHA-256 of 12 concatenated original-profile PCM WAV files in default, min, max order, with four release seeds per setting.",
+  "scope": {
+    "flaggedRecipes": 150,
+    "rendersPerRecipe": 12,
+    "contributingRecordingModules": 71,
+    "contributingTakes": 148
+  },
+  "cuts": [
+    {
+      "source": "motion-outboard-aeration",
+      "startSec": 2.26,
+      "endSec": 6.8,
+      "reason": "Speech-like passage in the outboard wake. Rebuilt the tail from the same take."
+    },
+    {
+      "source": "motion-sailboat-cabin",
+      "startSec": 0,
+      "endSec": 6.9,
+      "reason": "Key-like tap sequences persisted in the hull mixes after local splicing. Rebuilt the entire cabin bed from the median spectrum and slow swell envelope of its recording."
+    }
+  ],
+  "sounds": [
+    {
+      "id": "anchor-links-jump-over-bow-roller",
+      "decision": "preserved",
+      "masterSha256": "81486d25ae29db303a5e47ea0a38a3cd27f745f6c1c5edae7e7a8625bbab7b00",
+      "variantsSha256": "4f3e17745bc3d747e8f80bd69012c63272b89ea9ffb14f0c607031151e49805f"
+    },
+    {
+      "id": "arcade-round-zip-into-soft-riverbank",
+      "decision": "preserved",
+      "masterSha256": "e89930419d22f81c686c60a60227d8d6da151068d975a0d4c3d1c40c64493d93",
+      "variantsSha256": "d44eced06ba7e797aeec3d4e3c4293dc99bd8e65bf612b890c11e9197bf5c198"
+    },
+    {
+      "id": "bare-foot-over-wet-clay-tile",
+      "decision": "preserved",
+      "masterSha256": "bba8afce9828afdb9b500151fa6896f75fb3e4d4bb3757cd35b4884c72e6067f",
+      "variantsSha256": "9dfc05634b415ac242490f21e227fde3ac78bf68779a9633b4da013f2c7711d1"
+    },
+    {
+      "id": "bilge-water-sloshing-beneath-floorboards-constant-movement-loop",
+      "decision": "repaired",
+      "masterSha256": "b2bfdfaf3357af55b6326ec24fa1453132656d4c1611a9ee633d96ea67db8857",
+      "variantsSha256": "061d8aabd7b103d4a6b23a70ec48cf82bdac60a9c158c42f0931cd7f5b97ab28"
+    },
+    {
+      "id": "bilge-water-sloshing-beneath-floorboards-gentle-laps-loop",
+      "decision": "repaired",
+      "masterSha256": "c1f0b851b5cf8e4d534eaf4dc808e98a886142b3be70c6cea3177d92ce17cd21",
+      "variantsSha256": "06d03ca2b63c8c2184a9bbd2a62dbaa8df563352f90a97e3e1b5f8fc17d3e489"
+    },
+    {
+      "id": "bilge-water-sloshing-beneath-floorboards-water-receding",
+      "decision": "repaired",
+      "masterSha256": "9f465937e9784bdfcd5e475b58ea7d56b2c23c31c40ed8b3a46b52b1a0de2ff9",
+      "variantsSha256": "4cde379048c565fa71adf7b75ffa275733b12da29b0b07a8a43d6e7f1f9cd13d"
+    },
+    {
+      "id": "bilge-water-sloshing-beneath-floorboards-water-surging-in",
+      "decision": "repaired",
+      "masterSha256": "4398a6d9553ee16803cc680f3e477e041713b6be5b7a074994b1f12d1e036b2e",
+      "variantsSha256": "974bba17e955ca8dc3f2af8c214580a75886dcb01232e84bdb5ffef4c229f7a0"
+    },
+    {
+      "id": "bow-spray-crosses-cabin-windscreen",
+      "decision": "preserved",
+      "masterSha256": "ff21c6e4d43242ebf005ec31793d88098befe1d1745f3346c1dd181928151e16",
+      "variantsSha256": "adffe86564c5be360ebecc5ccdce0cd671122e43790db4337246ec1746f4aa36"
+    },
+    {
+      "id": "breakers-beneath-a-timber-jetty-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "ddf45d920c96242b599aa63cba28bf633003fe6d393b23029ffab8d7a31d5403",
+      "variantsSha256": "009e4f35bfb01ca3386314143ddb58d82c8e85c97953f760f2f9b5084f421645"
+    },
+    {
+      "id": "breakers-beneath-a-timber-jetty-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "cf2196bdecf4d41edbd51d4365959990575523cddd77ffc77d0beeb35327fa6b",
+      "variantsSha256": "62e7b6a7580137c9ed7fb85270b5a5504a96c56d6899bfe58dac134c31da2473"
+    },
+    {
+      "id": "breakers-beneath-a-timber-jetty-water-receding",
+      "decision": "preserved",
+      "masterSha256": "d0c512442399385d5636c3f88ae8b77e6af195c7fad71c3a58d3dd34553cc4df",
+      "variantsSha256": "8db7045062c86d547977338f4e6a78ce8d6ecf36283d2fb4a6c06e03d2bbea55"
+    },
+    {
+      "id": "breakers-beneath-a-timber-jetty-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "e31400342023e1def2c53a31c0e7d19e7e53c49d761d92892b1322d60327f632",
+      "variantsSha256": "3ab984d4f6bba3e12a74ca29aa0da9649101228e97d6b6fb94e40f0e2d81c7e2"
+    },
+    {
+      "id": "bubbles-rising-beside-a-submerged-wall-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "d09c46cd903bd34350115e9745723e940bbdb5640fdbb3c9c3880bea72a5a12a",
+      "variantsSha256": "fd4d042cdfd629f96af4c188d5aec7ccaddaae008aea835542057029d833911d"
+    },
+    {
+      "id": "bubbles-rising-beside-a-submerged-wall-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "cb7ad1880db8a3c16f2ea2254b9fd2a8b3f1d924b940d4b43b571eb11f3d5095",
+      "variantsSha256": "187c2684382bfe09107c967246f53fc73cc5fcb2f17cf13456f742d5e001236a"
+    },
+    {
+      "id": "bubbles-rising-beside-a-submerged-wall-water-receding",
+      "decision": "preserved",
+      "masterSha256": "bcd9bb3a95322a79ad60021e1b0b580fea191deb25d3d427f62d11ffc8e352b0",
+      "variantsSha256": "1bf20affe4ecb554c55d50ae19380b5983183378338c9d53638d4cc96581bdcb"
+    },
+    {
+      "id": "bubbles-rising-beside-a-submerged-wall-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "100809f5686bf103f68d9892fc6a8bd77e26dd8181a2a844aa2811750679ef3e",
+      "variantsSha256": "a361959ac8f61d2769a4e5eeb6d5146a7d35671c4e1676444063c4842af9ac05"
+    },
+    {
+      "id": "canvas-kayak-in-a-cove-arrival-splash",
+      "decision": "preserved",
+      "masterSha256": "c2cc5505e4da5213d346d7305e36b8dc8fac2c2572d56bc1c601345bd23a9159",
+      "variantsSha256": "b03f249a7daa904be86164529565fab4c85e1444fb2db64db28fa3a530b9c702"
+    },
+    {
+      "id": "canvas-kayak-in-a-cove-paddle-stroke",
+      "decision": "preserved",
+      "masterSha256": "0ad20962d37f71f4bb8e826c5127a60c0a482ce9d0ee5ef65535514790300b9b",
+      "variantsSha256": "ed5cf11782325b81415e0444c10b41b0073140732953857858c2ea9515139dc3"
+    },
+    {
+      "id": "canvas-kayak-in-a-cove-soft-boarding-contact",
+      "decision": "preserved",
+      "masterSha256": "8040290609d0975e4300332ec4e4a67004b434e8cd3017516d8fd871e43a4583",
+      "variantsSha256": "cd7bbe3870f86703a98b75258c7949c1aab1be377a16733c2c645e084ab574ea"
+    },
+    {
+      "id": "collapsed-ice-shelf-blast-followed-by-falling-debris",
+      "decision": "preserved",
+      "masterSha256": "9954f65cb974f77bac8595215d93fa0e0cfad031627c0720bb330c29dbea35a8",
+      "variantsSha256": "d620771aec3e5416ecc6af5c8305518c44a382329dca2f3f598360b3665749ab"
+    },
+    {
+      "id": "collapsed-ice-shelf-muffled-blast-through-cover",
+      "decision": "preserved",
+      "masterSha256": "f6282c9eb52cc85b947425b0246ed74b69f1c30e4745e795010a562e44fc8733",
+      "variantsSha256": "e85a0643371bb4be020647541e4588fa23c825dc684f161511401d049f15ed69"
+    },
+    {
+      "id": "collapsed-ice-shelf-single-concussive-blast",
+      "decision": "preserved",
+      "masterSha256": "6babad27f08f317e4b9a78b6c41f78dafa7354b52de85dd150c6919ec7df9358",
+      "variantsSha256": "608002dc14e5854a0ac870a4dbceb6718e2adc76228e580db1b213c4eb211dfd"
+    },
+    {
+      "id": "collapsed-ice-shelf-two-stage-pressure-burst",
+      "decision": "preserved",
+      "masterSha256": "6c95678c446e5805e96ebaea3a5b9144cbcedb129acdeef4f0c6dda57ed6f50b",
+      "variantsSha256": "bd40f891b9d7577d4246dda868fb2decfb2b09250f78163a34932a93041127e4"
+    },
+    {
+      "id": "concrete-fountain-rim-fragments-skipping-across",
+      "decision": "preserved",
+      "masterSha256": "ae3b45e347b71a9b3a6b388ca93b1385494ecb6231feb2537ce2750ed1de1086",
+      "variantsSha256": "290a9fdbdbe86dd6833537d68a918f6ad4f709183bab854fd8e8d635c8389cc6"
+    },
+    {
+      "id": "concrete-fountain-rim-glancing-projectile-hit",
+      "decision": "preserved",
+      "masterSha256": "e4a3f8f3aa306dd8ff18878a0d840a59a12ccbcca315690a91651e29fbfbc9ff",
+      "variantsSha256": "b17459c5f6f30cd51d42c185dca06592d735edd71d9580b451b73c4432fe76d2"
+    },
+    {
+      "id": "concrete-fountain-rim-hard-impact-and-scatter",
+      "decision": "preserved",
+      "masterSha256": "bc80e3e52f26beee09082ee0913ab6fcf956f264c2a83b3b602ab3be73b12798",
+      "variantsSha256": "135e6349057fe33459e33e4ba782718a277c41e187453d2a828488a4e0844fa3"
+    },
+    {
+      "id": "current-beneath-a-moored-hull-constant-movement-loop",
+      "decision": "repaired",
+      "masterSha256": "052dfce727591297e3d34278bdad31068e1a683498a3c2f60165766b1ff5feaa",
+      "variantsSha256": "a7b7762146c18fa0385ba760b1039506951a3cc144f7cf9d74cd87534accad89"
+    },
+    {
+      "id": "current-beneath-a-moored-hull-gentle-laps-loop",
+      "decision": "repaired",
+      "masterSha256": "d3806f54d091c79ea60ac111e8803a859cadddda1bf66e8d7ed2c72958e1aa4f",
+      "variantsSha256": "663de7de87fde490a07c228cc8effdac9410fcfda48c3a7532c258e8a60c6dc5"
+    },
+    {
+      "id": "current-beneath-a-moored-hull-water-receding",
+      "decision": "repaired",
+      "masterSha256": "309a4a9bbfe14657787300e6aa3b40264046eb303b4afc9697497b5622f04be9",
+      "variantsSha256": "e7361a67527bf6d00d3d2107e2ed3352cd2e7f9fb11694b97ad9db47f97ce44b"
+    },
+    {
+      "id": "current-beneath-a-moored-hull-water-surging-in",
+      "decision": "repaired",
+      "masterSha256": "5e470109f13503888eb763aab64dde98bb43cc55d21e6cb6f4c0b8d03a9360a1",
+      "variantsSha256": "6ff60ce88d835781d516a2c0dd514c2a0347f8f8ba673a3490e0615d462a49c2"
+    },
+    {
+      "id": "ducks-scatter-from-a-reed-bed",
+      "decision": "preserved",
+      "masterSha256": "d332b642ca78618930e308e2a9e04d510bfa9c48feec5e5c4dbe6d35a61b6018",
+      "variantsSha256": "54456ea8c3b3c72a62d3fcf68012100b1cdbbd0696d305cd4377b859f77e5c55"
+    },
+    {
+      "id": "ducks-shelter-in-a-reed-channel-loop",
+      "decision": "preserved",
+      "masterSha256": "b79b8da3623a8bf7b30b100fbd52b4583c6a187c900dd08efc3ffd4881799cf8",
+      "variantsSha256": "13b951ccef329e09699ade9f0dda886e4813eaef4548d07db50038ebd6af18a8"
+    },
+    {
+      "id": "dune-sand-to-shallow-puddles-walking-transition",
+      "decision": "preserved",
+      "masterSha256": "f36a05fab53720c672d32d247436c69479631606d4404c72035d55f3d2de391d",
+      "variantsSha256": "767ec94c26e46987045501a3b39fa8637dc627412cb1bac409565004a51e9ac9"
+    },
+    {
+      "id": "electric-hydrofoil-rises-on-lift",
+      "decision": "preserved",
+      "masterSha256": "39ae1a05df978d2d83b4a81ca4b7bce41aae3255bb2047f0a80d2d56816f8968",
+      "variantsSha256": "e73ba0abf43f125319bf3378778001a8d1fa0b2118d56548b36ed14b3a45e18a"
+    },
+    {
+      "id": "ferry-landing-at-a-slip-arrival-splash",
+      "decision": "preserved",
+      "masterSha256": "2a357080956fad4b5dc6b9bf049a2fb82caa959aba41faf982ab6377e1fdb05a",
+      "variantsSha256": "ed100b26f31a1ac021188f5b64e3e23c0a8cafeaafe36dd4bb5ddd386a6519dd"
+    },
+    {
+      "id": "ferry-landing-at-a-slip-body-against-the-fender",
+      "decision": "preserved",
+      "masterSha256": "8d80a8d560691e0ac2bbb33c614c940f5849e0dadd96ed4a8809c300262c48ed",
+      "variantsSha256": "8493d243ac612581ca12de87326193b8f6f15140661e50ec3198f228827317ff"
+    },
+    {
+      "id": "ferry-landing-at-a-slip-soft-boarding-contact",
+      "decision": "preserved",
+      "masterSha256": "88f1014ea467f22ffd85fb5c116429a1ea7ed8e515f2c8f31e860aba546bf23d",
+      "variantsSha256": "b3e5d1cba85f2655860bea45d66a962fa1cb6157f29ec10e09033e90f2e41b84"
+    },
+    {
+      "id": "floatplane-floats-slap-through-short-waves",
+      "decision": "preserved",
+      "masterSha256": "3b8e5e3aedfe33b64862e120068e7f69f8638da538451e6b1ab974fe5eb8ed52",
+      "variantsSha256": "dc6de0bbbeff323d11cfafe07d491113796098058399da2a0e132722d20a44f7"
+    },
+    {
+      "id": "frogs-subside-after-a-splash",
+      "decision": "preserved",
+      "masterSha256": "110ebc2433d170482124bb4c491c2a39e14ba013a70526ac316ecf7e36b9cd8b",
+      "variantsSha256": "78a0b65244c198f19f4aec00d75c5180a48106fa96853f4409b7cc90f8765ace"
+    },
+    {
+      "id": "frosted-pond-ice-debris-shifted-under-load",
+      "decision": "preserved",
+      "masterSha256": "9ab978b26f025e8c01e7bc0a97625605c98fd39d1dc1392b52f38bab19f9ece8",
+      "variantsSha256": "d22e6efcf34815c7f65f85a8c15415516c46330821cd48e85c76129d98376b95"
+    },
+    {
+      "id": "frosted-pond-ice-first-piece-gives-way",
+      "decision": "preserved",
+      "masterSha256": "a6f92e29561b4af759601169c439147be43fa0e09fb1065956493e21eac37676",
+      "variantsSha256": "25af879aef83c151a08255f9424ee4d9b76e8b42d8618135a653b3258d6a011c"
+    },
+    {
+      "id": "frosted-pond-ice-fragments-land-below",
+      "decision": "preserved",
+      "masterSha256": "6bfcac96b4e60800cc2363c3210827255b0324fe8bdaf30f80ec9ec1c10df301",
+      "variantsSha256": "eeb356d2e32a8047556899f08cfa2a75b0b73a99163e84c96dc3a4a810c5650f"
+    },
+    {
+      "id": "frosted-pond-ice-progressive-collapse",
+      "decision": "preserved",
+      "masterSha256": "643b515079c2d97c01defdc90296dbaa1586cb5a4f6d2409ea3d00b6ed1f9ef2",
+      "variantsSha256": "2cf04735635018f70eac6813b0a4acdae98880998790c78077174a59ea410c5d"
+    },
+    {
+      "id": "frozen-shallow-pool-fragments-skipping-across",
+      "decision": "preserved",
+      "masterSha256": "2d0c1ecc2915e78639e91edaa0628157562866a254294168b430355dd6d55c74",
+      "variantsSha256": "151b18e4fbfc3362c5d036053a1b0484eac3a58dfd58e9734f84895eacb65e71"
+    },
+    {
+      "id": "frozen-shallow-pool-glancing-projectile-hit",
+      "decision": "preserved",
+      "masterSha256": "339f5c761f8772582fac9f6c014a59f61090936074b70372a859f6aef77401c4",
+      "variantsSha256": "6004635e4607f655f978f6ae95db5f3434d7db79437310c577172f5faa9ed347"
+    },
+    {
+      "id": "frozen-shallow-pool-hard-impact-and-scatter",
+      "decision": "preserved",
+      "masterSha256": "b5db95d9292381da08911e1d8c3989cdfdf34292f87d024fe109f2523a58e4a1",
+      "variantsSha256": "9ae6b568b649b3e4c5fc82fc88d1ddbaf0d225814775850da49aa518f5276031"
+    },
+    {
+      "id": "full-water-trough-fragments-skipping-across",
+      "decision": "preserved",
+      "masterSha256": "dd85018aa733cbe3e99801c15840d1dcca7b604595c5a68837eb196513ace5e8",
+      "variantsSha256": "c823374eda14652f3ee188b44faace661239bb50d5dc1f2ba27fdb1a0fb4d431"
+    },
+    {
+      "id": "full-water-trough-glancing-projectile-hit",
+      "decision": "preserved",
+      "masterSha256": "eca625130b3967e9ffc2eb10b4c15bc11f2b3fa4101234e4245592ce04749ce8",
+      "variantsSha256": "15eea5b17b1964cd5c3200b6a2ff7caf85ca3a71253f827054e9c76e5330ff7c"
+    },
+    {
+      "id": "full-water-trough-hard-impact-and-scatter",
+      "decision": "preserved",
+      "masterSha256": "5137a513d66403a25dac5ad490357f511203e87aa6fa018acfa7f9a185ddc0ff",
+      "variantsSha256": "62634c579bbdfa81715cc2f785501c8e6c8c0aa24fba2711338c801e47309649"
+    },
+    {
+      "id": "geese-lift-from-shallow-water",
+      "decision": "preserved",
+      "masterSha256": "247a48c3906efd682a4bd649b92baaddc3d561c1993e4ed50bb3f0765f2dae0e",
+      "variantsSha256": "96e79ca97ef6cebe681c7f77927c1256ccb4d7fce5fb7f6429eabb6f2cd4cdad"
+    },
+    {
+      "id": "geyser-lifts-then-rains-back",
+      "decision": "preserved",
+      "masterSha256": "87d4723149837298918f2de052f9784d3ba3e784fb5eebe5ab5b3a4097af8821",
+      "variantsSha256": "dba94a15ab68a8ba17c5c961956c64efb4e938b5151a5d9a7d4bb261d75d3f9b"
+    },
+    {
+      "id": "glass-fiber-hull-idling-against-chop-loop",
+      "decision": "preserved",
+      "masterSha256": "7ad2809b7f3fd4bc6ae4d73ebb51448543e1338795c967fac3a5b0eff238a616",
+      "variantsSha256": "a72b9cc6cad025433e0d1d3768f68e84a0d6172b07064a7c50e0787b7f21e4a4"
+    },
+    {
+      "id": "goose-paddles-to-the-reeds",
+      "decision": "preserved",
+      "masterSha256": "eea787e2db7d91670ed5da0c2559844e14ef745ce3d4899a12aa7461f26dad40",
+      "variantsSha256": "a5b5419e8b1469273109e2fddd281ead4debee44c1553fec8cdcb0d8a358870f",
+      "auditionNote": "Check the goose call at foreground gain. Speech classifiers also respond to its short honk."
+    },
+    {
+      "id": "harbor-retaining-wall-blast-followed-by-falling-debris",
+      "decision": "preserved",
+      "masterSha256": "6e09c74a06b9a818bdb7b3b1b7582c14cd1d313b9c1ad45ea5e578c62a59ab28",
+      "variantsSha256": "2a156090554ee09a6912ee0944586231a40ec92f2feb9ed6da7f6ba4e9ca2bd7"
+    },
+    {
+      "id": "harbor-retaining-wall-muffled-blast-through-cover",
+      "decision": "preserved",
+      "masterSha256": "7fdc4284bc38e1254a7f5fb007844cf02b19a0b0ffea35280c49347886bb320b",
+      "variantsSha256": "934ef144c5fb45f1bd79d3d676c6163dcf51ff9cf3265565b5aa014066d0ddb3"
+    },
+    {
+      "id": "harbor-retaining-wall-single-concussive-blast",
+      "decision": "preserved",
+      "masterSha256": "c156e76ad4b3de5637f84b0ca88a38cc8d86bce3d02ec3cef11410fabfd62292",
+      "variantsSha256": "c1b21b4367f8db2696b4af292c1e9c39c5051d902b7eaafe9f4b8d2b5daf4465"
+    },
+    {
+      "id": "harbor-retaining-wall-two-stage-pressure-burst",
+      "decision": "preserved",
+      "masterSha256": "91a2fd2c308e454916e8b4b419a2cff43b32db3c8a3f4bbf949fc200a5567193",
+      "variantsSha256": "558c99ac6b5f4068f60030e3732e42d787e7e04d50008acac2961bfa40ac1f0c"
+    },
+    {
+      "id": "lagoon-ripples-against-a-stone-step-loop",
+      "decision": "preserved",
+      "masterSha256": "7cf18cfad26a2f9715d5a6f2400ad1cd0f2c805778bd48cb96674cf82adc7c11",
+      "variantsSha256": "173795aac4c052e2feba9117ce07c8e3612a3a8144a357c057e0a138f9ae3761",
+      "auditionNote": "Check a brief change in the water texture near the middle of the default loop."
+    },
+    {
+      "id": "launch-bow-cuts-a-cross-wake",
+      "decision": "preserved",
+      "masterSha256": "26dbbe3f357f2052c3b70b3532bf4736e245068d3e3c4023a01043cd2af5e3c2",
+      "variantsSha256": "94372a88bc390b73c9b75d248e7464a96949b4ae018c20aee8c6758b266669da"
+    },
+    {
+      "id": "mallard-slips-into-pond-water",
+      "decision": "preserved",
+      "masterSha256": "5c07ef2d68932d991f1338251d75ebb5a058c6b2512963411994f40712e71c5d",
+      "variantsSha256": "28dc72be9a136a71a4fd26f247d369302eb2c644ae10697232a89598c5ecd253"
+    },
+    {
+      "id": "mud-bank-fragments-skipping-across",
+      "decision": "preserved",
+      "masterSha256": "437c615f85d2c7eccbab9ece9f436b5cbffce7077979ce333db5ecf5e96b7239",
+      "variantsSha256": "d6e1331e17d9246a0cace18db15dd708aba5318e1626f95abe106e87795fd249"
+    },
+    {
+      "id": "mud-bank-glancing-projectile-hit",
+      "decision": "preserved",
+      "masterSha256": "d33279f9a26f1213fc724d2472382d93aff7f7c374542395776ed0efce92afd3",
+      "variantsSha256": "ab4151f9cd8a024e94e999153941e772b1219b76c6cfd2b771bfd90a9880c65f"
+    },
+    {
+      "id": "mud-bank-hard-impact-and-scatter",
+      "decision": "preserved",
+      "masterSha256": "f7310aaed23c137687de7046a3e155d459f11d78b7320be4fc4ff4efcabe0455",
+      "variantsSha256": "e10ade1d4ad74340c53cf4995ac3976220d728ba36e5863e3f9a998b0b9dd336"
+    },
+    {
+      "id": "ocean-breaker-at-a-rock-ledge",
+      "decision": "preserved",
+      "masterSha256": "1c5a500a915bf1d40654347b70b20eb084c2c75b47cf25505c584d53d98a08d2",
+      "variantsSha256": "63a7e79b3c96162e751dae0b16397df3c8bba0adf6ced16319177953690cb5cc"
+    },
+    {
+      "id": "outboard-aerated-wake-layer-loop",
+      "decision": "repaired",
+      "masterSha256": "b0f7f1cb5139d116ba6dc0943a6c8aace8d71f8e46163fb7c011b417be05e00b",
+      "variantsSha256": "96cacf5d837d389a7808ff71bb43693b133b14bcd18372d447652567b0944f6d",
+      "auditionNote": "The speech-like tail was repaired. Audition the replacement motor and water loop at sustained foreground gain."
+    },
+    {
+      "id": "outboard-primer-cranks-and-catches",
+      "decision": "preserved",
+      "masterSha256": "ee81612fab8f3dd09fba92d84ea912d8f6635a73f26fde39084a46e7d8753809",
+      "variantsSha256": "a98e2debd39780c8e1de08a360d91039fd4c197d4185ec41faad2a0d491474ce"
+    },
+    {
+      "id": "outboard-prop-ventilates-over-wave-crest",
+      "decision": "preserved",
+      "masterSha256": "8b4cc68ad50c840e56d43d2ae323f0e01f3d0b3efa13ceb237e7331a0e499626",
+      "variantsSha256": "28e5e800a25fb85175ac7f4fa184da4c5dd18b58ef9bec88def78797d96be235"
+    },
+    {
+      "id": "personal-watercraft-wash-against-the-dock",
+      "decision": "preserved",
+      "masterSha256": "7d03e234ef2a313d5b7c0b85196291594521a3295beddb3865713fa997890766",
+      "variantsSha256": "092dde5d9af4af6a928e05165e5703b991ee8ca94436255226c0741da9bbf760"
+    },
+    {
+      "id": "planing-hull-bow-slap-to-spray",
+      "decision": "preserved",
+      "masterSha256": "728f90f6e2fb7283d2579a12c5b5564d3b4c3a7789dbfc7c1b1a7c49a49ed5bd",
+      "variantsSha256": "2e71b0f66dbecd7c2106cd4fdece1a563170c0f749bc00386024869b07c167ad"
+    },
+    {
+      "id": "pool-practice-board-edge-slap-on-surface",
+      "decision": "preserved",
+      "masterSha256": "1417ff5758da43e4f1d56dcd392aeb053fdf4f11c669c54f3d952d5d10390055",
+      "variantsSha256": "8da237768acc4bc6a27bc13aa0c865dd3e625389ecbbcd887b8df7e63ae558de"
+    },
+    {
+      "id": "pool-practice-board-small-pool-landing",
+      "decision": "preserved",
+      "masterSha256": "95fdda82b979b938beb088e865939d6c8718da1e62d7d017428f948da5c6dda5",
+      "variantsSha256": "56180cae15ae2ca7daaf1a36cc62f8f9ecfb598b7729b72ff7350c6faa0ebbb0"
+    },
+    {
+      "id": "raindrops-in-a-galvanized-feed-trough-continuous-patter-loop",
+      "decision": "preserved",
+      "masterSha256": "47786c151637a6657d6d4b07ca704c139d97b735617e1b3317f2c639cb58931f",
+      "variantsSha256": "e314dbd6d28e5a6a978381e476ea2404a8517e1a599d89266b759ed6d4c57c06"
+    },
+    {
+      "id": "raindrops-in-a-galvanized-feed-trough-downpour-recedes",
+      "decision": "preserved",
+      "masterSha256": "1896d1830b7b44597c487ed5a65ae932b051b6613888dc0cd336dfd1364ace3b",
+      "variantsSha256": "664f2c0f986ad1c1ddca9a01435043d80d1020ceb5bb1bd190eb8c7a84d30aa6"
+    },
+    {
+      "id": "raindrops-in-a-galvanized-feed-trough-individual-drops-loop",
+      "decision": "preserved",
+      "masterSha256": "b02f649b8a30b72bea01903b1eb1a4b80a2520d68e6a9edc60c8f78eba1a7488",
+      "variantsSha256": "3fed1e84a9973715a8473a8a5a2b4882ccfe049902e1824fa168d8e0cf2e712c",
+      "auditionNote": "Check the cadence of the metallic drips at minimum intensity."
+    },
+    {
+      "id": "raindrops-in-a-galvanized-feed-trough-shower-builds",
+      "decision": "preserved",
+      "masterSha256": "3ffc1c78a8bdc74a12d082d881efab0c0cc0bfa8053ac3d7b563af36ab7980a9",
+      "variantsSha256": "b492a48e17f06dbcb2bdde5c7f3f8e1d5b078134cbdea2a5a8e4ab1a9bf4854d"
+    },
+    {
+      "id": "rainwater-passing-a-blocked-downspout-continuous-patter-loop",
+      "decision": "preserved",
+      "masterSha256": "a875408a4cd6171524006f076fe2f50c7bcfd79c5212032d6e4f80d7e7a07813",
+      "variantsSha256": "8af456a9a358aecb66c31890c5e9f57fdd70ebe5e287f11801966abba17ace99"
+    },
+    {
+      "id": "rainwater-passing-a-blocked-downspout-downpour-recedes",
+      "decision": "preserved",
+      "masterSha256": "8a2b36449ffe8de593fc78752c1b4786f48dc16b51b1eff0ec587d8677d2a8e0",
+      "variantsSha256": "cb85b39d28878ff9b1b80c4a08b0f589990b4383f309cfa3583f9ddbb2c98601"
+    },
+    {
+      "id": "rainwater-passing-a-blocked-downspout-individual-drops-loop",
+      "decision": "preserved",
+      "masterSha256": "bc9faa652895db6febcd67002d1734e1a48c6ceaa3235c80e53cc41c41c220a2",
+      "variantsSha256": "9f97f134abf99d358738bce98d10982ad242d149c8c6fcc0b7e0fe14e8068340"
+    },
+    {
+      "id": "rainwater-passing-a-blocked-downspout-shower-builds",
+      "decision": "preserved",
+      "masterSha256": "b0f13b27b5c7616f798d1d0a6465e49ce528d21854f51473f9b901eee89bb873",
+      "variantsSha256": "e5c4948054fe166f2129e8c3df60c59dd2fda7ef9a33f312609f761a1d56055b"
+    },
+    {
+      "id": "ripples-against-a-floating-pontoon-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "b6c9d5ea4e66e9d728c5cecdc738062b1d5b34eee15cddb0cfe36ab07cd7d254",
+      "variantsSha256": "7f1925144c70a1d317a2b380ea52c976593a0d66ede7af29454629accdbfab61"
+    },
+    {
+      "id": "ripples-against-a-floating-pontoon-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "173545adef8c8b48235e84ab1b365ce24cc3c7fdd5ff4820404a6107729af6e7",
+      "variantsSha256": "80c091803351f5b526c50f55fb2f93c5a9b81227e373e5de0522c2d5ce12b96a"
+    },
+    {
+      "id": "ripples-against-a-floating-pontoon-water-receding",
+      "decision": "preserved",
+      "masterSha256": "27ad97c47cead93f9f57160cc7df4bca0ddd8bb94566b8f9c3984fd67716863c",
+      "variantsSha256": "bff389da139e44fc765e7d7cbfce8e55cbce6719f3b6f8b180539b6d4f4dad83"
+    },
+    {
+      "id": "ripples-against-a-floating-pontoon-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "59713b48fc612f7505707df91c1360cc28a623df88606857edf1eaf4bc44ab74",
+      "variantsSha256": "aa87064ab2702bda5842bcc48826cbc1b9cf915726aa0d1f0803bcad7bc6384b"
+    },
+    {
+      "id": "rockpool-spill-over-a-low-lip-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "a5f91693e9f9f6e2c27c5b8f759a50e2f225704ca83ee161f16921bcd3e966db",
+      "variantsSha256": "742f24ce37ff93f67e5af95be4c604091024d4f45a359801fb95a90a679f2d62"
+    },
+    {
+      "id": "rockpool-spill-over-a-low-lip-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "138e9d6d8892c6f2c5ef8df2c57488a204e531c9adab4d8ad0a552c96c768ea6",
+      "variantsSha256": "cfe2d14ea5c22141e47a996e1f21d2ac329b87acec15484e278bcc5ce7d9c8fd"
+    },
+    {
+      "id": "rockpool-spill-over-a-low-lip-water-receding",
+      "decision": "preserved",
+      "masterSha256": "af72cbf67de6d42e3cb1a7d55e8791427d8e1afa47d66ceccf37d9693cab2d27",
+      "variantsSha256": "05caa63576a3f285dfcad91194e19c23f7fdba947ddaf968c4fdc171936339eb"
+    },
+    {
+      "id": "rockpool-spill-over-a-low-lip-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "284af1324be5cca21d7ba622c28ae4b7964e49ab01b6ab035280a19428a6fed0",
+      "variantsSha256": "c95d0f7ef96b3637148eb5f16076a59da39189618ed0d38edb836dd6e57be16a"
+    },
+    {
+      "id": "rowboat-at-reed-bank-arrival-splash",
+      "decision": "preserved",
+      "masterSha256": "f40e60379b396f900c51f91dee0eb86eedc515840b3fcea0f28567154b380430",
+      "variantsSha256": "8c454a1b3cdb306df72aeb9272724f974bc3153de644e21e6c99038b0e3dbfe0"
+    },
+    {
+      "id": "rubber-boot-in-shallow-ditch",
+      "decision": "preserved",
+      "masterSha256": "34ab949c5ec936f6c1123d3503114d7c5e2e157dc9cc32126a16504807eeb17d",
+      "variantsSha256": "19ec6b24faf04c90850f8cf88ac295991c1662876acdfe1df532b1ac56049bf8"
+    },
+    {
+      "id": "runabout-bow-lands-flat-off-wake",
+      "decision": "repaired",
+      "masterSha256": "5eb00978db6457799bee835233f22aabaa872bf60f2b2cbc7b0a79e85e7a8b0f",
+      "variantsSha256": "a56776fd85a9fdf179c79ef9b7ee039c6d455974839ef6796dce5a76f3ea8003"
+    },
+    {
+      "id": "sailing-dinghy-across-the-bay-arrival-splash",
+      "decision": "preserved",
+      "masterSha256": "5cb468e085397bb1e50a4f4200f0d521e6c77b07748dabfc43835b3b7a32389c",
+      "variantsSha256": "1cd8d8dd3b918f3d9da1e891049262d47f6063f310910f3e1245b84d4b10ea7c"
+    },
+    {
+      "id": "shallow-puddles-braking-skid-to-a-stop",
+      "decision": "preserved",
+      "masterSha256": "96e251edb9e1eb220ab7f9969bdf0d4ab08b893446a25b4e0711f3c610b72788",
+      "variantsSha256": "9bcd55f1d050c6e9889c190bed8e166097e328788e58ee18e95d2f94eee7b75c"
+    },
+    {
+      "id": "shallow-puddles-careful-toe-placement",
+      "decision": "preserved",
+      "masterSha256": "3cd8ab1964ec587f470d92d4fdbe1bc3dc97596a6e5187542a7c6f7dabed1236",
+      "variantsSha256": "961af376e452f422a65581500302bc52a9d66c645aafc7a232ac7e6c59956e4e"
+    },
+    {
+      "id": "shallow-puddles-drop-landing-and-recovery",
+      "decision": "preserved",
+      "masterSha256": "1d2b7311ec957e569b91063e59638bcb8e7f513377a0c39bbaf23b386cba7228",
+      "variantsSha256": "e82471b066f831bdbdee5281221e3ceb613d619fe83fde2b4d42f5d440ad348d"
+    },
+    {
+      "id": "shallow-puddles-heel-to-toe-weight-shift",
+      "decision": "preserved",
+      "masterSha256": "0e109741912ff9abb46148b6dd8436ce7ca2328593155d18f2474ce7093a24e9",
+      "variantsSha256": "bdd509d6fb74756f729494a4b817ccb20df5f683e6d1377f7d544f3879a6a826"
+    },
+    {
+      "id": "shallow-puddles-hurried-retreat",
+      "decision": "preserved",
+      "masterSha256": "ac24fcc8659098b13e8a91a5ffac149af93990f1edf80b9e9fd2a99d3f130178",
+      "variantsSha256": "7a13143bd490122e943d37e52fb25c625d1b748a3dab49ba75ba656acf50db18"
+    },
+    {
+      "id": "shallow-puddles-limping-gait",
+      "decision": "preserved",
+      "masterSha256": "d714f8d337e28f1843dc358f2f9579716fd2bfdd253d2a67e2ebd5cc65a6e215",
+      "variantsSha256": "daf84caaceede869674f80ed3c14963ad18c56a647f4833a59e5bec8e2c38bed"
+    },
+    {
+      "id": "shallow-puddles-running-push-off",
+      "decision": "preserved",
+      "masterSha256": "fe0184aaacad3777e5871609cfb5f3b6df9521eff89b2388d2268ad163b4382b",
+      "variantsSha256": "82662a200182721f46e4ca8aca7987e6ea160b279458162607d863f19d55df6d"
+    },
+    {
+      "id": "shallow-puddles-short-hop-landing",
+      "decision": "preserved",
+      "masterSha256": "dd8a5930f91e8f590b935280cb076fb725c0fd00a956a63ddf904715ea93a1fe",
+      "variantsSha256": "97d409730b960de1741066a0853ce755c9eb6347179b0fbcad47de31f03b8ecb"
+    },
+    {
+      "id": "shallow-puddles-slow-stalking-approach",
+      "decision": "preserved",
+      "masterSha256": "4f92c97a7c2ac10b5e0fd0550285479ff66ee2b04d57a74a3d338092c32c32c3",
+      "variantsSha256": "087d66cfee46a9b807ae9f8abe9a5af839597e38a050f3449d13b24655dfd9a6"
+    },
+    {
+      "id": "shallow-puddles-stagger-and-catch",
+      "decision": "preserved",
+      "masterSha256": "c2128dfb6cddf987ffdb6e152b1549fb834e23209f2bf0bd4fa5af8d7abf81d9",
+      "variantsSha256": "e8d8bb28bd60f6c3550d71699e1e2676fa8ab8f8efcfc7e6e356b5c95a223f88"
+    },
+    {
+      "id": "shallow-puddles-tight-turning-pivot",
+      "decision": "preserved",
+      "masterSha256": "c34ab8dd077cc09f2de1d3a37295710611ac509da86865b371c717373fdc77c4",
+      "variantsSha256": "1ebf2aeadd5e4fa17d8414cdb55055d11c0d38be039efe88a065cdddf7df6ee7"
+    },
+    {
+      "id": "shallow-puddles-to-dune-sand-walking-transition",
+      "decision": "preserved",
+      "masterSha256": "d5d3448578d9aa34613af666dd55dfcfd79f602b2cb1b1f34690c69259a29075",
+      "variantsSha256": "0fc504c44659aedfa43ec8f2f8decdc1b29dc1cd3584ebaee9d451c993c924b6"
+    },
+    {
+      "id": "shallow-puddles-to-wet-asphalt-walking-transition",
+      "decision": "preserved",
+      "masterSha256": "72384b950ee24b051078c11fd501c3325b5a229f905c2b460b9f0bb4f49fcdf0",
+      "variantsSha256": "03099f7aae2c45587998acc125e5e346941ff9b58ff9a909421a52a4fc03044d"
+    },
+    {
+      "id": "shallow-puddles-to-wood-planks-walking-transition",
+      "decision": "preserved",
+      "masterSha256": "2ccd09133f32b07b096b3176d0e2ad99becdeccc1814218229fcf103796a77f8",
+      "variantsSha256": "9a1e3e47c3ad18106022a73e1cc481ef9b1c80edd47f71af1fc2c8361b71fb0b"
+    },
+    {
+      "id": "shallow-puddles-walk-into-a-jog",
+      "decision": "preserved",
+      "masterSha256": "dd7ad8a2df78c455ee5066c163e6b98d118cda95d534897a74f38c0289f9e247",
+      "variantsSha256": "3a682534385a79b31a94aed97f2bda4380fb5f0b9599c866a3829dd803dd0572"
+    },
+    {
+      "id": "shallow-water-burst",
+      "decision": "preserved",
+      "masterSha256": "93096338254f41afaea5ef11dd37a48502aec167efb79abfbc3ac7ddd42f2c93",
+      "variantsSha256": "921529f8f724ce7cd64e4107f48c5a3f0ea0b9e5a6ed5a97e6b2e85172b84cdc"
+    },
+    {
+      "id": "shallow-water-footstep",
+      "decision": "preserved",
+      "masterSha256": "49ce15c4ddb09d6399d2fa789a3a81a15622b4de0b2356c283471cc92857426d",
+      "variantsSha256": "bc7494dac58ef38bfe2743873dd23af7cb8ecd641dc81bcffb317554b34998d3"
+    },
+    {
+      "id": "shingle-waterline-careful-edge-step",
+      "decision": "preserved",
+      "masterSha256": "5a4770bdb3dbcf3456b682f348ac18e651c15bacc14162b00c3e81dcd3583dd1",
+      "variantsSha256": "ec757767599c34f1da97b588e833ceb9f4979eeda0ab67ce8e6e8feb813b5dbc"
+    },
+    {
+      "id": "shingle-waterline-foot-lifts-free",
+      "decision": "preserved",
+      "masterSha256": "da478105e81ca2f476c7b0f796b0b7ab5ac2259296d930714c775a5faed83e94",
+      "variantsSha256": "8a025af78d1c22d33baf632a6a86495531149336699380ea72792685ce99be23"
+    },
+    {
+      "id": "shingle-waterline-quick-landing-brace",
+      "decision": "preserved",
+      "masterSha256": "446e2432954961035c433f9918aea306f59020baace9cde3f0bcb755762a85e7",
+      "variantsSha256": "12aaf11f573945781f6278e6b70c7c1ae9b25d17e08fc75b323005ddc7ec04d5"
+    },
+    {
+      "id": "shingle-waterline-weight-transfer",
+      "decision": "preserved",
+      "masterSha256": "146de4f67badf35ef103362fd531e59760a588d42d3629e9ef5c3b8371d5b540",
+      "variantsSha256": "7173796410f0ead75383899a908496979485f0f4bd5addb97a703fe149052cbb"
+    },
+    {
+      "id": "shoreline-explosion-heavy-water-crown",
+      "decision": "preserved",
+      "masterSha256": "f36f7af20b11330af8785fdb6b6a23c86e03b0fd99a9186cb9875302328288fe",
+      "variantsSha256": "704d185e39184e6ce66a03bd0ec428b85195b887795b8987410b78b266b8dc15"
+    },
+    {
+      "id": "single-casing-lands-on-water-in-a-shallow-trench",
+      "decision": "preserved",
+      "masterSha256": "9672e3e4d61a111b75242e8f5136206055c0e001924a934d467303a91323a305",
+      "variantsSha256": "a8aa54e8f690e438e4bdaf6fd6453193221129f36de164e31ba56ab49c3d35ac"
+    },
+    {
+      "id": "sleet-in-a-shallow-slush-puddle-first-scattered-strikes-loop",
+      "decision": "preserved",
+      "masterSha256": "5a5b1d1627c50ef34a3d4b064a1ae9b98e026dc86a71a2ffef134bca13af3f4b",
+      "variantsSha256": "23c21cdf4291be8164293bc1fb42156fd6a9445bd1a679ad554a4783cb745428"
+    },
+    {
+      "id": "sleet-in-a-shallow-slush-puddle-last-stones-falling",
+      "decision": "preserved",
+      "masterSha256": "ea3b732a42c93b5f5f68f33d6919b2d8f4fd73eb29c02db870762a7775e81e01",
+      "variantsSha256": "0de727e142c542d7ea5d05f3156fa9583120b4ddf37d2bad19a0e443627f4503"
+    },
+    {
+      "id": "sleet-in-a-shallow-slush-puddle-squall-arriving",
+      "decision": "preserved",
+      "masterSha256": "b8abbf6d963242f394d14b49df75fe0735eebb8adc8d78044187ebd68ad72485",
+      "variantsSha256": "42d1fc9f1e18c3fcb6b4628b38dd7c0801f2157c95987f76161899f66e28550c"
+    },
+    {
+      "id": "sleet-in-a-shallow-slush-puddle-unbroken-rattle-loop",
+      "decision": "preserved",
+      "masterSha256": "5e542be52e139387a350078d6e7a43c3c14008b745571b4837319f06b77b2273",
+      "variantsSha256": "15e7ffee0539e7eb568298392dd6417de1225176fb51e5fb9605c717a9f1db53"
+    },
+    {
+      "id": "slip-on-a-wet-barn-threshold",
+      "decision": "preserved",
+      "masterSha256": "7cd9ec19b940288fc47eeca55e3849c5e49dfa63f204bce035e345a365438281",
+      "variantsSha256": "9c5da3c1612b1f683586c239118f8b3ffcac1058284c76641012267591f26579"
+    },
+    {
+      "id": "small-outboard-skiff-under-a-bridge-arrival-splash",
+      "decision": "preserved",
+      "masterSha256": "5f80275210bb22faf07e10b29891d1358f2f0b2382c5019966d85f14b28fb7ab",
+      "variantsSha256": "82c03de14797d664f31f149816eb251e589c5fc0d0ec0b7747c39f26ac3ad859"
+    },
+    {
+      "id": "small-outboard-skiff-under-a-bridge-motor-pull",
+      "decision": "preserved",
+      "masterSha256": "285b07175789ed28eea038d948453acd638195f6a57ba33780d27a88e27064df",
+      "variantsSha256": "c76f7fad52b6070e785e0feff8b682786c95f859765ea80a865e9ac5cf40a6bc"
+    },
+    {
+      "id": "small-outboard-skiff-under-a-bridge-soft-boarding-contact",
+      "decision": "preserved",
+      "masterSha256": "b748b87306008f3edfdf82df5e8fbc8d355227aa0d08ffff297c394740a67b6a",
+      "variantsSha256": "7f4db02c55dde3a4b055e4a178e6d4133324235da8b2c5b2623dff71eed3aabd"
+    },
+    {
+      "id": "sonic-boom-doublet-over-open-water",
+      "decision": "preserved",
+      "masterSha256": "d186b99e74438d29d5515138d94f39de9def900830f94aa7dc44eeb43989709e",
+      "variantsSha256": "c4717184801afc8335eaf8b822c7b6619d9bbc9ee7882111ffc2c113b2e93473"
+    },
+    {
+      "id": "speedboat-chine-slaps-cross-chop",
+      "decision": "preserved",
+      "masterSha256": "fca487dca2384770484385b865207d26dab9e5a5cbba010c4928327019cd8594",
+      "variantsSha256": "b451bfaceb89a43515197a4b095a59f03c0a39a36d4d559e0687ee2a48db99b1"
+    },
+    {
+      "id": "spent-brass-spills-from-a-pouch-on-water-in-a-shallow-trench",
+      "decision": "preserved",
+      "masterSha256": "76ad55400fd9ece2e58780caceabf8d4be7bce2876726bf213d92cf1a58305cf",
+      "variantsSha256": "1c379cb06bb4d9824db32a6b6977022302ce57acf958524d1ab3420bb1c47293"
+    },
+    {
+      "id": "surf-around-a-tidal-cave-mouth-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "4f0a51dd5761f111e4cbfb836127085566ae5ca9afa605448d064aa9ba470e25",
+      "variantsSha256": "ce8efb15c97c62e32d0c57ef1d62be37b5b1026c3def91c79148ae3a102512e9"
+    },
+    {
+      "id": "surf-around-a-tidal-cave-mouth-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "bd39ffcc6e169ff5cedfc579848f776d6c9b04716247b6a65e6b21dcbd8801bd",
+      "variantsSha256": "61f9c8dd1b630abdce70b33a421bfbe8b73d59fe50bb92bf841b68d2a199af5a"
+    },
+    {
+      "id": "surf-around-a-tidal-cave-mouth-water-receding",
+      "decision": "preserved",
+      "masterSha256": "c225cf734e7a27ad3db278e058185589b589662700b999e230e945f5caf69f56",
+      "variantsSha256": "02f093fb74addd76dcd8f0a1627b3ac2ce5bc529971aa2a659e652a539da30fa"
+    },
+    {
+      "id": "surf-around-a-tidal-cave-mouth-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "7e1a5027be0f6b2804b01f447f2c231b073010c367637a138a8a2fd3aa397695",
+      "variantsSha256": "c95ab21de34262b54bcb44421643a2bbb440cee45aa495f23035e6cf8dc1e5b4"
+    },
+    {
+      "id": "surf-heard-below-a-reef-ledge-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "489cb944ac6925bf15e7acaeac6f2281a24e32b2f48dc6892c51587fcbde8562",
+      "variantsSha256": "b6a9a6e8b41bbd7d6839d21bae74d8a2ca4525a3a8ba494fc18ad87272abcf97"
+    },
+    {
+      "id": "surf-heard-below-a-reef-ledge-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "81ce116bf43b2bc6846b1150c2481e634a7e0866a2b45c35f21505618019377d",
+      "variantsSha256": "f48ef27873db9079924bfa47ed7a4e982c3ec269b5299d18eb9bb70bf4246c5f"
+    },
+    {
+      "id": "surf-heard-below-a-reef-ledge-water-receding",
+      "decision": "preserved",
+      "masterSha256": "3a3afbdff62c9a385624c56771aba114b72bfbbec350815c33d78a5bbb259bfa",
+      "variantsSha256": "2422c9343b72d3fe831a43a5ad37ac8091309b85bbb587ac25dd969c61b89476"
+    },
+    {
+      "id": "surf-heard-below-a-reef-ledge-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "b737c0ffb69e59a87d39061b2b20901b3dfcb5f78749965770d8b90234476953",
+      "variantsSha256": "69ddf0c9aba6b6233f50e7c29fc7184b9befc73a2791b21cdbbf28304cc38b14"
+    },
+    {
+      "id": "timber-footbridge-blast-followed-by-falling-debris",
+      "decision": "preserved",
+      "masterSha256": "ff3794bbd8a6e638df90993cba84da66e12ec5e4d6c495c3521ce4bf01c2c18a",
+      "variantsSha256": "ffda9db18af7584e0c31a6d160d60871565540209a853cb61ad2784ef4f5ac58"
+    },
+    {
+      "id": "timber-footbridge-muffled-blast-through-cover",
+      "decision": "preserved",
+      "masterSha256": "868a09890f4c4591f25479defb59ed9e2b818ade4d20492ebcdd3994682db510",
+      "variantsSha256": "e0ee0be25fbcff7099eab8dbdbc5f25024a9962d934cad688d6851e99ad72c77"
+    },
+    {
+      "id": "timber-footbridge-single-concussive-blast",
+      "decision": "preserved",
+      "masterSha256": "ea40f90e044d8797b955503293548204b068c5128b5903ffd0a1ea3ec3956227",
+      "variantsSha256": "175e01faee15863daf3d2e912089eaad468501133c62845475e1724fc71b53a5"
+    },
+    {
+      "id": "timber-footbridge-two-stage-pressure-burst",
+      "decision": "preserved",
+      "masterSha256": "02530cb9ca2a31e03a4e22bd2e16df2c70df668d3670a1539bdbb8067586b865",
+      "variantsSha256": "75c4ff65c18a201ce52258c3d2a500eb21eaae9b611210f768f8d5a2417026f2"
+    },
+    {
+      "id": "tire-floats-then-finds-wet-asphalt",
+      "decision": "preserved",
+      "masterSha256": "175403c511712468476f3ae56b4204a4c29142b9d7b8b818be96a8b1984495d6",
+      "variantsSha256": "9cc442b0a76398c1e7e5c05e46924a73fda3c6afe77a1b7d987a21c5bfb8c9e6"
+    },
+    {
+      "id": "two-casings-tumble-apart-on-water-in-a-shallow-trench",
+      "decision": "preserved",
+      "masterSha256": "b39d79b98e4ca1ad1718cd35e7e0cf359e9e3c75ec7575557ea001fd345d2099",
+      "variantsSha256": "8b03b003a94b339a02c9132a15c8201e58371604a6831892b551f04e048bfc40"
+    },
+    {
+      "id": "wake-rattles-an-aluminum-skiff-floor",
+      "decision": "repaired",
+      "masterSha256": "200807ca4337b345a0ac5cedbf7d8efc0611cb8e190c6ae196c1de40f56c0346",
+      "variantsSha256": "1bb87b4b300db59d3b78cedfbaeb3baa66edebbccff93780fbb43abd2f97e043"
+    },
+    {
+      "id": "water-at-a-stony-ford-constant-movement-loop",
+      "decision": "preserved",
+      "masterSha256": "8b1eedd5c281d7fb11053103914c7f58e147c0fb55b6546b94928400beb24585",
+      "variantsSha256": "a7c1a46dd586a9cdf4b57537568f3602c2799fd6068da7e807fc61881d40253d"
+    },
+    {
+      "id": "water-at-a-stony-ford-gentle-laps-loop",
+      "decision": "preserved",
+      "masterSha256": "84301a3d5ba1c5e41dec2024293c901285131099578305110bd92fb8f4050a36",
+      "variantsSha256": "49de3391bc3709de1680b64f56269bbd123e55992d40e371f4cac89dcee9f9e3"
+    },
+    {
+      "id": "water-at-a-stony-ford-water-receding",
+      "decision": "preserved",
+      "masterSha256": "3c3779375b035de53ba80121470b7e400877de19fb36d00f65b411f94c064201",
+      "variantsSha256": "760f30ab1948666e2235b8e6b8e1af9d8273d81f8f544f07c0a201388793274d"
+    },
+    {
+      "id": "water-at-a-stony-ford-water-surging-in",
+      "decision": "preserved",
+      "masterSha256": "4ac2cbf3577ce76a83f3831775e9964ecfdb33a19de3015a50a6b0bcb78a980e",
+      "variantsSha256": "70332a4c6f37cbb8109e56d9169a7dae91028d15d52a98995467ccdfcbb76e83"
+    },
+    {
+      "id": "wet-asphalt-slide-throws-a-fan-of-spray",
+      "decision": "preserved",
+      "masterSha256": "2862c13133d83c454aed19c23315d65fd9393b23cd42b78859a07fba973e218d",
+      "variantsSha256": "625d8d22e4f9f285560be24b9a0a396d5357c45d84701b92bee09e77e7d508d8"
+    },
+    {
+      "id": "wet-asphalt-to-shallow-puddles-walking-transition",
+      "decision": "preserved",
+      "masterSha256": "990df1f2ed22d958e1abefdbaca89d7db34948bf309e43a538c5fc26d5340dd7",
+      "variantsSha256": "5c77695f8d8a40262a752a1b7030683f17e6d11db2705ae44a7074e37fbaa5b7"
+    },
+    {
+      "id": "wet-ground-hit-by-arcade-projectile",
+      "decision": "preserved",
+      "masterSha256": "c02506866451cc0c7e9ce2520cad749277e0f6f8cee0b317ddee3847769f4e27",
+      "variantsSha256": "fac996223a63991714aa99b9cc4dfa8d46263401f22306f70af8eef319c0b995"
+    },
+    {
+      "id": "wheel-arch-throws-a-sheet-of-spray",
+      "decision": "preserved",
+      "masterSha256": "2ae42d629fb591a84790fd7bacbddde26e9c375f33be07bb4e25547ee45db665",
+      "variantsSha256": "dcf3ee1d686b3083305d47c1f6f71a316c4490a72c031a2c4e14c06ea4a6b71b"
+    },
+    {
+      "id": "wood-planks-to-shallow-puddles-walking-transition",
+      "decision": "preserved",
+      "masterSha256": "4b4eca6583dd96494858da4e2120be565faf02947173b9d2692ff53327f955e0",
+      "variantsSha256": "240489de34c2c1d6ce19e7d5f0d6ab07434142432e54928ddf7813dbb58ffa71",
+      "auditionNote": "Check the transition between plank knocks and splashes in the game mix."
+    },
+    {
+      "id": "wooden-dinghy-at-a-dock-arrival-splash",
+      "decision": "preserved",
+      "masterSha256": "899e8d31015e84621379ef9e1890d6e7d785b5a09792cad74c7316ae3f23e900",
+      "variantsSha256": "9cc9986f0a66744d1ee89ebf6d212cde6a85b8ac6d8a5fb3249d5d620902af0e"
+    }
+  ],
+  "relatedRepairs": [
+    {
+      "id": "anchored-sailboat-stern-cabin-swell-loop",
+      "decision": "repaired",
+      "masterSha256": "436f8ce1deeaeeccd1ece0e2c44ef24b712b6c2813f832cf809b90c823f6f661",
+      "variantsSha256": "2311e1c721eeca8ccc54b4b656fedb4ce6f2db815818e79831de9418305cb762"
+    },
+    {
+      "id": "boat-rub-rail-bumps-dock-then-recoils",
+      "decision": "repaired",
+      "masterSha256": "9a1dc3474b37ccde40c204c115980e612ad6882abe28edcbaf876496e36d1ebc",
+      "variantsSha256": "9dbb3783b3b482726a83f0610c205ef1915f37514472011286bcee26611d5982"
+    },
+    {
+      "id": "wind-against-a-sail-locker-hatch-gust-front-arriving",
+      "decision": "repaired",
+      "masterSha256": "93fb1ecf05d064488a4e36e699254ce3dc4045214213c589438eb04784f3ff1c",
+      "variantsSha256": "e932ad657575cf0ceff6816302e0aaac3b843b4bbd2ff751970ba7c6e2734925"
+    },
+    {
+      "id": "wind-against-a-sail-locker-hatch-intermittent-lulls-loop",
+      "decision": "repaired",
+      "masterSha256": "564d8e3dcd8db0ad616d6d0a10b9f94ac15547adddff040cc22974bcad0f9d6d",
+      "variantsSha256": "cc976d259efc93704b1655338a9af5773813b461b830dff428e1273be7f86b3a"
+    },
+    {
+      "id": "wind-against-a-sail-locker-hatch-sustained-current-loop",
+      "decision": "repaired",
+      "masterSha256": "b629d8d410e555f4765504b48969f907a51d325a7b2aeb2ce71cae2a96cc040c",
+      "variantsSha256": "48ef8313033f8930dfe81a52b3c6b34981bc6de8e429dfae64be5875a07b1ace"
+    },
+    {
+      "id": "wind-against-a-sail-locker-hatch-wind-dying-away",
+      "decision": "repaired",
+      "masterSha256": "58ea3299d9657c0add6844d15f37f27f54454328cbd6e3b95f60ad2ce250ff6d",
+      "variantsSha256": "0b6a0a28f76e43b326da1fad804726886683dd340719a192c577bb3393e05ee5"
+    }
+  ],
+  "signalChecks": {
+    "outboardWake": {
+      "measure": "Maximum speech score over 12 renders",
+      "before": 0.8528,
+      "after": 0.0562
+    },
+    "mooredHull": {
+      "measure": "Maximum keyboard score over 48 renders",
+      "before": 0.3048,
+      "after": 0.0011
+    }
+  }
+}

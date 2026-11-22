@@ -1,7 +1,7 @@
 import { mix } from '../engine/dsp.ts';
 import { atmosphere, scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/motion-outboard-aeration.ts';
+import source from './_recordings/reviewed-motion-outboard-aeration.ts';
 import source2 from './_recordings/milestone-smallwater.ts';
 
 export default {

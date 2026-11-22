@@ -4106,6 +4106,7 @@
     },
     {
       "file": "recipes/_recordings/motion-outboard-aeration.ts",
+      "supersededBy": "recipes/_recordings/reviewed-motion-outboard-aeration.ts",
       "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
       "author": "kyles",
       "url": "https://freesound.org/people/kyles/sounds/637203/",
@@ -4136,6 +4137,7 @@
     },
     {
       "file": "recipes/_recordings/motion-sailboat-cabin.ts",
+      "supersededBy": "recipes/_recordings/reviewed-motion-sailboat-cabin.ts",
       "title": "Anchored boat rolling_Below deck recording.wav",
       "author": "KaleidacousticsAudio",
       "url": "https://freesound.org/people/KaleidacousticsAudio/sounds/627067/",
@@ -5721,6 +5723,36 @@
         {
           "frames": 130320,
           "sha256": "63feee2c05e9e1f3f357eb0477dec6c1ac293a3ea328dfaf13e9b96d47c2d7d2"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/reviewed-motion-outboard-aeration.ts",
+      "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
+      "author": "kyles",
+      "url": "https://freesound.org/people/kyles/sounds/637203/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 163200,
+          "sha256": "880626eeaee1e3c660c871c248e7b8d810cd7581e2efef646b49182ac9f8a383"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/reviewed-motion-sailboat-cabin.ts",
+      "title": "Anchored boat rolling_Below deck recording.wav",
+      "author": "KaleidacousticsAudio",
+      "url": "https://freesound.org/people/KaleidacousticsAudio/sounds/627067/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 165600,
+          "sha256": "e14adcb07070c68b6800b54bea242dcfc64ab8c10fa2521949a72eebf22e7de5"
         }
       ]
     },

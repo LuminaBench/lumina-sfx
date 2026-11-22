@@ -17,10 +17,11 @@ node scripts/search.mjs rain --loop --json
 node scripts/search.mjs --collection "Farm · Harvest" --json
 ```
 
-For a foreground game effect, search with `--isolated` first. That subset uses designed sounds, stationary textures measured from real motors, and tightly cropped impact attacks. Other field recordings need a solo listen for conversation, typing, traffic, or room sound before foreground use. Keep incidental sounds out of the asset and add ambience separately in the game. Pass `--isolated` through install, remix, or the listening desk to enforce this choice.
+For a foreground game effect, search with `--isolated` first. That subset uses designed sounds, stationary textures measured from real motors, and tightly cropped impact attacks. If the isolated subset lacks the performance you need, try `--background-checked` to find field cues screened for speech and keyboard-like sounds across four seeds at three parameter settings. This filter matches the reviewed audio fingerprint and omits cues with an outstanding listening note. An unfiltered JSON search includes the cue’s `auditionNote` when relevant. Solo the actual export at game gain, especially after changing pitch, extending a tail, or looping a quiet passage. For other field recordings, audition the source for conversation, typing, traffic, and room sound before choosing it. Keep incidental sounds out of the asset and add ambience separately in the game. Pass `--isolated` through install, remix, or the listening desk to enforce this choice.
 
 ```sh
 node scripts/search.mjs interceptor --isolated
+node scripts/search.mjs moored hull --background-checked --json
 node scripts/remix.mjs --spec references/scenes/dogfight-cockpit.json --isolated --format wav --dest /absolute/game/audio
 ```
 
@@ -75,7 +76,7 @@ The tool runs QA before publishing. Use `ts` for editable playback, `wav` for PC
 
 For interactive actions, trigger the movement from player input and the contact from the game event. Keep continuous loops running as speed, load or depth changes. Compare candidates with a shared background and ten seeded performances using `npm run audition`.
 
-Use the [cookbook](references/sound-design-cookbook.md) to start a genuinely new cue. Choose relevant recorded transients from the [source inventory](sources/recordings.json). Each recipe default-exports a `SoundRecipe`. Size the output to `ctx.frames`, use `ctx.sampleRate` and derive variation from the supplied seed. Return finite PCM samples. Test the actual file before adding it to the game.
+Use the [cookbook](references/sound-design-cookbook.md) to start a genuinely new cue. Choose relevant recorded transients from the [source inventory](sources/recordings.json). If an inventory entry has `supersededBy`, use that repaired recording for new layers. Each recipe default-exports a `SoundRecipe`. Size the output to `ctx.frames`, use `ctx.sampleRate` and derive variation from the supplied seed. Return finite PCM samples. Test the actual file before adding it to the game.
 
 ```sh
 npm run --silent qa -- --file /absolute/game/src/audio/recipes/sowing-by-hand.ts --both-levels --extremes

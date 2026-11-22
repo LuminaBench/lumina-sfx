@@ -11549,7 +11549,8 @@
       "durationSec": 4.6,
       "mixRole": "ambience",
       "status": "review",
-      "loopable": true
+      "loopable": true,
+      "revision": 2
     },
     {
       "id": "electric-hydrofoil-rises-on-lift",
@@ -11658,7 +11659,8 @@
       "durationSec": 6.4,
       "mixRole": "ambience",
       "status": "review",
-      "loopable": true
+      "loopable": true,
+      "revision": 2
     },
     {
       "id": "personal-watercraft-wash-against-the-dock",
@@ -13843,7 +13845,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 7.02,
       "loopable": true,
-      "brief": "Bilge water sloshing beneath floorboards — constant movement"
+      "brief": "Bilge water sloshing beneath floorboards — constant movement",
+      "revision": 2
     },
     {
       "id": "bilge-water-sloshing-beneath-floorboards-gentle-laps-loop",
@@ -13852,7 +13855,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 6.9,
       "loopable": true,
-      "brief": "Bilge water sloshing beneath floorboards — gentle laps"
+      "brief": "Bilge water sloshing beneath floorboards — gentle laps",
+      "revision": 2
     },
     {
       "id": "bilge-water-sloshing-beneath-floorboards-water-receding",
@@ -13861,7 +13865,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 4.84,
       "loopable": false,
-      "brief": "Bilge water sloshing beneath floorboards — water receding"
+      "brief": "Bilge water sloshing beneath floorboards — water receding",
+      "revision": 2
     },
     {
       "id": "bilge-water-sloshing-beneath-floorboards-water-surging-in",
@@ -13870,7 +13875,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 4.72,
       "loopable": false,
-      "brief": "Bilge water sloshing beneath floorboards — water surging in"
+      "brief": "Bilge water sloshing beneath floorboards — water surging in",
+      "revision": 2
     },
     {
       "id": "blueprint-pin-pulled-free",
@@ -13897,7 +13903,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 1.2,
       "loopable": false,
-      "brief": "Boat rub rail bumps dock then recoils"
+      "brief": "Boat rub rail bumps dock then recoils",
+      "revision": 2
     },
     {
       "id": "body-dragged-one-length",
@@ -15724,7 +15731,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 7.68,
       "loopable": true,
-      "brief": "Current beneath a moored hull — constant movement"
+      "brief": "Current beneath a moored hull — constant movement",
+      "revision": 2
     },
     {
       "id": "current-beneath-a-moored-hull-gentle-laps-loop",
@@ -15733,7 +15741,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 7.56,
       "loopable": true,
-      "brief": "Current beneath a moored hull — gentle laps"
+      "brief": "Current beneath a moored hull — gentle laps",
+      "revision": 2
     },
     {
       "id": "current-beneath-a-moored-hull-water-receding",
@@ -15742,7 +15751,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 5.58,
       "loopable": false,
-      "brief": "Current beneath a moored hull — water receding"
+      "brief": "Current beneath a moored hull — water receding",
+      "revision": 2
     },
     {
       "id": "current-beneath-a-moored-hull-water-surging-in",
@@ -15751,7 +15761,8 @@
       "collection": "Field ambiences — water",
       "durationSec": 5.46,
       "loopable": false,
-      "brief": "Current beneath a moored hull — water surging in"
+      "brief": "Current beneath a moored hull — water surging in",
+      "revision": 2
     },
     {
       "id": "damped-arcade-sidearm-close-dry-report",
@@ -22352,7 +22363,8 @@
       "collection": "Propulsion · Contacts and transitions",
       "durationSec": 1.1,
       "loopable": false,
-      "brief": "Runabout bow lands flat off wake"
+      "brief": "Runabout bow lands flat off wake",
+      "revision": 2
     },
     {
       "id": "saddle-leather-settles-under-weight",
@@ -25333,7 +25345,8 @@
       "collection": "Propulsion · Contacts and transitions",
       "durationSec": 1.23,
       "loopable": false,
-      "brief": "Wake rattles an aluminum skiff floor"
+      "brief": "Wake rattles an aluminum skiff floor",
+      "revision": 2
     },
     {
       "id": "water-at-a-stony-ford-constant-movement-loop",
@@ -25639,7 +25652,8 @@
       "collection": "Field ambiences — wind",
       "durationSec": 5.15,
       "loopable": false,
-      "brief": "Wind against a sail locker hatch — gust front arriving"
+      "brief": "Wind against a sail locker hatch — gust front arriving",
+      "revision": 2
     },
     {
       "id": "wind-against-a-sail-locker-hatch-intermittent-lulls-loop",
@@ -25648,7 +25662,8 @@
       "collection": "Field ambiences — wind",
       "durationSec": 7.28,
       "loopable": true,
-      "brief": "Wind against a sail locker hatch — intermittent lulls"
+      "brief": "Wind against a sail locker hatch — intermittent lulls",
+      "revision": 2
     },
     {
       "id": "wind-against-a-sail-locker-hatch-sustained-current-loop",
@@ -25657,7 +25672,8 @@
       "collection": "Field ambiences — wind",
       "durationSec": 7.4,
       "loopable": true,
-      "brief": "Wind against a sail locker hatch — sustained current"
+      "brief": "Wind against a sail locker hatch — sustained current",
+      "revision": 2
     },
     {
       "id": "wind-against-a-sail-locker-hatch-wind-dying-away",
@@ -25666,7 +25682,8 @@
       "collection": "Field ambiences — wind",
       "durationSec": 5.27,
       "loopable": false,
-      "brief": "Wind against a sail locker hatch — wind dying away"
+      "brief": "Wind against a sail locker hatch — wind dying away",
+      "revision": 2
     },
     {
       "id": "wind-at-a-saltmarsh-boardwalk-gust-front-arriving",

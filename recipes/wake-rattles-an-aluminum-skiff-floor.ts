@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
-import recording1 from './_recordings/motion-sailboat-cabin.ts';
+import recording1 from './_recordings/reviewed-motion-sailboat-cabin.ts';
 import recording2 from './_recordings/milestone-snapwater.ts';
 
 export default {

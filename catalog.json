@@ -896,6 +896,7 @@
       "id": "anchor-links-jump-over-bow-roller",
       "name": "Anchor links jump over bow roller",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "anchor",
@@ -941,6 +942,7 @@
       "id": "anchored-sailboat-stern-cabin-swell-loop",
       "name": "Anchored sailboat stern-cabin swell loop",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "anchored",
@@ -2632,6 +2634,7 @@
       "id": "arcade-round-zip-into-soft-riverbank",
       "name": "Arcade round zip into soft riverbank",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Combat audio · Surfaces and energy",
       "tags": [
         "arcade",
@@ -4397,6 +4400,7 @@
       "id": "bare-foot-over-wet-clay-tile",
       "name": "Bare Foot over Wet Clay Tile",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Everyday actions",
       "tags": [
         "bare",
@@ -5092,6 +5096,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-constant-movement-loop",
       "name": "Bilge water sloshing beneath floorboards — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -5144,6 +5149,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-gentle-laps-loop",
       "name": "Bilge water sloshing beneath floorboards — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -5196,6 +5202,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-water-receding",
       "name": "Bilge water sloshing beneath floorboards — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -5248,6 +5255,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-water-surging-in",
       "name": "Bilge water sloshing beneath floorboards — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -5904,6 +5912,7 @@
       "id": "boat-rub-rail-bumps-dock-then-recoils",
       "name": "Boat rub rail bumps dock then recoils",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Watercraft",
       "tags": [
         "vehicle",
@@ -6409,6 +6418,7 @@
       "id": "bow-spray-crosses-cabin-windscreen",
       "name": "Bow spray crosses cabin windscreen",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
         "vehicle",
@@ -6497,6 +6507,7 @@
       "id": "breakers-beneath-a-timber-jetty-constant-movement-loop",
       "name": "Breakers beneath a timber jetty — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -6550,6 +6561,7 @@
       "id": "breakers-beneath-a-timber-jetty-gentle-laps-loop",
       "name": "Breakers beneath a timber jetty — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -6603,6 +6615,7 @@
       "id": "breakers-beneath-a-timber-jetty-water-receding",
       "name": "Breakers beneath a timber jetty — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -6656,6 +6669,7 @@
       "id": "breakers-beneath-a-timber-jetty-water-surging-in",
       "name": "Breakers beneath a timber jetty — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -7596,6 +7610,7 @@
       "id": "bubbles-rising-beside-a-submerged-wall-constant-movement-loop",
       "name": "Bubbles rising beside a submerged wall — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -7649,6 +7664,7 @@
       "id": "bubbles-rising-beside-a-submerged-wall-gentle-laps-loop",
       "name": "Bubbles rising beside a submerged wall — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -7702,6 +7718,7 @@
       "id": "bubbles-rising-beside-a-submerged-wall-water-receding",
       "name": "Bubbles rising beside a submerged wall — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -7755,6 +7772,7 @@
       "id": "bubbles-rising-beside-a-submerged-wall-water-surging-in",
       "name": "Bubbles rising beside a submerged wall — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -9459,6 +9477,7 @@
       "id": "canvas-kayak-in-a-cove-arrival-splash",
       "name": "Canvas Kayak in a Cove Arrival Splash",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "canvas",
@@ -9545,6 +9564,7 @@
       "id": "canvas-kayak-in-a-cove-paddle-stroke",
       "name": "Canvas Kayak in a Cove Paddle Stroke",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "canvas",
@@ -9623,6 +9643,7 @@
       "id": "canvas-kayak-in-a-cove-soft-boarding-contact",
       "name": "Canvas Kayak in a Cove Soft Boarding Contact",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "canvas",
@@ -16121,6 +16142,7 @@
       "id": "collapsed-ice-shelf-blast-followed-by-falling-debris",
       "name": "Collapsed ice shelf — blast followed by falling debris",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -16174,6 +16196,7 @@
       "id": "collapsed-ice-shelf-muffled-blast-through-cover",
       "name": "Collapsed ice shelf — muffled blast through cover",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -16227,6 +16250,7 @@
       "id": "collapsed-ice-shelf-single-concussive-blast",
       "name": "Collapsed ice shelf — single concussive blast",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -16280,6 +16304,7 @@
       "id": "collapsed-ice-shelf-two-stage-pressure-burst",
       "name": "Collapsed ice shelf — two-stage pressure burst",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -18510,6 +18535,7 @@
       "id": "concrete-fountain-rim-fragments-skipping-across",
       "name": "Concrete fountain rim — fragments skipping across",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -18563,6 +18589,7 @@
       "id": "concrete-fountain-rim-glancing-projectile-hit",
       "name": "Concrete fountain rim — glancing projectile hit",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -18616,6 +18643,7 @@
       "id": "concrete-fountain-rim-hard-impact-and-scatter",
       "name": "Concrete fountain rim — hard impact and scatter",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -22299,6 +22327,7 @@
       "id": "current-beneath-a-moored-hull-constant-movement-loop",
       "name": "Current beneath a moored hull — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -22352,6 +22381,7 @@
       "id": "current-beneath-a-moored-hull-gentle-laps-loop",
       "name": "Current beneath a moored hull — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -22405,6 +22435,7 @@
       "id": "current-beneath-a-moored-hull-water-receding",
       "name": "Current beneath a moored hull — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -22458,6 +22489,7 @@
       "id": "current-beneath-a-moored-hull-water-surging-in",
       "name": "Current beneath a moored hull — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -27715,6 +27747,7 @@
       "id": "ducks-scatter-from-a-reed-bed",
       "name": "Ducks scatter from a reed bed",
       "category": "Animals",
+      "backgroundChecked": true,
       "collection": "Wildlife · Field performances",
       "tags": [
         "duck",
@@ -27765,6 +27798,7 @@
       "id": "ducks-shelter-in-a-reed-channel-loop",
       "name": "Ducks shelter in a reed channel loop",
       "category": "Animals",
+      "backgroundChecked": true,
       "collection": "Wildlife · Location beds",
       "tags": [
         "duck",
@@ -28503,6 +28537,7 @@
       "id": "dune-sand-to-shallow-puddles-walking-transition",
       "name": "Dune sand to shallow puddles walking transition",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface crossings",
       "tags": [
         "beach",
@@ -29547,6 +29582,7 @@
       "id": "electric-hydrofoil-rises-on-lift",
       "name": "Electric hydrofoil rises on lift",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "electric",
@@ -33000,6 +33036,7 @@
       "id": "ferry-landing-at-a-slip-arrival-splash",
       "name": "Ferry Landing at a Slip Arrival Splash",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "ferry",
@@ -33034,6 +33071,7 @@
       "id": "ferry-landing-at-a-slip-body-against-the-fender",
       "name": "Ferry Landing at a Slip Body against the Fender",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "ferry",
@@ -33156,6 +33194,7 @@
       "id": "ferry-landing-at-a-slip-soft-boarding-contact",
       "name": "Ferry Landing at a Slip Soft Boarding Contact",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "ferry",
@@ -36214,6 +36253,7 @@
       "id": "floatplane-floats-slap-through-short-waves",
       "name": "Floatplane floats slap through short waves",
       "category": "Aircraft",
+      "backgroundChecked": true,
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -37609,6 +37649,7 @@
       "id": "frogs-subside-after-a-splash",
       "name": "Frogs subside after a splash",
       "category": "Animals",
+      "backgroundChecked": true,
       "collection": "Wildlife · Field performances",
       "tags": [
         "frog",
@@ -37725,6 +37766,7 @@
       "id": "frosted-pond-ice-debris-shifted-under-load",
       "name": "Frosted pond ice — debris shifted under load",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Destructible scenery",
       "tags": [
         "debris",
@@ -37778,6 +37820,7 @@
       "id": "frosted-pond-ice-first-piece-gives-way",
       "name": "Frosted pond ice — first piece gives way",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Destructible scenery",
       "tags": [
         "debris",
@@ -37831,6 +37874,7 @@
       "id": "frosted-pond-ice-fragments-land-below",
       "name": "Frosted pond ice — fragments land below",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Destructible scenery",
       "tags": [
         "debris",
@@ -37884,6 +37928,7 @@
       "id": "frosted-pond-ice-progressive-collapse",
       "name": "Frosted pond ice — progressive collapse",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Destructible scenery",
       "tags": [
         "debris",
@@ -38588,6 +38633,7 @@
       "id": "frozen-shallow-pool-fragments-skipping-across",
       "name": "Frozen shallow pool — fragments skipping across",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -38641,6 +38687,7 @@
       "id": "frozen-shallow-pool-glancing-projectile-hit",
       "name": "Frozen shallow pool — glancing projectile hit",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -38694,6 +38741,7 @@
       "id": "frozen-shallow-pool-hard-impact-and-scatter",
       "name": "Frozen shallow pool — hard impact and scatter",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -38790,6 +38838,7 @@
       "id": "full-water-trough-fragments-skipping-across",
       "name": "Full water trough — fragments skipping across",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -38843,6 +38892,7 @@
       "id": "full-water-trough-glancing-projectile-hit",
       "name": "Full water trough — glancing projectile hit",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -38896,6 +38946,7 @@
       "id": "full-water-trough-hard-impact-and-scatter",
       "name": "Full water trough — hard impact and scatter",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -39119,6 +39170,7 @@
       "id": "geese-lift-from-shallow-water",
       "name": "Geese lift from shallow water",
       "category": "Animals",
+      "backgroundChecked": true,
       "collection": "Wildlife · Field performances",
       "tags": [
         "goose",
@@ -39258,6 +39310,7 @@
       "id": "geyser-lifts-then-rains-back",
       "name": "Geyser Lifts Then Rains Back",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "geyser",
@@ -39478,6 +39531,7 @@
       "id": "glass-fiber-hull-idling-against-chop-loop",
       "name": "Glass-fiber hull idling against chop loop",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "glass",
@@ -40878,6 +40932,7 @@
       "id": "goose-paddles-to-the-reeds",
       "name": "Goose paddles to the reeds",
       "category": "Animals",
+      "auditionNote": "Check the goose call at foreground gain. Speech classifiers also respond to its short honk.",
       "collection": "Wildlife · Field performances",
       "tags": [
         "goose",
@@ -44526,6 +44581,7 @@
       "id": "harbor-retaining-wall-blast-followed-by-falling-debris",
       "name": "Harbor retaining wall — blast followed by falling debris",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -44579,6 +44635,7 @@
       "id": "harbor-retaining-wall-muffled-blast-through-cover",
       "name": "Harbor retaining wall — muffled blast through cover",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -44632,6 +44689,7 @@
       "id": "harbor-retaining-wall-single-concussive-blast",
       "name": "Harbor retaining wall — single concussive blast",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -44685,6 +44743,7 @@
       "id": "harbor-retaining-wall-two-stage-pressure-burst",
       "name": "Harbor retaining wall — two-stage pressure burst",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -52316,6 +52375,7 @@
       "id": "lagoon-ripples-against-a-stone-step-loop",
       "name": "Lagoon Ripples Against a Stone Step (Loop)",
       "category": "Water & Fire",
+      "auditionNote": "Check a brief change in the water texture near the middle of the default loop.",
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "lagoon",
@@ -52648,6 +52708,7 @@
       "id": "launch-bow-cuts-a-cross-wake",
       "name": "Launch Bow Cuts a Cross-Wake",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "boat",
@@ -57923,6 +57984,7 @@
       "id": "mallard-slips-into-pond-water",
       "name": "Mallard slips into pond water",
       "category": "Animals",
+      "backgroundChecked": true,
       "collection": "Wildlife · Field performances",
       "tags": [
         "duck",
@@ -61753,6 +61815,7 @@
       "id": "mud-bank-fragments-skipping-across",
       "name": "Mud bank — fragments skipping across",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -61805,6 +61868,7 @@
       "id": "mud-bank-glancing-projectile-hit",
       "name": "Mud bank — glancing projectile hit",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -61857,6 +61921,7 @@
       "id": "mud-bank-hard-impact-and-scatter",
       "name": "Mud bank — hard impact and scatter",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -62351,6 +62416,7 @@
       "id": "ocean-breaker-at-a-rock-ledge",
       "name": "Ocean Breaker at a Rock Ledge",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "ocean",
@@ -63670,6 +63736,7 @@
       "id": "outboard-aerated-wake-layer-loop",
       "name": "Outboard aerated wake layer loop",
       "category": "Water & Fire",
+      "auditionNote": "The speech-like tail was repaired. Audition the replacement motor and water loop at sustained foreground gain.",
       "collection": "Maritime · Motors and deck",
       "tags": [
         "outboard",
@@ -63714,6 +63781,7 @@
       "id": "outboard-primer-cranks-and-catches",
       "name": "Outboard primer cranks and catches",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "outboard",
@@ -63749,6 +63817,7 @@
       "id": "outboard-prop-ventilates-over-wave-crest",
       "name": "Outboard prop ventilates over wave crest",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Watercraft",
       "tags": [
         "vehicle",
@@ -67177,6 +67246,7 @@
       "id": "personal-watercraft-wash-against-the-dock",
       "name": "Personal watercraft wash against the dock",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "personal",
@@ -69197,6 +69267,7 @@
       "id": "planing-hull-bow-slap-to-spray",
       "name": "Planing hull bow slap to spray",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
         "planing",
@@ -71195,6 +71266,7 @@
       "id": "pool-practice-board-edge-slap-on-surface",
       "name": "Pool Practice Board Edge Slap on Surface",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Sport · Contacts and feedback",
       "tags": [
         "pool",
@@ -71230,6 +71302,7 @@
       "id": "pool-practice-board-small-pool-landing",
       "name": "Pool Practice Board Small Pool Landing",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Sport · Contacts and feedback",
       "tags": [
         "pool",
@@ -76186,6 +76259,7 @@
       "id": "raindrops-in-a-galvanized-feed-trough-continuous-patter-loop",
       "name": "Raindrops in a galvanized feed trough — continuous patter",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76239,6 +76313,7 @@
       "id": "raindrops-in-a-galvanized-feed-trough-downpour-recedes",
       "name": "Raindrops in a galvanized feed trough — downpour recedes",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76292,6 +76367,7 @@
       "id": "raindrops-in-a-galvanized-feed-trough-individual-drops-loop",
       "name": "Raindrops in a galvanized feed trough — individual drops",
       "category": "Weather & Ambience",
+      "auditionNote": "Check the cadence of the metallic drips at minimum intensity.",
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76345,6 +76421,7 @@
       "id": "raindrops-in-a-galvanized-feed-trough-shower-builds",
       "name": "Raindrops in a galvanized feed trough — shower builds",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76398,6 +76475,7 @@
       "id": "rainwater-passing-a-blocked-downspout-continuous-patter-loop",
       "name": "Rainwater passing a blocked downspout — continuous patter",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76451,6 +76529,7 @@
       "id": "rainwater-passing-a-blocked-downspout-downpour-recedes",
       "name": "Rainwater passing a blocked downspout — downpour recedes",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76504,6 +76583,7 @@
       "id": "rainwater-passing-a-blocked-downspout-individual-drops-loop",
       "name": "Rainwater passing a blocked downspout — individual drops",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -76557,6 +76637,7 @@
       "id": "rainwater-passing-a-blocked-downspout-shower-builds",
       "name": "Rainwater passing a blocked downspout — shower builds",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — rain",
       "tags": [
         "rain",
@@ -78830,6 +78911,7 @@
       "id": "ripples-against-a-floating-pontoon-constant-movement-loop",
       "name": "Ripples against a floating pontoon — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -78883,6 +78965,7 @@
       "id": "ripples-against-a-floating-pontoon-gentle-laps-loop",
       "name": "Ripples against a floating pontoon — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -78936,6 +79019,7 @@
       "id": "ripples-against-a-floating-pontoon-water-receding",
       "name": "Ripples against a floating pontoon — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -78989,6 +79073,7 @@
       "id": "ripples-against-a-floating-pontoon-water-surging-in",
       "name": "Ripples against a floating pontoon — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -79573,6 +79658,7 @@
       "id": "rockpool-spill-over-a-low-lip-constant-movement-loop",
       "name": "Rockpool spill over a low lip — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -79626,6 +79712,7 @@
       "id": "rockpool-spill-over-a-low-lip-gentle-laps-loop",
       "name": "Rockpool spill over a low lip — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -79679,6 +79766,7 @@
       "id": "rockpool-spill-over-a-low-lip-water-receding",
       "name": "Rockpool spill over a low lip — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -79732,6 +79820,7 @@
       "id": "rockpool-spill-over-a-low-lip-water-surging-in",
       "name": "Rockpool spill over a low lip — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -81075,6 +81164,7 @@
       "id": "rowboat-at-reed-bank-arrival-splash",
       "name": "Rowboat at Reed Bank Arrival Splash",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "rowboat",
@@ -81316,6 +81406,7 @@
       "id": "rubber-boot-in-shallow-ditch",
       "name": "Rubber Boot in Shallow Ditch",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Everyday actions",
       "tags": [
         "rubber",
@@ -81442,6 +81533,7 @@
       "id": "runabout-bow-lands-flat-off-wake",
       "name": "Runabout bow lands flat off wake",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
         "vehicle",
@@ -81591,6 +81683,7 @@
       "id": "sailing-dinghy-across-the-bay-arrival-splash",
       "name": "Sailing Dinghy across the Bay Arrival Splash",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "sailing",
@@ -84545,6 +84638,7 @@
       "id": "shallow-puddles-braking-skid-to-a-stop",
       "name": "Shallow puddles braking skid to a stop",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84592,6 +84686,7 @@
       "id": "shallow-puddles-careful-toe-placement",
       "name": "Shallow puddles careful toe placement",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84639,6 +84734,7 @@
       "id": "shallow-puddles-drop-landing-and-recovery",
       "name": "Shallow puddles drop landing and recovery",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84686,6 +84782,7 @@
       "id": "shallow-puddles-heel-to-toe-weight-shift",
       "name": "Shallow puddles heel to toe weight shift",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84724,6 +84821,7 @@
       "id": "shallow-puddles-hurried-retreat",
       "name": "Shallow puddles hurried retreat",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84771,6 +84869,7 @@
       "id": "shallow-puddles-limping-gait",
       "name": "Shallow puddles limping gait",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84810,6 +84909,7 @@
       "id": "shallow-puddles-running-push-off",
       "name": "Shallow puddles running push off",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84857,6 +84957,7 @@
       "id": "shallow-puddles-short-hop-landing",
       "name": "Shallow puddles short hop landing",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84903,6 +85004,7 @@
       "id": "shallow-puddles-slow-stalking-approach",
       "name": "Shallow puddles slow stalking approach",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84950,6 +85052,7 @@
       "id": "shallow-puddles-stagger-and-catch",
       "name": "Shallow puddles stagger and catch",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -84996,6 +85099,7 @@
       "id": "shallow-puddles-tight-turning-pivot",
       "name": "Shallow puddles tight turning pivot",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -85033,6 +85137,7 @@
       "id": "shallow-puddles-to-dune-sand-walking-transition",
       "name": "Shallow puddles to dune sand walking transition",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface crossings",
       "tags": [
         "water",
@@ -85090,6 +85195,7 @@
       "id": "shallow-puddles-to-wet-asphalt-walking-transition",
       "name": "Shallow puddles to wet asphalt walking transition",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface crossings",
       "tags": [
         "water",
@@ -85147,6 +85253,7 @@
       "id": "shallow-puddles-to-wood-planks-walking-transition",
       "name": "Shallow puddles to wood planks walking transition",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface crossings",
       "tags": [
         "water",
@@ -85205,6 +85312,7 @@
       "id": "shallow-puddles-walk-into-a-jog",
       "name": "Shallow puddles walk into a jog",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface performances",
       "tags": [
         "water",
@@ -85252,6 +85360,7 @@
       "id": "shallow-water-burst",
       "name": "Shallow Water Burst",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "explosion",
@@ -85293,6 +85402,7 @@
       "id": "shallow-water-footstep",
       "name": "Shallow Water Footstep",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surfaces",
       "tags": [
         "footstep",
@@ -85656,6 +85766,7 @@
       "id": "shingle-waterline-careful-edge-step",
       "name": "Shingle Waterline Careful Edge Step",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Gear and unusual surfaces",
       "tags": [
         "shingle",
@@ -85699,6 +85810,7 @@
       "id": "shingle-waterline-foot-lifts-free",
       "name": "Shingle Waterline Foot Lifts Free",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Gear and unusual surfaces",
       "tags": [
         "shingle",
@@ -85742,6 +85854,7 @@
       "id": "shingle-waterline-quick-landing-brace",
       "name": "Shingle Waterline Quick Landing Brace",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Gear and unusual surfaces",
       "tags": [
         "shingle",
@@ -85776,6 +85889,7 @@
       "id": "shingle-waterline-weight-transfer",
       "name": "Shingle Waterline Weight Transfer",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Gear and unusual surfaces",
       "tags": [
         "shingle",
@@ -86030,6 +86144,7 @@
       "id": "shoreline-explosion-heavy-water-crown",
       "name": "Shoreline explosion heavy water crown",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Destruction · Pressure and explosions",
       "tags": [
         "shoreline",
@@ -87122,6 +87237,7 @@
       "id": "single-casing-lands-on-water-in-a-shallow-trench",
       "name": "Single casing lands on water in a shallow trench",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Casing and surface foley",
       "tags": [
         "casing",
@@ -87690,6 +87806,7 @@
       "id": "sleet-in-a-shallow-slush-puddle-first-scattered-strikes-loop",
       "name": "Sleet in a shallow slush puddle — first scattered strikes",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — hail",
       "tags": [
         "hail",
@@ -87743,6 +87860,7 @@
       "id": "sleet-in-a-shallow-slush-puddle-last-stones-falling",
       "name": "Sleet in a shallow slush puddle — last stones falling",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — hail",
       "tags": [
         "hail",
@@ -87796,6 +87914,7 @@
       "id": "sleet-in-a-shallow-slush-puddle-squall-arriving",
       "name": "Sleet in a shallow slush puddle — squall arriving",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — hail",
       "tags": [
         "hail",
@@ -87849,6 +87968,7 @@
       "id": "sleet-in-a-shallow-slush-puddle-unbroken-rattle-loop",
       "name": "Sleet in a shallow slush puddle — unbroken rattle",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — hail",
       "tags": [
         "hail",
@@ -88017,6 +88137,7 @@
       "id": "slip-on-a-wet-barn-threshold",
       "name": "Slip on a Wet Barn Threshold",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Everyday actions",
       "tags": [
         "slip",
@@ -88489,6 +88610,7 @@
       "id": "small-outboard-skiff-under-a-bridge-arrival-splash",
       "name": "Small Outboard Skiff under a Bridge Arrival Splash",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "small",
@@ -88534,6 +88656,7 @@
       "id": "small-outboard-skiff-under-a-bridge-motor-pull",
       "name": "Small Outboard Skiff under a Bridge Motor Pull",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "small",
@@ -88661,6 +88784,7 @@
       "id": "small-outboard-skiff-under-a-bridge-soft-boarding-contact",
       "name": "Small Outboard Skiff under a Bridge Soft Boarding Contact",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "small",
@@ -90154,6 +90278,7 @@
       "id": "sonic-boom-doublet-over-open-water",
       "name": "Sonic Boom Doublet Over Open Water",
       "category": "Aircraft",
+      "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "sonic-boom",
@@ -90818,6 +90943,7 @@
       "id": "speedboat-chine-slaps-cross-chop",
       "name": "Speedboat chine slaps cross chop",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
         "vehicle",
@@ -91304,6 +91430,7 @@
       "id": "spent-brass-spills-from-a-pouch-on-water-in-a-shallow-trench",
       "name": "Spent brass spills from a pouch on water in a shallow trench",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Casing and surface foley",
       "tags": [
         "casing",
@@ -94908,6 +95035,7 @@
       "id": "surf-around-a-tidal-cave-mouth-constant-movement-loop",
       "name": "Surf around a tidal cave mouth — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -94961,6 +95089,7 @@
       "id": "surf-around-a-tidal-cave-mouth-gentle-laps-loop",
       "name": "Surf around a tidal cave mouth — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -95014,6 +95143,7 @@
       "id": "surf-around-a-tidal-cave-mouth-water-receding",
       "name": "Surf around a tidal cave mouth — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -95067,6 +95197,7 @@
       "id": "surf-around-a-tidal-cave-mouth-water-surging-in",
       "name": "Surf around a tidal cave mouth — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -95120,6 +95251,7 @@
       "id": "surf-heard-below-a-reef-ledge-constant-movement-loop",
       "name": "Surf heard below a reef ledge — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -95173,6 +95305,7 @@
       "id": "surf-heard-below-a-reef-ledge-gentle-laps-loop",
       "name": "Surf heard below a reef ledge — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -95226,6 +95359,7 @@
       "id": "surf-heard-below-a-reef-ledge-water-receding",
       "name": "Surf heard below a reef ledge — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -95279,6 +95413,7 @@
       "id": "surf-heard-below-a-reef-ledge-water-surging-in",
       "name": "Surf heard below a reef ledge — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -98505,6 +98640,7 @@
       "id": "timber-footbridge-blast-followed-by-falling-debris",
       "name": "Timber footbridge — blast followed by falling debris",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -98557,6 +98693,7 @@
       "id": "timber-footbridge-muffled-blast-through-cover",
       "name": "Timber footbridge — muffled blast through cover",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -98609,6 +98746,7 @@
       "id": "timber-footbridge-single-concussive-blast",
       "name": "Timber footbridge — single concussive blast",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -98661,6 +98799,7 @@
       "id": "timber-footbridge-two-stage-pressure-burst",
       "name": "Timber footbridge — two-stage pressure burst",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Field explosions and breakage",
       "tags": [
         "explosion",
@@ -99110,6 +99249,7 @@
       "id": "tire-floats-then-finds-wet-asphalt",
       "name": "Tire Floats Then Finds Wet Asphalt",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "tire",
@@ -104510,6 +104650,7 @@
       "id": "two-casings-tumble-apart-on-water-in-a-shallow-trench",
       "name": "Two casings tumble apart on water in a shallow trench",
       "category": "Weapons",
+      "backgroundChecked": true,
       "collection": "Casing and surface foley",
       "tags": [
         "casing",
@@ -106953,6 +107094,7 @@
       "id": "wake-rattles-an-aluminum-skiff-floor",
       "name": "Wake rattles an aluminum skiff floor",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
         "vehicle",
@@ -107241,6 +107383,7 @@
       "id": "water-at-a-stony-ford-constant-movement-loop",
       "name": "Water at a stony ford — constant movement",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -107293,6 +107436,7 @@
       "id": "water-at-a-stony-ford-gentle-laps-loop",
       "name": "Water at a stony ford — gentle laps",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -107345,6 +107489,7 @@
       "id": "water-at-a-stony-ford-water-receding",
       "name": "Water at a stony ford — water receding",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -107397,6 +107542,7 @@
       "id": "water-at-a-stony-ford-water-surging-in",
       "name": "Water at a stony ford — water surging in",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -108681,6 +108827,7 @@
       "id": "wet-asphalt-slide-throws-a-fan-of-spray",
       "name": "Wet asphalt slide throws a fan of spray",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
         "vehicle",
@@ -108984,6 +109131,7 @@
       "id": "wet-asphalt-to-shallow-puddles-walking-transition",
       "name": "Wet asphalt to shallow puddles walking transition",
       "category": "Footsteps & UI",
+      "backgroundChecked": true,
       "collection": "Movement · Surface crossings",
       "tags": [
         "rain",
@@ -109113,6 +109261,7 @@
       "id": "wet-ground-hit-by-arcade-projectile",
       "name": "Wet Ground Hit by Arcade Projectile",
       "category": "Impacts",
+      "backgroundChecked": true,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "wet",
@@ -109395,6 +109544,7 @@
       "id": "wheel-arch-throws-a-sheet-of-spray",
       "name": "Wheel Arch Throws a Sheet of Spray",
       "category": "Vehicles & Engines",
+      "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "wheel-arch",
@@ -109531,6 +109681,7 @@
       "id": "wind-against-a-sail-locker-hatch-gust-front-arriving",
       "name": "Wind against a sail locker hatch — gust front arriving",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -109583,6 +109734,7 @@
       "id": "wind-against-a-sail-locker-hatch-intermittent-lulls-loop",
       "name": "Wind against a sail locker hatch — intermittent lulls",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -109635,6 +109787,7 @@
       "id": "wind-against-a-sail-locker-hatch-sustained-current-loop",
       "name": "Wind against a sail locker hatch — sustained current",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -109687,6 +109840,7 @@
       "id": "wind-against-a-sail-locker-hatch-wind-dying-away",
       "name": "Wind against a sail locker hatch — wind dying away",
       "category": "Weather & Ambience",
+      "backgroundChecked": true,
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -112233,6 +112387,7 @@
       "id": "wood-planks-to-shallow-puddles-walking-transition",
       "name": "Wood planks to shallow puddles walking transition",
       "category": "Footsteps & UI",
+      "auditionNote": "Check the transition between plank knocks and splashes in the game mix.",
       "collection": "Movement · Surface crossings",
       "tags": [
         "boardwalk",
@@ -112671,6 +112826,7 @@
       "id": "wooden-dinghy-at-a-dock-arrival-splash",
       "name": "Wooden Dinghy at a Dock Arrival Splash",
       "category": "Water & Fire",
+      "backgroundChecked": true,
       "collection": "Water · Boats and shore",
       "tags": [
         "wooden",

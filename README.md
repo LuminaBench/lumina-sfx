@@ -7,7 +7,7 @@ Your coding agent can find a sound, layer a new one and deliver it to your game 
 
 ## Quick Start
 
-With Node.js 22.12 or newer and Git installed, run this once and select your coding agent.
+With Node.js 22.20 or newer and Git installed, run this once and select your coding agent.
 
 ```sh
 npx skills add LuminaBench/lumina-sfx -g
@@ -15,11 +15,13 @@ npx skills add LuminaBench/lumina-sfx -g
 
 Open a fresh agent session in your project and ask it to use `lumina-sfx`. Your players only need the audio or runtime your game ships.
 
-**Update installed global skills**
+**Update Lumina SFX**
 
 ```sh
-npx skills update -g
+npx skills update lumina-sfx -g
 ```
+
+Open a fresh agent session after updating. WAVs and recipes already copied into a game keep their existing version. Ask your agent to re-export the cues you want to refresh.
 
 **Remove Lumina SFX**
 
@@ -53,6 +55,7 @@ Run these from the installed skill directory or a clone of this repository. Repl
 
 ```sh
 node scripts/search.mjs rain --loop
+node scripts/search.mjs moored hull --background-checked
 node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --space small_room --wetness 0.25 --format wav --dest /path/to/game/audio
 node scripts/install-sfx.mjs grass-footstep gravel-footstep --engine godot --project /path/to/game
 npm run --silent qa -- grass-footstep --both-levels --extremes

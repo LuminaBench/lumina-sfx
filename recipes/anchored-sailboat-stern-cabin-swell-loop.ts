@@ -1,6 +1,6 @@
 import { scene, sceneCredits } from './_shared/material-scenes.ts';
 import type { SoundRecipe } from '../engine/types.ts';
-import source from './_recordings/motion-sailboat-cabin.ts';
+import source from './_recordings/reviewed-motion-sailboat-cabin.ts';
 
 export default {
   id: "anchored-sailboat-stern-cabin-swell-loop",

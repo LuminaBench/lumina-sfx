@@ -2,7 +2,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import { fieldWeather } from './_shared/weather-field.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
 import source from './_recordings/motion-harbor-hydrophone.ts';
-import wash from './_recordings/motion-sailboat-cabin.ts';
+import wash from './_recordings/reviewed-motion-sailboat-cabin.ts';
 import detail from './_recordings/atlas-bubbles.ts';
 
 export default {
