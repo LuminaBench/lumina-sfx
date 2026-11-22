@@ -68,4 +68,4 @@ You can render, modify and ship the sounds in personal or commercial games, apps
 
 ---
 
-**Support** · [LuminaBench](https://luminabench.com) · [About GitHub Sponsors](https://github.com/sponsors)
+**Support** · [LuminaBench](https://luminabench.com) · [Sponsor LuminaBench on GitHub](https://github.com/sponsors/LuminaBench)
