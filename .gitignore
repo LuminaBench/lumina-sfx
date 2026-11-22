@@ -5,3 +5,11 @@ qa/output/
 tasks/.feedback-*
 tasks/feedback.json
 sources/raw/
+
+# Personal listening desk and local hosting configuration
+/demo/
+/scripts/compare.mjs
+/.openai/
+*.wav
+*.ogg
+*.opus

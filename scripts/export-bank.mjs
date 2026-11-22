@@ -11,9 +11,9 @@ import { ROOT } from './recipes.mjs';
 const run = promisify(execFile);
 const studioEncoder = join(homedir(), '.local/share/lumina-sfx/tools/ffmpeg');
 const ffmpeg = process.env.FFMPEG_PATH || (existsSync(studioEncoder) ? studioEncoder : 'ffmpeg');
-const output = join(ROOT, 'qa/output');
+const output = process.env.LUMINA_QA_OUTPUT || join(ROOT, 'qa/output');
 const bank = join(output, 'opus-bank');
-const report = JSON.parse(await readFile(process.argv[2] || join(ROOT, 'qa/output/report-extremes-both-levels.json')));
+const report = JSON.parse(await readFile(process.argv[2] || join(output, 'report-extremes-both-levels.json')));
 const { sounds } = JSON.parse(await readFile(join(ROOT, 'catalog.json')));
 const approved = new Map(report.results.map(r => [r.id,r]));
 if (!report.pass || !report.profiles?.includes('balanced') || sounds.some(s => !approved.get(s.id)?.pass) || sounds.length !== approved.size) {

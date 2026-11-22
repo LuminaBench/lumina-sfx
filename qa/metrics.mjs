@@ -116,7 +116,7 @@ export function inspect(samples, recipe, rate) {
   const rmsDb = gainToDb(activeRms(samples, rate));
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
   const onsetMs = firstOnset(samples, Math.max(maximum * 0.02, dbToGain(-60))) / rate * 1000;
-  const onsetLimit = recipe.immediateOnset ? 1 : 5;
+  const onsetLimit = 1;
   const bands = spectrum(samples, rate, organicMaterial(recipe));
   const defaults = [
     ...(['explosion', 'thunder'].some((tag) => recipe.tags.includes(tag)) ? [{ band: 'sub', minShare: 0.15 }] : []),
@@ -145,7 +145,7 @@ export function inspectBalanced(samples, recipe, rate, settings, measured) {
   const deltaDb = measured.activeDb - settings.activeDb;
   const pass = measured.peakDbfs <= settings.ceilingDbfs + 0.01 &&
     Math.abs(deltaDb - settings.gainDb) < 0.10 &&
-    (recipe.loopable ? loop.pass : onsetMs < (recipe.immediateOnset ? 1 : 5));
+    (recipe.loopable ? loop.pass : onsetMs < (1));
   return {
     pass,
     role: settings.role,

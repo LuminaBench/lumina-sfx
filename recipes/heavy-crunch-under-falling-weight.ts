@@ -6,7 +6,7 @@ import dryBranchSnap from './_recordings/dry-branch-snap.ts';
 import fieldPepperRip from './_recordings/field-pepper-rip.ts';
 
 export default {
-  id: 'heavy-crunch-under-falling-weight', name: "Heavy crunch under falling weight", category: 'Zombies & Combat',
+  id: 'heavy-crunch-under-falling-weight', name: "Heavy crunch under falling weight", category: 'Combat Foley',
   tags: ["bone", "crush", "wet", "body", "impact"],
   loopable: false, durationSec: 0.519, mixRole: 'impact', targetRmsDbfs: -22,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

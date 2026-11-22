@@ -5,7 +5,7 @@ import twoFootLanding from './_recordings/two-foot-landing.ts';
 import jacketMovementRustle from './_recordings/jacket-movement-rustle.ts';
 
 export default {
-  id: 'knees-strike-and-hands-catch', name: "Knees strike and hands catch", category: 'Zombies & Combat',
+  id: 'knees-strike-and-hands-catch', name: "Knees strike and hands catch", category: 'Combat Foley',
   tags: ["body", "fall", "kneeling", "landing"],
   loopable: false, durationSec: 0.612, mixRole: 'impact', targetRmsDbfs: -23,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

@@ -5,7 +5,8 @@ export const macroControls = {
   punch: { min: 0, max: 1, default: 0 },
   size: { min: 0, max: 1, default: 0.5 },
   distance: { min: 0, max: 1, default: 0 },
-  space: { values: ['dry', 'small_room', 'hallway', 'outdoor', 'cavern'], default: 'dry' },
+  space: { values: ['dry', 'small_room', 'hallway', 'outdoor_open', 'canyon_echo', 'underwater', 'outdoor', 'cavern'], default: 'dry' },
+  wetness: { min: 0, max: 1, default: 0.5 },
   grit: { min: 0, max: 1, default: 0 },
   speed: { min: 0.25, max: 4, default: 1 },
   pitchShift: { min: -24, max: 24, default: 0 },
@@ -16,6 +17,7 @@ const defaults: Required<DesignMacros> = {
   size: 0.5,
   distance: 0,
   space: 'dry',
+  wetness: 0.5,
   grit: 0,
   speed: 1,
   pitchShift: 0,
@@ -63,6 +65,9 @@ const spaces = {
     ],
     tail: 0.35,
   },
+  outdoor_open: { taps: [[0.041, 0.12], [0.116, -0.055]], tail: 0.22 },
+  canyon_echo: { taps: [[0.153, 0.43], [0.287, -0.31], [0.419, 0.22]], tail: 1.18 },
+  underwater: { taps: [[0.016, 0.21], [0.052, 0.24], [0.097, -0.12]], tail: 0.43 },
   cavern: {
     taps: [
       [0.059, 0.36],
@@ -75,7 +80,7 @@ const spaces = {
 } as const;
 
 function duration(recipe: SoundRecipe, m: Required<DesignMacros>) {
-  return recipe.durationSec / m.speed + (recipe.loopable ? 0 : spaces[m.space].tail + 0.24 * m.distance);
+  return recipe.durationSec / m.speed + (recipe.loopable ? 0 : (m.wetness === 0 ? 0 : spaces[m.space].tail + 0.24 * m.distance));
 }
 
 export function renderDurationSec(recipe: SoundRecipe, override?: DesignMacros): number {
@@ -182,6 +187,7 @@ function shape(
   }
   const bass = biquad('lowpass', 200, 0.71, rate);
   const air = biquad('lowpass', Math.min(rate * 0.45, 18000 * 0.053 ** m.distance), 0.71, rate);
+  const submerged = biquad('lowpass', 1100, 0.66, rate);
   const fast = 1 - Math.exp(-1 / (rate * 0.0013)),
     slow = 1 - Math.exp(-1 / (rate * 0.028));
   let attack = 0,
@@ -195,9 +201,10 @@ function shape(
       x *= 1 + ((m.punch * Math.max(0, attack - body)) / (attack + 0.005)) * 2;
     }
     if (m.grit) x = (1 - m.grit) * x + m.grit * Math.tanh(x * (1 + 5 * m.grit));
+    if (m.space === 'underwater') x += m.wetness * (submerged(x) - x);
     out[i] = m.distance ? air(x) * (1 - 0.34 * m.distance) : x;
   }
-  if (m.space === 'dry' && !m.distance) return out;
+  if (m.wetness === 0 || (m.space === 'dry' && !m.distance)) return out;
   const reflected = out.slice();
   const reflections: [number, number][] = spaces[m.space].taps.map(([time, gain]) => [time, gain]);
   if (m.distance) reflections.push([0.042 + 0.11 * m.distance, 0.38 * m.distance]);
@@ -205,13 +212,13 @@ function shape(
     const delay = Math.max(1, Math.round(time * rate));
     const damp = biquad('lowpass', 3500 / (1 + m.distance), 0.71, rate);
     const memory = new Float32Array(delay);
-    const decay = Math.max(0.05, spaces[m.space].tail + 0.24 * m.distance);
+    const decay = Math.max(0.05, (m.wetness === 0 ? 0 : spaces[m.space].tail + 0.24 * m.distance));
     const feedback = 0.004 ** (time / decay);
     for (let i = 0; i < out.length; i++) {
       const j = i % delay,
         echo = damp(memory[j]);
       memory[j] = out[i] + feedback * echo;
-      reflected[i] += gain * echo;
+      reflected[i] += (2 * m.wetness) * gain * echo;
     }
   }
   return reflected;

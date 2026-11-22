@@ -5,7 +5,7 @@ import wetCropBrush from './_recordings/wet-crop-brush.ts';
 import twoFootLanding from './_recordings/two-foot-landing.ts';
 
 export default {
-  id: 'close-palm-slap-with-wet-tail', name: "Close palm slap with wet tail", category: 'Zombies & Combat',
+  id: 'close-palm-slap-with-wet-tail', name: "Close palm slap with wet tail", category: 'Combat Foley',
   tags: ["flesh", "slap", "body", "wet", "impact"],
   loopable: false, durationSec: 0.325, mixRole: 'impact', targetRmsDbfs: -22,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

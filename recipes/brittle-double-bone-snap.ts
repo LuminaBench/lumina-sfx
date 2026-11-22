@@ -5,7 +5,7 @@ import dryBranchSnap from './_recordings/dry-branch-snap.ts';
 import jacketMovementRustle from './_recordings/jacket-movement-rustle.ts';
 
 export default {
-  id: 'brittle-double-bone-snap', name: "Brittle double bone snap", category: 'Zombies & Combat',
+  id: 'brittle-double-bone-snap', name: "Brittle double bone snap", category: 'Combat Foley',
   tags: ["bone", "crunch", "fracture", "foley"],
   loopable: false, durationSec: 0.369, mixRole: 'impact', targetRmsDbfs: -22,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

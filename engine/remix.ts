@@ -25,7 +25,7 @@ export interface RemixDesign {
 
 export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]): SoundRecipe {
   if (typeof design.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(design.id)) throw Error('Use a lowercase hyphenated remix ID');
-  if (!layers.length || layers.length > 3) throw Error('A remix uses one to three layers');
+  if (!layers.length || layers.length > 4) throw Error('A remix uses one to four layers');
   resolveMacros(design.macros);
   for (const target of design.spectrum ?? []) {
     if (

@@ -7,9 +7,9 @@ import { pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
 import { loadRecipes, ROOT } from '../scripts/recipes.mjs';
 
-const output = join(ROOT, 'qa', 'output');
+const output = resolve(process.env.LUMINA_QA_OUTPUT || join(ROOT, 'qa', 'output'));
 const seedCount = 4;
-const masters = join(ROOT, 'qa/output', 'master-wav');
+const masters = join(output, 'master-wav');
 const repairs = join(output, 'rework');
 async function checkAndRoute(recipe, extremes, bothLevels) {
   const result = await checkRecipe(recipe, { extremes, bothLevels, wavPath: join(masters, recipe.id + '.wav') });

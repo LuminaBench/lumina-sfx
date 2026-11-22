@@ -6,7 +6,7 @@ import wetCropBrush from './_recordings/wet-crop-brush.ts';
 import dryVineBrush from './_recordings/dry-vine-brush.ts';
 
 export default {
-  id: 'heavy-fall-into-wet-leaves', name: "Heavy fall into wet leaves", category: 'Zombies & Combat',
+  id: 'heavy-fall-into-wet-leaves', name: "Heavy fall into wet leaves", category: 'Combat Foley',
   tags: ["body", "fall", "wet", "leaves", "impact"],
   loopable: false, durationSec: 0.808, mixRole: 'impact', targetRmsDbfs: -23,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

@@ -5,7 +5,7 @@ import slattedCrateSettle from './_recordings/slatted-crate-settle.ts';
 import jacketMovementRustle from './_recordings/jacket-movement-rustle.ts';
 
 export default {
-  id: 'shoulder-checks-a-wooden-jamb', name: "Shoulder checks a wooden jamb", category: 'Zombies & Combat',
+  id: 'shoulder-checks-a-wooden-jamb', name: "Shoulder checks a wooden jamb", category: 'Combat Foley',
   tags: ["body", "impact", "shoulder", "door", "combat"],
   loopable: false, durationSec: 0.41, mixRole: 'impact', targetRmsDbfs: -22,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

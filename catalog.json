@@ -21,10 +21,18 @@
         "dry",
         "small_room",
         "hallway",
+        "outdoor_open",
+        "canyon_echo",
+        "underwater",
         "outdoor",
         "cavern"
       ],
       "default": "dry"
+    },
+    "wetness": {
+      "min": 0,
+      "max": 1,
+      "default": 0.5
     },
     "grit": {
       "min": 0,
@@ -42,7 +50,7 @@
       "default": 0
     }
   },
-  "count": 2626,
+  "count": 2617,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -950,55 +958,6 @@
       },
       "channels": 1,
       "file": "recipes/anchored-sailboat-stern-cabin-swell-loop.ts"
-    },
-    {
-      "id": "angry-creature-recoils-from-contact",
-      "name": "Angry creature recoils from contact",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "snarl",
-        "hit",
-        "reaction"
-      ],
-      "loopable": false,
-      "durationSec": 1.4,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -22,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Rustling foliage.WAV",
-        "author": "DDT197",
-        "url": "https://freesound.org/people/DDT197/sounds/445788/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/angry-creature-recoils-from-contact.ts"
     },
     {
       "id": "antique-long-rifle-close-dry-report",
@@ -5658,6 +5617,73 @@
       "file": "recipes/blast-from-inside-a-vehicle-cabin.ts"
     },
     {
+      "id": "blast-through-a-timber-partition",
+      "name": "Blast Through a Timber Partition",
+      "category": "Impacts",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "blast",
+        "timber",
+        "wood",
+        "breach",
+        "splinters",
+        "debris",
+        "cinematic",
+        "explosion"
+      ],
+      "loopable": false,
+      "durationSec": 4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -10.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "WOODImpt_Large Axe Chopping Small Log_HvD_OwSFX",
+        "author": "Hano_van_Dalen",
+        "url": "https://freesound.org/people/Hano_van_Dalen/sounds/767326/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "snd_box_smash.wav",
+          "author": "gristi",
+          "url": "https://freesound.org/people/gristi/sounds/562189/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Jump_Landing_Wood_01.wav",
+          "author": "IPaddeh",
+          "url": "https://freesound.org/people/IPaddeh/sounds/422857/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Jump Into Gravel.MP3",
+          "author": "EchoCinematics",
+          "url": "https://freesound.org/people/EchoCinematics/sounds/132901/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/blast-through-a-timber-partition.ts"
+    },
+    {
       "id": "blink-teleport",
       "name": "Blink Teleport",
       "category": "Sci-Fi & UI",
@@ -5681,55 +5707,6 @@
       "targetRmsDbfs": -23,
       "channels": 1,
       "file": "recipes/blink-teleport.ts"
-    },
-    {
-      "id": "blocked-doorway-angry-moan",
-      "name": "Blocked doorway angry moan",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "zombie",
-        "frustration",
-        "door"
-      ],
-      "loopable": false,
-      "durationSec": 2.017,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Zombie moaning",
-        "author": "8oni",
-        "url": "https://freesound.org/people/8oni/sounds/394843/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "fast door banging",
-          "author": "perrybassin",
-          "url": "https://freesound.org/people/perrybassin/sounds/686795/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/blocked-doorway-angry-moan.ts"
     },
     {
       "id": "blueprint-pin-pulled-free",
@@ -5909,7 +5886,7 @@
     {
       "id": "body-dragged-one-length",
       "name": "Body dragged one length",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -7455,7 +7432,7 @@
     {
       "id": "brittle-double-bone-snap",
       "name": "Brittle double bone snap",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "bone",
@@ -13246,6 +13223,7 @@
         }
       },
       "targetRmsDbfs": -22,
+      "mixRole": "voice",
       "recording": {
         "title": "Chicken clucking",
         "author": "Breviceps",
@@ -13491,6 +13469,66 @@
       "file": "recipes/choice-replaces-an-active-selection.ts"
     },
     {
+      "id": "cinematic-c4-pressure-front",
+      "name": "Cinematic C4 Pressure Front",
+      "category": "Impacts",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "blast",
+        "pressure-front",
+        "shockwave",
+        "cinematic",
+        "sub",
+        "theatrical",
+        "impact",
+        "explosion"
+      ],
+      "loopable": false,
+      "durationSec": 4.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -10,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Foley_Rocks_Stones_Impacts_Mono.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/567701/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Old SLR film camera film advance lever and shutter button click",
+          "author": "khenshom",
+          "url": "https://freesound.org/people/khenshom/sounds/516486/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/cinematic-c4-pressure-front.ts"
+    },
+    {
       "id": "cinematic-chapter-card-thump",
       "name": "Cinematic Chapter Card Thump",
       "category": "Sci-Fi & UI",
@@ -13515,6 +13553,73 @@
       "mixRole": "impact",
       "channels": 1,
       "file": "recipes/cinematic-chapter-card-thump.ts"
+    },
+    {
+      "id": "cinematic-petrol-flare-and-falling-cinders",
+      "name": "Cinematic Petrol Flare and Falling Cinders",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "fire",
+        "flare",
+        "ignition",
+        "whoosh",
+        "cinders",
+        "embers",
+        "cinematic",
+        "explosion"
+      ],
+      "loopable": false,
+      "durationSec": 5.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -12.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "TELV 152 Burlap Bag Rustles.mp3",
+        "author": "mf_gloom",
+        "url": "https://freesound.org/people/mf_gloom/sounds/517849/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Bonfire CU with hiss.aif",
+          "author": "surrey_film",
+          "url": "https://freesound.org/people/surrey_film/sounds/86342/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Firecracker Explosion",
+          "author": "unfa",
+          "url": "https://freesound.org/people/unfa/sounds/609588/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Footsteps_Mountain_Boots_Gravel_Mono.wav",
+          "author": "Nox_Sound",
+          "url": "https://freesound.org/people/Nox_Sound/sounds/556002/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/cinematic-petrol-flare-and-falling-cinders.ts"
     },
     {
       "id": "city-bus-engine-idle-loop",
@@ -14229,7 +14334,7 @@
     {
       "id": "close-palm-slap-with-wet-tail",
       "name": "Close palm slap with wet tail",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "flesh",
@@ -20846,104 +20951,6 @@
       "file": "recipes/crafting-stack-reaches-capacity.ts"
     },
     {
-      "id": "crawler-pulls-across-wet-tile",
-      "name": "Crawler pulls across wet tile",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "crawl",
-        "drag",
-        "flesh"
-      ],
-      "loopable": false,
-      "durationSec": 1.722,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -26,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Rustling foliage.WAV",
-        "author": "DDT197",
-        "url": "https://freesound.org/people/DDT197/sounds/445788/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Footsteps_Mountain_Boots_Gravel_Mono.wav",
-          "author": "Nox_Sound",
-          "url": "https://freesound.org/people/Nox_Sound/sounds/556002/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/crawler-pulls-across-wet-tile.ts"
-    },
-    {
-      "id": "creature-rolls-against-a-steel-door",
-      "name": "Creature rolls against a steel door",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "body",
-        "impact",
-        "hatch"
-      ],
-      "loopable": false,
-      "durationSec": 1.147,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Feet Landing On Ground",
-        "author": "elynch0901",
-        "url": "https://freesound.org/people/elynch0901/sounds/464489/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Metal_Hatch_Small_Fumble_Close_01",
-          "author": "Rudmer_Rotteveel",
-          "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/718442/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/creature-rolls-against-a-steel-door.ts"
-    },
-    {
       "id": "crevasse-ice-break",
       "name": "Crevasse Ice Break",
       "category": "Impacts",
@@ -21963,55 +21970,6 @@
       ],
       "channels": 1,
       "file": "recipes/crouch-shift-on-leaf-litter.ts"
-    },
-    {
-      "id": "crouched-creature-rises-from-rubble",
-      "name": "Crouched creature rises from rubble",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "zombie",
-        "scrape",
-        "snarl"
-      ],
-      "loopable": false,
-      "durationSec": 1.452,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -24,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Footsteps_Mountain_Boots_Gravel_Mono.wav",
-        "author": "Nox_Sound",
-        "url": "https://freesound.org/people/Nox_Sound/sounds/556002/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "concrete_17a_boots_walk.wav",
-          "author": "sturmankin",
-          "url": "https://freesound.org/people/sturmankin/sounds/272253/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/crouched-creature-rises-from-rubble.ts"
     },
     {
       "id": "crow-leaves-a-fence-post",
@@ -25509,7 +25467,7 @@
     {
       "id": "distant-impact-through-a-floor",
       "name": "Distant impact through a floor",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -27776,7 +27734,7 @@
     {
       "id": "dull-torso-hit-followed-by-cloth",
       "name": "Dull torso hit followed by cloth",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -32866,98 +32824,6 @@
       "file": "recipes/fender-scrape-followed-by-mirror-strike.ts"
     },
     {
-      "id": "feral-lunge-past-a-shoulder",
-      "name": "Feral lunge past a shoulder",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "creature",
-        "lunge",
-        "rush"
-      ],
-      "loopable": false,
-      "durationSec": 0.79,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -22,
-      "mixRole": "voice",
-      "recording": {
-        "title": "zombie growl",
-        "author": "drdock",
-        "url": "https://freesound.org/people/drdock/sounds/740007/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
-          "author": "Nox_Sound",
-          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Feet Landing On Ground",
-          "author": "elynch0901",
-          "url": "https://freesound.org/people/elynch0901/sounds/464489/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/feral-lunge-past-a-shoulder.ts"
-    },
-    {
-      "id": "feral-throat-catches-on-an-inhale",
-      "name": "Feral throat catches on an inhale",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "zombie",
-        "rasp",
-        "inhalation",
-        "close"
-      ],
-      "loopable": false,
-      "durationSec": 1.26,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Zombie moaning",
-        "author": "8oni",
-        "url": "https://freesound.org/people/8oni/sounds/394843/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/feral-throat-catches-on-an-inhale.ts"
-    },
-    {
       "id": "ferry-landing-at-a-slip-arrival-splash",
       "name": "Ferry Landing at a Slip Arrival Splash",
       "category": "Water & Fire",
@@ -36377,6 +36243,58 @@
       "file": "recipes/foot-placed-on-a-cart-step.ts"
     },
     {
+      "id": "forked-lightning-with-a-late-hill-return",
+      "name": "Forked Lightning with a Late Hill Return",
+      "category": "Weather & Ambience",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "lightning",
+        "thunder",
+        "storm",
+        "hills",
+        "echo",
+        "late-return",
+        "weather"
+      ],
+      "loopable": false,
+      "durationSec": 6.4,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -12.5,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Whistling wind at marina",
+          "author": "richwise",
+          "url": "https://freesound.org/people/richwise/sounds/796396/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/forked-lightning-with-a-late-hill-return.ts"
+    },
+    {
       "id": "forklift-lift-under-a-pallet",
       "name": "Forklift lift under a pallet",
       "category": "Vehicles & Engines",
@@ -38963,6 +38881,72 @@
       },
       "channels": 1,
       "file": "recipes/geese-warning-flock.ts"
+    },
+    {
+      "id": "geyser-lifts-then-rains-back",
+      "name": "Geyser Lifts Then Rains Back",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "geyser",
+        "eruption",
+        "steam",
+        "water",
+        "rain",
+        "geothermal",
+        "splash"
+      ],
+      "loopable": false,
+      "durationSec": 6.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -14.5,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Aquatic sound of some bubble in a swimming pool (underwater recording)",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/208816/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Old SLR film camera film advance lever and shutter button click",
+          "author": "khenshom",
+          "url": "https://freesound.org/people/khenshom/sounds/516486/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Watering the garden",
+          "author": "derjuli",
+          "url": "https://freesound.org/people/derjuli/sounds/467227/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Watering with a Watering Can.mp3",
+          "author": "Bricklover",
+          "url": "https://freesound.org/people/Bricklover/sounds/532890/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/geyser-lifts-then-rains-back.ts"
     },
     {
       "id": "glass-diagram-before-and-after-swap",
@@ -45016,7 +45000,7 @@
     {
       "id": "heavy-crunch-under-falling-weight",
       "name": "Heavy crunch under falling weight",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "bone",
@@ -45147,7 +45131,7 @@
     {
       "id": "heavy-fall-into-wet-leaves",
       "name": "Heavy fall into wet leaves",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -45204,7 +45188,7 @@
     {
       "id": "heavy-fall-onto-empty-crates",
       "name": "Heavy fall onto empty crates",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -48019,153 +48003,6 @@
       "file": "recipes/hop-over-a-shallow-furrow.ts"
     },
     {
-      "id": "horde-behind-a-boarded-window-loop",
-      "name": "Horde behind a boarded window loop",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Location beds",
-      "tags": [
-        "zombie",
-        "walla",
-        "boarded",
-        "window",
-        "crowd",
-        "loop"
-      ],
-      "loopable": true,
-      "durationSec": 4.5,
-      "params": {
-        "presence": {
-          "label": "Presence",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -27,
-      "mixRole": "ambience",
-      "recording": {
-        "title": "ZombiesMoaning.wav",
-        "author": "voiceofgup",
-        "url": "https://freesound.org/people/voiceofgup/sounds/165872/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "fast door banging",
-          "author": "perrybassin",
-          "url": "https://freesound.org/people/perrybassin/sounds/686795/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "piece_of_wood_thrown_or_dropped.wav",
-          "author": "vibe_crc",
-          "url": "https://freesound.org/people/vibe_crc/sounds/59319/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/horde-behind-a-boarded-window-loop.ts"
-    },
-    {
-      "id": "horde-recedes-down-a-corridor",
-      "name": "Horde recedes down a corridor",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "horde",
-        "zombie",
-        "crowd",
-        "distance"
-      ],
-      "loopable": false,
-      "durationSec": 4.357,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -25,
-      "mixRole": "voice",
-      "recording": {
-        "title": "ZombiesMoaning.wav",
-        "author": "voiceofgup",
-        "url": "https://freesound.org/people/voiceofgup/sounds/165872/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "channels": 1,
-      "file": "recipes/horde-recedes-down-a-corridor.ts"
-    },
-    {
-      "id": "horde-surges-against-a-gate",
-      "name": "Horde surges against a gate",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "horde",
-        "zombie",
-        "crowd",
-        "gate"
-      ],
-      "loopable": false,
-      "durationSec": 3.257,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
-      "recording": {
-        "title": "ZombiesMoaning.wav",
-        "author": "voiceofgup",
-        "url": "https://freesound.org/people/voiceofgup/sounds/165872/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Light Metal Chain Shake",
-          "author": "loganzsound",
-          "url": "https://freesound.org/people/loganzsound/sounds/874471/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Gate door drawbridge wooden creaky opens closes hinge.wav",
-          "author": "WavJunction.com",
-          "url": "https://freesound.org/people/WavJunction.com/sounds/456763/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "fast door banging",
-          "author": "perrybassin",
-          "url": "https://freesound.org/people/perrybassin/sounds/686795/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/horde-surges-against-a-gate.ts"
-    },
-    {
       "id": "horse-chewing-a-carrot",
       "name": "Horse Chewing a Carrot",
       "category": "Animals",
@@ -49790,163 +49627,6 @@
       "file": "recipes/industrial-warning-pulse-loop.ts"
     },
     {
-      "id": "infected-below-a-bridge-loop",
-      "name": "Infected below a bridge loop",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Location beds",
-      "tags": [
-        "zombie",
-        "crowd",
-        "moan",
-        "water",
-        "horror",
-        "loop"
-      ],
-      "loopable": true,
-      "durationSec": 4.5,
-      "params": {
-        "presence": {
-          "label": "Presence",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -28,
-      "mixRole": "ambience",
-      "recording": {
-        "title": "Small brook, stream, water sound",
-        "author": "SamsterBirdies",
-        "url": "https://freesound.org/people/SamsterBirdies/sounds/584269/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "ZombiesMoaning.wav",
-          "author": "voiceofgup",
-          "url": "https://freesound.org/people/voiceofgup/sounds/165872/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/infected-below-a-bridge-loop.ts"
-    },
-    {
-      "id": "infected-claws-at-a-locked-door",
-      "name": "Infected claws at a locked door",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "scratching",
-        "rattling",
-        "door"
-      ],
-      "loopable": false,
-      "durationSec": 1.347,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
-      "recording": {
-        "title": "fast door banging",
-        "author": "perrybassin",
-        "url": "https://freesound.org/people/perrybassin/sounds/686795/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Wooden Chest Lid Latches Open.wav",
-          "author": "The_Frisbee_of_Peace",
-          "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/infected-claws-at-a-locked-door.ts"
-    },
-    {
-      "id": "infected-jaw-snaps-shut",
-      "name": "Infected jaw snaps shut",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "bite",
-        "jaw",
-        "bone",
-        "teeth"
-      ],
-      "loopable": false,
-      "durationSec": 0.55,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -21,
-      "mixRole": "voice",
-      "recording": {
-        "title": "zombie growl",
-        "author": "drdock",
-        "url": "https://freesound.org/people/drdock/sounds/740007/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Wooden Object Snapping",
-          "author": "CheatinSloth",
-          "url": "https://freesound.org/people/CheatinSloth/sounds/738787/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Rustling foliage.WAV",
-          "author": "DDT197",
-          "url": "https://freesound.org/people/DDT197/sounds/445788/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Normal click",
-          "author": "Breviceps",
-          "url": "https://freesound.org/people/Breviceps/sounds/448086/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/infected-jaw-snaps-shut.ts"
-    },
-    {
       "id": "inside-beehive-loop",
       "name": "Inside a Beehive",
       "category": "Weather & Ambience",
@@ -51513,7 +51193,7 @@
     {
       "id": "joint-crack-with-tendon-release",
       "name": "Joint crack with tendon release",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "bone",
@@ -51964,7 +51644,7 @@
     {
       "id": "knees-strike-and-hands-catch",
       "name": "Knees strike and hands catch",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -52013,7 +51693,7 @@
     {
       "id": "knife-prop-sinks-into-a-melon",
       "name": "Knife prop sinks into a melon",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "foley",
@@ -52067,6 +51747,72 @@
       ],
       "channels": 1,
       "file": "recipes/knife-prop-sinks-into-a-melon.ts"
+    },
+    {
+      "id": "lagoon-ripples-against-a-stone-step-loop",
+      "name": "Lagoon Ripples Against a Stone Step (Loop)",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "lagoon",
+        "ripples",
+        "water",
+        "stone",
+        "loop",
+        "gentle",
+        "ambience"
+      ],
+      "loopable": true,
+      "durationSec": 6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Waves Lapping a Pebbled Beach",
+        "author": "apintofmild",
+        "url": "https://freesound.org/people/apintofmild/sounds/819474/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Aquatic sound of some bubble in a swimming pool (underwater recording)",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/208816/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Scooping Water with Plastic Watering Can",
+          "author": "qubodup",
+          "url": "https://freesound.org/people/qubodup/sounds/210424/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Waterdrop falling on water surface",
+          "author": "damarlo",
+          "url": "https://freesound.org/people/damarlo/sounds/736528/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/lagoon-ripples-against-a-stone-step-loop.ts"
     },
     {
       "id": "lamb-calls-from-beside-the-barn",
@@ -52333,6 +52079,72 @@
       ],
       "channels": 1,
       "file": "recipes/late-night-workshop-window-air-loop.ts"
+    },
+    {
+      "id": "launch-bow-cuts-a-cross-wake",
+      "name": "Launch Bow Cuts a Cross-Wake",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "boat",
+        "launch",
+        "bow",
+        "wake",
+        "hull",
+        "spray",
+        "maritime"
+      ],
+      "loopable": false,
+      "durationSec": 4.2,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -15.5,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Waves Lapping a Pebbled Beach",
+        "author": "apintofmild",
+        "url": "https://freesound.org/people/apintofmild/sounds/819474/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Jetski.wav",
+          "author": "wjauch",
+          "url": "https://freesound.org/people/wjauch/sounds/212441/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Watering the garden",
+          "author": "derjuli",
+          "url": "https://freesound.org/people/derjuli/sounds/467227/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Jump_Landing_Wood_01.wav",
+          "author": "IPaddeh",
+          "url": "https://freesound.org/people/IPaddeh/sounds/422857/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Water Splash",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/launch-bow-cuts-a-cross-wake.ts"
     },
     {
       "id": "layer-visibility-toggled-off",
@@ -55857,7 +55669,7 @@
         "long"
       ],
       "loopable": false,
-      "durationSec": 0.94,
+      "durationSec": 1.4,
       "params": {
         "tail": {
           "label": "Tail",
@@ -57211,6 +57023,65 @@
       },
       "channels": 1,
       "file": "recipes/low-health-heartbeat-loop.ts"
+    },
+    {
+      "id": "low-jet-downwash-churns-the-inlet",
+      "name": "Low Jet Downwash Churns the Inlet",
+      "category": "Aircraft",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "jet",
+        "aircraft",
+        "downwash",
+        "flyover",
+        "water",
+        "inlet",
+        "turbulence"
+      ],
+      "loopable": false,
+      "durationSec": 5.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -13.5,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Jet Flyby 1",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/168079/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Jetski.wav",
+          "author": "wjauch",
+          "url": "https://freesound.org/people/wjauch/sounds/212441/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Old SLR film camera film advance lever and shutter button click",
+          "author": "khenshom",
+          "url": "https://freesound.org/people/khenshom/sounds/516486/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Takeoff 1 (Distant)",
+          "author": "clif_creates",
+          "url": "https://freesound.org/people/clif_creates/sounds/251973/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/low-jet-downwash-churns-the-inlet.ts"
     },
     {
       "id": "low-orbit-recovery-beacon-connects",
@@ -61900,6 +61771,79 @@
       },
       "channels": 1,
       "file": "recipes/night-mode-showcase-split-view-slide.ts"
+    },
+    {
+      "id": "ocean-breaker-at-a-rock-ledge",
+      "name": "Ocean Breaker at a Rock Ledge",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "ocean",
+        "wave",
+        "breaker",
+        "rock",
+        "surf",
+        "splash",
+        "coastal"
+      ],
+      "loopable": false,
+      "durationSec": 4.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -16.5,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Waves on beach natural sound.",
+        "author": "goochiano",
+        "url": "https://freesound.org/people/goochiano/sounds/623050/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Whistling wind at marina",
+          "author": "richwise",
+          "url": "https://freesound.org/people/richwise/sounds/796396/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Water Splash",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Waves Lapping a Pebbled Beach",
+          "author": "apintofmild",
+          "url": "https://freesound.org/people/apintofmild/sounds/819474/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/ocean-breaker-at-a-rock-ledge.ts"
     },
     {
       "id": "old-brick-lintel-debris-shifted-under-load",
@@ -75634,7 +75578,7 @@
     {
       "id": "raincoat-sleeve-takes-a-body-blow",
       "name": "Raincoat sleeve takes a body blow",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "flesh",
@@ -85725,7 +85669,7 @@
     {
       "id": "shoulder-checks-a-wooden-jamb",
       "name": "Shoulder checks a wooden jamb",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "body",
@@ -86048,55 +85992,6 @@
       },
       "channels": 1,
       "file": "recipes/shower-passing-away.ts"
-    },
-    {
-      "id": "sick-breath-against-glass",
-      "name": "Sick breath against glass",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "zombie",
-        "breath",
-        "window"
-      ],
-      "loopable": false,
-      "durationSec": 1.572,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -25,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Zombie moaning",
-        "author": "8oni",
-        "url": "https://freesound.org/people/8oni/sounds/394843/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Glass jar - Open & close",
-          "author": "Vrymaa",
-          "url": "https://freesound.org/people/Vrymaa/sounds/734624/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/sick-breath-against-glass.ts"
     },
     {
       "id": "side-glass-breaks-during-parking-collision",
@@ -89609,7 +89504,7 @@
     {
       "id": "soft-tissue-pull-and-snap",
       "name": "Soft tissue pull and snap",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "collection": "Creature · Physical horror",
       "tags": [
         "flesh",
@@ -89702,6 +89597,58 @@
       ],
       "channels": 1,
       "file": "recipes/softbox-fabric-unfold.ts"
+    },
+    {
+      "id": "sonic-boom-doublet-over-open-water",
+      "name": "Sonic Boom Doublet Over Open Water",
+      "category": "Aircraft",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "sonic-boom",
+        "doublet",
+        "supersonic",
+        "n-wave",
+        "shockwave",
+        "water",
+        "aircraft"
+      ],
+      "loopable": false,
+      "durationSec": 4.6,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -11,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Water Splash",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/sonic-boom-doublet-over-open-water.ts"
     },
     {
       "id": "sonic-stun-chirp",
@@ -91414,55 +91361,6 @@
       ],
       "channels": 1,
       "file": "recipes/staking-a-tomato-plant-with-twine.ts"
-    },
-    {
-      "id": "stalker-snarls-and-steps-forward",
-      "name": "Stalker snarls and steps forward",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "creature",
-        "zombie",
-        "threat",
-        "attack"
-      ],
-      "loopable": false,
-      "durationSec": 0.83,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
-      "recording": {
-        "title": "zombie growl",
-        "author": "drdock",
-        "url": "https://freesound.org/people/drdock/sounds/740007/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "concrete_17a_boots_walk.wav",
-          "author": "sturmankin",
-          "url": "https://freesound.org/people/sturmankin/sounds/272253/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
-          "author": "Nox_Sound",
-          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/stalker-snarls-and-steps-forward.ts"
     },
     {
       "id": "stall-straw-fork-toss",
@@ -98551,6 +98449,72 @@
       "file": "recipes/tire-clearing-sticky-mud.ts"
     },
     {
+      "id": "tire-floats-then-finds-wet-asphalt",
+      "name": "Tire Floats Then Finds Wet Asphalt",
+      "category": "Vehicles & Engines",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "tire",
+        "hydroplane",
+        "aquaplane",
+        "wet-asphalt",
+        "skid",
+        "car",
+        "traction"
+      ],
+      "loopable": false,
+      "durationSec": 3.8,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -15,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "single car drives by on a wet country road field recording",
+        "author": "Garuda1982",
+        "url": "https://freesound.org/people/Garuda1982/sounds/613963/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "car_rain_02",
+          "author": "nsdhhdw",
+          "url": "https://freesound.org/people/nsdhhdw/sounds/838716/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Car peels off",
+          "author": "therisingorder",
+          "url": "https://freesound.org/people/therisingorder/sounds/271337/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "abrupt stopping car on wet ground.aif",
+          "author": "Ermens",
+          "url": "https://freesound.org/people/Ermens/sounds/199525/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/tire-floats-then-finds-wet-asphalt.ts"
+    },
+    {
       "id": "tire-sidewall-scrubs-a-wet-curb",
       "name": "Tire sidewall scrubs a wet curb",
       "category": "Vehicles & Engines",
@@ -103959,49 +103923,6 @@
       "file": "recipes/two-foot-landing.ts"
     },
     {
-      "id": "two-infected-answer-in-a-stairwell",
-      "name": "Two infected answer in a stairwell",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "creature",
-        "groan",
-        "chorus",
-        "echo"
-      ],
-      "loopable": false,
-      "durationSec": 3.187,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -24,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Zombie moaning",
-        "author": "8oni",
-        "url": "https://freesound.org/people/8oni/sounds/394843/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/two-infected-answer-in-a-stairwell.ts"
-    },
-    {
       "id": "two-lions-call-across-an-enclosure",
       "name": "Two lions call across an enclosure",
       "category": "Animals",
@@ -106354,56 +106275,6 @@
       "file": "recipes/vintage-runabout-tiny-gear-or-ratchet-adjustment.ts"
     },
     {
-      "id": "voice-dies-behind-a-bulkhead",
-      "name": "Voice dies behind a bulkhead",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "voice",
-        "door",
-        "slam",
-        "muffled"
-      ],
-      "loopable": false,
-      "durationSec": 1.902,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -25,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Zombie moaning",
-        "author": "8oni",
-        "url": "https://freesound.org/people/8oni/sounds/394843/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Door slamming",
-          "author": "MonteFlorSounds",
-          "url": "https://freesound.org/people/MonteFlorSounds/sounds/847114/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "zombie growl",
-          "author": "drdock",
-          "url": "https://freesound.org/people/drdock/sounds/740007/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/voice-dies-behind-a-bulkhead.ts"
-    },
-    {
       "id": "wake-rattles-an-aluminum-skiff-floor",
       "name": "Wake rattles an aluminum skiff floor",
       "category": "Vehicles & Engines",
@@ -106449,106 +106320,6 @@
       ],
       "channels": 1,
       "file": "recipes/wake-rattles-an-aluminum-skiff-floor.ts"
-    },
-    {
-      "id": "walker-catches-on-a-chain-fence",
-      "name": "Walker catches on a chain fence",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "chain",
-        "wire",
-        "fence",
-        "struggle"
-      ],
-      "loopable": false,
-      "durationSec": 1.722,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -24,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Light Metal Chain Shake",
-        "author": "loganzsound",
-        "url": "https://freesound.org/people/loganzsound/sounds/874471/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
-          "author": "Nox_Sound",
-          "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/walker-catches-on-a-chain-fence.ts"
-    },
-    {
-      "id": "walker-pulls-free-of-brush",
-      "name": "Walker pulls free of brush",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
-      "tags": [
-        "zombie",
-        "creature",
-        "snag",
-        "leaves",
-        "groan"
-      ],
-      "loopable": false,
-      "durationSec": 1.991,
-      "params": {
-        "force": {
-          "label": "Force",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -25,
-      "mixRole": "voice",
-      "recording": {
-        "title": "Rustling Leaves.wav",
-        "author": "FunWithSound",
-        "url": "https://freesound.org/people/FunWithSound/sounds/406099/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Lettuce Ripping - Senn K6 SD 788T.WAV",
-          "author": "lunchmoney",
-          "url": "https://freesound.org/people/lunchmoney/sounds/382042/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/walker-pulls-free-of-brush.ts"
     },
     {
       "id": "walking-shift-with-a-full-pail",
@@ -108906,104 +108677,70 @@
       "file": "recipes/wet-rope-coil-dropped-onto-boards.ts"
     },
     {
-      "id": "wet-throat-rattle-and-release",
-      "name": "Wet throat rattle and release",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Physical horror",
+      "id": "wheel-arch-throws-a-sheet-of-spray",
+      "name": "Wheel Arch Throws a Sheet of Spray",
+      "category": "Vehicles & Engines",
+      "collection": "Physics · Water, weather and impacts",
       "tags": [
-        "zombie",
-        "creature",
-        "guttural",
-        "mouth"
+        "wheel-arch",
+        "spray",
+        "puddle",
+        "splash",
+        "wet-road",
+        "car",
+        "water"
       ],
       "loopable": false,
-      "durationSec": 1.7,
+      "durationSec": 3.2,
       "params": {
-        "force": {
-          "label": "Force",
+        "intensity": {
+          "label": "Intensity",
           "min": 0,
           "max": 1,
-          "default": 0.52
+          "default": 0.55
         }
       },
-      "targetRmsDbfs": -23,
-      "mixRole": "voice",
+      "targetRmsDbfs": -14.5,
+      "mixRole": "vehicle",
       "recording": {
-        "title": "zombie growl",
-        "author": "drdock",
-        "url": "https://freesound.org/people/drdock/sounds/740007/",
+        "title": "car_rain_02",
+        "author": "nsdhhdw",
+        "url": "https://freesound.org/people/nsdhhdw/sounds/838716/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Rustling foliage.WAV",
-          "author": "DDT197",
-          "url": "https://freesound.org/people/DDT197/sounds/445788/",
+          "title": "single car drives by on a wet country road field recording",
+          "author": "Garuda1982",
+          "url": "https://freesound.org/people/Garuda1982/sounds/613963/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         },
         {
-          "title": "Zombie moaning",
-          "author": "8oni",
-          "url": "https://freesound.org/people/8oni/sounds/394843/",
+          "title": "Water Splash",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Watering the garden",
+          "author": "derjuli",
+          "url": "https://freesound.org/people/derjuli/sounds/467227/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "Splashing Footsteps Shallow Water",
+          "author": "ChristopherJngs",
+          "url": "https://freesound.org/people/ChristopherJngs/sounds/861369/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
       ],
       "channels": 1,
-      "file": "recipes/wet-throat-rattle-and-release.ts"
-    },
-    {
-      "id": "why-the-forest-fell-quiet-loop",
-      "name": "Distant horde in a quiet forest loop",
-      "category": "Zombies & Combat",
-      "collection": "Creature · Location beds",
-      "tags": [
-        "horror",
-        "forest",
-        "horde",
-        "distant",
-        "zombie",
-        "loop"
-      ],
-      "loopable": true,
-      "durationSec": 4.5,
-      "params": {
-        "presence": {
-          "label": "Presence",
-          "min": 0,
-          "max": 1,
-          "default": 0.52
-        }
-      },
-      "targetRmsDbfs": -29,
-      "mixRole": "ambience",
-      "recording": {
-        "title": "Rustling foliage.WAV",
-        "author": "DDT197",
-        "url": "https://freesound.org/people/DDT197/sounds/445788/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "ZombiesMoaning.wav",
-          "author": "voiceofgup",
-          "url": "https://freesound.org/people/voiceofgup/sounds/165872/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Wooden Object Snapping",
-          "author": "CheatinSloth",
-          "url": "https://freesound.org/people/CheatinSloth/sounds/738787/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
-      "channels": 1,
-      "file": "recipes/why-the-forest-fell-quiet-loop.ts"
+      "file": "recipes/wheel-arch-throws-a-sheet-of-spray.ts"
     },
     {
       "id": "wide-product-reveal-swell",

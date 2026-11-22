@@ -19,14 +19,14 @@ const original = {
       { span: 0.0042, low: 216, high: 2100, edge: 1.44, weight: 1.75 });
     mix(sound, front);
     scatter(ctx, sound, front, 0.73, 1.63, 3600);
-    layer(ctx, sound, 0.008, 1.05, (air) => rumble(air, 104, 0.022, 0.17, 1.02), 2.91);
-    layer(ctx, sound, 0.084, 1.45, (air) => rumble(air, 96, 0.054, 0.31, 0.74), 1.69);
-    layer(ctx, sound, 0.278, 1.69, (air) => rumble(air, 78, 0.12, 0.39, 0.67), 1.42);
-    layer(ctx, sound, 0.64, 1.85, (air) => rumble(air, 68, 0.18, 0.46, 0.47), 1.03);
+    layer(ctx, sound, 0.008, 1.05, (air) => rumble(air, 104, 0.022, 0.17, 1.02), 1.86);
+    layer(ctx, sound, 0.084, 1.45, (air) => rumble(air, 96, 0.054, 0.31, 0.74), 1.12);
+    layer(ctx, sound, 0.278, 1.69, (air) => rumble(air, 78, 0.12, 0.39, 0.67), 0.98);
+    layer(ctx, sound, 0.64, 1.85, (air) => rumble(air, 68, 0.18, 0.46, 0.47), 0.72);
     for (let i = 0; i < 19; i++) {
       const at = 0.037 + ((i + ctx.random()) / 19) ** 1.75 * 1.32;
       const bright = 730 + ctx.random() ** 1.4 * 5100;
-      const weight = (0.45 + ctx.random() * 0.65) * Math.exp(-at * 3.3) * (0.20 + params.debris * 0.84);
+      const weight = (0.45 + ctx.random() * 0.65) * Math.exp(-at * 3.3) * params.debris;
       layer(ctx, sound, at, 0.085, (chip) => punch(chip, [
         { color: 'pink', kind: 'bandpass', hz: bright * 0.42, q: 1.02, gain: 0.85, attack: 0.0018, decay: 0.013 },
         { color: 'white', kind: 'bandpass', hz: bright, q: 1.67, gain: 0.88, attack: 0.00028, decay: 0.008 },
@@ -42,5 +42,5 @@ const original = {
 
 export default withImpactFoley(original, [
   { clip: foley0, at: 0, span: 0.24, gain: 0.37, cutoff: 10100, speed: 0.77 },
-  { clip: foley1, at: 0.175, span: 0.65, gain: 0.14, cutoff: 7100, speed: 0.86 },
+  { clip: foley1, at: 0.175, span: 0.65, gain: params => 0.26 * params.debris, cutoff: 7100, speed: 0.86 },
 ]);

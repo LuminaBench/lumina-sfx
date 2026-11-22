@@ -5,7 +5,7 @@ import fieldLeafTear from './_recordings/field-leaf-tear.ts';
 import fieldPepperRip from './_recordings/field-pepper-rip.ts';
 
 export default {
-  id: 'joint-crack-with-tendon-release', name: "Joint crack with tendon release", category: 'Zombies & Combat',
+  id: 'joint-crack-with-tendon-release', name: "Joint crack with tendon release", category: 'Combat Foley',
   tags: ["bone", "joint", "crack", "snap", "foley"],
   loopable: false, durationSec: 0.392, mixRole: 'impact', targetRmsDbfs: -23,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

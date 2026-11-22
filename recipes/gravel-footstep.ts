@@ -11,8 +11,8 @@ export default {
   ...performanceCredits(naturalGravel, naturalGravelDrag),
   render(ctx, { seed, params }) {
     return perform(ctx, seed, params.coarseness, [
-      [naturalGravel, 0, 0.4264, 1, 0.99, 5200 + params.coarseness * 5900, 0, 0.001, 0.022],
-      [naturalGravelDrag, 0.085, 0.2288, 0.05 + params.coarseness * 0.12, 1.07, 4700, 0, 0.001, 0.022],
-    ], { taps: [0.042, 0.102], send: 0.055, dampingHz: 2600 });
+      [naturalGravel, 0, 0.4264, 1, 1.025 - 0.061 * params.coarseness, 5200 + params.coarseness * 5900, 0, 0.001, 0.022],
+      [naturalGravelDrag, 0.085, 0.2288, 0.05 + params.coarseness * 0.12, 1.03, 3800 + 2100 * params.coarseness, 0, 0.001, 0.022],
+    ], { taps: [0.008, 0.019], send: 0.035, dampingHz: 2600 });
   },
 } satisfies SoundRecipe;

@@ -1,5 +1,5 @@
 export type Category =
-  | 'Weapons' | 'Zombies & Combat' | 'Weather & Ambience' | 'Footsteps & UI'
+  | 'Weapons' | 'Combat Foley' | 'Weather & Ambience' | 'Footsteps & UI'
   | 'Animals' | 'Vehicles & Engines' | 'Aircraft' | 'Missiles'
   | 'Water & Fire' | 'Impacts' | 'Sci-Fi & UI' | 'Farming' | 'Props & Interactions';
 
@@ -28,7 +28,8 @@ export interface DesignMacros {
   punch?: number;
   size?: number;
   distance?: number;
-  space?: 'dry' | 'small_room' | 'hallway' | 'outdoor' | 'cavern';
+  space?: 'dry' | 'small_room' | 'hallway' | 'outdoor' | 'cavern' | 'outdoor_open' | 'canyon_echo' | 'underwater';
+  wetness?: number;
   grit?: number;
   speed?: number;
   pitchShift?: number;

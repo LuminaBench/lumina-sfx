@@ -12,5 +12,5 @@
     "noEmit": true,
     "skipLibCheck": true
   },
-  "include": ["engine/**/*.ts", "recipes/**/*.ts", "demo/**/*.ts"]
+  "include": ["engine/**/*.ts", "recipes/**/*.ts"]
 }

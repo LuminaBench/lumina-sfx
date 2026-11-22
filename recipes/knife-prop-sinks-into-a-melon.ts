@@ -6,7 +6,7 @@ import fieldCabbageChop from './_recordings/field-cabbage-chop.ts';
 import fieldPepperRip from './_recordings/field-pepper-rip.ts';
 
 export default {
-  id: 'knife-prop-sinks-into-a-melon', name: "Knife prop sinks into a melon", category: 'Zombies & Combat',
+  id: 'knife-prop-sinks-into-a-melon', name: "Knife prop sinks into a melon", category: 'Combat Foley',
   tags: ["foley", "fruit", "wet", "flesh", "stab", "game"],
   loopable: false, durationSec: 0.491, mixRole: 'impact', targetRmsDbfs: -22,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

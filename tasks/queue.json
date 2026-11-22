@@ -10,7 +10,7 @@
       "loopable": false,
       "brief": "Chicken Clucks",
       "acceptance": "Use real, close hen clucks with clear gaps and preserved natural timing.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "rooster-crow",
@@ -561,7 +561,8 @@
       "loopable": false,
       "brief": "Long Rifle Shot",
       "blueprint": "pistol-9mm",
-      "acceptance": "The main report reads immediately. Reflections and handling remain distinguishable."
+      "acceptance": "The main report reads immediately. Reflections and handling remain distinguishable.",
+      "revision": 2
     },
     {
       "id": "double-barrel-shot",
@@ -7249,7 +7250,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.38,
       "loopable": false,
       "acceptance": "A close mechanical start changes into steady moving engine and air."
@@ -7260,7 +7261,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "The steady low-power rhythm is clearly audible over the bed."
@@ -7271,7 +7272,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.35,
       "loopable": false,
       "acceptance": "Approach, nearby movement, and a distinct receding perspective."
@@ -7282,7 +7283,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.82,
       "loopable": false,
       "acceptance": "The engine passes beyond an enclosure with damped high frequencies."
@@ -7293,7 +7294,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.76,
       "loopable": false,
       "acceptance": "A fast contact turns into several ordinary settling sounds as the movement stops."
@@ -7304,7 +7305,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.91,
       "loopable": false,
       "acceptance": "Mechanical rotation loses energy and finishes with a quieter dry contact."
@@ -7315,7 +7316,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.64,
       "loopable": false,
       "acceptance": "A close mechanical start changes into steady moving engine and air."
@@ -7326,7 +7327,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "The steady low-power rhythm is clearly audible over the bed."
@@ -7337,7 +7338,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.54,
       "loopable": false,
       "acceptance": "Approach, nearby movement, and a distinct receding perspective."
@@ -7348,7 +7349,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.97,
       "loopable": false,
       "acceptance": "The engine passes beyond an enclosure with damped high frequencies."
@@ -7359,7 +7360,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.96,
       "loopable": false,
       "acceptance": "A fast contact turns into several ordinary settling sounds as the movement stops."
@@ -7370,7 +7371,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.12,
       "loopable": false,
       "acceptance": "Mechanical rotation loses energy and finishes with a quieter dry contact."
@@ -7381,7 +7382,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.45,
       "loopable": false,
       "acceptance": "A close mechanical start changes into steady moving engine and air."
@@ -7392,7 +7393,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "The steady low-power rhythm is clearly audible over the bed."
@@ -7403,7 +7404,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.41,
       "loopable": false,
       "acceptance": "Approach, nearby movement, and a distinct receding perspective."
@@ -7414,7 +7415,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.86,
       "loopable": false,
       "acceptance": "The engine passes beyond an enclosure with damped high frequencies."
@@ -7425,7 +7426,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.82,
       "loopable": false,
       "acceptance": "A fast contact turns into several ordinary settling sounds as the movement stops."
@@ -7436,7 +7437,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.97,
       "loopable": false,
       "acceptance": "Mechanical rotation loses energy and finishes with a quieter dry contact."
@@ -7447,7 +7448,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.85,
       "loopable": false,
       "acceptance": "A close mechanical start changes into steady moving engine and air."
@@ -7458,7 +7459,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "The steady low-power rhythm is clearly audible over the bed."
@@ -7469,7 +7470,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.71,
       "loopable": false,
       "acceptance": "Approach, nearby movement, and a distinct receding perspective."
@@ -7480,7 +7481,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 6.09,
       "loopable": false,
       "acceptance": "The engine passes beyond an enclosure with damped high frequencies."
@@ -7491,7 +7492,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.12,
       "loopable": false,
       "acceptance": "A fast contact turns into several ordinary settling sounds as the movement stops."
@@ -7502,7 +7503,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.31,
       "loopable": false,
       "acceptance": "Mechanical rotation loses energy and finishes with a quieter dry contact."
@@ -7513,7 +7514,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.2,
       "loopable": false,
       "acceptance": "A close mechanical start changes into steady moving engine and air."
@@ -7524,7 +7525,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "The steady low-power rhythm is clearly audible over the bed."
@@ -7535,7 +7536,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.22,
       "loopable": false,
       "acceptance": "Approach, nearby movement, and a distinct receding perspective."
@@ -7546,7 +7547,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.72,
       "loopable": false,
       "acceptance": "The engine passes beyond an enclosure with damped high frequencies."
@@ -7557,7 +7558,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.63,
       "loopable": false,
       "acceptance": "A fast contact turns into several ordinary settling sounds as the movement stops."
@@ -7568,7 +7569,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 3.76,
       "loopable": false,
       "acceptance": "Mechanical rotation loses energy and finishes with a quieter dry contact."
@@ -7579,7 +7580,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Quiet projection of high air with a light structural sound."
@@ -7590,7 +7591,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.4,
       "loopable": false,
       "acceptance": "A narrow gust grows and changes with light wing vibration."
@@ -7601,7 +7602,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.9,
       "loopable": false,
       "acceptance": "Broad noise fills and releases around a brief passing peak."
@@ -7612,7 +7613,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.7,
       "loopable": false,
       "acceptance": "Soft flutter travels through a near narrow wind rush."
@@ -7623,7 +7624,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "Soft turf contact and a much quicker narrow wheel-speed release."
@@ -7634,7 +7635,7 @@
       "collection": "Aviation · Airframes and airfields",
       "category": "Aircraft",
       "blueprint": "light-propeller-plane-pull-away",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.45,
       "loopable": false,
       "acceptance": "Separate bumps before a smooth tire-like low roll slows."
@@ -7645,7 +7646,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.27,
       "loopable": false,
       "acceptance": "The main working contact is distinct before the water tail."
@@ -7656,7 +7657,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Small continuous waterline movement with a contained foreground."
@@ -7667,7 +7668,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Steady water swing moves into a clear distant fade."
@@ -7678,7 +7679,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "First moving water hit opens into a short hull or paddle splatter."
@@ -7689,7 +7690,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.26,
       "loopable": false,
       "acceptance": "A damped weight transfer gives way to light material displacement."
@@ -7700,7 +7701,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Muffled low water displacement with very little high edge."
@@ -7711,7 +7712,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.27,
       "loopable": false,
       "acceptance": "The main working contact is distinct before the water tail."
@@ -7722,7 +7723,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Small continuous waterline movement with a contained foreground."
@@ -7733,7 +7734,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Steady water swing moves into a clear distant fade."
@@ -7744,7 +7745,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "First moving water hit opens into a short hull or paddle splatter."
@@ -7755,7 +7756,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.26,
       "loopable": false,
       "acceptance": "A damped weight transfer gives way to light material displacement."
@@ -7766,7 +7767,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Muffled low water displacement with very little high edge."
@@ -7777,7 +7778,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.27,
       "loopable": false,
       "acceptance": "The main working contact is distinct before the water tail."
@@ -7788,7 +7789,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Small continuous waterline movement with a contained foreground."
@@ -7799,7 +7800,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Steady water swing moves into a clear distant fade."
@@ -7810,7 +7811,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "First moving water hit opens into a short hull or paddle splatter."
@@ -7821,7 +7822,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.26,
       "loopable": false,
       "acceptance": "A damped weight transfer gives way to light material displacement."
@@ -7832,7 +7833,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Muffled low water displacement with very little high edge."
@@ -7843,7 +7844,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.27,
       "loopable": false,
       "acceptance": "The main working contact is distinct before the water tail."
@@ -7854,7 +7855,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Small continuous waterline movement with a contained foreground."
@@ -7865,7 +7866,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Steady water swing moves into a clear distant fade."
@@ -7876,7 +7877,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "First moving water hit opens into a short hull or paddle splatter."
@@ -7887,7 +7888,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.26,
       "loopable": false,
       "acceptance": "A damped weight transfer gives way to light material displacement."
@@ -7898,7 +7899,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Muffled low water displacement with very little high edge."
@@ -7909,7 +7910,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.27,
       "loopable": false,
       "acceptance": "The main working contact is distinct before the water tail."
@@ -7920,7 +7921,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Small continuous waterline movement with a contained foreground."
@@ -7931,7 +7932,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Steady water swing moves into a clear distant fade."
@@ -7942,7 +7943,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "First moving water hit opens into a short hull or paddle splatter."
@@ -7953,7 +7954,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.26,
       "loopable": false,
       "acceptance": "A damped weight transfer gives way to light material displacement."
@@ -7964,7 +7965,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Muffled low water displacement with very little high edge."
@@ -7975,7 +7976,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.27,
       "loopable": false,
       "acceptance": "The main working contact is distinct before the water tail."
@@ -7986,7 +7987,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Small continuous waterline movement with a contained foreground."
@@ -7997,7 +7998,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Steady water swing moves into a clear distant fade."
@@ -8008,7 +8009,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.02,
       "loopable": false,
       "acceptance": "First moving water hit opens into a short hull or paddle splatter."
@@ -8019,7 +8020,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.26,
       "loopable": false,
       "acceptance": "A damped weight transfer gives way to light material displacement."
@@ -8030,7 +8031,7 @@
       "collection": "Water · Boats and shore",
       "category": "Water & Fire",
       "blueprint": "parachute-descent-calm-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Muffled low water displacement with very little high edge."
@@ -8041,7 +8042,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.6,
       "loopable": false,
       "acceptance": "Rolling motion builds from low start and reaches a clear moving tail."
@@ -8052,7 +8053,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Wheel rhythm surrounds subtle short close mechanical rattling."
@@ -8063,7 +8064,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Distant roll brightens, then building reflections broaden the stop."
@@ -8074,7 +8075,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.3,
       "loopable": false,
       "acceptance": "Short air release and separated wheel or coupling contact."
@@ -8085,7 +8086,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.91,
       "loopable": false,
       "acceptance": "One small latch leads to a little door movement."
@@ -8096,7 +8097,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.69,
       "loopable": false,
       "acceptance": "Sliding rollers travel before a separate end contact."
@@ -8107,7 +8108,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.42,
       "loopable": false,
       "acceptance": "Sliding material settles against a damped seal and brief latch."
@@ -8118,7 +8119,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Background transport is present through steady covered space."
@@ -8129,7 +8130,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.6,
       "loopable": false,
       "acceptance": "Rolling motion builds from low start and reaches a clear moving tail."
@@ -8140,7 +8141,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Wheel rhythm surrounds subtle short close mechanical rattling."
@@ -8151,7 +8152,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Distant roll brightens, then building reflections broaden the stop."
@@ -8162,7 +8163,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.3,
       "loopable": false,
       "acceptance": "Short air release and separated wheel or coupling contact."
@@ -8173,7 +8174,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.91,
       "loopable": false,
       "acceptance": "One small latch leads to a little door movement."
@@ -8184,7 +8185,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.69,
       "loopable": false,
       "acceptance": "Sliding rollers travel before a separate end contact."
@@ -8195,7 +8196,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.42,
       "loopable": false,
       "acceptance": "Sliding material settles against a damped seal and brief latch."
@@ -8206,7 +8207,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Background transport is present through steady covered space."
@@ -8217,7 +8218,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.6,
       "loopable": false,
       "acceptance": "Rolling motion builds from low start and reaches a clear moving tail."
@@ -8228,7 +8229,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Wheel rhythm surrounds subtle short close mechanical rattling."
@@ -8239,7 +8240,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Distant roll brightens, then building reflections broaden the stop."
@@ -8250,7 +8251,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.3,
       "loopable": false,
       "acceptance": "Short air release and separated wheel or coupling contact."
@@ -8261,7 +8262,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.91,
       "loopable": false,
       "acceptance": "One small latch leads to a little door movement."
@@ -8272,7 +8273,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.69,
       "loopable": false,
       "acceptance": "Sliding rollers travel before a separate end contact."
@@ -8283,7 +8284,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.42,
       "loopable": false,
       "acceptance": "Sliding material settles against a damped seal and brief latch."
@@ -8294,7 +8295,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Background transport is present through steady covered space."
@@ -8305,7 +8306,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.6,
       "loopable": false,
       "acceptance": "Rolling motion builds from low start and reaches a clear moving tail."
@@ -8316,7 +8317,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Wheel rhythm surrounds subtle short close mechanical rattling."
@@ -8327,7 +8328,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.2,
       "loopable": false,
       "acceptance": "Distant roll brightens, then building reflections broaden the stop."
@@ -8338,7 +8339,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.3,
       "loopable": false,
       "acceptance": "Short air release and separated wheel or coupling contact."
@@ -8349,7 +8350,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.91,
       "loopable": false,
       "acceptance": "One small latch leads to a little door movement."
@@ -8360,7 +8361,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.69,
       "loopable": false,
       "acceptance": "Sliding rollers travel before a separate end contact."
@@ -8371,7 +8372,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.42,
       "loopable": false,
       "acceptance": "Sliding material settles against a damped seal and brief latch."
@@ -8382,7 +8383,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "Background transport is present through steady covered space."
@@ -8393,7 +8394,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.43,
       "loopable": false,
       "acceptance": "Three contacts rotate from launch to a soft lock."
@@ -8404,7 +8405,7 @@
       "collection": "Transit · Stations and rail motion",
       "category": "Vehicles & Engines",
       "blueprint": "commuter-train-passing-at-platform",
-      "status": "released",
+      "status": "review",
       "durationSec": 8,
       "loopable": true,
       "acceptance": "Low mechanical rotation and regularly spaced small comb plate ticks."
@@ -8415,7 +8416,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.4,
       "loopable": false,
       "acceptance": "Mechanical pickup changes to an audible sustained working rate."
@@ -8426,7 +8427,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.81,
       "loopable": false,
       "acceptance": "Nearby body crosses over an independent ground sound."
@@ -8437,7 +8438,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.39,
       "loopable": false,
       "acceptance": "Confined motion opens up a nearer edge and then decays in the open."
@@ -8448,7 +8449,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "A restrained steady movement bed with material-specific wheel contact."
@@ -8459,7 +8460,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.87,
       "loopable": false,
       "acceptance": "A longer initial drag is followed by two separate body contacts."
@@ -8470,7 +8471,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.76,
       "loopable": false,
       "acceptance": "Close small mechanism moves through short ticks and one firm final contact."
@@ -8481,7 +8482,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.43,
       "loopable": false,
       "acceptance": "A quick double weight change sounds separate from the moving background."
@@ -8492,7 +8493,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.92,
       "loopable": false,
       "acceptance": "Foreground rolling tone becomes darker and shorter behind the barrier."
@@ -8503,7 +8504,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.4,
       "loopable": false,
       "acceptance": "Mechanical pickup changes to an audible sustained working rate."
@@ -8514,7 +8515,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.81,
       "loopable": false,
       "acceptance": "Nearby body crosses over an independent ground sound."
@@ -8525,7 +8526,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.39,
       "loopable": false,
       "acceptance": "Confined motion opens up a nearer edge and then decays in the open."
@@ -8536,7 +8537,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "A restrained steady movement bed with material-specific wheel contact."
@@ -8547,7 +8548,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.87,
       "loopable": false,
       "acceptance": "A longer initial drag is followed by two separate body contacts."
@@ -8558,7 +8559,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.76,
       "loopable": false,
       "acceptance": "Close small mechanism moves through short ticks and one firm final contact."
@@ -8569,7 +8570,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.43,
       "loopable": false,
       "acceptance": "A quick double weight change sounds separate from the moving background."
@@ -8580,7 +8581,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.92,
       "loopable": false,
       "acceptance": "Foreground rolling tone becomes darker and shorter behind the barrier."
@@ -8591,7 +8592,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.4,
       "loopable": false,
       "acceptance": "Mechanical pickup changes to an audible sustained working rate."
@@ -8602,7 +8603,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.81,
       "loopable": false,
       "acceptance": "Nearby body crosses over an independent ground sound."
@@ -8613,7 +8614,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.39,
       "loopable": false,
       "acceptance": "Confined motion opens up a nearer edge and then decays in the open."
@@ -8624,7 +8625,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "A restrained steady movement bed with material-specific wheel contact."
@@ -8635,7 +8636,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.87,
       "loopable": false,
       "acceptance": "A longer initial drag is followed by two separate body contacts."
@@ -8646,7 +8647,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.76,
       "loopable": false,
       "acceptance": "Close small mechanism moves through short ticks and one firm final contact."
@@ -8657,7 +8658,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.43,
       "loopable": false,
       "acceptance": "A quick double weight change sounds separate from the moving background."
@@ -8668,7 +8669,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.92,
       "loopable": false,
       "acceptance": "Foreground rolling tone becomes darker and shorter behind the barrier."
@@ -8679,7 +8680,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 2.4,
       "loopable": false,
       "acceptance": "Mechanical pickup changes to an audible sustained working rate."
@@ -8690,7 +8691,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.81,
       "loopable": false,
       "acceptance": "Nearby body crosses over an independent ground sound."
@@ -8701,7 +8702,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.39,
       "loopable": false,
       "acceptance": "Confined motion opens up a nearer edge and then decays in the open."
@@ -8712,7 +8713,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 9,
       "loopable": true,
       "acceptance": "A restrained steady movement bed with material-specific wheel contact."
@@ -8723,7 +8724,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.87,
       "loopable": false,
       "acceptance": "A longer initial drag is followed by two separate body contacts."
@@ -8734,7 +8735,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.76,
       "loopable": false,
       "acceptance": "Close small mechanism moves through short ticks and one firm final contact."
@@ -8745,7 +8746,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.43,
       "loopable": false,
       "acceptance": "A quick double weight change sounds separate from the moving background."
@@ -8756,7 +8757,7 @@
       "collection": "Motion · Road and workshop",
       "category": "Vehicles & Engines",
       "blueprint": "sports-car-inside-upshift",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.92,
       "loopable": false,
       "acceptance": "Foreground rolling tone becomes darker and shorter behind the barrier."
@@ -8767,7 +8768,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.66,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -8778,7 +8779,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -8789,7 +8790,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.96,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -8800,7 +8801,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.14,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -8811,7 +8812,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.69,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -8822,7 +8823,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.07,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -8833,7 +8834,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.98,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -8844,7 +8845,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.17,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -8855,7 +8856,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.75,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -8866,7 +8867,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.11,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -8877,7 +8878,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.01,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -8888,7 +8889,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.22,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -8899,7 +8900,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.8,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -8910,7 +8911,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.15,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -8921,7 +8922,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -8932,7 +8933,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.25,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -8943,7 +8944,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -8954,7 +8955,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.09,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -8965,7 +8966,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -8976,7 +8977,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.19,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -8987,7 +8988,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.64,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -8998,7 +8999,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.03,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -9009,7 +9010,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.94,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -9020,7 +9021,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.13,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -9031,7 +9032,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.83,
       "loopable": false,
       "acceptance": "A fast material cue leads into a small upward resolution."
@@ -9042,7 +9043,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.18,
       "loopable": false,
       "acceptance": "Two separate events make the moment of comparison audible."
@@ -9053,7 +9054,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.07,
       "loopable": false,
       "acceptance": "One directional texture crosses a softer secondary material layer."
@@ -9064,7 +9065,7 @@
       "collection": "Creator · Edit punctuation",
       "category": "Sci-Fi & UI",
       "blueprint": "clean-title-reveal-with-soft-hit",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.28,
       "loopable": false,
       "acceptance": "The close reads as a descending ending with soft trailing detail."
@@ -9075,7 +9076,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Open air with active close surface detail and natural movement."
@@ -9086,7 +9087,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Damped body and sparse nearby surface motions."
@@ -9097,7 +9098,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Occasional uneven rain contacts over a quiet older environment."
@@ -9108,7 +9109,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Low atmosphere with distant intermittent nighttime detail."
@@ -9119,7 +9120,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 5.18,
       "loopable": false,
       "acceptance": "Near gust swells, softens, and drags surface detail across the foreground."
@@ -9130,7 +9131,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Open air with active close surface detail and natural movement."
@@ -9141,7 +9142,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Damped body and sparse nearby surface motions."
@@ -9152,7 +9153,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Occasional uneven rain contacts over a quiet older environment."
@@ -9163,7 +9164,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Low atmosphere with distant intermittent nighttime detail."
@@ -9174,7 +9175,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.74,
       "loopable": false,
       "acceptance": "Near gust swells, softens, and drags surface detail across the foreground."
@@ -9185,7 +9186,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Open air with active close surface detail and natural movement."
@@ -9196,7 +9197,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Damped body and sparse nearby surface motions."
@@ -9207,7 +9208,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Occasional uneven rain contacts over a quiet older environment."
@@ -9218,7 +9219,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Low atmosphere with distant intermittent nighttime detail."
@@ -9229,7 +9230,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.54,
       "loopable": false,
       "acceptance": "Near gust swells, softens, and drags surface detail across the foreground."
@@ -9240,7 +9241,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Open air with active close surface detail and natural movement."
@@ -9251,7 +9252,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Damped body and sparse nearby surface motions."
@@ -9262,7 +9263,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Occasional uneven rain contacts over a quiet older environment."
@@ -9273,7 +9274,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Low atmosphere with distant intermittent nighttime detail."
@@ -9284,7 +9285,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.78,
       "loopable": false,
       "acceptance": "Near gust swells, softens, and drags surface detail across the foreground."
@@ -9295,7 +9296,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Open air with active close surface detail and natural movement."
@@ -9306,7 +9307,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Damped body and sparse nearby surface motions."
@@ -9317,7 +9318,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Occasional uneven rain contacts over a quiet older environment."
@@ -9328,7 +9329,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Low atmosphere with distant intermittent nighttime detail."
@@ -9339,7 +9340,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.66,
       "loopable": false,
       "acceptance": "Near gust swells, softens, and drags surface detail across the foreground."
@@ -9350,7 +9351,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Open air with active close surface detail and natural movement."
@@ -9361,7 +9362,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Damped body and sparse nearby surface motions."
@@ -9372,7 +9373,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Occasional uneven rain contacts over a quiet older environment."
@@ -9383,7 +9384,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 10,
       "loopable": true,
       "acceptance": "Low atmosphere with distant intermittent nighttime detail."
@@ -9394,7 +9395,7 @@
       "collection": "Environment · Biome perspectives",
       "category": "Weather & Ambience",
       "blueprint": "coastal-walkway-breeze-loop",
-      "status": "released",
+      "status": "review",
       "durationSec": 4.42,
       "loopable": false,
       "acceptance": "Near gust swells, softens, and drags surface detail across the foreground."
@@ -9405,7 +9406,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9416,7 +9417,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9427,7 +9428,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9438,7 +9439,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9449,7 +9450,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9460,7 +9461,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9471,7 +9472,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.43,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9482,7 +9483,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9493,7 +9494,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9504,7 +9505,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.57,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9515,7 +9516,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9526,7 +9527,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9537,7 +9538,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9548,7 +9549,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9559,7 +9560,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9570,7 +9571,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9581,7 +9582,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9592,7 +9593,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9603,7 +9604,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9614,7 +9615,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9625,7 +9626,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9636,7 +9637,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9647,7 +9648,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9658,7 +9659,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9669,7 +9670,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.82,
       "loopable": false,
       "acceptance": "Short close-scale action with readable initial contact and separate material trace."
@@ -9680,7 +9681,7 @@
       "collection": "Props · Everyday equipment",
       "category": "Props & Interactions",
       "blueprint": "recording-button-with-plastic-body",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.04,
       "loopable": false,
       "acceptance": "A secondary mechanical movement comes to a recognizable restrained stop."
@@ -9691,7 +9692,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9702,7 +9703,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9713,7 +9714,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9724,7 +9725,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9735,7 +9736,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9746,7 +9747,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9757,7 +9758,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9768,7 +9769,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9779,7 +9780,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9790,7 +9791,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9801,7 +9802,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9812,7 +9813,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9823,7 +9824,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9834,7 +9835,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9845,7 +9846,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9856,7 +9857,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9867,7 +9868,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9878,7 +9879,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9889,7 +9890,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9900,7 +9901,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9911,7 +9912,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9922,7 +9923,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9933,7 +9934,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9944,7 +9945,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9955,7 +9956,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.72,
       "loopable": false,
       "acceptance": "A clean initial contact reads as the named material before its short tail."
@@ -9966,7 +9967,7 @@
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "Multiple distinct contacts express the motion and stop with a deliberate cadence."
@@ -9977,7 +9978,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.73,
       "loopable": false,
       "acceptance": "Slow weight transfer precedes a material-specific near contact."
@@ -9988,7 +9989,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.65,
       "loopable": false,
       "acceptance": "A compact edge contact followed by a quieter material release."
@@ -9999,7 +10000,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.1,
       "loopable": false,
       "acceptance": "A short first hit and a weighted support contact follow the arrival."
@@ -10010,7 +10011,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.81,
       "loopable": false,
       "acceptance": "Physical resistance lets go before a small departing layer."
@@ -10021,7 +10022,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.73,
       "loopable": false,
       "acceptance": "Slow weight transfer precedes a material-specific near contact."
@@ -10032,7 +10033,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.65,
       "loopable": false,
       "acceptance": "A compact edge contact followed by a quieter material release."
@@ -10043,7 +10044,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.1,
       "loopable": false,
       "acceptance": "A short first hit and a weighted support contact follow the arrival."
@@ -10054,7 +10055,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.81,
       "loopable": false,
       "acceptance": "Physical resistance lets go before a small departing layer."
@@ -10065,7 +10066,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.73,
       "loopable": false,
       "acceptance": "Slow weight transfer precedes a material-specific near contact."
@@ -10076,7 +10077,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.65,
       "loopable": false,
       "acceptance": "A compact edge contact followed by a quieter material release."
@@ -10087,7 +10088,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.1,
       "loopable": false,
       "acceptance": "A short first hit and a weighted support contact follow the arrival."
@@ -10098,7 +10099,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.81,
       "loopable": false,
       "acceptance": "Physical resistance lets go before a small departing layer."
@@ -10109,7 +10110,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.73,
       "loopable": false,
       "acceptance": "Slow weight transfer precedes a material-specific near contact."
@@ -10120,7 +10121,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.65,
       "loopable": false,
       "acceptance": "A compact edge contact followed by a quieter material release."
@@ -10131,7 +10132,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.1,
       "loopable": false,
       "acceptance": "A short first hit and a weighted support contact follow the arrival."
@@ -10142,7 +10143,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.81,
       "loopable": false,
       "acceptance": "Physical resistance lets go before a small departing layer."
@@ -10153,7 +10154,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.73,
       "loopable": false,
       "acceptance": "Slow weight transfer precedes a material-specific near contact."
@@ -10164,7 +10165,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.65,
       "loopable": false,
       "acceptance": "A compact edge contact followed by a quieter material release."
@@ -10175,7 +10176,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.1,
       "loopable": false,
       "acceptance": "A short first hit and a weighted support contact follow the arrival."
@@ -10186,7 +10187,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.81,
       "loopable": false,
       "acceptance": "Physical resistance lets go before a small departing layer."
@@ -10197,7 +10198,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.73,
       "loopable": false,
       "acceptance": "Slow weight transfer precedes a material-specific near contact."
@@ -10208,7 +10209,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.65,
       "loopable": false,
       "acceptance": "A compact edge contact followed by a quieter material release."
@@ -10219,7 +10220,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.1,
       "loopable": false,
       "acceptance": "A short first hit and a weighted support contact follow the arrival."
@@ -10230,7 +10231,7 @@
       "collection": "Movement · Gear and unusual surfaces",
       "category": "Footsteps & UI",
       "blueprint": "hop-over-a-shallow-furrow",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.81,
       "loopable": false,
       "acceptance": "Physical resistance lets go before a small departing layer."
@@ -10241,7 +10242,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10252,7 +10253,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10263,7 +10264,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10274,7 +10275,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10285,7 +10286,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10296,7 +10297,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10307,7 +10308,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10318,7 +10319,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10329,7 +10330,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10340,7 +10341,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10351,7 +10352,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10362,7 +10363,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10373,7 +10374,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10384,7 +10385,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10395,7 +10396,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10406,7 +10407,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10417,7 +10418,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10428,7 +10429,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10439,7 +10440,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10450,7 +10451,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10461,7 +10462,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10472,7 +10473,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10483,7 +10484,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10494,7 +10495,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10505,7 +10506,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 0.92,
       "loopable": false,
       "acceptance": "Tactile physical engagement leads into a two-part acknowledgement with its own character."
@@ -10516,7 +10517,7 @@
       "collection": "Space · Fictional hardware",
       "category": "Sci-Fi & UI",
       "blueprint": "habitat-airlock-bolt-retracting",
-      "status": "released",
+      "status": "review",
       "durationSec": 1.21,
       "loopable": false,
       "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
@@ -10570,7 +10571,7 @@
       "brief": "Rally upshift",
       "durationSec": 2.94,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10582,7 +10583,7 @@
       "brief": "Propeller flyby",
       "durationSec": 3.54,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10604,7 +10605,7 @@
       "brief": "Jet pass overhead",
       "durationSec": 3.64,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10616,7 +10617,7 @@
       "brief": "Rocket launch whoosh",
       "durationSec": 2.48,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10628,7 +10629,7 @@
       "brief": "Missile pass zip",
       "durationSec": 0.52,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10800,7 +10801,7 @@
       "brief": "Indoor concussion blast",
       "durationSec": 1.87,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10812,7 +10813,7 @@
       "brief": "Subway distant blast",
       "durationSec": 3.9,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10834,7 +10835,7 @@
       "brief": "Truck metal collision",
       "durationSec": 2.39,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10846,7 +10847,7 @@
       "brief": "Parking lot scrape",
       "durationSec": 1.48,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -10858,7 +10859,7 @@
       "brief": "Tire skid halt",
       "durationSec": 1.42,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11030,7 +11031,7 @@
       "brief": "Shotgun indoor report",
       "durationSec": 1.03,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11042,7 +11043,7 @@
       "brief": "Rifle distant report",
       "durationSec": 1.31,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11054,7 +11055,7 @@
       "brief": "Sidearm tight indoor report",
       "durationSec": 0.69,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11066,7 +11067,7 @@
       "brief": "Antique powder report",
       "durationSec": 1.68,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11138,7 +11139,7 @@
       "brief": "Compact petrol crossover key start",
       "durationSec": 3.2,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11150,7 +11151,7 @@
       "brief": "Compact petrol crossover steady idle loop",
       "durationSec": 5.5,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11162,7 +11163,7 @@
       "brief": "Petrol cold start inside concrete garage",
       "durationSec": 2.25,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11174,7 +11175,7 @@
       "brief": "Diesel V6 left bank clatter loop",
       "durationSec": 5.6,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11186,7 +11187,7 @@
       "brief": "Diesel V6 under open hood loop",
       "durationSec": 5.6,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11198,7 +11199,7 @@
       "brief": "Mercedes diesel parked exterior loop",
       "durationSec": 5.7,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11210,7 +11211,7 @@
       "brief": "Supercharged coupe cabin load rise",
       "durationSec": 2.4,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11222,7 +11223,7 @@
       "brief": "Turbo blow-off curbside pass",
       "durationSec": 1.58,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11234,7 +11235,7 @@
       "brief": "Tuned coupe coast and exhaust burble",
       "durationSec": 2.9,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11246,7 +11247,7 @@
       "brief": "Delivery EV inverter pullaway",
       "durationSec": 3.6,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11258,7 +11259,7 @@
       "brief": "Electric taxi low-speed cabin coast loop",
       "durationSec": 5.2,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11270,7 +11271,7 @@
       "brief": "Heavy truck gearbox taking load",
       "durationSec": 3.8,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11282,7 +11283,7 @@
       "brief": "Straight-six turbo dyno load sweep",
       "durationSec": 3.72,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11294,7 +11295,7 @@
       "brief": "Heavy-duty diesel towing pullaway",
       "durationSec": 5.5,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11306,7 +11307,7 @@
       "brief": "Ducati twin cold starter catch",
       "durationSec": 3.45,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11318,7 +11319,7 @@
       "brief": "Yamaha 125 two-stroke steady idle loop",
       "durationSec": 5.55,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11330,7 +11331,7 @@
       "brief": "Two-stroke trail bike bog and recover",
       "durationSec": 3.4,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11342,7 +11343,7 @@
       "brief": "Moped courtyard rev and let-off",
       "durationSec": 4.25,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11354,7 +11355,7 @@
       "brief": "Scooter center stand foot and return",
       "durationSec": 0.73,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11366,7 +11367,7 @@
       "brief": "Dirt bike chain guide chatter loop",
       "durationSec": 3.25,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11378,7 +11379,7 @@
       "brief": "Industrial forklift key start close",
       "durationSec": 2.15,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11390,7 +11391,7 @@
       "brief": "Forklift lift under a pallet",
       "durationSec": 3.6,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11402,7 +11403,7 @@
       "brief": "Forklift valve spool shuts off",
       "durationSec": 0.9,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11414,7 +11415,7 @@
       "brief": "Mobile crane hydraulic tension hold loop",
       "durationSec": 3.4,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11426,7 +11427,7 @@
       "brief": "Pallet forks slide on concrete",
       "durationSec": 1.25,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11438,7 +11439,7 @@
       "brief": "Utility diesel fan slips to idle",
       "durationSec": 3.1,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11450,7 +11451,7 @@
       "brief": "Honda 250 trail bike rider start and roll",
       "durationSec": 4.33,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11462,7 +11463,7 @@
       "brief": "Honda 250 trail bike mid-speed rider loop",
       "durationSec": 4.07,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11474,7 +11475,7 @@
       "brief": "Personal watercraft approaches the dock",
       "durationSec": 4.62,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11486,7 +11487,7 @@
       "brief": "Personal watercraft retreat on open water",
       "durationSec": 6.1,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11498,7 +11499,7 @@
       "brief": "Harbor motor through hydrophone loop",
       "durationSec": 6,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11510,7 +11511,7 @@
       "brief": "Planing hull bow slap to spray",
       "durationSec": 2.8,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11522,7 +11523,7 @@
       "brief": "Glass-fiber hull idling against chop loop",
       "durationSec": 5.2,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11534,7 +11535,7 @@
       "brief": "Skiff transom following wake loop",
       "durationSec": 5.4,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11546,7 +11547,7 @@
       "brief": "Outboard aerated wake layer loop",
       "durationSec": 4.6,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11558,7 +11559,7 @@
       "brief": "Electric hydrofoil rises on lift",
       "durationSec": 3.6,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11570,7 +11571,7 @@
       "brief": "Marina mooring line strains and relaxes",
       "durationSec": 1.58,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11582,7 +11583,7 @@
       "brief": "Anchor links jump over bow roller",
       "durationSec": 1.76,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11594,7 +11595,7 @@
       "brief": "Boat deck locker latch drops",
       "durationSec": 0.71,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11606,7 +11607,7 @@
       "brief": "Small deck pump check valve burp",
       "durationSec": 1.25,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11618,7 +11619,7 @@
       "brief": "Working motorboat steady offshore loop",
       "durationSec": 6.25,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11630,7 +11631,7 @@
       "brief": "Outboard primer cranks and catches",
       "durationSec": 4.18,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11642,7 +11643,7 @@
       "brief": "Flat-bottom riverboat changing throttle",
       "durationSec": 5.51,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11654,7 +11655,7 @@
       "brief": "Anchored sailboat stern-cabin swell loop",
       "durationSec": 6.4,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11666,7 +11667,7 @@
       "brief": "Personal watercraft wash against the dock",
       "durationSec": 2.5,
       "mixRole": "foley",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11678,7 +11679,7 @@
       "brief": "Light prop plane distant circuit loop",
       "durationSec": 5.8,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11690,7 +11691,7 @@
       "brief": "Light prop plane low crossing profile",
       "durationSec": 4.3,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11702,7 +11703,7 @@
       "brief": "Light aircraft cockpit loose canopy chatter",
       "durationSec": 2.42,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11714,7 +11715,7 @@
       "brief": "Cockpit headset switch and cup shift",
       "durationSec": 0.61,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11726,7 +11727,7 @@
       "brief": "Prop aircraft brake and fairing settle",
       "durationSec": 1.55,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11738,7 +11739,7 @@
       "brief": "Twin spool turbine warm idle loop",
       "durationSec": 4.8,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11750,7 +11751,7 @@
       "brief": "Pilot perspective turbine winding down",
       "durationSec": 4.2,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11762,7 +11763,7 @@
       "brief": "Supersonic-style fictional jet departure",
       "durationSec": 4.8,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11774,7 +11775,7 @@
       "brief": "High jet contrail distant loop",
       "durationSec": 6.1,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11786,7 +11787,7 @@
       "brief": "Ducted fan scout lifts into transit",
       "durationSec": 3.73,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11798,7 +11799,7 @@
       "brief": "Helicopter tail rotor high blade flutter loop",
       "durationSec": 5.1,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11810,7 +11811,7 @@
       "brief": "Airframe compartment lock bar seats",
       "durationSec": 0.77,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11822,7 +11823,7 @@
       "brief": "Cessna 152 grass taxi inside cabin loop",
       "durationSec": 6.25,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11834,7 +11835,7 @@
       "brief": "Passenger turboprop cabin takeoff surge",
       "durationSec": 6.22,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11846,7 +11847,7 @@
       "brief": "Cessna cabin intercom switch and seat shift",
       "durationSec": 0.83,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11858,7 +11859,7 @@
       "brief": "Tracked earthmover steady steel run loop",
       "durationSec": 5.65,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11870,7 +11871,7 @@
       "brief": "Armored crawler gravel creep loop",
       "durationSec": 5.1,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11882,7 +11883,7 @@
       "brief": "Armored crawler shallow mud loop",
       "durationSec": 5.4,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11894,7 +11895,7 @@
       "brief": "Armored crawler metal deck loop",
       "durationSec": 4.95,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -11906,7 +11907,7 @@
       "brief": "Armored crawler slow pivot on stone",
       "durationSec": 2.73,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11918,7 +11919,7 @@
       "brief": "Armored crawler brakes and hull settles",
       "durationSec": 2.42,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11930,7 +11931,7 @@
       "brief": "Armored drive sprocket under strain",
       "durationSec": 2.13,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11942,7 +11943,7 @@
       "brief": "Armored hatch latch dogs engage",
       "durationSec": 0.88,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11954,7 +11955,7 @@
       "brief": "Armored track tensioner snaps once",
       "durationSec": 0.69,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11966,7 +11967,7 @@
       "brief": "Armored elevation motor free play",
       "durationSec": 1.88,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11978,7 +11979,7 @@
       "brief": "Armored suspension pressure bleed",
       "durationSec": 1.77,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -11990,7 +11991,7 @@
       "brief": "Armored interior floorplate shiver loop",
       "durationSec": 4.4,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -12002,7 +12003,7 @@
       "brief": "Compact arcade pistol dry snap",
       "durationSec": 0.39,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12014,7 +12015,7 @@
       "brief": "Compact arcade pistol through a closed doorway",
       "durationSec": 0.61,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12026,7 +12027,7 @@
       "brief": "Arcade hand cannon street corner reflection",
       "durationSec": 0.92,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12038,7 +12039,7 @@
       "brief": "Arcade scattergun narrow tile room",
       "durationSec": 0.98,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12050,7 +12051,7 @@
       "brief": "Arcade scattergun distant yard echo",
       "durationSec": 1.31,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12062,7 +12063,7 @@
       "brief": "Arcade carbine two-shot corridor cue",
       "durationSec": 0.77,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12074,7 +12075,7 @@
       "brief": "Arcade carbine dry courtyard trio",
       "durationSec": 0.89,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12086,7 +12087,7 @@
       "brief": "Arcade marksman long canyon echo",
       "durationSec": 1.89,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12098,7 +12099,7 @@
       "brief": "Arcade sentry thump heard inside a vehicle",
       "durationSec": 0.9,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12110,7 +12111,7 @@
       "brief": "Pneumatic arcade dart tool airy pop",
       "durationSec": 0.54,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12122,7 +12123,7 @@
       "brief": "Arcade pulse launcher world-space charge release",
       "durationSec": 1.63,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12134,7 +12135,7 @@
       "brief": "Armored arcade cannon low report and hull ring",
       "durationSec": 1.5,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12146,7 +12147,7 @@
       "brief": "Prism emitter focus ring click",
       "durationSec": 0.44,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12158,7 +12159,7 @@
       "brief": "Modular prop empty cradle latch",
       "durationSec": 0.47,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12170,7 +12171,7 @@
       "brief": "Modular prop insert and retention click",
       "durationSec": 0.78,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12182,7 +12183,7 @@
       "brief": "Clockwork prop wind and unlatch",
       "durationSec": 1.1,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12194,7 +12195,7 @@
       "brief": "Magnetic sheath heavy blade draw",
       "durationSec": 1.11,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12206,7 +12207,7 @@
       "brief": "Padded sling strap and swivel creak",
       "durationSec": 1.03,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12218,7 +12219,7 @@
       "brief": "Light scout armor plate rustle",
       "durationSec": 0.87,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12230,7 +12231,7 @@
       "brief": "Heavy guard armor plates crouch and rise",
       "durationSec": 1.42,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12242,7 +12243,7 @@
       "brief": "Hard-shell energy cell cracks loose",
       "durationSec": 0.66,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12254,7 +12255,7 @@
       "brief": "Air-pulse prop seal vents and cools",
       "durationSec": 1.3,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12266,7 +12267,7 @@
       "brief": "Spent brass prop bounces on concrete",
       "durationSec": 0.7,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12278,7 +12279,7 @@
       "brief": "Spent brass prop drops into grass",
       "durationSec": 0.46,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12290,7 +12291,7 @@
       "brief": "Spent brass prop skitters down steel stairs",
       "durationSec": 1.16,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12302,7 +12303,7 @@
       "brief": "Arcade training round chips brick",
       "durationSec": 0.77,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12314,7 +12315,7 @@
       "brief": "Arcade round snaps through old plywood",
       "durationSec": 0.63,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12326,7 +12327,7 @@
       "brief": "Arcade round zip into soft riverbank",
       "durationSec": 0.7,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12338,7 +12339,7 @@
       "brief": "Arcade ricochet on hanging steel panel",
       "durationSec": 0.94,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12350,7 +12351,7 @@
       "brief": "Energy shield light grazing contact",
       "durationSec": 0.57,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12362,7 +12363,7 @@
       "brief": "Energy shield direct body impact",
       "durationSec": 0.81,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12374,7 +12375,7 @@
       "brief": "Energy shield overload collapse",
       "durationSec": 1.67,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12386,7 +12387,7 @@
       "brief": "Prism repeater capacitor charge loop",
       "durationSec": 2.87,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -12398,7 +12399,7 @@
       "brief": "Prism repeater clear energy discharge",
       "durationSec": 0.97,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12410,7 +12411,7 @@
       "brief": "Prism repeater depleted fizzle",
       "durationSec": 0.72,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12422,7 +12423,7 @@
       "brief": "Fictional arc blade emergency power down",
       "durationSec": 1.2,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12434,7 +12435,7 @@
       "brief": "Menu option focus microswitch",
       "durationSec": 0.09,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12446,7 +12447,7 @@
       "brief": "Menu selection firm downclick",
       "durationSec": 0.143,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12458,7 +12459,7 @@
       "brief": "Menu confirm spring detent",
       "durationSec": 0.174,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12470,7 +12471,7 @@
       "brief": "Menu cancel felt stop",
       "durationSec": 0.16,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12482,7 +12483,7 @@
       "brief": "Menu unavailable double contact",
       "durationSec": 0.185,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12494,7 +12495,7 @@
       "brief": "Menu tab switches with rocker",
       "durationSec": 0.155,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12506,7 +12507,7 @@
       "brief": "Inventory slot soft snap",
       "durationSec": 0.197,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12518,7 +12519,7 @@
       "brief": "Toggle enabled crisp upward tick",
       "durationSec": 0.119,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12530,7 +12531,7 @@
       "brief": "Toggle disabled rubber latch",
       "durationSec": 0.127,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12542,7 +12543,7 @@
       "brief": "Radial menu detent short tick",
       "durationSec": 0.064,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12554,7 +12555,7 @@
       "brief": "Slider notched dial across three stops",
       "durationSec": 0.233,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12566,7 +12567,7 @@
       "brief": "Panel closed cloth and catch",
       "durationSec": 0.247,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12578,7 +12579,7 @@
       "brief": "Arcade kill confirm dry ceramic stamp",
       "durationSec": 0.217,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12590,7 +12591,7 @@
       "brief": "Arcade kill confirm ratchet double click",
       "durationSec": 0.259,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12602,7 +12603,7 @@
       "brief": "Arcade kill confirm padded bass punch",
       "durationSec": 0.223,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12614,7 +12615,7 @@
       "brief": "Arcade kill confirm tuned air break",
       "durationSec": 0.269,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12626,7 +12627,7 @@
       "brief": "Arcade elimination glass grit seal",
       "durationSec": 0.291,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12638,7 +12639,7 @@
       "brief": "Armored target defeated panel latch",
       "durationSec": 0.309,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12650,7 +12651,7 @@
       "brief": "Stealth takedown quiet wood token",
       "durationSec": 0.242,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12662,7 +12663,7 @@
       "brief": "Finisher confirm low grate snap",
       "durationSec": 0.392,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12674,7 +12675,7 @@
       "brief": "Hitmarker cloth and sharp tick",
       "durationSec": 0.105,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12686,7 +12687,7 @@
       "brief": "Critical hit hard ceramic doublet",
       "durationSec": 0.169,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12698,7 +12699,7 @@
       "brief": "Armor break dry crack and scrape",
       "durationSec": 0.341,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12710,7 +12711,7 @@
       "brief": "Headshot feedback single bright notch",
       "durationSec": 0.169,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12722,7 +12723,7 @@
       "brief": "Factory crane warning single close buzzer",
       "durationSec": 1.28,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12734,7 +12735,7 @@
       "brief": "Factory door warning two unequal buzzes",
       "durationSec": 1.61,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12746,7 +12747,7 @@
       "brief": "Appliance timer warning single beep",
       "durationSec": 0.29,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12758,7 +12759,7 @@
       "brief": "Panel advisory warning two hardware beeps",
       "durationSec": 0.68,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12770,7 +12771,7 @@
       "brief": "Countdown timer low battery warning",
       "durationSec": 2.06,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12782,7 +12783,7 @@
       "brief": "Ceiling detector alert isolated pulse",
       "durationSec": 0.65,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12794,7 +12795,7 @@
       "brief": "Ceiling detector warning three pulses",
       "durationSec": 3.12,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12806,7 +12807,7 @@
       "brief": "Relay panel brownout warning",
       "durationSec": 0.74,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12818,7 +12819,7 @@
       "brief": "Radar hard lock warning dry double burst",
       "durationSec": 0.63,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12830,7 +12831,7 @@
       "brief": "Terrain proximity warning rough buzz",
       "durationSec": 1.13,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12842,7 +12843,7 @@
       "brief": "Garage door ajar panel chime",
       "durationSec": 0.85,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12854,7 +12855,7 @@
       "brief": "Mechanical warning bell sharp trip",
       "durationSec": 1.17,
       "mixRole": "interface",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12866,7 +12867,7 @@
       "brief": "Arcade missile compact ignition snap",
       "durationSec": 0.79,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12878,7 +12879,7 @@
       "brief": "Arcade missile long bright thrust departure",
       "durationSec": 2.07,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12890,7 +12891,7 @@
       "brief": "Fictional launch heard through cockpit glass",
       "durationSec": 1.85,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12902,7 +12903,7 @@
       "brief": "Fictional launch far pad over open water",
       "durationSec": 3.4,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12914,7 +12915,7 @@
       "brief": "Supersonic missile close needle whistle",
       "durationSec": 0.42,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12926,7 +12927,7 @@
       "brief": "Supersonic missile distant thin whistle",
       "durationSec": 0.89,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12938,7 +12939,7 @@
       "brief": "Supersonic missile overhead ripping pass",
       "durationSec": 0.81,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12950,7 +12951,7 @@
       "brief": "Supersonic missile canyon edge pass",
       "durationSec": 1.46,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12962,7 +12963,7 @@
       "brief": "Fast interceptor broad air pass",
       "durationSec": 1.77,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12974,7 +12975,7 @@
       "brief": "Guided arcade propulsion cuts then fades",
       "durationSec": 1.29,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12986,7 +12987,7 @@
       "brief": "Close supersonic twin pressure crack",
       "durationSec": 1.31,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -12998,7 +12999,7 @@
       "brief": "Distant supersonic boom across open country",
       "durationSec": 2.73,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13010,7 +13011,7 @@
       "brief": "Supersonic boom heard from cockpit cabin",
       "durationSec": 1.83,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13022,7 +13023,7 @@
       "brief": "Supersonic boom above coastal cliffs",
       "durationSec": 2.84,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13034,7 +13035,7 @@
       "brief": "Supersonic boom through a hangar wall",
       "durationSec": 1.96,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13046,7 +13047,7 @@
       "brief": "Heavy jet low Doppler sweep",
       "durationSec": 3.41,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13058,7 +13059,7 @@
       "brief": "Jet transonic gust and pressure buffet",
       "durationSec": 2.12,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13070,7 +13071,7 @@
       "brief": "High-altitude jet whistle crossing",
       "durationSec": 3.7,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13082,7 +13083,7 @@
       "brief": "Ground crew jet ignition interior wash",
       "durationSec": 3.58,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13094,7 +13095,7 @@
       "brief": "Passenger turboprop cabin power settles",
       "durationSec": 5.1,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13106,7 +13107,7 @@
       "brief": "Close alley explosion concrete debris",
       "durationSec": 2.79,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13118,7 +13119,7 @@
       "brief": "Explosion behind a shut metal door",
       "durationSec": 2.12,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13130,7 +13131,7 @@
       "brief": "Explosion through plate glass shower",
       "durationSec": 2.35,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13142,7 +13143,7 @@
       "brief": "Wooden shed explosion splinter fall",
       "durationSec": 2.58,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13154,7 +13155,7 @@
       "brief": "Deep quarry explosion rock slap",
       "durationSec": 3.84,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13166,7 +13167,7 @@
       "brief": "Flash charge explosion empty corridor",
       "durationSec": 1.62,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13178,7 +13179,7 @@
       "brief": "Shoreline explosion heavy water crown",
       "durationSec": 3.75,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13190,7 +13191,7 @@
       "brief": "Vehicle hull explosion with loose panels",
       "durationSec": 2.9,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13202,7 +13203,7 @@
       "brief": "Soft earth explosion heavy dirt fall",
       "durationSec": 3.07,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13214,7 +13215,7 @@
       "brief": "Hangar secondary explosions spaced chain",
       "durationSec": 4.12,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13226,7 +13227,7 @@
       "brief": "Arcade sidearm dry paper target report",
       "durationSec": 0.44,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13238,7 +13239,7 @@
       "brief": "Compact sidearm underpass reflection",
       "durationSec": 0.92,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13250,7 +13251,7 @@
       "brief": "Arcade scattergun exterior short barrel",
       "durationSec": 0.74,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13262,7 +13263,7 @@
       "brief": "Arcade rifle gravel pit single report",
       "durationSec": 0.94,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13274,7 +13275,7 @@
       "brief": "Arcade rifle report heard through car glass",
       "durationSec": 0.72,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13286,7 +13287,7 @@
       "brief": "Arcade heavy revolver close steel report",
       "durationSec": 0.8,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13298,7 +13299,7 @@
       "brief": "Pneumatic launcher practice report",
       "durationSec": 0.6,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13310,7 +13311,7 @@
       "brief": "Arcade mounted report through a stairwell",
       "durationSec": 1.53,
       "mixRole": "impact",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13322,7 +13323,7 @@
       "brief": "Prop sidearm reload short slider and seat",
       "durationSec": 0.67,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13334,7 +13335,7 @@
       "brief": "Prop sidearm reload heavy magazine catch",
       "durationSec": 0.79,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13346,7 +13347,7 @@
       "brief": "Shotgun prop reload wood pump clack",
       "durationSec": 0.86,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13358,7 +13359,7 @@
       "brief": "Carbine prop reload quick soft polymer seat",
       "durationSec": 0.54,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13370,7 +13371,7 @@
       "brief": "Carbine prop reload heavy alloy slot",
       "durationSec": 0.85,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13382,7 +13383,7 @@
       "brief": "Arcade revolver prop cylinder swings open",
       "durationSec": 0.61,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13394,7 +13395,7 @@
       "brief": "Arcade revolver prop cylinder latches shut",
       "durationSec": 0.37,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13406,7 +13407,7 @@
       "brief": "Heavy fictional canister swap and valve",
       "durationSec": 1.07,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13418,7 +13419,7 @@
       "brief": "Energy rifle empty cell release",
       "durationSec": 0.55,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13430,7 +13431,7 @@
       "brief": "Energy rifle hard cell reload snap",
       "durationSec": 0.81,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13442,7 +13443,7 @@
       "brief": "Prop launcher empty chamber spring release",
       "durationSec": 0.64,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13454,7 +13455,7 @@
       "brief": "Prop launcher brass catches in a pouch",
       "durationSec": 0.64,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13466,7 +13467,7 @@
       "brief": "Heavy diesel work truck outside power hold loop",
       "durationSec": 5.02,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -13478,7 +13479,7 @@
       "brief": "Road diesel short loaded drawdown",
       "durationSec": 4.5,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13490,7 +13491,7 @@
       "brief": "Compact crossover seat vibration under load loop",
       "durationSec": 4.59,
       "mixRole": "ambience",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -13502,7 +13503,7 @@
       "brief": "Trail bike light throttle surge rider perspective",
       "durationSec": 4.22,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13514,7 +13515,7 @@
       "brief": "Two-stroke moped climbs under load",
       "durationSec": 5.21,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13526,7 +13527,7 @@
       "brief": "Tracked bulldozer reversing machinery loop",
       "durationSec": 6.15,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": true
     },
     {
@@ -13538,7 +13539,7 @@
       "brief": "Tracked vehicle reverse warning and track settle",
       "durationSec": 2.38,
       "mixRole": "vehicle",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13550,7 +13551,7 @@
       "brief": "Heavy truck pneumatic brake seat",
       "durationSec": 1.62,
       "mixRole": "detail",
-      "status": "released",
+      "status": "review",
       "loopable": false
     },
     {
@@ -13579,15 +13580,6 @@
       "durationSec": 0.266,
       "loopable": false,
       "brief": "Accordion panel unfolds"
-    },
-    {
-      "id": "angry-creature-recoils-from-contact",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.4,
-      "loopable": false,
-      "brief": "Angry creature recoils from contact"
     },
     {
       "id": "antique-long-rifle-close-dry-report",
@@ -13878,15 +13870,6 @@
       "brief": "Bilge water sloshing beneath floorboards — water surging in"
     },
     {
-      "id": "blocked-doorway-angry-moan",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 2.017,
-      "loopable": false,
-      "brief": "Blocked doorway angry moan"
-    },
-    {
       "id": "blueprint-pin-pulled-free",
       "category": "Sci-Fi & UI",
       "status": "review",
@@ -13915,7 +13898,7 @@
     },
     {
       "id": "body-dragged-one-length",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.852,
@@ -14104,7 +14087,7 @@
     },
     {
       "id": "brittle-double-bone-snap",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.369,
@@ -14689,7 +14672,7 @@
     },
     {
       "id": "close-palm-slap-with-wet-tail",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.325,
@@ -15543,24 +15526,6 @@
       "brief": "Crafting stack reaches capacity"
     },
     {
-      "id": "crawler-pulls-across-wet-tile",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.722,
-      "loopable": false,
-      "brief": "Crawler pulls across wet tile"
-    },
-    {
-      "id": "creature-rolls-against-a-steel-door",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.147,
-      "loopable": false,
-      "brief": "Creature rolls against a steel door"
-    },
-    {
       "id": "crickets-beneath-a-half-open-window-loop",
       "category": "Animals",
       "status": "review",
@@ -15712,15 +15677,6 @@
       "durationSec": 4.52,
       "loopable": false,
       "brief": "Crosswind at a bridge flagstaff — wind dying away"
-    },
-    {
-      "id": "crouched-creature-rises-from-rubble",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.452,
-      "loopable": false,
-      "brief": "Crouched creature rises from rubble"
     },
     {
       "id": "crow-leaves-a-fence-post",
@@ -16138,7 +16094,7 @@
     },
     {
       "id": "distant-impact-through-a-floor",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.622,
@@ -16354,7 +16310,7 @@
     },
     {
       "id": "dull-torso-hit-followed-by-cloth",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.399,
@@ -16909,24 +16865,6 @@
       "durationSec": 0.88,
       "loopable": false,
       "brief": "Fender scrape followed by mirror strike"
-    },
-    {
-      "id": "feral-lunge-past-a-shoulder",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 0.79,
-      "loopable": false,
-      "brief": "Feral lunge past a shoulder"
-    },
-    {
-      "id": "feral-throat-catches-on-an-inhale",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.26,
-      "loopable": false,
-      "brief": "Feral throat catches on an inhale"
     },
     {
       "id": "fictional-bullpup-carbine-close-dry-report",
@@ -18577,7 +18515,7 @@
     },
     {
       "id": "heavy-crunch-under-falling-weight",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.519,
@@ -18586,7 +18524,7 @@
     },
     {
       "id": "heavy-fall-into-wet-leaves",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.808,
@@ -18595,7 +18533,7 @@
     },
     {
       "id": "heavy-fall-onto-empty-crates",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.818,
@@ -18828,33 +18766,6 @@
       "brief": "Hollow metal walk into a jog"
     },
     {
-      "id": "horde-behind-a-boarded-window-loop",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Location beds",
-      "durationSec": 4.5,
-      "loopable": true,
-      "brief": "Horde behind a boarded window loop"
-    },
-    {
-      "id": "horde-recedes-down-a-corridor",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 4.357,
-      "loopable": false,
-      "brief": "Horde recedes down a corridor"
-    },
-    {
-      "id": "horde-surges-against-a-gate",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 3.257,
-      "loopable": false,
-      "brief": "Horde surges against a gate"
-    },
-    {
       "id": "horse-exhales-over-a-stable-door",
       "category": "Animals",
       "status": "review",
@@ -19026,33 +18937,6 @@
       "brief": "Incoming artillery game cue — open air departure"
     },
     {
-      "id": "infected-below-a-bridge-loop",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Location beds",
-      "durationSec": 4.5,
-      "loopable": true,
-      "brief": "Infected below a bridge loop"
-    },
-    {
-      "id": "infected-claws-at-a-locked-door",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.347,
-      "loopable": false,
-      "brief": "Infected claws at a locked door"
-    },
-    {
-      "id": "infected-jaw-snaps-shut",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 0.55,
-      "loopable": false,
-      "brief": "Infected jaw snaps shut"
-    },
-    {
       "id": "interceptor-turbofan-afterburner-departure",
       "category": "Aircraft",
       "status": "review",
@@ -19189,7 +19073,7 @@
     },
     {
       "id": "joint-crack-with-tendon-release",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.392,
@@ -19234,7 +19118,7 @@
     },
     {
       "id": "knees-strike-and-hands-catch",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.612,
@@ -19243,7 +19127,7 @@
     },
     {
       "id": "knife-prop-sinks-into-a-melon",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.491,
@@ -21862,7 +21746,7 @@
     },
     {
       "id": "raincoat-sleeve-takes-a-body-blow",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.283,
@@ -22960,7 +22844,7 @@
     },
     {
       "id": "shoulder-checks-a-wooden-jamb",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.41,
@@ -23002,15 +22886,6 @@
       "durationSec": 4.83,
       "loopable": false,
       "brief": "Shower inside a parked delivery van — shower builds"
-    },
-    {
-      "id": "sick-breath-against-glass",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.572,
-      "loopable": false,
-      "brief": "Sick breath against glass"
     },
     {
       "id": "side-glass-breaks-during-parking-collision",
@@ -23320,7 +23195,7 @@
     },
     {
       "id": "soft-tissue-pull-and-snap",
-      "category": "Zombies & Combat",
+      "category": "Combat Foley",
       "status": "review",
       "collection": "Creature · Physical horror",
       "durationSec": 0.639,
@@ -23515,15 +23390,6 @@
       "durationSec": 2.955,
       "loopable": false,
       "brief": "Split rail fence — progressive collapse"
-    },
-    {
-      "id": "stalker-snarls-and-steps-forward",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 0.83,
-      "loopable": false,
-      "brief": "Stalker snarls and steps forward"
     },
     {
       "id": "steel-guardrail-buckles-under-door-scrape",
@@ -25092,15 +24958,6 @@
       "brief": "Two casings tumble apart on water in a shallow trench"
     },
     {
-      "id": "two-infected-answer-in-a-stairwell",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 3.187,
-      "loopable": false,
-      "brief": "Two infected answer in a stairwell"
-    },
-    {
       "id": "two-lions-call-across-an-enclosure",
       "category": "Animals",
       "status": "review",
@@ -25407,15 +25264,6 @@
       "brief": "V12-inspired touring coupe wide-open exhaust loop"
     },
     {
-      "id": "voice-dies-behind-a-bulkhead",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.902,
-      "loopable": false,
-      "brief": "Voice dies behind a bulkhead"
-    },
-    {
       "id": "wake-rattles-an-aluminum-skiff-floor",
       "category": "Vehicles & Engines",
       "status": "review",
@@ -25423,24 +25271,6 @@
       "durationSec": 1.23,
       "loopable": false,
       "brief": "Wake rattles an aluminum skiff floor"
-    },
-    {
-      "id": "walker-catches-on-a-chain-fence",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.722,
-      "loopable": false,
-      "brief": "Walker catches on a chain fence"
-    },
-    {
-      "id": "walker-pulls-free-of-brush",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.991,
-      "loopable": false,
-      "brief": "Walker pulls free of brush"
     },
     {
       "id": "water-at-a-stony-ford-constant-movement-loop",
@@ -25729,24 +25559,6 @@
       "durationSec": 2.176,
       "loopable": false,
       "brief": "Wet asphalt walk into a jog"
-    },
-    {
-      "id": "wet-throat-rattle-and-release",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Physical horror",
-      "durationSec": 1.7,
-      "loopable": false,
-      "brief": "Wet throat rattle and release"
-    },
-    {
-      "id": "why-the-forest-fell-quiet-loop",
-      "category": "Zombies & Combat",
-      "status": "review",
-      "collection": "Creature · Location beds",
-      "durationSec": 4.5,
-      "loopable": true,
-      "brief": "Why the forest fell quiet loop"
     },
     {
       "id": "wild-wolves-in-a-wooded-valley-loop",
@@ -26313,7 +26125,8 @@
       "collection": "Studio originals · Weather & Ambience",
       "durationSec": 8.25,
       "loopable": false,
-      "brief": "Close Lightning & Thunder"
+      "brief": "Close Lightning & Thunder",
+      "revision": 2
     },
     {
       "id": "concrete-footstep",
@@ -26349,7 +26162,8 @@
       "collection": "Studio originals · Footsteps & UI",
       "durationSec": 0.52,
       "loopable": false,
-      "brief": "Gravel Footstep"
+      "brief": "Gravel Footstep",
+      "revision": 2
     },
     {
       "id": "grenade-explosion",
@@ -26358,7 +26172,8 @@
       "collection": "Studio originals · Weapons",
       "durationSec": 2.65,
       "loopable": false,
-      "brief": "Grenade Explosion"
+      "brief": "Grenade Explosion",
+      "revision": 2
     },
     {
       "id": "heavy-storm-rain-loop",
@@ -26467,6 +26282,126 @@
       "durationSec": 0.66,
       "loopable": false,
       "brief": "Shell Casing Drop"
+    },
+    {
+      "id": "ocean-breaker-at-a-rock-ledge",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 4.8,
+      "loopable": false,
+      "brief": "Ocean Breaker at a Rock Ledge",
+      "revision": 1
+    },
+    {
+      "id": "lagoon-ripples-against-a-stone-step-loop",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 6.0,
+      "loopable": true,
+      "brief": "Lagoon Ripples Against a Stone Step (Loop)",
+      "revision": 1
+    },
+    {
+      "id": "launch-bow-cuts-a-cross-wake",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 4.2,
+      "loopable": false,
+      "brief": "Launch Bow Cuts a Cross-Wake",
+      "revision": 1
+    },
+    {
+      "id": "low-jet-downwash-churns-the-inlet",
+      "category": "Aircraft",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 5.6,
+      "loopable": false,
+      "brief": "Low Jet Downwash Churns the Inlet",
+      "revision": 1
+    },
+    {
+      "id": "sonic-boom-doublet-over-open-water",
+      "category": "Aircraft",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 4.6,
+      "loopable": false,
+      "brief": "Sonic Boom Doublet Over Open Water",
+      "revision": 1
+    },
+    {
+      "id": "tire-floats-then-finds-wet-asphalt",
+      "category": "Vehicles & Engines",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 3.8,
+      "loopable": false,
+      "brief": "Tire Floats Then Finds Wet Asphalt",
+      "revision": 1
+    },
+    {
+      "id": "wheel-arch-throws-a-sheet-of-spray",
+      "category": "Vehicles & Engines",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 3.2,
+      "loopable": false,
+      "brief": "Wheel Arch Throws a Sheet of Spray",
+      "revision": 1
+    },
+    {
+      "id": "forked-lightning-with-a-late-hill-return",
+      "category": "Weather & Ambience",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 6.4,
+      "loopable": false,
+      "brief": "Forked Lightning with a Late Hill Return",
+      "revision": 1
+    },
+    {
+      "id": "cinematic-petrol-flare-and-falling-cinders",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 5.2,
+      "loopable": false,
+      "brief": "Cinematic Petrol Flare and Falling Cinders",
+      "revision": 1
+    },
+    {
+      "id": "cinematic-c4-pressure-front",
+      "category": "Impacts",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 4.4,
+      "loopable": false,
+      "brief": "Cinematic C4 Pressure Front",
+      "revision": 1
+    },
+    {
+      "id": "blast-through-a-timber-partition",
+      "category": "Impacts",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 4.0,
+      "loopable": false,
+      "brief": "Blast Through a Timber Partition",
+      "revision": 1
+    },
+    {
+      "id": "geyser-lifts-then-rains-back",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 6.2,
+      "loopable": false,
+      "brief": "Geyser Lifts Then Rains Back",
+      "revision": 1
     }
   ]
 }

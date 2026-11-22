@@ -6,7 +6,7 @@ import barnTimberCreak from './_recordings/barn-timber-creak.ts';
 import jacketMovementRustle from './_recordings/jacket-movement-rustle.ts';
 
 export default {
-  id: 'heavy-fall-onto-empty-crates', name: "Heavy fall onto empty crates", category: 'Zombies & Combat',
+  id: 'heavy-fall-onto-empty-crates', name: "Heavy fall onto empty crates", category: 'Combat Foley',
   tags: ["body", "fall", "wooden", "crate", "impact"],
   loopable: false, durationSec: 0.818, mixRole: 'impact', targetRmsDbfs: -21,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

@@ -5,7 +5,7 @@ import jacketMovementRustle from './_recordings/jacket-movement-rustle.ts';
 import wetCropBrush from './_recordings/wet-crop-brush.ts';
 
 export default {
-  id: 'dull-torso-hit-followed-by-cloth', name: "Dull torso hit followed by cloth", category: 'Zombies & Combat',
+  id: 'dull-torso-hit-followed-by-cloth', name: "Dull torso hit followed by cloth", category: 'Combat Foley',
   tags: ["body", "torso", "melee", "thump", "cloth"],
   loopable: false, durationSec: 0.399, mixRole: 'impact', targetRmsDbfs: -23,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

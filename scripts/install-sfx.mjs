@@ -1,23 +1,37 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
 import { resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { selectRecipes, installRecipes } from './install-files.mjs';
-const { values, positionals } = parseArgs({
-  options: { dest: { type: 'string', default: './src/lumina-sfx' }, help: { type: 'boolean' } },
-  allowPositionals: true,
-});
-if (values.help || !positionals.length) {
-  console.log('Usage: node scripts/install-sfx.mjs <sound-id> [sound-id…] [--dest <directory>]');
-  if (!values.help) process.exitCode = 1;
-} else {
-  try {
-    const selected = await selectRecipes(positionals);
-    const dest = resolve(values.dest);
+
+async function main() {
+  const { values, positionals } = parseArgs({
+    options: { dest: { type: 'string' }, project: { type: 'string' }, engine: { type: 'string' }, help: { type: 'boolean' } },
+    allowPositionals: true,
+  });
+  if (values.help || !positionals.length) {
+    console.log('node scripts/install-sfx.mjs <id> [id ...] [--project GAME] [--engine web|godot|unity|unreal|python|wav] [--dest DIR]');
+    if (!values.help) process.exitCode = 1;
+    return;
+  }
+  const selected = await selectRecipes(positionals);
+  const { detectProject, installEngine } = await import('./install-engine.mjs');
+  const target = await detectProject(values.project ?? values.dest ?? process.cwd());
+  // Preserve the existing TypeScript-only --dest interface for browser projects.
+  if (!values.engine && !values.project && (!target || (values.dest && target.engine === 'web'))) {
+    const dest = resolve(values.dest ?? './src/lumina-sfx');
     const written = await installRecipes(selected, dest);
     console.log(`Installed ${selected.length} recipe(s) into ${dest} (${written} files written)`);
-    for (const r of selected) console.log('  ' + r.file);
-  } catch (error) {
-    console.error(error.message);
-    process.exitCode = 1;
+    return;
   }
+  const root = resolve(values.project ?? target?.root ?? process.cwd());
+  console.log(JSON.stringify(await installEngine(selected, { root, dest: values.dest, engine: values.engine ?? target?.engine ?? 'web' }), null, 2));
+}
+
+if (!process.features.typescript && !process.execArgv.includes('--experimental-strip-types')) {
+  const child = spawnSync(process.execPath, ['--experimental-strip-types', ...process.argv.slice(1)], { stdio: 'inherit' });
+  process.exitCode = child.status ?? 1;
+} else {
+  try { await main(); }
+  catch (error) { console.error(error.message); process.exitCode = 1; }
 }

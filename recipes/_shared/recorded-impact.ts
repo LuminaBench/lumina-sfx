@@ -7,7 +7,7 @@ interface FoleyLayer {
   clip: RecordedClip;
   at: number;
   span: number;
-  gain: number;
+  gain: number | ((params: Readonly<Record<string, number>>) => number);
   cutoff: number;
   speed: number;
 }
@@ -36,7 +36,8 @@ export function withImpactFoley(base: SoundRecipe, layers: readonly FoleyLayer[]
         for (let i = 0; i < frames; i++) {
           take[i] *= Math.min(1, (frames-1-i)/fade, i / Math.max(1, ctx.sampleRate*.00018));
         }
-        if (peak > .001) mix(dry, take, dryPeak * layer.gain / peak, at);
+        const gain = typeof layer.gain === 'function' ? layer.gain(opts.params) : layer.gain;
+        if (peak > .001) mix(dry, take, dryPeak * gain / peak, at);
       }
       return dry;
     },

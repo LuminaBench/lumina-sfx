@@ -5,7 +5,7 @@ import naturalPlanks from './_recordings/natural-planks.ts';
 import barnTimberCreak from './_recordings/barn-timber-creak.ts';
 
 export default {
-  id: 'distant-impact-through-a-floor', name: "Distant impact through a floor", category: 'Zombies & Combat',
+  id: 'distant-impact-through-a-floor', name: "Distant impact through a floor", category: 'Combat Foley',
   tags: ["body", "fall", "impact", "muffled", "upstairs"],
   loopable: false, durationSec: 0.622, mixRole: 'impact', targetRmsDbfs: -25,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

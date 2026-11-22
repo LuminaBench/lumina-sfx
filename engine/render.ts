@@ -38,7 +38,7 @@ export function activeRms(samples: Float32Array, sampleRate: number): number {
 }
 
 function taper(samples: Float32Array, sampleRate: number): void {
-  const start = Math.round(sampleRate * 0.0003);
+  const start = Math.max(1, Math.round(sampleRate * 0.0002));
   const end = Math.min(Math.round(sampleRate * 0.022), samples.length / 2 | 0);
   for (let i = 0; i < start; i++) samples[i] *= i / start;
   for (let i = 0; i < end; i++) {
@@ -46,15 +46,24 @@ function taper(samples: Float32Array, sampleRate: number): void {
   }
 }
 
-function prepareShot(raw: Float32Array, sampleRate: number, immediate = false): Float32Array {
-  let peak = 0;
-  for (const sample of raw) peak = Math.max(peak, Math.abs(sample));
-  const onset = raw.findIndex((sample) => Math.abs(sample) >= peak * 0.02 && peak > 0);
-  const trim = Math.max(0, onset - (immediate ? 0 : Math.round(sampleRate * 0.001)));
+// Align a genuine attack to the end of a 0.2 ms de-click ramp. Trimming the
+// attack to frame zero and then fading it can erase the only early contact.
+function alignAttack(raw: Float32Array, onset: number, sampleRate: number): Float32Array {
+  const ramp = Math.max(1, Math.round(sampleRate * 0.0002));
+  const start = Math.max(0, onset) - ramp;
   const shot = new Float32Array(raw.length);
-  shot.set(raw.subarray(trim));
+  for (let i = 0; i < shot.length && i + start < raw.length; i++) {
+    shot[i] = raw[Math.max(0, i + start)];
+  }
   taper(shot, sampleRate);
   return shot;
+}
+
+function prepareShot(raw: Float32Array, sampleRate: number): Float32Array {
+  let peak = 0;
+  for (const sample of raw) peak = Math.max(peak, Math.abs(sample));
+  const onset = raw.findIndex(sample => Math.abs(sample) >= peak * 0.035);
+  return alignAttack(raw, onset, sampleRate);
 }
 
 function master(input: Float32Array, sampleRate: number, rmsDbfs: number): Float32Array {
@@ -108,7 +117,7 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
     throw new Error(`${recipe.id}: render must return exactly ${ctx.frames} Float32 samples`);
   }
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
-  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate, recipe.immediateOnset);
+  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate);
   const output = master(prepared, sampleRate, target);
   return opts.level === 'balanced' ? balanceLevels(output, sampleRate, resolveMixRole(recipe)) : output;
 }
@@ -128,15 +137,10 @@ export function renderChannels(recipe: SoundRecipe, opts: RenderOptions = {}, sa
     peak = Math.max(peak, Math.abs(x));
   }
   let onset = 0;
-  while (onset < frames && Math.max(Math.abs(raw[0][onset]), Math.abs(raw[1][onset])) < peak * 0.02) onset++;
-  const trim = Math.max(0, onset - (recipe.immediateOnset ? 0 : Math.round(sampleRate * 0.001)));
-  const channels = raw.map(c => {
-    if (recipe.loopable) return closeLoop(c, frames, overlap);
-    const shot = new Float32Array(frames);
-    shot.set(c.subarray(trim));
-    taper(shot, sampleRate);
-    return shot;
-  });
+  while (onset < frames && Math.max(Math.abs(raw[0][onset]), Math.abs(raw[1][onset])) < peak * 0.035) onset++;
+  const channels = raw.map(c => recipe.loopable
+    ? closeLoop(c, frames, overlap)
+    : alignAttack(c, onset, sampleRate));
   const interleaved = new Float32Array(frames*2);
   for (let i = 0; i < frames; i++) {
     interleaved[i*2] = channels[0][i];

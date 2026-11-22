@@ -5,7 +5,7 @@ import twoFootLanding from './_recordings/two-foot-landing.ts';
 import fieldPepperRip from './_recordings/field-pepper-rip.ts';
 
 export default {
-  id: 'raincoat-sleeve-takes-a-body-blow', name: "Raincoat sleeve takes a body blow", category: 'Zombies & Combat',
+  id: 'raincoat-sleeve-takes-a-body-blow', name: "Raincoat sleeve takes a body blow", category: 'Combat Foley',
   tags: ["flesh", "impact", "padded", "coat", "combat"],
   loopable: false, durationSec: 0.283, mixRole: 'impact', targetRmsDbfs: -22,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

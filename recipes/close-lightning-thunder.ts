@@ -5,7 +5,7 @@ import source from './_recordings/atlas-thunder-left.ts';
 import wash from './_recordings/atlas-thunder-right.ts';
 import detail from './_recordings/atlas-thunder-roll.ts';
 
-const path = { space: "open", cutoff: 7900, rolls: [0.009, 0.23, 0.8, 2.14, 4.2], decay: 3.3, width: 0.19 } as const;
+const path = { space: "open", cutoff: 7900, rolls: [0.045, 0.35, 1.18, 2.73, 4.62], decay: 3.15, width: 0.14 } as const;
 
 export default {
   id: "close-lightning-thunder", name: "Close Lightning & Thunder", category: "Weather & Ambience",

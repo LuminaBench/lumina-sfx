@@ -1,0 +1,5 @@
+{
+  "FileVersion": 3, "Version": 1, "VersionName": "1.0", "FriendlyName": "Lumina SFX",
+  "Category": "Audio", "EnabledByDefault": true, "CanContainContent": false,
+  "Modules": [{ "Name": "LuminaSfx", "Type": "Runtime", "LoadingPhase": "Default" }]
+}

@@ -3,7 +3,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { DEFAULT_SEED, renderSound, renderChannels, SAMPLE_RATE } from '../engine/render.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { balanceLevels, balanceSettings, measureLevel, resolveMixRole } from '../engine/levels.ts';
-import { decodeWav, inspect, inspectBalanced } from './metrics.mjs';
+import { checkLoop, decodeWav, inspect, inspectBalanced } from './metrics.mjs';
 import { writeFile, rename, rm } from 'node:fs/promises';
 const seedCount = 4;
 export async function publish(path, bytes) {
@@ -45,7 +45,11 @@ export async function checkRecipe(recipe, { extremes = false, bothLevels = false
           checks.stereo = { pass: peak <= 10**(-0.5/20) && foldRatio > 0.25 && sideRatio > 1e-6 &&
             master.byteLength === 44 + pcm.length*4 && new DataView(master).getUint16(22, true) === 2,
             foldRatio, sideRatio, peak };
-          if (recipe.immediateOnset && !recipe.loopable) {
+          if (recipe.loopable) {
+            const sides = channels.map(channel => checkLoop(channel, SAMPLE_RATE));
+            checks.stereoBoundary = { pass: sides.every(side => side.pass), sides };
+          }
+          if (!recipe.loopable) {
             const floor = Math.max(0.001, peak*0.02);
             const frame = channels[0].findIndex((v,i) => Math.max(Math.abs(v), Math.abs(channels[1][i])) >= floor);
             const ms = frame < 0 ? null : frame*1000/SAMPLE_RATE;

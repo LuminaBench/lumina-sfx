@@ -4571,44 +4571,6 @@
       ]
     },
     {
-      "file": "recipes/_recordings/natural-groan.ts",
-      "title": "Zombie moaning",
-      "author": "8oni",
-      "url": "https://freesound.org/people/8oni/sounds/394843/",
-      "license": "CC0-1.0",
-      "verifiedOn": "2026-11-21",
-      "sampleRate": 18000,
-      "takes": [
-        {
-          "frames": 25916,
-          "sha256": "ff81567c26320ed3561c3fb5858e9529130ead182102280bb3dd9214a3ff14ca"
-        },
-        {
-          "frames": 19994,
-          "sha256": "1336f0a3c7f4e0ebf886a7ec61a6517f93367bca029307f3a0e1de4e9abc8080"
-        },
-        {
-          "frames": 17101,
-          "sha256": "d6662789a274c8974e36039ed68dbbff0ed37b1f08625a51cbe172d20e2ded39"
-        }
-      ]
-    },
-    {
-      "file": "recipes/_recordings/natural-growl.ts",
-      "title": "zombie growl",
-      "author": "drdock",
-      "url": "https://freesound.org/people/drdock/sounds/740007/",
-      "license": "CC0-1.0",
-      "verifiedOn": "2026-11-21",
-      "sampleRate": 18000,
-      "takes": [
-        {
-          "frames": 14763,
-          "sha256": "856c8c93cd3473c6ba90f41984415007c794104ae24ecc4bc04bc4d5821dd782"
-        }
-      ]
-    },
-    {
       "file": "recipes/_recordings/natural-hooves.ts",
       "title": "6 horses gallop.wav",
       "author": "bruno.auzet",
@@ -4628,29 +4590,6 @@
         {
           "frames": 34560,
           "sha256": "84aca3837673b650098abb4abc3b18216f22cd2da76021cda5fd75dd7be5b6b4"
-        }
-      ]
-    },
-    {
-      "file": "recipes/_recordings/natural-horde.ts",
-      "title": "ZombiesMoaning.wav",
-      "author": "voiceofgup",
-      "url": "https://freesound.org/people/voiceofgup/sounds/165872/",
-      "license": "CC0-1.0",
-      "verifiedOn": "2026-11-21",
-      "sampleRate": 18000,
-      "takes": [
-        {
-          "frames": 76320,
-          "sha256": "35e8262f45f88c53fc6c4c7600e037e453f28fa583136741fd93728ad2974b5d"
-        },
-        {
-          "frames": 88560,
-          "sha256": "fb3e9999be5ca3d9e1ef35b9fb3410805c04465f1245956df994d163c5e57573"
-        },
-        {
-          "frames": 77760,
-          "sha256": "c71c0a3816b4fac3cbd37360d2ec0746cc5b3cd5273d0a5beb2ab20add436171"
         }
       ]
     },

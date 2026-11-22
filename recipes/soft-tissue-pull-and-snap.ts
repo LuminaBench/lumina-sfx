@@ -6,7 +6,7 @@ import fieldCabbageChop from './_recordings/field-cabbage-chop.ts';
 import fieldPepperRip from './_recordings/field-pepper-rip.ts';
 
 export default {
-  id: 'soft-tissue-pull-and-snap', name: "Soft tissue pull and snap", category: 'Zombies & Combat',
+  id: 'soft-tissue-pull-and-snap', name: "Soft tissue pull and snap", category: 'Combat Foley',
   tags: ["flesh", "tearing", "wet", "impact"],
   loopable: false, durationSec: 0.639, mixRole: 'impact', targetRmsDbfs: -24,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },

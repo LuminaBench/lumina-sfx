@@ -5,7 +5,7 @@ import naturalGravelDrag from './_recordings/natural-gravel-drag.ts';
 import twoFootLanding from './_recordings/two-foot-landing.ts';
 
 export default {
-  id: 'body-dragged-one-length', name: "Body dragged one length", category: 'Zombies & Combat',
+  id: 'body-dragged-one-length', name: "Body dragged one length", category: 'Combat Foley',
   tags: ["body", "cloth", "drag", "concrete", "weight"],
   loopable: false, durationSec: 0.852, mixRole: 'impact', targetRmsDbfs: -25,
   params: { force: { label: 'Force', min: 0, max: 1, default: 0.52 } },
