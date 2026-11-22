@@ -1,0 +1,27 @@
+{
+  "id": "missile-departure-whistling-away",
+  "name": "Missile departure · whistle receding into open air",
+  "style": "natural",
+  "layers": [
+    {
+      "id": "flight-missile-away-from-canopy",
+      "params": { "force": 0.62 },
+      "envelope": [[0, 0.86], [0.075, 0.89], [0.29, 0.35], [0.75, 0.04], [1.3, 0]]
+    },
+    {
+      "id": "supersonic-missile-close-needle-whistle",
+      "offsetSec": 0.029,
+      "gain": 0.92,
+      "envelope": [[0, 0], [0.041, 0.43], [0.093, 1], [0.22, 0.62], [0.39, 0]],
+      "muffle": { "cutoffHz": 2200, "envelope": [[0, 0], [0.12, 0.12], [0.39, 0.97]] }
+    },
+    {
+      "id": "supersonic-missile-distant-thin-whistle",
+      "offsetSec": 0.135,
+      "macros": { "speed": 0.80, "pitchShift": -2 },
+      "gain": 0.53,
+      "envelope": [[0, 0], [0.080, 0.58], [0.18, 0.8], [0.48, 0.4], [0.78, 0.11], [1.08, 0]],
+      "muffle": { "cutoffHz": 1100, "envelope": [[0, 0.14], [0.78, 0.94]] }
+    }
+  ]
+}

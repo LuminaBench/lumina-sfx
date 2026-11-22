@@ -64,7 +64,7 @@
       "grit": 0.06
     }
   },
-  "count": 2632,
+  "count": 2642,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -50883,6 +50883,53 @@
       "file": "recipes/inventory-item-place.ts"
     },
     {
+      "id": "inventory-magnet-seat",
+      "name": "Magnetic seat · inventory drop",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "seat": 0.061
+      },
+      "contains": [
+        "fabric drag and magnetic seat"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "inventory",
+        "drag",
+        "drop",
+        "valid",
+        "slot",
+        "magnet",
+        "magnetic",
+        "seat"
+      ],
+      "loopable": false,
+      "durationSec": 0.189,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Wooden Chest Lid Latches Open.wav",
+        "author": "The_Frisbee_of_Peace",
+        "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/inventory-magnet-seat.ts"
+    },
+    {
       "id": "inventory-slot-soft-snap",
       "name": "Inventory slot soft snap",
       "category": "Footsteps & UI",
@@ -84200,6 +84247,428 @@
       ],
       "channels": 1,
       "file": "recipes/service-truck-bumper-hits-steel-bollard.ts"
+    },
+    {
+      "id": "settings-apply-overcentre-latch",
+      "name": "Over-centre latch · apply changes",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "commit": 0.071
+      },
+      "contains": [
+        "over-centre travel and damped latch"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "apply",
+        "commit",
+        "save",
+        "confirm",
+        "changes",
+        "firm",
+        "latch"
+      ],
+      "loopable": false,
+      "durationSec": 0.205,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-apply-overcentre-latch.ts"
+    },
+    {
+      "id": "settings-back-suede-release",
+      "name": "Suede release · back to parent",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "release": 0.05
+      },
+      "contains": [
+        "suede brush and low release"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "back",
+        "return",
+        "cancel",
+        "submenu",
+        "suede",
+        "soft",
+        "release"
+      ],
+      "loopable": false,
+      "durationSec": 0.164,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-back-suede-release.ts"
+    },
+    {
+      "id": "settings-focus-felt-tick",
+      "name": "Felt tick · settings focus",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "focus": 0
+      },
+      "contains": [
+        "felt-lined focus tick"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "focus",
+        "hover",
+        "navigation",
+        "quiet",
+        "rapid",
+        "scroll",
+        "felt",
+        "tick"
+      ],
+      "loopable": false,
+      "durationSec": 0.059,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-focus-felt-tick.ts"
+    },
+    {
+      "id": "settings-list-edge-felt-bumper",
+      "name": "Felt bumper · end of list",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "stop": 0.059
+      },
+      "contains": [
+        "damped double bumper contact"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "list",
+        "boundary",
+        "limit",
+        "end",
+        "blocked",
+        "soft",
+        "stop"
+      ],
+      "loopable": false,
+      "durationSec": 0.143,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "SWITCH BUTTON PRESSING.wav",
+        "author": "EricsSoundschmiede",
+        "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-list-edge-felt-bumper.ts"
+    },
+    {
+      "id": "settings-slider-knurled-index",
+      "name": "Knurled dial · slider step",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "step": 0
+      },
+      "contains": [
+        "single fine dial increment"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "slider",
+        "notch",
+        "step",
+        "dial",
+        "index",
+        "single",
+        "fine",
+        "increment"
+      ],
+      "loopable": false,
+      "durationSec": 0.049,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Ratchet Wrench Fast Multiple",
+        "author": "Rudmer_Rotteveel",
+        "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/591529/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-slider-knurled-index.ts"
+    },
+    {
+      "id": "settings-subtab-porcelain-tip",
+      "name": "Porcelain tip · select subtab",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "seat": 0.014
+      },
+      "contains": [
+        "porcelain tip and stone seat"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "subtab",
+        "tab",
+        "select",
+        "precision",
+        "ceramic",
+        "click",
+        "crisp"
+      ],
+      "loopable": false,
+      "durationSec": 0.098,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-subtab-porcelain-tip.ts"
+    },
+    {
+      "id": "settings-tab-walnut-detent",
+      "name": "Walnut detent · switch settings tab",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "seat": 0.028
+      },
+      "contains": [
+        "walnut contact and cushioned detent"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "tabs",
+        "switch",
+        "selection",
+        "click",
+        "wood",
+        "warm",
+        "tactile"
+      ],
+      "loopable": false,
+      "durationSec": 0.137,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-tab-walnut-detent.ts"
+    },
+    {
+      "id": "settings-toggle-engage-brass",
+      "name": "Brass rocker · toggle on",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "seat": 0.033
+      },
+      "contains": [
+        "rocker travel and brass snap"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "toggle",
+        "on",
+        "enable",
+        "switch",
+        "brass",
+        "snap"
+      ],
+      "loopable": false,
+      "durationSec": 0.123,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch On Off.flac",
+        "author": "qubodup",
+        "url": "https://freesound.org/people/qubodup/sounds/183994/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-toggle-engage-brass.ts"
+    },
+    {
+      "id": "settings-toggle-off-cork",
+      "name": "Cork stop · toggle off",
+      "category": "Footsteps & UI",
+      "isolation": "isolated",
+      "markers": {
+        "seat": 0.041
+      },
+      "contains": [
+        "muted rocker and cork seat"
+      ],
+      "perspective": "local interface",
+      "collection": "Tactile menus",
+      "tags": [
+        "menu",
+        "ui",
+        "settings",
+        "toggle",
+        "off",
+        "disable",
+        "switch",
+        "cork",
+        "muted"
+      ],
+      "loopable": false,
+      "durationSec": 0.12,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/settings-toggle-off-cork.ts"
     },
     {
       "id": "settings-toggle-off",

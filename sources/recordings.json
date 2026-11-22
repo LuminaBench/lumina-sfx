@@ -3092,6 +3092,25 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-milestone-ratchet.ts",
+      "title": "Ratchet Wrench Fast Multiple",
+      "author": "Rudmer_Rotteveel",
+      "url": "https://freesound.org/people/Rudmer_Rotteveel/sounds/591529/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1088,
+          "sha256": "453ac04353634b37e61ef0cac867dd228788bf9718b1abbf5a08dab4b179c7ad"
+        },
+        {
+          "frames": 1088,
+          "sha256": "8b13ff19cb8a2131a6f3010fc6c55ee33255e0c729efacb181c729ec93e27dab"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-motion-flatboat-throttle.ts",
       "title": "River boat with outboard engine (at changing speeds)",
       "author": "nomadas",
@@ -3167,6 +3186,56 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-physical-light-switch.ts",
+      "title": "Light Switch On Off.flac",
+      "author": "qubodup",
+      "url": "https://freesound.org/people/qubodup/sounds/183994/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 816,
+          "sha256": "0dd38345a783e725f31092b3aa838debbf608c8e0b495efe1c193a617cbfc1f9"
+        },
+        {
+          "frames": 816,
+          "sha256": "4df45e23433c5efb66a0db5fe31f12ab0caf912f87a044e48601b2f2d79681a9"
+        },
+        {
+          "frames": 816,
+          "sha256": "7114e424930900656b22dc7dfbdf0c6389d1337f06ca7f8f689c92e7fdd3246c"
+        },
+        {
+          "frames": 816,
+          "sha256": "bd9806d3b64e861ec30dab11727c4ac1c4da361fe4cc4a199fadb55cf813eb3a"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-response-button.ts",
+      "title": "SWITCH BUTTON PRESSING.wav",
+      "author": "EricsSoundschmiede",
+      "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 36000,
+      "takes": [
+        {
+          "frames": 1224,
+          "sha256": "6acfe19ccc6ce68bf2e6c6d8e18e0fb6d21a807719b0a732116c55755f876941"
+        },
+        {
+          "frames": 1224,
+          "sha256": "be0a8eb2e9979993777dd4962ae47b828f9b4852c6ac33184cb40359081b45f5"
+        },
+        {
+          "frames": 1224,
+          "sha256": "e8ec9eca164e22c4854be52712ad470b97a95637dcaf5717bd740fc787b20be0"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-response-diesel-loaded.ts",
       "title": "Diesel engine idle and gas",
       "author": "Iridiuss",
@@ -3178,6 +3247,63 @@
         {
           "frames": 65536,
           "sha256": "643a74dcd77ea355d266266c758e5ade5dfb2f7285367044655f4fbc48a39351"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-response-microclick.ts",
+      "title": "Normal click",
+      "author": "Breviceps",
+      "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 36000,
+      "takes": [
+        {
+          "frames": 1224,
+          "sha256": "c534b19e32cb68238e5e7b74fb1053eab9ed58f61942f6adaac0760ac8c663c4"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-response-rocker.ts",
+      "title": "Light Switch ON / OFF",
+      "author": "FillSoko",
+      "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 36000,
+      "takes": [
+        {
+          "frames": 1224,
+          "sha256": "5681162b55b87881766c143f20a8601632400384d24bce6e341b634c62395a51"
+        },
+        {
+          "frames": 1224,
+          "sha256": "2bf94fb7ae2d1ad40ab5e3fec9d2a7b6d8d3e57a6b12a4793d5cfed9b3ab0e60"
+        },
+        {
+          "frames": 1224,
+          "sha256": "c69af2e9ee585ef5173ed74cdd97cc0aea1ee106bee93026085a35d9f4fca80d"
+        },
+        {
+          "frames": 1224,
+          "sha256": "309f7bad9eb396df22343e7a541f587101fe092c795fa0e1f273878b0b2e7fba"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-wooden-chest-latch-release.ts",
+      "title": "Wooden Chest Lid Latches Open.wav",
+      "author": "The_Frisbee_of_Peace",
+      "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 816,
+          "sha256": "e6b909414500fa7a69ee16c0fa94b2d5016d4e0d5023f52ba5278ac065911464"
         }
       ]
     },

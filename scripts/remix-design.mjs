@@ -21,6 +21,9 @@ const layerKeys = [
   'fromMarker',
   'durationSec',
   'envelope',
+  'label',
+  'fitSec',
+  'afterLayer',
   'atMarker',
   'muffle',
 ];
@@ -53,6 +56,7 @@ export async function loadDesign(input, directory = process.cwd()) {
       if (settings.params !== undefined) fields(settings.params, 'params');
       if (settings.macros !== undefined) fields(settings.macros, 'layer macros');
       if (settings.atMarker !== undefined) fields(settings.atMarker, 'anchor', ['layer', 'name', 'shiftSec']);
+      if (settings.afterLayer !== undefined) fields(settings.afterLayer, 'end anchor', ['layer', 'shiftSec']);
       if (settings.muffle !== undefined) fields(settings.muffle, 'muffle', ['cutoffHz', 'envelope']);
       if (nested !== undefined)
         children.push({ child: await parse(nested, directory, ancestors, depth + 1), settings });

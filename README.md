@@ -3,7 +3,7 @@
 Describe what a player should hear, from a boot on gravel to a storm rolling in over the sea.<br>
 Your coding agent can find a sound, layer a new one and deliver it to your game with an offline CPU renderer.
 
-![2,632 Sounds](https://img.shields.io/badge/2%2C632-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
+![2,642 Sounds](https://img.shields.io/badge/2%2C642-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
 
 ## Quick Start
 
@@ -31,7 +31,7 @@ npx skills remove lumina-sfx -g
 
 ## What You Can Ask Your AI
 
-- “Find three short menu clicks for my browser game. Give me WAV previews so I can pick the one that feels right.”
+- “Find three short menu clicks for my browser game. Give me WAV previews, then fit the one I pick to my tab animation.”
 - “Build a coastal storm for my indie RPG. Start with waves and wind, bring in a sharp thunderclap after four seconds, then let a softer rumble roll away.”
 - “Install grass and gravel footsteps in my Godot scene. Trigger them when a foot lands and vary each step so walking sounds natural.”
 
@@ -45,6 +45,8 @@ npx skills remove lumina-sfx -g
 | Unreal Engine 5 | Runtime plugin and WAVs for Sound Wave import |
 | Python / Pygame | Mixer helper and WAV variants |
 | WAV | Audio files and a checksum manifest for any compatible editor or engine |
+
+Build a tactile settings menu with ten isolated Foley cues and fit a click to a UI animation. [Menu sounds and editing examples](references/menu-design.md)
 
 Build a cockpit dogfight, a drive on wet asphalt, or a dive beneath a boat. Search with `--isolated` for foreground cues without field-recording backgrounds. [Scene examples and listening desk](references/scene-design.md)
 

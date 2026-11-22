@@ -1,0 +1,15 @@
+// Derived offline by scripts/build-isolated-sources.mjs
+import type { RecordedClip } from '../../engine/recording.ts';
+export default {
+  "credit": {
+    "title": "Wooden Chest Lid Latches Open.wav",
+    "author": "The_Frisbee_of_Peace",
+    "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
+    "license": "CC0-1.0",
+    "verifiedOn": "2026-11-21"
+  },
+  "sampleRate": 24000,
+  "takes": [
+    "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"
+  ]
+} satisfies RecordedClip;

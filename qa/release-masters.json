@@ -1,6 +1,6 @@
 {
-  "soundCount": 2632,
-  "seedParameterCombinations": 31584,
+  "soundCount": 2642,
+  "seedParameterCombinations": 31704,
   "masteringProfiles": [
     "original",
     "balanced"
@@ -1183,6 +1183,7 @@
     "interior-indicator-three-ticks": "efd1d4f679628dc3291e2325c422c6e9f6e2a445a3b7fabf71bead8ce52fc6c8",
     "inventory-item-lift": "858a1c59d77e39d5101c8093526c3c0c77d0452196dbb4fdd3a125140d554a27",
     "inventory-item-place": "cfe3660ff7118da8430ee9163a4998afaa09ace2d9603961a78d08dccc671f6a",
+    "inventory-magnet-seat": "c0b590561312273708d22e9aee9760342d56cad394a68bdbcc3e58ba62ff496b",
     "inventory-slot-soft-snap": "4c6ded7d98687f6a5948c372a7790d45dcb3b2b1760dd4efb5931f04e6b3b191",
     "inventory-stack-split": "fc838c5c2da8ce7754568ccdde7cd3fa2a9aaf58c9b00bacf53c5033a02f4b5a",
     "ion-blaster-shot": "2b3decfb74a4b5ce381262871562f67739852433ef6f02430090d86045ab44c0",
@@ -1966,7 +1967,16 @@
     "seedling-rootball-set": "9c16ec7e784438121f17d9cbfa30623d2ee79d1582d7c52752162f11882d51e6",
     "sensor-clears-the-sector": "5a4ef4660d48be7765a9d0b2d80956ccb9cda53241b8cf1f82409eb4a454ccc1",
     "service-truck-bumper-hits-steel-bollard": "11ac48e71a9df123cf05d48f154c73964a939619811aeaa6901f66ec53f75ffe",
+    "settings-apply-overcentre-latch": "25b6654b31a6317ba31b6421af69111edca366a5e16fb6ea39ef83dec4708a1c",
+    "settings-back-suede-release": "bf2399dd6da3825e4c0cb8979ee6190b9da809b13bf6544e7742abae5f639996",
+    "settings-focus-felt-tick": "c67cccc85739d209c1bb9640e40e05931f6358427306c0da9cef2c06ee7c2085",
+    "settings-list-edge-felt-bumper": "bfc6666614339b820cc491e1f3b18dec3f2514e2801e606f06c4594a836f80c3",
+    "settings-slider-knurled-index": "a72e8c0891dc2d97295f7b8d4146437211a92713fea2d06dbf35b8aa7c810db0",
+    "settings-subtab-porcelain-tip": "a0d72c0978a2984cdc0437825c573489d0b28cc24074414c99001481df97c8b9",
+    "settings-tab-walnut-detent": "324fd0cb0519fd8dd6dae5bd001becd0dceb12e56bb04c03b5db63e46fd388b7",
+    "settings-toggle-engage-brass": "6c4dff23e1080a534b4457ec717b43668d69b648dcacf2b517a833014405bc56",
     "settings-toggle-off": "c07c73a8faf1e372c92ac0777bc7b816d7cd1a67a8b7862dcd2a080119d5aaa1",
+    "settings-toggle-off-cork": "bd8c4d7cc3c1f697dfb164b9eb227f5fef38ac30d649b892966ad74f78c42fc5",
     "settings-toggle-on": "ec1db96b1798d0b408a7e5fb4cfda6b446e12b09ba9622f4f4e91c544b6f3acb",
     "shaded-rocky-creek-after-dusk-loop": "fc5ad4402170c960dc04f65d503e2c3408128d1d6d97adf05277c6c01197415b",
     "shaded-rocky-creek-by-day-loop": "640d9e8f1828d07d71cde63cf1a119f9672cbfaf0fd0142435de17a19debb303",

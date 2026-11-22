@@ -11,6 +11,7 @@ import { checkIsolatedRecipes, installRecipes } from './install-files.mjs';
 const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --dest <game/audio>
   --punch 0..1 --size 0..1 --distance 0..1 --grit 0..1
   --space dry|small_room|hallway|outdoor_open|canyon_echo|underwater|outdoor|cavern --wetness 0..1 --speed 0.25..4 --pitchShift -24..24
+  --fit-seconds N (fit one complete cue to a game animation)
   --params '{"nativeControl":0.7}' (one layer)
   --spec path/to/design.json (per-layer gain, offsetSec and params)
   --style natural|cinematic|arcade
@@ -21,7 +22,7 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
 async function main() {
   const names = ['punch', 'size', 'distance', 'space', 'grit', 'wetness', 'speed', 'pitchShift'];
   const options = Object.fromEntries(
-    [...names, 'format', 'spec', 'id', 'name', 'dest', 'params', 'style'].map((k) => [k, { type: 'string' }]),
+    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'params', 'style'].map((k) => [k, { type: 'string' }]),
   );
   const { values: v, positionals } = parseArgs({
     allowPositionals: true,
@@ -40,12 +41,16 @@ async function main() {
   const format = v.format ?? 'ts';
   if (!['ts','wav','ogg','opus'].includes(format)) throw Error('Expected --format ts, wav, ogg or opus');
   let spec;
+  const fit = v['fit-seconds'];
   if (v.spec) {
-    if (positionals.length || [v.id, v.name, v.params, v.style, ...names.map((k) => v[k])].some((x) => x !== undefined)) {
+    if (positionals.length || [fit, v.id, v.name, v.params, v.style, ...names.map((k) => v[k])].some((x) => x !== undefined)) {
       throw Error('Supply the design in either --spec or command-line options');
     }
     spec = v.spec;
   } else {
+    if (fit !== undefined && (positionals.length !== 1 || v.style !== undefined || v.speed !== undefined)) {
+      throw Error('--fit-seconds takes one recipe and sets its pace; supply layers or style via --spec');
+    }
     if (v.params && positionals.length !== 1) throw Error('Use --spec for DSP overrides on multiple layers');
     const macros = Object.fromEntries(
       names.filter((k) => v[k] !== undefined).map((k) => [k, k === 'space' ? v[k] : Number(v[k] || NaN)]),
@@ -54,8 +59,11 @@ async function main() {
       id: v.id,
       name: v.name,
       style: v.style,
-      macros,
-      layers: positionals.map((id) => ({ id, params: v.params ? JSON.parse(v.params) : {} })),
+      macros: fit === undefined ? macros : undefined,
+      layers: positionals.map((id) => ({
+        id, params: v.params ? JSON.parse(v.params) : {},
+        ...(fit === undefined ? {} : { fitSec: Number(fit), macros }),
+      })),
     };
   }
   const { loadDesign } = await import('./remix-design.mjs');

@@ -1,6 +1,6 @@
 ---
 name: lumina-sfx
-description: Find, sculpt, layer, invent and verify offline game sound effects. Use for Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
+description: Find, sculpt, layer, invent and verify offline game sound effects. Use for tactile menus, non-vocal alerts, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
 # Lumina SFX
@@ -9,7 +9,7 @@ Run the studio commands from this skill's directory using Node.js 22.12+. Pass t
 
 ## 1. Search for the closest performance
 
-Start with the game event, surface, perspective and foreground/background role. Search uses all supplied words. Broaden the query if the first one returns nothing. Each catalog entry supplies an ID, duration, loop flag, tags, controls, and recording credits when relevant. Search also matches credited recording titles. For annotated cues, inspect `contains`, `perspective`, and `markers` to choose a specific moment in the performance.
+Start with the game event, surface, perspective and foreground/background role. For everyday requests use `--intent "clicky switch settings tabs" --limit 3` to rank partial matches and synonyms. Optionally add `--exclude "arcade jingle"` to filter matching metadata words. Add `--designs` to find multi-layer JSON arrangements and pass the returned file to remix with `--spec`. Plain positional search requires all supplied words. Broaden the query if the first one returns nothing. Each catalog entry supplies an ID, duration, loop flag, tags, controls, and recording credits when relevant. Search also matches credited recording titles. For annotated cues, inspect `contains`, `perspective`, and `markers` to choose a specific moment in the performance.
 
 ```sh
 node scripts/search.mjs seed planting --json
@@ -36,7 +36,7 @@ Supported explicit engines are `web`, `godot`, `unity`, `unreal`, `python` and `
 
 ## 2. Sculpt and remix
 
-Keep high-priority events intelligible above weather and motion beds. Use the recipe's native parameters for the action itself. Use macros for the listener's perspective, scale and room. Their exact schema is available at the root of [catalog.json](catalog.json).
+For settings tabs, focused controls, inventory drops and non-vocal game feedback, see [tactile menus and event hooks](references/menu-design.md). Use a short physical confirmation for local success. Give advisory and warning states distinct non-vocal rhythms. Keep high-priority events intelligible above weather and motion beds. Use the recipe's native parameters for the action itself. Use macros for the listener's perspective, scale and room. Their exact schema is available at the root of [catalog.json](catalog.json).
 
 | Control | Range | Meaning |
 | --- | --- | --- |
@@ -53,7 +53,7 @@ Keep high-priority events intelligible above weather and motion beds. Use the re
 node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --params '{"force":0.3}' --space small_room --wetness 0.25 --format wav --dest /absolute/game/audio
 ```
 
-For 2–4 layers, use a JSON design. Gains are linear. Offsets are seconds. Leave one audible layer at zero. The first layer supplies the mix and spectral brief. Each layer accepts its own `params` and `macros`. An all-loop stack with zero offsets and unbounded layers stays loopable. Use cue landmarks, gain envelopes, and a gradual filter change to join events. The scene guide includes nested JSON arrangements, ready-to-render designs, live event installers, and a blind listening desk. [Scene design](references/scene-design.md)
+Fit a one-shot to an animation with `--fit-seconds 0.18`. For 2–4 layers, use a JSON design. A layer can use `fitSec` for a full retime, `durationSec` to crop or sustain a loop, and `afterLayer` to follow or overlap a named predecessor. Gains are linear. Offsets are seconds. Leave one audible layer at zero. The first layer supplies the mix and spectral brief. Each layer accepts its own `params` and `macros`. An all-loop stack with zero offsets and unbounded layers stays loopable. Use cue landmarks, gain envelopes, and a gradual filter change to join events. The scene guide includes nested JSON arrangements, ready-to-render designs, live event installers, and a blind listening desk. [Scene design](references/scene-design.md)
 
 ```json
 {

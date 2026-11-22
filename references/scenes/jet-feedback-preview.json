@@ -1,0 +1,21 @@
+{
+  "id": "jet-feedback-preview",
+  "name": "Cockpit audition · departure and elimination feedback",
+  "style": "natural",
+  "layers": [
+    {
+      "id": "interceptor-turbofan-canopy-interior-cruise-loop",
+      "durationSec": 4.2,
+      "envelope": [[0, 0.33], [3.87, 0.33], [4.19, 0]]
+    },
+    {
+      "design": "missile-departure-whistling-away.json",
+      "offsetSec": 0.47,
+      "gain": 0.88,
+      "muffle": { "cutoffHz": 3200, "envelope": [[0, 0.36], [1.32, 0.84]] }
+    },
+    { "design": "jet-elimination-dry-latch.json", "offsetSec": 2.32, "gain": 0.85 },
+    { "id": "flight-airburst-open-sky", "offsetSec": 2.66, "gain": 0.29,
+      "muffle": { "cutoffHz": 1100, "envelope": [[0, 0.92]] } }
+  ]
+}

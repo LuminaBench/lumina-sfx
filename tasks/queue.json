@@ -26634,6 +26634,96 @@
       "loopable": false,
       "brief": "Flight radar contact lost",
       "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
+    },
+    {
+      "id": "settings-focus-felt-tick",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.059,
+      "loopable": false,
+      "brief": "Felt tick · settings focus"
+    },
+    {
+      "id": "settings-tab-walnut-detent",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.137,
+      "loopable": false,
+      "brief": "Walnut detent · switch settings tab"
+    },
+    {
+      "id": "settings-subtab-porcelain-tip",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.098,
+      "loopable": false,
+      "brief": "Porcelain tip · select subtab"
+    },
+    {
+      "id": "settings-back-suede-release",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.164,
+      "loopable": false,
+      "brief": "Suede release · back to parent"
+    },
+    {
+      "id": "settings-toggle-engage-brass",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.123,
+      "loopable": false,
+      "brief": "Brass rocker · toggle on"
+    },
+    {
+      "id": "settings-toggle-off-cork",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.12,
+      "loopable": false,
+      "brief": "Cork stop · toggle off"
+    },
+    {
+      "id": "settings-slider-knurled-index",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.049,
+      "loopable": false,
+      "brief": "Knurled dial · slider step"
+    },
+    {
+      "id": "settings-list-edge-felt-bumper",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.143,
+      "loopable": false,
+      "brief": "Felt bumper · end of list"
+    },
+    {
+      "id": "inventory-magnet-seat",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.189,
+      "loopable": false,
+      "brief": "Magnetic seat · inventory drop"
+    },
+    {
+      "id": "settings-apply-overcentre-latch",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Tactile menus",
+      "durationSec": 0.205,
+      "loopable": false,
+      "brief": "Over-centre latch · apply changes"
     }
   ]
 }

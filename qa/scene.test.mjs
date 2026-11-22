@@ -144,3 +144,25 @@ assert.ok(delta < -18, 'Submerged residual surface motor should lose its airy hi
 console.log(
   'Nested five-source recipe and underwater stem passed. High-to-low energy change ' + delta.toFixed(1) + ' dB.',
 );
+
+const fitted = { recipe: tone, label: 'press', fitSec: 0.5 };
+const follow = { recipe: tone, label: 'release', fitSec: 0.25, afterLayer: { layer: 'press', shiftSec: -0.025 } };
+const chain = make(fitted, follow);
+assert.equal(chain.durationSec, 0.725);
+assert.equal(chain.markers['press.middle'], 0.3);
+assert.equal(chain.markers['release.middle'], 0.625);
+assert.deepEqual(renderSound(chain), renderSound(make(fitted, { ...follow, afterLayer: undefined, offsetSec: 0.475 })));
+const withTail = make({ recipe: tone, fitSec: 1.16, macros: { space: 'small_room' } });
+assert.ok(Math.abs(withTail.durationSec - 1.16) < 1e-10);
+assert.ok(Math.abs(withTail.markers['layer1.middle'] - 0.6) < 1e-10);
+const fromMid = make({ recipe: tone, fromMarker: 'middle', fitSec: 0.2 });
+assert.equal(fromMid.durationSec, 0.2);
+assert.throws(() => make(fitted, { ...follow, label: 'press' }), /unique/);
+assert.throws(() => make(fitted, { ...follow, afterLayer: { layer: 'typo' } }), /earlier/);
+assert.throws(() => make({ recipe: tone, fitSec: 0.01 }), /stretch/);
+assert.throws(() => make({ recipe: tone, fitSec: 1, durationSec: 2 }), /fitSec/);
+assert.throws(() => make({ recipe: { ...tone, loopable: true }, label: 'press' }, follow), /Bound the loop/);
+const deck = await loadDesign(fileURLToPath(new URL('../references/scenes/settings-panel-apply.json', import.meta.url)));
+assert.equal(deck.recipe.isolation, 'isolated');
+assert.ok(deck.recipe.markers['apply.commit'] > deck.recipe.markers['toggle.seat']);
+console.log('Passed named anchors, overlap, fit duration, crop, tails and editable settings scene.');

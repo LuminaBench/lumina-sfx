@@ -49,7 +49,10 @@ function automation(points: Curve, power: boolean) {
 export interface RemixLayer {
   recipe: SoundRecipe;
   fromMarker?: string;
-  atMarker?: { layer: number; name: string; shiftSec?: number };
+  label?: string;
+  fitSec?: number;
+  afterLayer?: { layer: number | string; shiftSec?: number };
+  atMarker?: { layer: number | string; name: string; shiftSec?: number };
   durationSec?: number;
   envelope?: Curve;
   muffle?: { cutoffHz: number; envelope: Curve };
@@ -92,6 +95,13 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
   const first = layers[0].recipe;
   const paramKey = (index: number, key: string) => (layers.length === 1 ? key : 'layer' + (index + 1) + '_' + key);
   const positions: { offset: number; start: number; speed: number; length: number }[] = [];
+  const labels = new Map<string, number>();
+  function earlierLayer(ref: string | number, index: number) {
+    const n = typeof ref === 'string' ? labels.get(ref) : ref - 1;
+    if (n === undefined || !Number.isInteger(n) || n < 0 || n >= index)
+      throw Error('Anchor must reference an earlier layer');
+    return n;
+  }
   const tracks = layers.map(
     (
       {
@@ -99,7 +109,10 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         macros,
         gain = 1,
         offsetSec,
+        label,
         atMarker,
+        afterLayer,
+        fitSec,
         fromMarker,
         durationSec: span,
         envelope = [],
@@ -108,22 +121,29 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       },
       index,
     ) => {
-      if (atMarker !== undefined) {
-        if (
-          !atMarker ||
-          offsetSec !== undefined ||
-          !Number.isInteger(atMarker.layer) ||
-          atMarker.layer < 1 ||
-          atMarker.layer > index
-        )
-          throw Error('Anchor to an earlier layer instead of supplying an offset');
-        const reference = positions[atMarker.layer - 1];
-        const marker = layers[atMarker.layer - 1].recipe.markers?.[atMarker.name];
-        const shift = atMarker.shiftSec ?? 0;
-        if (typeof marker !== 'number' || !Number.isFinite(marker) || !Number.isFinite(shift))
-          throw Error('Unknown anchor marker or invalid shift');
-        const relative = marker / reference.speed - reference.start;
-        if (relative < 0 || relative >= reference.length) throw Error('Anchor outside selected layer window');
+      if (label !== undefined) {
+        if (typeof label !== 'string' || !/^[a-z][a-z0-9-]*$/.test(label) || /^layer[0-9]+$/.test(label) || labels.has(label))
+          throw Error('Expected a unique lowercase layer label');
+        labels.set(label, index);
+      }
+      if (atMarker !== undefined || afterLayer !== undefined) {
+        if (offsetSec !== undefined || (atMarker !== undefined && afterLayer !== undefined))
+          throw Error('Choose one earlier-layer anchor or an explicit offset');
+        const anchor = atMarker ?? afterLayer;
+        if (!anchor || typeof anchor !== 'object') throw Error('Invalid layer anchor');
+        const source = earlierLayer(anchor.layer, index);
+        const reference = positions[source];
+        const shift = anchor.shiftSec ?? 0;
+        if (!Number.isFinite(shift)) throw Error('Invalid anchor shift');
+        let relative = reference.length;
+        if (atMarker) {
+          const marker = layers[source].recipe.markers?.[atMarker.name];
+          if (typeof marker !== 'number' || !Number.isFinite(marker)) throw Error('Unknown anchor marker');
+          relative = marker / reference.speed - reference.start;
+          if (relative < 0 || relative >= reference.length) throw Error('Anchor outside selected layer window');
+        } else if (layers[source].recipe.loopable && layers[source].durationSec === undefined && layers[source].fitSec === undefined) {
+          throw Error('Bound the loop before anchoring to its end');
+        }
         offsetSec = reference.offset + relative + shift;
       }
       offsetSec ??= 0;
@@ -139,10 +159,20 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         params[paramKey(index, key)] = { ...spec, default: overrides[key] ?? spec.default };
       }
       resolveMacros(macros);
-      const speed = macros?.speed ?? recipe.macros?.speed ?? 1;
       const marker = fromMarker === undefined ? 0 : recipe.markers?.[fromMarker];
       if (typeof marker !== 'number' || !Number.isFinite(marker) || marker < 0 || marker >= recipe.durationSec)
         throw Error(recipe.id + ': invalid source marker ' + fromMarker);
+      if (fitSec !== undefined) {
+        if (!Number.isFinite(fitSec) || fitSec <= 0 || span !== undefined || macros?.speed !== undefined)
+          throw Error('Use a positive fitSec without durationSec or an explicit speed');
+        const tail = renderDurationSec(recipe, { ...macros, speed: 1 }) - recipe.durationSec;
+        const fittedSpeed = (recipe.durationSec - marker) / (fitSec - tail);
+        if (!(fittedSpeed >= 0.25 && fittedSpeed <= 4))
+          throw Error('fitSec exceeds the available stretch range including the room tail');
+        macros = { ...macros, speed: fittedSpeed };
+        span = fitSec;
+      }
+      const speed = macros?.speed ?? recipe.macros?.speed ?? 1;
       const start = marker / speed;
       const remaining = renderDurationSec(recipe, macros) - start;
       if (
@@ -238,8 +268,10 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
   for (const [index, track] of tracks.entries()) {
     for (const [name, sourceTime] of Object.entries(track.recipe.markers ?? {})) {
       const relative = sourceTime / positions[index].speed - track.start;
-      if (relative >= 0 && relative < track.length)
+      if (relative >= 0 && relative < track.length) {
         markers['layer' + (index + 1) + '.' + name] = track.offsetSec + relative;
+        if (layers[index].label) markers[layers[index].label + '.' + name] = track.offsetSec + relative;
+      }
     }
   }
   const result: SoundRecipe = {

@@ -1,0 +1,19 @@
+{
+  "id": "jet-elimination-dry-latch",
+  "name": "Elimination confirmed · dry cockpit latch",
+  "style": "natural",
+  "layers": [
+    {
+      "id": "target-eliminated-with-a-latch",
+      "params": { "pressure": 0.40 },
+      "durationSec": 0.145,
+      "envelope": [[0, 1], [0.041, 0.95], [0.09, 0.5], [0.141, 0]]
+    },
+    {
+      "id": "menu-cancel-felt-stop",
+      "offsetSec": 0.019,
+      "gain": 0.33,
+      "muffle": { "cutoffHz": 800, "envelope": [[0, 1]] }
+    }
+  ]
+}

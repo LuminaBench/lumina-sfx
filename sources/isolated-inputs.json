@@ -11,6 +11,12 @@
   ],
   "transient": [
     "clarity-pistol",
-    "atlas-firecracker"
+    "atlas-firecracker",
+    "response-microclick",
+    "response-rocker",
+    "response-button",
+    "physical-light-switch",
+    "milestone-ratchet",
+    "wooden-chest-latch-release"
   ]
 }

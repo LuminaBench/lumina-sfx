@@ -1,0 +1,244 @@
+[
+  {
+    "id": "settings-panel-apply",
+    "name": "Settings tabs, toggle and apply",
+    "category": "UI",
+    "tags": [
+      "click",
+      "clicky",
+      "menu",
+      "switch",
+      "tab",
+      "settings",
+      "controls",
+      "save",
+      "changes",
+      "tactile"
+    ],
+    "kind": "design",
+    "file": "references/scenes/settings-panel-apply.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 1.153
+  },
+  {
+    "id": "jet-elimination-dry-latch",
+    "name": "Dry HUD latch for a confirmed elimination",
+    "category": "UI",
+    "tags": [
+      "local",
+      "player",
+      "kill",
+      "confirm",
+      "subtle",
+      "quiet",
+      "combat",
+      "feedback",
+      "dry",
+      "instrument",
+      "click"
+    ],
+    "kind": "design",
+    "file": "references/scenes/jet-elimination-dry-latch.json",
+    "loopable": false,
+    "durationSec": 0.179
+  },
+  {
+    "id": "missile-departure-whistling-away",
+    "name": "Missile departure with a receding whistle",
+    "category": "Flight",
+    "tags": [
+      "missile",
+      "launch",
+      "phew",
+      "outgoing",
+      "whistle",
+      "flying",
+      "away",
+      "tail"
+    ],
+    "kind": "design",
+    "file": "references/scenes/missile-departure-whistling-away.json",
+    "loopable": false,
+    "durationSec": 1.36
+  },
+  {
+    "id": "jet-feedback-preview",
+    "name": "Cockpit engine, departure and credited result",
+    "category": "Flight",
+    "tags": [
+      "cockpit",
+      "jet",
+      "engine",
+      "departure",
+      "result",
+      "feedback",
+      "chain"
+    ],
+    "kind": "design",
+    "file": "references/scenes/jet-feedback-preview.json",
+    "loopable": false,
+    "durationSec": 4.3100000000000005
+  },
+  {
+    "id": "radar-state-preview",
+    "name": "Radar acquisition, lock and loss",
+    "category": "Flight",
+    "tags": [
+      "radar",
+      "warning",
+      "lock",
+      "contact",
+      "release",
+      "nonvocal",
+      "panel",
+      "alert"
+    ],
+    "kind": "design",
+    "file": "references/scenes/radar-state-preview.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 2.15
+  },
+  {
+    "id": "dogfight-exterior",
+    "name": "Exterior flypast and airburst",
+    "category": "Flight",
+    "tags": [
+      "jet",
+      "external",
+      "spectator",
+      "camera",
+      "pass",
+      "exterior",
+      "airburst"
+    ],
+    "kind": "design",
+    "file": "references/scenes/dogfight-exterior.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 7.77
+  },
+  {
+    "id": "dogfight-cockpit",
+    "name": "Air combat inside the canopy",
+    "category": "Flight",
+    "tags": [
+      "flight",
+      "cockpit",
+      "radar",
+      "launch",
+      "engine",
+      "airburst"
+    ],
+    "kind": "design",
+    "file": "references/scenes/dogfight-cockpit.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 6.5
+  },
+  {
+    "id": "flight-weapons-pass",
+    "name": "Canopy burst, launch and distant airburst",
+    "category": "Flight",
+    "tags": [
+      "burst",
+      "flypast",
+      "canopy",
+      "ignition"
+    ],
+    "kind": "design",
+    "file": "references/scenes/flight-weapons-pass.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 3.9971999999999994
+  },
+  {
+    "id": "dive-beneath-the-boat",
+    "name": "Dive from the surface beneath a boat",
+    "category": "Water",
+    "tags": [
+      "underwater",
+      "depth",
+      "submerged",
+      "bubbles",
+      "motor",
+      "dive"
+    ],
+    "kind": "design",
+    "file": "references/scenes/dive-beneath-the-boat.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 6.3
+  },
+  {
+    "id": "wet-road-barrier",
+    "name": "Wet road approach, skid and barrier impact",
+    "category": "Vehicles",
+    "tags": [
+      "vehicle",
+      "car",
+      "acceleration",
+      "wet",
+      "road",
+      "driving",
+      "skids",
+      "crash",
+      "collision"
+    ],
+    "kind": "design",
+    "file": "references/scenes/wet-road-barrier.json",
+    "loopable": false,
+    "durationSec": 5.44
+  },
+  {
+    "id": "barrier-and-broken-glass",
+    "name": "Wet-road collision followed by falling glass",
+    "category": "Vehicles",
+    "tags": [
+      "car",
+      "barrier",
+      "broken",
+      "glass",
+      "debris",
+      "extended",
+      "nested"
+    ],
+    "kind": "design",
+    "file": "references/scenes/barrier-and-broken-glass.json",
+    "loopable": false,
+    "durationSec": 6.0482
+  },
+  {
+    "id": "melee-steel-parry",
+    "name": "Swing and steel parry",
+    "category": "Foley",
+    "tags": [
+      "swing",
+      "timed",
+      "steel",
+      "contact",
+      "parry"
+    ],
+    "kind": "design",
+    "file": "references/scenes/melee-steel-parry.json",
+    "loopable": false,
+    "durationSec": 0.6825688073394495
+  },
+  {
+    "id": "melee-timber-check",
+    "name": "Swing checked against timber",
+    "category": "Foley",
+    "tags": [
+      "wood",
+      "timber",
+      "swing",
+      "impact",
+      "movement"
+    ],
+    "kind": "design",
+    "file": "references/scenes/melee-timber-check.json",
+    "loopable": false,
+    "durationSec": 0.46
+  }
+]

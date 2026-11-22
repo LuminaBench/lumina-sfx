@@ -1,0 +1,13 @@
+{
+  "id": "settings-panel-apply",
+  "name": "Settings panel · tab, toggle and apply",
+  "layers": [
+    { "id": "settings-tab-walnut-detent", "label": "tab", "fitSec": 0.11 },
+    { "id": "settings-toggle-engage-brass", "label": "toggle",
+      "afterLayer": { "layer": "tab", "shiftSec": 0.31 } },
+    { "id": "settings-apply-overcentre-latch", "label": "apply", "fitSec": 0.24,
+      "afterLayer": { "layer": "toggle", "shiftSec": 0.37 } },
+    { "id": "settings-back-suede-release", "durationSec": 0.09, "gain": 0.27,
+      "atMarker": { "layer": "apply", "name": "commit", "shiftSec": 0.007 } }
+  ]
+}
