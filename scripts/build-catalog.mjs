@@ -5,6 +5,7 @@ import { encodeWav } from '../engine/wav.ts';
 import { readFile, writeFile } from 'node:fs/promises';
 import { loadRecipes } from './recipes.mjs';
 import { checkIsolatedRecipes } from './install-files.mjs';
+import { sceneMoods } from '../engine/scene-mood.ts';
 import { sceneStyles } from '../engine/remix.ts';
 import { macroControls, renderDurationSec } from '../engine/sculpt.ts';
 
@@ -39,5 +40,5 @@ const sounds = recipes.map(recipe => {
 });
 await checkIsolatedRecipes(sounds.filter(sound => sound.isolation === 'isolated'));
 await writeFile(new URL('../catalog.json', import.meta.url),
-  JSON.stringify({ schemaVersion: 1, macroControls, sceneStyles, count: sounds.length, sounds }, null, 2) + '\n');
+  JSON.stringify({ schemaVersion: 1, macroControls, sceneStyles, sceneMoods, count: sounds.length, sounds }, null, 2) + '\n');
 process.stdout.write(`Indexed ${sounds.length} recipes\n`);

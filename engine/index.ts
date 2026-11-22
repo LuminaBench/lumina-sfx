@@ -9,3 +9,5 @@ export { composeRecipe } from './remix.ts';
 export type { RemixLayer, RemixDesign } from './remix.ts';
 export { SfxScene } from './scene.ts';
 export type { GameAudioScene, SceneCue } from './scene.ts';
+export { sceneMoods } from './scene-mood.ts';
+export type { SceneMood, SceneRole } from './scene-mood.ts';

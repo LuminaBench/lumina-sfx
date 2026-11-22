@@ -1,6 +1,9 @@
 // Offline retrieval over the catalog. Keep exact search available for asset IDs and scripts.
-const stopWords = new Set('a an the of to for from with that when my me you i want need please sound sounds effect effects sfx something make like as and in it is through going really very just feels more'.split(' '));
+const stopWords = new Set('a an the of to for from with that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more'.split(' '));
 const vocabulary = {
+  relaxing: 'calm', relaxed: 'calm', tranquil: 'calm', soothing: 'calm', peaceful: 'calm', chilled: 'calm',
+  intense: 'dramatic', suspenseful: 'dramatic', tense: 'dramatic',
+  seaside: 'beach', shoreline: 'shore', waves: 'surf',
   tabs: 'tab', tabbed: 'tab', switching: 'switch', changing: 'switch', switched: 'switch',
   clicks: 'click', clicky: 'click', clicking: 'click', clicked: 'click', selecting: 'select',
   settings: 'settings', options: 'settings', preferences: 'settings', menus: 'menu',
@@ -16,7 +19,16 @@ function words(value) {
 }
 
 export function rankByIntent(sounds, query, exclude = '') {
-  const terms = [...new Set(words(query).filter(term => !stopWords.has(term)))];
+  const queryWords = words(query);
+  const isMood = term => term === 'calm' || term === 'dramatic';
+  const negators = new Set(['not', 'never', 'without', 'no']);
+  const moods = [...new Set(queryWords.filter((term, i) => isMood(term) && !negators.has(queryWords[i-1])))];
+  const tokens = [...new Set(queryWords.filter(term => !stopWords.has(term) && !negators.has(term)))];
+  const mood = moods.length === 1 ? moods[0] : undefined;
+  const subject = tokens.filter(term => !isMood(term));
+  const terms = subject.length ? subject : moods;
+  const palette = mood === 'calm' ? ['calm', 'gentle', 'soft', 'distant', 'quiet'] :
+    mood === 'dramatic' ? ['dramatic', 'surge', 'close', 'heavy', 'sharp'] : [];
   if (!terms.length) return [];
   const excluded = words(exclude);
   const documents = sounds.map(sound => {
@@ -38,8 +50,9 @@ export function rankByIntent(sounds, query, exclude = '') {
       score += relevance * weights[i];
       if (relevance) hits++;
     });
-    if (hits) scored.push({ sound, score: score * hits / terms.length, exact: query.trim().toLowerCase() === sound.id });
+    const affinity = palette.filter(term => tags.has(term) || title.has(term)).length;
+    if (hits) scored.push({ sound, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
   }
   return scored.sort((a, b) => Number(b.exact) - Number(a.exact) || b.score - a.score ||
-    a.sound.id.localeCompare(b.sound.id)).map(item => item.sound);
+    a.sound.id.localeCompare(b.sound.id)).map(item => mood ? { ...item.sound, suggestedMood: mood } : item.sound);
 }

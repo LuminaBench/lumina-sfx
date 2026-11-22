@@ -240,5 +240,31 @@
     "file": "references/scenes/melee-timber-check.json",
     "loopable": false,
     "durationSec": 0.46
+  },
+  {
+    "id": "beach-fire-weather-front",
+    "name": "Beach fire as a rain front crosses the surf",
+    "category": "Weather",
+    "tags": [
+      "beach",
+      "sea",
+      "coast",
+      "ocean",
+      "shore",
+      "campfire",
+      "fire",
+      "embers",
+      "surf",
+      "rain",
+      "storm",
+      "thunder",
+      "crossfade",
+      "calm",
+      "dramatic"
+    ],
+    "kind": "design",
+    "file": "references/scenes/beach-fire-weather-front.json",
+    "loopable": false,
+    "durationSec": 12
   }
 ]

@@ -45,10 +45,11 @@ if (values.help) {
   if (values.json) console.log(JSON.stringify(sounds, null, 2));
   else if (!sounds.length) console.log('No matching recipes');
   else for (const sound of sounds) {
+    const mood = sound.suggestedMood ? ' · mood ' + sound.suggestedMood : '';
     if (sound.kind === 'design') {
-      console.log(`${sound.id.padEnd(29)} ${sound.name} · ${sound.file}`);
+      console.log(`${sound.id.padEnd(29)} ${sound.name} · ${sound.file}${mood}`);
       continue;
     }
-    console.log(`${sound.id.padEnd(29)} ${sound.name} · ${sound.category} · ${sound.durationSec}s${sound.loopable ? ' · loop' : ''}`);
+    console.log(`${sound.id.padEnd(29)} ${sound.name} · ${sound.category} · ${sound.durationSec}s${sound.loopable ? ' · loop' : ''}${mood}`);
   }
 }

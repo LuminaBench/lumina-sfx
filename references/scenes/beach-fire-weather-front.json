@@ -1,0 +1,129 @@
+{
+  "id": "beach-fire-weather-front",
+  "name": "Beach fire as a rain front crosses the surf",
+  "mood": "neutral",
+  "layers": [
+    {
+      "id": "campfire-crackle-loop",
+      "role": "focus",
+      "durationSec": 12,
+      "gain": 1.14,
+      "paramsByMood": {
+        "calm": {
+          "sparks": 0.3
+        },
+        "dramatic": {
+          "sparks": 0.92
+        }
+      },
+      "envelope": [
+        [
+          0,
+          0.86
+        ],
+        [
+          0.4,
+          1
+        ],
+        [
+          11.4,
+          0.94
+        ],
+        [
+          12,
+          0
+        ]
+      ]
+    },
+    {
+      "label": "shore",
+      "role": "bed",
+      "design": {
+        "id": "shore-before-front",
+        "layers": [
+          {
+            "id": "breakers-beneath-a-timber-jetty-gentle-laps-loop",
+            "durationSec": 5.5,
+            "gain": 0.88
+          },
+          {
+            "id": "light-rain-loop",
+            "durationSec": 5.5,
+            "gain": 0.3
+          }
+        ]
+      },
+      "gain": 0.82
+    },
+    {
+      "label": "squall",
+      "role": "bed",
+      "design": {
+        "id": "rain-over-reef",
+        "layers": [
+          {
+            "id": "surf-heard-below-a-reef-ledge-constant-movement-loop",
+            "durationSec": 8.1,
+            "gain": 0.88
+          },
+          {
+            "id": "heavy-storm-rain-loop",
+            "durationSec": 8.1,
+            "gain": 0.64
+          }
+        ]
+      },
+      "gain": 0.85,
+      "afterLayer": {
+        "layer": "shore",
+        "crossfadeSec": 1.6
+      },
+      "envelope": [
+        [
+          0,
+          0.85
+        ],
+        [
+          3.8,
+          1
+        ],
+        [
+          7.4,
+          0.86
+        ],
+        [
+          8.1,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "thunder-over-a-flat-salt-pan-long-rolling-front",
+      "role": "accent",
+      "offsetSec": 3.23,
+      "gain": 0.78,
+      "paramsByMood": {
+        "calm": {
+          "distance": 0.91
+        },
+        "dramatic": {
+          "distance": 0.12
+        }
+      },
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          8.76,
+          0
+        ]
+      ]
+    }
+  ]
+}

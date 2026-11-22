@@ -9,6 +9,8 @@ Start with what the listener should recognize, where their ears are, and what th
 | Air combat | [Canopy](scenes/dogfight-cockpit.json) and [external pass](scenes/dogfight-exterior.json) | [Throttle, RPM, radar changes, burst, release and detonation](scenes/dogfight-live.json) |
 | Dive | [Boat above and below water](scenes/dive-beneath-the-boat.json) | [Depth, entry and resurfacing](scenes/dive-live.json) |
 
+For emotional direction, shared pitched accents and transitions between beds, use the [scene intent guide](scene-intent.md).
+
 ## Print a timed scene
 
 ```sh

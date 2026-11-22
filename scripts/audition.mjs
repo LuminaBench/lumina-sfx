@@ -14,6 +14,7 @@ const { positionals: inputs, values } = parseArgs({
   allowPositionals: true,
   options: {
     isolated: { type: 'boolean' },
+    moods: { type: 'boolean' },
     styles: { type: 'boolean' },
     bed: { type: 'string' },
     out: { type: 'string' },
@@ -22,22 +23,28 @@ const { positionals: inputs, values } = parseArgs({
 });
 if (values.help) {
   console.log(
-    'npm run audition -- <id-or-design.json> <id-or-design.json> [third] (or one candidate with --styles) [--isolated] --bed <loop-id> --out <desk.html>',
+    'npm run audition -- <id-or-design.json> <id-or-design.json> [third] (or one candidate with --styles or --moods) [--isolated] --bed <loop-id> --out <desk.html>',
   );
   process.exit(0);
 }
-if ((values.styles ? inputs.length !== 1 : ![2, 3].includes(inputs.length)) || !values.out)
+if (values.styles && values.moods) throw Error('Compare either styles or moods');
+if ((values.styles || values.moods ? inputs.length !== 1 : ![2, 3].includes(inputs.length)) || !values.out)
   throw Error('Choose two or three candidates and an --out HTML file');
 async function recipe(id) {
   const [sound] = await loadRecipes(new Set([id]));
   if (!sound) throw Error('Unknown sound: ' + id);
   return sound;
 }
-async function candidate(input, style) {
+async function candidate(input, style, mood) {
   async function group(design, directory) {
     const {recipe, selected} = await loadDesign(design, directory);
     if (values.isolated) await checkIsolatedRecipes(selected);
     return recipe;
+  }
+  if (mood) {
+    const spec = input.endsWith('.json') ? JSON.parse(await readFile(input, 'utf8')) :
+      { id: input, layers: [{ id: input }] };
+    return group({ ...spec, id: spec.id + '-' + mood, mood }, dirname(resolve(input)));
   }
   if (!input.endsWith('.json')) {
     const base = await recipe(input);
@@ -61,7 +68,7 @@ function preview(sound, seed) {
 }
 const wav = (channels) => Buffer.from(encodeWav(channels)).toString('base64');
 const sounds = await Promise.all(
-  values.styles
+  values.moods ? ['neutral', 'calm', 'dramatic'].map(mood => candidate(inputs[0], undefined, mood)) : values.styles
     ? Object.keys(sceneStyles).map((style) => candidate(inputs[0], style))
     : inputs.map((input) => candidate(input)),
 );
@@ -87,7 +94,7 @@ if (!bed.loopable) throw Error('Choose a loopable background');
 const bedAudio = renderChannels(bed, { level: 'balanced' });
 const bedLevel = Math.max(...bedAudio.map((c) => measureLevel(c, SAMPLE_RATE).activeDb));
 const bedGain = Math.min(0.27, 0.7 * 10 ** ((target - 8 - bedLevel) / 20));
-const data = { startDry: Boolean(values.isolated), choices, bedId: bed.id, bed: wav(bedAudio.map((c) => c.map((s) => s * bedGain))) };
+const data = { startDry: Boolean(values.isolated || (values.moods && !values.bed)), choices, bedId: bed.id, bed: wav(bedAudio.map((c) => c.map((s) => s * bedGain))) };
 const reel = createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0, 16);
 const payload = JSON.stringify({ reel, ...data }).replaceAll('<', '\\u003c');
 const player = await readFile(new URL('./audition-player.js', import.meta.url), 'utf8');

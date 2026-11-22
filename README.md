@@ -35,6 +35,8 @@ npx skills remove lumina-sfx -g
 - “Build a coastal storm for my indie RPG. Start with waves and wind, bring in a sharp thunderclap after four seconds, then let a softer rumble roll away.”
 - “Install grass and gravel footsteps in my Godot scene. Trigger them when a foot lands and vary each step so walking sounds natural.”
 
+Render the same beach fire as a quiet rest stop or an approaching storm. The editable scene changes spark activity, thunder distance and layer balance while keeping its timing. [Mood mixing and crossfades](references/scene-intent.md)
+
 ## Supported Engines
 
 | Target | What goes into your project |

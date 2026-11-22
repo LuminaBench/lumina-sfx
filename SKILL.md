@@ -1,6 +1,6 @@
 ---
 name: lumina-sfx
-description: Find, sculpt, layer, invent and verify offline game sound effects. Use for tactile menus, non-vocal alerts, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
+description: Find, sculpt, layer, invent and verify offline game sound effects. Use for tactile menus, non-vocal alerts, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
 # Lumina SFX
@@ -35,6 +35,8 @@ node scripts/install-sfx.mjs plant-large-seeds --engine wav --dest /absolute/pat
 Supported explicit engines are `web`, `godot`, `unity`, `unreal`, `python` and `wav`. Check the installed adapter's README for scene setup. For a source-only TypeScript installation in a web game use `node scripts/install-sfx.mjs plant-large-seeds --dest /absolute/path/to/game/src/audio`. The importer copies shared dependencies once and detects conflicting edits. Installed audio is a game-owned snapshot.
 
 ## 2. Sculpt and remix
+
+Start a scene by identifying its foreground, listener position, background and emotional change. Use a `calm` or `dramatic` mood with an explicit layer role and native performance controls when appropriate. For a sustained handoff, join two layers with `afterLayer.crossfadeSec`. Tune pitched layers to a shared `tonicHz` only when their source pitches are known. Check the same seed and timing in both moods. [Scene intent, tuning and blind comparisons](references/scene-intent.md)
 
 For settings tabs, focused controls, inventory drops and non-vocal game feedback, see [tactile menus and event hooks](references/menu-design.md). Use a short physical confirmation for local success. Give advisory and warning states distinct non-vocal rhythms. Keep high-priority events intelligible above weather and motion beds. Use the recipe's native parameters for the action itself. Use macros for the listener's perspective, scale and room. Their exact schema is available at the root of [catalog.json](catalog.json).
 

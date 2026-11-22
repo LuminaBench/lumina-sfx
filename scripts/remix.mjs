@@ -14,6 +14,7 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
   --fit-seconds N (fit one complete cue to a game animation)
   --params '{"nativeControl":0.7}' (one layer)
   --spec path/to/design.json (per-layer gain, offsetSec and params)
+  --mood neutral|calm|dramatic (also applies to the root of --spec)
   --style natural|cinematic|arcade
   --format ts|wav|ogg|opus (default ts)
   --isolated (require isolated source layers)
@@ -22,7 +23,7 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
 async function main() {
   const names = ['punch', 'size', 'distance', 'space', 'grit', 'wetness', 'speed', 'pitchShift'];
   const options = Object.fromEntries(
-    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'params', 'style'].map((k) => [k, { type: 'string' }]),
+    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'params', 'style', 'mood'].map((k) => [k, { type: 'string' }]),
   );
   const { values: v, positionals } = parseArgs({
     allowPositionals: true,
@@ -69,7 +70,7 @@ async function main() {
   const { loadDesign } = await import('./remix-design.mjs');
   const { renderDurationSec } = await import('../engine/sculpt.ts');
   const { checkRecipe } = await import('../qa/check-recipe.mjs');
-  const { recipe, selected, source } = await loadDesign(spec);
+  const { recipe, selected, source } = await loadDesign(spec, process.cwd(), v.mood);
   if (v.isolated) {
     await checkIsolatedRecipes(selected);
     if (recipe.isolation !== 'isolated') throw Error('A source recipe no longer declares isolation');

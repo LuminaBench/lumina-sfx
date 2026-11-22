@@ -10,11 +10,14 @@ function fields(value, label, allowed) {
     for (const key of Object.keys(value))
       if (!allowed.includes(key)) throw Error('Unknown ' + label + ' field: ' + key);
 }
-const designKeys = ['id', 'name', 'style', 'layers', 'macros', 'spectrum'];
+const designKeys = ['id', 'name', 'style', 'mood', 'tonicHz', 'layers', 'macros', 'spectrum'];
 const layerKeys = [
   'id',
   'design',
   'gain',
+  'role',
+  'paramsByMood',
+  'tune',
   'params',
   'macros',
   'offsetSec',
@@ -31,7 +34,7 @@ const validId = (id) => typeof id === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.t
 
 // Resolve references relative to the containing design. The export embeds the arrangement,
 // so a game never depends on the original design JSON or any studio path.
-export async function loadDesign(input, directory = process.cwd()) {
+export async function loadDesign(input, directory = process.cwd(), mood) {
   const ids = new Set();
   let leaves = 0;
   async function parse(input, directory, ancestors, depth) {
@@ -53,10 +56,12 @@ export async function loadDesign(input, directory = process.cwd()) {
       fields(layer, 'layer', layerKeys);
       const { id, design: nested, ...settings } = layer;
       if ((id === undefined) === (nested === undefined)) throw Error('Each layer needs one id or design');
+      if (settings.tune !== undefined) fields(settings.tune, 'tuning', ['sourceHz', 'intervalSemitones']);
+      if (settings.paramsByMood !== undefined) fields(settings.paramsByMood, 'mood parameters', ['calm', 'dramatic', 'neutral']);
       if (settings.params !== undefined) fields(settings.params, 'params');
       if (settings.macros !== undefined) fields(settings.macros, 'layer macros');
       if (settings.atMarker !== undefined) fields(settings.atMarker, 'anchor', ['layer', 'name', 'shiftSec']);
-      if (settings.afterLayer !== undefined) fields(settings.afterLayer, 'end anchor', ['layer', 'shiftSec']);
+      if (settings.afterLayer !== undefined) fields(settings.afterLayer, 'end anchor', ['layer', 'shiftSec', 'crossfadeSec']);
       if (settings.muffle !== undefined) fields(settings.muffle, 'muffle', ['cutoffHz', 'envelope']);
       if (nested !== undefined)
         children.push({ child: await parse(nested, directory, ancestors, depth + 1), settings });
@@ -71,6 +76,7 @@ export async function loadDesign(input, directory = process.cwd()) {
     return { design, children };
   }
   const root = await parse(input, directory, [], 1);
+  if (mood !== undefined) root.design.mood = mood;
   if (ids.has(root.design.id)) throw Error('Choose an output ID distinct from its base recipes');
   const selected = await selectRecipes([...ids]);
   const byId = new Map((await loadRecipes(ids)).map((recipe) => [recipe.id, recipe]));

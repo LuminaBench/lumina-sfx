@@ -1,3 +1,5 @@
+import { defaultSceneRole, sceneMoods } from './scene-mood.ts';
+import type { SceneMood, SceneRole } from './scene-mood.ts';
 import { biquad } from './dsp.ts';
 import { renderChannels } from './render.ts';
 import { renderDurationSec, resolveMacros } from './sculpt.ts';
@@ -48,10 +50,13 @@ function automation(points: Curve, power: boolean) {
 
 export interface RemixLayer {
   recipe: SoundRecipe;
+  role?: SceneRole;
+  paramsByMood?: Partial<Record<SceneMood, Readonly<Record<string, number>>>>;
+  tune?: { sourceHz: number; intervalSemitones?: number };
   fromMarker?: string;
   label?: string;
   fitSec?: number;
-  afterLayer?: { layer: number | string; shiftSec?: number };
+  afterLayer?: { layer: number | string; shiftSec?: number; crossfadeSec?: number };
   atMarker?: { layer: number | string; name: string; shiftSec?: number };
   durationSec?: number;
   envelope?: Curve;
@@ -67,6 +72,8 @@ export const sceneStyles = {
   arcade: { punch: 0.42, speed: 1.09, grit: 0.06 },
 } as const;
 export interface RemixDesign {
+  mood?: SceneMood;
+  tonicHz?: number;
   style?: keyof typeof sceneStyles;
   id: string;
   name?: string;
@@ -79,6 +86,10 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
     throw Error('Use a lowercase hyphenated remix ID');
   if (!layers.length || layers.length > 4) throw Error('A remix uses one to four layers');
   if (design.style !== undefined && !Object.hasOwn(sceneStyles, design.style)) throw Error('Unknown scene style');
+  const mood = design.mood === undefined ? 'neutral' : design.mood;
+  if (!Object.hasOwn(sceneMoods, mood)) throw Error('Unknown scene mood');
+  if (design.tonicHz !== undefined && !(Number.isFinite(design.tonicHz) && design.tonicHz > 0))
+    throw Error('tonicHz must be a positive frequency');
   const styling = design.style ? { ...sceneStyles[design.style], ...design.macros } : design.macros;
   resolveMacros(styling);
   for (const target of design.spectrum ?? []) {
@@ -102,10 +113,14 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       throw Error('Anchor must reference an earlier layer');
     return n;
   }
+  const fades = layers.map(() => ({ incoming: 0, outgoing: 0 }));
   const tracks = layers.map(
     (
       {
         recipe,
+        role = defaultSceneRole(recipe),
+        paramsByMood,
+        tune,
         macros,
         gain = 1,
         offsetSec,
@@ -121,6 +136,18 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       },
       index,
     ) => {
+      if (!Object.hasOwn(sceneMoods[mood], role)) throw Error('Unknown scene layer role');
+      const [moodGain, cutoffHz] = sceneMoods[mood][role];
+      if (mood === 'dramatic' && role !== 'bed' && (macros?.punch ?? recipe.macros?.punch) === undefined) {
+        macros = { ...macros, punch: role === 'accent' ? 0.40 : 0.16 };
+      }
+      if (tune !== undefined) {
+        const interval = tune?.intervalSemitones ?? 0;
+        if (!design.tonicHz || !tune || !Number.isFinite(tune.sourceHz) || tune.sourceHz <= 0 ||
+            !Number.isFinite(interval) || macros?.pitchShift !== undefined)
+          throw Error('Tuning needs tonicHz, sourceHz and a finite interval without another pitch override');
+        macros = { ...macros, pitchShift: 12 * Math.log2(design.tonicHz / tune.sourceHz) + interval };
+      }
       if (label !== undefined) {
         if (typeof label !== 'string' || !/^[a-z][a-z0-9-]*$/.test(label) || /^layer[0-9]+$/.test(label) || labels.has(label))
           throw Error('Expected a unique lowercase layer label');
@@ -144,17 +171,34 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         } else if (layers[source].recipe.loopable && layers[source].durationSec === undefined && layers[source].fitSec === undefined) {
           throw Error('Bound the loop before anchoring to its end');
         }
+        if (afterLayer?.crossfadeSec !== undefined) {
+          const seconds = afterLayer.crossfadeSec;
+          if (afterLayer.shiftSec !== undefined || !Number.isFinite(seconds) || seconds <= 0 ||
+              seconds + fades[source].incoming > reference.length + 1e-9 || fades[source].outgoing)
+            throw Error('Invalid or overlapping crossfade on outgoing layer');
+          fades[source].outgoing = seconds;
+          fades[index].incoming = seconds;
+          relative -= seconds;
+        }
         offsetSec = reference.offset + relative + shift;
       }
       offsetSec ??= 0;
       if (!Number.isFinite(gain) || gain < 0 || gain > 4) throw Error('Layer gain must be in [0,4]');
       if (!Number.isFinite(offsetSec) || offsetSec < 0) throw Error('Expected non-negative layer offset');
-      for (const [key, value] of Object.entries(overrides)) {
-        const spec = Object.hasOwn(recipe.params, key) && recipe.params[key];
-        if (!spec || !Number.isFinite(value) || value < spec.min || value > spec.max) {
-          throw Error(recipe.id + ': unknown or out-of-range DSP parameter ' + key);
+      if (paramsByMood !== undefined && (!paramsByMood || typeof paramsByMood !== 'object' || Array.isArray(paramsByMood)))
+        throw Error('Invalid mood parameter groups');
+      for (const preset of Object.keys(paramsByMood ?? {})) {
+        if (!Object.hasOwn(sceneMoods, preset)) throw Error('Unknown mood parameter group');
+      }
+      for (const settings of [overrides, ...Object.values(paramsByMood ?? {})]) {
+        if (!settings || typeof settings !== 'object' || Array.isArray(settings)) throw Error('Invalid layer parameters');
+        for (const [key, value] of Object.entries(settings)) {
+          const spec = Object.hasOwn(recipe.params, key) && recipe.params[key];
+          if (!spec || !Number.isFinite(value) || value < spec.min || value > spec.max)
+            throw Error(recipe.id + ': unknown or out-of-range DSP parameter ' + key);
         }
       }
+      overrides = { ...overrides, ...paramsByMood?.[mood] };
       for (const [key, spec] of Object.entries(recipe.params)) {
         params[paramKey(index, key)] = { ...spec, default: overrides[key] ?? spec.default };
       }
@@ -181,6 +225,8 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       )
         throw Error(recipe.id + ': invalid layer duration');
       const length = span ?? remaining;
+      if (fades[index].incoming > length + 1e-9)
+        throw Error('Crossfade exceeds incoming layer duration');
       positions.push({ offset: offsetSec, start, speed, length });
       const limit = recipe.loopable && span === undefined ? 120 : length;
       validateCurve(envelope, limit, 4);
@@ -195,7 +241,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
           throw Error('Invalid muffle filter or envelope');
         validateCurve(muffle.envelope, limit, 1);
       }
-      return { recipe, gain, offsetSec, macros, start, length, span, envelope, muffle };
+      return { recipe, gain: gain * moodGain, cutoffHz, offsetSec, macros, start, length, span, envelope, muffle };
     },
   );
   if (
@@ -236,6 +282,10 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         audio.map(() =>
           biquad('lowpass', Math.min(ctx.sampleRate * 0.45, track.muffle!.cutoffHz), 0.707, ctx.sampleRate),
         );
+      const toneFilters = track.cutoffHz ? audio.map(() =>
+        biquad('lowpass', Math.min(ctx.sampleRate * 0.45, track.cutoffHz), 0.707, ctx.sampleRate)) : undefined;
+      const fadeIn = Math.round(fades[index].incoming * ctx.sampleRate);
+      const fadeOut = Math.round(fades[index].outgoing * ctx.sampleRate);
       const edge = Math.max(1, Math.round(ctx.sampleRate * 0.003));
       for (let i = 0; i < length; i++) {
         const frame = (start + i) % audio[0].length;
@@ -249,6 +299,12 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
           left += wet * (filters[0](left) - left);
           right = filters[1] ? right + wet * (filters[1](right) - right) : left;
         }
+        if (toneFilters) {
+          left = toneFilters[0](left);
+          right = toneFilters[1] ? toneFilters[1](right) : left;
+        }
+        if (i < fadeIn) gain *= Math.sin(Math.PI * 0.5 * i / fadeIn);
+        if (fadeOut && i >= length - fadeOut) gain *= Math.sin(Math.PI * 0.5 * (length - i) / fadeOut);
         if (start) gain *= Math.min(1, i / edge);
         if (track.span !== undefined) gain *= Math.min(1, (length - 1 - i) / edge);
         if (stereoOut) {
