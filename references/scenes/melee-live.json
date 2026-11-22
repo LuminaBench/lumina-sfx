@@ -1,0 +1,17 @@
+{
+  "controls": {},
+  "cues": [
+    {
+      "id": "knife-pass-by-the-sleeve",
+      "event": "swing"
+    },
+    {
+      "id": "blade-checks-on-timber",
+      "event": "wood"
+    },
+    {
+      "id": "steel-parry-and-release",
+      "event": "steel"
+    }
+  ]
+}

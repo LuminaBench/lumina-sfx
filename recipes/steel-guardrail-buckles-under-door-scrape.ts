@@ -4,6 +4,7 @@ import recording1 from './_recordings/car-sideswipe-scrape.ts';
 import recording2 from './_recordings/motion-chain-scrape.ts';
 
 export default {
+  perspective: "roadside exterior", contains: ["panel scrapes against rail", "iron flex"], markers: {"scrape": 0, "buckle": 0.35},
   id: 'steel-guardrail-buckles-under-door-scrape', name: 'Steel guardrail buckles under door scrape', category: 'Vehicles & Engines',
   tags: ["vehicle", "steel", "guardrail", "buckles", "under", "door", "scrape", "iron", "foley"], loopable: false, durationSec: 1.17,
   mixRole: 'vehicle', targetRmsDbfs: -23,

@@ -3,6 +3,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import source from './_recordings/motion-harbor-hydrophone.ts';
 
 export default {
+  perspective: "submerged", contains: ["underwater harbor motor"], markers: {"bed": 0},
   id: "harbor-motor-through-hydrophone-loop",
   name: "Harbor motor through hydrophone loop",
   category: "Water & Fire",

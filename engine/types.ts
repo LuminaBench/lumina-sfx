@@ -56,6 +56,9 @@ export interface RecordingCredit {
 }
 
 export interface SoundRecipe {
+  readonly markers?: Readonly<Record<string, number>>;
+  readonly contains?: readonly string[];
+  readonly perspective?: string;
   readonly macros?: Readonly<DesignMacros>;
   readonly id: string;
   readonly name: string;

@@ -3,6 +3,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import recording from './_recordings/wooden-chest-latch-release.ts';
 
 export default {
+  perspective: "within reach", contains: ["latch release"], markers: {"accent": 0.41},
   id: 'wooden-chest-latch-release', name: 'Wooden Chest Latch Release', category: 'Props & Interactions',
   tags: ['chest', 'clasp', 'lock', 'latch', 'release', 'unlock', 'loot', 'foley', 'cc0'],
   loopable: false, durationSec: 0.635, targetRmsDbfs: -29,

@@ -1,0 +1,12 @@
+{
+  "id": "barrier-and-broken-glass",
+  "layers": [
+    { "design": "wet-road-barrier.json" },
+    {
+      "id": "arcade-glass-cluster-scattering",
+      "atMarker": { "layer": 1, "name": "layer4.buckle", "shiftSec": 0.055 },
+      "gain": 0.30,
+      "macros": { "size": 0.34, "distance": 0.18 }
+    }
+  ]
+}

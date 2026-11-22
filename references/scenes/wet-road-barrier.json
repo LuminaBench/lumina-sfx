@@ -1,0 +1,93 @@
+{
+  "id": "wet-road-barrier",
+  "style": "natural",
+  "layers": [
+    {
+      "id": "car-keyed-ignition",
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          1.3,
+          0.86
+        ],
+        [
+          1.94,
+          0.06
+        ]
+      ]
+    },
+    {
+      "id": "car-wet-asphalt-pass",
+      "atMarker": {
+        "layer": 1,
+        "name": "handoff",
+        "shiftSec": -0.27
+      },
+      "envelope": [
+        [
+          0,
+          0.12
+        ],
+        [
+          0.65,
+          0.58
+        ],
+        [
+          2.65,
+          0.94
+        ],
+        [
+          3.56,
+          0.24
+        ],
+        [
+          4.0,
+          0.05
+        ]
+      ]
+    },
+    {
+      "id": "tire-skid-halt",
+      "atMarker": {
+        "layer": 2,
+        "name": "closest",
+        "shiftSec": -0.27
+      },
+      "gain": 1.15,
+      "envelope": [
+        [
+          0,
+          0.27
+        ],
+        [
+          0.23,
+          0.92
+        ],
+        [
+          0.63,
+          1
+        ],
+        [
+          1.15,
+          0.19
+        ],
+        [
+          1.41,
+          0.02
+        ]
+      ]
+    },
+    {
+      "id": "steel-guardrail-buckles-under-door-scrape",
+      "atMarker": {
+        "layer": 3,
+        "name": "catch",
+        "shiftSec": -0.1
+      },
+      "gain": 1.32
+    }
+  ]
+}

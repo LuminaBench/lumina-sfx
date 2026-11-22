@@ -5,6 +5,7 @@ import idle from './_recordings/motion-marine-engine.ts';
 import loaded from './_recordings/motion-outboard-aeration.ts';
 
 export default {
+  perspective: "above water", contains: ["steady motor heard offshore"], markers: {"handoff": 1.48},
   id: "working-motorboat-steady-offshore-loop",
   name: "Working motorboat steady offshore loop",
   category: "Water & Fire",

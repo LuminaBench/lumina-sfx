@@ -1,0 +1,34 @@
+{
+  "controls": {
+    "depth": 0
+  },
+  "cues": [
+    {
+      "id": "working-motorboat-steady-offshore-loop",
+      "blend": {
+        "control": "depth",
+        "side": "out"
+      },
+      "lowpass": {
+        "control": "depth",
+        "openHz": 18000,
+        "closedHz": 300
+      }
+    },
+    {
+      "id": "harbor-motor-through-hydrophone-loop",
+      "blend": {
+        "control": "depth",
+        "side": "in"
+      }
+    },
+    {
+      "id": "dive-breaks-the-surface",
+      "event": "entry"
+    },
+    {
+      "id": "swimmer-breaks-into-air",
+      "event": "surface"
+    }
+  ]
+}

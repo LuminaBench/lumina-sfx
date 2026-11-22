@@ -26402,6 +26402,96 @@
       "loopable": false,
       "brief": "Geyser Lifts Then Rains Back",
       "revision": 1
+    },
+    {
+      "id": "gravel-check-step-and-turn",
+      "category": "Combat Foley",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.79,
+      "loopable": false,
+      "brief": "Boot checks its stride and turns on gravel",
+      "acceptance": "Identify planted boot in context at matched level."
+    },
+    {
+      "id": "hand-steadies-loose-latch",
+      "category": "Props & Interactions",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.74,
+      "loopable": false,
+      "brief": "Hand steadies a loose latch",
+      "acceptance": "Identify latch slides in context at matched level."
+    },
+    {
+      "id": "knife-pass-by-the-sleeve",
+      "category": "Combat Foley",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.46,
+      "loopable": false,
+      "brief": "Short knife pass by the sleeve",
+      "acceptance": "Identify grip shifts in context at matched level."
+    },
+    {
+      "id": "duel-air-whistle",
+      "category": "Combat Foley",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.37,
+      "loopable": false,
+      "brief": "Accented dueling air whistle",
+      "acceptance": "Identify bright rising air accent in context at matched level."
+    },
+    {
+      "id": "blade-checks-on-timber",
+      "category": "Impacts",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.31,
+      "loopable": false,
+      "brief": "Blade checks against a timber guard",
+      "acceptance": "Identify dry wood contact in context at matched level."
+    },
+    {
+      "id": "steel-parry-and-release",
+      "category": "Impacts",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.62,
+      "loopable": false,
+      "brief": "Steel parry with a brief ringing release",
+      "acceptance": "Identify metal contact in context at matched level."
+    },
+    {
+      "id": "dive-breaks-the-surface",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 1.25,
+      "loopable": false,
+      "brief": "Dive breaks the water surface",
+      "acceptance": "Identify entry splash in context at matched level."
+    },
+    {
+      "id": "swimmer-breaks-into-air",
+      "category": "Water & Fire",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 1.04,
+      "loopable": false,
+      "brief": "Swimmer breaks back into open air",
+      "acceptance": "Identify last submerged bubbles in context at matched level."
+    },
+    {
+      "id": "wet-tire-contact-patch-loop",
+      "category": "Vehicles & Engines",
+      "status": "review",
+      "collection": "Scene performances",
+      "durationSec": 0.69,
+      "loopable": true,
+      "brief": "Sustained wet tire slip",
+      "acceptance": "Maintain friction while slip persists, without repeating the final stop."
     }
   ]
 }

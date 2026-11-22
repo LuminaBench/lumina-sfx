@@ -7,3 +7,5 @@ export { SfxBedBlend } from './bed-blend.ts';
 export { macroControls, renderDurationSec } from './sculpt.ts';
 export { composeRecipe } from './remix.ts';
 export type { RemixLayer, RemixDesign } from './remix.ts';
+export { SfxScene } from './scene.ts';
+export type { GameAudioScene, SceneCue } from './scene.ts';

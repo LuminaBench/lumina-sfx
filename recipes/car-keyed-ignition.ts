@@ -3,6 +3,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import recording from './_recordings/car-keyed-ignition.ts';
 
 export default {
+  perspective: "inside cabin", contains: ["key turns", "starter cranks"], markers: {"keyAccent": 0.07, "handoff": 1.2},
   id: 'car-keyed-ignition', name: 'Car Key and Cabin Ignition', category: 'Vehicles & Engines',
   tags: ['car', 'engine', 'key', 'ignition', 'cabin'], loopable: false, durationSec: 1.94,
   params: { pace: { label: 'Pace', min: 0, max: 1, default: 0.5 } },

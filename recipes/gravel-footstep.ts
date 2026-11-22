@@ -4,6 +4,7 @@ import naturalGravel from './_recordings/natural-gravel.ts';
 import naturalGravelDrag from './_recordings/natural-gravel-drag.ts';
 
 export default {
+  perspective: "close ground", contains: ["boot on loose gravel"], markers: {"plant": 0.03},
   id: 'gravel-footstep', name: "Gravel Footstep", category: 'Footsteps & UI',
   tags: ["gravel", "stone", "crunch", "grit", "pebbles", "trail", "footstep", "walk"],
   loopable: false, durationSec: 0.52, mixRole: 'foley', targetRmsDbfs: -26,

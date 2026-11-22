@@ -1,0 +1,102 @@
+{
+  "id": "dive-beneath-the-boat",
+  "style": "natural",
+  "layers": [
+    {
+      "id": "working-motorboat-steady-offshore-loop",
+      "durationSec": 6.3,
+      "envelope": [
+        [
+          0,
+          0.88
+        ],
+        [
+          1.44,
+          0.88
+        ],
+        [
+          1.83,
+          0.26
+        ],
+        [
+          5.14,
+          0.26
+        ],
+        [
+          5.25,
+          0.83
+        ],
+        [
+          6.29,
+          0.78
+        ]
+      ],
+      "muffle": {
+        "cutoffHz": 300,
+        "envelope": [
+          [
+            0,
+            0
+          ],
+          [
+            1.48,
+            0
+          ],
+          [
+            1.6,
+            1
+          ],
+          [
+            5.14,
+            1
+          ],
+          [
+            5.25,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "dive-breaks-the-surface",
+      "atMarker": {
+        "layer": 1,
+        "name": "handoff",
+        "shiftSec": 0
+      },
+      "gain": 0.68
+    },
+    {
+      "id": "harbor-motor-through-hydrophone-loop",
+      "atMarker": {
+        "layer": 2,
+        "name": "submerged",
+        "shiftSec": -0.1
+      },
+      "durationSec": 3.79,
+      "envelope": [
+        [
+          0,
+          0.04
+        ],
+        [
+          0.36,
+          0.93
+        ],
+        [
+          3.45,
+          0.93
+        ],
+        [
+          3.7,
+          0.02
+        ]
+      ]
+    },
+    {
+      "id": "swimmer-breaks-into-air",
+      "offsetSec": 4.98,
+      "gain": 0.73
+    }
+  ]
+}

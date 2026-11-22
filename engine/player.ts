@@ -31,7 +31,7 @@ export class SfxPlayer {
   private readonly random = rng(DEFAULT_SEED ^ 0xa341316c);
   private readonly variants: (AudioBuffer | undefined)[];
   private readonly voices = new Set<Voice>();
-  private readonly context: AudioContext;
+  private readonly context: BaseAudioContext;
   private readonly recipe: SoundRecipe;
   private readonly output: AudioNode;
   private readonly macros?: Readonly<DesignMacros>;
@@ -44,7 +44,7 @@ export class SfxPlayer {
   private repeating = false;
   private lastShotTime?: number;
 
-  constructor(context: AudioContext, recipe: SoundRecipe, options: PlayerOptions = {}) {
+  constructor(context: BaseAudioContext, recipe: SoundRecipe, options: PlayerOptions = {}) {
     this.context = context;
     this.recipe = recipe;
     this.output = options.output ?? context.destination;

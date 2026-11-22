@@ -1,0 +1,65 @@
+{
+  "controls": {
+    "rpm": 0,
+    "load": 0,
+    "speed": 0,
+    "slip": 0
+  },
+  "cues": [
+    {
+      "id": "car-keyed-ignition",
+      "event": "ignition"
+    },
+    {
+      "id": "club-racer-hatchback-pit-lane-idle-loop",
+      "gain": 0.73,
+      "blend": {
+        "control": "load",
+        "side": "out"
+      },
+      "rate": {
+        "control": "rpm",
+        "min": 0.88,
+        "max": 1.38
+      }
+    },
+    {
+      "id": "club-racer-hatchback-wide-open-exhaust-loop",
+      "gain": 0.79,
+      "blend": {
+        "control": "load",
+        "side": "in"
+      },
+      "rate": {
+        "control": "rpm",
+        "min": 0.74,
+        "max": 1.25
+      }
+    },
+    {
+      "id": "car-interior-asphalt-loop",
+      "gain": 0.36,
+      "blend": {
+        "control": "speed",
+        "side": "in"
+      }
+    },
+    {
+      "id": "wet-tire-contact-patch-loop",
+      "blend": {
+        "control": "slip",
+        "side": "in"
+      },
+      "rate": {
+        "control": "speed",
+        "min": 0.92,
+        "max": 1.11
+      },
+      "gain": 0.86
+    },
+    {
+      "id": "steel-guardrail-buckles-under-door-scrape",
+      "event": "collision"
+    }
+  ]
+}

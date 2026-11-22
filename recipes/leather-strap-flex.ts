@@ -3,6 +3,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import recording from './_recordings/leather-strap-flex.ts';
 
 export default {
+  perspective: "within reach", contains: ["leather under tension"], markers: {"accent": 0.36},
   id: 'leather-strap-flex', name: 'Leather Strap Flex', category: 'Props & Interactions',
   tags: ['leather', 'strap', 'belt', 'pouch', 'gear', 'equipment', 'creak', 'foley', 'cc0'],
   loopable: false, durationSec: 0.663, targetRmsDbfs: -31,

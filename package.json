@@ -8,6 +8,8 @@
   },
   "scripts": {
     "qa": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/run.mjs",
+    "scene:install": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/install-scene.mjs",
+    "audition": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/audition.mjs",
     "compare": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/compare.mjs",
     "catalog": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/build-catalog.mjs",
     "search": "node scripts/search.mjs",

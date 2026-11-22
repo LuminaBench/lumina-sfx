@@ -206,7 +206,7 @@ function shape(
   }
   if (m.wetness === 0 || (m.space === 'dry' && !m.distance)) return out;
   const reflected = out.slice();
-  const reflections: [number, number][] = spaces[m.space].taps.map(([time, gain]) => [time, gain]);
+  const reflections: [number, number][] = spaces[m.space].taps.map(([time, gain]): [number, number] => [time, gain]);
   if (m.distance) reflections.push([0.042 + 0.11 * m.distance, 0.38 * m.distance]);
   for (const [time, gain] of reflections) {
     const delay = Math.max(1, Math.round(time * rate));

@@ -1,0 +1,35 @@
+{
+  "id": "melee-steel-parry",
+  "style": "arcade",
+  "layers": [
+    {
+      "id": "duel-air-whistle",
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          0.1,
+          1
+        ],
+        [
+          0.15,
+          0.28
+        ],
+        [
+          0.34,
+          0.08
+        ]
+      ]
+    },
+    {
+      "id": "steel-parry-and-release",
+      "atMarker": {
+        "layer": 1,
+        "name": "pass",
+        "shiftSec": 0.052
+      }
+    }
+  ]
+}

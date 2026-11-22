@@ -9,7 +9,7 @@ Run the studio commands from this skill's directory using Node.js 22.12+. Pass t
 
 ## 1. Search for the closest performance
 
-Start with the game event, surface, perspective and foreground/background role. Search uses all supplied words. Broaden the query if the first one returns nothing. Each catalog entry supplies an ID, duration, loop flag, tags, controls, and recording credits when relevant.
+Start with the game event, surface, perspective and foreground/background role. Search uses all supplied words. Broaden the query if the first one returns nothing. Each catalog entry supplies an ID, duration, loop flag, tags, controls, and recording credits when relevant. Search also matches credited recording titles. For annotated cues, inspect `contains`, `perspective`, and `markers` to choose a specific moment in the performance.
 
 ```sh
 node scripts/search.mjs seed planting --json
@@ -45,7 +45,7 @@ Keep high-priority events intelligible above weather and motion beds. Use the re
 node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --params '{"force":0.3}' --space small_room --wetness 0.25 --format wav --dest /absolute/game/audio
 ```
 
-For 2–4 layers, use a JSON design. Gains are linear. Offsets are seconds. Leave one audible layer at zero. The first layer supplies the mix and spectral brief. Each layer accepts its own `params` and `macros`. An all-loop stack with zero offsets stays loopable.
+For 2–4 layers, use a JSON design. Gains are linear. Offsets are seconds. Leave one audible layer at zero. The first layer supplies the mix and spectral brief. Each layer accepts its own `params` and `macros`. An all-loop stack with zero offsets and unbounded layers stays loopable. Use cue landmarks, gain envelopes, and a gradual filter change to join events. The scene guide includes nested JSON arrangements, ready-to-render designs, live event installers, and a blind listening desk. [Scene design](references/scene-design.md)
 
 ```json
 {
@@ -65,6 +65,8 @@ node scripts/remix.mjs --spec /absolute/path/design.json --format ts --extremes 
 The tool runs QA before publishing. Use `ts` for editable playback, `wav` for PCM or sample-accurate looping, `ogg` for Vorbis and `opus` for compact delivery. Both compressed formats require local FFmpeg. Read the JSON result for the file, checksum and errors. Editable recipes retain their credits. For exported audio preserve the manifest or the credits returned by the remix CLI.
 
 ## 3. Invent, verify and wire it in
+
+For interactive actions, trigger the movement from player input and the contact from the game event. Keep continuous loops running as speed, load or depth changes. Compare candidates with a shared background and ten seeded performances using `npm run audition`.
 
 Use the [cookbook](references/sound-design-cookbook.md) to start a genuinely new cue. Choose relevant recorded transients from the [source inventory](sources/recordings.json). Each recipe default-exports a `SoundRecipe`. Size the output to `ctx.frames`, use `ctx.sampleRate` and derive variation from the supplied seed. Return finite PCM samples. Test the actual file before adding it to the game.
 

@@ -3,6 +3,7 @@ import type { SoundRecipe } from '../engine/types.ts';
 import recording from './_recordings/car-wet-asphalt-pass.ts';
 
 export default {
+  perspective: "roadside exterior", contains: ["wet tire spray", "passing vehicle fades"], markers: {"closest": 2.69, "recede": 3.12},
   id: 'car-wet-asphalt-pass', name: 'Car Passing on Wet Asphalt', category: 'Vehicles & Engines',
   tags: ['car', 'drive-by', 'wet', 'asphalt', 'tires'], loopable: false, durationSec: 4.01,
   params: { pace: { label: 'Pace', min: 0, max: 1, default: 0.5 } },

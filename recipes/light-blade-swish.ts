@@ -3,6 +3,7 @@ import recording from "./_recordings/light-blade-swish.ts";
 import type { SoundRecipe } from "../engine/types.ts";
 
 export default {
+  perspective: "close pass", contains: ["short recorded blade air movement"], markers: {"pass": 0.01},
   id: "light-blade-swish", name: "Light Blade Swish", category: "Impacts",
   tags: ["blade", "swish", "whoosh", "melee", "motion"],
   loopable: false, durationSec: 0.34, targetRmsDbfs: -23,

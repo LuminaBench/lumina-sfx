@@ -5,6 +5,7 @@ import source from './_recordings/car-wet-braking-stop.ts';
 import road from './_recordings/car-wet-asphalt-pass.ts';
 
 export default {
+  perspective: "roadside exterior", contains: ["braking on wet asphalt", "rubber catches"], markers: {"skidPeak": 0.56, "catch": 1.02},
   id: "tire-skid-halt",
   name: "Tire skid halt",
   category: "Vehicles & Engines",

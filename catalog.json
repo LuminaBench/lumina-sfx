@@ -50,7 +50,21 @@
       "default": 0
     }
   },
-  "count": 2617,
+  "sceneStyles": {
+    "natural": {},
+    "cinematic": {
+      "size": 0.68,
+      "punch": 0.21,
+      "space": "outdoor_open",
+      "wetness": 0.24
+    },
+    "arcade": {
+      "punch": 0.42,
+      "speed": 1.09,
+      "grit": 0.06
+    }
+  },
+  "count": 2626,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -5448,6 +5462,57 @@
       },
       "channels": 1,
       "file": "recipes/blacksmith-anvil-strike.ts"
+    },
+    {
+      "id": "blade-checks-on-timber",
+      "name": "Blade checks against a timber guard",
+      "category": "Impacts",
+      "markers": {
+        "contact": 0,
+        "recoil": 0.061
+      },
+      "contains": [
+        "dry wood contact",
+        "short grip recoil"
+      ],
+      "perspective": "within reach",
+      "collection": "Scene performances",
+      "tags": [
+        "blade",
+        "checks",
+        "on",
+        "timber"
+      ],
+      "loopable": false,
+      "durationSec": 0.31,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "recording": {
+        "title": "WOODImpt_Large Axe Chopping Small Log_HvD_OwSFX",
+        "author": "Hano_van_Dalen",
+        "url": "https://freesound.org/people/Hano_van_Dalen/sounds/767326/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Leather",
+          "author": "Vendarro",
+          "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/blade-checks-on-timber.ts"
     },
     {
       "id": "blast-across-a-rainy-rooftop",
@@ -10854,6 +10919,15 @@
       "id": "car-keyed-ignition",
       "name": "Car Key and Cabin Ignition",
       "category": "Vehicles & Engines",
+      "markers": {
+        "keyAccent": 0.07,
+        "handoff": 1.2
+      },
+      "contains": [
+        "key turns",
+        "starter cranks"
+      ],
+      "perspective": "inside cabin",
       "collection": "Vehicles · Engines",
       "tags": [
         "car",
@@ -11372,6 +11446,15 @@
       "id": "car-wet-asphalt-pass",
       "name": "Car Passing on Wet Asphalt",
       "category": "Vehicles & Engines",
+      "markers": {
+        "closest": 2.69,
+        "recede": 3.12
+      },
+      "contains": [
+        "wet tire spray",
+        "passing vehicle fades"
+      ],
+      "perspective": "roadside exterior",
       "collection": "Vehicles · Driving",
       "tags": [
         "car",
@@ -25689,6 +25772,57 @@
       "file": "recipes/distant-thunder-across-a-lake.ts"
     },
     {
+      "id": "dive-breaks-the-surface",
+      "name": "Dive breaks the water surface",
+      "category": "Water & Fire",
+      "markers": {
+        "entry": 0,
+        "submerged": 0.25
+      },
+      "contains": [
+        "entry splash",
+        "air escapes underwater"
+      ],
+      "perspective": "crossing waterline",
+      "collection": "Scene performances",
+      "tags": [
+        "dive",
+        "breaks",
+        "the",
+        "surface"
+      ],
+      "loopable": false,
+      "durationSec": 1.25,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -22,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Water Splash",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/434978/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Aquatic sound of some bubble in a swimming pool (underwater recording)",
+          "author": "felix.blume",
+          "url": "https://freesound.org/people/felix.blume/sounds/208816/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/dive-breaks-the-surface.ts"
+    },
+    {
       "id": "dog-barks-from-behind-a-door",
       "name": "Dog barks from behind a door",
       "category": "Animals",
@@ -27725,6 +27859,56 @@
       ],
       "channels": 1,
       "file": "recipes/ducted-fan-scout-lifts-into-transit.ts"
+    },
+    {
+      "id": "duel-air-whistle",
+      "name": "Accented dueling air whistle",
+      "category": "Combat Foley",
+      "markers": {
+        "pass": 0.072
+      },
+      "contains": [
+        "bright rising air accent",
+        "blade rush",
+        "short follow through"
+      ],
+      "perspective": "close pass",
+      "collection": "Scene performances",
+      "tags": [
+        "duel",
+        "air",
+        "whistle"
+      ],
+      "loopable": false,
+      "durationSec": 0.37,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Knife Swing 1_3",
+        "author": "Joao_Janz",
+        "url": "https://freesound.org/people/Joao_Janz/sounds/485267/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Leather",
+          "author": "Vendarro",
+          "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/duel-air-whistle.ts"
     },
     {
       "id": "dull-torso-hit-followed-by-cloth",
@@ -40705,9 +40889,60 @@
       "file": "recipes/grass-footstep.ts"
     },
     {
+      "id": "gravel-check-step-and-turn",
+      "name": "Boot checks its stride and turns on gravel",
+      "category": "Combat Foley",
+      "markers": {
+        "plant": 0,
+        "pivot": 0.27
+      },
+      "contains": [
+        "planted boot",
+        "gravel twisting under sole",
+        "weight shifts away"
+      ],
+      "perspective": "close ground",
+      "collection": "Scene performances",
+      "tags": [
+        "gravel",
+        "check",
+        "step",
+        "and",
+        "turn"
+      ],
+      "loopable": false,
+      "durationSec": 0.79,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps_Mountain_Boots_Gravel_Mono.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/556002/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/gravel-check-step-and-turn.ts"
+    },
+    {
       "id": "gravel-footstep",
       "name": "Gravel Footstep",
       "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0.03
+      },
+      "contains": [
+        "boot on loose gravel"
+      ],
+      "perspective": "close ground",
       "collection": "Studio originals · Footsteps & UI",
       "tags": [
         "gravel",
@@ -42993,6 +43228,58 @@
       "file": "recipes/hand-pump-strokes.ts"
     },
     {
+      "id": "hand-steadies-loose-latch",
+      "name": "Hand steadies a loose latch",
+      "category": "Props & Interactions",
+      "markers": {
+        "slide": 0,
+        "settle": 0.39
+      },
+      "contains": [
+        "latch slides",
+        "chain settles",
+        "soft grip movement"
+      ],
+      "perspective": "within reach",
+      "collection": "Scene performances",
+      "tags": [
+        "hand",
+        "steadies",
+        "loose",
+        "latch"
+      ],
+      "loopable": false,
+      "durationSec": 0.74,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "detail",
+      "recording": {
+        "title": "door lock slide chain rattle.flac",
+        "author": "kyles",
+        "url": "https://freesound.org/people/kyles/sounds/453961/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Leather",
+          "author": "Vendarro",
+          "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/hand-steadies-loose-latch.ts"
+    },
+    {
       "id": "handful-of-sand-on-stone",
       "name": "Handful of Sand on Stone",
       "category": "Impacts",
@@ -43984,6 +44271,13 @@
       "id": "harbor-motor-through-hydrophone-loop",
       "name": "Harbor motor through hydrophone loop",
       "category": "Water & Fire",
+      "markers": {
+        "bed": 0
+      },
+      "contains": [
+        "underwater harbor motor"
+      ],
+      "perspective": "submerged",
       "collection": "Maritime · Motors and deck",
       "tags": [
         "harbor",
@@ -51684,6 +51978,59 @@
       "file": "recipes/knees-strike-and-hands-catch.ts"
     },
     {
+      "id": "knife-pass-by-the-sleeve",
+      "name": "Short knife pass by the sleeve",
+      "category": "Combat Foley",
+      "markers": {
+        "grip": 0,
+        "pass": 0.095
+      },
+      "contains": [
+        "grip shifts",
+        "short blade moves through air",
+        "leather settles"
+      ],
+      "perspective": "first person",
+      "collection": "Scene performances",
+      "tags": [
+        "knife",
+        "pass",
+        "by",
+        "the",
+        "sleeve"
+      ],
+      "loopable": false,
+      "durationSec": 0.46,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Leather",
+        "author": "Vendarro",
+        "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Knife Swing 1_3",
+          "author": "Joao_Janz",
+          "url": "https://freesound.org/people/Joao_Janz/sounds/485267/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/knife-pass-by-the-sleeve.ts"
+    },
+    {
       "id": "knife-prop-sinks-into-a-melon",
       "name": "Knife prop sinks into a melon",
       "category": "Combat Foley",
@@ -53293,6 +53640,13 @@
       "id": "leather-strap-flex",
       "name": "Leather Strap Flex",
       "category": "Props & Interactions",
+      "markers": {
+        "accent": 0.36
+      },
+      "contains": [
+        "leather under tension"
+      ],
+      "perspective": "within reach",
       "collection": "Props · Handheld",
       "tags": [
         "leather",
@@ -53779,6 +54133,13 @@
       "id": "light-blade-swish",
       "name": "Light Blade Swish",
       "category": "Impacts",
+      "markers": {
+        "pass": 0.01
+      },
+      "contains": [
+        "short recorded blade air movement"
+      ],
+      "perspective": "close pass",
       "collection": "World Foley · Motion & Actions",
       "tags": [
         "blade",
@@ -91683,6 +92044,15 @@
       "id": "steel-guardrail-buckles-under-door-scrape",
       "name": "Steel guardrail buckles under door scrape",
       "category": "Vehicles & Engines",
+      "markers": {
+        "scrape": 0,
+        "buckle": 0.35
+      },
+      "contains": [
+        "panel scrapes against rail",
+        "iron flex"
+      ],
+      "perspective": "roadside exterior",
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
         "vehicle",
@@ -91725,6 +92095,58 @@
       ],
       "channels": 1,
       "file": "recipes/steel-guardrail-buckles-under-door-scrape.ts"
+    },
+    {
+      "id": "steel-parry-and-release",
+      "name": "Steel parry with a brief ringing release",
+      "category": "Impacts",
+      "markers": {
+        "contact": 0,
+        "release": 0.24
+      },
+      "contains": [
+        "metal contact",
+        "steel rings briefly",
+        "grip catches"
+      ],
+      "perspective": "within reach",
+      "collection": "Scene performances",
+      "tags": [
+        "steel",
+        "parry",
+        "and",
+        "release"
+      ],
+      "loopable": false,
+      "durationSec": 0.62,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Metal Hit Clang",
+        "author": "dslrguide",
+        "url": "https://freesound.org/people/dslrguide/sounds/321481/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Leather",
+          "author": "Vendarro",
+          "url": "https://freesound.org/people/Vendarro/sounds/399540/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/steel-parry-and-release.ts"
     },
     {
       "id": "steel-patrol-cutter-approach-to-breakwater",
@@ -95393,6 +95815,65 @@
       "file": "recipes/swarm-recedes-into-blossom.ts"
     },
     {
+      "id": "swimmer-breaks-into-air",
+      "name": "Swimmer breaks back into open air",
+      "category": "Water & Fire",
+      "markers": {
+        "surface": 0.2,
+        "drain": 0.52
+      },
+      "contains": [
+        "last submerged bubbles",
+        "surface breaks",
+        "water drains"
+      ],
+      "perspective": "crossing waterline",
+      "collection": "Scene performances",
+      "tags": [
+        "swimmer",
+        "breaks",
+        "into",
+        "air"
+      ],
+      "loopable": false,
+      "durationSec": 1.04,
+      "params": {
+        "force": {
+          "label": "Gesture force",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Aquatic sound of some bubble in a swimming pool (underwater recording)",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/208816/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Splashing Footsteps Shallow Water",
+          "author": "ChristopherJngs",
+          "url": "https://freesound.org/people/ChristopherJngs/sounds/861369/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        },
+        {
+          "title": "water splash",
+          "author": "audiosmedia",
+          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/swimmer-breaks-into-air.ts"
+    },
+    {
       "id": "swinging-chain-gate-fragments-skipping-across",
       "name": "Swinging chain gate — fragments skipping across",
       "category": "Weapons",
@@ -98543,6 +99024,15 @@
       "id": "tire-skid-halt",
       "name": "Tire skid halt",
       "category": "Vehicles & Engines",
+      "markers": {
+        "skidPeak": 0.56,
+        "catch": 1.02
+      },
+      "contains": [
+        "braking on wet asphalt",
+        "rubber catches"
+      ],
+      "perspective": "roadside exterior",
       "collection": "Vehicles · Load and close mechanisms",
       "tags": [
         "tire",
@@ -108652,6 +109142,47 @@
       "file": "recipes/wet-rope-coil-dropped-onto-boards.ts"
     },
     {
+      "id": "wet-tire-contact-patch-loop",
+      "name": "Wet tire sliding under load",
+      "category": "Vehicles & Engines",
+      "markers": {
+        "scrub": 0
+      },
+      "contains": [
+        "loaded tire rubbing wet pavement"
+      ],
+      "perspective": "roadside exterior",
+      "collection": "Scene performances",
+      "tags": [
+        "wet",
+        "tire",
+        "slip",
+        "skid",
+        "sustained"
+      ],
+      "loopable": true,
+      "durationSec": 0.69,
+      "params": {
+        "pressure": {
+          "label": "Tire pressure on road",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "abrupt stopping car on wet ground.aif",
+        "author": "Ermens",
+        "url": "https://freesound.org/people/Ermens/sounds/199525/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/wet-tire-contact-patch-loop.ts"
+    },
+    {
       "id": "wheel-arch-throws-a-sheet-of-spray",
       "name": "Wheel Arch Throws a Sheet of Spray",
       "category": "Vehicles & Engines",
@@ -111782,6 +112313,13 @@
       "id": "wooden-chest-latch-release",
       "name": "Wooden Chest Latch Release",
       "category": "Props & Interactions",
+      "markers": {
+        "accent": 0.41
+      },
+      "contains": [
+        "latch release"
+      ],
+      "perspective": "within reach",
       "collection": "Props · Doors & Storage",
       "tags": [
         "chest",
@@ -112538,6 +113076,13 @@
       "id": "working-motorboat-steady-offshore-loop",
       "name": "Working motorboat steady offshore loop",
       "category": "Water & Fire",
+      "markers": {
+        "handoff": 1.48
+      },
+      "contains": [
+        "steady motor heard offshore"
+      ],
+      "perspective": "above water",
       "collection": "Maritime · Motors and deck",
       "tags": [
         "working",
