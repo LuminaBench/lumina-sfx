@@ -1,3 +1,13 @@
+Lumina SFX — Split License
+
+Choose the terms for the material you use. A game that bundles both the
+runtime and sound recipes uses both parts of this license.
+
+1. Code and documentation — MIT
+
+The MIT text below covers engine/, scripts/, adapters/, SKILL.md and the
+project's other software, tests and documentation outside the sound library.
+
 MIT License
 
 Copyright (c) 2026 LuminaBench contributors
@@ -19,3 +29,39 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+2. Sound library — Lumina Open Game Audio License 1.0
+
+Copyright (c) 2026 LuminaBench contributors.
+
+Scope. This part covers the original Lumina sound designs and arrangements
+in recipes/, the original library material in sources/, and the selection
+and arrangement of catalog.json. It also covers those creative contributions
+when embodied in rendered audio or modified versions.
+
+What you can do. You have a worldwide, non-exclusive, royalty-free license
+to download, copy, render, edit, layer and synchronize these sounds in
+personal or commercial games, apps, videos and interactive demos. You may
+ship, sell, stream or monetize those projects and their updates, including
+the recipes or audio files they need at runtime. Your team and contractors
+may share working copies to make and maintain those projects. You may also
+fork the repository to contribute improvements. No audio attribution or
+credit screen is required. A mention of Lumina SFX is appreciated.
+
+What you cannot do under this license. You may not redistribute, rebrand
+or resell the recipe bank or a collection of its rendered sounds as a
+competing SFX pack, sample library, training dataset or Agent Skill. This
+applies to free and paid offerings, including renamed, modified or
+reformatted collections. For example, a game may include hundreds of
+working sound assets. Offering those assets as a downloadable sound pack
+for other developers requires separate permission from the rights holders.
+
+Source recordings. Third-party recordings retain their original terms,
+identified in sources/recordings.json. CC0 and public-domain material
+remains independently available under those terms. This license grants
+only rights held by the Lumina contributors. Earlier releases remain
+available under the terms under which they were distributed.
+
+The sound library is provided as is, without warranty. To the extent
+permitted by law, the contributors are not liable for damages arising
+from its use.

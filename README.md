@@ -1,56 +1,71 @@
 # Lumina SFX
 
-Give a coding agent a game event and an acoustic brief. Lumina SFX gives it **2,617 searchable sound recipes**, a CPU renderer, and the tools to deliver just the sounds that game uses. Recipes combine original TypeScript synthesis and credited recording excerpts. A fixed seed reproduces the same performance offline.
+Describe what a player should hear, from a boot on gravel to a storm rolling in over the sea.<br>
+Your coding agent can find a sound, layer a new one and deliver it to your game with an offline CPU renderer.
 
-## Install the skill
+![2,617 Sounds](https://img.shields.io/badge/2%2C617-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
 
-With Node.js 22.12+ installed, run:
+## Quick Start
+
+With Node.js 22.12 or newer and Git installed, run this once and select your coding agent.
 
 ```sh
 npx skills add LuminaBench/lumina-sfx -g
 ```
 
-The installer downloads the public skill from GitHub. Select your coding agent during installation, then open a fresh session in your game project. Update a CLI-managed installation with `npx skills update -g`. Remove it with `npx skills remove lumina-sfx -g`. The game retains any recipes and audio you already copied into it.
+Open a fresh agent session in your project and ask it to use `lumina-sfx`. Your players only need the audio or runtime your game ships.
 
-## Ask your agent
-
-- “Use lumina-sfx in Wakefall. Play a quiet seed drop when planting succeeds, vary it across the row, and let rain sit behind it.”
-- “Find a jet passing low over water. Keep the engine in front, let the spray arrive a moment later, and export a WAV for my Godot scene.”
-- “Give my crafting menu a short mechanical confirmation. Combine a muted switch and a softer return, test the mix, and wire it to successful crafts.”
-
-The agent searches the catalog by event, material, perspective and loop state. Each result gives it a stable ID, editable controls and, where applicable, recording credits. It can install the original, sculpt one cue, stack up to four, or write a new recipe. The game triggers the resulting code or imported audio at the relevant event. Rendering and playback use local CPU resources.
-
-## Run it yourself
-
-For a full studio checkout, run `git clone https://github.com/LuminaBench/lumina-sfx.git`. Run the following from that checkout or the installed skill directory. The core tools use Node's standard library.
+**Update installed global skills**
 
 ```sh
-node scripts/search.mjs seed planting
-npm run --silent qa -- plant-large-seeds
-node scripts/install-sfx.mjs plant-large-seeds light-rain-loop --project /path/to/game
-node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --space small_room --wetness 0.25 --format wav --dest /path/to/game/audio
+npx skills update -g
 ```
 
-QA writes the 44.1 kHz, 16-bit preview to `qa/output/master-wav/plant-large-seeds.wav` and reports its checksum. Use `LUMINA_QA_OUTPUT` to put large renders elsewhere. Choose `--format ts` for an editable recipe with its source dependencies. WAV works offline with Node alone. Ogg Vorbis and Opus additionally use a local FFmpeg build with the matching encoder.
+**Remove Lumina SFX**
 
-| Game target | Selective install |
+```sh
+npx skills remove lumina-sfx -g
+```
+
+## What You Can Ask Your AI
+
+- “Find three short menu clicks for my browser game. Give me WAV previews so I can pick the one that feels right.”
+- “Build a coastal storm for my indie RPG. Start with waves and wind, bring in a sharp thunderclap after four seconds, then let a softer rumble roll away.”
+- “Install grass and gravel footsteps in my Godot scene. Trigger them when a foot lands and vary each step so walking sounds natural.”
+
+## Supported Engines
+
+| Target | What goes into your project |
 | --- | --- |
-| Web / Three.js | Web Audio playback helper and WAV pools under `public/lumina-sfx`, editable recipes in `src/lumina-sfx` |
-| Godot 4 | GDScript helper and WAVs under `res://lumina_sfx/` |
-| Unity | C# component and three-variant pools under `Assets/Resources/LuminaSfx/` |
-| Unreal Engine 5 | Runtime plugin and WAVs under `Content/LuminaSfx/` for Sound Wave import |
-| Python / Pygame | Python helper and WAVs in `lumina_sfx/` |
-| WAV only | Audio variants and checksum manifest in `audio/lumina-sfx/` |
+| Web / Three.js | Web Audio player, editable TypeScript recipes and WAV variants |
+| Godot 4 | GDScript playback helper and WAVs |
+| Unity | C# component and WAVs for AudioClips |
+| Unreal Engine 5 | Runtime plugin and WAVs for Sound Wave import |
+| Python / Pygame | Mixer helper and WAV variants |
+| WAV | Audio files and a checksum manifest for any compatible editor or engine |
 
-Set `--engine web|godot|unity|unreal|python|wav` explicitly, or point `--project` at a project with engine markers. A bare directory defaults to web. Each adapter includes its own scene hookup example. The balanced game profile leaves headroom for foreground actions over ambient loops.
+<details>
+<summary>CLI commands for search, remix, export and QA</summary>
 
-## Verify a build
+Run these from the installed skill directory or a clone of this repository. Replace the example game paths with your own.
 
 ```sh
-npm run --silent qa -- all --both-levels --extremes --jobs 6 > /tmp/lumina-qa-report.json
-npm run bank
+node scripts/search.mjs rain --loop
+node scripts/remix.mjs plant-large-seeds --id greenhouse-seeds --space small_room --wetness 0.25 --format wav --dest /path/to/game/audio
+node scripts/install-sfx.mjs grass-footstep gravel-footstep --engine godot --project /path/to/game
+npm run --silent qa -- grass-footstep --both-levels --extremes
 ```
 
-QA tests four seeds at the default, minimum and maximum controls. It measures peaks, active loudness, transient onset, loop continuity and specified frequency bands. The release checksums cover all masters. The optional Opus bank exporter verifies each approved WAV checksum and decodes every encoded file to check its length. See [release measurements](qa/release-masters.json), [agent workflow](SKILL.md), [sound-design cookbook](references/sound-design-cookbook.md), and [recording provenance](sources/recordings.json).
+QA writes a 44.1 kHz, 16-bit preview under `qa/output/master-wav/` and checks peak level, loudness, onset and applicable loop boundaries. WAV and editable TypeScript exports run offline with Node alone. Ogg Vorbis and Opus use a local FFmpeg encoder.
 
-Studio listening tools and personal votes live on the maintainer's machine. Local Y/N review tracks taste separately from technical QA. Code is available under the [MIT license](LICENSE). Recording excerpts carry the licenses and credits in the source inventory.
+For per-layer gain, timing and sound-design controls, see the [agent workflow](SKILL.md) and [sound-design cookbook](references/sound-design-cookbook.md).
+
+</details>
+
+## License
+
+You can render, modify and ship the sounds in personal or commercial games, apps, videos and demos for free, with no royalties or audio credit required. The engine and tools use MIT, and the sound library license prohibits redistributing, rebranding or reselling the bank or rendered collections as a competing SFX pack, sample library, training dataset or Agent Skill. [Full license](LICENSE)
+
+---
+
+**Support** · [LuminaBench](https://luminabench.com) · [About GitHub Sponsors](https://github.com/sponsors)

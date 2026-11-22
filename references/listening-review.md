@@ -8,7 +8,7 @@ The [catalog](../catalog.json) describes the full library. [Queue tickets](../ta
 - Weather is a proven family in this studio. Start from `light-rain-loop`, `heavy-storm-rain-loop`, `howling-wind-loop`, and `close-lightning-thunder`. Vary surface, drop density, gust pacing, distance, and perspective. Keep beds irregular and protect the loop seam.
 - Preserve the difference between a quiet texture and a loud event. Use `targetRmsDbfs` when a cue needs a deliberate level relative to its peers. Keep playback and export at the same target.
 - Make each new candidate recognizable by its timing or material in an audio-only audition. Give gun reports a clear transient, give crashes separate impact and material phases, and give animal calls species-specific phrasing. For futuristic devices and energy weapons, author original timbres and cues.
-- Prioritize one clear game event per cue. For Wakefall start with quiet seed handling, planting, watering, picking, crop prep, livestock care, and farm habitats. Use nearby accepted recordings as references. Keep the [roadmap](../tasks/ROADMAP.md) and collection sizes in view.
+- Prioritize one clear game event per cue. For a farming game, start with quiet seed handling, planting, watering, picking, crop prep, livestock care, and farm habitats. Use nearby accepted recordings as references. Group these cues by the actions a player performs together.
 - Run per-sound QA and test parameter limits before marking a candidate `review`. Generate the catalog after adding or changing recipes.
 
 ## Use recorded audio

@@ -13,3 +13,6 @@ sources/raw/
 *.wav
 *.ogg
 *.opus
+
+# Local studio planning notes
+/tasks/*.md
