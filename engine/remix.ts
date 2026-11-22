@@ -1,6 +1,7 @@
 import { defaultSceneRole, sceneMoods } from './scene-mood.ts';
 import type { SceneMood, SceneRole } from './scene-mood.ts';
-import { biquad } from './dsp.ts';
+import { measureLevel } from './levels.ts';
+import { biquad, dbToGain } from './dsp.ts';
 import { renderChannels } from './render.ts';
 import { renderDurationSec, resolveMacros } from './sculpt.ts';
 import type {
@@ -51,6 +52,7 @@ function automation(points: Curve, power: boolean) {
 export interface RemixLayer {
   recipe: SoundRecipe;
   role?: SceneRole;
+  under?: { layer: number | string; byDb: number };
   paramsByMood?: Partial<Record<SceneMood, Readonly<Record<string, number>>>>;
   tune?: { sourceHz: number; intervalSemitones?: number };
   fromMarker?: string;
@@ -113,12 +115,14 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       throw Error('Anchor must reference an earlier layer');
     return n;
   }
+  const referencedLevels = new Set<number>();
   const fades = layers.map(() => ({ incoming: 0, outgoing: 0 }));
   const tracks = layers.map(
     (
       {
         recipe,
         role = defaultSceneRole(recipe),
+        under,
         paramsByMood,
         tune,
         macros,
@@ -136,6 +140,20 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       },
       index,
     ) => {
+      // An explicitly supporting wind bed can otherwise mask the listener's subject.
+      // An authored gain (including unity) or an explicit level relationship takes precedence.
+      if (under === undefined && layers[index].gain === undefined && layers[index].role === 'bed' && recipe.loopable &&
+          recipe.tags.some(tag => tag === 'wind' || tag === 'breeze')) {
+        const focus = layers.slice(0, index).findIndex(layer => layer.role === 'focus');
+        if (focus >= 0) under = { layer: focus + 1, byDb: 16 };
+      }
+      let relativeTo: number | undefined;
+      if (under !== undefined) {
+        if (!under || !Number.isFinite(under.byDb) || under.byDb < 0 || under.byDb > 60)
+          throw Error('under.byDb must be between 0 and 60');
+        relativeTo = earlierLayer(under.layer, index);
+        referencedLevels.add(relativeTo);
+      }
       if (!Object.hasOwn(sceneMoods[mood], role)) throw Error('Unknown scene layer role');
       const [moodGain, cutoffHz] = sceneMoods[mood][role];
       if (mood === 'dramatic' && role !== 'bed' && (macros?.punch ?? recipe.macros?.punch) === undefined) {
@@ -241,7 +259,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
           throw Error('Invalid muffle filter or envelope');
         validateCurve(muffle.envelope, limit, 1);
       }
-      return { recipe, gain: gain * moodGain, cutoffHz, offsetSec, macros, start, length, span, envelope, muffle };
+      return { recipe, relativeTo, byDb: under?.byDb ?? 0, gain: gain * moodGain, cutoffHz, offsetSec, macros, start, length, span, envelope, muffle };
     },
   );
   if (
@@ -260,6 +278,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
 
   function mix(ctx: RenderContext, opts: ResolvedOptions, stereoOut: boolean) {
     const output = Array.from({ length: stereoOut ? 2 : 1 }, () => new Float32Array(ctx.frames));
+    const activeLevels = new Map<number, number>();
     for (const [index, track] of tracks.entries()) {
       if (!track.gain) continue;
       const controls = Object.fromEntries(
@@ -275,6 +294,10 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       const frames =
         track.recipe.loopable && track.span === undefined ? ctx.frames : Math.round(track.length * ctx.sampleRate);
       const length = Math.min(frames, ctx.frames - offset);
+      // Meter just the rendered stem window, including automation and the actual source take.
+      const metered = referencedLevels.has(index) || track.relativeTo !== undefined;
+      const target = metered ? output.map(() => new Float32Array(length)) : output;
+      const destOffset = metered ? 0 : offset;
       const gainCurve = track.envelope.length ? automation(track.envelope, true) : undefined;
       const wetCurve = track.muffle && automation(track.muffle.envelope, false);
       const filters =
@@ -308,11 +331,21 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         if (start) gain *= Math.min(1, i / edge);
         if (track.span !== undefined) gain *= Math.min(1, (length - 1 - i) / edge);
         if (stereoOut) {
-          output[0][offset + i] += gain * left;
-          output[1][offset + i] += gain * right;
+          target[0][destOffset + i] += gain * left;
+          target[1][destOffset + i] += gain * right;
         } else {
           const mono = audio.length === 1 ? left : (left + right) * 0.5;
-          output[0][offset + i] += gain * mono;
+          target[0][destOffset + i] += gain * mono;
+        }
+      }
+      if (metered) {
+        const level = Math.max(...target.map(channel => measureLevel(channel, ctx.sampleRate).activeDb));
+        const reference = track.relativeTo === undefined ? Infinity : activeLevels.get(track.relativeTo) ?? -Infinity;
+        const trimDb = Math.min(0, reference - track.byDb - level);
+        activeLevels.set(index, level + trimDb);
+        const trim = dbToGain(trimDb);
+        for (let ch = 0; ch < target.length; ch++) {
+          for (let i = 0; i < length; i++) output[ch][offset + i] += target[ch][i] * trim;
         }
       }
     }

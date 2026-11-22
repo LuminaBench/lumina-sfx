@@ -26,6 +26,8 @@ In the catalog, each mood and role lists its relative linear gain and low-pass c
 
 Mark a layer's `role` when the story differs from its default. An ordinary loop defaults to bed, an impact to accent, and most other one-shots to focus. A fire loop beside the listener can be the focus. Use `paramsByMood` to change what the subject actually does. For example, the beach template changes the fire's spark activity and the thunder's native distance. Base `params` apply first, then the selected mood's named values. Explicit punch controls take precedence over the dramatic transient treatment. Normal mastering still applies after the layers are mixed.
 
+For a measured level gap between a supporting layer and a foreground sound, use the [two-layer fire example and relative-level control](launch-audio.md).
+
 ## Join textures and preserve physical contacts
 
 Use a linked crossfade when one sustained texture takes over from another. Label the first layer, give a loop a finite `durationSec`, and attach the second using `"afterLayer": {"layer":"shore","crossfadeSec":1.6}`. The second layer starts before the first ends. The two gain curves are linked with an equal-power taper. Start with several hundred milliseconds for rain or motors and adjust by ear. For copies of the same recording, listen for a level swell or phase cancellation in mono. An ordinary cut or a hand-shaped envelope may work better there.

@@ -266,5 +266,25 @@
     "file": "references/scenes/beach-fire-weather-front.json",
     "loopable": false,
     "durationSec": 12
+  },
+  {
+    "id": "fireside-distant-thunder",
+    "name": "Close fire in a distant thunderstorm",
+    "category": "Weather",
+    "tags": [
+      "fire",
+      "campfire",
+      "thunderstorm",
+      "thunder",
+      "crackle",
+      "storm",
+      "quiet",
+      "distant",
+      "simple"
+    ],
+    "kind": "design",
+    "file": "references/scenes/fireside-distant-thunder.json",
+    "loopable": false,
+    "durationSec": 10
   }
 ]

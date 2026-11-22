@@ -3,7 +3,7 @@
 Describe what a player should hear, from a boot on gravel to a storm rolling in over the sea.<br>
 Your coding agent can find a sound, layer a new one and deliver it to your game with an offline CPU renderer.
 
-![2,642 Sounds](https://img.shields.io/badge/2%2C642-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
+![2,844 Sounds](https://img.shields.io/badge/2%2C844-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
 
 ## Quick Start
 
@@ -36,6 +36,8 @@ npx skills remove lumina-sfx -g
 - “Install grass and gravel footsteps in my Godot scene. Trigger them when a foot lands and vary each step so walking sounds natural.”
 
 Render the same beach fire as a quiet rest stop or an approaching storm. The editable scene changes spark activity, thunder distance and layer balance while keeping its timing. [Mood mixing and crossfades](references/scene-intent.md)
+
+Choose from 200 isolated launch-video cues, including mechanical and office keyboards, device clicks, and directional swipes. [Launch audio and foreground mixing](references/launch-audio.md)
 
 ## Supported Engines
 

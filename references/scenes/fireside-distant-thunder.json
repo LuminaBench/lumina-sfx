@@ -1,0 +1,14 @@
+{
+  "id": "fireside-distant-thunder",
+  "name": "Close fire in a distant thunderstorm",
+  "layers": [
+    {
+      "id": "campfire-crackle-loop", "label": "fire", "role": "focus", "durationSec": 10,
+      "params": { "sparks": 0.53 }, "envelope": [[0, 1], [9.5, 1], [10, 0]]
+    },
+    {
+      "id": "distant-rolling-thunder", "role": "bed", "offsetSec": 2.2,
+      "params": { "distance": 0.76 }, "under": { "layer": "fire", "byDb": 7 }
+    }
+  ]
+}

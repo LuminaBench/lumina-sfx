@@ -1,0 +1,14 @@
+import { editorContact } from './_shared/editor-contact.ts';
+import attack from './_recordings/isolated-milestone-key-single.ts';
+
+export default editorContact(
+  "gasket-mount-keyboard-typed-word", "Gasket-mounted keyboard four-letter word",
+  ["keyboard", "key", "launch", "video", "mechanical", "soft", "thock", "typing", "text", "word", "burst"], 0.448, attack,
+  {"bodyHz": 240, "decayMs": 18, "cutoffHz": 4600, "snap": 0.86, "rattle": 0.018},
+  [
+    {"at": 0, "weight": 0.88, "pitch": 1.06},
+    {"at": 0.106, "weight": 1, "pitch": 0.93},
+    {"at": 0.184, "weight": 0.76, "pitch": 1.14},
+    {"at": 0.328, "weight": 0.94, "pitch": 0.97}
+  ],
+);

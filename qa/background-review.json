@@ -652,6 +652,7 @@
     },
     {
       "id": "shallow-puddles-to-wood-planks-walking-transition",
+      "supersededReason": "The plank performance was revised to remove the barn creak after this listening review.",
       "decision": "preserved",
       "masterSha256": "2ccd09133f32b07b096b3176d0e2ad99becdeccc1814218229fcf103796a77f8",
       "variantsSha256": "9a1e3e47c3ad18106022a73e1cc481ef9b1c80edd47f71af1fc2c8361b71fb0b"

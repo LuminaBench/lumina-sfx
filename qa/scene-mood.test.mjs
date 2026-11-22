@@ -67,3 +67,28 @@ for (const [query,id,mood] of [['relaxing surf','quiet-surf','calm'],['intense s
 assert.equal(rankByIntent(documents,'calm surf not dramatic')[0].suggestedMood,'calm');
 assert.equal(rankByIntent(documents,'calm surf then dramatic surf')[0].suggestedMood,undefined);
 console.log('Passed mood retrieval, native controls, equal-power overlaps at three sample rates and measured harmonic tuning.');
+
+// The cap follows the rendered foreground level and never lifts an already quiet bed.
+function rawMix(layers) {
+  return compose(layers).render({ frames: 44100, sampleRate: 44100, random: () => .5 }, { seed: 1, params: {} });
+}
+const reference = {...first, gain: .38};
+const unbounded = rawMix([reference, second]);
+const focus = rawMix([reference]);
+const below = {layer:'first',byDb:16};
+const capped = rawMix([reference, {...second, under:below}]);
+const { measureLevel } = await import('../engine/levels.ts');
+const db = pcm => measureLevel(pcm,44100).activeDb;
+const difference = (a,b) => a.map((x,i) => x - b[i]);
+assert.ok(db(difference(unbounded, focus)) > db(focus) - 16);
+assert.ok(Math.abs(db(difference(capped, focus)) - db(focus) + 16) < .02);
+const quiet = {...second, gain:.01};
+const quietDifference = difference(rawMix([reference, quiet]),rawMix([reference,{...quiet,under:below}]));
+assert.ok(quietDifference.every(sample => Math.abs(sample) < 1e-7));
+assert.deepEqual(rawMix([{...reference,gain:0},{...second,under:below}]),new Float32Array(44100));
+assert.throws(() => compose([first,{...second,under:{layer:'missing',byDb:9}}]), /earlier layer/);
+assert.throws(() => compose([first,{...second,under:{layer:'first',byDb:-5}}]), /byDb/);
+const fire = {...reference, role:'focus'};
+const breeze = {recipe:{...second.recipe,loopable:true,tags:['breeze']},role:'bed',durationSec:1};
+assert.deepEqual(rawMix([fire,breeze]),rawMix([fire,{...breeze,under:below}]));
+assert.ok(db(difference(rawMix([fire,{...breeze,gain:1}]),rawMix([fire]))) > db(rawMix([fire])) - 10);

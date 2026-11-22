@@ -16,6 +16,7 @@ const layerKeys = [
   'design',
   'gain',
   'role',
+  'under',
   'paramsByMood',
   'tune',
   'params',
@@ -56,6 +57,7 @@ export async function loadDesign(input, directory = process.cwd(), mood) {
       fields(layer, 'layer', layerKeys);
       const { id, design: nested, ...settings } = layer;
       if ((id === undefined) === (nested === undefined)) throw Error('Each layer needs one id or design');
+      if (settings.under !== undefined) fields(settings.under, 'relative level', ['layer', 'byDb']);
       if (settings.tune !== undefined) fields(settings.tune, 'tuning', ['sourceHz', 'intervalSemitones']);
       if (settings.paramsByMood !== undefined) fields(settings.paramsByMood, 'mood parameters', ['calm', 'dramatic', 'neutral']);
       if (settings.params !== undefined) fields(settings.params, 'params');

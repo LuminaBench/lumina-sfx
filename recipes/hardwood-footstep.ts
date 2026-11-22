@@ -4,7 +4,8 @@ import recording from './_recordings/hardwood-footstep.ts';
 
 export default {
   id: 'hardwood-footstep', name: 'Hardwood Floor Footstep', category: 'Footsteps & UI',
-  tags: ['footstep', 'wood', 'boards', 'heel', 'shoe', 'walk', 'foley', 'cc0'],
+  contains: ['single complete indoor footstep'], perspective: 'inside a house',
+  tags: ['floor', 'indoor', 'single', 'footstep', 'wood', 'boards', 'heel', 'shoe', 'walk', 'foley', 'cc0'],
   loopable: false, durationSec: 0.272, targetRmsDbfs: -24,
   params: { pace: { label: 'Pace', min: 0, max: 1, default: 0.5 } },
   recording: recording.credit,

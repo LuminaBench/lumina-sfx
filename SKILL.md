@@ -1,6 +1,6 @@
 ---
 name: lumina-sfx
-description: Find, sculpt, layer, invent and verify offline game sound effects. Use for tactile menus, non-vocal alerts, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
+description: Find, sculpt, layer, invent and verify offline game sound effects. Use for launch videos, keyboards, swipes, tactile menus, non-vocal alerts, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
 # Lumina SFX
@@ -35,6 +35,8 @@ node scripts/install-sfx.mjs plant-large-seeds --engine wav --dest /absolute/pat
 Supported explicit engines are `web`, `godot`, `unity`, `unreal`, `python` and `wav`. Check the installed adapter's README for scene setup. For a source-only TypeScript installation in a web game use `node scripts/install-sfx.mjs plant-large-seeds --dest /absolute/path/to/game/src/audio`. The importer copies shared dependencies once and detects conflicting edits. Installed audio is a game-owned snapshot.
 
 ## 2. Sculpt and remix
+
+Try the closest complete performance on its own. Search results are alternatives. Add a layer only for a distinct requested action, missing timing cue or audible perspective. A wooden-floor step already includes the sole. Start a fireside thunderstorm with fire and thunder; give optional wind an explicit `under` level relative to the fire. For keyboard and pointer gestures, transition sync points, and measured background levels, see [launch audio](references/launch-audio.md).
 
 Start a scene by identifying its foreground, listener position, background and emotional change. Use a `calm` or `dramatic` mood with an explicit layer role and native performance controls when appropriate. For a sustained handoff, join two layers with `afterLayer.crossfadeSec`. Tune pitched layers to a shared `tonicHz` only when their source pitches are known. Check the same seed and timing in both moods. [Scene intent, tuning and blind comparisons](references/scene-intent.md)
 
