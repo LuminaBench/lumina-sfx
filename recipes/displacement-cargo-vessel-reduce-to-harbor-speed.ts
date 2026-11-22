@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/motion-harbor-hydrophone.ts';
-import loaded from './_recordings/motion-marine-engine.ts';
+import idle from './_recordings/isolated-motion-harbor-hydrophone.ts';
+import loaded from './_recordings/isolated-motion-marine-engine.ts';
 
 export default {
+  isolation: 'isolated',
   id: 'displacement-cargo-vessel-reduce-to-harbor-speed',
   name: 'Displacement cargo vessel reduce to harbor speed',
   category: 'Vehicles & Engines',

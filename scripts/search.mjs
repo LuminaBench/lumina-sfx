@@ -3,12 +3,12 @@ import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 
 const { values, positionals } = parseArgs({
-  options: { votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
+  options: { isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
   allowPositionals: true,
 });
 
 if (values.help) {
-  console.log('Usage: node scripts/search.mjs [terms…] [--category <name>] [--collection <name>] [--loop] [--votes listening-export.json] [--json]');
+  console.log('Usage: node scripts/search.mjs [terms…] [--category <name>] [--collection <name>] [--loop] [--isolated] [--votes listening-export.json] [--json]');
 } else {
   const catalog = JSON.parse(await readFile(new URL('../catalog.json', import.meta.url), 'utf8'));
   const terms = positionals.join(' ').toLowerCase().split(/\s+/).filter(Boolean);
@@ -17,7 +17,7 @@ if (values.help) {
     return terms.every((term) => text.includes(term)) &&
       (!values.category || sound.category.toLowerCase().includes(values.category.toLowerCase())) &&
       (!values.collection || sound.collection?.toLowerCase().includes(values.collection.toLowerCase())) &&
-      (!values.loop || sound.loopable);
+      (!values.loop || sound.loopable) && (!values.isolated || sound.isolation === 'isolated');
   });
   if (values.votes) {
     const review = JSON.parse(await readFile(values.votes, 'utf8'));

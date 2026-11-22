@@ -18,6 +18,8 @@ Use the recipient game's event hooks to select and play a small set of cues. Sta
 | An explosion occurs | `close-alley-explosion-concrete-debris` | Pick material and perspective, such as plate glass, earth, a metal bulkhead, or a distant tunnel. |
 | Reload animation needs a close Foley cue | `carbine-prop-reload-quick-soft-polymer-seat` | Align the cue's contact to the animation marker. |
 
+Use `flight-radar-acquiring`, `radar-hard-lock-warning-dry-double-burst` and `flight-radar-contact-lost` for electronic state changes. Reserve tactile console clicks for a player actually pressing a control.
+
 ## Collections
 
 - **Feedback · Menu and interaction** and **Feedback · Elimination and combat** cover compact physical responses, hitmarkers, and distinct elimination stamps.

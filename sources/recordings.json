@@ -3020,6 +3020,168 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-atlas-firecracker.ts",
+      "title": "Firecracker Explosion",
+      "author": "unfa",
+      "url": "https://freesound.org/people/unfa/sounds/609588/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1088,
+          "sha256": "7a33cefc40529a7f4698a7d563a6b3dcc9d44e4bbc47bfb587805e5c19991f0c"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-clarity-pistol.ts",
+      "title": "Baretta_22_ pistol _shots_1",
+      "author": "TheGreenEyedGhost",
+      "url": "https://freesound.org/people/TheGreenEyedGhost/sounds/707777/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 36000,
+      "takes": [
+        {
+          "frames": 1224,
+          "sha256": "55f97349b54f433c0ee29fdadfcf3209691aab18ca79f16b6cbf1c4f6b2f5964"
+        },
+        {
+          "frames": 1224,
+          "sha256": "00bec601d2a5129381c7f2e6461b2754eee8062f7c9f8470e5e1392e53e18038"
+        },
+        {
+          "frames": 1224,
+          "sha256": "903ac07717f88ec7de2a2de5c3fa17732862c0f86bbcee8179efea51a7adc6bf"
+        },
+        {
+          "frames": 1224,
+          "sha256": "8e5aafe101d3b5e544f397740e3edd098b60591c0095c12488966edc64284589"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-demo-fighter-rise.ts",
+      "title": "F16 takeoff 1.WAV",
+      "author": "Sandermotions",
+      "url": "https://freesound.org/people/Sandermotions/sounds/275990/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "454671dffa4122f276b8d7019d832f296138335fb7387094a0cc1c59e50ac15c"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-demo-turbine-idle.ts",
+      "title": "F16 fighter jet start up.aif",
+      "author": "ikbenraar",
+      "url": "https://freesound.org/people/ikbenraar/sounds/322178/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "3f26c3da21e010ac94d46d2cd0b268ff26b9c23ab9709f9c29849a8293711322"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-motion-flatboat-throttle.ts",
+      "title": "River boat with outboard engine (at changing speeds)",
+      "author": "nomadas",
+      "url": "https://freesound.org/people/nomadas/sounds/690160/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "c494ed9d31bf573daa65235e57b31bd1a81d742ae627cff0b45caffa31e61f55"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-motion-harbor-hydrophone.ts",
+      "title": "140816_Brela_HarborSub2.wav",
+      "author": "blaukreuz",
+      "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "8fc09cb48e6a5972fe26f3415eda2d0bce810a4e1fa1db6a5e2cb3bdaf22beb2"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-motion-marine-engine.ts",
+      "title": "Boat engine.wav",
+      "author": "XiiiSamples",
+      "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "e3d435c95febe4873f118a70b8c7def77c51ae784ca730edbba0709e45600de6"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-motion-outboard-aeration.ts",
+      "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
+      "author": "kyles",
+      "url": "https://freesound.org/people/kyles/sounds/637203/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "2984346c0a77c680b03dd2835e82b53b1b96b1108ee64e64114503e4b61fa6e3"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-motion-outboard-cranking.ts",
+      "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
+      "author": "kyles",
+      "url": "https://freesound.org/people/kyles/sounds/637203/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "f30b94b00b354a6cc528c275ba11bfd452e9581e5b8e29666a463f4b7378565e"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-response-diesel-loaded.ts",
+      "title": "Diesel engine idle and gas",
+      "author": "Iridiuss",
+      "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "643a74dcd77ea355d266266c758e5ade5dfb2f7285367044655f4fbc48a39351"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/jacket-movement-rustle.ts",
       "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
       "author": "Nox_Sound",

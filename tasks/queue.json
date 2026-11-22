@@ -11500,7 +11500,8 @@
       "durationSec": 6,
       "mixRole": "ambience",
       "status": "review",
-      "loopable": true
+      "loopable": true,
+      "revision": 2
     },
     {
       "id": "planing-hull-bow-slap-to-spray",
@@ -11620,7 +11621,8 @@
       "durationSec": 6.25,
       "mixRole": "vehicle",
       "status": "review",
-      "loopable": true
+      "loopable": true,
+      "revision": 2
     },
     {
       "id": "outboard-primer-cranks-and-catches",
@@ -12820,7 +12822,8 @@
       "durationSec": 0.63,
       "mixRole": "interface",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "terrain-proximity-warning-rough-buzz",
@@ -16009,7 +16012,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.85,
       "loopable": false,
-      "brief": "Displacement cargo vessel approach to breakwater"
+      "brief": "Displacement cargo vessel approach to breakwater",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-departure-beyond-harbor-mouth",
@@ -16018,7 +16022,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.63,
       "loopable": false,
-      "brief": "Displacement cargo vessel departure beyond harbor mouth"
+      "brief": "Displacement cargo vessel departure beyond harbor mouth",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop",
@@ -16027,7 +16032,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.65,
       "loopable": true,
-      "brief": "Displacement cargo vessel enclosed wheelhouse vibration loop"
+      "brief": "Displacement cargo vessel enclosed wheelhouse vibration loop",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-harbor-idle-machinery-loop",
@@ -16036,7 +16042,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.24,
       "loopable": true,
-      "brief": "Displacement cargo vessel harbor idle machinery loop"
+      "brief": "Displacement cargo vessel harbor idle machinery loop",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-loaded-shaft-propulsion-loop",
@@ -16045,7 +16052,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.47,
       "loopable": true,
-      "brief": "Displacement cargo vessel loaded shaft propulsion loop"
+      "brief": "Displacement cargo vessel loaded shaft propulsion loop",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-passage-cruise-loop",
@@ -16054,7 +16062,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.95,
       "loopable": true,
-      "brief": "Displacement cargo vessel passage cruise loop"
+      "brief": "Displacement cargo vessel passage cruise loop",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-reduce-to-harbor-speed",
@@ -16063,7 +16072,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 1.66,
       "loopable": false,
-      "brief": "Displacement cargo vessel reduce to harbor speed"
+      "brief": "Displacement cargo vessel reduce to harbor speed",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-ring-up-full-ahead",
@@ -16072,7 +16082,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.11,
       "loopable": false,
-      "brief": "Displacement cargo vessel ring up full ahead"
+      "brief": "Displacement cargo vessel ring up full ahead",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-settle-alongside-berth",
@@ -16081,7 +16092,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.35,
       "loopable": false,
-      "brief": "Displacement cargo vessel settle alongside berth"
+      "brief": "Displacement cargo vessel settle alongside berth",
+      "revision": 2
     },
     {
       "id": "displacement-cargo-vessel-two-docking-throttle-corrections",
@@ -16090,7 +16102,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.3,
       "loopable": false,
-      "brief": "Displacement cargo vessel two docking throttle corrections"
+      "brief": "Displacement cargo vessel two docking throttle corrections",
+      "revision": 2
     },
     {
       "id": "distant-impact-through-a-floor",
@@ -17152,7 +17165,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.85,
       "loopable": false,
-      "brief": "Fishing skiff tiller motor approach from open water"
+      "brief": "Fishing skiff tiller motor approach from open water",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-channel-cruise-loop",
@@ -17161,7 +17175,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.98,
       "loopable": true,
-      "brief": "Fishing skiff tiller motor channel cruise loop"
+      "brief": "Fishing skiff tiller motor channel cruise loop",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-climb-onto-plane",
@@ -17170,7 +17185,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.84,
       "loopable": false,
-      "brief": "Fishing skiff tiller motor climb onto plane"
+      "brief": "Fishing skiff tiller motor climb onto plane",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-come-off-plane",
@@ -17179,7 +17195,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.24,
       "loopable": false,
-      "brief": "Fishing skiff tiller motor come off plane"
+      "brief": "Fishing skiff tiller motor come off plane",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-helm-shelter-vibration-loop",
@@ -17188,7 +17205,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.58,
       "loopable": true,
-      "brief": "Fishing skiff tiller motor helm shelter vibration loop"
+      "brief": "Fishing skiff tiller motor helm shelter vibration loop",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-mooring-idle-loop",
@@ -17197,7 +17215,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.03,
       "loopable": true,
-      "brief": "Fishing skiff tiller motor mooring idle loop"
+      "brief": "Fishing skiff tiller motor mooring idle loop",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-planing-throttle-loop",
@@ -17206,7 +17225,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.33,
       "loopable": true,
-      "brief": "Fishing skiff tiller motor planing throttle loop"
+      "brief": "Fishing skiff tiller motor planing throttle loop",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-return-to-idle-at-pontoon",
@@ -17215,7 +17235,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.17,
       "loopable": false,
-      "brief": "Fishing skiff tiller motor return to idle at pontoon"
+      "brief": "Fishing skiff tiller motor return to idle at pontoon",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-two-throttle-corrections",
@@ -17224,7 +17245,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.11,
       "loopable": false,
-      "brief": "Fishing skiff tiller motor two throttle corrections"
+      "brief": "Fishing skiff tiller motor two throttle corrections",
+      "revision": 2
     },
     {
       "id": "fishing-skiff-tiller-motor-wake-recedes-past-dock",
@@ -17233,7 +17255,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.55,
       "loopable": false,
-      "brief": "Fishing skiff tiller motor wake recedes past dock"
+      "brief": "Fishing skiff tiller motor wake recedes past dock",
+      "revision": 2
     },
     {
       "id": "flames-behind-a-closed-workshop-door-fire-settling",
@@ -18331,7 +18354,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.73,
       "loopable": false,
-      "brief": "Harbor launch inboard approach from open water"
+      "brief": "Harbor launch inboard approach from open water",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-channel-cruise-loop",
@@ -18340,7 +18364,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.85,
       "loopable": true,
-      "brief": "Harbor launch inboard channel cruise loop"
+      "brief": "Harbor launch inboard channel cruise loop",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-climb-onto-plane",
@@ -18349,7 +18374,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.75,
       "loopable": false,
-      "brief": "Harbor launch inboard climb onto plane"
+      "brief": "Harbor launch inboard climb onto plane",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-come-off-plane",
@@ -18358,7 +18384,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.17,
       "loopable": false,
-      "brief": "Harbor launch inboard come off plane"
+      "brief": "Harbor launch inboard come off plane",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-helm-shelter-vibration-loop",
@@ -18367,7 +18394,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.46,
       "loopable": true,
-      "brief": "Harbor launch inboard helm shelter vibration loop"
+      "brief": "Harbor launch inboard helm shelter vibration loop",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-mooring-idle-loop",
@@ -18376,7 +18404,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.93,
       "loopable": true,
-      "brief": "Harbor launch inboard mooring idle loop"
+      "brief": "Harbor launch inboard mooring idle loop",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-planing-throttle-loop",
@@ -18385,7 +18414,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.22,
       "loopable": true,
-      "brief": "Harbor launch inboard planing throttle loop"
+      "brief": "Harbor launch inboard planing throttle loop",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-return-to-idle-at-pontoon",
@@ -18394,7 +18424,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.07,
       "loopable": false,
-      "brief": "Harbor launch inboard return to idle at pontoon"
+      "brief": "Harbor launch inboard return to idle at pontoon",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-two-throttle-corrections",
@@ -18403,7 +18434,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.01,
       "loopable": false,
-      "brief": "Harbor launch inboard two throttle corrections"
+      "brief": "Harbor launch inboard two throttle corrections",
+      "revision": 2
     },
     {
       "id": "harbor-launch-inboard-wake-recedes-past-dock",
@@ -18412,7 +18444,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.44,
       "loopable": false,
-      "brief": "Harbor launch inboard wake recedes past dock"
+      "brief": "Harbor launch inboard wake recedes past dock",
+      "revision": 2
     },
     {
       "id": "harbor-retaining-wall-blast-followed-by-falling-debris",
@@ -18943,7 +18976,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 4.16,
       "loopable": false,
-      "brief": "Interceptor turbofan afterburner departure"
+      "brief": "Interceptor turbofan afterburner departure",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-augmented-exhaust-roar-loop",
@@ -18952,7 +18986,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.9,
       "loopable": true,
-      "brief": "Interceptor turbofan augmented exhaust roar loop"
+      "brief": "Interceptor turbofan augmented exhaust roar loop",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-canopy-interior-cruise-loop",
@@ -18961,7 +18996,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 4.19,
       "loopable": true,
-      "brief": "Interceptor turbofan canopy interior cruise loop"
+      "brief": "Interceptor turbofan canopy interior cruise loop",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-dry-thrust-cruise-loop",
@@ -18970,7 +19006,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 4.67,
       "loopable": true,
-      "brief": "Interceptor turbofan dry thrust cruise loop"
+      "brief": "Interceptor turbofan dry thrust cruise loop",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-head-on-flightline-approach",
@@ -18979,7 +19016,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 4.51,
       "loopable": false,
-      "brief": "Interceptor turbofan head-on flightline approach"
+      "brief": "Interceptor turbofan head-on flightline approach",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-ramp-idle-loop",
@@ -18988,7 +19026,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.55,
       "loopable": true,
-      "brief": "Interceptor turbofan ramp idle loop"
+      "brief": "Interceptor turbofan ramp idle loop",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-rollout-to-taxi-power",
@@ -18997,7 +19036,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.72,
       "loopable": false,
-      "brief": "Interceptor turbofan rollout to taxi power"
+      "brief": "Interceptor turbofan rollout to taxi power",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-throttle-cut-on-descent",
@@ -19006,7 +19046,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.63,
       "loopable": false,
-      "brief": "Interceptor turbofan throttle cut on descent"
+      "brief": "Interceptor turbofan throttle cut on descent",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-turbine-spool-to-takeoff",
@@ -19015,7 +19056,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.33,
       "loopable": false,
-      "brief": "Interceptor turbofan turbine spool to takeoff"
+      "brief": "Interceptor turbofan turbine spool to takeoff",
+      "revision": 2
     },
     {
       "id": "interceptor-turbofan-two-thrust-surges",
@@ -19024,7 +19066,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.64,
       "loopable": false,
-      "brief": "Interceptor turbofan two thrust surges"
+      "brief": "Interceptor turbofan two thrust surges",
+      "revision": 2
     },
     {
       "id": "jacket-cuff-brushes-a-doorframe",
@@ -23407,7 +23450,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.89,
       "loopable": false,
-      "brief": "Steel patrol cutter approach to breakwater"
+      "brief": "Steel patrol cutter approach to breakwater",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-departure-beyond-harbor-mouth",
@@ -23416,7 +23460,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.66,
       "loopable": false,
-      "brief": "Steel patrol cutter departure beyond harbor mouth"
+      "brief": "Steel patrol cutter departure beyond harbor mouth",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-enclosed-wheelhouse-vibration-loop",
@@ -23425,7 +23470,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.68,
       "loopable": true,
-      "brief": "Steel patrol cutter enclosed wheelhouse vibration loop"
+      "brief": "Steel patrol cutter enclosed wheelhouse vibration loop",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-harbor-idle-machinery-loop",
@@ -23434,7 +23480,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.27,
       "loopable": true,
-      "brief": "Steel patrol cutter harbor idle machinery loop"
+      "brief": "Steel patrol cutter harbor idle machinery loop",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-loaded-shaft-propulsion-loop",
@@ -23443,7 +23490,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.49,
       "loopable": true,
-      "brief": "Steel patrol cutter loaded shaft propulsion loop"
+      "brief": "Steel patrol cutter loaded shaft propulsion loop",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-passage-cruise-loop",
@@ -23452,7 +23500,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.98,
       "loopable": true,
-      "brief": "Steel patrol cutter passage cruise loop"
+      "brief": "Steel patrol cutter passage cruise loop",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-reduce-to-harbor-speed",
@@ -23461,7 +23510,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 1.68,
       "loopable": false,
-      "brief": "Steel patrol cutter reduce to harbor speed"
+      "brief": "Steel patrol cutter reduce to harbor speed",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-ring-up-full-ahead",
@@ -23470,7 +23520,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.13,
       "loopable": false,
-      "brief": "Steel patrol cutter ring up full ahead"
+      "brief": "Steel patrol cutter ring up full ahead",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-settle-alongside-berth",
@@ -23479,7 +23530,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.38,
       "loopable": false,
-      "brief": "Steel patrol cutter settle alongside berth"
+      "brief": "Steel patrol cutter settle alongside berth",
+      "revision": 2
     },
     {
       "id": "steel-patrol-cutter-two-docking-throttle-corrections",
@@ -23488,7 +23540,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.33,
       "loopable": false,
-      "brief": "Steel patrol cutter two docking throttle corrections"
+      "brief": "Steel patrol cutter two docking throttle corrections",
+      "revision": 2
     },
     {
       "id": "steel-shelving-unit-debris-shifted-under-load",
@@ -24793,7 +24846,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.77,
       "loopable": false,
-      "brief": "Twin-outboard speedboat approach from open water"
+      "brief": "Twin-outboard speedboat approach from open water",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-channel-cruise-loop",
@@ -24802,7 +24856,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.9,
       "loopable": true,
-      "brief": "Twin-outboard speedboat channel cruise loop"
+      "brief": "Twin-outboard speedboat channel cruise loop",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-climb-onto-plane",
@@ -24811,7 +24866,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.78,
       "loopable": false,
-      "brief": "Twin-outboard speedboat climb onto plane"
+      "brief": "Twin-outboard speedboat climb onto plane",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-come-off-plane",
@@ -24820,7 +24876,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.2,
       "loopable": false,
-      "brief": "Twin-outboard speedboat come off plane"
+      "brief": "Twin-outboard speedboat come off plane",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-helm-shelter-vibration-loop",
@@ -24829,7 +24886,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.5,
       "loopable": true,
-      "brief": "Twin-outboard speedboat helm shelter vibration loop"
+      "brief": "Twin-outboard speedboat helm shelter vibration loop",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-mooring-idle-loop",
@@ -24838,7 +24896,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 2.96,
       "loopable": true,
-      "brief": "Twin-outboard speedboat mooring idle loop"
+      "brief": "Twin-outboard speedboat mooring idle loop",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-planing-throttle-loop",
@@ -24847,7 +24906,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.26,
       "loopable": true,
-      "brief": "Twin-outboard speedboat planing throttle loop"
+      "brief": "Twin-outboard speedboat planing throttle loop",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-return-to-idle-at-pontoon",
@@ -24856,7 +24916,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.1,
       "loopable": false,
-      "brief": "Twin-outboard speedboat return to idle at pontoon"
+      "brief": "Twin-outboard speedboat return to idle at pontoon",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-two-throttle-corrections",
@@ -24865,7 +24926,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.04,
       "loopable": false,
-      "brief": "Twin-outboard speedboat two throttle corrections"
+      "brief": "Twin-outboard speedboat two throttle corrections",
+      "revision": 2
     },
     {
       "id": "twin-outboard-speedboat-wake-recedes-past-dock",
@@ -24874,7 +24936,8 @@
       "collection": "Propulsion · Watercraft",
       "durationSec": 3.47,
       "loopable": false,
-      "brief": "Twin-outboard speedboat wake recedes past dock"
+      "brief": "Twin-outboard speedboat wake recedes past dock",
+      "revision": 2
     },
     {
       "id": "twin-wheel-ruts-fill-with-water",
@@ -26298,7 +26361,7 @@
       "category": "Water & Fire",
       "status": "review",
       "collection": "Physics · Water, weather and impacts",
-      "durationSec": 6.0,
+      "durationSec": 6,
       "loopable": true,
       "brief": "Lagoon Ripples Against a Stone Step (Loop)",
       "revision": 1
@@ -26388,7 +26451,7 @@
       "category": "Impacts",
       "status": "review",
       "collection": "Physics · Water, weather and impacts",
-      "durationSec": 4.0,
+      "durationSec": 4,
       "loopable": false,
       "brief": "Blast Through a Timber Partition",
       "revision": 1
@@ -26471,7 +26534,8 @@
       "durationSec": 1.25,
       "loopable": false,
       "brief": "Dive breaks the water surface",
-      "acceptance": "Identify entry splash in context at matched level."
+      "acceptance": "Identify entry splash in context at matched level.",
+      "revision": 2
     },
     {
       "id": "swimmer-breaks-into-air",
@@ -26481,7 +26545,8 @@
       "durationSec": 1.04,
       "loopable": false,
       "brief": "Swimmer breaks back into open air",
-      "acceptance": "Identify last submerged bubbles in context at matched level."
+      "acceptance": "Identify last submerged bubbles in context at matched level.",
+      "revision": 2
     },
     {
       "id": "wet-tire-contact-patch-loop",
@@ -26492,6 +26557,66 @@
       "loopable": true,
       "brief": "Sustained wet tire slip",
       "acceptance": "Maintain friction while slip persists, without repeating the final stop."
+    },
+    {
+      "id": "flight-airburst-open-sky",
+      "category": "Impacts",
+      "status": "review",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "durationSec": 1.65,
+      "loopable": false,
+      "brief": "Open-sky airburst",
+      "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
+    },
+    {
+      "id": "flight-cannon-burst-canopy",
+      "category": "Weapons",
+      "status": "review",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "durationSec": 0.67,
+      "loopable": false,
+      "brief": "Flight cannon burst, canopy",
+      "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
+    },
+    {
+      "id": "flight-cannon-burst-exterior",
+      "category": "Weapons",
+      "status": "review",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "durationSec": 0.67,
+      "loopable": false,
+      "brief": "Flight cannon burst, exterior",
+      "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
+    },
+    {
+      "id": "flight-missile-away-from-canopy",
+      "category": "Missiles",
+      "status": "review",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "durationSec": 1.36,
+      "loopable": false,
+      "brief": "Missile away past canopy",
+      "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
+    },
+    {
+      "id": "flight-radar-acquiring",
+      "category": "Sci-Fi & UI",
+      "status": "review",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "durationSec": 0.46,
+      "loopable": false,
+      "brief": "Flight radar acquiring",
+      "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
+    },
+    {
+      "id": "flight-radar-contact-lost",
+      "category": "Sci-Fi & UI",
+      "status": "review",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "durationSec": 0.31,
+      "loopable": false,
+      "brief": "Flight radar contact lost",
+      "acceptance": "Identify the cue above engine noise without room sound or unrelated input clicks."
     }
   ]
 }

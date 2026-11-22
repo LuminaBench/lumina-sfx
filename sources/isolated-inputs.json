@@ -1,0 +1,16 @@
+{
+  "stationaryTexture": [
+    "motion-marine-engine",
+    "motion-outboard-aeration",
+    "motion-harbor-hydrophone",
+    "demo-fighter-rise",
+    "demo-turbine-idle",
+    "motion-flatboat-throttle",
+    "motion-outboard-cranking",
+    "response-diesel-loaded"
+  ],
+  "transient": [
+    "clarity-pistol",
+    "atlas-firecracker"
+  ]
+}

@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/motion-outboard-cranking.ts';
-import loaded from './_recordings/motion-outboard-aeration.ts';
+import idle from './_recordings/isolated-motion-outboard-cranking.ts';
+import loaded from './_recordings/isolated-motion-outboard-aeration.ts';
 
 export default {
+  isolation: 'isolated',
   id: 'fishing-skiff-tiller-motor-climb-onto-plane',
   name: 'Fishing skiff tiller motor climb onto plane',
   category: 'Vehicles & Engines',

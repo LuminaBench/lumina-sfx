@@ -3,7 +3,7 @@
 Describe what a player should hear, from a boot on gravel to a storm rolling in over the sea.<br>
 Your coding agent can find a sound, layer a new one and deliver it to your game with an offline CPU renderer.
 
-![2,626 Sounds](https://img.shields.io/badge/2%2C626-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
+![2,632 Sounds](https://img.shields.io/badge/2%2C632-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
 
 ## Quick Start
 
@@ -44,7 +44,7 @@ npx skills remove lumina-sfx -g
 | Python / Pygame | Mixer helper and WAV variants |
 | WAV | Audio files and a checksum manifest for any compatible editor or engine |
 
-Build an interactive wet-road drive, a melee swing with material-specific contact, or a dive beneath a boat. [Scene examples and listening desk](references/scene-design.md)
+Build a cockpit dogfight, a drive on wet asphalt, or a dive beneath a boat. Search with `--isolated` for foreground cues without field-recording backgrounds. [Scene examples and listening desk](references/scene-design.md)
 
 <details>
 <summary>CLI commands for search, remix, export and QA</summary>

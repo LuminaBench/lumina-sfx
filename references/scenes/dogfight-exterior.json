@@ -1,0 +1,9 @@
+{
+  "id": "dogfight-exterior",
+  "layers": [
+    { "id": "interceptor-turbofan-head-on-flightline-approach", "envelope": [[0,0.55],[2.72,0.98],[3.85,0.72],[4.5,0.05]] },
+    { "id": "interceptor-turbofan-afterburner-departure", "offsetSec": 3.61, "envelope": [[0,0.05],[0.68,1.02],[2.9,0.76],[4.15,0.18]] },
+    { "id": "flight-cannon-burst-exterior", "offsetSec": 2.36, "gain": 1.14 },
+    { "id": "flight-airburst-open-sky", "offsetSec": 5.13, "gain": 1.08, "macros": {"distance":0.21} }
+  ]
+}

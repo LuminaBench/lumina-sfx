@@ -1,0 +1,51 @@
+{
+  "id": "dogfight-cockpit",
+  "style": "natural",
+  "layers": [
+    {
+      "id": "interceptor-turbofan-canopy-interior-cruise-loop",
+      "durationSec": 6.5,
+      "envelope": [
+        [
+          0,
+          0.65
+        ],
+        [
+          1,
+          0.79
+        ],
+        [
+          2.2,
+          0.57
+        ],
+        [
+          4.15,
+          0.45
+        ],
+        [
+          5.49,
+          0.73
+        ],
+        [
+          6.49,
+          0.53
+        ]
+      ]
+    },
+    {
+      "id": "flight-radar-acquiring",
+      "offsetSec": 0.68,
+      "gain": 0.64
+    },
+    {
+      "id": "radar-hard-lock-warning-dry-double-burst",
+      "offsetSec": 1.45,
+      "gain": 0.65
+    },
+    {
+      "design": "flight-weapons-pass.json",
+      "offsetSec": 2.06,
+      "gain": 1.19
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "radar-state-preview",
+  "layers": [
+    { "id": "flight-radar-acquiring" },
+    { "id": "radar-hard-lock-warning-dry-double-burst", "offsetSec": 0.83, "gain": 0.94 },
+    { "id": "flight-radar-contact-lost", "offsetSec": 1.84 }
+  ]
+}

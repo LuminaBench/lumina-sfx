@@ -20,6 +20,19 @@ async function collect(file, files) {
   }
 }
 
+export async function checkIsolatedRecipes(selected) {
+  const inputs = JSON.parse(await readFile(resolve(ROOT, 'sources/isolated-inputs.json'), 'utf8'));
+  const allowed = new Set([...inputs.stationaryTexture, ...inputs.transient].map(name => 'recipes/_recordings/isolated-' + name + '.ts'));
+  const files = new Map();
+  for (const item of selected) {
+    if (item.isolation !== 'isolated') throw Error('Unreviewed for isolated playback: ' + item.id);
+    await collect(item.file, files);
+  }
+  for (const file of files.keys()) {
+    if (file.startsWith('recipes/_recordings/') && !allowed.has(file)) throw Error('Unreviewed recording in isolated selection: ' + file);
+  }
+}
+
 async function existing(target) {
   try {
     return await readFile(target, 'utf8');

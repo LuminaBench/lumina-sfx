@@ -243,6 +243,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
     }
   }
   const result: SoundRecipe = {
+    isolation: tracks.every(track => track.recipe.isolation === 'isolated') ? 'isolated' : undefined,
     markers,
     id: design.id,
     name: design.name ?? design.id,

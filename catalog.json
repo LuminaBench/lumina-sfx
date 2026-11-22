@@ -64,7 +64,7 @@
       "grit": 0.06
     }
   },
-  "count": 2626,
+  "count": 2632,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -24959,6 +24959,7 @@
       "id": "displacement-cargo-vessel-approach-to-breakwater",
       "name": "Displacement cargo vessel approach to breakwater",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25012,6 +25013,7 @@
       "id": "displacement-cargo-vessel-departure-beyond-harbor-mouth",
       "name": "Displacement cargo vessel departure beyond harbor mouth",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25067,6 +25069,7 @@
       "id": "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop",
       "name": "Displacement cargo vessel enclosed wheelhouse vibration loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25122,6 +25125,7 @@
       "id": "displacement-cargo-vessel-harbor-idle-machinery-loop",
       "name": "Displacement cargo vessel harbor idle machinery loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25176,6 +25180,7 @@
       "id": "displacement-cargo-vessel-loaded-shaft-propulsion-loop",
       "name": "Displacement cargo vessel loaded shaft propulsion loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25231,6 +25236,7 @@
       "id": "displacement-cargo-vessel-passage-cruise-loop",
       "name": "Displacement cargo vessel passage cruise loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25284,6 +25290,7 @@
       "id": "displacement-cargo-vessel-reduce-to-harbor-speed",
       "name": "Displacement cargo vessel reduce to harbor speed",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25339,6 +25346,7 @@
       "id": "displacement-cargo-vessel-ring-up-full-ahead",
       "name": "Displacement cargo vessel ring up full ahead",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25394,6 +25402,7 @@
       "id": "displacement-cargo-vessel-settle-alongside-berth",
       "name": "Displacement cargo vessel settle alongside berth",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25447,6 +25456,7 @@
       "id": "displacement-cargo-vessel-two-docking-throttle-corrections",
       "name": "Displacement cargo vessel two docking throttle corrections",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -25775,6 +25785,7 @@
       "id": "dive-breaks-the-surface",
       "name": "Dive breaks the water surface",
       "category": "Water & Fire",
+      "isolation": "isolated",
       "markers": {
         "entry": 0,
         "submerged": 0.25
@@ -25803,22 +25814,6 @@
       },
       "targetRmsDbfs": -22,
       "mixRole": "foley",
-      "recording": {
-        "title": "Water Splash",
-        "author": "felix.blume",
-        "url": "https://freesound.org/people/felix.blume/sounds/434978/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Aquatic sound of some bubble in a swimming pool (underwater recording)",
-          "author": "felix.blume",
-          "url": "https://freesound.org/people/felix.blume/sounds/208816/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/dive-breaks-the-surface.ts"
     },
@@ -34995,6 +34990,7 @@
       "id": "fishing-skiff-tiller-motor-approach-from-open-water",
       "name": "Fishing skiff tiller motor approach from open water",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35041,6 +35037,7 @@
       "id": "fishing-skiff-tiller-motor-channel-cruise-loop",
       "name": "Fishing skiff tiller motor channel cruise loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35086,6 +35083,7 @@
       "id": "fishing-skiff-tiller-motor-climb-onto-plane",
       "name": "Fishing skiff tiller motor climb onto plane",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35132,6 +35130,7 @@
       "id": "fishing-skiff-tiller-motor-come-off-plane",
       "name": "Fishing skiff tiller motor come off plane",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35178,6 +35177,7 @@
       "id": "fishing-skiff-tiller-motor-helm-shelter-vibration-loop",
       "name": "Fishing skiff tiller motor helm shelter vibration loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35225,6 +35225,7 @@
       "id": "fishing-skiff-tiller-motor-mooring-idle-loop",
       "name": "Fishing skiff tiller motor mooring idle loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35270,6 +35271,7 @@
       "id": "fishing-skiff-tiller-motor-planing-throttle-loop",
       "name": "Fishing skiff tiller motor planing throttle loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35316,6 +35318,7 @@
       "id": "fishing-skiff-tiller-motor-return-to-idle-at-pontoon",
       "name": "Fishing skiff tiller motor return to idle at pontoon",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35364,6 +35367,7 @@
       "id": "fishing-skiff-tiller-motor-two-throttle-corrections",
       "name": "Fishing skiff tiller motor two throttle corrections",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -35410,6 +35414,7 @@
       "id": "fishing-skiff-tiller-motor-wake-recedes-past-dock",
       "name": "Fishing skiff tiller motor wake recedes past dock",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -36015,6 +36020,195 @@
       ],
       "channels": 1,
       "file": "recipes/flesh-impact.ts"
+    },
+    {
+      "id": "flight-airburst-open-sky",
+      "name": "Open-sky airburst",
+      "category": "Impacts",
+      "isolation": "isolated",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "tags": [
+        "dogfight",
+        "aircraft",
+        "explosion",
+        "airburst",
+        "outside"
+      ],
+      "loopable": false,
+      "durationSec": 1.65,
+      "params": {
+        "size": {
+          "label": "Apparent weight",
+          "min": 0,
+          "max": 1,
+          "default": 0.58
+        }
+      },
+      "targetRmsDbfs": -21,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Firecracker Explosion",
+        "author": "unfa",
+        "url": "https://freesound.org/people/unfa/sounds/609588/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/flight-airburst-open-sky.ts"
+    },
+    {
+      "id": "flight-cannon-burst-canopy",
+      "name": "Flight cannon burst, canopy",
+      "category": "Weapons",
+      "isolation": "isolated",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "tags": [
+        "aircraft",
+        "dogfight",
+        "gun",
+        "cannon",
+        "burst",
+        "canopy"
+      ],
+      "loopable": false,
+      "durationSec": 0.67,
+      "params": {
+        "force": {
+          "label": "Force",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Baretta_22_ pistol _shots_1",
+        "author": "TheGreenEyedGhost",
+        "url": "https://freesound.org/people/TheGreenEyedGhost/sounds/707777/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/flight-cannon-burst-canopy.ts"
+    },
+    {
+      "id": "flight-cannon-burst-exterior",
+      "name": "Flight cannon burst, exterior",
+      "category": "Weapons",
+      "isolation": "isolated",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "tags": [
+        "aircraft",
+        "dogfight",
+        "gun",
+        "cannon",
+        "burst",
+        "exterior"
+      ],
+      "loopable": false,
+      "durationSec": 0.67,
+      "params": {
+        "force": {
+          "label": "Force",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Baretta_22_ pistol _shots_1",
+        "author": "TheGreenEyedGhost",
+        "url": "https://freesound.org/people/TheGreenEyedGhost/sounds/707777/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/flight-cannon-burst-exterior.ts"
+    },
+    {
+      "id": "flight-missile-away-from-canopy",
+      "name": "Missile away past canopy",
+      "category": "Missiles",
+      "isolation": "isolated",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "tags": [
+        "dogfight",
+        "missile",
+        "launch",
+        "canopy",
+        "departure"
+      ],
+      "loopable": false,
+      "durationSec": 1.36,
+      "params": {
+        "force": {
+          "label": "Flyaway energy",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "impact",
+      "channels": 1,
+      "file": "recipes/flight-missile-away-from-canopy.ts"
+    },
+    {
+      "id": "flight-radar-acquiring",
+      "name": "Flight radar acquiring",
+      "category": "Sci-Fi & UI",
+      "isolation": "isolated",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "tags": [
+        "radar",
+        "dogfight",
+        "alert",
+        "search"
+      ],
+      "loopable": false,
+      "durationSec": 0.46,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "channels": 1,
+      "file": "recipes/flight-radar-acquiring.ts"
+    },
+    {
+      "id": "flight-radar-contact-lost",
+      "name": "Flight radar contact lost",
+      "category": "Sci-Fi & UI",
+      "isolation": "isolated",
+      "collection": "Flight · Isolated cockpit and exterior",
+      "tags": [
+        "radar",
+        "dogfight",
+        "alert",
+        "lost"
+      ],
+      "loopable": false,
+      "durationSec": 0.31,
+      "params": {
+        "intensity": {
+          "label": "Intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "channels": 1,
+      "file": "recipes/flight-radar-contact-lost.ts"
     },
     {
       "id": "floatplane-floats-slap-through-short-waves",
@@ -43729,6 +43923,7 @@
       "id": "harbor-launch-inboard-approach-from-open-water",
       "name": "Harbor launch inboard approach from open water",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -43783,6 +43978,7 @@
       "id": "harbor-launch-inboard-channel-cruise-loop",
       "name": "Harbor launch inboard channel cruise loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -43836,6 +44032,7 @@
       "id": "harbor-launch-inboard-climb-onto-plane",
       "name": "Harbor launch inboard climb onto plane",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -43890,6 +44087,7 @@
       "id": "harbor-launch-inboard-come-off-plane",
       "name": "Harbor launch inboard come off plane",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -43944,6 +44142,7 @@
       "id": "harbor-launch-inboard-helm-shelter-vibration-loop",
       "name": "Harbor launch inboard helm shelter vibration loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -43999,6 +44198,7 @@
       "id": "harbor-launch-inboard-mooring-idle-loop",
       "name": "Harbor launch inboard mooring idle loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -44052,6 +44252,7 @@
       "id": "harbor-launch-inboard-planing-throttle-loop",
       "name": "Harbor launch inboard planing throttle loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -44106,6 +44307,7 @@
       "id": "harbor-launch-inboard-return-to-idle-at-pontoon",
       "name": "Harbor launch inboard return to idle at pontoon",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -44162,6 +44364,7 @@
       "id": "harbor-launch-inboard-two-throttle-corrections",
       "name": "Harbor launch inboard two throttle corrections",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -44216,6 +44419,7 @@
       "id": "harbor-launch-inboard-wake-recedes-past-dock",
       "name": "Harbor launch inboard wake recedes past dock",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -44271,6 +44475,7 @@
       "id": "harbor-motor-through-hydrophone-loop",
       "name": "Harbor motor through hydrophone loop",
       "category": "Water & Fire",
+      "isolation": "isolated",
       "markers": {
         "bed": 0
       },
@@ -44305,6 +44510,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "boat outboard motor throaty start false starts idle rattle take off ride various speeds accelerate decelerate.flac",
+          "author": "kyles",
+          "url": "https://freesound.org/people/kyles/sounds/637203/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/harbor-motor-through-hydrophone-loop.ts"
     },
@@ -49951,6 +50165,7 @@
       "id": "interceptor-turbofan-afterburner-departure",
       "name": "Interceptor turbofan afterburner departure",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50003,6 +50218,7 @@
       "id": "interceptor-turbofan-augmented-exhaust-roar-loop",
       "name": "Interceptor turbofan augmented exhaust roar loop",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50057,6 +50273,7 @@
       "id": "interceptor-turbofan-canopy-interior-cruise-loop",
       "name": "Interceptor turbofan canopy interior cruise loop",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50111,6 +50328,7 @@
       "id": "interceptor-turbofan-dry-thrust-cruise-loop",
       "name": "Interceptor turbofan dry thrust cruise loop",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50164,6 +50382,7 @@
       "id": "interceptor-turbofan-head-on-flightline-approach",
       "name": "Interceptor turbofan head-on flightline approach",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50217,6 +50436,7 @@
       "id": "interceptor-turbofan-ramp-idle-loop",
       "name": "Interceptor turbofan ramp idle loop",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50269,6 +50489,7 @@
       "id": "interceptor-turbofan-rollout-to-taxi-power",
       "name": "Interceptor turbofan rollout to taxi power",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50323,6 +50544,7 @@
       "id": "interceptor-turbofan-throttle-cut-on-descent",
       "name": "Interceptor turbofan throttle cut on descent",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50377,6 +50599,7 @@
       "id": "interceptor-turbofan-turbine-spool-to-takeoff",
       "name": "Interceptor turbofan turbine spool to takeoff",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -50431,6 +50654,7 @@
       "id": "interceptor-turbofan-two-thrust-surges",
       "name": "Interceptor turbofan two thrust surges",
       "category": "Aircraft",
+      "isolation": "isolated",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -73779,16 +74003,19 @@
       "id": "radar-hard-lock-warning-dry-double-burst",
       "name": "Radar hard lock warning dry double burst",
       "category": "Sci-Fi & UI",
+      "isolation": "isolated",
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "radar",
-        "hard",
+        "dogfight",
+        "alert",
         "lock",
         "warning",
+        "hard",
+        "lock",
         "dry",
         "double",
         "burst",
-        "alert",
         "alarm"
       ],
       "loopable": false,
@@ -73803,22 +74030,6 @@
       },
       "targetRmsDbfs": -25,
       "mixRole": "interface",
-      "recording": {
-        "title": "Microwave Beeps",
-        "author": "joe_anderson22",
-        "url": "https://freesound.org/people/joe_anderson22/sounds/389214/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Smoke alarm.wav",
-          "author": "jess90",
-          "url": "https://freesound.org/people/jess90/sounds/680073/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/radar-hard-lock-warning-dry-double-burst.ts"
     },
@@ -92152,6 +92363,7 @@
       "id": "steel-patrol-cutter-approach-to-breakwater",
       "name": "Steel patrol cutter approach to breakwater",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92205,6 +92417,7 @@
       "id": "steel-patrol-cutter-departure-beyond-harbor-mouth",
       "name": "Steel patrol cutter departure beyond harbor mouth",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92260,6 +92473,7 @@
       "id": "steel-patrol-cutter-enclosed-wheelhouse-vibration-loop",
       "name": "Steel patrol cutter enclosed wheelhouse vibration loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92315,6 +92529,7 @@
       "id": "steel-patrol-cutter-harbor-idle-machinery-loop",
       "name": "Steel patrol cutter harbor idle machinery loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92369,6 +92584,7 @@
       "id": "steel-patrol-cutter-loaded-shaft-propulsion-loop",
       "name": "Steel patrol cutter loaded shaft propulsion loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92424,6 +92640,7 @@
       "id": "steel-patrol-cutter-passage-cruise-loop",
       "name": "Steel patrol cutter passage cruise loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92477,6 +92694,7 @@
       "id": "steel-patrol-cutter-reduce-to-harbor-speed",
       "name": "Steel patrol cutter reduce to harbor speed",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92532,6 +92750,7 @@
       "id": "steel-patrol-cutter-ring-up-full-ahead",
       "name": "Steel patrol cutter ring up full ahead",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92587,6 +92806,7 @@
       "id": "steel-patrol-cutter-settle-alongside-berth",
       "name": "Steel patrol cutter settle alongside berth",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -92640,6 +92860,7 @@
       "id": "steel-patrol-cutter-two-docking-throttle-corrections",
       "name": "Steel patrol cutter two docking throttle corrections",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -95818,6 +96039,7 @@
       "id": "swimmer-breaks-into-air",
       "name": "Swimmer breaks back into open air",
       "category": "Water & Fire",
+      "isolation": "isolated",
       "markers": {
         "surface": 0.2,
         "drain": 0.52
@@ -95847,29 +96069,6 @@
       },
       "targetRmsDbfs": -23,
       "mixRole": "foley",
-      "recording": {
-        "title": "Aquatic sound of some bubble in a swimming pool (underwater recording)",
-        "author": "felix.blume",
-        "url": "https://freesound.org/people/felix.blume/sounds/208816/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
-      "additionalRecordings": [
-        {
-          "title": "Splashing Footsteps Shallow Water",
-          "author": "ChristopherJngs",
-          "url": "https://freesound.org/people/ChristopherJngs/sounds/861369/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "water splash",
-          "author": "audiosmedia",
-          "url": "https://freesound.org/people/audiosmedia/sounds/243519/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/swimmer-breaks-into-air.ts"
     },
@@ -103296,6 +103495,7 @@
       "id": "twin-outboard-speedboat-approach-from-open-water",
       "name": "Twin-outboard speedboat approach from open water",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103349,6 +103549,7 @@
       "id": "twin-outboard-speedboat-channel-cruise-loop",
       "name": "Twin-outboard speedboat channel cruise loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103401,6 +103602,7 @@
       "id": "twin-outboard-speedboat-climb-onto-plane",
       "name": "Twin-outboard speedboat climb onto plane",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103454,6 +103656,7 @@
       "id": "twin-outboard-speedboat-come-off-plane",
       "name": "Twin-outboard speedboat come off plane",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103507,6 +103710,7 @@
       "id": "twin-outboard-speedboat-helm-shelter-vibration-loop",
       "name": "Twin-outboard speedboat helm shelter vibration loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103561,6 +103765,7 @@
       "id": "twin-outboard-speedboat-mooring-idle-loop",
       "name": "Twin-outboard speedboat mooring idle loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103613,6 +103818,7 @@
       "id": "twin-outboard-speedboat-planing-throttle-loop",
       "name": "Twin-outboard speedboat planing throttle loop",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103666,6 +103872,7 @@
       "id": "twin-outboard-speedboat-return-to-idle-at-pontoon",
       "name": "Twin-outboard speedboat return to idle at pontoon",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103721,6 +103928,7 @@
       "id": "twin-outboard-speedboat-two-throttle-corrections",
       "name": "Twin-outboard speedboat two throttle corrections",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -103774,6 +103982,7 @@
       "id": "twin-outboard-speedboat-wake-recedes-past-dock",
       "name": "Twin-outboard speedboat wake recedes past dock",
       "category": "Vehicles & Engines",
+      "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
         "boat",
@@ -113076,6 +113285,7 @@
       "id": "working-motorboat-steady-offshore-loop",
       "name": "Working motorboat steady offshore loop",
       "category": "Water & Fire",
+      "isolation": "isolated",
       "markers": {
         "handoff": 1.48
       },

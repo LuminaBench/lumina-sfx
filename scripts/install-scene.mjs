@@ -1,17 +1,18 @@
 import { parseArgs } from 'node:util';
 import { basename, resolve } from 'node:path';
 import { readFile } from 'node:fs/promises';
-import { installRecipes, selectRecipes } from './install-files.mjs';
+import { checkIsolatedRecipes, installRecipes, selectRecipes } from './install-files.mjs';
 import { loadRecipes } from './recipes.mjs';
 import { validateScene } from '../engine/scene.ts';
 
-const { values, positionals } = parseArgs({ allowPositionals: true, options: { dest: { type: 'string' } } });
+const { values, positionals } = parseArgs({ allowPositionals: true, options: { isolated: { type: 'boolean' }, dest: { type: 'string' } } });
 if (positionals.length !== 1 || !values.dest)
   throw Error('npm run scene:install -- <scene.json> --dest /game/src/audio');
 const scene = JSON.parse(await readFile(positionals[0], 'utf8'));
 const name = basename(positionals[0], '.json');
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)) throw Error('Use a lowercase hyphenated scene filename');
 const selected = await selectRecipes(scene.cues.map((cue) => cue.id));
+if (values.isolated) await checkIsolatedRecipes(selected);
 const recipes = await loadRecipes(new Set(selected.map((s) => s.id)));
 validateScene(scene, new Map(recipes.map((r) => [r.id, r])));
 const file = 'scenes/' + name + '.ts';

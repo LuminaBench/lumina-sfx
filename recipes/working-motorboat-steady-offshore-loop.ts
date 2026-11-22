@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/motion-marine-engine.ts';
-import loaded from './_recordings/motion-outboard-aeration.ts';
+import idle from './_recordings/isolated-motion-marine-engine.ts';
+import loaded from './_recordings/isolated-motion-outboard-aeration.ts';
 
 export default {
+  isolation: 'isolated',
   perspective: "above water", contains: ["steady motor heard offshore"], markers: {"handoff": 1.48},
   id: "working-motorboat-steady-offshore-loop",
   name: "Working motorboat steady offshore loop",

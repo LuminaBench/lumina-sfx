@@ -6,6 +6,7 @@ Start with what the listener should recognize, where their ears are, and what th
 | --- | --- | --- |
 | Wet road | [Ignition, pass, skid, barrier](scenes/wet-road-barrier.json) | [RPM, load, speed, slip and collision](scenes/wet-road-live.json) |
 | Melee | [Timber check](scenes/melee-timber-check.json) and [steel parry](scenes/melee-steel-parry.json) | [Swing, wood contact, steel contact](scenes/melee-live.json) |
+| Air combat | [Canopy](scenes/dogfight-cockpit.json) and [external pass](scenes/dogfight-exterior.json) | [Throttle, RPM, radar changes, burst, release and detonation](scenes/dogfight-live.json) |
 | Dive | [Boat above and below water](scenes/dive-beneath-the-boat.json) | [Depth, entry and resurfacing](scenes/dive-live.json) |
 
 ## Print a timed scene
@@ -46,7 +47,7 @@ road.trigger('collision');
 road.dispose();
 ```
 
-RPM changes the rate of persistent engine voices, load blends idle and exhaust, speed brings in road noise, and slip sustains tire friction. A miss in the melee scene emits only `swing`. Emit `wood` or `steel` at the animation contact frame if the game registers contact. The dive scene keeps both motor recordings running while depth changes their balance and filters the surface recording. Emit `entry` and `surface` once per crossing. In a native game, export the referenced stems through the engine installer and bind the same events and normalized controls to its mixer.
+RPM changes the rate of persistent engine voices, load blends idle and exhaust, speed brings in road noise, and slip sustains tire friction. A miss in the melee scene emits only `swing`. Emit `wood` or `steel` at the animation contact frame if the game registers contact. The dive scene keeps both motor textures running while depth changes their balance and filters the surface recording. Emit `entry` and `surface` once per crossing. In a native game, export the referenced stems through the engine installer and bind the same events and normalized controls to its mixer.
 
 ## Listen in context
 
@@ -55,6 +56,11 @@ npm run audition -- knife-pass-by-the-sleeve references/scenes/melee-timber-chec
 npm run audition -- knife-pass-by-the-sleeve --styles --out /absolute/review/styles.html
 ```
 
-Open the HTML and press Space. The desk shuffles candidates and hides their names. Every take is matched to the same weighted active level before adding a shared background. Test recognition in quiet, with the bed, on the simulated mono phone speaker, and over ten seeded performances. Excerpts are limited to twelve seconds per take. Y or N saves a vote and plays the next candidate. Add a short recognition guess or reason before voting. Export votes to retain the observations with the actual cue IDs. Browser storage is local to the desk. Pass an exported vote file to `node scripts/search.mjs knife --votes /absolute/review/votes.json --json` to rank matching catalog cues by the listener’s decisions and return the reason and listening context. Test custom designs and style variants by their own IDs.
+Open the HTML and press Space. The desk shuffles candidates and hides their names. Every take is matched to the same weighted active level before adding a shared background. Test recognition in quiet, with the bed, on the simulated mono phone speaker, and over ten seeded performances. Excerpts are limited to twelve seconds per take. Y or N saves a vote and plays the next candidate. Use `--isolated` to start the comparison dry and restrict the foreground candidates to isolated recipes. Add a short recognition guess or reason before voting. Export votes to retain the observations with the actual cue IDs. Browser storage is local to the desk. Pass an exported vote file to `node scripts/search.mjs knife --votes /absolute/review/votes.json --json` to rank matching catalog cues by the listener’s decisions and return the reason and listening context. Test custom designs and style variants by their own IDs.
 
 Keep a quiet footstep quiet in the shipped mix. Matching playback level in the listening desk serves comparison only. Use balanced game roles and the game bus gain for delivery. Automated QA measures signal integrity. Blind recognition and repetition votes supply the perceptual evidence.
+
+
+For the flight scene, fire radar cues only when a contact changes state. Trigger the burst, release and detonation independently from gameplay. The canopy engine keeps running as RPM and throttle change. Use the exterior cannon and the pass design for a spectator camera. The radar tones are original game feedback. [Audition acquisition, lock, and loss in sequence](scenes/radar-state-preview.json).
+
+Engine textures retain the median spectrum and persistent tonal peaks of credited motor recordings. Their new phase and time history remove the field recording’s sequence of events. Gun and blast attacks use up to 34 ms of source audio with authored bodies and tails. The water entry, surfacing, and radar layers are synthesized. To check the isolated assets against their transforms and dependency lists, run `node --experimental-strip-types qa/isolation.test.mjs`.

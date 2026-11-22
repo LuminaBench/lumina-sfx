@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/demo-turbine-idle.ts';
-import loaded from './_recordings/demo-fighter-rise.ts';
+import idle from './_recordings/isolated-demo-turbine-idle.ts';
+import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
+  isolation: 'isolated',
   id: 'interceptor-turbofan-two-thrust-surges',
   name: 'Interceptor turbofan two thrust surges',
   category: 'Aircraft',

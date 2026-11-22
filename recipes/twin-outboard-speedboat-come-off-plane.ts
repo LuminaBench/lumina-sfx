@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/motion-outboard-aeration.ts';
-import loaded from './_recordings/motion-flatboat-throttle.ts';
+import idle from './_recordings/isolated-motion-outboard-aeration.ts';
+import loaded from './_recordings/isolated-motion-flatboat-throttle.ts';
 
 export default {
+  isolation: 'isolated',
   id: 'twin-outboard-speedboat-come-off-plane',
   name: 'Twin-outboard speedboat come off plane',
   category: 'Vehicles & Engines',

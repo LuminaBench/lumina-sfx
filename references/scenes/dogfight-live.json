@@ -1,0 +1,62 @@
+{
+  "controls": {
+    "throttle": 0.3,
+    "rpm": 0.4
+  },
+  "cues": [
+    {
+      "id": "interceptor-turbofan-canopy-interior-cruise-loop",
+      "blend": {
+        "control": "throttle",
+        "side": "out"
+      },
+      "rate": {
+        "control": "rpm",
+        "min": 0.85,
+        "max": 1.12
+      }
+    },
+    {
+      "id": "interceptor-turbofan-augmented-exhaust-roar-loop",
+      "gain": 0.71,
+      "blend": {
+        "control": "throttle",
+        "side": "in"
+      },
+      "lowpass": {
+        "control": "throttle",
+        "openHz": 2300,
+        "closedHz": 1850
+      },
+      "rate": {
+        "control": "rpm",
+        "min": 0.84,
+        "max": 1.1
+      }
+    },
+    {
+      "id": "flight-radar-acquiring",
+      "event": "acquiring"
+    },
+    {
+      "id": "radar-hard-lock-warning-dry-double-burst",
+      "event": "locked"
+    },
+    {
+      "id": "flight-radar-contact-lost",
+      "event": "lost"
+    },
+    {
+      "id": "flight-cannon-burst-canopy",
+      "event": "burst"
+    },
+    {
+      "id": "flight-missile-away-from-canopy",
+      "event": "release"
+    },
+    {
+      "id": "flight-airburst-open-sky",
+      "event": "detonation"
+    }
+  ]
+}

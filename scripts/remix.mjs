@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { digest, encodeDelivery, publishAsset } from './audio-export.mjs';
 import { spawnSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
-import { installRecipes } from './install-files.mjs';
+import { checkIsolatedRecipes, installRecipes } from './install-files.mjs';
 
 
 const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --dest <game/audio>
@@ -15,6 +15,7 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
   --spec path/to/design.json (per-layer gain, offsetSec and params)
   --style natural|cinematic|arcade
   --format ts|wav|ogg|opus (default ts)
+  --isolated (require isolated source layers)
   --extremes (also test native control limits)
 `;
 async function main() {
@@ -27,6 +28,7 @@ async function main() {
     options: {
       ...options,
       help: { type: 'boolean' },
+      isolated: { type: 'boolean' },
       extremes: { type: 'boolean' },
     },
   });
@@ -60,6 +62,10 @@ async function main() {
   const { renderDurationSec } = await import('../engine/sculpt.ts');
   const { checkRecipe } = await import('../qa/check-recipe.mjs');
   const { recipe, selected, source } = await loadDesign(spec);
+  if (v.isolated) {
+    await checkIsolatedRecipes(selected);
+    if (recipe.isolation !== 'isolated') throw Error('A source recipe no longer declares isolation');
+  }
   const temp = await mkdtemp(join(tmpdir(), 'lumina-remix-'));
   let qa, wav;
   try {
@@ -83,7 +89,7 @@ async function main() {
     const file = resolve(v.dest, recipe.id + '.' + format);
     const bytes = await encodeDelivery(wav, format);
     await publishAsset(file, bytes);
-    console.log(JSON.stringify({ pass: true, id: recipe.id, file, format, masterSha256: qa.masterSha256,
+    console.log(JSON.stringify({ pass: true, id: recipe.id, file, format, isolation: recipe.isolation, masterSha256: qa.masterSha256,
       sha256: digest(bytes), variants: qa.variants.length, credits: [recipe.recording, ...(recipe.additionalRecordings ?? [])].filter(Boolean) }));
     return;
   }
@@ -96,6 +102,7 @@ async function main() {
         id: recipe.id,
         file: resolve(v.dest, file),
         durationSec: renderDurationSec(recipe),
+        isolation: recipe.isolation,
         channels: recipe.renderStereo ? 2 : 1,
         profiles: ['original', 'balanced'],
         variants: qa.variants.length,

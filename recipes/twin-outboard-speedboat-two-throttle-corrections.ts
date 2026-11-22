@@ -1,10 +1,11 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { propulsion } from './_shared/propulsion.ts';
 import { sceneCredits } from './_shared/material-scenes.ts';
-import idle from './_recordings/motion-outboard-aeration.ts';
-import loaded from './_recordings/motion-flatboat-throttle.ts';
+import idle from './_recordings/isolated-motion-outboard-aeration.ts';
+import loaded from './_recordings/isolated-motion-flatboat-throttle.ts';
 
 export default {
+  isolation: 'isolated',
   id: 'twin-outboard-speedboat-two-throttle-corrections',
   name: 'Twin-outboard speedboat two throttle corrections',
   category: 'Vehicles & Engines',

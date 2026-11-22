@@ -17,6 +17,13 @@ node scripts/search.mjs rain --loop --json
 node scripts/search.mjs --collection "Farm · Harvest" --json
 ```
 
+For a foreground game effect, search with `--isolated` first. That subset uses designed sounds, stationary textures measured from real motors, and tightly cropped impact attacks. Other field recordings need a solo listen for conversation, typing, traffic, or room sound before foreground use. Keep incidental sounds out of the asset and add ambience separately in the game. Pass `--isolated` through install, remix, or the listening desk to enforce this choice.
+
+```sh
+node scripts/search.mjs interceptor --isolated
+node scripts/remix.mjs --spec references/scenes/dogfight-cockpit.json --isolated --format wav --dest /absolute/game/audio
+```
+
 For a close match, install only the required IDs. Playback helpers accept three-variant pools, positions, and live loop controls. The game still needs to call the helper on its actual success, collision, movement or state transition. Use one persistent player per repeating event where appropriate.
 
 ```sh

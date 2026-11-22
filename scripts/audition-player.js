@@ -11,6 +11,7 @@ let votes = {};
 try {
   votes = JSON.parse(localStorage.getItem(key) || '{}') || {};
 } catch {}
+if (data.startDry) el('bed').checked = false;
 const choices = data.choices.slice();
 for (let i = choices.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
