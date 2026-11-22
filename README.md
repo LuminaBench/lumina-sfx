@@ -10,7 +10,7 @@ With Node.js 22.12+ installed, run:
 npx skills add LuminaBench/lumina-sfx -g
 ```
 
-The repository is currently private. Collaborators need GitHub read access and working Git credentials. With GitHub CLI, `gh auth login` followed by `gh auth setup-git` configures HTTPS access. Select your coding agent during installation, then open a fresh session in your game project. Update a CLI-managed installation with `npx skills update -g`. Remove it with `npx skills remove lumina-sfx -g`. The game retains any recipes and audio you already copied into it.
+The installer downloads the public skill from GitHub. Select your coding agent during installation, then open a fresh session in your game project. Update a CLI-managed installation with `npx skills update -g`. Remove it with `npx skills remove lumina-sfx -g`. The game retains any recipes and audio you already copied into it.
 
 ## Ask your agent
 
@@ -22,7 +22,7 @@ The agent searches the catalog by event, material, perspective and loop state. E
 
 ## Run it yourself
 
-For a full studio checkout, run `gh repo clone LuminaBench/lumina-sfx`. Run the following from that checkout or the installed skill directory. The core tools use Node's standard library.
+For a full studio checkout, run `git clone https://github.com/LuminaBench/lumina-sfx.git`. Run the following from that checkout or the installed skill directory. The core tools use Node's standard library.
 
 ```sh
 node scripts/search.mjs seed planting
