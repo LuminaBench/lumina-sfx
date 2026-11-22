@@ -8,7 +8,7 @@ export default {
   id: "rolling-a-pumpkin-out-of-the-patch",
   name: "Rolling a Pumpkin out of the Patch",
   category: "Farming",
-  tags: ["rolling", "pumpkin", "patch", "farm", "wakefall"],
+  tags: ["rolling", "pumpkin", "patch", "farm"],
   loopable: false,
   durationSec: 1.13,
   targetRmsDbfs: -24,

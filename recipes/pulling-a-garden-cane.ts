@@ -8,7 +8,7 @@ export default {
   id: "pulling-a-garden-cane",
   name: "Pulling a Garden Cane",
   category: "Farming",
-  tags: ["pulling", "garden", "cane", "farm", "wakefall"],
+  tags: ["pulling", "garden", "cane", "farm"],
   loopable: false,
   durationSec: 0.8,
   targetRmsDbfs: -24,

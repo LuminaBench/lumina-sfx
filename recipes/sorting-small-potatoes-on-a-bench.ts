@@ -7,7 +7,7 @@ export default {
   id: "sorting-small-potatoes-on-a-bench",
   name: "Sorting Small Potatoes on a Bench",
   category: "Farming",
-  tags: ["sorting", "small", "potatoes", "bench", "farm", "wakefall"],
+  tags: ["sorting", "small", "potatoes", "bench", "farm"],
   loopable: false,
   durationSec: 0.79,
   targetRmsDbfs: -24,

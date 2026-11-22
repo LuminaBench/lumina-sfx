@@ -7,7 +7,7 @@ export default {
   id: "watering-seeds-with-a-dropper",
   name: "Watering Seeds with a Dropper",
   category: "Farming",
-  tags: ["watering", "seeds", "dropper", "farm", "wakefall"],
+  tags: ["watering", "seeds", "dropper", "farm"],
   loopable: false,
   durationSec: 0.81,
   targetRmsDbfs: -28,

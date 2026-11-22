@@ -7,7 +7,7 @@ export default {
   id: "clipping-a-ripe-tomato-truss",
   name: "Clipping a Ripe Tomato Truss",
   category: "Farming",
-  tags: ["clipping", "ripe", "tomato", "truss", "farm", "wakefall"],
+  tags: ["clipping", "ripe", "tomato", "truss", "farm"],
   loopable: false,
   durationSec: 0.54,
   targetRmsDbfs: -24,

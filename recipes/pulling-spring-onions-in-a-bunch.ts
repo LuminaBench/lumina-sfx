@@ -9,7 +9,7 @@ export default {
   id: "pulling-spring-onions-in-a-bunch",
   name: "Pulling Spring Onions in a Bunch",
   category: "Farming",
-  tags: ["pulling", "spring", "onions", "bunch", "farm", "wakefall"],
+  tags: ["pulling", "spring", "onions", "bunch", "farm"],
   loopable: false,
   durationSec: 0.85,
   targetRmsDbfs: -25,

@@ -7,7 +7,7 @@ export default {
   id: "hand-mulching-a-row",
   name: "Hand-Mulching a Row",
   category: "Farming",
-  tags: ["hand", "mulching", "row", "farm", "wakefall"],
+  tags: ["hand", "mulching", "row", "farm"],
   loopable: false,
   durationSec: 0.79,
   targetRmsDbfs: -27,

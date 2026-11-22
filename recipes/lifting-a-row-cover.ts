@@ -8,7 +8,7 @@ export default {
   id: "lifting-a-row-cover",
   name: "Lifting a Row Cover",
   category: "Farming",
-  tags: ["lifting", "row", "cover", "farm", "wakefall"],
+  tags: ["lifting", "row", "cover", "farm"],
   loopable: false,
   durationSec: 0.97,
   targetRmsDbfs: -26,

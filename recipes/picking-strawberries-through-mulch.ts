@@ -8,7 +8,7 @@ export default {
   id: "picking-strawberries-through-mulch",
   name: "Picking Strawberries through Mulch",
   category: "Farming",
-  tags: ["picking", "strawberries", "mulch", "farm", "wakefall"],
+  tags: ["picking", "strawberries", "mulch", "farm"],
   loopable: false,
   durationSec: 0.75,
   targetRmsDbfs: -27,

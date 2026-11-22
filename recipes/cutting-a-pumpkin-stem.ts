@@ -7,7 +7,7 @@ export default {
   id: "cutting-a-pumpkin-stem",
   name: "Cutting a Pumpkin Stem",
   category: "Farming",
-  tags: ["cutting", "pumpkin", "stem", "farm", "wakefall"],
+  tags: ["cutting", "pumpkin", "stem", "farm"],
   loopable: false,
   durationSec: 0.75,
   targetRmsDbfs: -23,

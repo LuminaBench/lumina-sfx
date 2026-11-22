@@ -8,7 +8,7 @@ export default {
   id: "staking-a-tomato-plant-with-twine",
   name: "Staking a Tomato Plant with Twine",
   category: "Farming",
-  tags: ["staking", "tomato", "plant", "twine", "farm", "wakefall"],
+  tags: ["staking", "tomato", "plant", "twine", "farm"],
   loopable: false,
   durationSec: 0.89,
   targetRmsDbfs: -26,

@@ -7,7 +7,7 @@ export default {
   id: "dragging-a-drip-line",
   name: "Dragging a Drip Line",
   category: "Farming",
-  tags: ["dragging", "drip", "line", "farm", "wakefall"],
+  tags: ["dragging", "drip", "line", "farm"],
   loopable: false,
   durationSec: 0.99,
   targetRmsDbfs: -25,

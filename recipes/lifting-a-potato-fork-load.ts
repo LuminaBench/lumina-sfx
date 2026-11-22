@@ -8,7 +8,7 @@ export default {
   id: "lifting-a-potato-fork-load",
   name: "Lifting a Potato Fork Load",
   category: "Farming",
-  tags: ["lifting", "potato", "fork", "load", "farm", "wakefall"],
+  tags: ["lifting", "potato", "fork", "load", "farm"],
   loopable: false,
   durationSec: 0.98,
   targetRmsDbfs: -23,

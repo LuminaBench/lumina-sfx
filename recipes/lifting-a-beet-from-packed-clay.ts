@@ -8,7 +8,7 @@ export default {
   id: "lifting-a-beet-from-packed-clay",
   name: "Lifting a Beet from Packed Clay",
   category: "Farming",
-  tags: ["lifting", "beet", "packed", "clay", "farm", "wakefall"],
+  tags: ["lifting", "beet", "packed", "clay", "farm"],
   loopable: false,
   durationSec: 0.76,
   targetRmsDbfs: -24,

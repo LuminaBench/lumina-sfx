@@ -8,7 +8,7 @@ export default {
   id: "clipping-a-grapevine-to-a-trellis",
   name: "Clipping a Grapevine to a Trellis",
   category: "Farming",
-  tags: ["clipping", "grapevine", "trellis", "farm", "wakefall"],
+  tags: ["clipping", "grapevine", "trellis", "farm"],
   loopable: false,
   durationSec: 0.55,
   targetRmsDbfs: -26,

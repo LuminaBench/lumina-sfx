@@ -320,7 +320,7 @@
       "id": "airing-a-grain-shed-loop",
       "name": "Airing a Grain Shed",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "airing",
         "grain",
@@ -4049,7 +4049,7 @@
       "id": "autumn-berry-hedge-loop",
       "name": "Autumn Berry Hedge",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "autumn",
         "berry",
@@ -8908,7 +8908,7 @@
       "id": "calf-calling-under-a-barn-roof",
       "name": "Calf Calling under a Barn Roof",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "calf",
         "calling",
@@ -14047,14 +14047,13 @@
       "id": "clipping-a-drip-line-connector",
       "name": "Clipping a Drip-Line Connector",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "clipping",
         "drip",
         "line",
         "connector",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.45,
@@ -14090,13 +14089,12 @@
       "id": "clipping-a-grapevine-to-a-trellis",
       "name": "Clipping a Grapevine to a Trellis",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "clipping",
         "grapevine",
         "trellis",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.55,
@@ -14139,14 +14137,13 @@
       "id": "clipping-a-ripe-tomato-truss",
       "name": "Clipping a Ripe Tomato Truss",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "clipping",
         "ripe",
         "tomato",
         "truss",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.54,
@@ -14428,7 +14425,7 @@
       "id": "closing-an-iron-stove-damper",
       "name": "Closing an Iron Stove Damper",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "closing",
         "an",
@@ -20111,7 +20108,7 @@
       "id": "cow-chewing-silage",
       "name": "Cow Chewing Silage",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "cow",
         "chewing",
@@ -20152,7 +20149,7 @@
       "id": "cow-drinking-from-a-trough",
       "name": "Cow Drinking from a Trough",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "cow",
         "drinking",
@@ -20323,7 +20320,7 @@
       "id": "cow-snorting-at-the-feed-rail",
       "name": "Cow Snorting at the Feed Rail",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "cow",
         "snorting",
@@ -20422,7 +20419,7 @@
       "id": "cracking-dry-bread-crust",
       "name": "Cracking Dry Bread Crust",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "cracking",
         "dry",
@@ -22465,13 +22462,12 @@
       "id": "cutting-a-pumpkin-stem",
       "name": "Cutting a Pumpkin Stem",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "cutting",
         "pumpkin",
         "stem",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.75,
@@ -22865,7 +22861,7 @@
       "id": "dawn-at-a-cow-pasture-loop",
       "name": "Dawn at a Cow Pasture",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "dawn",
         "cow",
@@ -25518,7 +25514,7 @@
       "id": "distant-marsh-birds-at-dusk-loop",
       "name": "Distant Marsh Birds at Dusk",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "distant",
         "marsh",
@@ -26510,13 +26506,12 @@
       "id": "dragging-a-drip-line",
       "name": "Dragging a Drip Line",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "dragging",
         "drip",
         "line",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.99,
@@ -27334,7 +27329,7 @@
       "id": "dry-stone-wall-in-farmland-loop",
       "name": "Dry Stone Wall in Farmland",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "dry",
         "stone",
@@ -27468,7 +27463,7 @@
       "id": "duck-dabbling-in-shallow-water",
       "name": "Duck Dabbling in Shallow Water",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "duck",
         "dabbling",
@@ -27517,7 +27512,7 @@
       "id": "duck-flapping-after-a-bath",
       "name": "Duck Flapping after a Bath",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "duck",
         "flapping",
@@ -30351,7 +30346,7 @@
       "id": "empty-stable-in-a-light-wind-loop",
       "name": "Empty Stable in a Light Wind",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "empty",
         "stable",
@@ -30393,13 +30388,12 @@
       "id": "emptying-a-compost-fork",
       "name": "Emptying a Compost Fork",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "emptying",
         "compost",
         "fork",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.91,
@@ -32480,7 +32474,7 @@
       "id": "farm-market-between-customers-loop",
       "name": "Farm Market between Customers",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "farm",
         "market",
@@ -40259,7 +40253,7 @@
       "id": "goat-browsing-a-leafy-stem",
       "name": "Goat Browsing a Leafy Stem",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "goat",
         "browsing",
@@ -40383,7 +40377,7 @@
       "id": "goat-kids-calling-together",
       "name": "Goat Kids Calling Together",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "goat",
         "kids",
@@ -40474,7 +40468,7 @@
       "id": "goose-hissing-in-warning",
       "name": "Goose Hissing in Warning",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "goose",
         "hissing",
@@ -42902,13 +42896,12 @@
       "id": "hand-mulching-a-row",
       "name": "Hand-Mulching a Row",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "hand",
         "mulching",
         "row",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.79,
@@ -44574,7 +44567,7 @@
       "id": "hayloft-above-the-yard-loop",
       "name": "Hayloft above the Yard",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "hayloft",
         "above",
@@ -44959,7 +44952,7 @@
       "id": "heavy-corn-leaves-in-a-breeze-loop",
       "name": "Heavy Corn Leaves in a Breeze",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "heavy",
         "corn",
@@ -46123,7 +46116,7 @@
       "id": "hedgerow-after-rain-loop",
       "name": "Hedgerow after Rain",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "hedgerow",
         "rain",
@@ -46388,7 +46381,7 @@
       "id": "hen-pecking-grain",
       "name": "Hen Pecking Grain",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "hen",
         "pecking",
@@ -46429,7 +46422,7 @@
       "id": "hen-scratching-straw",
       "name": "Hen Scratching Straw",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "hen",
         "scratching",
@@ -46470,7 +46463,7 @@
       "id": "hen-settling-on-a-nest",
       "name": "Hen Settling on a Nest",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "hen",
         "settling",
@@ -48006,7 +47999,7 @@
       "id": "horse-chewing-a-carrot",
       "name": "Horse Chewing a Carrot",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "horse",
         "chewing",
@@ -48087,7 +48080,7 @@
       "id": "horse-drinking-from-a-bucket",
       "name": "Horse Drinking from a Bucket",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "horse",
         "drinking",
@@ -48227,7 +48220,7 @@
       "id": "horse-hoof-on-rubber-stall-mat",
       "name": "Horse Hoof on Rubber Stall Mat",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "horse",
         "hoof",
@@ -48403,7 +48396,7 @@
       "id": "horse-snorting-in-a-stall",
       "name": "Horse Snorting in a Stall",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "horse",
         "snorting",
@@ -50775,7 +50768,7 @@
       "id": "jar-cooling-seal-pop",
       "name": "Jar Cooling Seal Pop",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "jar",
         "cooling",
@@ -51564,7 +51557,7 @@
       "id": "kneading-dough-on-a-board",
       "name": "Kneading Dough on a Board",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "kneading",
         "dough",
@@ -51851,7 +51844,7 @@
       "id": "lamb-following-its-ewe",
       "name": "Lamb Following Its Ewe",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "lamb",
         "following",
@@ -52235,7 +52228,7 @@
       "id": "lead-rope-clip-on-a-halter",
       "name": "Lead Rope Clip on a Halter",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "lead",
         "rope",
@@ -53160,7 +53153,7 @@
       "id": "leather-halter-buckle-fasten",
       "name": "Leather Halter Buckle Fasten",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "leather",
         "halter",
@@ -53513,14 +53506,13 @@
       "id": "lifting-a-beet-from-packed-clay",
       "name": "Lifting a Beet from Packed Clay",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "lifting",
         "beet",
         "packed",
         "clay",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.76,
@@ -53563,7 +53555,7 @@
       "id": "lifting-a-bread-pan-onto-a-rack",
       "name": "Lifting a Bread Pan onto a Rack",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "lifting",
         "bread",
@@ -53604,7 +53596,7 @@
       "id": "lifting-a-clay-cup-off-a-saucer",
       "name": "Lifting a Clay Cup off a Saucer",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "lifting",
         "clay",
@@ -53645,14 +53637,13 @@
       "id": "lifting-a-potato-fork-load",
       "name": "Lifting a Potato Fork Load",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "lifting",
         "potato",
         "fork",
         "load",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.98,
@@ -53695,13 +53686,12 @@
       "id": "lifting-a-row-cover",
       "name": "Lifting a Row Cover",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "lifting",
         "row",
         "cover",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.97,
@@ -59336,7 +59326,7 @@
       "id": "midsummer-orchard-at-noon-loop",
       "name": "Midsummer Orchard at Noon",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "midsummer",
         "orchard",
@@ -59377,7 +59367,7 @@
       "id": "milling-grain-by-hand",
       "name": "Milling Grain by Hand",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "milling",
         "grain",
@@ -59424,7 +59414,7 @@
       "id": "millstone-first-turn",
       "name": "Millstone First Turn",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "millstone",
         "first",
@@ -61135,7 +61125,7 @@
       "id": "moving-water-under-a-mill-floor-loop",
       "name": "Moving Water under a Mill Floor",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "moving",
         "water",
@@ -62145,7 +62135,7 @@
       "id": "open-pasture-at-first-frost-loop",
       "name": "Open Pasture at First Frost",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "open",
         "pasture",
@@ -62483,7 +62473,7 @@
       "id": "opening-a-milk-can",
       "name": "Opening a Milk Can",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "opening",
         "milk",
@@ -62548,7 +62538,7 @@
       "id": "orchard-at-dusk-loop",
       "name": "Orchard at Dusk",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "orchard",
         "dusk",
@@ -65995,14 +65985,13 @@
       "id": "peeling-a-wet-cabbage-leaf",
       "name": "Peeling a Wet Cabbage Leaf",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "peeling",
         "wet",
         "cabbage",
         "leaf",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.76,
@@ -67193,13 +67182,12 @@
       "id": "picking-strawberries-through-mulch",
       "name": "Picking Strawberries through Mulch",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "picking",
         "strawberries",
         "mulch",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.75,
@@ -67398,7 +67386,7 @@
       "id": "pig-sniffing-straw",
       "name": "Pig Sniffing Straw",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "pig",
         "sniffing",
@@ -67488,7 +67476,7 @@
       "id": "piglet-calling-to-the-litter",
       "name": "Piglet Calling to the Litter",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "piglet",
         "calling",
@@ -69240,13 +69228,12 @@
       "id": "plucking-a-ripe-plum",
       "name": "Plucking a Ripe Plum",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "plucking",
         "ripe",
         "plum",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.49,
@@ -70539,7 +70526,7 @@
       "id": "pond-reed-edge-in-daylight-loop",
       "name": "Pond Reed Edge in Daylight",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "pond",
         "reed",
@@ -70581,7 +70568,7 @@
       "id": "pond-surface-in-a-morning-breeze-loop",
       "name": "Pond Surface in a Morning Breeze",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "pond",
         "surface",
@@ -70800,7 +70787,7 @@
       "id": "pouring-milk-into-a-crock",
       "name": "Pouring Milk into a Crock",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "pouring",
         "milk",
@@ -71195,7 +71182,7 @@
       "id": "pressing-curds-in-a-mold",
       "name": "Pressing Curds in a Mold",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "pressing",
         "curds",
@@ -71746,13 +71733,12 @@
       "id": "pulling-a-garden-cane",
       "name": "Pulling a Garden Cane",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "pulling",
         "garden",
         "cane",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.8,
@@ -71795,7 +71781,7 @@
       "id": "pulling-a-loom-shuttle",
       "name": "Pulling a Loom Shuttle",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "pulling",
         "loom",
@@ -71835,14 +71821,13 @@
       "id": "pulling-spring-onions-in-a-bunch",
       "name": "Pulling Spring Onions in a Bunch",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "pulling",
         "spring",
         "onions",
         "bunch",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.85,
@@ -71892,7 +71877,7 @@
       "id": "pulling-waxed-thread-through-leather",
       "name": "Pulling Waxed Thread through Leather",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "pulling",
         "waxed",
@@ -72264,7 +72249,7 @@
       "id": "pushing-dough-through-a-roller",
       "name": "Pushing Dough through a Roller",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "pushing",
         "dough",
@@ -72295,7 +72280,7 @@
       "id": "putting-a-kettle-onto-a-trivet",
       "name": "Putting a Kettle onto a Trivet",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "putting",
         "kettle",
@@ -72755,7 +72740,7 @@
       "id": "quiet-farm-shop-interior-loop",
       "name": "Quiet Farm Shop Interior",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "quiet",
         "farm",
@@ -72924,7 +72909,7 @@
       "id": "quiet-poultry-shed-at-dusk-loop",
       "name": "Quiet Poultry Shed at Dusk",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "quiet",
         "poultry",
@@ -76086,7 +76071,7 @@
       "id": "raking-ash-out-of-a-hearth",
       "name": "Raking Ash out of a Hearth",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "raking",
         "ash",
@@ -77619,13 +77604,12 @@
       "id": "removing-a-seedling-plug",
       "name": "Removing a Seedling Plug",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "removing",
         "seedling",
         "plug",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.63,
@@ -79229,13 +79213,12 @@
       "id": "rolling-a-pumpkin-out-of-the-patch",
       "name": "Rolling a Pumpkin out of the Patch",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "rolling",
         "pumpkin",
         "patch",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 1.13,
@@ -80961,7 +80944,7 @@
       "id": "rustling-oat-field-loop",
       "name": "Rustling Oat Field",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "rustling",
         "oat",
@@ -83947,15 +83930,14 @@
       "id": "shaking-last-grain-from-a-seed-head",
       "name": "Shaking Last Grain from a Seed Head",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "shaking",
         "last",
         "grain",
         "seed",
         "head",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.62,
@@ -84909,7 +84891,7 @@
       "id": "sheep-grazing-close",
       "name": "Sheep Grazing Close",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "sheep",
         "grazing",
@@ -85037,7 +85019,7 @@
       "id": "sheltered-barn-during-rain-loop",
       "name": "Sheltered Barn during Rain",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "sheltered",
         "barn",
@@ -86079,13 +86061,12 @@
       "id": "sifting-compost-through-a-screen",
       "name": "Sifting Compost through a Screen",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "sifting",
         "compost",
         "screen",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 1.09,
@@ -86112,7 +86093,7 @@
       "id": "sifting-flour-into-a-bowl",
       "name": "Sifting Flour into a Bowl",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "sifting",
         "flour",
@@ -86794,7 +86775,7 @@
       "id": "skimming-foam-from-a-pot",
       "name": "Skimming Foam from a Pot",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "skimming",
         "foam",
@@ -88349,14 +88330,13 @@
       "id": "snapping-a-pea-pod-from-the-vine",
       "name": "Snapping a Pea Pod from the Vine",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "snapping",
         "pea",
         "pod",
         "vine",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.43,
@@ -88437,7 +88417,7 @@
       "id": "snow-beside-the-stable-loop",
       "name": "Snow beside the Stable",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "snow",
         "beside",
@@ -89679,14 +89659,13 @@
       "id": "sorting-small-potatoes-on-a-bench",
       "name": "Sorting Small Potatoes on a Bench",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "sorting",
         "small",
         "potatoes",
         "bench",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.79,
@@ -91157,7 +91136,7 @@
       "id": "stable-after-evening-feed-loop",
       "name": "Stable after Evening Feed",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "stable",
         "evening",
@@ -91212,7 +91191,7 @@
       "id": "stable-feed-lid-lift",
       "name": "Stable Feed Lid Lift",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "stable",
         "feed",
@@ -91316,14 +91295,13 @@
       "id": "staking-a-tomato-plant-with-twine",
       "name": "Staking a Tomato Plant with Twine",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "staking",
         "tomato",
         "plant",
         "twine",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.89,
@@ -91366,7 +91344,7 @@
       "id": "stall-straw-fork-toss",
       "name": "Stall Straw Fork Toss",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "stall",
         "straw",
@@ -91415,7 +91393,7 @@
       "id": "standing-bean-trellis-in-wind-loop",
       "name": "Standing Bean Trellis in Wind",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "standing",
         "bean",
@@ -93425,7 +93403,7 @@
       "id": "stirring-a-thick-stew",
       "name": "Stirring a Thick Stew",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "stirring",
         "thick",
@@ -93893,7 +93871,7 @@
       "id": "summer-insects-at-a-creek-bank-loop",
       "name": "Summer Insects at a Creek Bank",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "summer",
         "insects",
@@ -95337,7 +95315,7 @@
       "id": "swallows-above-a-farmyard-loop",
       "name": "Swallows above a Farmyard",
       "category": "Weather & Ambience",
-      "collection": "Wakefall · Rural places",
+      "collection": "Farm · Rural places",
       "tags": [
         "swallows",
         "above",
@@ -95899,7 +95877,7 @@
       "id": "tapping-a-jam-jar-lid",
       "name": "Tapping a Jam Jar Lid",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "tapping",
         "jam",
@@ -98727,14 +98705,13 @@
       "id": "tossing-garden-cuttings-into-compost",
       "name": "Tossing Garden Cuttings into Compost",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "tossing",
         "garden",
         "cuttings",
         "compost",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.93,
@@ -100633,7 +100610,7 @@
       "id": "trimming-clay-on-a-wheel",
       "name": "Trimming Clay on a Wheel",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "trimming",
         "clay",
@@ -101900,7 +101877,7 @@
       "id": "turkey-wing-rustle",
       "name": "Turkey Wing Rustle",
       "category": "Animals",
-      "collection": "Wakefall · Stable and livestock",
+      "collection": "Farm · Stable and livestock",
       "tags": [
         "turkey",
         "wing",
@@ -102023,7 +102000,7 @@
       "id": "turning-a-pottery-wheel-by-foot",
       "name": "Turning a Pottery Wheel by Foot",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "turning",
         "pottery",
@@ -103443,7 +103420,7 @@
       "id": "twisting-a-preserving-jar-shut",
       "name": "Twisting a Preserving Jar Shut",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "twisting",
         "preserving",
@@ -104632,14 +104609,13 @@
       "id": "unrolling-a-strip-of-seed-tape",
       "name": "Unrolling a Strip of Seed Tape",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "unrolling",
         "strip",
         "seed",
         "tape",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.7,
@@ -107326,13 +107302,12 @@
       "id": "watering-seeds-with-a-dropper",
       "name": "Watering Seeds with a Dropper",
       "category": "Farming",
-      "collection": "Wakefall · Fieldwork",
+      "collection": "Farm · Fieldwork",
       "tags": [
         "watering",
         "seeds",
         "dropper",
-        "farm",
-        "wakefall"
+        "farm"
       ],
       "loopable": false,
       "durationSec": 0.81,
@@ -111759,7 +111734,7 @@
       "id": "wooden-butter-churn-strokes",
       "name": "Wooden Butter Churn Strokes",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "wooden",
         "butter",
@@ -112515,7 +112490,7 @@
       "id": "working-a-spinning-wheel-treadle",
       "name": "Working a Spinning Wheel Treadle",
       "category": "Props & Interactions",
-      "collection": "Wakefall · Homestead production",
+      "collection": "Farm · Homestead production",
       "tags": [
         "working",
         "spinning",

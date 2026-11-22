@@ -7,7 +7,7 @@ export default {
   id: "shaking-last-grain-from-a-seed-head",
   name: "Shaking Last Grain from a Seed Head",
   category: "Farming",
-  tags: ["shaking", "last", "grain", "seed", "head", "farm", "wakefall"],
+  tags: ["shaking", "last", "grain", "seed", "head", "farm"],
   loopable: false,
   durationSec: 0.62,
   targetRmsDbfs: -27,

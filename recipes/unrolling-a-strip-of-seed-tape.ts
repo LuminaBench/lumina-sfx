@@ -7,7 +7,7 @@ export default {
   id: "unrolling-a-strip-of-seed-tape",
   name: "Unrolling a Strip of Seed Tape",
   category: "Farming",
-  tags: ["unrolling", "strip", "seed", "tape", "farm", "wakefall"],
+  tags: ["unrolling", "strip", "seed", "tape", "farm"],
   loopable: false,
   durationSec: 0.7,
   targetRmsDbfs: -27,

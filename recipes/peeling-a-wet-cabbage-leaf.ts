@@ -7,7 +7,7 @@ export default {
   id: "peeling-a-wet-cabbage-leaf",
   name: "Peeling a Wet Cabbage Leaf",
   category: "Farming",
-  tags: ["peeling", "wet", "cabbage", "leaf", "farm", "wakefall"],
+  tags: ["peeling", "wet", "cabbage", "leaf", "farm"],
   loopable: false,
   durationSec: 0.76,
   targetRmsDbfs: -25,

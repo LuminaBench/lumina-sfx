@@ -8,7 +8,7 @@ export default {
   id: "emptying-a-compost-fork",
   name: "Emptying a Compost Fork",
   category: "Farming",
-  tags: ["emptying", "compost", "fork", "farm", "wakefall"],
+  tags: ["emptying", "compost", "fork", "farm"],
   loopable: false,
   durationSec: 0.91,
   targetRmsDbfs: -23,

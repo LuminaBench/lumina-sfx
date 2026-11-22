@@ -7,7 +7,7 @@ export default {
   id: "clipping-a-drip-line-connector",
   name: "Clipping a Drip-Line Connector",
   category: "Farming",
-  tags: ["clipping", "drip", "line", "connector", "farm", "wakefall"],
+  tags: ["clipping", "drip", "line", "connector", "farm"],
   loopable: false,
   durationSec: 0.45,
   targetRmsDbfs: -25,

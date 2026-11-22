@@ -8,7 +8,7 @@ export default {
   id: "snapping-a-pea-pod-from-the-vine",
   name: "Snapping a Pea Pod from the Vine",
   category: "Farming",
-  tags: ["snapping", "pea", "pod", "vine", "farm", "wakefall"],
+  tags: ["snapping", "pea", "pod", "vine", "farm"],
   loopable: false,
   durationSec: 0.43,
   targetRmsDbfs: -26,

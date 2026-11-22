@@ -7,7 +7,7 @@ export default {
   id: "sifting-compost-through-a-screen",
   name: "Sifting Compost through a Screen",
   category: "Farming",
-  tags: ["sifting", "compost", "screen", "farm", "wakefall"],
+  tags: ["sifting", "compost", "screen", "farm"],
   loopable: false,
   durationSec: 1.09,
   targetRmsDbfs: -25,

@@ -7,7 +7,7 @@ export default {
   id: "removing-a-seedling-plug",
   name: "Removing a Seedling Plug",
   category: "Farming",
-  tags: ["removing", "seedling", "plug", "farm", "wakefall"],
+  tags: ["removing", "seedling", "plug", "farm"],
   loopable: false,
   durationSec: 0.63,
   targetRmsDbfs: -25,

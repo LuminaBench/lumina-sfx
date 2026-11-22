@@ -8,7 +8,7 @@ export default {
   id: "tossing-garden-cuttings-into-compost",
   name: "Tossing Garden Cuttings into Compost",
   category: "Farming",
-  tags: ["tossing", "garden", "cuttings", "compost", "farm", "wakefall"],
+  tags: ["tossing", "garden", "cuttings", "compost", "farm"],
   loopable: false,
   durationSec: 0.93,
   targetRmsDbfs: -25,

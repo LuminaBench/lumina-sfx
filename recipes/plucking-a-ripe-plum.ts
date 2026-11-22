@@ -7,7 +7,7 @@ export default {
   id: "plucking-a-ripe-plum",
   name: "Plucking a Ripe Plum",
   category: "Farming",
-  tags: ["plucking", "ripe", "plum", "farm", "wakefall"],
+  tags: ["plucking", "ripe", "plum", "farm"],
   loopable: false,
   durationSec: 0.49,
   targetRmsDbfs: -26,
