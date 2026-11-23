@@ -1,9 +1,15 @@
 # Lumina SFX
 
-Describe what a player should hear, from a boot on gravel to a storm rolling in over the sea.<br>
-Your coding agent can find a sound, layer a new one and deliver it to your game with an offline CPU renderer.
+Describe what you want to hear, from a boot scuffing gravel to a storm rolling in over the sea. Lumina SFX gives your coding agent 2,844 editable sound effects to audition, layer and render offline. Export a WAV for your edit or wire the sound to an event in your game.
 
 ![2,844 Sounds](https://img.shields.io/badge/2%2C844-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
+
+**Listen before installing**
+
+| Preview | What to listen for | Editable recipe |
+| --- | --- | --- |
+| [Play the settings panel · 1.2 s](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@main/.github/previews/settings-panel-apply.mp3) | A tab clicks into place, a toggle engages, then a heavier latch confirms Apply. | [Menu timing](references/scenes/settings-panel-apply.json) |
+| [Play the fireside storm · 10 s](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@main/.github/previews/fireside-distant-thunder.mp3) | A close fire crackles as thunder rolls in behind it. The fire stays in the foreground. | [Layers and levels](references/scenes/fireside-distant-thunder.json) |
 
 ## Quick Start
 
@@ -13,9 +19,14 @@ With Node.js 22.20 or newer and Git installed, run this once and select your cod
 npx skills add LuminaBench/lumina-sfx -g
 ```
 
-Open a fresh agent session in your project and ask it to use `lumina-sfx`. Your players only need the audio or runtime your game ships.
+Open a fresh agent session in your project and try this prompt.
 
-**Update Lumina SFX**
+> Use lumina-sfx to find three short menu clicks. Render a WAV preview of each so I can pick one to fit my tab animation.
+
+<details>
+<summary>Update or remove Lumina SFX</summary>
+
+**Update**
 
 ```sh
 npx skills update lumina-sfx -g
@@ -23,15 +34,17 @@ npx skills update lumina-sfx -g
 
 Open a fresh agent session after updating. WAVs and recipes already copied into a game keep their existing version. Ask your agent to re-export the cues you want to refresh.
 
-**Remove Lumina SFX**
+**Remove**
 
 ```sh
 npx skills remove lumina-sfx -g
 ```
 
+</details>
+
 ## What You Can Ask Your AI
 
-- “Find three short menu clicks for my browser game. Give me WAV previews, then fit the one I pick to my tab animation.”
+- “For my launch video, give me a short burst of mechanical keyboard typing, one mouse click and a soft swipe. Export them as separate WAVs so I can place them on the cuts.”
 - “Build a coastal storm for my indie RPG. Start with waves and wind, bring in a sharp thunderclap after four seconds, then let a softer rumble roll away.”
 - “Install grass and gravel footsteps in my Godot scene. Trigger them when a foot lands and vary each step so walking sounds natural.”
 
