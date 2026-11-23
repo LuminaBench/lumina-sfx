@@ -1,19 +1,18 @@
 # Lumina SFX
 
-Describe what you want to hear, from a boot scuffing gravel to a storm rolling in over the sea. Lumina SFX gives your coding agent 2,844 editable sound effects to audition, layer and render offline. Export a WAV for your edit or wire the sound to an event in your game.
+An offline sound studio for coding agents. Find a sound among 2,844 editable effects, layer it with others, and export a WAV or wire it into your game.
 
-![2,844 Sounds](https://img.shields.io/badge/2%2C844-Sounds-355C63) ![Offline CPU](https://img.shields.io/badge/Offline-CPU-355C63) ![Cross-Engine](https://img.shields.io/badge/Cross--Engine-355C63) ![Free for Commercial Games](https://img.shields.io/badge/Free_for_Commercial_Games-31694F)
+## Listen
 
-**Listen before installing**
+| Preview | In the mix |
+| --- | --- |
+| [▶ Heavy rain and close thunder](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/storm-front.mp3) · 5 s | A gust moves through heavy rain. A close thunderclap breaks over it. |
+| [▶ Three shots on steel](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/pistol-steel-ricochet.mp3) · 2.85 s | Three sharp reports, each answered by a steel impact and a ricochet. |
+| [▶ Fireside storm](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/fireside-distant-thunder.mp3) · 10 s | The fire crackles up close. Thunder rolls in the distance. |
 
-| Preview | What to listen for | Editable recipe |
-| --- | --- | --- |
-| [Play the settings panel · 1.2 s](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@main/.github/previews/settings-panel-apply.mp3) | A tab clicks into place, a toggle engages, then a heavier latch confirms Apply. | [Menu timing](references/scenes/settings-panel-apply.json) |
-| [Play the fireside storm · 10 s](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@main/.github/previews/fireside-distant-thunder.mp3) | A close fire crackles as thunder rolls in behind it. The fire stays in the foreground. | [Layers and levels](references/scenes/fireside-distant-thunder.json) |
+## Install
 
-## Quick Start
-
-With Node.js 22.20 or newer and Git installed, run this once and select your coding agent.
+With Git and Node.js 22.20 or newer installed, run this command and select your coding agent.
 
 ```sh
 npx skills add LuminaBench/lumina-sfx -g
@@ -21,7 +20,7 @@ npx skills add LuminaBench/lumina-sfx -g
 
 Open a fresh agent session in your project and try this prompt.
 
-> Use lumina-sfx to find three short menu clicks. Render a WAV preview of each so I can pick one to fit my tab animation.
+> Use lumina-sfx to make three clicks for my settings menu. Give me a WAV of each so I can pick one to fit the animation.
 
 <details>
 <summary>Update or remove Lumina SFX</summary>
@@ -42,30 +41,12 @@ npx skills remove lumina-sfx -g
 
 </details>
 
-## What You Can Ask Your AI
+## Use it in a project
 
-- “For my launch video, give me a short burst of mechanical keyboard typing, one mouse click and a soft swipe. Export them as separate WAVs so I can place them on the cuts.”
-- “Build a coastal storm for my indie RPG. Start with waves and wind, bring in a sharp thunderclap after four seconds, then let a softer rumble roll away.”
-- “Install grass and gravel footsteps in my Godot scene. Trigger them when a foot lands and vary each step so walking sounds natural.”
+Export WAVs for any audio editor, or install playback helpers for Web Audio / Three.js, Godot 4, Unity, Unreal Engine 5 and Python / Pygame. Web projects can also use the editable TypeScript recipes.
 
-Render the same beach fire as a quiet rest stop or an approaching storm. The editable scene changes spark activity, thunder distance and layer balance while keeping its timing. [Mood mixing and crossfades](references/scene-intent.md)
-
-Choose from 200 isolated launch-video cues, including mechanical and office keyboards, device clicks, and directional swipes. [Launch audio and foreground mixing](references/launch-audio.md)
-
-## Supported Engines
-
-| Target | What goes into your project |
-| --- | --- |
-| Web / Three.js | Web Audio player, editable TypeScript recipes and WAV variants |
-| Godot 4 | GDScript playback helper and WAVs |
-| Unity | C# component and WAVs for AudioClips |
-| Unreal Engine 5 | Runtime plugin and WAVs for Sound Wave import |
-| Python / Pygame | Mixer helper and WAV variants |
-| WAV | Audio files and a checksum manifest for any compatible editor or engine |
-
-Build a tactile settings menu with ten isolated Foley cues and fit a click to a UI animation. [Menu sounds and editing examples](references/menu-design.md)
-
-Build a cockpit dogfight, a drive on wet asphalt, or a dive beneath a boat. Search with `--isolated` for foreground cues without field-recording backgrounds. [Scene examples and listening desk](references/scene-design.md)
+- **Menus and launch videos.** Fit a click, a typed word or a directional swipe to a cut. [Menu examples](references/menu-design.md) · [Launch audio](references/launch-audio.md)
+- **Games and ambience.** Tie footsteps to ground contact, blend a car engine with road noise, or let a thunderstorm build around a campfire. [Scene recipes](references/scene-design.md) · [Mood and crossfades](references/scene-intent.md)
 
 <details>
 <summary>CLI commands for search, remix, export and QA</summary>
