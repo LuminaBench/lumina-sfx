@@ -28970,6 +28970,61 @@
       "brief": "Brief flex of a domestic floorboard",
       "acceptance": "One isolated action, suitable for close indoor use.",
       "revision": 1
+    },
+    {
+      "id": "stride-hardwood",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.46,
+      "loopable": false,
+      "brief": "One recorded hardwood foot plant with gait and sole controls.",
+      "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
+      "revision": 1
+    },
+    {
+      "id": "stride-concrete",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.47,
+      "loopable": false,
+      "brief": "One recorded concrete foot plant with gait and sole controls.",
+      "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
+      "revision": 1
+    },
+    {
+      "id": "stride-gravel",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.48,
+      "loopable": false,
+      "brief": "One recorded gravel foot plant with gait and sole controls.",
+      "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
+      "revision": 1
+    },
+    {
+      "id": "stride-grass",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.46,
+      "loopable": false,
+      "brief": "One recorded grass foot plant with gait and sole controls.",
+      "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
+      "revision": 1
+    },
+    {
+      "id": "stride-puddle",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.73,
+      "loopable": false,
+      "brief": "One recorded puddle foot plant with gait and sole controls.",
+      "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
+      "revision": 1
     }
   ]
 }

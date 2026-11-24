@@ -3062,6 +3062,33 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-cloth-pass.ts",
+      "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+      "author": "Nox_Sound",
+      "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 3696,
+          "sha256": "6f1d392146bb8f00cd530a9ccc672367d392941ce9ecb31641d3161c9cdfea56"
+        },
+        {
+          "frames": 3960,
+          "sha256": "f59981ad530822345701181465ad30a1526b1544df75b01f098a4c36856ed2e3"
+        },
+        {
+          "frames": 3888,
+          "sha256": "e21992ff51975acb908c23127f0573a714181cbcd54aa7cfb8079806a8a86745"
+        },
+        {
+          "frames": 3528,
+          "sha256": "c70924f63445ad9c65131085455c02f63d2ee765ab2d1be31ba88862dd456065"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-demo-fighter-rise.ts",
       "title": "F16 takeoff 1.WAV",
       "author": "Sandermotions",
@@ -3088,6 +3115,138 @@
         {
           "frames": 65536,
           "sha256": "3f26c3da21e010ac94d46d2cd0b268ff26b9c23ab9709f9c29849a8293711322"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-hardwood-footstep.ts",
+      "title": "Footsteps on wood floor",
+      "author": "IENBA",
+      "url": "https://freesound.org/people/IENBA/sounds/485421/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 816,
+          "sha256": "d102d041e429ed1bf7e3b03c01d86cd808183003981b0927e2a88ab544eb98ea"
+        },
+        {
+          "frames": 816,
+          "sha256": "48d710d3b6f1131bf40de90ffb63578a9c6bd6828e23c72a58daf3a2f7d067f7"
+        },
+        {
+          "frames": 816,
+          "sha256": "41b8640a24b413e94e9013dcb359609f79474da2133fecf20d5dc468fc2632da"
+        },
+        {
+          "frames": 816,
+          "sha256": "811a0c178bb98db96b52515b68c0cdac61369fe7eb30a30f873d3ab092e0ce9f"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-key-firm.ts",
+      "title": "Keyboard Typing 001.wav",
+      "author": "ristooooo1",
+      "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1440,
+          "sha256": "4631251f74522f1d08409b30ee494123497a983f81d37cfe459d2e10f40665db"
+        },
+        {
+          "frames": 1856,
+          "sha256": "1bad883bda8a9a6af0b6a33cb544e4970de7e18bdb09ecacf6ce5062b9676295"
+        },
+        {
+          "frames": 1696,
+          "sha256": "ebcf50f1b7d7b959422c7488b19bf5e6814ec234847f0fd408ec61d9094a0d92"
+        },
+        {
+          "frames": 1888,
+          "sha256": "31a1dc8a6688384f14e38ea310c1fd56d1fc7e94893eb915dfb81e9bcf8f7488"
+        },
+        {
+          "frames": 1024,
+          "sha256": "9046e7ac17bbb0ecb80743c697a1c17205575b5519fc636ee4b1d73bb8740a9e"
+        },
+        {
+          "frames": 1504,
+          "sha256": "6e15e7bc255e984bcafea8ea8e662a44d540a37c975af17e342b1a129f8c36b7"
+        },
+        {
+          "frames": 768,
+          "sha256": "3cbfbc064f951458fd4bc44fbde415731d06d962ac247f4ebef80f263156a7a9"
+        },
+        {
+          "frames": 1664,
+          "sha256": "9e751a2811fe2f22d3f195864428125e9a34100441a3894e8cfa9b5eb91dbd3d"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-key-office.ts",
+      "title": "Keyboard typing",
+      "author": "Breviceps",
+      "url": "https://freesound.org/people/Breviceps/sounds/447909/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1504,
+          "sha256": "3eb2ad070a67c796c44676320814cb90365bab21a379471e78ea1175ebc70b14"
+        },
+        {
+          "frames": 1568,
+          "sha256": "b0cc44ed77875e7df2e42df5b29425b7d2ca4250512ab184c992a37ec210fec5"
+        },
+        {
+          "frames": 1600,
+          "sha256": "58c00adba75345056d4603f6cabb3e9228da8d700f855e00c366b05efe9cc371"
+        },
+        {
+          "frames": 1600,
+          "sha256": "07068ff4fb46fb05b9827c7eccf27e0554bc01b56c0f76048fc222a18c3dc34c"
+        },
+        {
+          "frames": 1312,
+          "sha256": "860e5cbbb12ebf36f4586e074b75ffdede66aa4d623c7d9ad4fbda3f0522b4fa"
+        },
+        {
+          "frames": 1408,
+          "sha256": "4d14e0ecf143799ba5f53c8d736fc0742155212d690a407c2f87c8bf302c32fc"
+        },
+        {
+          "frames": 1568,
+          "sha256": "71d277345b62d1e014fb2e7fba5e87ed2d006b220092f00edc57250de3763309"
+        },
+        {
+          "frames": 1440,
+          "sha256": "dd887f90329c5f88129406f69c8e27d5fed4031e429674de4e63e3a5b87119b5"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-milestone-key-single.ts",
+      "title": "Keyboard Typing 001.wav",
+      "author": "ristooooo1",
+      "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1088,
+          "sha256": "2ae9d68555d29c6557870f70215554983e8d6822ac6f14990ff959df6f33bac4"
+        },
+        {
+          "frames": 1088,
+          "sha256": "b5d37b62b7535859968c893be5734f5502267a02aaa58303b31b2ef97db94f91"
         }
       ]
     },
@@ -6278,6 +6437,65 @@
         {
           "frames": 16920,
           "sha256": "4bc72c66739b31fa76a349add2996c12af702a0f03423b428856403d966539bf"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/stride-hardwood.ts",
+      "title": "Footsteps on wood floor",
+      "author": "IENBA",
+      "url": "https://freesound.org/people/IENBA/sounds/485421/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-24",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 8154,
+          "sha256": "61783cfeef67f0a16dba5064bd169ee4fab2332e39e2c11dfc6b581751725675"
+        },
+        {
+          "frames": 9796,
+          "sha256": "50994ff60ef5754e958205e15ef5f9c77dd30395107862df4deb279af6525ecd"
+        },
+        {
+          "frames": 9370,
+          "sha256": "dcbf03c9f241409106b678d07e3c2d1d7c18817cd33dc8dc757c0a17b298a849"
+        },
+        {
+          "frames": 9402,
+          "sha256": "9ee76ec2129cbd959b058b64285c4d6363e9fc3668f28c1d089c12e69a24f1f7"
+        },
+        {
+          "frames": 8739,
+          "sha256": "93d167a2a072545a613ae18f24eadaa6d01a3c5c9cc947d28de4dc9c017998d7"
+        },
+        {
+          "frames": 9042,
+          "sha256": "ba1eddb29463b7741355f303c959b9444c921324fc98aedc4d90693d3ac4f94d"
+        },
+        {
+          "frames": 8446,
+          "sha256": "f0f61abf1d89957d3f5e2067be7559ba2a378267c90266f0ad6ba192fed6d610"
+        },
+        {
+          "frames": 9735,
+          "sha256": "7c98a2ba82d156cc405d85dd0f1af47a698746080f867884b01bed2e0e4f01e6"
+        },
+        {
+          "frames": 10553,
+          "sha256": "9bae847b60ae03a62b2106ca87e5b2f51ad7d777204f53925520b9edb9a51a8b"
+        },
+        {
+          "frames": 9272,
+          "sha256": "0408537648a494e9048d97d5ebea079d6acfee29cb127c5be28d1e9e1b80ddd8"
+        },
+        {
+          "frames": 8136,
+          "sha256": "e769fdc2da2fbb2cbd035891d15c3792d43568bedbef2c6e7388939fb74d473d"
+        },
+        {
+          "frames": 10301,
+          "sha256": "ee07021ec14998662fa9d1c9c5d5a6c04cf7a608d98bdc57ded16e0ba076b97a"
         }
       ]
     },

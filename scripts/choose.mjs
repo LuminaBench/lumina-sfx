@@ -68,4 +68,13 @@ const decision = unresolved ? 'review' : scene ? 'authored-scene' : shared || re
 const cues = shared ? [{ id:shared.id, covers:positionals, contains:shared.contains }] :
   requests.map((r,i) => r.top ? { request:r.query, id:scene?.sources[i] ?? r.top } :
     { request:r.query, closest:r.closest ?? null });
+// A matched stride supplies one contact. Give agents the entry points for a walk or a live character.
+for (const cue of cues) {
+  if (!cue.id?.startsWith('stride-')) continue;
+  const source = bank.find(s => s.id === cue.id);
+  if (source?.takeCount) cue.movement = {
+    surface: cue.id.slice(7), takeCount: source.takeCount, eventsPerPlant: 1,
+    sequence: 'scripts/footsteps.mjs', live: 'engine/footsteps.ts', guide: 'references/footsteps.md',
+  };
+}
 console.log(JSON.stringify({ decision, scene, cues }, null, 2));

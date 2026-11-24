@@ -35,7 +35,7 @@ const sounds = recipes.map(recipe => {
   return {
     id, name, category, isolation: recipe.isolation, backgroundChecked: current && !entry.auditionNote || undefined,
     auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, contains: recipe.contains, perspective: recipe.perspective, collection: collections.get(id), tags, loopable, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
-    additionalRecordings, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
+    additionalRecordings, takeCount: recipe.takeCount, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
   };
 });
 await checkIsolatedRecipes(sounds.filter(sound => sound.isolation === 'isolated'));

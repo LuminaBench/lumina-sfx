@@ -1,6 +1,6 @@
 ---
 name: lumina-sfx
-description: Find, sculpt, layer, invent and verify offline game sound effects. Use for launch videos, keyboards, swipes, tactile menus, non-vocal alerts, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
+description: Find, sculpt, layer, invent and verify offline game sound effects. Use for launch videos, keyboards, swipes, tactile menus, non-vocal alerts, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, animation-driven footsteps, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
 # Lumina SFX
@@ -8,6 +8,8 @@ description: Find, sculpt, layer, invent and verify offline game sound effects. 
 Run the studio commands from this skill's directory using Node.js 22.12+. Pass the absolute game path to `--project` or `--dest`. Core search, WAV rendering, selective install and QA work offline from the checkout. The game uses the assets or code you install. The user can keep their existing audio manager. When shipping runtime code, include its MIT notice. The sound license permits commercial project use without audio attribution and restricts competing library distribution. [License](LICENSE)
 
 ## 1. Search for the closest performance
+
+For footsteps, choose the delivery first. One plant, a timed walk and a live animation marker use the same recorded takes. Use the [movement guide](references/footsteps.md) for surface selection, alternating feet, turns, wetness and listener direction. A change of ground keeps the character’s stride history.
 
 Choose the audible event before choosing layers. For a concrete brief, use `node scripts/choose.mjs "settings tab" --isolated`. Give it one short phrase per requested sound. Keep controller bindings, narrative motivation and delivery instructions separate from the audible description. A `single-cue` result is ready to audition. A `review` result shows words the catalog could not substantiate. Inspect those or invent the missing performance. For a fixed environment use `--scene`; a saved arrangement qualifies only when its source layers cover the requested cues without extras. For live actions, keep their triggers independent.
 

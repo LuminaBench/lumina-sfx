@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2844,
+  "count": 2849,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -102211,6 +102211,387 @@
       ],
       "channels": 1,
       "file": "recipes/streetcar-departure-through-a-junction.ts"
+    },
+    {
+      "id": "stride-concrete",
+      "name": "Concrete alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "concrete",
+        "pavement",
+        "cement"
+      ],
+      "loopable": false,
+      "durationSec": 0.47,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "foley",
+      "recording": {
+        "title": "concrete_17a_boots_walk.wav",
+        "author": "sturmankin",
+        "url": "https://freesound.org/people/sturmankin/sounds/272253/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Walking on wet asphalt",
+          "author": "SpinOpel",
+          "url": "https://freesound.org/people/SpinOpel/sounds/835102/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "takeCount": 10,
+      "channels": 1,
+      "file": "recipes/stride-concrete.ts"
+    },
+    {
+      "id": "stride-grass",
+      "name": "Grass alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "grass",
+        "soft",
+        "turf",
+        "meadow"
+      ],
+      "loopable": false,
+      "durationSec": 0.46,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps_Mountain_Boots_Grass_Mono.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/556042/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "takeCount": 8,
+      "channels": 1,
+      "file": "recipes/stride-grass.ts"
+    },
+    {
+      "id": "stride-gravel",
+      "name": "Gravel alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "gravel",
+        "grit",
+        "pebbles"
+      ],
+      "loopable": false,
+      "durationSec": 0.48,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps_Mountain_Boots_Gravel_Mono.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/556002/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "takeCount": 8,
+      "channels": 1,
+      "file": "recipes/stride-gravel.ts"
+    },
+    {
+      "id": "stride-hardwood",
+      "name": "Hardwood alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "hardwood",
+        "wood",
+        "floor",
+        "indoor"
+      ],
+      "loopable": false,
+      "durationSec": 0.46,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -23,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps on wood floor",
+        "author": "IENBA",
+        "url": "https://freesound.org/people/IENBA/sounds/485421/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-24"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Walking on wet asphalt",
+          "author": "SpinOpel",
+          "url": "https://freesound.org/people/SpinOpel/sounds/835102/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "takeCount": 12,
+      "channels": 1,
+      "file": "recipes/stride-hardwood.ts"
+    },
+    {
+      "id": "stride-puddle",
+      "name": "Puddle alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "puddle",
+        "shallow",
+        "water",
+        "splash"
+      ],
+      "loopable": false,
+      "durationSec": 0.73,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Splashing Footsteps Shallow Water",
+        "author": "ChristopherJngs",
+        "url": "https://freesound.org/people/ChristopherJngs/sounds/861369/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "takeCount": 9,
+      "channels": 1,
+      "file": "recipes/stride-puddle.ts"
     },
     {
       "id": "stylus-barrel-double-click",

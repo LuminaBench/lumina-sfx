@@ -1,0 +1,136 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
+import { mkdtemp, readFile, readdir, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { FootstepWalker, contactSamples } from '../engine/footsteps.ts';
+import { activeRms, renderSound } from '../engine/render.ts';
+import { encodeWav } from '../engine/wav.ts';
+import { renderRoute } from '../scripts/footsteps.mjs';
+import { loadRecipes, ROOT } from '../scripts/recipes.mjs';
+import { decodeWav, inspect } from './metrics.mjs';
+
+const ids = ['hardwood','concrete','gravel','grass','puddle'].map(surface => 'stride-' + surface);
+const collection = await loadRecipes(new Set(ids));
+const recipe = Object.fromEntries(collection.map(r => [r.id.slice(7), r]));
+const flags = ['--experimental-strip-types','--disable-warning=ExperimentalWarning'];
+const energy = pcm => pcm.reduce((sum, x) => sum + x * x, 0);
+const cli = (...args) => execFileSync(process.execPath, [...flags,'scripts/footsteps.mjs',...args],
+  {cwd:ROOT, encoding:'utf8', stdio:['ignore','pipe','pipe']});
+
+test('agent search routes a repeating step to its surface and movement tools', () => {
+  const run = execFileSync(process.execPath, ['scripts/choose.mjs','alternating gravel footsteps'], {cwd: ROOT});
+  const {cues} = JSON.parse(run);
+  assert.equal(cues[0].id, 'stride-gravel');
+  assert.equal(cues[0].movement.takeCount, recipe.gravel.takeCount);
+  assert.equal(cues[0].movement.eventsPerPlant, 1);
+});
+
+test('each foot exhausts its own recorded pool and crosses refill boundaries without a repeat', () => {
+  assert.deepEqual(collection.map(r => r.takeCount).sort((a,b) => a-b), [8,8,9,10,12]);
+  for (const r of collection) {
+    const w = new FootstepWalker(7), feet = [[], []];
+    for (let i = 0; i < 60; i++) {
+      const hit = w.plant(r), side = i % 2;
+      assert.equal(hit.foot, side ? 'right' : 'left');
+      assert.equal(hit.take % 2, side);
+      assert.notEqual(hit.take, feet[side].at(-1));
+      feet[side].push(hit.take);
+    }
+    for (const [side, takes] of feet.entries()) {
+      const n = Math.floor((r.takeCount + 1 - side) / 2);
+      for (let i = 0; i+n <= takes.length; i += n) assert.equal(new Set(takes.slice(i,i+n)).size, n);
+    }
+  }
+});
+
+test('one plant per grounded marker and continuous side history across surfaces', () => {
+  const w = new FootstepWalker(31), reference = new FootstepWalker(31);
+  const a = {eventId:'character:cycle1:0',foot:'right'};
+  assert.equal(w.plant(recipe.grass, {...a, grounded:false}), null);
+  assert.throws(() => w.plant(recipe.grass, {...a,actor:{x:NaN,z:0}}));
+  assert.deepEqual(w.plant(recipe.grass,a), reference.plant(recipe.grass,a));
+  assert.equal(w.plant(recipe.grass,a), null);
+  const b = w.plant(recipe.hardwood);
+  assert.deepEqual(b, reference.plant(recipe.hardwood));
+  assert.equal(b.foot, 'left');
+  const plantedRightOnLeft = w.plant(recipe.hardwood, {foot:'right',contactPosition:{x:-2,z:-1}});
+  assert.ok(plantedRightOnLeft.pan < -.5);
+});
+
+test('every surface take passes onset, peak and active loudness across gait and parameter extremes', () => {
+  for (const r of collection) {
+    for (const setting of ['default','min','max']) {
+      const params = Object.fromEntries(Object.entries(r.params).map(([key, p]) => [key,p[setting]]));
+      for (let take = 0; take < r.takeCount; take++) {
+        const pcm = decodeWav(encodeWav(renderSound(r, {seed:take,params})),44100);
+        for (const [k,v] of Object.entries(inspect(pcm,r,44100))) {
+          if (v) assert.ok(v.pass, JSON.stringify({id:r.id,setting,take,k,v}));
+        }
+      }
+    }
+  }
+});
+
+test('material level, gait, footwear, wetness and pivots survive rendering', () => {
+  function plant(r, input) { return new FootstepWalker(90).plant(r,input); }
+  const dry = plant(recipe.hardwood,{}), pcm = contactSamples(dry);
+  const db = x => 20 * Math.log10(activeRms(contactSamples(x),44100) * x.gain);
+  assert.ok(db(dry) - db(plant(recipe.grass,{})) > 8);
+  assert.ok(db(plant(recipe.hardwood,{gait:'sprint'})) - db(plant(recipe.hardwood,{gait:'sneak'})) > 7);
+  for (const control of [{footwear:'boot'}, {wetness:1}, {travel:'backward'}, {motion:'pivot'}, {weight:1}]) {
+    const alt = plant(recipe.hardwood,control);
+    assert.equal(alt.take,dry.take);
+    const diff = contactSamples(alt).map((x,i) => x-pcm[i]);
+    assert.ok(energy(diff) > energy(pcm)*.002, JSON.stringify(control));
+  }
+});
+
+test('authored routes reproduce stereo movement, requested event count and entry/stop', async () => {
+  const route = [{surface:'gravel',steps:10,gait:'sprint',from:{x:-4,z:-1},to:{x:4,z:-1}}];
+  const a = await renderRoute(route,31), b = await renderRoute(route,31);
+  assert.deepEqual(a.events,b.events);
+  assert.deepEqual(a.channels,b.channels);
+  assert.equal(a.events.length,10);
+  assert.deepEqual(a.events.map(e => e.motion), ['push-off', ...Array(8).fill('steady'), 'brake']);
+  const c = await renderRoute(route,102);
+  assert.notDeepEqual(c.events.map(e=>e.take),a.events.map(e=>e.take));
+  const [left,right] = a.channels, last = a.events.at(-1).frame;
+  assert.ok(energy(left.subarray(0,8000)) > 4*energy(right.subarray(0,8000)));
+  assert.ok(energy(right.subarray(last)) > 4*energy(left.subarray(last)));
+  assert.ok(a.peakDbfs <= -1);
+  const turned = await renderRoute([{...route[0],listener:{x:0,z:0,yaw:Math.PI}}],31);
+  for (const [i,e] of turned.events.entries()) assert.ok(Math.abs(e.pan + a.events[i].pan) < 1e-6);
+  const one = await renderRoute([{surface:'hardwood',steps:1,firstFoot:'right'}]);
+  assert.equal(one.events.length,1);
+  assert.equal(one.events[0].foot,'right');
+  assert.equal(one.events[0].motion,'steady');
+  assert.ok(one.events[0].pan > 0 && one.events[0].pan < .12);
+  await assert.rejects(renderRoute([{surface:'hardwood',steps:0}]));
+  await assert.rejects(renderRoute([{surface:'gravel',steps:1,from:{x:0,z:0}}]));
+});
+
+test('native export gives distinct mono files per side and preserves an existing bank on conflict', async () => {
+  const dir = await mkdtemp(join(tmpdir(),'lumina-movement-test-'));
+  try {
+    const bank = join(dir,'takes');
+    const args = ['--surface','puddle','--bank',bank];
+    const manifest = JSON.parse(cli(...args));
+    assert.equal(manifest.takes.length,9);
+    assert.equal(manifest.credits[0].license,'CC0-1.0');
+    const before = new Map();
+    for (const item of manifest.takes) {
+      const bytes = await readFile(join(bank,item.file));
+      assert.equal(bytes.readUInt16LE(22),1);
+      assert.equal(bytes.readUInt32LE(24),44100);
+      assert.equal(item.take % 2, item.foot === 'right' ? 1 : 0);
+      before.set(item.file,bytes);
+    }
+    assert.equal(new Set([...before.values()].map(b=>b.toString('base64'))).size,9);
+    assert.deepEqual(JSON.parse(cli(...args)),manifest);
+    assert.throws(() => cli(...args,'--gait','sprint'), /Existing bank differs/);
+    for (const [name, bytes] of before) assert.deepEqual(await readFile(join(bank,name)),bytes);
+    assert.deepEqual(await readdir(dir),['takes']);
+  } finally { await rm(dir,{recursive:true,force:true}); }
+});

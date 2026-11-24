@@ -1,6 +1,6 @@
 # Lumina SFX
 
-An offline sound studio for coding agents. Find a sound among 2,844 editable effects, layer it with others, and export a WAV or wire it into your game.
+An offline sound studio for coding agents. Find a sound among 2,849 editable effects, layer it with others, and export a WAV or wire it into your game.
 
 ## Listen
 
@@ -46,7 +46,8 @@ npx skills remove lumina-sfx -g
 Export WAVs for any audio editor, or install playback helpers for Web Audio / Three.js, Godot 4, Unity, Unreal Engine 5 and Python / Pygame. Web projects can also use the editable TypeScript recipes.
 
 - **Menus and launch videos.** Fit a click, a typed word or a directional swipe to a cut. [Menu examples](references/menu-design.md) · [Launch audio](references/launch-audio.md)
-- **Games and ambience.** Tie footsteps to ground contact, blend a car engine with road noise, or let a thunderstorm build around a campfire. [Scene recipes](references/scene-design.md) · [Mood and crossfades](references/scene-intent.md)
+- **Movement.** Make an eight-step walk on hardwood, follow a runner across gravel, or trigger one recorded step per animation marker. [Footstep controls and examples](references/footsteps.md)
+- **Games and ambience.** Blend a car engine with road noise, or let a thunderstorm build around a campfire. [Scene recipes](references/scene-design.md) · [Mood and crossfades](references/scene-intent.md)
 
 <details>
 <summary>CLI commands for search, remix, export and QA</summary>
