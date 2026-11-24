@@ -7,11 +7,11 @@ import { join } from 'node:path';
 import { FootstepWalker, contactSamples } from '../engine/footsteps.ts';
 import { activeRms, renderSound } from '../engine/render.ts';
 import { encodeWav } from '../engine/wav.ts';
-import { renderRoute } from '../scripts/footsteps.mjs';
+import { renderRoute, surfaces } from '../scripts/footsteps.mjs';
 import { loadRecipes, ROOT } from '../scripts/recipes.mjs';
 import { decodeWav, inspect } from './metrics.mjs';
 
-const ids = ['hardwood','concrete','gravel','grass','puddle'].map(surface => 'stride-' + surface);
+const ids = surfaces.map(surface => 'stride-' + surface);
 const collection = await loadRecipes(new Set(ids));
 const recipe = Object.fromEntries(collection.map(r => [r.id.slice(7), r]));
 const flags = ['--experimental-strip-types','--disable-warning=ExperimentalWarning'];
@@ -20,15 +20,19 @@ const cli = (...args) => execFileSync(process.execPath, [...flags,'scripts/foots
   {cwd:ROOT, encoding:'utf8', stdio:['ignore','pipe','pipe']});
 
 test('agent search routes a repeating step to its surface and movement tools', () => {
-  const run = execFileSync(process.execPath, ['scripts/choose.mjs','alternating gravel footsteps'], {cwd: ROOT});
-  const {cues} = JSON.parse(run);
-  assert.equal(cues[0].id, 'stride-gravel');
-  assert.equal(cues[0].movement.takeCount, recipe.gravel.takeCount);
-  assert.equal(cues[0].movement.eventsPerPlant, 1);
+  for (const surface of ['gravel','metal-stairs','snow','mud','sand']) {
+    const query = 'alternating ' + surface.replaceAll('-', ' ') + ' footsteps';
+    const run = execFileSync(process.execPath, ['scripts/choose.mjs',query], {cwd: ROOT});
+    const {cues} = JSON.parse(run);
+    assert.equal(cues[0].id, recipe[surface].id);
+    assert.equal(cues[0].movement.takeCount, recipe[surface].takeCount);
+    assert.equal(cues[0].movement.eventsPerPlant, 1);
+  }
 });
 
 test('each foot exhausts its own recorded pool and crosses refill boundaries without a repeat', () => {
-  assert.deepEqual(collection.map(r => r.takeCount).sort((a,b) => a-b), [8,8,9,10,12]);
+  assert.deepEqual(Object.fromEntries(collection.map(r => [r.id.slice(7),r.takeCount])),
+    {hardwood:12, concrete:10, gravel:8, grass:8, puddle:9, 'metal-stairs':7, snow:9, mud:5, sand:7});
   for (const r of collection) {
     const w = new FootstepWalker(7), feet = [[], []];
     for (let i = 0; i < 60; i++) {
@@ -109,6 +113,38 @@ test('authored routes reproduce stereo movement, requested event count and entry
   assert.ok(one.events[0].pan > 0 && one.events[0].pan < .12);
   await assert.rejects(renderRoute([{surface:'hardwood',steps:0}]));
   await assert.rejects(renderRoute([{surface:'gravel',steps:1,from:{x:0,z:0}}]));
+});
+
+test('a surface boundary keeps phase and cadence; an authored gait ramp changes effort over the requested plants', async () => {
+  const terrain = ['metal-stairs','snow','mud','sand'];
+  const uniform = terrain.map(surface => ({surface,steps:3,gait:'walk'}));
+  const seed = 109;
+  const {events} = await renderRoute(uniform,seed);
+  const control = await renderRoute([{surface:'hardwood',steps:12}],seed);
+  assert.deepEqual(events.map(e => [e.frame,e.foot]),control.events.map(e => [e.frame,e.foot]));
+  const incoming = {surface:'mud',steps:6,gait:'sprint'};
+  const before = {surface:'snow',steps:4,gait:'walk'};
+  const ramp = (await renderRoute([before,{...incoming,transitionSteps:3}],seed)).events;
+  const abrupt = (await renderRoute([before,incoming],seed)).events;
+  const gap = (arr,i) => arr[i+1].frame - arr[i].frame;
+  for (const i of [4,5]) {
+    assert.ok(gap(ramp,i) > gap(abrupt,i));
+    assert.ok(ramp[i].gain < abrupt[i].gain);
+    assert.ok(gap(ramp,i) > gap(ramp,i+1));
+  }
+  assert.ok(Math.abs(gap(ramp,6)-gap(abrupt,6)) <= 1);
+  assert.equal(ramp[6].gain,abrupt[6].gain);
+  await assert.rejects(renderRoute([before,{...incoming,transitionSteps:7}],seed));
+});
+
+test('stair treads retain low body and a restrained top end in light and heavy plants', () => {
+  const stair = recipe['metal-stairs'];
+  for (const gait of [0,.5,1]) for (const boot of [0,1]) for (let take=0;take<stair.takeCount;take++) {
+    const params = {gait,boot,weight:boot,wetness:boot,scuff:boot};
+    const checks = inspect(renderSound(stair,{seed:take,params}),stair,44100);
+    assert.ok(checks.spectrum.pass);
+    assert.ok(checks.spectrum.highAbove4kHzShare < .16);
+  }
 });
 
 test('native export gives distinct mono files per side and preserves an existing bank on conflict', async () => {

@@ -1,6 +1,6 @@
 {
-  "soundCount": 2849,
-  "seedParameterCombinations": 34188,
+  "soundCount": 2853,
+  "seedParameterCombinations": 34236,
   "masteringProfiles": [
     "original",
     "balanced"
@@ -2376,7 +2376,11 @@
     "stride-grass": "5d03adb99f7533006a67f5fc44fcbbf24307ddc390ae50cf27f68518ad27b6a6",
     "stride-gravel": "b4d04655666e318e41d469138a9fc4d5af2512dc28e9ec43f202e97d2e3a49d9",
     "stride-hardwood": "5b53c98a61d5f125156e42e359989c1fff3a97612607874a69975fb4692b433e",
+    "stride-metal-stairs": "37d26c3a67bc6f891c2dd3dcd86e859c85f275bab84f37a866789b522176c3c6",
+    "stride-mud": "00da638666d44d822e3edfd9ed0f5efc0a46ba7e68bda0c3e5270a01c7805d84",
     "stride-puddle": "ccaf9aa739c7de2f3f7d36b357310f7a5b0f50c12e96f237c85954b2986ae7c2",
+    "stride-sand": "2c61bb91543a362089695bded0ffa8e12b80c123a7d18f70973ca301a5862ce4",
+    "stride-snow": "5a3c62ba2ead39481b0ce2654f8f8052ae296544e32e48dfa631d246a9a34c64",
     "stylus-barrel-double-click": "4ab6e05c7b5c33cd62cbb296eae25d70c1a0a0c1d40d7754d15823e942b1601d",
     "stylus-barrel-press": "3f0ede214399e9dd9c9f7d8a16983650e833cabc825b8ab354179443ef32b1e9",
     "stylus-barrel-press-and-hold": "c7cdcfae105c730ec5771ae8200e4103454e7ca95201aee8ca6ad50e60f1b5ab",

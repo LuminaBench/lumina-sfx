@@ -29025,6 +29025,50 @@
       "brief": "One recorded puddle foot plant with gait and sole controls.",
       "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
       "revision": 1
+    },
+    {
+      "id": "stride-metal-stairs",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.66,
+      "loopable": false,
+      "brief": "One recorded foot plant on metal stairs.",
+      "acceptance": "One plant per marker, distinct takes for each foot and a natural release at walking and running pace.",
+      "revision": 1
+    },
+    {
+      "id": "stride-snow",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.59,
+      "loopable": false,
+      "brief": "One recorded foot plant on snow.",
+      "acceptance": "One plant per marker, distinct takes for each foot and a natural release at walking and running pace.",
+      "revision": 1
+    },
+    {
+      "id": "stride-mud",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.57,
+      "loopable": false,
+      "brief": "One recorded foot plant on mud.",
+      "acceptance": "One plant per marker, distinct takes for each foot and a natural release at walking and running pace.",
+      "revision": 1
+    },
+    {
+      "id": "stride-sand",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Movement · Foot contacts",
+      "durationSec": 0.59,
+      "loopable": false,
+      "brief": "One recorded foot plant on sand.",
+      "acceptance": "One plant per marker, distinct takes for each foot and a natural release at walking and running pace.",
+      "revision": 1
     }
   ]
 }

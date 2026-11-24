@@ -3,13 +3,13 @@ import { parseArgs } from 'node:util';
 import { mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import { dirname, resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { contactGain, contactSamples, FootstepWalker, stepIntervalSec } from '../engine/footsteps.ts';
+import { contactGain, contactSamples, FootstepWalker, gaitEffort, stepIntervalSec } from '../engine/footsteps.ts';
 import { rng } from '../engine/dsp.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { loadRecipes } from './recipes.mjs';
 import { publishAsset } from './audio-export.mjs';
 
-const surfaces = ['hardwood', 'concrete', 'gravel', 'grass', 'puddle'];
+export const surfaces = ['hardwood', 'concrete', 'gravel', 'grass', 'puddle', 'metal-stairs', 'snow', 'mud', 'sand'];
 const rate = 44100;
 function choice(value, allowed, label) {
   if (!allowed.includes(value)) throw Error(label + ' expects ' + allowed.join(' | '));
@@ -31,9 +31,10 @@ function pose(input) {
   return input;
 }
 function segment(input) {
-  fields(input, ['surface','steps','gait','footwear','firstFoot','wetness','weight','travel','motion','from','to','listener'], 'segment');
+  fields(input, ['surface','steps','gait','transitionSteps','footwear','firstFoot','wetness','weight','travel','motion','from','to','listener'], 'segment');
   choice(input.surface, surfaces, 'surface');
   number(input.steps, 1, 256, 'steps', true);
+  number(input.transitionSteps ?? 0, 0, input.steps, 'transitionSteps', true);
   choice(input.gait ?? 'walk', Object.keys(stepIntervalSec), 'gait');
   choice(input.motion ?? 'steady', ['steady','push-off','brake','pivot'], 'motion');
   choice(input.travel ?? 'forward', ['forward','backward','left','right'], 'travel');
@@ -74,20 +75,27 @@ export async function renderRoute(inputs, seed = 104729) {
   const hits = [];
   let at = 0, end = 0;
   const totalSteps = segments.reduce((sum, s) => sum + s.steps, 0);
+  let previousGait = segments[0].gait ?? 'walk';
   for (const s of segments) {
+    const gait = s.gait ?? 'walk';
     const recipe = recipes.get('stride-' + s.surface);
     for (let i = 0; i < s.steps; i++) {
       const first = hits.length === 0, last = hits.length === totalSteps - 1;
       const motion = s.motion ?? (totalSteps === 1 ? 'steady' : first ? 'push-off' : last ? 'brake' : 'steady');
-      const hit = walker.plant(recipe, {...s, motion, actor: actorAt(s, s.steps === 1 ? 0 : i / (s.steps - 1)), foot: i === 0 ? s.firstFoot : undefined});
+      const blend = s.transitionSteps ? Math.min(1, (i + 1) / s.transitionSteps) : 1;
+      const effort = gaitEffort[previousGait] + blend * (gaitEffort[gait] - gaitEffort[previousGait]);
+      const interval = stepIntervalSec[previousGait] + blend * (stepIntervalSec[gait] - stepIntervalSec[previousGait]);
+      const hit = walker.plant(recipe, {...s, gait: effort, motion, actor: actorAt(s, s.steps === 1 ? 0 : i / (s.steps - 1)), foot: i === 0 ? s.firstFoot : undefined});
       const offset = Math.round(at * rate);
       hits.push({hit, offset, motion});
       end = Math.max(end, offset + Math.round(recipe.durationSec * rate));
       // A small timing variation in an authored walk. Live timing belongs to the animation.
       const settling = totalSteps > 2 && (first || hits.length === totalSteps - 1) ? 1.12 : 1;
-      at += stepIntervalSec[s.gait ?? 'walk'] * settling * (.96 + .08 * cadence());
+      at += interval * settling * (.96 + .08 * cadence());
     }
+    previousGait = gait;
   }
+  if (end > 120 * rate) throw Error('Use a route under two minutes');
   const channels = [new Float32Array(end),new Float32Array(end)];
   const events = [];
   for (const {hit,offset,motion} of hits) {

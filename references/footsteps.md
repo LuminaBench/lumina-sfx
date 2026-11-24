@@ -9,6 +9,10 @@ Choose the surface under the planted foot. A single strike already contains its 
 | Loose gravel | `stride-gravel` | 8 |
 | Grass | `stride-grass` | 8 |
 | Shallow standing water | `stride-puddle` | 9 |
+| Metal stair tread | `stride-metal-stairs` | 7 |
+| Boot on snow | `stride-snow` | 9 |
+| Mud | `stride-mud` | 5 walking + 5 running |
+| Dry sand | `stride-sand` | 7 |
 
 ### One step or a finished walk
 
@@ -31,6 +35,10 @@ A route is a JSON array. This walker crosses in front of a listener at the origi
 ```
 
 Use `gait` (`sneak`, `walk`, `sprint`) for pace and effort, `footwear` (`shoe`, `boot`) for sole firmness, `weight` and `wetness` (0–1) for load and surface dampness. Shoe and boot shape the recorded performance. A puddle has its own recorded splashes. For local footwork use `travel` (`forward`, `backward`, `left`, `right`) and `motion` (`steady`, `push-off`, `brake`, `pivot`). A route eases into the first step and settles on the last. Use `motion: "steady"` for a passage already in motion. Set `firstFoot` on a segment only to override the existing alternation.
+
+At a change of gait, set `transitionSteps` on the incoming route segment to ease the elapsed time and effort over that many plants. For example, `{"surface":"mud","steps":5,"gait":"sprint","transitionSteps":3}` accelerates over three contacts after a walk. Omitting it keeps the chosen cadence immediately. Changing material alone preserves the rhythm and the next foot. In live playback the animation controls timing. A game can supply numeric `gait` from 0 to 1 as its actor accelerates.
+
+The mud recipe draws from separate walking and running performances. In native games export one bank per gait. Higher surface wetness emphasizes the mud release and softens the brittle crust on snow. Sand stays quieter than the stairs. Metal stairs already include the short ring of the tread. Allow that tail to decay at the step's own level.
 
 ### Live game with animation markers
 

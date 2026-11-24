@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2849,
+  "count": 2853,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -102521,6 +102521,185 @@
       "file": "recipes/stride-hardwood.ts"
     },
     {
+      "id": "stride-metal-stairs",
+      "name": "Metal stairs alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "metal-stairs",
+        "metal",
+        "stairs",
+        "steel",
+        "staircase",
+        "grate",
+        "tread"
+      ],
+      "loopable": false,
+      "durationSec": 0.66,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps on Metal",
+        "author": "IENBA",
+        "url": "https://freesound.org/people/IENBA/sounds/698697/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Metal Stairs Foot Steps",
+          "author": "sagamusix",
+          "url": "https://freesound.org/people/sagamusix/sounds/452421/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-24"
+        }
+      ],
+      "takeCount": 7,
+      "spectrum": [
+        {
+          "band": "sub",
+          "minShare": 0.08
+        },
+        {
+          "band": "high",
+          "minShare": 0.001
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/stride-metal-stairs.ts"
+    },
+    {
+      "id": "stride-mud",
+      "name": "Mud alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "mud",
+        "wet",
+        "soft",
+        "suction",
+        "squelch",
+        "muddy"
+      ],
+      "loopable": false,
+      "durationSec": 0.57,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps_Mountain_Boots_Mud_Mono.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/548384/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Squelch.flac",
+          "author": "billox30",
+          "url": "https://freesound.org/people/billox30/sounds/167927/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-24"
+        }
+      ],
+      "takeCount": 5,
+      "channels": 1,
+      "file": "recipes/stride-mud.ts"
+    },
+    {
       "id": "stride-puddle",
       "name": "Puddle alternating foot contact",
       "category": "Footsteps & UI",
@@ -102592,6 +102771,164 @@
       "takeCount": 9,
       "channels": 1,
       "file": "recipes/stride-puddle.ts"
+    },
+    {
+      "id": "stride-sand",
+      "name": "Sand alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "sand",
+        "dry",
+        "dune",
+        "beach",
+        "soft",
+        "grain"
+      ],
+      "loopable": false,
+      "durationSec": 0.59,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps on Sand.wav",
+        "author": "BrendanSound12",
+        "url": "https://freesound.org/people/BrendanSound12/sounds/445155/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "takeCount": 7,
+      "channels": 1,
+      "file": "recipes/stride-sand.ts"
+    },
+    {
+      "id": "stride-snow",
+      "name": "Snow alternating foot contact",
+      "category": "Footsteps & UI",
+      "markers": {
+        "plant": 0
+      },
+      "contains": [
+        "one shoe contact"
+      ],
+      "perspective": "close ground",
+      "collection": "Movement · Foot contacts",
+      "tags": [
+        "step",
+        "footstep",
+        "movement",
+        "stride",
+        "left",
+        "right",
+        "walk",
+        "sprint",
+        "snow",
+        "packed",
+        "winter",
+        "compression",
+        "crunch"
+      ],
+      "loopable": false,
+      "durationSec": 0.59,
+      "params": {
+        "gait": {
+          "label": "Sneak / walk / sprint",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "boot": {
+          "label": "Soft shoe to firm boot",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        },
+        "weight": {
+          "label": "Load carried by the foot",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "wetness": {
+          "label": "Surface dampness",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        },
+        "scuff": {
+          "label": "Lateral or reverse sole contact",
+          "min": 0,
+          "max": 1,
+          "default": 0
+        }
+      },
+      "targetRmsDbfs": -25.5,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Footsteps_Mountain_Boots_Snow_Walk_Mono.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/613849/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Footsteps in icy snow",
+          "author": "AugustSandberg",
+          "url": "https://freesound.org/people/AugustSandberg/sounds/677720/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "takeCount": 9,
+      "channels": 1,
+      "file": "recipes/stride-snow.ts"
     },
     {
       "id": "stylus-barrel-double-click",

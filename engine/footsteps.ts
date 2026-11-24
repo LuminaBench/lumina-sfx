@@ -10,7 +10,8 @@ export type Travel = 'forward' | 'backward' | 'left' | 'right';
 export interface GroundPose { x: number; z: number; yaw?: number }
 export interface Plant {
   foot?: Foot;
-  gait?: Gait;
+  /** Numeric effort interpolates sneak (0), walk (0.5) and sprint (1). */
+  gait?: Gait | number;
   footwear?: 'shoe' | 'boot';
   weight?: number;
   wetness?: number;
@@ -28,7 +29,7 @@ export interface FootContact {
   recipe: FootstepRecipe; foot: Foot; take: number; gain: number; pan: number;
   params: Record<string, number>;
 }
-const pace = {sneak: 0, walk: .5, sprint: 1};
+export const gaitEffort: Readonly<Record<Gait, number>> = {sneak: 0, walk: .5, sprint: 1};
 export const stepIntervalSec: Readonly<Record<Gait, number>> = {sneak: .76, walk: .54, sprint: .319};
 interface Bag { remaining: number[]; last?: number }
 function draw(bag: Bag, count: number, side: number, random: () => number) {
@@ -80,6 +81,8 @@ export class FootstepWalker {
     }
     if (![input.weight ?? .5, input.wetness ?? 0].every(Number.isFinite))
       throw new RangeError('Footstep weight and wetness must be finite');
+    const gait = typeof input.gait === 'number' ? input.gait : gaitEffort[input.gait ?? 'walk'];
+    if (!Number.isFinite(gait) || gait < 0 || gait > 1) throw new RangeError('Expected gait effort from 0 to 1');
     if (input.eventId !== undefined) {
       this.seen.add(input.eventId);
       if (this.seen.size > 32) this.seen.delete(this.seen.values().next().value!);
@@ -90,18 +93,19 @@ export class FootstepWalker {
     if (!bags) { bags = [{remaining: []}, {remaining: []}]; this.bags.set(recipe, bags); }
     const side = foot === 'left' ? 0 : 1;
     const take = draw(bags[side], recipe.takeCount, side, this.random);
-    const gait = pace[input.gait ?? 'walk'];
     const weight = clamp(input.weight ?? .5, 0, 1), wetness = clamp(input.wetness ?? 0, 0, 1);
     const travel = input.travel ?? 'forward';
     const lateralScuff = travel === 'forward' ? 0 : travel === 'backward' ? .65 : travel === foot ? .85 : .42;
     const motion = input.motion ?? 'steady';
     const scuff = Math.max(lateralScuff, motion === 'pivot' ? 1 : motion === 'brake' ? .56 : 0);
     const load = clamp(weight + (motion === 'brake' ? .18 : motion === 'push-off' ? -.12 : 0), 0, 1);
-    const effort = clamp(gait + (motion === 'push-off' ? -.12 : motion === 'pivot' ? -.22 : 0), 0, 1);
+    const accent = motion === 'push-off' ? -.12 : motion === 'pivot' ? -.22 : 0;
+    const effort = clamp(gait + accent, 0, 1);
     const {pan, level} = spatial(foot, input);
     const gain = contactGain(effort, load) * (.94 + .12 * this.random()) * level;
     // Discrete sole profiles are shared by live and offline renders. Gain and position stay continuous.
-    const params = {gait: effort, weight: Math.round(load * 8) / 8, wetness: Math.round(wetness * 8) / 8,
+    const profileGait = clamp(Math.round(gait * 32) / 32 + accent, 0, 1);
+    const params = {gait: profileGait, weight: Math.round(load * 8) / 8, wetness: Math.round(wetness * 8) / 8,
       scuff, boot: input.footwear === 'boot' ? 1 : 0};
     return {recipe, foot, take, gain, pan, params};
   }

@@ -6500,6 +6500,114 @@
       ]
     },
     {
+      "file": "recipes/_recordings/stride-mud-run-extra.ts",
+      "title": "Footsteps_Mountain_Boots_Mud_Mono.wav",
+      "author": "Nox_Sound",
+      "url": "https://freesound.org/people/Nox_Sound/sounds/548384/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-24",
+      "sampleRate": 18000,
+      "takes": [
+        {
+          "frames": 8048,
+          "sha256": "ae9820bc641434a20560e4993034b61b5a46c652f2e076322baa9b4491fa86d4"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/stride-mud-suction.ts",
+      "title": "Squelch.flac",
+      "author": "billox30",
+      "url": "https://freesound.org/people/billox30/sounds/167927/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-24",
+      "sampleRate": 18000,
+      "takes": [
+        {
+          "frames": 4140,
+          "sha256": "4355128ac7ab01c6f753b72d746e6a7019c33ae6807b592259b45169e6eb9152"
+        },
+        {
+          "frames": 4141,
+          "sha256": "305f05ffd7480c78a52bab03fb8475565df2cc498f19331979ebc28226d4c008"
+        },
+        {
+          "frames": 4140,
+          "sha256": "cb2fd7cb9c1ffdd689b0ce15e2aa50f54ac17a98bac827b271910a589d473c39"
+        },
+        {
+          "frames": 4140,
+          "sha256": "23ba87a35918e16087ae73ee7d5cc296aa9bc8b6516f37441c63db60348c7701"
+        },
+        {
+          "frames": 4140,
+          "sha256": "7b813162170c4862916e6e0e4f01811c0672c93ba65916121b05614f96806299"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/stride-sand-extra.ts",
+      "title": "Footsteps on Sand.wav",
+      "author": "BrendanSound12",
+      "url": "https://freesound.org/people/BrendanSound12/sounds/445155/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-24",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 11510,
+          "sha256": "f49f3932c3fbd44655ad56b67c0ae01888e84921c1736123967ccb824e8cf058"
+        },
+        {
+          "frames": 12240,
+          "sha256": "aef50a6fb0ab269b58035de48a27a855a315477349c832d04de09a25a0ad07f5"
+        },
+        {
+          "frames": 10560,
+          "sha256": "d53533fd46c9a14c5806951096b69e7914d3ddf12e23c8c586314ccb7da27b45"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/stride-stair-treads.ts",
+      "title": "Metal Stairs Foot Steps",
+      "author": "sagamusix",
+      "url": "https://freesound.org/people/sagamusix/sounds/452421/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-24",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 3720,
+          "sha256": "cdb4dc9a7da71cced1dfe16f88dad83dc8da9ccca7b4c1f9cdf83675e49dc7a8"
+        },
+        {
+          "frames": 3720,
+          "sha256": "65c512dcd231e715579b5605756d80536becec0209b0bf5fae37f09f1dfb0ad2"
+        },
+        {
+          "frames": 3720,
+          "sha256": "b0d298acfa5d894003571aed67198be2cce24285a741927c555536614b6a2ba6"
+        },
+        {
+          "frames": 3720,
+          "sha256": "7dcf66e613562fe3bae45399d92e103b84501d31cb4a24cde640351a6fa0acb5"
+        },
+        {
+          "frames": 3720,
+          "sha256": "03a4a0a4231b67ea28862e7f708f684aa2ea629db86e97094fa3c5b256511094"
+        },
+        {
+          "frames": 3720,
+          "sha256": "7e4187752319546f8a847f6e32bfe2b140f348cd2ef664e8e32d89dfd5caf5a1"
+        },
+        {
+          "frames": 3720,
+          "sha256": "0fed521fffef5cb18fabbcf36067fa7291f09f2f905ec093b06c34ed5884cdb8"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/tractor-diesel-idle-loop.ts",
       "title": "Tractor Engine",
       "author": "lucasfuchs",

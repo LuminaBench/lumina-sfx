@@ -1,16 +1,31 @@
+import { activeRms } from '../../engine/render.ts';
 import { biquad, mix } from '../../engine/dsp.ts';
 import { renderRecording, type RecordedClip } from '../../engine/recording.ts';
 import type { FootstepRecipe } from '../../engine/footsteps.ts';
 
+interface ContactOptions {
+  dampSole?: RecordedClip;
+  running?: RecordedClip;
+  release?: {clip: RecordedClip; startSec: number; gain: number; wetGain?: number; cutoffHz: number};
+  cutoffHz?: number;
+  sprintTailSec?: number;
+  spectrum?: FootstepRecipe['spectrum'];
+}
+
 /** Each take is one complete sole contact. Shape its heel and roll in place. */
 export function strideContact(surface: string, tags: string[], clip: RecordedClip, target: number,
-  duration: number, dampSole?: RecordedClip): FootstepRecipe {
+  duration: number, sourceOrOptions: RecordedClip | ContactOptions = {}): FootstepRecipe {
+  const options: ContactOptions = 'takes' in sourceOrOptions ? {dampSole: sourceOrOptions} : sourceOrOptions;
+  const {dampSole, running} = options;
+  if (running && running.takes.length !== clip.takes.length) throw Error('Expected matching walk and run take counts');
+  const credits = [dampSole, running, options.release?.clip].filter((source): source is RecordedClip =>
+    !!source && source.credit.url !== clip.credit.url).map(source => source.credit);
   return {
-    id: 'stride-' + surface, name: surface[0].toUpperCase() + surface.slice(1) + ' alternating foot contact',
+    id: 'stride-' + surface, name: surface[0].toUpperCase() + surface.slice(1).replaceAll('-', ' ') + ' alternating foot contact',
     category: 'Footsteps & UI', tags: ['step', 'footstep', 'movement', 'stride', 'left', 'right', 'walk', 'sprint', surface, ...tags],
     contains: ['one shoe contact'], markers: { plant: 0 }, perspective: 'close ground',
     takeCount: clip.takes.length, durationSec: duration, loopable: false, mixRole: 'foley', targetRmsDbfs: target,
-    recording: clip.credit, additionalRecordings: dampSole ? [dampSole.credit] : undefined,
+    spectrum: options.spectrum, recording: clip.credit, additionalRecordings: credits.length ? credits : undefined,
     params: {
       gait: {label: 'Sneak / walk / sprint', min: 0, max: 1, default: .5},
       boot: {label: 'Soft shoe to firm boot', min: 0, max: 1, default: .4},
@@ -21,8 +36,30 @@ export function strideContact(surface: string, tags: string[], clip: RecordedCli
     render(ctx, {seed, params}) {
       const {gait, boot, weight, wetness, scuff} = params;
       const speed = 0.92 + gait * .16 - weight * .044 + scuff * .04;
-      const out = renderRecording(ctx, clip, {seed, speed, cutoffHz:
-        (6600 + gait * 4100 + boot * 2000) * (1 - .33 * wetness)});
+      const performance = running && gait >= .75 ? running : clip;
+      const cutoff = Math.min(6600 + gait * 4100 + boot * 2000, options.cutoffHz ?? Infinity);
+      const out = renderRecording(ctx, performance, {seed, speed, cutoffHz: cutoff * (1 - .33 * wetness)});
+      // Bring out the existing compression or suction as the sole rolls off the surface.
+      if (options.release) {
+        const detail = options.release;
+        const length = Math.round((.22 - .09 * gait) * ctx.sampleRate);
+        const texture = renderRecording({...ctx, frames: length}, detail.clip, {
+          seed, speed, cutoffHz: detail.cutoffHz, startSec: detail.startSec,
+        });
+        for (let i = 0; i < length; i++) texture[i] *= Math.sin(Math.PI * i / length) ** 2;
+        const level = activeRms(out, ctx.sampleRate) / Math.max(1e-4, activeRms(texture, ctx.sampleRate));
+        const gain = detail.gain + wetness * ((detail.wetGain ?? detail.gain) - detail.gain);
+        mix(out, texture, level * gain, Math.round((.06 - .035 * gait) * ctx.sampleRate));
+      }
+      // Shorten the release as the next running contact approaches. Preserve the full walking tail.
+      if (options.sprintTailSec && gait > .5) {
+        const end = duration + (options.sprintTailSec - duration) * (gait - .5) * 2;
+        const fadeFrames = Math.round(.085 * ctx.sampleRate);
+        const stop = Math.min(out.length, Math.round(end * ctx.sampleRate));
+        for (let i = Math.max(0, stop - fadeFrames); i < stop; i++)
+          out[i] *= .5 - .5 * Math.cos(Math.PI * (stop - i) / fadeFrames);
+        out.fill(0, stop);
+      }
       const removeRumble = biquad('highpass', 38, .707, ctx.sampleRate);
       const body = biquad('lowpass', 340 + 120 * boot, .71, ctx.sampleRate);
       const decay = Math.exp(-1 / (ctx.sampleRate * (.026 + .02 * weight)));
