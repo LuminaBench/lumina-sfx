@@ -59,6 +59,11 @@ export async function installRecipes(selected, dest, custom) {
   await collect(runtime, files);
   for (const recipe of selected) await collect(recipe.file, files);
   // The generated recipe is published last, after all its dependencies exist.
+  for(const dep of custom?.dependencies??[]) await collect(dep,files);
+  if(files.has('engine/hrtf/sadie-h3.ts')) for(const name of ['NOTICE.md','LICENSE.txt']) {
+    const path='engine/hrtf/'+name;
+    files.set(path,await readFile(resolve(ROOT,path),'utf8'));
+  }
   if (custom) files.set(custom.file, custom.source);
   dest = resolve(dest);
   const pending = [];

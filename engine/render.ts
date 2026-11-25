@@ -109,6 +109,16 @@ function renderContext(recipe: SoundRecipe, opts: RenderOptions, sampleRate: num
   return { ctx, resolved: { seed, params }, frames, overlap };
 }
 
+function sceneCeiling(channels: Float32Array[]): Float32Array[] {
+  let peak = 0;
+  for (const channel of channels) for (const sample of channel) {
+    if (!Number.isFinite(sample)) throw Error('Non-finite scene sample');
+    peak = Math.max(peak,Math.abs(sample));
+  }
+  const gain = Math.min(1,dbToGain(PEAK_LIMIT_DB-.08)/Math.max(peak,1e-12));
+  return gain===1 ? channels : channels.map(c=>c.map(v=>v*gain));
+}
+
 export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampleRate = SAMPLE_RATE): Float32Array {
   recipe = designedRecipe(recipe, opts.macros);
   const { ctx, resolved, frames, overlap } = renderContext(recipe, opts, sampleRate);
@@ -116,6 +126,7 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
   if (!(raw instanceof Float32Array) || raw.length !== ctx.frames) {
     throw new Error(`${recipe.id}: render must return exactly ${ctx.frames} Float32 samples`);
   }
+  if (recipe.preserveTimeline) return sceneCeiling([raw])[0];
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
   const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate);
   const output = master(prepared, sampleRate, target);
@@ -131,6 +142,7 @@ export function renderChannels(recipe: SoundRecipe, opts: RenderOptions = {}, sa
   if (raw.length !== 2 || raw.some(c => !(c instanceof Float32Array) || c.length !== ctx.frames)) {
     throw new Error(recipe.id + ': stereo renderer must return two equal-length channels');
   }
+  if (recipe.preserveTimeline) return sceneCeiling([...raw]);
   let peak = 0;
   for (const c of raw) for (const x of c) {
     if (!Number.isFinite(x)) throw new Error('Non-finite stereo sample');

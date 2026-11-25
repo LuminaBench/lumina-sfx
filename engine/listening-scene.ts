@@ -1,0 +1,427 @@
+// Scene time is in seconds. The focus policy only changes gain; movement belongs to placement.
+import { biquad } from './dsp.ts';
+import { composeRecipe, sceneStyles } from './remix.ts';
+import type { RemixDesign, RemixLayer, TimedStem } from './remix.ts';
+import { bounded, placeAudio, validatePlacement, validateTrajectory } from './spatial.ts';
+import type { HeadResponse, OutputMode, Placement, Trajectory } from './spatial.ts';
+import { resolveMacros } from './sculpt.ts';
+import type { SoundRecipe } from './types.ts';
+
+export interface Focus {
+  subjects: readonly string[];
+  marginDb?: number;
+}
+export interface Moment extends Focus {
+  from: number;
+  to: number;
+}
+export interface ListeningDesign extends RemixDesign {
+  schemaVersion: 2;
+  viewpoint?: string;
+  listener?: Trajectory;
+  output?: OutputMode;
+  focus?: Focus & { moments?: readonly Moment[] };
+}
+export interface ListeningLayer extends RemixLayer {
+  placement?: Placement;
+  locked?: boolean;
+  maskEq?: { hz: number; cutDb: number; q?: number };
+}
+export interface Stem {
+  label: string;
+  source: string;
+  placement: Placement;
+  locked: boolean;
+  offset: number;
+  dry: Float32Array[];
+  ears: Float32Array[];
+}
+export interface Region {
+  from: number;
+  to: number;
+  subjects: readonly string[];
+  marginDb: number;
+  gain: Record<string, number>;
+  measuredBeforeDb: number | null;
+  measuredAfterDb: number | null;
+  worstTimeSec: number | null;
+  overlapWindows: number;
+  transientWindows: number;
+  conflicts: string[];
+  delivered?: {
+    activeWindows: number;
+    focusDbfs: number;
+    backgroundDbfs: number;
+    marginDb: number;
+    phoneMarginDb: number | null;
+    worstTimeSec: number;
+  };
+}
+export interface SceneInspection {
+  masterGain: number;
+  rate: number;
+  seed: number;
+  output: OutputMode;
+  listener: Trajectory;
+  viewpoint?: string;
+  regions: Region[];
+  stems: Stem[];
+  frames: number;
+}
+export type InspectScene = (result: SceneInspection) => void;
+export function layerSeed(label: string, base: number) {
+  let hash = 2166136261;
+  for (let i = 0; i < label.length; i++) hash = Math.imul(hash ^ label.charCodeAt(i), 16777619);
+  return (hash + base) >>> 0;
+}
+const levelDb = (power: number) => 10 * Math.log10(Math.max(1e-16, power));
+function quantile(values: number[], fraction: number) {
+  return values.sort((a, b) => a - b)[Math.floor((values.length - 1) * fraction)];
+}
+function powerAt(stem: Stem, start: number, end: number) {
+  let energy = 0;
+  for (let i = Math.max(0, start - stem.offset); i < Math.min(end - stem.offset, stem.ears[0].length); i++)
+    for (const c of stem.ears) energy += c[i] * c[i];
+  return energy / ((end - start) * stem.ears.length);
+}
+interface WindowPower {
+  start: number;
+  focus: number;
+  bed: number;
+  locked: number;
+  cross: number;
+}
+function bedPower(w: WindowPower, trim: number) {
+  return Math.max(0, w.locked + 2 * w.cross * trim + w.bed * trim * trim);
+}
+function measure(stems: Stem[], spec: Moment, rate: number): Region {
+  const { from, to, subjects } = spec,
+    marginDb = spec.marginDb ?? 8;
+  const gain: Record<string, number> = Object.create(null);
+  for (const s of stems) gain[s.label] = 1;
+  const result: Region = {
+    from,
+    to,
+    subjects,
+    marginDb,
+    gain,
+    measuredBeforeDb: null,
+    measuredAfterDb: null,
+    worstTimeSec: null,
+    overlapWindows: 0,
+    transientWindows: 0,
+    conflicts: [],
+  };
+  if (!subjects.length) return result;
+  const foreground = stems.filter((s) => subjects.includes(s.label));
+  const start = Math.round(from * rate),
+    end = Math.round(to * rate),
+    hop = Math.max(1, Math.round(rate * 0.05));
+  const windows: (readonly [number, number])[] = [];
+  for (let t = start; t < end; t += hop) windows.push([t, Math.min(t + hop, end)] as const);
+  if (foreground.length > 1) {
+    // Shared subjects are matched on overlapping active windows only. A silent subject
+    // never drags the rest of the scene down. Locked reference levels are authoritative.
+    const levels = foreground.map((s) => windows.map(([a, b]) => powerAt(s, a, b)));
+    const peaks = levels.map((xs) => xs.reduce((a, b) => Math.max(a, b), 0));
+    const jointlyActive = windows.map((_, i) =>
+      levels.every((xs, k) => xs[i] > Math.max(1e-12, peaks[k] * 0.01)),
+    );
+    const typical = levels.map((xs) =>
+      quantile(
+        xs.filter((_, i) => jointlyActive[i]),
+        0.5,
+      ),
+    );
+    if (typical.every(Number.isFinite)) {
+      const fixed = typical.filter((_, i) => foreground[i].locked);
+      const target = Math.min(...(fixed.length ? fixed : typical));
+      foreground.forEach((s, i) => {
+        if (!s.locked) gain[s.label] = Math.min(1, Math.sqrt(target / typical[i]));
+      });
+      if (
+        fixed.length &&
+        typical.some((v, i) => Math.abs(levelDb((v * gain[foreground[i].label] ** 2) / target)) > 2)
+      )
+        result.conflicts.push('Shared subjects cannot be equally present with the locked levels.');
+    }
+  }
+  const measured: WindowPower[] = [];
+  const n = stems[0].ears.length;
+  for (const [a, b] of windows) {
+    const buses = Array.from({ length: 3 * n }, () => new Float32Array(b - a));
+    for (const s of stems) {
+      const bus = subjects.includes(s.label) ? 0 : s.locked ? 1 : 2;
+      const lo = Math.max(0, s.offset - a),
+        hi = Math.min(b - a, s.offset - a + s.ears[0].length);
+      for (let ch = 0; ch < n; ch++) {
+        const dest = buses[bus * n + ch],
+          src = s.ears[ch],
+          g = gain[s.label];
+        for (let j = lo; j < hi; j++) dest[j] += src[a + j - s.offset] * g;
+      }
+    }
+    let focus = 0,
+      bed = 0,
+      locked = 0,
+      cross = 0;
+    for (let ch = 0; ch < n; ch++)
+      for (let j = 0; j < b - a; j++) {
+        const f = buses[ch][j],
+          l = buses[n + ch][j],
+          u = buses[2 * n + ch][j];
+        focus += f * f;
+        locked += l * l;
+        bed += u * u;
+        cross += l * u;
+      }
+    const frames = (b - a) * n;
+    measured.push({
+      start: a / rate,
+      focus: focus / frames,
+      bed: bed / frames,
+      locked: locked / frames,
+      cross: cross / frames,
+    });
+  }
+  const max = measured.reduce((m, w) => Math.max(m, w.focus), 0);
+  const active = measured.filter((w) => w.focus > Math.max(1e-12, max * 0.008) && bedPower(w, 1) > 1e-12);
+  result.overlapWindows = active.length;
+  if (!active.length) return result;
+  const requested = 10 ** (-marginDb / 10);
+  // Solve the power of the actual summed, possibly correlated, adjustable and locked beds.
+  // A steady trim per authored region keeps ambience from pumping between short contacts.
+  const trims = active.map((w) => {
+    if (bedPower(w, 1) <= w.focus * requested) return 1;
+    const d = w.cross * w.cross + w.bed * (w.focus * requested - w.locked);
+    return d < 0 || w.bed < 1e-16 ? 0 : Math.min(1, Math.max(0, (-w.cross + Math.sqrt(d)) / w.bed));
+  });
+  const trim = Math.max(10 ** (-30 / 20), quantile(trims, 0.05));
+  for (const s of stems) if (!subjects.includes(s.label) && !s.locked) gain[s.label] = trim;
+  const gap = (w: WindowPower, g: number) => levelDb(w.focus) - levelDb(bedPower(w, g));
+  const worst = active.reduce((a, b) => (gap(a, trim) < gap(b, trim) ? a : b));
+  result.measuredBeforeDb = quantile(
+    active.map((w) => gap(w, 1)),
+    0.05,
+  );
+  result.measuredAfterDb = quantile(
+    active.map((w) => gap(w, trim)),
+    0.05,
+  );
+  result.worstTimeSec = worst.start;
+  result.transientWindows = active.filter((w) => gap(w, trim) < marginDb - 1).length;
+  if (result.measuredAfterDb < marginDb - 0.25)
+    result.conflicts.push('Requested margin exceeds the available trim or a background level is locked.');
+  return result;
+}
+// Audit the actual handoff ramps and the mono phone band. Gating uses the subject's
+// local peak, so a quiet but recognisable distant source still gets evaluated.
+function auditRegion(stems: Stem[], regions: Region[], k: number, rate: number) {
+  const r = regions[k];
+  if (!r.subjects.length) return;
+  const hop = Math.round(0.05 * rate),
+    start = Math.round(r.from * rate),
+    end = Math.round(r.to * rate);
+  const windows = [];
+  const hp = 1 - Math.exp((-2 * Math.PI * 280) / rate),
+    lp = 1 - Math.exp((-2 * Math.PI * 3800) / rate);
+  const low = [0, 0],
+    high = [0, 0];
+  for (let a = start; a < end; a += hop) {
+    const n = Math.min(hop, end - a),
+      sides = stems[0].ears.length;
+    const bus = Array.from({ length: 2 * sides }, () => new Float32Array(n));
+    for (const s of stems) {
+      const role = r.subjects.includes(s.label) ? 0 : 1;
+      const lo = Math.max(0, s.offset - a),
+        hi = Math.min(n, s.ears[0].length + s.offset - a);
+      for (let j = lo; j < hi; j++) {
+        const t = (a + j) / rate,
+          g = k && t - r.from < 0.1 ? regionGain(regions, k, t, s.label) : r.gain[s.label];
+        for (let ch = 0; ch < sides; ch++) bus[role * sides + ch][j] += s.ears[ch][a + j - s.offset] * g;
+      }
+    }
+    const power = [0, 0],
+      phone = [0, 0];
+    for (let role = 0; role < 2; role++)
+      for (let j = 0; j < n; j++) {
+        let mono = 0;
+        for (let c = 0; c < sides; c++) {
+          const x = bus[role * sides + c][j];
+          power[role] += (x * x) / sides;
+          mono += x / sides;
+        }
+        low[role] += hp * (mono - low[role]);
+        high[role] += lp * (mono - low[role] - high[role]);
+        phone[role] += high[role] ** 2;
+      }
+    windows.push({ t: a / rate, f: power[0] / n, b: power[1] / n, pf: phone[0] / n, pb: phone[1] / n });
+  }
+  const peak = windows.reduce((p, w) => Math.max(p, w.f), 0);
+  if (peak <= 1e-12) {
+    r.conflicts.push('No audible focus signal in this region at the listener.');
+    return;
+  }
+  const active = windows.filter((w) => w.f > peak * 0.008 && w.b > 1e-12);
+  if (!active.length) return;
+  const gap = (f: number, b: number) => levelDb(f) - levelDb(b);
+  const worst = active.reduce((a, b) => (gap(a.f, a.b) < gap(b.f, b.b) ? a : b));
+  const phones = active.filter((w) => w.pb > 1e-12).map((w) => gap(w.pf, w.pb));
+  r.delivered = {
+    activeWindows: active.length,
+    focusDbfs: levelDb(worst.f),
+    backgroundDbfs: levelDb(worst.b),
+    marginDb: quantile(
+      active.map((w) => gap(w.f, w.b)),
+      0.05,
+    ),
+    phoneMarginDb: phones.length ? quantile(phones, 0.05) : null,
+    worstTimeSec: worst.t,
+  };
+}
+// Crossfade only at deliberate handoffs. Gain stays constant between them.
+export function regionGain(regions: Region[], index: number, time: number, label: string) {
+  const current = regions[index];
+  const ease = Math.min(0.1, (current.to - current.from) / 2);
+  const u = Math.min(1, Math.max(0, (time - current.from) / ease));
+  const prev = index ? regions[index - 1].gain[label] : current.gain[label];
+  return prev + (current.gain[label] - prev) * (0.5 - 0.5 * Math.cos(Math.PI * u));
+}
+export function composeListeningScene(
+  design: ListeningDesign,
+  layers: readonly ListeningLayer[],
+  head?: HeadResponse,
+  inspect?: InspectScene,
+): SoundRecipe {
+  if (design.schemaVersion !== 2) throw Error('Expected listening scene version 2');
+  const output = design.output ?? 'stereo',
+    listener = design.listener ?? { position: [0, 0, 0] as const };
+  if (!['stereo', 'mono', 'headphones'].includes(output)) throw Error('Unknown scene output');
+  if (output === 'headphones' && !head)
+    throw Error('Headphone output requires the measured headphone filter');
+  validateTrajectory(listener);
+  if (design.style !== undefined && !Object.hasOwn(sceneStyles, design.style))
+    throw Error('Unknown scene style');
+  const palette = { ...(design.style ? sceneStyles[design.style] : {}), ...design.macros };
+  resolveMacros(palette);
+  const named = layers.map((l) => ({
+    ...l,
+    macros: { ...palette, ...l.macros },
+    label:
+      l.label ??
+      (/^[a-z]/.test(l.recipe.id) && !/^layer[0-9]+$/.test(l.recipe.id)
+        ? l.recipe.id
+        : 'source-' + l.recipe.id),
+  }));
+  const labels = new Set(named.map((l) => l.label));
+  if (labels.size !== layers.length) throw Error('Repeated sources need unique labels');
+  for (const l of named) {
+    if (l.maskEq) {
+      bounded(l.maskEq.hz, 50, 12000, 'maskEq centre frequency');
+      bounded(l.maskEq.cutDb, 0, 9, 'maskEq cutDb');
+      bounded(l.maskEq.q ?? 0.9, 0.3, 4, 'maskEq Q');
+    }
+    validatePlacement(l.placement ?? { kind: 'listener' });
+    if (l.locked !== undefined && typeof l.locked !== 'boolean') throw Error('locked must be boolean');
+  }
+  const focus = design.focus ?? { subjects: named.filter((s) => s.role === 'focus').map((s) => s.label) };
+  function validateFocus(f: Focus) {
+    if (
+      !Array.isArray(f.subjects) ||
+      new Set(f.subjects).size !== f.subjects.length ||
+      f.subjects.some((s) => !labels.has(s))
+    )
+      throw Error('Focus subjects must name distinct scene layers');
+    bounded(f.marginDb ?? 8, 0, 30, 'focus marginDb');
+  }
+  validateFocus(focus);
+  const moments = focus.moments ?? [];
+  let last = 0;
+  for (const m of moments) {
+    validateFocus(m);
+    bounded(m.from, last, 120, 'moment start');
+    bounded(m.to, m.from, 120, 'moment end');
+    if (m.from === m.to) throw Error('A focus moment needs a duration');
+    last = m.to;
+  }
+  const recipe = composeRecipe({ ...design, style: undefined, macros: undefined }, named, {
+    output,
+    seed: (i, base) => layerSeed(named[i].label, base),
+    finish(dry: TimedStem[], ctx, seed) {
+      const { frames, sampleRate: rate } = ctx;
+      const stems: Stem[] = dry
+        .map(({ index, offset, channels }) => {
+          const l = named[index],
+            placement = l.placement ?? { kind: 'listener' as const };
+          if (l.maskEq && l.maskEq.cutDb > 0) {
+            const cut = 1 - 10 ** (-l.maskEq.cutDb / 20);
+            channels = channels.map((c) => {
+              const band = biquad('bandpass', l.maskEq!.hz, l.maskEq!.q ?? 0.9, rate);
+              return c.map((x) => x - cut * band(x));
+            });
+          }
+          return {
+            label: l.label,
+            source: l.recipe.id,
+            placement,
+            locked: l.locked ?? false,
+            offset,
+            dry: channels,
+            ears: placeAudio(
+              channels,
+              placement,
+              listener,
+              output,
+              rate,
+              offset / rate,
+              output === 'headphones' ? head : undefined,
+            ),
+          };
+        })
+        .sort((a, b) => (a.label < b.label ? -1 : 1));
+      const regions: Region[] = [];
+      let t = 0;
+      for (const m of moments) {
+        if (m.from > t) regions.push(measure(stems, { ...focus, from: t, to: m.from }, rate));
+        regions.push(measure(stems, { ...m, marginDb: m.marginDb ?? focus.marginDb }, rate));
+        t = m.to;
+      }
+      if (t < frames / rate) regions.push(measure(stems, { ...focus, from: t, to: frames / rate }, rate));
+      const mix = Array.from({ length: output === 'mono' ? 1 : 2 }, () => new Float32Array(frames));
+      for (const s of stems) {
+        for (const [k, r] of regions.entries()) {
+          const from = Math.max(s.offset, Math.round(r.from * rate)),
+            to = Math.min(s.offset + s.ears[0].length, Math.round(r.to * rate));
+          const transitionEnd = k ? Math.min(to, Math.ceil((r.from + 0.1) * rate)) : from;
+          for (let ch = 0; ch < mix.length; ch++) {
+            const src = s.ears[ch],
+              out = mix[ch];
+            for (let i = from; i < transitionEnd; i++)
+              out[i] += src[i - s.offset] * regionGain(regions, k, i / rate, s.label);
+            for (let i = transitionEnd; i < to; i++) out[i] += src[i - s.offset] * r.gain[s.label];
+          }
+        }
+      }
+      if (inspect) {
+        regions.forEach((_, i) => auditRegion(stems, regions, i, rate));
+        let peak = 0;
+        for (const channel of mix) for (const x of channel) peak = Math.max(peak, Math.abs(x));
+        const masterGain = Math.min(1, 10 ** (-0.58 / 20) / Math.max(peak, 1e-12));
+        inspect({
+          masterGain,
+          rate,
+          seed,
+          output,
+          listener,
+          viewpoint: design.viewpoint,
+          regions,
+          stems,
+          frames,
+        });
+      }
+      return mix;
+    },
+  });
+  if (last > recipe.durationSec) throw Error('Focus moment extends beyond the scene');
+  return recipe;
+}

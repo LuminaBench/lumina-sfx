@@ -17,13 +17,15 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
   --mood neutral|calm|dramatic (also applies to the root of --spec)
   --style natural|cinematic|arcade
   --format ts|wav|ogg|opus (default ts)
+  --report path/to/report.json (listener-level focus diagnostics for a version 2 scene)
+  --stems path/to/stems (dry independent sources, positioned solos and playback manifest)
   --isolated (require isolated source layers)
   --extremes (also test native control limits)
 `;
 async function main() {
   const names = ['punch', 'size', 'distance', 'space', 'grit', 'wetness', 'speed', 'pitchShift'];
   const options = Object.fromEntries(
-    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'params', 'style', 'mood'].map((k) => [k, { type: 'string' }]),
+    [...names, 'fit-seconds', 'format', 'spec', 'id', 'name', 'dest', 'report', 'stems', 'params', 'style', 'mood'].map((k) => [k, { type: 'string' }]),
   );
   const { values: v, positionals } = parseArgs({
     allowPositionals: true,
@@ -70,7 +72,10 @@ async function main() {
   const { loadDesign } = await import('./remix-design.mjs');
   const { renderDurationSec } = await import('../engine/sculpt.ts');
   const { checkRecipe } = await import('../qa/check-recipe.mjs');
-  const { recipe, selected, source } = await loadDesign(spec, process.cwd(), v.mood);
+  let scene;
+  const capture=v.report || v.stems ? x=>{if(!scene) scene=x;} : undefined;
+  const { recipe, selected, source, dependencies } = await loadDesign(spec, process.cwd(), v.mood,capture);
+  if(capture && !recipe.preserveTimeline) throw Error('--report and --stems require a version 2 scene');
   if (v.isolated) {
     await checkIsolatedRecipes(selected);
     if (recipe.isolation !== 'isolated') throw Error('A source recipe no longer declares isolation');
@@ -94,6 +99,10 @@ async function main() {
     process.exitCode = 1;
     return;
   }
+  if(capture){
+    const {exportSceneReview}=await import('./scene-review.mjs');
+    await exportSceneReview(scene,v.report,v.stems);
+  }
   if (format !== 'ts') {
     const file = resolve(v.dest, recipe.id + '.' + format);
     const bytes = await encodeDelivery(wav, format);
@@ -103,7 +112,7 @@ async function main() {
     return;
   }
   const file = 'recipes/' + recipe.id + '.ts';
-  await installRecipes(selected, v.dest, { file, source });
+  await installRecipes(selected, v.dest, { file, source, dependencies });
   console.log(
     JSON.stringify(
       {

@@ -11,6 +11,22 @@ if (positionals.length !== 1 || !values.dest)
 const scene = JSON.parse(await readFile(positionals[0], 'utf8'));
 const name = basename(positionals[0], '.json');
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)) throw Error('Use a lowercase hyphenated scene filename');
+if(scene.schemaVersion===2){
+  const {loadDesign}=await import('./remix-design.mjs');
+  let snapshot;
+  const {recipe,selected}=await loadDesign(positionals[0],process.cwd(),undefined,x=>{snapshot??=x;});
+  if(values.isolated) await checkIsolatedRecipes(selected);
+  const {checkRecipe}=await import('../qa/check-recipe.mjs');
+  const qa=await checkRecipe(recipe,{bothLevels:true});
+  if(!qa.pass)throw Error('Scene QA failed: '+JSON.stringify(qa.variants.filter(x=>!x.pass)));
+  const {exportSceneReview}=await import('./scene-review.mjs');
+  const directory=resolve(values.dest,name);
+  const {publishAsset}=await import('./audio-export.mjs');
+  for(const file of ['live-listening.ts','spatial.ts'])
+    await publishAsset(resolve(directory,file),await readFile(new URL('../engine/'+file,import.meta.url)));
+  await exportSceneReview(snapshot,undefined,directory,false);
+  console.log(JSON.stringify({pass:true,file:resolve(directory,'scene.json'),player:resolve(directory,'live-listening.ts'),sources:selected.length}));
+} else {
 const selected = await selectRecipes(scene.cues.map((cue) => cue.id));
 if (values.isolated) await checkIsolatedRecipes(selected);
 const recipes = await loadRecipes(new Set(selected.map((s) => s.id)));
@@ -30,3 +46,4 @@ const source = [
 ].join('\n');
 const written = await installRecipes(selected, values.dest, { file, source });
 console.log(JSON.stringify({ file: resolve(values.dest, file), written, cues: selected.length }));
+}

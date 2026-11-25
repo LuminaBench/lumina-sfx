@@ -4,15 +4,22 @@ import { readFile } from 'node:fs/promises';
 import { rankByIntent } from './intent-search.mjs';
 
 const { positionals, values } = parseArgs({ allowPositionals: true, options: {
-  isolated: { type: 'boolean' }, scene: { type: 'boolean' }, exclude: { type: 'string' }, help: { type: 'boolean' },
+  brief:{type:'string'}, isolated: { type: 'boolean' }, scene: { type: 'boolean' }, exclude: { type: 'string' }, help: { type: 'boolean' },
 } });
-if (values.help || !positionals.length || positionals.some(q => !q.trim())) {
-  console.log('node scripts/choose.mjs "requested cue" ["another cue"] [--scene] [--isolated] [--exclude "words"]');
+if (values.help || (!values.brief && !positionals.length) || positionals.some(q => !q.trim())) {
+  console.log('node scripts/choose.mjs "requested cue" ["another cue"] [--scene] [--isolated] [--exclude "words"] or --brief brief.json');
   process.exit(values.help ? 0 : 1);
 }
 const read = async url => JSON.parse(await readFile(url, 'utf8'));
 const catalog = await read(new URL('../catalog.json', import.meta.url));
 const bank = catalog.sounds.filter(s => !values.isolated || s.isolation === 'isolated');
+if(values.brief){
+  if(positionals.length || values.scene || values.exclude) throw Error('Supply queries and exclusions inside --brief');
+  const {resolveListeningBrief}=await import('./listening-brief.mjs');
+  const decision=resolveListeningBrief(JSON.parse(await readFile(values.brief,'utf8')),bank);
+  console.log(JSON.stringify(decision,null,2));
+  process.exit(decision.design?0:2);
+}
 const requests = positionals.map(query => {
   const ranked = rankByIntent(bank, query, values.exclude, true);
   const matches = ranked.filter(s => !s.missing.length || s.id === query);

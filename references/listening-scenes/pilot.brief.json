@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "id": "pilot-weather",
+  "viewpoint": "pilot inside the canopy",
+  "focus": {
+    "subjects": [
+      "engine"
+    ]
+  },
+  "layers": [
+    {
+      "label": "engine",
+      "query": "interceptor turbofan",
+      "prefer": "canopy interior cruise",
+      "placement": {
+        "kind": "listener"
+      },
+      "durationSec": 5
+    },
+    {
+      "label": "storm",
+      "query": "heavy storm rain loop",
+      "placement": {
+        "kind": "area",
+        "position": [
+          0,
+          2,
+          -2
+        ]
+      },
+      "durationSec": 5
+    }
+  ]
+}

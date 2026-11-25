@@ -83,10 +83,17 @@ export interface RemixDesign {
   macros?: Readonly<DesignMacros>;
 }
 
-export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]): SoundRecipe {
+export interface TimedStem { index: number; offset: number; channels: Float32Array[] }
+export interface SceneStage {
+  output: 'mono'|'stereo'|'headphones';
+  seed(index: number, base: number): number;
+  finish(stems: TimedStem[], ctx: RenderContext, seed: number): Float32Array[];
+}
+
+export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[], stage?: SceneStage): SoundRecipe {
   if (typeof design.id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(design.id))
     throw Error('Use a lowercase hyphenated remix ID');
-  if (!layers.length || layers.length > 4) throw Error('A remix uses one to four layers');
+  if (!layers.length || layers.length > (stage ? 32 : 4)) throw Error('A remix uses one to four layers');
   if (design.style !== undefined && !Object.hasOwn(sceneStyles, design.style)) throw Error('Unknown scene style');
   const mood = design.mood === undefined ? 'neutral' : design.mood;
   if (!Object.hasOwn(sceneMoods, mood)) throw Error('Unknown scene mood');
@@ -106,7 +113,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
   }
   const params: Record<string, SoundParameter> = {};
   const first = layers[0].recipe;
-  const paramKey = (index: number, key: string) => (layers.length === 1 ? key : 'layer' + (index + 1) + '_' + key);
+  const paramKey = (index: number, key: string) => stage ? layers[index].label + '_' + key : (layers.length === 1 ? key : 'layer' + (index + 1) + '_' + key);
   const positions: { offset: number; start: number; speed: number; length: number }[] = [];
   const labels = new Map<string, number>();
   function earlierLayer(ref: string | number, index: number) {
@@ -142,7 +149,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
     ) => {
       // An explicitly supporting wind bed can otherwise mask the listener's subject.
       // An authored gain (including unity) or an explicit level relationship takes precedence.
-      if (under === undefined && layers[index].gain === undefined && layers[index].role === 'bed' && recipe.loopable &&
+      if (!stage && under === undefined && layers[index].gain === undefined && layers[index].role === 'bed' && recipe.loopable &&
           recipe.tags.some(tag => tag === 'wind' || tag === 'breeze')) {
         const focus = layers.slice(0, index).findIndex(layer => layer.role === 'focus');
         if (focus >= 0) under = { layer: focus + 1, byDb: 16 };
@@ -263,30 +270,33 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
     },
   );
   if (
-    !tracks.some(
+    !stage && !tracks.some(
       (t) => t.gain > 0 && t.offsetSec === 0 && (!t.envelope.length || t.envelope.some((point) => point[1] > 0)),
     )
   )
     throw Error('Start one audible layer at offset zero');
   const durationSec = Math.max(...tracks.map((t) => t.offsetSec + t.length));
-  const loopable = tracks.every((t) => t.recipe.loopable && t.offsetSec === 0 && t.span === undefined);
+  const loopable = !stage && tracks.every((t) => t.recipe.loopable && t.offsetSec === 0 && t.span === undefined);
   const credits = tracks
     .flatMap((t) => [t.recipe.recording, ...(t.recipe.additionalRecordings ?? [])])
     .filter((c) => c !== undefined);
   const unique = [...new Map(credits.map((c) => [c.url, c])).values()];
-  const stereo = tracks.some((t) => Boolean(t.recipe.renderStereo));
+  const stereo = stage ? stage.output !== 'mono' : tracks.some((t) => Boolean(t.recipe.renderStereo));
 
   function mix(ctx: RenderContext, opts: ResolvedOptions, stereoOut: boolean) {
+    if(stage && tracks.reduce((sum,t)=>sum+(t.recipe.loopable && t.span===undefined ? ctx.frames : Math.min(ctx.frames,Math.round(ctx.sampleRate*t.length))),0)>16000000)
+      throw Error('Scene exceeds 16 million source frames; render in shorter sections or use fewer simultaneous stems');
     const output = Array.from({ length: stereoOut ? 2 : 1 }, () => new Float32Array(ctx.frames));
+    const stems: TimedStem[] = [];
     const activeLevels = new Map<number, number>();
     for (const [index, track] of tracks.entries()) {
-      if (!track.gain) continue;
+      if (!track.gain && !stage) continue;
       const controls = Object.fromEntries(
         Object.keys(track.recipe.params).map((key) => [key, opts.params[paramKey(index, key)]]),
       );
       const audio = renderChannels(
         track.recipe,
-        { seed: (opts.seed + index * 8191) >>> 0, params: controls, macros: track.macros },
+        { seed: stage ? stage.seed(index, opts.seed) : (opts.seed + index * 8191) >>> 0, params: controls, macros: track.macros },
         ctx.sampleRate,
       );
       const offset = Math.round(track.offsetSec * ctx.sampleRate);
@@ -296,8 +306,8 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       const length = Math.min(frames, ctx.frames - offset);
       // Meter just the rendered stem window, including automation and the actual source take.
       const metered = referencedLevels.has(index) || track.relativeTo !== undefined;
-      const target = metered ? output.map(() => new Float32Array(length)) : output;
-      const destOffset = metered ? 0 : offset;
+      const target = stage ? [new Float32Array(length), new Float32Array(length)] : metered ? output.map(() => new Float32Array(length)) : output;
+      const destOffset = stage || metered ? 0 : offset;
       const gainCurve = track.envelope.length ? automation(track.envelope, true) : undefined;
       const wetCurve = track.muffle && automation(track.muffle.envelope, false);
       const filters =
@@ -330,7 +340,7 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         if (fadeOut && i >= length - fadeOut) gain *= Math.sin(Math.PI * 0.5 * (length - i) / fadeOut);
         if (start) gain *= Math.min(1, i / edge);
         if (track.span !== undefined) gain *= Math.min(1, (length - 1 - i) / edge);
-        if (stereoOut) {
+        if (stereoOut || stage) {
           target[0][destOffset + i] += gain * left;
           target[1][destOffset + i] += gain * right;
         } else {
@@ -345,9 +355,18 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
         activeLevels.set(index, level + trimDb);
         const trim = dbToGain(trimDb);
         for (let ch = 0; ch < target.length; ch++) {
-          for (let i = 0; i < length; i++) output[ch][offset + i] += target[ch][i] * trim;
+          for (let i = 0; i < length; i++) {
+            if (stage) target[ch][i] *= trim;
+            else output[ch][offset + i] += target[ch][i] * trim;
+          }
         }
       }
+      if (stage) stems.push({index, offset, channels:target});
+    }
+    if (stage) {
+      const mix = stage.finish(stems,ctx,opts.seed);
+      if (!stereoOut && mix.length===2) return [mix[0].map((v,i)=>(v+mix[1][i])*.5)];
+      return mix;
     }
     return output;
   }
@@ -372,9 +391,10 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
     mixRole: first.mixRole,
     tags: [...new Set(['remix', ...first.tags, ...tracks.slice(1).map((t) => t.recipe.id)])],
     loopable,
-    immediateOnset: !loopable,
+    immediateOnset: !stage && !loopable,
+    preserveTimeline: stage ? true : undefined,
     durationSec,
-    spectrum: design.spectrum ?? first.spectrum,
+    spectrum: design.spectrum ?? (stage ? undefined : first.spectrum),
     params,
     macros: styling,
     targetRmsDbfs: first.targetRmsDbfs,

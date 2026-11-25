@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 2,
+  "id": "orbit-and-turn",
+  "viewpoint": "A turbine arcs around you, then you turn towards it. The menu ticks stay centred.",
+  "output": "headphones",
+  "listener": {
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "path": [
+      {
+        "at": 5.2,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yaw": 0
+      },
+      {
+        "at": 6.3,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "yaw": -90
+      }
+    ]
+  },
+  "focus": {
+    "subjects": []
+  },
+  "layers": [
+    {
+      "id": "interceptor-turbofan-ramp-idle-loop",
+      "label": "turbine",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -2,
+          0.3,
+          -0.1
+        ],
+        "refDistance": 1.5,
+        "path": [
+          {
+            "at": 1.3,
+            "position": [
+              0,
+              0.4,
+              -2
+            ]
+          },
+          {
+            "at": 2.6,
+            "position": [
+              2,
+              0.5,
+              0
+            ]
+          },
+          {
+            "at": 3.9,
+            "position": [
+              0,
+              2.2,
+              1
+            ]
+          },
+          {
+            "at": 5.2,
+            "position": [
+              -2,
+              0.3,
+              0
+            ]
+          },
+          {
+            "at": 7,
+            "position": [
+              -2,
+              0.3,
+              0
+            ]
+          }
+        ]
+      },
+      "durationSec": 7,
+      "envelope": [
+        [
+          0,
+          0
+        ],
+        [
+          0.08,
+          1
+        ],
+        [
+          6.7,
+          1
+        ],
+        [
+          7,
+          0
+        ]
+      ]
+    },
+    {
+      "id": "menu-tab-switches-with-rocker",
+      "label": "click-a",
+      "placement": {
+        "kind": "listener"
+      },
+      "gain": 0.45,
+      "offsetSec": 1
+    },
+    {
+      "id": "menu-tab-switches-with-rocker",
+      "label": "click-b",
+      "placement": {
+        "kind": "listener"
+      },
+      "gain": 0.45,
+      "offsetSec": 6.3
+    }
+  ]
+}

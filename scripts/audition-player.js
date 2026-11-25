@@ -21,6 +21,7 @@ function show() {
   const done = index === choices.length;
   el('count').textContent = done ? 'Review complete.' : 'Candidate ' + (index + 1) + ' of ' + choices.length;
   for (const id of ['yes', 'no', 'play', 'repeat']) el(id).disabled = done;
+  if(!done) el('repeat').textContent = choices[index].takes.length===1 ? 'Replay this take' : 'Play ten takes';
   el('heard').value = '';
   el('reason').value = '';
   auditioned = false;
@@ -93,7 +94,7 @@ async function play(many = false) {
         if (!--pending) nodes.forEach((n) => n.disconnect());
       };
     auditioned = true;
-    el('status').textContent = many ? 'Playing ten takes.' : 'Playing.';
+    el('status').textContent = many && sounds.length>1 ? 'Playing '+sounds.length+' takes.' : 'Playing.';
   } catch (e) {
     el('status').textContent = e.message;
   }

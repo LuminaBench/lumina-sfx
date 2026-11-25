@@ -74,8 +74,8 @@ const sounds = await Promise.all(
 );
 if (new Set(sounds.map((r) => r.id)).size !== sounds.length) throw Error('Each candidate needs a distinct ID');
 const takes = sounds.map((sound) =>
-  Array.from({ length: 10 }, (_, i) => {
-    const channels = preview(sound, DEFAULT_SEED + i * 8191);
+  Array.from({ length: sound.preserveTimeline ? 1 : 10 }, (_, i) => {
+    const channels = preview(sound, sound.preserveTimeline ? DEFAULT_SEED : DEFAULT_SEED + i * 8191);
     const level = Math.max(...channels.map((c) => measureLevel(c, SAMPLE_RATE).activeDb));
     if (!Number.isFinite(level) || channels.every((c) => c.every((s) => s === 0)))
       throw Error('Silent candidate: ' + sound.id);
@@ -94,7 +94,7 @@ if (!bed.loopable) throw Error('Choose a loopable background');
 const bedAudio = renderChannels(bed, { level: 'balanced' });
 const bedLevel = Math.max(...bedAudio.map((c) => measureLevel(c, SAMPLE_RATE).activeDb));
 const bedGain = Math.min(0.27, 0.7 * 10 ** ((target - 8 - bedLevel) / 20));
-const data = { startDry: Boolean(values.isolated || (values.moods && !values.bed)), choices, bedId: bed.id, bed: wav(bedAudio.map((c) => c.map((s) => s * bedGain))) };
+const data = { startDry: Boolean(values.isolated || (sounds.some(s=>s.preserveTimeline) && !values.bed) || (values.moods && !values.bed)), choices, bedId: bed.id, bed: wav(bedAudio.map((c) => c.map((s) => s * bedGain))) };
 const reel = createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0, 16);
 const payload = JSON.stringify({ reel, ...data }).replaceAll('<', '\\u003c');
 const player = await readFile(new URL('./audition-player.js', import.meta.url), 'utf8');
@@ -109,7 +109,7 @@ console.log(
   JSON.stringify({
     file: path,
     candidates: sounds.map((r) => r.id),
-    takes: 10,
+    takes: takes.map(t=>t.length),
     matchedActiveDb: target,
     bed: bed.id,
   }),

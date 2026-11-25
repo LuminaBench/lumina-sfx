@@ -56,6 +56,8 @@ export interface RecordingCredit {
 }
 
 export interface SoundRecipe {
+  /** A scene owns its event clock and relative listening level. */
+  preserveTimeline?: boolean;
   readonly isolation?: 'isolated';
   readonly markers?: Readonly<Record<string, number>>;
   readonly contains?: readonly string[];

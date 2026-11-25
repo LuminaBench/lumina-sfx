@@ -1,11 +1,19 @@
 ---
 name: lumina-sfx
-description: Find, sculpt, layer, invent and verify offline game sound effects. Use for launch videos, keyboards, swipes, tactile menus, non-vocal alerts, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, animation-driven footsteps, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
+description: Find, sculpt, layer, invent and verify offline game sound effects. Use for launch videos, keyboards, swipes, tactile menus, non-vocal alerts, scene focus, listener perspective, 3D headphone audio, moving emitters, timed focus handoffs, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, animation-driven footsteps, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
 # Lumina SFX
 
 Run the studio commands from this skill's directory using Node.js 22.12+. Pass the absolute game path to `--project` or `--dest`. Core search, WAV rendering, selective install and QA work offline from the checkout. The game uses the assets or code you install. The user can keep their existing audio manager. When shipping runtime code, include its MIT notice. The sound license permits commercial project use without audio attribution and restricts competing library distribution. [License](LICENSE)
+
+## Place the listener and choose what matters
+
+For a brief with perspective, masking or movement, translate the user's sentence into a version 2 listening scene. Name the listener, foreground, supports and event times. Give explicit descriptions such as “faint”, “equally clear” or “let the thunder cover it once” precedence over word order. “Bring it forward in the mix” changes emphasis. “Move it in front of me” changes position. State an assumed viewpoint in the scene. A menu press usually needs one listener-relative cue.
+
+Search for the source **as heard from this viewpoint**. A canopy-interior turbine suits a pilot. Exterior exhaust suits the listener below. Start from dry, isolated sources for moving emitters. Inspect recorded pass-bys for baked-in motion and `contains` for embedded weather. Make every extra layer justify itself.
+
+Use the [listening scene guide](references/listening-scenes.md) to resolve a brief, render headphones/stereo/mono, inspect the combined bed at the listener, or install independent live emitters. Name each layer once and keep its label across edits. Choose and save the simplest scene that meets the brief. For “a jet in a storm” start with the engine as the subject. For “a storm with a barely audible jet” prioritise the weather, set the jet's distance from the viewpoint and audition its quiet level. Preserve locks and report audible conflicts.
 
 ## 1. Search for the closest performance
 

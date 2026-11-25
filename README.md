@@ -2,6 +2,8 @@
 
 An offline sound studio for coding agents. Find a sound among 2,853 editable effects, layer it with others, and export a WAV or wire it into your game.
 
+Describe where the listener is and what they should hear first. A pilot can follow an engine through rain while someone on the beach hears the same aircraft pass overhead. Choose a speaker mix, binaural headphone WAV or independently moving game emitters. [Spatial audio and scene mixing](references/listening-scenes.md)
+
 ## Listen
 
 | Preview | In the mix |

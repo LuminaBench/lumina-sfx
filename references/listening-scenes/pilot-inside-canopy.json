@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 2,
+  "id": "pilot-inside-canopy",
+  "viewpoint": "Pilot, rain on glazing",
+  "output": "stereo",
+  "focus": {
+    "subjects": [
+      "jet"
+    ],
+    "marginDb": 8
+  },
+  "layers": [
+    {
+      "id": "interceptor-turbofan-canopy-interior-cruise-loop",
+      "label": "jet",
+      "durationSec": 8,
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          7.65,
+          1
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "placement": {
+        "kind": "listener"
+      }
+    },
+    {
+      "id": "rain-on-a-parked-car-canopy-loop",
+      "durationSec": 8,
+      "envelope": [
+        [
+          0,
+          1
+        ],
+        [
+          7.65,
+          1
+        ],
+        [
+          8,
+          0
+        ]
+      ],
+      "label": "rain",
+      "placement": {
+        "kind": "area",
+        "position": [
+          -1.4,
+          0.9,
+          -1
+        ],
+        "spread": 0.8
+      }
+    },
+    {
+      "id": "distant-rolling-thunder",
+      "offsetSec": 2.25,
+      "params": {
+        "distance": 0.76
+      },
+      "label": "thunder",
+      "placement": {
+        "kind": "point",
+        "position": [
+          -5,
+          4,
+          -7
+        ],
+        "refDistance": 6
+      }
+    }
+  ]
+}
