@@ -6,7 +6,7 @@ import { biquad, noise, renderSamples, TAU } from '../engine/dsp.ts';
 
 const original = {
   id: 'howling-wind-loop', name: "Eerie Howling Wind", category: 'Weather & Ambience',
-  tags: ["wind","howl","eerie","ambience","loop"], loopable: true, durationSec: 8,
+  tags: ["wind","howl","eerie","ambience","loop"], loopable: true, sustainMode: 'evolving', durationSec: 8,
   params: { howl: { label: 'Howl', min: 0, max: 1, default: 0.71 } },
   render(ctx, { params }) {
     const wind = noise(ctx.random, 'pink');

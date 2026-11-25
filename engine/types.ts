@@ -72,6 +72,8 @@ export interface SoundRecipe {
   readonly category: Category;
   readonly tags: readonly string[];
   readonly loopable: boolean;
+  /** Can generate a continuous performance for arbitrary frame counts. */
+  readonly sustainMode?: 'evolving';
   readonly durationSec: number;
   readonly params: Readonly<Record<string, SoundParameter>>;
   readonly immediateOnset?: boolean;

@@ -5,7 +5,7 @@ import source from './_recordings/isolated-rain-foliage.ts';
 
 export default {
   id: "canopy-rain-on-broad-banana-leaves-continuous-patter-loop", name: "Canopy rain on broad banana leaves — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "open", "continuous patter", "canopy", "on", "broad"], loopable: true, durationSec: 6.66,
+  tags: ["rain", "field-recording", "open", "continuous patter", "canopy", "on", "broad"], loopable: true, sustainMode: 'evolving', durationSec: 6.66,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

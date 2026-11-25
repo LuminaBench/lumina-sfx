@@ -2,6 +2,12 @@
 
 A listening scene places sounds in metres and gives the mix a subject. Source audio, position and emphasis are independently editable. Use one source when one performance already contains the requested event. Keep UI clicks attached to the listener unless they come from a physical control in the world.
 
+## Continuous weather and waterlines
+
+For a long take, give one evolving rain or fire layer the duration of the shot. The renderer can carry the performance across the whole scene and keep the same result for a given seed. Inspect the dry stem across at least three nominal loop lengths. Listen for the same prominent drop, pop or swell at regular intervals.
+
+Keep a boat on one path when a swimmer dives beneath it. Automate the layer's low-pass blend across the listener's entry and exit. Use the recorded entry once, then the recorded shedding of water once on the way out. Align the strongest change of perspective with the water contact. Audition the motor alone through both crossings, then bring the water gestures up just enough to hear their different shapes.
+
 ## From a sentence to a mix
 
 1. Choose one listener. Describe the foreground source, the source of each background sound, the distance in metres and the material between each source and the listener. Default briefs use natural balance. The engine, rain and thunder can all run at the same time. A focus label lets you measure masking. Request directed balance if the edit calls for a gain target or a handoff.

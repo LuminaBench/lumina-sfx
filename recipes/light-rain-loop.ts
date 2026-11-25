@@ -4,7 +4,7 @@ import drops from './_recordings/isolated-canopy-droplets.ts';
 
 export default {
   id: 'light-rain-loop', name: "Light Rain", category: 'Weather & Ambience',
-  tags: ["rain","weather","drizzle","loop"], loopable: true, durationSec: 6,
+  tags: ["rain","weather","drizzle","loop"], loopable: true, sustainMode: 'evolving', durationSec: 6,
   params: { drops: { label: 'Drops', min: 0, max: 1, default: 0.62 } },
   soloQueries: ['light rain'], components: ['rain'], isolation: 'isolated',
   recording: drops.credit,

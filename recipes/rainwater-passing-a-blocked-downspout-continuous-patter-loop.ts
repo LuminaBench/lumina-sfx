@@ -5,7 +5,7 @@ import source from './_recordings/isolated-rain-drain.ts';
 
 export default {
   id: "rainwater-passing-a-blocked-downspout-continuous-patter-loop", name: "Rainwater passing a blocked downspout — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "passage", "continuous patter", "rainwater", "passing", "a", "blocked"], loopable: true, durationSec: 6.72,
+  tags: ["rain", "field-recording", "passage", "continuous patter", "rainwater", "passing", "a", "blocked"], loopable: true, sustainMode: 'evolving', durationSec: 6.72,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

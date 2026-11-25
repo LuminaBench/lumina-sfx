@@ -7,6 +7,7 @@ import { renderDurationSec, resolveMacros } from './sculpt.ts';
 import type {
   DesignMacros,
   RenderContext,
+  RenderOptions,
   ResolvedOptions,
   SoundParameter,
   SoundRecipe,
@@ -47,6 +48,46 @@ function automation(points: Curve, power: boolean) {
     const b = next[1];
     return power ? Math.sqrt(a * a + fraction * (b * b - a * a)) : a + fraction * (b - a);
   };
+}
+
+// Extend an ambience's source performance before applying movement and mix automation.
+// Long or strongly retimed scenes use bounded renders with fresh deterministic takes.
+function renderLayerAudio(recipe: SoundRecipe, opts: RenderOptions, rate: number, needed: number) {
+  const nativeFrames = Math.round(renderDurationSec(recipe, opts.macros) * rate);
+  if (!recipe.loopable || recipe.sustainMode !== 'evolving' || needed <= nativeFrames)
+    return renderChannels(recipe, opts, rate);
+
+  const speed = opts.macros?.speed ?? recipe.macros?.speed ?? 1;
+  const maxFrames = Math.floor(48 * rate / Math.max(1, speed));
+  const firstFrames = Math.min(needed, maxFrames);
+  function take(frames: number, index: number) {
+    const seed = ((opts.seed ?? 0) + Math.imul(index, 0x9e3779b9)) >>> 0;
+    return renderChannels({ ...recipe, durationSec: frames * speed / rate }, { ...opts, seed }, rate);
+  }
+  const first = take(firstFrames, 0);
+  if (needed === firstFrames) return first;
+
+  const out = first.map(channel => {
+    const samples = new Float32Array(needed);
+    samples.set(channel);
+    return samples;
+  });
+  const overlap = Math.min(Math.round(0.35 * rate), firstFrames >> 2);
+  for (let end = firstFrames, index = 1; end < needed; index++) {
+    const start = end - overlap;
+    const frames = Math.min(maxFrames, needed - start);
+    const next = take(frames, index);
+    for (const [ch, source] of next.entries()) {
+      const dst = out[ch];
+      for (let i = 0; i < overlap; i++) {
+        const angle = 0.5 * Math.PI * i / (overlap - 1);
+        dst[start + i] = dst[start + i] * Math.cos(angle) + source[i] * Math.sin(angle);
+      }
+      dst.set(source.subarray(overlap), end);
+    }
+    end = start + frames;
+  }
+  return out;
 }
 
 export interface RemixLayer {
@@ -294,16 +335,17 @@ export function composeRecipe(design: RemixDesign, layers: readonly RemixLayer[]
       const controls = Object.fromEntries(
         Object.keys(track.recipe.params).map((key) => [key, opts.params[paramKey(index, key)]]),
       );
-      const audio = renderChannels(
-        track.recipe,
-        { seed: stage ? stage.seed(index, opts.seed) : (opts.seed + index * 8191) >>> 0, params: controls, macros: track.macros },
-        ctx.sampleRate,
-      );
       const offset = Math.round(track.offsetSec * ctx.sampleRate);
       const start = Math.round(track.start * ctx.sampleRate);
       const frames =
         track.recipe.loopable && track.span === undefined ? ctx.frames : Math.round(track.length * ctx.sampleRate);
       const length = Math.min(frames, ctx.frames - offset);
+      const audio = renderLayerAudio(
+        track.recipe,
+        { seed: stage ? stage.seed(index, opts.seed) : (opts.seed + index * 8191) >>> 0, params: controls, macros: track.macros },
+        ctx.sampleRate,
+        start + length,
+      );
       // Meter just the rendered stem window, including automation and the actual source take.
       const metered = referencedLevels.has(index) || track.relativeTo !== undefined;
       const target = stage ? [new Float32Array(length), new Float32Array(length)] : metered ? output.map(() => new Float32Array(length)) : output;

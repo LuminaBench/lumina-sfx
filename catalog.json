@@ -9017,6 +9017,7 @@
         "in"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.68,
       "params": {
         "intensity": {
@@ -9058,6 +9059,7 @@
         "in"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.8,
       "params": {
         "intensity": {
@@ -10165,6 +10167,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7,
       "params": {
         "sparks": {
@@ -10176,9 +10179,9 @@
       },
       "mixRole": "ambience",
       "recording": {
-        "title": "Campfire.wav",
-        "author": "Defaultv",
-        "url": "https://freesound.org/people/Defaultv/sounds/536935/",
+        "title": "Fire_Burning_03.flac",
+        "author": "wwstudioswastaken",
+        "url": "https://freesound.org/people/wwstudioswastaken/sounds/624425/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-25"
       },
@@ -10247,6 +10250,7 @@
         "broad"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.66,
       "params": {
         "intensity": {
@@ -23969,6 +23973,7 @@
         "bridge"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.74,
       "params": {
         "intensity": {
@@ -28094,8 +28099,8 @@
         "submerged": 0.25
       },
       "contains": [
-        "entry splash",
-        "air escapes underwater"
+        "body entering water",
+        "muffled wash"
       ],
       "perspective": "crossing waterline",
       "collection": "Scene performances",
@@ -28106,7 +28111,7 @@
         "surface"
       ],
       "loopable": false,
-      "durationSec": 1.25,
+      "durationSec": 2.16,
       "params": {
         "force": {
           "label": "Gesture force",
@@ -28117,6 +28122,13 @@
       },
       "targetRmsDbfs": -22,
       "mixRole": "foley",
+      "recording": {
+        "title": "splash body dive into water pool.flac",
+        "author": "kyles",
+        "url": "https://freesound.org/people/kyles/sounds/637823/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-25"
+      },
       "channels": 1,
       "file": "recipes/dive-breaks-the-surface.ts"
     },
@@ -28843,6 +28855,7 @@
         "empty"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.35,
       "params": {
         "intensity": {
@@ -28966,6 +28979,7 @@
         "apartment"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.43,
       "params": {
         "intensity": {
@@ -28978,11 +28992,11 @@
       "targetRmsDbfs": -25,
       "mixRole": "ambience",
       "recording": {
-        "title": "Medium rain on a tin roof",
-        "author": "Sassaby",
-        "url": "https://freesound.org/people/Sassaby/sounds/771981/",
+        "title": "Rain hitting an aluminium roof",
+        "author": "florianreichelt",
+        "url": "https://freesound.org/people/florianreichelt/sounds/680152/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-25"
       },
       "channels": 1,
       "file": "recipes/drips-over-an-apartment-fire-escape-continuous-patter-loop.ts"
@@ -32612,6 +32626,7 @@
         "damp"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.89,
       "params": {
         "intensity": {
@@ -32653,6 +32668,7 @@
         "damp"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.01,
       "params": {
         "intensity": {
@@ -37494,6 +37510,7 @@
         "a"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.86,
       "params": {
         "intensity": {
@@ -37506,9 +37523,9 @@
       "targetRmsDbfs": -24,
       "mixRole": "ambience",
       "recording": {
-        "title": "Campfire.wav",
-        "author": "Defaultv",
-        "url": "https://freesound.org/people/Defaultv/sounds/536935/",
+        "title": "Fire_Burning_03.flac",
+        "author": "wwstudioswastaken",
+        "url": "https://freesound.org/people/wwstudioswastaken/sounds/624425/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-25"
       },
@@ -37534,6 +37551,7 @@
         "a"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.98,
       "params": {
         "intensity": {
@@ -37546,9 +37564,9 @@
       "targetRmsDbfs": -24,
       "mixRole": "ambience",
       "recording": {
-        "title": "Campfire.wav",
-        "author": "Defaultv",
-        "url": "https://freesound.org/people/Defaultv/sounds/536935/",
+        "title": "Fire_Burning_03.flac",
+        "author": "wwstudioswastaken",
+        "url": "https://freesound.org/people/wwstudioswastaken/sounds/624425/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-25"
       },
@@ -37654,6 +37672,7 @@
         "sheltered"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.21,
       "params": {
         "intensity": {
@@ -37694,6 +37713,7 @@
         "sheltered"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.33,
       "params": {
         "intensity": {
@@ -38289,6 +38309,7 @@
         "closed"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.67,
       "params": {
         "intensity": {
@@ -38330,6 +38351,7 @@
         "closed"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.79,
       "params": {
         "intensity": {
@@ -38453,6 +38475,7 @@
         "straw"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.58,
       "params": {
         "intensity": {
@@ -38494,6 +38517,7 @@
         "straw"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.7,
       "params": {
         "intensity": {
@@ -46026,6 +46050,7 @@
         "dry"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.11,
       "params": {
         "intensity": {
@@ -46240,6 +46265,7 @@
         "dry"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.08,
       "params": {
         "intensity": {
@@ -47625,6 +47651,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 3.85,
       "params": {
         "rpm": {
@@ -48910,6 +48937,7 @@
         "an"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.27,
       "params": {
         "intensity": {
@@ -48950,6 +48978,7 @@
         "an"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.39,
       "params": {
         "intensity": {
@@ -50069,6 +50098,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7,
       "params": {
         "gusts": {
@@ -52644,6 +52674,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 8,
       "params": {
         "howl": {
@@ -58687,6 +58718,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6,
       "params": {
         "drops": {
@@ -66636,6 +66668,7 @@
         "an"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.06,
       "params": {
         "intensity": {
@@ -80696,6 +80729,7 @@
         "reed"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.6,
       "params": {
         "intensity": {
@@ -80856,6 +80890,7 @@
         "canvas"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.06,
       "params": {
         "intensity": {
@@ -81016,6 +81051,7 @@
         "storm"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.68,
       "params": {
         "intensity": {
@@ -81213,6 +81249,7 @@
         "heavy"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 8.6,
       "params": {
         "intensity": {
@@ -81290,6 +81327,7 @@
         "covered"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.1,
       "params": {
         "intensity": {
@@ -81514,6 +81552,7 @@
         "greenhouse"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.51,
       "params": {
         "intensity": {
@@ -81672,6 +81711,7 @@
         "ambience"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 10,
       "params": {
         "intensity": {
@@ -81775,6 +81815,7 @@
         "splashes"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7,
       "params": {
         "splash": {
@@ -81906,6 +81947,7 @@
         "wooden"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.6,
       "params": {
         "intensity": {
@@ -82117,6 +82159,7 @@
         "galvanized"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.48,
       "params": {
         "intensity": {
@@ -82286,6 +82329,7 @@
         "heavy"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 8.6,
       "params": {
         "intensity": {
@@ -82298,11 +82342,11 @@
       "targetRmsDbfs": -24,
       "mixRole": "ambience",
       "recording": {
-        "title": "08-24-rain-car-windscreen",
-        "author": "DanielHren",
-        "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+        "title": "Light Rain",
+        "author": "soundrecorder7",
+        "url": "https://freesound.org/people/soundrecorder7/sounds/167034/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-25"
       },
       "channels": 1,
       "file": "recipes/rainfall-open-air-clean-loop.ts"
@@ -82327,6 +82371,7 @@
         "blocked"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.72,
       "params": {
         "intensity": {
@@ -92675,6 +92720,7 @@
         "parked"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.13,
       "params": {
         "intensity": {
@@ -104425,7 +104471,7 @@
         "drain": 0.52
       },
       "contains": [
-        "last submerged bubbles",
+        "waterline slosh",
         "surface breaks",
         "water drains"
       ],
@@ -104438,7 +104484,7 @@
         "air"
       ],
       "loopable": false,
-      "durationSec": 1.04,
+      "durationSec": 2.2,
       "params": {
         "force": {
           "label": "Gesture force",
@@ -104449,6 +104495,13 @@
       },
       "targetRmsDbfs": -23,
       "mixRole": "foley",
+      "recording": {
+        "title": "coming out of water- woosh",
+        "author": "morganveilleux",
+        "url": "https://freesound.org/people/morganveilleux/sounds/389987/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-25"
+      },
       "channels": 1,
       "file": "recipes/swimmer-breaks-into-air.ts"
     },
@@ -117883,6 +117936,7 @@
         "stove"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.68,
       "params": {
         "intensity": {
@@ -117925,6 +117979,7 @@
         "stove"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.8,
       "params": {
         "intensity": {
@@ -119911,6 +119966,7 @@
         "sail"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.4,
       "params": {
         "intensity": {
@@ -120142,6 +120198,7 @@
         "saltmarsh"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.94,
       "params": {
         "intensity": {
@@ -120338,6 +120395,7 @@
         "bare"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.39,
       "params": {
         "intensity": {
@@ -120549,6 +120607,7 @@
         "a"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.3,
       "params": {
         "intensity": {
@@ -120767,6 +120826,7 @@
         "a"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.98,
       "params": {
         "intensity": {
@@ -121238,6 +121298,7 @@
         "a"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.75,
       "params": {
         "intensity": {
@@ -121279,6 +121340,7 @@
         "a"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.87,
       "params": {
         "intensity": {

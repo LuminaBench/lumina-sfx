@@ -161,7 +161,7 @@
       "underwater",
       "depth",
       "submerged",
-      "bubbles",
+      "waterline",
       "motor",
       "dive"
     ],
@@ -169,7 +169,7 @@
     "file": "references/scenes/dive-beneath-the-boat.json",
     "isolation": "isolated",
     "loopable": false,
-    "durationSec": 6.3
+    "durationSec": 7.180000000000001
   },
   {
     "id": "wet-road-barrier",

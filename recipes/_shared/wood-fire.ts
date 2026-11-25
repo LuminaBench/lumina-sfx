@@ -19,11 +19,11 @@ export function woodFire(
 ) {
   const rate = ctx.sampleRate;
   const source = sustain(ctx, burn, seed, .87 + .17 * size, 5500 + 3100 * brightness);
-  const rumbleCut = biquad('highpass', 65 + 35 * (1 - size), .68, rate);
-  const warmth = biquad('lowpass', 700 + 410 * size, .67, rate);
-  const mid = biquad('lowpass', 2200 + 1100 * brightness, .68, rate);
-  const relax = Math.exp(-1 / (.048 * rate));
-  const ceiling = .045 + .105 * sparks;
+  const rumbleCut = biquad('highpass', 47 + 27 * (1 - size), .68, rate);
+  const warmth = biquad('lowpass', 410 + 260 * size, .67, rate);
+  const mid = biquad('lowpass', 1450 + 1050 * brightness, .68, rate);
+  const relax = Math.exp(-1 / (.023 * rate));
+  const ceiling = .028 + .10 * sparks;
   let envelope = 0;
 
   for (let i = 0; i < source.length; i++) {
@@ -41,9 +41,9 @@ export function woodFire(
     if (movement === 'scattered') activity = .78 + .12 * Math.sin(4.1 * t + size);
 
     source[i] = activity * (
-      low * (.66 + .16 * size) +
-      (body - low) * (.76 + .18 * sparks) +
-      edge * (.61 + .30 * sparks) / (1 + .58 * envelope / ceiling)
+      low * (1.03 + .24 * size) +
+      (body - low) * (.77 + .20 * sparks) +
+      edge * (.39 + .57 * sparks) / (1 + .67 * envelope / ceiling)
     );
   }
   return space === 'open' ? source : roomReturns(ctx, source, space);

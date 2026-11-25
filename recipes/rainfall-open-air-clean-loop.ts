@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
-import { independentRain } from './_shared/independent-rain.ts';
-import drops from './_recordings/isolated-canopy-droplets.ts';
+import { sustain } from './_shared/field-layers.ts';
+import rain from './_recordings/isolated-garden-shower.ts';
 
 export default {
   soloQueries: ["rain", "rainfall", "steady rain", "rain shower"],
@@ -11,12 +11,13 @@ export default {
   components: ['rain'],
   isolation: 'isolated',
   mixRole: 'ambience',
-  recording: drops.credit,
-  loopable: true,
+  recording: rain.credit,
+  loopable: true, sustainMode: 'evolving',
   durationSec: 8.6,
   targetRmsDbfs: -24,
   params: { intensity: { label: 'Rain intensity', min: 0, max: 1, default: 0.56 } },
-  render(ctx, { params }) {
-    return independentRain(ctx, params.intensity, false);
+  render(ctx, { params, seed }) {
+    // Preserve each recorded run of drops. Intensity changes their weight and brightness.
+    return sustain(ctx, rain, seed, .92 + .15 * params.intensity, 4200 + 6200 * params.intensity);
   },
 } satisfies SoundRecipe;

@@ -4,7 +4,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-ring-fire.ts';
 export default {
   id: "water-hissing-on-stove-coals-low-simmer-loop", name: "Water hissing on stove coals — low simmer", category: "Water & Fire",
-  tags: ["fire", "field-recording", "interior", "low simmer", "water", "hissing", "on", "stove"], loopable: true, durationSec: 6.68,
+  tags: ["fire", "field-recording", "interior", "low simmer", "water", "hissing", "on", "stove"], loopable: true, sustainMode: 'evolving', durationSec: 6.68,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.23 } },
   recording: burn.credit, components: ['fire', 'steam'], isolation:'isolated',

@@ -5,7 +5,7 @@ import source from './_recordings/isolated-rain-roof.ts';
 
 export default {
   id: "windblown-rain-on-a-loose-garage-door-continuous-patter-loop", name: "Windblown rain on a loose garage door — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "interior", "continuous patter", "windblown", "on", "a"], loopable: true, durationSec: 6.98,
+  tags: ["rain", "field-recording", "interior", "continuous patter", "windblown", "on", "a"], loopable: true, sustainMode: 'evolving', durationSec: 6.98,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

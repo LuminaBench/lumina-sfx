@@ -46,9 +46,11 @@ export function sustain(ctx: RenderContext, clip: RecordedClip, seed: number, sp
     const length = Math.max(.009, sourceSeconds * (.65 + .295 * draw()));
     const start = Math.max(0, (sourceSeconds - length) * draw());
     const frames = Math.max(1, Math.round(length / stretch * ctx.sampleRate));
-    const window = renderRecording({ ...ctx, frames }, clip, { seed: take, speed: stretch, startSec: start, cutoffHz: hz });
+    // A short preview may use only the opening of a long field take.
+    const usedFrames = Math.min(frames, result.length - offset);
+    const window = renderRecording({ ...ctx, frames: usedFrames }, clip, { seed: take, speed: stretch, startSec: start, cutoffHz: hz });
     const nextOverlap = Math.min(Math.round(.18 * ctx.sampleRate), frames >> 2);
-    for (let i = 0; i < frames && i + offset < result.length; i++) {
+    for (let i = 0; i < usedFrames; i++) {
       const fade = Math.min(overlap ? i / overlap : 1, nextOverlap ? (frames - i - 1) / nextOverlap : 1, 1);
       result[i + offset] += window[i] * Math.sin(Math.PI * .5 * fade);
     }

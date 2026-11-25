@@ -5,7 +5,7 @@ import source from './_recordings/isolated-rain-foliage.ts';
 
 export default {
   id: "rain-across-woven-reed-roofing-continuous-patter-loop", name: "Rain across woven reed roofing — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "interior", "continuous patter", "across", "woven", "reed"], loopable: true, durationSec: 6.6,
+  tags: ["rain", "field-recording", "interior", "continuous patter", "across", "woven", "reed"], loopable: true, sustainMode: 'evolving', durationSec: 6.6,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

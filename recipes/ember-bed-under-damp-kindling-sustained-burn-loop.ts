@@ -3,7 +3,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-hearth-wood.ts';
 export default {
   id: "ember-bed-under-damp-kindling-sustained-burn-loop", name: "Ember bed under damp kindling — sustained burn", category: "Water & Fire",
-  tags: ["fire", "field-recording", "open", "sustained burn", "ember", "bed", "under", "damp"], loopable: true, durationSec: 7.01,
+  tags: ["fire", "field-recording", "open", "sustained burn", "ember", "bed", "under", "damp"], loopable: true, sustainMode: 'evolving', durationSec: 7.01,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   recording: burn.credit, components: ['fire'], isolation:'isolated',

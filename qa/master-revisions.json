@@ -37,23 +37,23 @@
     },
     "burning-pallet-stack-in-a-loading-yard-fire-settling": {
       "previous": "383978db144b9b0b086c6aac7d7538e56a97a8f266608ebba401d89fabc924f9",
-      "current": "8a48c9000028e6627f34a88feca80612b633792a192304096569da043ef22982",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "b5ed68f7459a5a0930096c6402e59290a7b8df9e8ec2a7a5c55f58325ade6095",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "burning-pallet-stack-in-a-loading-yard-flames-catching": {
       "previous": "fe0175f869e07e11d696c55fbbb53b7fea07b0bc6f96ed47bac3f7409b6745b0",
-      "current": "81dfeaa0e1b901d38e123fee3691693a7b44aaf5c1a3aa959d965791d0513f59",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "d0740f34da04c6453b56323c6aa81cfce6e97aa0f6a61018fb0b58d08a3ab198",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "burning-pallet-stack-in-a-loading-yard-low-simmer-loop": {
       "previous": "01e7555b605be1946a9505e07932ecf55945b5cdd34e920d37e27e5ccfcf1d16",
-      "current": "504cabefda97c3570bed581e154a6b604362c459b5ab05dd8432b0caa3a57544",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "8449450e8ea1f7360a592c3ccb10df9fa03241be07eaa7b0416b634da528a040",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "burning-pallet-stack-in-a-loading-yard-sustained-burn-loop": {
       "previous": "4aaacb2b6ae80afc6e818fdf927aef0b6724f66bc0315bec8d31898f141cac84",
-      "current": "bc6f8aabaef970e829545c0d3df7c1ef3b438af9703a9f5b5c13bdf2f38fc736",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "28092e4fc52d20c7f28b47997204386a63afbc327363d4c5e3def626e6f95ce5",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "calf-calling-under-a-barn-roof": {
       "previous": "e7b05871bd5aa414641fceaee182a626a9a04f209572ed9fd14a15e0da2ddbac",
@@ -67,8 +67,8 @@
     },
     "campfire-crackle-loop": {
       "previous": "e8f13a9b7487deb00fb07c461582b4249da7e4664c526598e6ed25b005ffce1c",
-      "current": "41694bf3685bf7af3f916ea0a18ff20e0f2f870d2ca683dd405aad790f34236e",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "a361a97b443676bb7abf504e47e3978c827617279684d1a8d8a37a3aa6e506c2",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "canopy-rain-on-broad-banana-leaves-continuous-patter-loop": {
       "previous": "988c81311a11196dc1a5cd3e0295694250d1731e831e9aafa364956746965335",
@@ -195,6 +195,11 @@
       "current": "61aa0bc5a7f89c8938c1aa360844820afefd2361f71c0b97be3a07e341869d61",
       "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
     },
+    "dive-breaks-the-surface": {
+      "previous": "3eb766f4af6af045df96f519c725afa2273d3a4e688de20c0f005dc0ad73c534",
+      "current": "e02a69aed2425e912b45c45c7517973986763fb24a0762497f581d30e4d1ccce",
+      "reason": "Preserve the recorded waterline gesture and change listening perspective through contact."
+    },
     "double-thunder-roll": {
       "previous": "669dbd7fcb873bcb20319b006c5815304dc71616a061b6ea10bf6ea2015085c4",
       "current": "347a40d2638700f61c9dfcaa8da3fe2151ffd746429d5a5d7f17e552b3806c19",
@@ -222,8 +227,8 @@
     },
     "drips-over-an-apartment-fire-escape-continuous-patter-loop": {
       "previous": "ab4477066af250a38d435a9476b3588616732b9673ed20636f4b7e5e4090e1c7",
-      "current": "63f5d2cbca80589ac0f7e7ebba070dd0c30f2a61817a331ba5da38852e304c05",
-      "reason": "Keep only rainfall and its specified impact surface."
+      "current": "f45a84261c1812ebc6e40d94c055661fd37612178fb5ea4d017065bfc55ae2eb",
+      "reason": "Use longer, clean field takes of rain on a metal roof."
     },
     "drips-over-an-apartment-fire-escape-downpour-recedes": {
       "previous": "a30ab349452e28448782fe8d4ac1f3ad588fb774789582b2bb84a0bd0af08d4f",
@@ -252,23 +257,23 @@
     },
     "ember-bed-under-damp-kindling-fire-settling": {
       "previous": "90e63f0cbe91c098d50d3a1e3e09bed8bc8e093e752828f424e2e954b5ef0dce",
-      "current": "e597425682e0b191cbf25c3e30f941edbb6094028e405780fb0022aa3d47592f",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "63e39e6504b8870f1e593b1e573bf9b3e73ae8a012f460e03f078192648268d4",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "ember-bed-under-damp-kindling-flames-catching": {
       "previous": "a7fc4fc8dc4f68aa52166c807d807fb7359833132c9c176a113c952e1c523996",
-      "current": "04cb1dd2af4a911e6d0b5ad6073ad8d12edfba44d7769af9372a8e059bfd69c9",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "358255e95b60fc10a8068358eb26aa2f833e39e6f008502192858ef25d78ac0a",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "ember-bed-under-damp-kindling-low-simmer-loop": {
       "previous": "db31c064bf72a266ac5247d8998cb8ad19d9da37d4a9f9b616fa6b43acc17814",
-      "current": "bfc60b9405e57a25d14c48aea4af9000e6053b53d7149655ab1cd043aa99064f",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "40a2b60fca4fec978fd00169718a6fb5c4644eeb2d3882f8cb7ccb4ffaeccb09",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "ember-bed-under-damp-kindling-sustained-burn-loop": {
       "previous": "af5acb6452a00286216d481a31e8716baea31a0ec38ea67e1dca95d703bb44e5",
-      "current": "63bf6c58a2507f380fa91594a1cf12929d235f476f81d51770564a1c73dbf738",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "94db24fcf623e2a100af65f433afcd2b1045d5b19aab7fea9b0090b1bae77734",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "ewe-and-lamb-reunite": {
       "previous": "d7099d8fdbcd49d98e57e7034e3aff73db2b2c434bbf54e77caae2f21bbceb89",
@@ -287,83 +292,83 @@
     },
     "fire-breathing-up-a-stone-chimney-fire-settling": {
       "previous": "8079ddaa5f6d889aa97fc30f27342a94c621d8fb32f0063e75bbc2a97fecc8c7",
-      "current": "55abc97f28bd2eaebce5873fc5a13bc6aa58249384727e3b58c2246b9609bbaa",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "05c218be6bd82352bd79755a12f100f38ae7a7a662195d948bd9980303bdc95a",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-breathing-up-a-stone-chimney-flames-catching": {
       "previous": "4a5af772e1bd475f5bf555198007978bc62286b6dce6f820060158fecf286086",
-      "current": "00d0d2143b7bcde6eb7b18cc8cd57e6d089980d01beea6c2d49eb1bd122a3f02",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "aeb54813c060c5f5afc0cfe3b6c35246e7a7d32cd4b1c664fa7f43d6499578f9",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-breathing-up-a-stone-chimney-low-simmer-loop": {
       "previous": "18d4992f7fe69bdd7a286bc20ce6806ee7e7562eedff6d710cd221c58d45bb48",
-      "current": "2439bc9826f6fb21a5b491c7489c496cfb795722b5d8267b96aee446c7749d38",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "2dca5126eab2161a2fdc518917edf04b9e10a1a0ebc1d6bf35345796ec022234",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-breathing-up-a-stone-chimney-sustained-burn-loop": {
       "previous": "a5be3f91deb1708d59be084b7ee12150c5f1e8ba162f5e97d8cddefe0061a99d",
-      "current": "c7e6deea046ebfe6dbd74aed37a58fdf3e3bb2ba294a30e51e489af792aa6cb9",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "c086e6423c8dc6ca8729cd73117340c98bb309a05adf82f49f066176fac3ad43",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-in-a-sheltered-outdoor-brazier-fire-settling": {
       "previous": "5e395b2ad0f506ca22a8f87224d06f637e3fbd399ad041c9fab91598b08d3fff",
-      "current": "4170d7e5ed6839a87ae50515392c7a3eb7394d46da52f394a634ccdd5df68182",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "58aef83483598211c6b60bda241e4822956749b1cf113fd600c4c77f264b181e",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-in-a-sheltered-outdoor-brazier-flames-catching": {
       "previous": "bba324cf2d87e2dbeb9745c7fa6aa1a69cee174d316dcea976506d55f10ff5a1",
-      "current": "ed41ab41f5eddfb51c7718a0f0e13681867e0202b48fdbd62aba194b46fec977",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "5dd475f331690536c01b5928f47ef220f95785a31b4f298a053fa42500280aaa",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-in-a-sheltered-outdoor-brazier-low-simmer-loop": {
       "previous": "01c144725e86e62d8a2893ad6d4a78195b4ef80abdd43e7aaf660d10e81e5b41",
-      "current": "47e42a260113b1d7cde279162207ee3495f4549c4f79e8d961c12971e5eb6502",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "e6797b855ca28cc30b9b286e03aac2b3d63c5bbd250c1e49a5ebd8bb55c06e2f",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "fire-in-a-sheltered-outdoor-brazier-sustained-burn-loop": {
       "previous": "91b914b726116e74a3adc6f038a0104be13bcb8c121645edbbb6f3d788008cf0",
-      "current": "1e7efc235c49a0950127c257f52571f33de7ba13fb12b47f9e37bad863816500",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "8e2acfe99d1451794375fe099469d9612183b2af1ebd151d48c722295b5b61f0",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-behind-a-closed-workshop-door-fire-settling": {
       "previous": "39330a32aff8adafb3a387ebc7ee4f93bf77e97aa0ed4129726e9b5cbebf3bad",
-      "current": "5a68c3f884697443ae0cb6778ca3ddaf13eb35e3118aaf2b83fe1b6edbb902df",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "b8b9cb218b2395c58204140ca8ed3671abf8d175d72052cece137bf395a1e638",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-behind-a-closed-workshop-door-flames-catching": {
       "previous": "8afbe915e6f491577b5d2ed42d67aa75ee02c5513db54f76f4b2263ff89f654e",
-      "current": "ffac443b07a91da462343fd762f40002b4b89b1a6eae30fbabf407b73e453bb1",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "b97002af35727c2f00d5015f2bd1a29695e4f3fdac32aeb8f9d8868b1d635849",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-behind-a-closed-workshop-door-low-simmer-loop": {
       "previous": "6540a5f0b5208793b87968b38e75947f379e3dad303fc413ec44e0bb1ebf7b88",
-      "current": "ea9d9b31b4d95c4b872b13990774868b0870828d94a10646f09e8af4528bed39",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "0692fb28c297b673184ca559c614c3a1d33b382839b8f4f6d93947fa862d1495",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-behind-a-closed-workshop-door-sustained-burn-loop": {
       "previous": "215e5c5ff3dac48d45b70a1fa1f8204328e70e68957d0c91b9bb0077861f7b11",
-      "current": "8bb7de23869642651a88859eef73716644efe40148c148fb84e1151b2018be58",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "38c2c6f925ed4c0d0a0b764c920989ea3a798adb8b04b7f64f1198b19dc3e7a9",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-moving-through-straw-bedding-fire-settling": {
       "previous": "d8adbbeb240fb317e111abae21da9915ae587f2da4b7825403f53c76ee378423",
-      "current": "b462ec1ecdea9b2620c07b649d25c70c17d2ec44335e5ad2c7bb15bbf11d4be2",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "fd4594960a4e8d5a1f9a8114f1f057f98cb0e5060f937a7195d854bc153e0b53",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-moving-through-straw-bedding-flames-catching": {
       "previous": "b6723c4efd817e4539d230b583fa80fef91fcbac8e69d2b5b392bafc6ae20663",
-      "current": "f374445053a50370efc7d0b4bb8f0068eebbfa5e372f2a1f60cd1194bc08e59c",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "99b0b51ec69972a7e66520e19174af5e5dcf93af176a53bcc0bd056ae23443bb",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-moving-through-straw-bedding-low-simmer-loop": {
       "previous": "ce8305d25dd1577b7cb09105d64e3c783458a6862871c80ae86f37d47282a306",
-      "current": "c74134c92a1331ad9926e3030abd3c320e21094483e440f9312ce0fedbb42cc9",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "533ad1b7613a92e65406f0ded9ee4caa2b37898664907f723b732e6d0dfef9d3",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flames-moving-through-straw-bedding-sustained-burn-loop": {
       "previous": "9aa28f62b4dde1fdcb9812997be3516d543b488ef9691e6e4cf6bc275c5f63c4",
-      "current": "c712ccb0cd2cae5323815c6ad29aadef05a226f661524dfdb061562d7d0ba37c",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "f8546a403b1ab79cb091518ef496ca2cbd5a31627373167f11dd4ecdd5d582e5",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "flat-bottom-riverboat-changing-throttle": {
       "previous": "127dd276b5fec6d8b99c031b4c572d8f3a185aca0d21222ee1fa5510a8cc1357",
@@ -512,23 +517,23 @@
     },
     "hearth-fire-behind-an-iron-grate-fire-settling": {
       "previous": "6afa643a15d77dff6cdb0ff95be5116411310e5ed40e40473a8c4ae90fd3044b",
-      "current": "e22e25e99dc64bef6df9caf2634df8182d34b9fae4bc9ffb696299327d58c348",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "3b0994bb3207aa1976c6456daed8b6b227780c6eb9aa98a245860c5da45f2226",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "hearth-fire-behind-an-iron-grate-flames-catching": {
       "previous": "f60d8d113c641b00b04198d95c1366abaa4fb251b7c2c657daeef5af66faab59",
-      "current": "a8cf576c097a62db4d8a32fe43e89c520f466d4f0744ad0783eaaec7219e6cad",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "a2f49a65339cb691972ad2b98a5d504685c50831ebc01c4fd455b2932343c3d9",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "hearth-fire-behind-an-iron-grate-low-simmer-loop": {
       "previous": "6d6736f4ce318d86a16fcbeacc8a01a68732fea4769b133d418380a70bab1b38",
-      "current": "4a82d01a031f4faede9f938dc807672c8082cb30f6b8607ee66c0fbbf43895b2",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "a55926198abada228892f7894ce79c91412434e56ecd88117a8cf50a00b373b0",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "hearth-fire-behind-an-iron-grate-sustained-burn-loop": {
       "previous": "6c0f232624153546c9011f5eb27cd5fd611b5c4629054ad0265d3b6304a2a049",
-      "current": "754e766a71a80ca94c7ec49e99a9228b1f3656590870a49349500bd581c82e66",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "f8180954f8c70befa5e3462c318f7c2fa0919579dc87da1566f60195fb7b5626",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "heavy-storm-rain-loop": {
       "previous": "249d2032c5fc2dfe88a50eb5a86e4adee847344510ab5c0c1e0764ca0c268967",
@@ -1050,6 +1055,11 @@
       "current": "efc7a0c4b4cd988f02906924a91299c3531b07c3fea6c6d062ff4b34b06b8efa",
       "reason": "Rebuild propulsion from the intended motor texture and motion."
     },
+    "swimmer-breaks-into-air": {
+      "previous": "57495e7efdc66ac2259333dcaa8ce55414b26c36835a4e5ef51b9980eccd3783",
+      "current": "27be9cf937838bc459c9292c1b101ec87c2e70b2a10c3507ab5d50cc698092e0",
+      "reason": "Preserve the recorded waterline gesture and change listening perspective through contact."
+    },
     "thunder-across-a-reed-lake-long-rolling-front": {
       "previous": "d320fa423907554cf98bfd7c43cb848754c418f1a8c40e80ef572e3ede4d8164",
       "current": "3a0c2cfbb40a4a19c185fd3b21992829f88a4aad48cf9353c2b3a16bdbbcfd0d",
@@ -1262,23 +1272,23 @@
     },
     "water-hissing-on-stove-coals-fire-settling": {
       "previous": "f1e46975c356862827b4d52334a62c5515b2a6d69bbb51f86e9aab4728b4143d",
-      "current": "7692f2b566631e00fe9326bbf2f7be073ee5c2aff3d3ee738195f3319a79bce7",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "699d1d3fcf45aad2a2c1e9affcc2798e2c1b8d2b03d234bc4d67fa6bad727ae0",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "water-hissing-on-stove-coals-flames-catching": {
       "previous": "44ae5384cd027f325b39abdd968114d3c88c551d31f0199f3e89940e1e98097b",
-      "current": "e949e8056f6a9586fab47afa5b991adc8c37173f0035e81c3b50bc29de5e16bf",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "b367bd43fc8578c5e5eb86fe3a38cb81e777ce7b312b4303ad88303bed6139ae",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "water-hissing-on-stove-coals-low-simmer-loop": {
       "previous": "9e528b14236a4227081cff61e1d4103c99e599111d391abbedac11bdd77bfce3",
-      "current": "755823d818aca10662d8e97f8e18f0f44fbdcbe9f285df5d62e5c9f7a7487267",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "a196e4c2c71a6c05368487b03b077439d52d31331b593e6b31875967996abeb4",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "water-hissing-on-stove-coals-sustained-burn-loop": {
       "previous": "d8e2089f7ab43c37a67d56fcbe3a0d8209d7a174e75c3e9f63219e10ee8da75b",
-      "current": "d997032f7aeb4d2206fe1d2a651e0c6a5638965ef31bb6da91cd8d6b30ddb5d1",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "0c02abb40f1abb8cf516728ba85c67eb64316ae57b07c47cbed2dea9ac86d776",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "wet-asphalt-slide-throws-a-fan-of-spray": {
       "previous": "2862c13133d83c454aed19c23315d65fd9393b23cd42b78859a07fba973e218d",
@@ -1402,23 +1412,23 @@
     },
     "windward-side-of-a-brush-fire-fire-settling": {
       "previous": "b271bda9637a7048a120c39f9537edbc8b9c6f6977511fa9f3bcc171ff5661e4",
-      "current": "c60f737ac30ca72b900c12f4ce86ab733a1d146740090127e8d0287cd44c73ae",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "d3f86e8cca6f7385b0bf1d378d8bb7efb1a87fbc98480969e67b54a6fe387847",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "windward-side-of-a-brush-fire-flames-catching": {
       "previous": "92042d04681626fc9731f8b5019eef6450350e1b8c1b65a0efd07d4d554d6e29",
-      "current": "99e018b392c2fae9d869a688be5d1951895685d69a7b477c3b4225baa9e346a8",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "927eba291b289ae88597b9eef41f953cfd2b950e487cf0a0ecac06c64bdfb350",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "windward-side-of-a-brush-fire-low-simmer-loop": {
       "previous": "e2c9fefefa640e10a47b3efab121df789c61dc960e480da6a60b2b54dd419e87",
-      "current": "9cc87ec850552979366d2123edd21a8aecf28738a44ba944fb1f9634cc5f5366",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "9f9c37cda423d0d71733674267351e752dd2a2805b75bdc2f29f24b0a56b85f1",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     },
     "windward-side-of-a-brush-fire-sustained-burn-loop": {
       "previous": "f1ed86b5b0fc20041797b2982b55315107d312a1b47220402f62744d10a4a207",
-      "current": "9dd33a66f2340d97d6047d30222d2e26f17bae0c84c8af6f53fb7ab15da22909",
-      "reason": "Use a sustained CC0 wood flame with controlled native wood snaps."
+      "current": "e2250a876f6dd333f88bf99c8dc86177d280771fbd8dd20f612d9cedf026b718",
+      "reason": "Restore low wood-flame body and soften short bright snaps."
     }
   }
 }

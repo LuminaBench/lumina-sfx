@@ -3043,6 +3043,29 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-aluminium-roof-shower.ts",
+      "title": "Rain hitting an aluminium roof",
+      "author": "florianreichelt",
+      "url": "https://freesound.org/people/florianreichelt/sounds/680152/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 336000,
+          "sha256": "67704f201e972f15558ec0f3baf46473d70e989ec12ca4ff1fdd2f20238985b1"
+        },
+        {
+          "frames": 336000,
+          "sha256": "d079840e4576e5fdddbdaa6938749ee3498b522f174e7ccaaae12d817cc16ecc"
+        },
+        {
+          "frames": 336000,
+          "sha256": "b7e4f0f850ca9bcf8a2507553c78ff872eddd6a28b9c4f6782946726f316f84a"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-atlas-firecracker.ts",
       "title": "Firecracker Explosion",
       "author": "unfa",
@@ -3328,6 +3351,25 @@
         {
           "frames": 65536,
           "sha256": "f0ea3109ee179f0b977dc87292d9c29b3165a0d649c1da68c5044dd632f7e5a8"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-garden-shower.ts",
+      "title": "Light Rain",
+      "author": "soundrecorder7",
+      "url": "https://freesound.org/people/soundrecorder7/sounds/167034/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 288000,
+          "sha256": "0429865a38b601e33c294e457e56256fcc1e2b7626d4e061be025660e5bf69ca"
+        },
+        {
+          "frames": 288000,
+          "sha256": "0f3ed1bea33e1edee16a4ee16c5be88cd4f8ef7e0bf49effc2af162b596177ac"
         }
       ]
     },
@@ -3919,6 +3961,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-swimmer-entry.ts",
+      "title": "splash body dive into water pool.flac",
+      "author": "kyles",
+      "url": "https://freesound.org/people/kyles/sounds/637823/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 51360,
+          "sha256": "161382f3d6742999d6106f008016ae47f4baddcb9edbd962cd4cc7be3ddb86cb"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-thunder-attack.ts",
       "title": "Thunderclap",
       "author": "Fission9",
@@ -3964,6 +4021,21 @@
         {
           "frames": 36720,
           "sha256": "461282df37c07459bc335dac8a88e8f14bd105fe77a256ed3a015adfada47313"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-water-lift.ts",
+      "title": "coming out of water- woosh",
+      "author": "morganveilleux",
+      "url": "https://freesound.org/people/morganveilleux/sounds/389987/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 51840,
+          "sha256": "7b811d129a38dab184a1ce09d0061e3809f7e0cd05197ebaa417b61b23c32cd4"
         }
       ]
     },
@@ -4021,6 +4093,25 @@
         {
           "frames": 71400,
           "sha256": "7a84198bc5fcfac758859e67069faa90fbfd8eee048812d326a889ded09d98e0"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-wood-flame.ts",
+      "title": "Fire_Burning_03.flac",
+      "author": "wwstudioswastaken",
+      "url": "https://freesound.org/people/wwstudioswastaken/sounds/624425/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 240000,
+          "sha256": "3d79c6a9439019e97c575dc0a8e738feb3ba7d3a22b569a36282819fe2c512bd"
+        },
+        {
+          "frames": 240000,
+          "sha256": "110e4bb4ba8d0c4193d0889d7b9dd72a0c4f321f945d2bcc5525c795fef6fa7d"
         }
       ]
     },

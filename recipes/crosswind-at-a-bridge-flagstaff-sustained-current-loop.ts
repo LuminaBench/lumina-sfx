@@ -6,7 +6,7 @@ import wash from './_recordings/isolated-wind-fabric.ts';
 
 export default {
   id: "crosswind-at-a-bridge-flagstaff-sustained-current-loop", name: "Crosswind at a bridge flagstaff — sustained current", category: "Weather & Ambience",
-  tags: ["wind", "field-recording", "open", "sustained current", "crosswind", "at", "a", "bridge"], loopable: true, durationSec: 6.74,
+  tags: ["wind", "field-recording", "open", "sustained current", "crosswind", "at", "a", "bridge"], loopable: true, sustainMode: 'evolving', durationSec: 6.74,
   isolation:'isolated', components:['wind'],
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },

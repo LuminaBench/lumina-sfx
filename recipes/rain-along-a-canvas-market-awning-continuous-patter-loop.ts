@@ -5,7 +5,7 @@ import source from './_recordings/isolated-rain-foliage.ts';
 
 export default {
   id: "rain-along-a-canvas-market-awning-continuous-patter-loop", name: "Rain along a canvas market awning — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "screened", "continuous patter", "along", "a", "canvas"], loopable: true, durationSec: 7.06,
+  tags: ["rain", "field-recording", "screened", "continuous patter", "along", "a", "canvas"], loopable: true, sustainMode: 'evolving', durationSec: 7.06,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

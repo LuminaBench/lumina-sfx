@@ -3,7 +3,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-wood-fire.ts';
 export default {
   id: "burning-pallet-stack-in-a-loading-yard-low-simmer-loop", name: "Burning pallet stack in a loading yard — low simmer", category: "Water & Fire",
-  tags: ["fire", "field-recording", "open", "low simmer", "burning", "pallet", "stack", "in"], loopable: true, durationSec: 7.68,
+  tags: ["fire", "field-recording", "open", "low simmer", "burning", "pallet", "stack", "in"], loopable: true, sustainMode: 'evolving', durationSec: 7.68,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.23 } },
   recording: burn.credit, components: ['fire'], isolation:'isolated',

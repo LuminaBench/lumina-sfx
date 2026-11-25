@@ -5,7 +5,7 @@ import { surfaceRain } from './_shared/weather-textures.ts';
 
 export default {
   id: "rain-on-puddles-loop", name: "Rain on Puddles", category: 'Weather & Ambience',
-  tags: ["rain","puddles","water","splashes"], loopable: true, durationSec: 7,
+  tags: ["rain","puddles","water","splashes"], loopable: true, sustainMode: 'evolving', durationSec: 7,
   components: ['rain'], isolation: 'isolated', recording:drops.credit,
   params: { splash: { label: "Splash", min: 0, max: 1, default: 0.66 } },
   render(ctx, { params }) {

@@ -3,7 +3,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-ring-fire.ts';
 export default {
   id: "hearth-fire-behind-an-iron-grate-low-simmer-loop", name: "Hearth fire behind an iron grate — low simmer", category: "Water & Fire",
-  tags: ["fire", "field-recording", "interior", "low simmer", "hearth", "behind", "an"], loopable: true, durationSec: 7.27,
+  tags: ["fire", "field-recording", "interior", "low simmer", "hearth", "behind", "an"], loopable: true, sustainMode: 'evolving', durationSec: 7.27,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.23 } },
   recording: burn.credit, components: ['fire'], isolation:'isolated',

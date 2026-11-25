@@ -8,7 +8,7 @@ export default {
   name: "Rain on a Parked Car Canopy",
   category: "Weather & Ambience",
   tags: ["rain", "parked", "car", "canopy", "ambience"],
-  loopable: true,
+  loopable: true, sustainMode: 'evolving',
   durationSec: 10.0,
   targetRmsDbfs: -28,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },

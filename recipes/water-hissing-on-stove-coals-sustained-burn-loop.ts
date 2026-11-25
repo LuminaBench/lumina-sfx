@@ -4,7 +4,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-ring-fire.ts';
 export default {
   id: "water-hissing-on-stove-coals-sustained-burn-loop", name: "Water hissing on stove coals — sustained burn", category: "Water & Fire",
-  tags: ["fire", "field-recording", "interior", "sustained burn", "water", "hissing", "on", "stove"], loopable: true, durationSec: 6.8,
+  tags: ["fire", "field-recording", "interior", "sustained burn", "water", "hissing", "on", "stove"], loopable: true, sustainMode: 'evolving', durationSec: 6.8,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   recording: burn.credit, components: ['fire', 'steam'], isolation:'isolated',

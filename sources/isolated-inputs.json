@@ -532,5 +532,62 @@
         ]
       ]
     }
+  },
+  "fieldTakes": {
+    "wood-flame": [
+      {
+        "startSec": 37,
+        "frames": 240000,
+        "sha256": "3d79c6a9439019e97c575dc0a8e738feb3ba7d3a22b569a36282819fe2c512bd"
+      },
+      {
+        "startSec": 21,
+        "frames": 240000,
+        "sha256": "110e4bb4ba8d0c4193d0889d7b9dd72a0c4f321f945d2bcc5525c795fef6fa7d"
+      }
+    ],
+    "garden-shower": [
+      {
+        "startSec": 0.7,
+        "frames": 288000,
+        "sha256": "0429865a38b601e33c294e457e56256fcc1e2b7626d4e061be025660e5bf69ca"
+      },
+      {
+        "startSec": 13,
+        "frames": 288000,
+        "sha256": "0f3ed1bea33e1edee16a4ee16c5be88cd4f8ef7e0bf49effc2af162b596177ac"
+      }
+    ],
+    "aluminium-roof-shower": [
+      {
+        "startSec": 6,
+        "frames": 336000,
+        "sha256": "67704f201e972f15558ec0f3baf46473d70e989ec12ca4ff1fdd2f20238985b1"
+      },
+      {
+        "startSec": 31,
+        "frames": 336000,
+        "sha256": "d079840e4576e5fdddbdaa6938749ee3498b522f174e7ccaaae12d817cc16ecc"
+      },
+      {
+        "startSec": 55,
+        "frames": 336000,
+        "sha256": "b7e4f0f850ca9bcf8a2507553c78ff872eddd6a28b9c4f6782946726f316f84a"
+      }
+    ],
+    "swimmer-entry": [
+      {
+        "startSec": 0.557,
+        "frames": 51360,
+        "sha256": "161382f3d6742999d6106f008016ae47f4baddcb9edbd962cd4cc7be3ddb86cb"
+      }
+    ],
+    "water-lift": [
+      {
+        "startSec": 0.092,
+        "frames": 51840,
+        "sha256": "7b811d129a38dab184a1ce09d0061e3809f7e0cd05197ebaa417b61b23c32cd4"
+      }
+    ]
   }
 }

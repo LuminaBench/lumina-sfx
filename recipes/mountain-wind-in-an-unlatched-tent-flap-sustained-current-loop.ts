@@ -6,7 +6,7 @@ import wash from './_recordings/isolated-wind-fabric.ts';
 
 export default {
   id: "mountain-wind-in-an-unlatched-tent-flap-sustained-current-loop", name: "Mountain wind in an unlatched tent flap — sustained current", category: "Weather & Ambience",
-  tags: ["wind", "field-recording", "screened", "sustained current", "mountain", "in", "an"], loopable: true, durationSec: 7.06,
+  tags: ["wind", "field-recording", "screened", "sustained current", "mountain", "in", "an"], loopable: true, sustainMode: 'evolving', durationSec: 7.06,
   isolation:'isolated', components:['wind'],
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },

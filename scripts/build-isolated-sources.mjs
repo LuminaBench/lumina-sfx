@@ -1,6 +1,7 @@
 // Run with Node's TypeScript support. All inputs are checked-in CC0 takes.
 // A stationary spectrum retains engine coloration while discarding the time sequence.
 import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { fft, stationaryTexture } from './recording-texture.mjs';
 const folder = new URL('../recipes/_recordings/', import.meta.url);
 function transient(take, sampleRate) {
@@ -25,6 +26,18 @@ function transient(take, sampleRate) {
 }
 const inputs = JSON.parse(await readFile(new URL('../sources/isolated-inputs.json', import.meta.url), 'utf8'));
 const check = process.argv.includes('--check');
+// Complete field gestures and longer ambience excerpts are packed once. Keep their
+// source offsets and digests so offline builds check the exact selected takes.
+for (const [name, cuts] of Object.entries(inputs.fieldTakes)) {
+  const { default: clip } = await import(new URL('isolated-' + name + '.ts', folder));
+  if (clip.takes.length !== cuts.length || clip.credit.license !== 'CC0-1.0')
+    throw Error('Unexpected field recording: ' + name);
+  for (const [i, cut] of cuts.entries()) {
+    const pcm = Buffer.from(clip.takes[i], 'base64');
+    if (pcm.length !== 2 * cut.frames || createHash('sha256').update(pcm).digest('hex') !== cut.sha256)
+      throw Error('Field take mismatch: ' + name + '/' + i);
+  }
+}
 function windowTake(clip, [take, start, seconds], matchStrike) {
   const pcm = Buffer.from(clip.takes[take], 'base64');
   const offset = Math.round(start * clip.sampleRate);

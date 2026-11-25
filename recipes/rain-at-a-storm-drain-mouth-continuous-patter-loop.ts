@@ -5,7 +5,7 @@ import source from './_recordings/isolated-rain-drain.ts';
 
 export default {
   id: "rain-at-a-storm-drain-mouth-continuous-patter-loop", name: "Rain at a storm drain mouth — continuous patter", category: "Weather & Ambience",
-  tags: ["rain", "field-recording", "open", "continuous patter", "at", "a", "storm"], loopable: true, durationSec: 6.68,
+  tags: ["rain", "field-recording", "open", "continuous patter", "at", "a", "storm"], loopable: true, sustainMode: 'evolving', durationSec: 6.68,
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

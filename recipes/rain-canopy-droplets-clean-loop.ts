@@ -11,7 +11,7 @@ export default {
   isolation: 'isolated',
   mixRole: 'ambience',
   recording: drops.credit,
-  loopable: true,
+  loopable: true, sustainMode: 'evolving',
   durationSec: 8.6,
   targetRmsDbfs: -26,
   params: { intensity: { label: 'Rain intensity', min: 0, max: 1, default: 0.56 } },

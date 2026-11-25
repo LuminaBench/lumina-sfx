@@ -6,7 +6,7 @@ import wash from './_recordings/isolated-demo-sheltered-wind.ts';
 
 export default {
   id: "gusts-pushing-through-dry-maize-sustained-current-loop", name: "Gusts pushing through dry maize — sustained current", category: "Weather & Ambience",
-  tags: ["wind", "field-recording", "open", "sustained current", "gusts", "pushing", "through", "dry"], loopable: true, durationSec: 7.11,
+  tags: ["wind", "field-recording", "open", "sustained current", "gusts", "pushing", "through", "dry"], loopable: true, sustainMode: 'evolving', durationSec: 7.11,
   isolation:'isolated', components:['wind'],
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },

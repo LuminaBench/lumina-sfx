@@ -17,6 +17,8 @@ For a single sound, start with `node scripts/choose.mjs "rain only" --clean`. Pl
 
 For a moving scene, locate each physical source once. For example, a nearby turbine can stay behind the pilot while thunder starts 650 metres front-left and rain hits the canopy. Use `acoustics.distanceM` and `acoustics.direction` for fixed sources or a world-space `placement.path` for motion. Set `balance: "natural"` to preserve the resulting distance and obstruction cues. Render the dry solo if a layer seems to have an unwanted sound.
 
+For long rain, flame or a steady motor, prefer a catalog loop with `sustainMode: "evolving"` and set the layer's `durationSec` to the full shot. For immersion or a window opening, keep the same emitter running and automate its `muffle` or `placement.obstruction`. Time a single recorded crossing gesture to contact. Audition the quiet foreground and the exposed background for several original loop lengths. Listen for a returning drip, a doubled splash or a sharp tick that gives away a join.
+
 Use the [listening scene guide](references/listening-scenes.md) to resolve a brief, render headphones/stereo/mono, inspect the combined bed at the listener, or install independent live emitters. Name each layer once and keep its label across edits. Choose and save the simplest scene that meets the brief. For “a jet in a storm” start with the engine as the subject. For “a storm with a barely audible jet” prioritise the weather, set the jet's distance from the viewpoint and audition its quiet level. Preserve locks and report audible conflicts.
 
 ## 1. Search for the closest performance

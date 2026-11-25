@@ -1,6 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
 import { woodFire } from './_shared/wood-fire.ts';
-import burn from './_recordings/isolated-ring-fire.ts';
+import burn from './_recordings/isolated-wood-flame.ts';
 
 export default {
   id: 'campfire-crackle-loop',
@@ -10,7 +10,7 @@ export default {
   soloQueries: ['fire', 'campfire', 'wood fire', 'quiet fire', 'fire crackle', 'campfire crackle'],
   components: ['fire'],
   isolation: 'isolated',
-  loopable: true,
+  loopable: true, sustainMode: 'evolving',
   durationSec: 7,
   mixRole: 'ambience',
   recording: burn.credit,

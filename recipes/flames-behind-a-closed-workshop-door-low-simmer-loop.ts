@@ -3,7 +3,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-wood-fire.ts';
 export default {
   id: "flames-behind-a-closed-workshop-door-low-simmer-loop", name: "Flames behind a closed workshop door — low simmer", category: "Water & Fire",
-  tags: ["fire", "field-recording", "screened", "low simmer", "flames", "behind", "a", "closed"], loopable: true, durationSec: 7.67,
+  tags: ["fire", "field-recording", "screened", "low simmer", "flames", "behind", "a", "closed"], loopable: true, sustainMode: 'evolving', durationSec: 7.67,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.23 } },
   recording: burn.credit, components: ['fire'], isolation:'isolated',

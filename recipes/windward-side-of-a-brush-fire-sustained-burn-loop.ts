@@ -3,7 +3,7 @@ import { woodFire } from './_shared/wood-fire.ts';
 import burn from './_recordings/isolated-wood-fire.ts';
 export default {
   id: "windward-side-of-a-brush-fire-sustained-burn-loop", name: "Windward side of a brush fire — sustained burn", category: "Water & Fire",
-  tags: ["fire", "field-recording", "open", "sustained burn", "windward", "side", "of", "a"], loopable: true, durationSec: 6.87,
+  tags: ["fire", "field-recording", "open", "sustained burn", "windward", "side", "of", "a"], loopable: true, sustainMode: 'evolving', durationSec: 6.87,
   mixRole: "ambience", targetRmsDbfs: -24,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.61 } },
   recording: burn.credit, components: ['fire'], isolation:'isolated',
