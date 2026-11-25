@@ -3,6 +3,7 @@ import { independentRain } from './_shared/independent-rain.ts';
 import drops from './_recordings/isolated-canopy-droplets.ts';
 
 export default {
+  soloQueries: ["rain", "rainfall", "steady rain", "rain shower"],
   id: 'rainfall-open-air-clean-loop',
   name: 'Open-air rainfall · isolated steady shower',
   category: 'Weather & Ambience',

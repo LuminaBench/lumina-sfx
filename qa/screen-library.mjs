@@ -52,7 +52,7 @@ try {
       for (const [name, value] of Object.entries(estimate.labels))
         if (value.score > (labels[name]?.score ?? 0)) labels[name] = { ...value, side };
     }
-    const intended = [recipe.id, ...recipe.tags, ...(recipe.contains ?? [])].join(' ');
+    const intended = [recipe.id, ...recipe.tags, ...(recipe.contains ?? []), ...(recipe.components ?? [])].join(' ');
     const flags = [];
     for (const [name, { score, at }] of Object.entries(labels)) {
       const family = /speech|conversation|narration|chatter|talking|whisper|shout|singing|laughter/.test(
@@ -61,8 +61,9 @@ try {
         ? 'voice'
         : /typing|computer_keyboard|mouse_click|computer_mouse/.test(name)
           ? 'computer'
-          : /cricket|insect|chirp|bird/.test(name)
-            ? 'wildlife'
+          : /cricket|insect|mosquito|bee_buzz|fly_buzz/.test(name) ? 'insect'
+          : /bird|chirp|crow_caw|owl_hoot/.test(name)
+            ? 'bird'
             : null;
       if (!family || score < 0.5) continue;
       if (
@@ -71,10 +72,9 @@ try {
       )
         continue;
       if (
-        family === 'wildlife' &&
-        /bird|chicken|hen\b|rooster|cricket|frog|cicada|insect|duck|goose|aviary|dawn chorus/.test(intended)
-      )
-        continue;
+        (family === 'bird' && /bird|chicken|\bhen\b|rooster|duck|goose|geese|aviary|dawn chorus|\b(owl|crow|raven|robin|gull|sparrow|pigeon|eagle|falcon|hawk|parrot|finch)\b/.test(intended)) ||
+        (family === 'insect' && /cricket|cicada|insect|mosquito|bee[- ]buzz|beehive|bees/.test(intended))
+      ) continue;
       flags.push({ name, at, score: +score.toFixed(3) });
     }
     rows.push({

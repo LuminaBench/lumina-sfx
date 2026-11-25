@@ -70,7 +70,7 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
     const children = [];
     for (const layer of layers) {
       fields(layer, 'layer', listening ? [...layerKeys,'placement','acoustics','event','locked','maskEq'] : layerKeys);
-      if(layer.acoustics) fields(layer.acoustics,'acoustics',['source','distanceM','bearingDeg','elevationDeg','through','travel']);
+      if(layer.acoustics) fields(layer.acoustics,'acoustics',['source','distanceM','direction','bearingDeg','elevationDeg','through','travel']);
       if(layer.maskEq) fields(layer.maskEq,'mask EQ',['hz','cutDb','q']);
       if(layer.placement) {
         fields(layer.placement,'placement',['kind','position','path','yaw','pitch','roll','refDistance','rolloff','spread','innerAngle','outerAngle','outerGain','air','doppler','obstruction','room']);

@@ -8,6 +8,7 @@ import idle from './_recordings/isolated-demo-turbine-idle.ts';
 import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
+  soloQueries: ["cockpit", "cockpit engine", "jet cockpit", "inside a cockpit", "dry cockpit", "cockpit ambience"],
   isolation: 'isolated',
   components: ['jet-engine'],
   id: 'interceptor-turbofan-canopy-interior-cruise-loop',

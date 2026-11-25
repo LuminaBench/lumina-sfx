@@ -2838,6 +2838,29 @@
       ]
     },
     {
+      "file": "recipes/_recordings/hearth-wood.ts",
+      "title": "Fireplace wood crackling",
+      "author": "Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/707262/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 96000,
+          "sha256": "ca6ddcc36680ce77bc940903ef639683dc6517b529a97d53e9d44809575a2211"
+        },
+        {
+          "frames": 96000,
+          "sha256": "94e46db16cb2fc3abf72e6fbe3e1ff34b0b842008894afb919b5b057066d0073"
+        },
+        {
+          "frames": 96000,
+          "sha256": "27f98b19d38d9d9435d2df3bd1202850d64ebb0085ff3f5ece591422c8dd300d"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/heavy-metal-door-slam.ts",
       "title": "Door Smash 1",
       "author": "qubodup",
@@ -3035,6 +3058,121 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-barn-call.ts",
+      "title": "Cow - Moo 1 - 96kHz.wav",
+      "author": "JarredGibb",
+      "url": "https://freesound.org/people/JarredGibb/sounds/233130/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 37120,
+          "sha256": "018bc1a36a7dbac381f5471e673a74f4b4e2623bb25962d8065fb4d8ca9e7d84"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-bike-idle-core.ts",
+      "title": "motorbike throttling.1.wav",
+      "author": "overmedium",
+      "url": "https://freesound.org/people/overmedium/sounds/651750/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 24696,
+          "sha256": "cf30339bba79caff9f55f4b9f5f2bff889ffc3b32f272d53011971c493e67dac"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-canopy-droplets.ts",
+      "title": "08-24-rain-car-windscreen",
+      "author": "DanielHren",
+      "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 19500,
+      "takes": [
+        {
+          "frames": 858,
+          "sha256": "a1ab8e8160e71a301c5e02e6041414d7acf842c7ba344361e7ed21a9de244d14"
+        },
+        {
+          "frames": 1131,
+          "sha256": "fc509c93b3adafe81dcf27804542e7b428546616f5ef4e535ecb509196ccd0e4"
+        },
+        {
+          "frames": 1365,
+          "sha256": "bd8e3fcdbd933521f7924db8bdc006d7e6e486b8eace3f354ff616322e47837f"
+        },
+        {
+          "frames": 956,
+          "sha256": "636a4db5b2af905a30e38808033738adc1b04370980cae590a9244ec5e9cfe52"
+        },
+        {
+          "frames": 1229,
+          "sha256": "ed0f47d7b7cf9fcc3abb2ff059baacf875715903d6e654bc79d64844c8fc6cb8"
+        },
+        {
+          "frames": 858,
+          "sha256": "847c3c5d9ae624a637822f2ff9d1ffe02293c2beba94c60f2e3b88cc7e275b2d"
+        },
+        {
+          "frames": 1131,
+          "sha256": "524528a571b4888a0353c1c6ae546216cddf44074720e0b6471da70f40cdc0f2"
+        },
+        {
+          "frames": 1365,
+          "sha256": "56804afdbf8b635556dd914d61f1d8184ea1c0bc3f15d66645fe32255bde2b39"
+        },
+        {
+          "frames": 956,
+          "sha256": "1dc1b687a3afde7d23237c366c62cdfeb9ed28e7b8fe62cedfa4bb6be0dad1aa"
+        },
+        {
+          "frames": 1229,
+          "sha256": "7f1f6f050ca3372b4eaccf79c95bc95c8372a4cf37ae8194d23cd8beeb798deb"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-cat-call.ts",
+      "title": "Animal - Cat Meow",
+      "author": "Vrymaa",
+      "url": "https://freesound.org/people/Vrymaa/sounds/756236/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 23040,
+          "sha256": "d5b44ec2e9f9559e7bbf94ff3d5e14b670f188df4ddc1421dadf9a62513143ca"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-chewing.ts",
+      "title": "cow chewing corn.wav",
+      "author": "soupods",
+      "url": "https://freesound.org/people/soupods/sounds/653727/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 19920,
+          "sha256": "4b299b4fa8eae0904159c3b869c0768728a29d2bb9c6528a10ef7acda21dc3c3"
+        },
+        {
+          "frames": 30240,
+          "sha256": "d786b0a795b47c90766128109755a7557eaf628e24a464f36a0b439b8309b497"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-clarity-pistol.ts",
       "title": "Baretta_22_ pistol _shots_1",
       "author": "TheGreenEyedGhost",
@@ -3089,6 +3227,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-demo-carriage-bed.ts",
+      "title": "on train.wav",
+      "author": "soundofsong",
+      "url": "https://freesound.org/people/soundofsong/sounds/650570/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "12dca54ebbc609e1cd18d167d7462710a8d20e9a83afc93dac5fda1a09f58370"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-demo-fighter-rise.ts",
       "title": "F16 takeoff 1.WAV",
       "author": "Sandermotions",
@@ -3104,6 +3257,51 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-demo-quadcopter-hover.ts",
+      "title": "Quadrocopter Take-Off And Landing",
+      "author": "Alcappuccino",
+      "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "2a3898fdff086ee1e6228951941dd3b073d978c6b425e93036ae0586eb49905b"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-demo-quadcopter-run.ts",
+      "title": "Drone taking off and landing",
+      "author": "hoshisato",
+      "url": "https://freesound.org/people/hoshisato/sounds/822500/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "0aa93d70dd45ad8b0ada6ce5752f0479b3c6c9a4745bcaec2101494de0d33162"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-demo-sheltered-wind.ts",
+      "title": "Whistling wind at marina",
+      "author": "richwise",
+      "url": "https://freesound.org/people/richwise/sounds/796396/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 18000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "635bfaa51170fdb9fe2ac54e725c7c9ff99026de931d982b23d290cc373a243c"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-demo-turbine-idle.ts",
       "title": "F16 fighter jet start up.aif",
       "author": "ikbenraar",
@@ -3115,6 +3313,21 @@
         {
           "frames": 65536,
           "sha256": "3f26c3da21e010ac94d46d2cd0b268ff26b9c23ab9709f9c29849a8293711322"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-field-corn-rustle.ts",
+      "title": "wind medium brisk breeze through stiff dry corn stalks or grass gusty rustling.flac",
+      "author": "kyles",
+      "url": "https://freesound.org/people/kyles/sounds/454363/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 18000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "f0ea3109ee179f0b977dc87292d9c29b3165a0d649c1da68c5044dd632f7e5a8"
         }
       ]
     },
@@ -3142,6 +3355,29 @@
         {
           "frames": 816,
           "sha256": "811a0c178bb98db96b52515b68c0cdac61369fe7eb30a30f873d3ab092e0ce9f"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-hearth-wood.ts",
+      "title": "Fireplace wood crackling",
+      "author": "Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/707262/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 95040,
+          "sha256": "888f8188a985dc51d4d7ad56e7f847781c4876d459603bde37b856df18583b20"
+        },
+        {
+          "frames": 95040,
+          "sha256": "3a33781840e498d4a86b080bb1d055c713abe1c4f00ea5b6eae266224b5740f4"
+        },
+        {
+          "frames": 95040,
+          "sha256": "6b74a68e726ec9f132770629199698d66394c39d9d5c3b6b05218752e401a199"
         }
       ]
     },
@@ -3232,6 +3468,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-lamb-call.ts",
+      "title": "Lamb and Mother",
+      "author": "swiftoid",
+      "url": "https://freesound.org/people/swiftoid/sounds/182509/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 22320,
+          "sha256": "32169a6daf37824c1724d689f14f5c1ce73972491b2321fdcb02a83c353739d3"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-milestone-key-single.ts",
       "title": "Keyboard Typing 001.wav",
       "author": "ristooooo1",
@@ -3251,6 +3502,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-milestone-prop-steady.ts",
+      "title": "Propeller plane",
+      "author": "Breviceps",
+      "url": "https://freesound.org/people/Breviceps/sounds/515293/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "579b7ab6a1d584b84e331d000b866df6f2d1e4213bd562473e4b24f0aa6a4b2d"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-milestone-ratchet.ts",
       "title": "Ratchet Wrench Fast Multiple",
       "author": "Rudmer_Rotteveel",
@@ -3266,6 +3532,21 @@
         {
           "frames": 1088,
           "sha256": "8b13ff19cb8a2131a6f3010fc6c55ee33255e0c729efacb181c729ec93e27dab"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-milestone-train.ts",
+      "title": "train arriving at the station",
+      "author": "launemax",
+      "url": "https://freesound.org/people/launemax/sounds/250516/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "18bbe8fff78ca6624a90953acd75006a9887decd7c64aac901863093d79f3b67"
         }
       ]
     },
@@ -3372,6 +3653,101 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-rail-bend.ts",
+      "title": "Squeaking tram departing.wav",
+      "author": "dersinnsspace",
+      "url": "https://freesound.org/people/dersinnsspace/sounds/417657/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 172800,
+          "sha256": "12d51351993e8028b8ca15acaad315090e25cca2987fd85599a24ac343b0da78"
+        },
+        {
+          "frames": 172800,
+          "sha256": "62523273aa7379ceccf862779cd8a4079b8d8e0f2f054ee12425ccffc3d49c10"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-rain-drain.ts",
+      "title": "Water Through Drain (No Reverb).wav",
+      "author": "clif_creates",
+      "url": "https://freesound.org/people/clif_creates/sounds/381419/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 18000,
+      "takes": [
+        {
+          "frames": 18720,
+          "sha256": "b1f137b81356681ffadf8ef2235a8b567be9362d1f7ebd445328a3a7fc07700c"
+        },
+        {
+          "frames": 19080,
+          "sha256": "2e961ca67a7bc64e40c15eb1ab9cbd53940e53c7da3f6cede9ec1ca882dec5f9"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-rain-foliage.ts",
+      "title": "Tropical Rain - light in a forest with drop hitting the leaves",
+      "author": "nyoz",
+      "url": "https://freesound.org/people/nyoz/sounds/615747/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 20500,
+      "takes": [
+        {
+          "frames": 26240,
+          "sha256": "674f19e3eb141dd29607cd7bc949c44a4220b9ee33a3d87468db50bcc21419c5"
+        },
+        {
+          "frames": 24190,
+          "sha256": "a7bdc43fcaee56ad5531c0a67d5bf3775f6fda76be65fc48e3bb3aee9e083f09"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-rain-glazing.ts",
+      "title": "08-24-rain-car-windscreen",
+      "author": "DanielHren",
+      "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 19500,
+      "takes": [
+        {
+          "frames": 24960,
+          "sha256": "7b12e8ec9f00e1ceb3b86b4de251c75a7ec3066138346ac9e90b51788dbc6475"
+        },
+        {
+          "frames": 23010,
+          "sha256": "c2bc7c4c0b0c5f6373328ba539b34247e471a447245b0216f061fef122bdecc7"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-rain-roof.ts",
+      "title": "Medium rain on a tin roof",
+      "author": "Sassaby",
+      "url": "https://freesound.org/people/Sassaby/sounds/771981/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 20000,
+      "takes": [
+        {
+          "frames": 25600,
+          "sha256": "c18c83dc679759336368510693ec9a27a40c2e54929a42d08efad707954e6618"
+        },
+        {
+          "frames": 23600,
+          "sha256": "9e4c8da916d8d0fab5c6974c731195f4ac263fedfb0cd123da98c91d96c6d57a"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-response-button.ts",
       "title": "SWITCH BUTTON PRESSING.wav",
       "author": "EricsSoundschmiede",
@@ -3452,6 +3828,203 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-ring-fire.ts",
+      "title": "Campfire.wav",
+      "author": "Defaultv",
+      "url": "https://freesound.org/people/Defaultv/sounds/536935/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 83520,
+          "sha256": "dda4ff06b321e06e91613b8129c68dddf22c913ce7be65a644730359dfb05038"
+        },
+        {
+          "frames": 83520,
+          "sha256": "d7187cf88659c2f65fc039051c0847ca1a14b3a13af7e05d1fd6faef4ca639c2"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-robin-call.ts",
+      "title": "Robin singing",
+      "author": "naturenotesuk",
+      "url": "https://freesound.org/people/naturenotesuk/sounds/418425/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 41280,
+          "sha256": "67fc41816d4246f03f9efe238cd5df3b2dcb0b2bc004878a81bb4f7bed8f2b32"
+        },
+        {
+          "frames": 53040,
+          "sha256": "d898f71fb3bd05083b23380f9cb47aa9cb9cc0778b578c84a4aaba9fa236ecd7"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-sheep-voice.ts",
+      "title": "sheep bleat outdoors",
+      "author": "Yuval",
+      "url": "https://freesound.org/people/Yuval/sounds/210511/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 37440,
+          "sha256": "c32bbea872d69b27eb2b84979c65a7bfa5c16c9fa1f0ae40e5e7e48d12f1a0af"
+        },
+        {
+          "frames": 35200,
+          "sha256": "2aa3babc370f7a31383884a99ae58101902f56be1ee2d719bcfe8f30c90a6112"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-storm-body.ts",
+      "title": "Thunderclap",
+      "author": "Fission9",
+      "url": "https://freesound.org/people/Fission9/sounds/534023/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 12800,
+      "takes": [
+        {
+          "frames": 33920,
+          "sha256": "37b95c04d1b36f1f19226e0a388854dadd4666905e7f0ca2dae4388094ef74a4"
+        },
+        {
+          "frames": 30976,
+          "sha256": "3bc461ab311f5dd3c85796f81a39b6b1817e04f8d4a7ad81a52aa7625cf86a09"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-storm-right.ts",
+      "title": "Thunderclap",
+      "author": "Fission9",
+      "url": "https://freesound.org/people/Fission9/sounds/534023/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 18800,
+      "takes": [
+        {
+          "frames": 22372,
+          "sha256": "581ad3236fa5580014624ad397dd3b3c76da6566d0677a4c91ae1bcc5dc6319a"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-thunder-attack.ts",
+      "title": "Thunderclap",
+      "author": "Fission9",
+      "url": "https://freesound.org/people/Fission9/sounds/534023/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 18800,
+      "takes": [
+        {
+          "frames": 22372,
+          "sha256": "7e4a95bf210761019f1b22b23fd8f09b6ceef0eaf470b8e8311bba84304ac68c"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-tire-scrub.ts",
+      "title": "Car peels off",
+      "author": "therisingorder",
+      "url": "https://freesound.org/people/therisingorder/sounds/271337/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 34178,
+          "sha256": "7542aa570eb6669a4b8caf43e64b42f95e6baef89a4c979636753a85c72ba0f5"
+        },
+        {
+          "frames": 36603,
+          "sha256": "beeea81171160f56a072398f017824190fc02a569f46fe9d6907f1fdb50951e1"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-turbine-core.ts",
+      "title": "F16 takeoff 1.WAV",
+      "author": "Sandermotions",
+      "url": "https://freesound.org/people/Sandermotions/sounds/275990/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 36720,
+          "sha256": "461282df37c07459bc335dac8a88e8f14bd105fe77a256ed3a015adfada47313"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-wind-fabric.ts",
+      "title": "Tent Fabric Blow in Light Wind.wav",
+      "author": "bmacphail",
+      "url": "https://freesound.org/people/bmacphail/sounds/569538/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 16080,
+          "sha256": "c88dc7ded4f52643c1b719764dcb69b27ec93195be2dd49335846e4e092e7927"
+        },
+        {
+          "frames": 17760,
+          "sha256": "3ce310fa4188c12f353211b9773c051fac20ebc8220b393e767e65cff91f8bf7"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-wind-leaf.ts",
+      "title": "Rustling Leaves.wav",
+      "author": "FunWithSound",
+      "url": "https://freesound.org/people/FunWithSound/sounds/406099/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 13760,
+          "sha256": "72ce374e45574f41bdb77bb03af0ad8dd59de40c93eb31985871d0219df95a9b"
+        },
+        {
+          "frames": 15680,
+          "sha256": "efd44598700c27bd8383d38cdfdd982d193ec43161b7ea379fc305e47c00ece1"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-wood-fire.ts",
+      "title": "Bonfire CU with hiss.aif",
+      "author": "surrey_film",
+      "url": "https://freesound.org/people/surrey_film/sounds/86342/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 21000,
+      "takes": [
+        {
+          "frames": 61320,
+          "sha256": "72251d38d0045a90ed25f676a133577cc058a238ad48dd96b88c6ff2674fbf7d"
+        },
+        {
+          "frames": 71400,
+          "sha256": "7a84198bc5fcfac758859e67069faa90fbfd8eee048812d326a889ded09d98e0"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-wooden-chest-latch-release.ts",
       "title": "Wooden Chest Lid Latches Open.wav",
       "author": "The_Frisbee_of_Peace",
@@ -3463,6 +4036,21 @@
         {
           "frames": 816,
           "sha256": "e6b909414500fa7a69ee16c0fa94b2d5016d4e0d5023f52ba5278ac065911464"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-young-goat.ts",
+      "title": "Baby goat bleating",
+      "author": "jsbarrett",
+      "url": "https://freesound.org/people/jsbarrett/sounds/200333/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 20640,
+          "sha256": "6ce9c437713d28bf8c33348b156f044f35b826ea693d5ba7c24062a3eafe0760"
         }
       ]
     },
@@ -6038,6 +6626,25 @@
         {
           "frames": 165600,
           "sha256": "e14adcb07070c68b6800b54bea242dcfc64ab8c10fa2521949a72eebf22e7de5"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/ring-fire.ts",
+      "title": "Campfire.wav",
+      "author": "Defaultv",
+      "url": "https://freesound.org/people/Defaultv/sounds/536935/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-25",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 84000,
+          "sha256": "4d3d03d249347acac474fa51d7352eba766b741d11ca147801715b98f2fd2dad"
+        },
+        {
+          "frames": 84000,
+          "sha256": "a6db3990b97fb86482bf129a661bfe8e49bfa0c2f51cbd6ce6ac0449471c2652"
         }
       ]
     },

@@ -285,6 +285,7 @@
     "kind": "design",
     "file": "references/scenes/fireside-distant-thunder.json",
     "loopable": false,
-    "durationSec": 10
+    "durationSec": 10,
+    "isolation": "isolated"
   }
 ]

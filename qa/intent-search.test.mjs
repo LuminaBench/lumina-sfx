@@ -33,7 +33,14 @@ assert.equal(choose('thocky mechanical keyboard click', '--isolated').cues[0].id
 assert.equal(choose('settings tab', '--scene').decision, 'single-cue');
 assert.equal(choose('silk swipe left','settings tab','--isolated').decision, 'individual-cues');
 assert.equal(choose('fire crackle','distant thunder','--scene').scene.id, 'fireside-distant-thunder');
-assert.equal(choose('fire crackle','distant thunder','--isolated','--scene').scene, undefined);
+assert.equal(choose('fire crackle','distant thunder','--isolated','--scene').scene.id, 'fireside-distant-thunder');
 assert.equal(choose('ceramic jellyfish teleporter').decision, 'review');
 assert.deepEqual(choose('heel', 'sole', '--scene', '--isolated').cues.map(c => c.id), ['indoor-hardwood-shoe-step']);
 assert.equal(choose('heel', 'heel', '--scene', '--isolated').cues.length, 2);
+
+for (const [query, id] of [
+  ['rain only','rainfall-open-air-clean-loop'], ['just thunder','thunder-isolated-rolling-strike'],
+  ['cockpit without rain','interceptor-turbofan-canopy-interior-cruise-loop'], ['fire','campfire-crackle-loop'],
+  ['light rain','light-rain-loop'], ['heavy rain','heavy-storm-rain-loop'],
+]) assert.equal(choose(query,'--clean').cues[0].id, id);
+assert.equal(choose('rain only','--clean').cues.length, 1);

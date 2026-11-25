@@ -9,7 +9,12 @@
     "motion-outboard-cranking",
     "response-diesel-loaded",
     "demo-carriage-bed",
-    "milestone-train"
+    "milestone-train",
+    "demo-sheltered-wind",
+    "field-corn-rustle",
+    "demo-quadcopter-run",
+    "demo-quadcopter-hover",
+    "milestone-prop-steady"
   ],
   "transient": [
     "clarity-pistol",
@@ -241,6 +246,289 @@
           0,
           0.08,
           1.12
+        ]
+      ]
+    },
+    "wood-fire": {
+      "source": "atlas-fire",
+      "cuts": [
+        [
+          0,
+          0.1,
+          2.92
+        ],
+        [
+          1,
+          0.15,
+          3.4
+        ]
+      ]
+    },
+    "storm-right": {
+      "source": "atlas-thunder-right",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.19
+        ]
+      ],
+      "noiseFloor": {
+        "source": "atlas-thunder-roll",
+        "take": 0,
+        "start": 3.55,
+        "duration": 0.85
+      }
+    },
+    "storm-body": {
+      "source": "atlas-thunder-roll",
+      "cuts": [
+        [
+          0,
+          0,
+          2.65
+        ],
+        [
+          1,
+          0.01,
+          2.42
+        ]
+      ],
+      "noiseFloor": {
+        "source": "atlas-thunder-roll",
+        "take": 0,
+        "start": 3.55,
+        "duration": 0.85
+      }
+    },
+    "cat-call": {
+      "source": "cat-meow",
+      "cuts": [
+        [
+          0,
+          0.004,
+          0.72
+        ]
+      ]
+    },
+    "lamb-call": {
+      "source": "field-lamb-call",
+      "cuts": [
+        [
+          0,
+          0.008,
+          0.93
+        ]
+      ]
+    },
+    "chewing": {
+      "source": "field-cow-chew",
+      "cuts": [
+        [
+          0,
+          0.02,
+          0.83
+        ],
+        [
+          1,
+          0.03,
+          1.26
+        ]
+      ]
+    },
+    "wind-fabric": {
+      "source": "demo-tent-tension",
+      "cuts": [
+        [
+          0,
+          0.18,
+          0.67
+        ],
+        [
+          1,
+          0.56,
+          0.74
+        ]
+      ]
+    },
+    "wind-leaf": {
+      "source": "dry-vine-brush",
+      "cuts": [
+        [
+          0,
+          0.025,
+          0.43
+        ],
+        [
+          1,
+          0.035,
+          0.49
+        ]
+      ]
+    },
+    "rain-roof": {
+      "source": "atlas-tin",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.28
+        ],
+        [
+          1,
+          0.42,
+          1.18
+        ]
+      ]
+    },
+    "rain-foliage": {
+      "source": "atlas-leaves",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.28
+        ],
+        [
+          1,
+          0.42,
+          1.18
+        ]
+      ]
+    },
+    "rain-drain": {
+      "source": "atlas-drain",
+      "cuts": [
+        [
+          0,
+          1.82,
+          1.04
+        ],
+        [
+          1,
+          0.94,
+          1.06
+        ]
+      ]
+    },
+    "rain-glazing": {
+      "source": "atlas-glass",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.28
+        ],
+        [
+          1,
+          0.42,
+          1.18
+        ]
+      ]
+    },
+    "hearth-wood": {
+      "source": "hearth-wood",
+      "cuts": [
+        [
+          0,
+          0.01,
+          3.96
+        ],
+        [
+          1,
+          0.01,
+          3.96
+        ],
+        [
+          2,
+          0.01,
+          3.96
+        ]
+      ]
+    },
+    "rail-bend": {
+      "source": "demo-tram-squeal",
+      "cuts": [
+        [
+          0,
+          2.44,
+          1.06
+        ],
+        [
+          0,
+          4.14,
+          1.13
+        ]
+      ],
+      "extendSec": 7.2
+    },
+    "tire-scrub": {
+      "source": "car-tire-skid-launch",
+      "cuts": [
+        [
+          0,
+          0.14,
+          1.55
+        ],
+        [
+          0,
+          0.37,
+          1.66
+        ]
+      ]
+    },
+    "robin-call": {
+      "source": "natural-robin",
+      "cuts": [
+        [
+          0,
+          0.005,
+          1.72
+        ],
+        [
+          1,
+          0.04,
+          2.21
+        ]
+      ]
+    },
+    "sheep-voice": {
+      "source": "sheep-bleat",
+      "cuts": [
+        [
+          0,
+          0.004,
+          1.17
+        ],
+        [
+          1,
+          0.005,
+          1.1
+        ]
+      ]
+    },
+    "young-goat": {
+      "source": "field-goat-young",
+      "cuts": [
+        [
+          1,
+          0.003,
+          0.86
+        ]
+      ]
+    },
+    "ring-fire": {
+      "source": "ring-fire",
+      "cuts": [
+        [
+          0,
+          0.006,
+          3.48
+        ],
+        [
+          1,
+          0.006,
+          3.48
         ]
       ]
     }

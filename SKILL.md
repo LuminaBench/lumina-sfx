@@ -13,6 +13,10 @@ For a brief with perspective, masking or movement, translate the user's sentence
 
 Search for the source **as heard from this viewpoint**. A canopy-interior turbine suits a pilot. Exterior exhaust suits the listener below. Start from dry, isolated sources for moving emitters. Inspect recorded pass-bys for baked-in motion and `contains` for embedded weather. Make every extra layer justify itself.
 
+For a single sound, start with `node scripts/choose.mjs "rain only" --clean`. Plain “rain”, “thunder”, “cockpit” and “fire” each resolve to one dry performance. A named location sets the listening position. Add another emitter when the brief calls for a second audible event. A steady loop supplies its own variation, and a recorded performance can already include a contact and its decay. Inspect `components`, `contains` and review flags before adding layers.
+
+For a moving scene, locate each physical source once. For example, a nearby turbine can stay behind the pilot while thunder starts 650 metres front-left and rain hits the canopy. Use `acoustics.distanceM` and `acoustics.direction` for fixed sources or a world-space `placement.path` for motion. Set `balance: "natural"` to preserve the resulting distance and obstruction cues. Render the dry solo if a layer seems to have an unwanted sound.
+
 Use the [listening scene guide](references/listening-scenes.md) to resolve a brief, render headphones/stereo/mono, inspect the combined bed at the listener, or install independent live emitters. Name each layer once and keep its label across edits. Choose and save the simplest scene that meets the brief. For “a jet in a storm” start with the engine as the subject. For “a storm with a barely audible jet” prioritise the weather, set the jet's distance from the viewpoint and audition its quiet level. Preserve locks and report audible conflicts.
 
 ## 1. Search for the closest performance

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { leafIds } from './scene-leaves.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
@@ -20,13 +21,24 @@ if (values.help) {
   const limit = values.limit === undefined ? undefined : Number(values.limit);
   if (limit !== undefined && (!Number.isSafeInteger(limit) || limit < 1)) throw Error('--limit requires a positive integer');
   let sounds = candidates.filter((sound) => {
-    const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.contains ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
+    const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.soloQueries ?? []), ...(sound.contains ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
     return (!values.clean || (sound.isolation === 'isolated' && !sound.cleanHold && !sound.auditionNote)) && terms.every((term) => text.includes(term)) &&
       (!values.category || sound.category.toLowerCase().includes(values.category.toLowerCase())) &&
       (!values.collection || sound.collection?.toLowerCase().includes(values.collection.toLowerCase())) &&
       (!values['background-checked'] || sound.backgroundChecked === true) &&
       (!values.loop || sound.loopable) && (!values.isolated || sound.isolation === 'isolated');
   });
+  if (values.designs && values.clean) {
+    const bank = JSON.parse(await readFile(new URL('../catalog.json', import.meta.url))).sounds;
+    const eligible = new Set(bank.filter(s => s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote).map(s => s.id));
+    const checked = [];
+    for (const design of sounds) {
+      const url = new URL('../' + design.file, import.meta.url);
+      const leaves = await leafIds(JSON.parse(await readFile(url, 'utf8')), url);
+      if (leaves.every(id => eligible.has(id))) checked.push(design);
+    }
+    sounds = checked;
+  }
   if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude);
   if (values.votes) {
     const review = JSON.parse(await readFile(values.votes, 'utf8'));

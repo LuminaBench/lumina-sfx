@@ -35,7 +35,7 @@ const sounds = recipes.map(recipe => {
   const current = matchesReviewedAudio(recipe, entry?.variantsSha256);
   return {
     id, name, category, cleanHold:holds[id]?.labels, isolation: recipe.isolation, backgroundChecked: current && !entry.auditionNote && !holds[id] || undefined,
-    auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: collections.get(id), tags, loopable, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
+    auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, soloQueries:recipe.soloQueries, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: collections.get(id), tags, loopable, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
     additionalRecordings, takeCount: recipe.takeCount, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
   };
 });

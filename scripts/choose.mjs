@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
+import { leafIds } from './scene-leaves.mjs';
 import { rankByIntent } from './intent-search.mjs';
 
 const { positionals, values } = parseArgs({ allowPositionals: true, options: {
@@ -21,22 +22,14 @@ if(values.brief){
   process.exit(decision.design?0:2);
 }
 const requests = positionals.map(query => {
-  const ranked = rankByIntent(bank, query, values.exclude, true);
+  const candidates = bank.filter(s => s.id === query || (!s.cleanHold && !s.auditionNote));
+  const ranked = rankByIntent(candidates, query, values.exclude, true);
   const matches = ranked.filter(s => !s.missing.length || s.id === query);
   return { query, matches: new Set(matches.map(s => s.id)), top: matches[0]?.id,
     closest: ranked[0] && { id: ranked[0].id, unmatchedWords: ranked[0].missing } };
 });
 
 // Only an exact cover of the requested performances qualifies as a reusable timed scene.
-// Walk the published scene index, including nested groups and file references.
-async function leafIds(spec, base, ancestors = []) {
-  if (typeof spec === 'string') {
-    const url = new URL(spec, base);
-    if (ancestors.includes(url.href)) throw Error('Circular design ' + spec);
-    return leafIds(await read(url), url, [...ancestors, url.href]);
-  }
-  return (await Promise.all(spec.layers.map(l => l.id ?? leafIds(l.design, base, ancestors)))).flat();
-}
 function assign(leaves, index, used) {
   if (index === requests.length) return [];
   for (const [i,id] of leaves.entries()) {

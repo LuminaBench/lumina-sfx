@@ -1,5 +1,5 @@
 // Offline retrieval over the catalog. Keep exact search available for asset IDs and scripts.
-const stopWords = new Set('a an the of to for from with that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more'.split(' '));
+const stopWords = new Set('a an the of to for from with that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more only solo alone'.split(' '));
 const vocabulary = {
   thocky: 'thock', thocking: 'thock', leftward: 'left', rightward: 'right',
   keystrokes: 'key', keycap: 'key', keycaps: 'key', keydown: 'press', keyup: 'release', enter: 'return',
@@ -46,10 +46,11 @@ export function rankByIntent(sounds, query, exclude = '', explain = false) {
   if (!terms.length) return [];
   const excluded = [...words(exclude), ...negated.filter(term => !isMood(term))];
   const documents = sounds.map(sound => {
-    const title = new Set(words(sound.id + ' ' + sound.name));
+    const aliases = (sound.soloQueries ?? []).map(q => words(q).filter(w => !stopWords.has(w)));
+    const title = new Set([...words(sound.id + ' ' + sound.name), ...aliases.flat()]);
     const tags = new Set(words(sound.tags.join(' ')));
     const context = new Set(words([sound.category, sound.collection, sound.perspective, ...(sound.contains ?? [])].join(' ')));
-    return { sound, title, tags, context };
+    return { sound, title, tags, context, aliases };
   });
   const weights = terms.map(term => {
     const count = documents.filter(d => d.title.has(term) || d.tags.has(term) || d.context.has(term)).length;
@@ -58,7 +59,7 @@ export function rankByIntent(sounds, query, exclude = '', explain = false) {
   const floorStep = (terms.includes('step') || terms.includes('footstep')) &&
     (terms.includes('floor') || terms.includes('wood'));
   const scored = [];
-  for (const { sound, title, tags, context } of documents) {
+  for (const { sound, title, tags, context, aliases } of documents) {
     if (floorStep) {
       const walking = title.has('footstep') || tags.has('footstep') || tags.has('walk');
       const material = terms.includes('wood') ? 'wood' : 'floor';
@@ -73,10 +74,11 @@ export function rankByIntent(sounds, query, exclude = '', explain = false) {
       if (relevance) hits++;
     });
     const affinity = palette.filter(term => tags.has(term) || title.has(term)).length;
-    if (!hits) continue;
+    if (!hits || !terms.some(t => title.has(t) || tags.has(t) || words((sound.contains ?? []).join(" ")).includes(t))) continue;
+    const solo = aliases.some(a => a.length === terms.length && terms.every(t => a.includes(t)));
     const result = explain ? { ...sound, missing: terms.filter(t => !title.has(t) && !tags.has(t) && !context.has(t)) } : sound;
-    scored.push({ sound: result, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
+    scored.push({ sound: result, solo, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
   }
-  return scored.sort((a, b) => Number(b.exact) - Number(a.exact) || b.score - a.score ||
+  return scored.sort((a, b) => Number(b.exact) - Number(a.exact) || Number(b.solo) - Number(a.solo) || b.score - a.score ||
     a.sound.id.localeCompare(b.sound.id)).map(item => mood ? { ...item.sound, suggestedMood: mood } : item.sound);
 }

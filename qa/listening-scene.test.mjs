@@ -275,3 +275,14 @@ test('a moving listener hears the discrete event from its emission position', as
   assert.deepEqual(result.placement.position,[686,0,0]);
   assert.equal(result.placement.path,undefined);
 });
+
+test('named directions use the listener orientation at emission and retain distance', () => {
+  for (const [direction, bearingDeg, elevationDeg] of [['overhead',0,90],['below',0,-90],['rear-left',-135,0],['front-right',45,0]]) {
+    const listener = {position:[4,2,1],yaw:36,pitch:8};
+    const sound = acoustics => run({listener}, [{recipe:tone,label:'signal',acoustics:{distanceM:8,...acoustics}}]);
+    const named = sound({direction}), numeric = sound({bearingDeg,elevationDeg});
+    assert.deepEqual(named.stems[0].placement.position, numeric.stems[0].placement.position);
+    assert.ok(Math.abs(named.stems[0].arrival.distanceM - 8) < 1e-8);
+    assert.throws(() => sound({direction,bearingDeg}), /direction or numeric/);
+  }
+});

@@ -12,7 +12,14 @@ const sources = {
   vehicle: { radius: 3, trim: 0 },
   foley: { radius: 1, trim: 0 },
 } as const;
+// Listener-relative bearings and elevations in degrees at emission time.
+const directions = {
+  front: [0, 0], 'front-right': [45, 0], right: [90, 0], 'rear-right': [135, 0],
+  rear: [180, 0], 'rear-left': [-135, 0], left: [-90, 0], 'front-left': [-45, 0],
+  overhead: [0, 90], below: [0, -90],
+} as const;
 export interface Acoustics {
+  direction?: keyof typeof directions;
   source?: keyof typeof sources;
   distanceM?: number;
   bearingDeg?: number;
@@ -100,14 +107,18 @@ export function resolveEmitter(
   const p = layer.placement ?? {},
     emission = layer.offsetSec ?? 0;
   if (a.distanceM !== undefined && p.position) throw Error('Choose distanceM or world position, not both');
-  if ((a.bearingDeg !== undefined || a.elevationDeg !== undefined) && a.distanceM === undefined)
+  if (a.direction !== undefined && !Object.hasOwn(directions, a.direction)) throw Error('Unknown emitter direction');
+  if (a.direction !== undefined && (a.bearingDeg !== undefined || a.elevationDeg !== undefined))
+    throw Error('Choose direction or numeric angles');
+  const angles = a.direction === undefined ? [0, 0] : directions[a.direction];
+  if ((a.direction !== undefined || a.bearingDeg !== undefined || a.elevationDeg !== undefined) && a.distanceM === undefined)
     throw Error('Bearing and elevation need distanceM');
   if (a.distanceM === undefined && !p.position)
     throw Error('Acoustics needs distanceM or a world position');
   if (p.kind === 'listener') throw Error('World acoustics need a world emitter');
   const distance = bounded(a.distanceM ?? 0, 0, 40000, 'distanceM'),
-    bearing = bounded(a.bearingDeg ?? 0, -360, 360, 'bearingDeg'),
-    elevation = bounded(a.elevationDeg ?? 0, -90, 90, 'elevationDeg');
+    bearing = bounded(a.bearingDeg ?? angles[0], -360, 360, 'bearingDeg'),
+    elevation = bounded(a.elevationDeg ?? angles[1], -90, 90, 'elevationDeg');
   if (through !== 'open' && p.obstruction !== undefined)
     throw Error('Choose a boundary or an obstruction curve');
   const placement: Placement = {

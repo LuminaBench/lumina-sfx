@@ -91,6 +91,29 @@ for (const name of [...inputs.stationaryTexture, ...inputs.transient, ...Object.
     const {default:noiseClip}=await import(new URL(floor.source+'.ts',folder));
     takes=takes.map(t=>subtractFloor(t,{...floor,clip:noiseClip},clip.sampleRate));
   }
+  if (window?.extendSec !== undefined) {
+    // Reconstruct a continuous rail friction bed from the two identified turns
+    // on the track. Crossfade their tails and alternate the starting take.
+    const frames = Math.round(clip.sampleRate * window.extendSec);
+    const overlap = Math.round(.105 * clip.sampleRate);
+    const pieces = takes.map(t => Buffer.from(t, 'base64'));
+    if (!Number.isSafeInteger(frames) || frames < 1 || pieces.some(b => b.length / 2 < 2 * overlap))
+      throw Error('Unusable sustain window: ' + name);
+    takes = pieces.map((_, first) => {
+      const data = new Float32Array(frames);
+      for (let at = 0, n = first; at < frames; n++) {
+        const part = pieces[n % pieces.length], count = part.length / 2;
+        for (let i = 0; i < count && at + i < frames; i++) {
+          const w = Math.min(1, at ? i / overlap : 1, (count - 1 - i) / overlap);
+          data[at + i] += w * part.readInt16LE(i * 2);
+        }
+        at += count - overlap;
+      }
+      const bytes = Buffer.alloc(2 * frames);
+      data.forEach((v,i) => bytes.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(v))), 2*i));
+      return bytes.toString('base64');
+    });
+  }
   const text =
     "// Derived offline by scripts/build-isolated-sources.mjs\nimport type { RecordedClip } from '../../engine/recording.ts';\nexport default " +
     JSON.stringify({ credit: clip.credit, sampleRate: clip.sampleRate, takes }, null, 2) +

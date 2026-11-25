@@ -84,3 +84,14 @@ The live manifest stores arrival offsets for the authored listener trajectory. I
 A [passing bell](listening-scenes/passing-bell.json) crops a single ding from a longer ring and places three contacts along one path. For vehicle load, compare [climbing](listening-scenes/hill-under-load.json) and [coasting](listening-scenes/coasting-in-gear.json). Both hold the same RPM and seed; power demand selects a different blend of motor textures.
 
 If a distant subject disappears, solo it and check for a recording that already sounds far away. Adjust the competing beds first. If a wide source becomes thin in mono, inspect the source's native stereo fold and narrow its spread or choose a more mono-compatible recording. For moving assets with baked-in pitch changes, leave additional Doppler off.
+
+
+## Longer scenes for headphones
+
+| Scene | What to listen for |
+| --- | --- |
+| [Hearth at the lodge window](listening-scenes/hearth-at-the-lodge-window.json) | The fire stays still at the left knee. Opening the window on the right lets in rain. Two distant discharges arrive at different bearings and times. |
+| [Under the launch](listening-scenes/under-the-launch.json) | The same boat moves overhead while the swimmer dives and resurfaces. The sound changes at the waterline. |
+| [Last departure in the rain](listening-scenes/last-departure-in-the-rain.json) | Rain stays overhead as one turbine approaches, crosses the hangar and falls away. Its motion drives Doppler and distance. |
+
+For a stationary source, `"acoustics": {"distanceM": 12, "direction": "rear-left"}` measures direction from the listener at emission. The eight horizontal choices run from `front` clockwise through `front-right`, `right`, `rear-right`, `rear`, `rear-left`, `left` and `front-left`. Use `overhead` or `below` for vertical placement. For other angles, provide `bearingDeg` and `elevationDeg` together with the distance. A changing listener pose rotates the heard direction. A source path supplies the changing world position of a moving object.

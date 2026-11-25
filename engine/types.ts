@@ -19,6 +19,8 @@ export interface SpectralExpectation {
 }
 
 export interface RenderContext {
+  /** Start of the continuation supplied for a loop crossfade, in sample frames. */
+  readonly loopFrames?: number;
   readonly sampleRate: number;
   readonly frames: number;
   random(): number;
@@ -60,6 +62,7 @@ export interface SoundRecipe {
   preserveTimeline?: boolean;
   readonly isolation?: 'isolated';
   readonly markers?: Readonly<Record<string, number>>;
+  readonly soloQueries?: readonly string[];
   readonly components?:readonly string[];
   readonly contains?: readonly string[];
   readonly perspective?: string;

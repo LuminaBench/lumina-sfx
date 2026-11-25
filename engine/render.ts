@@ -105,7 +105,7 @@ function renderContext(recipe: SoundRecipe, opts: RenderOptions, sampleRate: num
     return [key, value === undefined || !Number.isFinite(value) ? spec.default : clamp(value, spec.min, spec.max)];
   }));
   const seed = Number.isFinite(opts.seed) ? opts.seed! >>> 0 : DEFAULT_SEED;
-  const ctx = { sampleRate, frames: frames + overlap, random: rng(seed) };
+  const ctx = { sampleRate, frames: frames + overlap, loopFrames: overlap ? frames : undefined, random: rng(seed) };
   return { ctx, resolved: { seed, params }, frames, overlap };
 }
 

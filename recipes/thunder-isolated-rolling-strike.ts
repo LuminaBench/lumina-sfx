@@ -5,6 +5,7 @@ import attack from './_recordings/isolated-thunder-attack.ts';
 import { profile } from './_shared/thunder-profile.ts';
 
 export default {
+  soloQueries: ["thunder", "lightning", "rolling thunder", "thunderclap"],
   id: 'thunder-isolated-rolling-strike',
   name: 'Thunder · isolated rolling strike',
   category: 'Weather & Ambience',
