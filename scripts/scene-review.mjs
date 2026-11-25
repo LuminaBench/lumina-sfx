@@ -9,11 +9,12 @@ export async function exportSceneReview(scene, reportPath, stemDir, includeSolos
   const sources = scene.stems.map((s) => ({
     label: s.label,
     id: s.source,
+    event:s.event, components:s.components, arrival:s.arrival,
     offsetSec: s.offset / rate,
     placement: s.placement,
     locked: s.locked,
   }));
-  const report = { masterGain, rate, frames, output, seed, viewpoint, listener, regions, sources };
+  const report = { balance:scene.balance, masterGain, rate, frames, output, seed, viewpoint, listener, regions, sources };
   if (reportPath) {
     await mkdir(dirname(reportPath), { recursive: true });
     await publishAsset(reportPath, json(report));

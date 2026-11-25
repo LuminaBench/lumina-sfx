@@ -4,12 +4,12 @@ import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 
 const { values, positionals } = parseArgs({
-  options: { designs: { type: 'boolean' }, intent: { type: 'string' }, exclude: { type: 'string' }, limit: { type: 'string' }, 'background-checked': { type: 'boolean' }, isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
+  options: { designs: { type: 'boolean' }, intent: { type: 'string' }, exclude: { type: 'string' }, limit: { type: 'string' }, 'background-checked': { type: 'boolean' }, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
   allowPositionals: true,
 });
 
 if (values.help) {
-  console.log('Usage: node scripts/search.mjs [terms… | --intent "game event"] [--exclude "tags or words" (intent mode)] [--designs] [--limit N] [--category <name>] [--collection <name>] [--loop] [--isolated] [--background-checked] [--votes listening-export.json] [--json]');
+  console.log('Usage: node scripts/search.mjs [terms… | --intent "game event"] [--exclude "tags or words" (intent mode)] [--designs] [--limit N] [--category <name>] [--collection <name>] [--loop] [--clean] [--isolated] [--background-checked] [--votes listening-export.json] [--json]');
 } else {
   const candidates = values.designs
     ? JSON.parse(await readFile(new URL('../references/scenes/index.json', import.meta.url), 'utf8'))
@@ -21,7 +21,7 @@ if (values.help) {
   if (limit !== undefined && (!Number.isSafeInteger(limit) || limit < 1)) throw Error('--limit requires a positive integer');
   let sounds = candidates.filter((sound) => {
     const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.contains ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
-    return terms.every((term) => text.includes(term)) &&
+    return (!values.clean || (sound.isolation === 'isolated' && !sound.cleanHold && !sound.auditionNote)) && terms.every((term) => text.includes(term)) &&
       (!values.category || sound.category.toLowerCase().includes(values.category.toLowerCase())) &&
       (!values.collection || sound.collection?.toLowerCase().includes(values.collection.toLowerCase())) &&
       (!values['background-checked'] || sound.backgroundChecked === true) &&

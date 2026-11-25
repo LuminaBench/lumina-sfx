@@ -11,7 +11,8 @@ let votes = {};
 try {
   votes = JSON.parse(localStorage.getItem(key) || '{}') || {};
 } catch {}
-if (data.startDry) el('bed').checked = false;
+el('bed').checked = Boolean(data.bed && !data.startDry);
+if(!data.bed)el('bed').closest('label').hidden=true;
 const choices = data.choices.slice();
 for (let i = choices.length - 1; i > 0; i--) {
   const j = Math.floor(Math.random() * (i + 1));
@@ -50,7 +51,7 @@ async function play(many = false) {
     ctx ??= new AudioContext();
     await ctx.resume();
     const item = choices[index];
-    const bed = el('bed').checked ? await buffer(data.bed) : null;
+    const bed = data.bed && el('bed').checked ? await buffer(data.bed) : null;
     const sounds = await Promise.all((many ? item.takes : item.takes.slice(0, 1)).map(buffer));
     if (serial !== generation) return;
     let out = ctx.destination;

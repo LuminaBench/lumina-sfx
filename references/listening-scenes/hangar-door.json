@@ -8,7 +8,7 @@
   },
   "layers": [
     {
-      "id": "light-rain-loop",
+      "id": "rainfall-open-air-clean-loop",
       "label": "rain",
       "placement": {
         "kind": "point",
@@ -61,5 +61,7 @@
       "gain": 0.28,
       "durationSec": 6
     }
-  ]
+  ],
+  "scope": "world",
+  "sourcePolicy": "clean"
 }

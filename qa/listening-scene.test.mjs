@@ -44,7 +44,7 @@ const tone = {
     );
   },
 };
-const layer = (label, extra = {}) => ({ recipe: tone, label, ...extra });
+const layer = (label, extra = {}) => ({ recipe: tone, label, event:label, ...extra });
 test('focus works against the sum, across array order, when the named source is a loop', async () => {
   const design = await read('cockpit-engine');
   let a, b;
@@ -68,8 +68,8 @@ test('focus works against the sum, across array order, when the named source is 
 });
 test('one edit preserves timestamps, take and absolute foreground level', () => {
   const layers = [layer('foot', { offsetSec: 0.25 }), layer('wind', { gain: 0.8, locked: true })];
-  const a = run({ focus: { subjects: ['foot'] } }, layers);
-  const b = run({ focus: { subjects: ['foot'] } }, [
+  const a = run({ balance:'directed', focus: { subjects: ['foot'] } }, layers);
+  const b = run({ balance:'directed', focus: { subjects: ['foot'] } }, [
     ...layers.slice(0, 1),
     layer('wind', { gain: 0.15, locked: true }),
   ]);
@@ -83,7 +83,7 @@ test('one edit preserves timestamps, take and absolute foreground level', () => 
 });
 test('explicit no focus, shared focus, handoff, unknown labels and bad keyframes', () => {
   const layers = [layer('a', { gain: 0.25 }), layer('b')];
-  const shared = run({ focus: { subjects: ['a', 'b'] } }, layers);
+  const shared = run({ balance:'directed', focus: { subjects: ['a', 'b'] } }, layers);
   assert.ok(shared.regions[0].gain.b < 0.3);
   const ambient = run({ focus: { subjects: [] } }, layers);
   assert.deepEqual(Object.values(ambient.regions[0].gain), [1, 1]);
@@ -200,10 +200,10 @@ test('agent intent resolves the viewpoint without changing an explicit subject',
   const a = resolveListeningBrief(brief, bank);
   assert.equal(a.design.layers[0].id, 'interceptor-turbofan-canopy-interior-cruise-loop');
   const b = resolveListeningBrief(
-    { ...brief, layers: [...brief.layers].reverse(), focus: { subjects: ['storm'] } },
+    { ...brief, layers: [...brief.layers].reverse(), focus: { subjects: ['thunder'] } },
     bank,
   );
-  assert.deepEqual(b.design.focus.subjects, ['storm']);
+  assert.deepEqual(b.design.focus.subjects, ['thunder']);
   assert.deepEqual(b.design.layers, [...a.design.layers].reverse());
   const c = resolveListeningBrief({ ...brief, layers: [{ label: 'fake', query: 'imaginaryxxxx' }] }, bank);
   assert.equal(c.decision, 'review');
@@ -216,4 +216,62 @@ test('a targeted competing-band cut is applied before measuring or exporting dry
     b = run({}, [base[0], layer('rain', { maskEq: { hz: 480, cutDb: 6, q: 0.8 } })]);
   assert.deepEqual(a.stems[0].dry, b.stems[0].dry);
   assert.ok(energy(a.stems[1].dry[0]) > 3.2 * energy(b.stems[1].dry[0]));
+});
+
+test('a single physical scene preserves its engine, delays thunder and contains only the requested sources', async () => {
+  const shot = await read('pilot-inside-canopy'), dry = await read('dry-cockpit');
+  async function snapshot(design) {
+    let scene;
+    const {recipe} = await loadDesign(design, undefined, undefined, value=>scene=value);
+    renderChannels(recipe, {}, rate);
+    return scene;
+  }
+  const storm = await snapshot(shot), clear = await snapshot(dry);
+  const byLabel = label => storm.stems.find(s=>s.label===label);
+  assert.deepEqual(storm.stems.map(x=>x.label),['jet','rain','thunder']);
+  assert.deepEqual(byLabel('jet').ears,clear.stems[0].ears);
+  assert.ok(Math.abs(byLabel('thunder').offset / rate - 2.85)<1/rate);
+  assert.deepEqual(Object.values(storm.regions[0].gain), [1,1,1]);
+  assert.ok(storm.regions[0].delivered.marginDb > 2);
+  const close = structuredClone(shot);
+  close.layers.find(l=>l.label==='thunder').acoustics.distanceM=60;
+  const near=(await snapshot(close)).stems.find(s=>s.label==='thunder');
+  assert.ok(near.offset<byLabel('thunder').offset-rate);
+  assert.ok(energy(near.ears[0])>3*energy(byLabel('thunder').ears[0]));
+  const orbit=await snapshot(await read('orbit-and-turn'));
+  assert.deepEqual(orbit.stems.map(s=>s.label),['turbine']);
+});
+
+test('clean scenes enforce physical identity and permit distinct overlapping emitters', () => {
+  const recipe={...tone,isolation:'isolated',components:['rain']};
+  const one={recipe,label:'roof'},two={recipe:{...recipe,id:'second-rain'},label:'glass'};
+  assert.throws(()=>run({balance:'natural'},[one,two]),/Overlapping copies/);
+  assert.doesNotThrow(()=>run({balance:'natural'},[{...one,event:'front'}, {...two,event:'rear'}]));
+  assert.doesNotThrow(()=>run({balance:'natural'},[one,{...two,offsetSec:1.1}]));
+  assert.throws(()=>run({scope:'world'},[{recipe:{...tone,mixRole:'interface'}}]),/interface cue/);
+  assert.throws(()=>run({sourcePolicy:'clean'},[layer('field')]),/isolated source/);
+  assert.doesNotThrow(()=>run({},[{recipe: tone, gain:4,acoustics:{source:'turbine',distanceM:3}}]));
+});
+
+test('a natural pilot brief infers paths only for requested sources and rejects duplicate rain',async()=>{
+  const {sounds}=JSON.parse(await readFile(new URL('../catalog.json',import.meta.url)));
+  const brief={schemaVersion:2,id:'brief-check',viewpoint:'inside the cockpit',focus:{subjects:['jet']},
+    layers:[{label:'jet',query:'interceptor-turbofan-canopy-interior-cruise-loop'}]};
+  const {design}=resolveListeningBrief(brief,sounds);
+  assert.equal(design.balance,'natural');assert.equal(design.sourcePolicy,'clean');
+  assert.equal(design.layers.length,1); assert.ok(design.layers[0].acoustics.distanceM<5);
+  const rain={label:'rain',query:'rain-canopy-droplets-clean-loop'};
+  const duplicate=resolveListeningBrief({...brief,layers:[...brief.layers,rain,{...rain,label:'patter'}]},sounds);
+  assert.equal(duplicate.decision,'review');assert.match(duplicate.missing[0].reason,/overlapping/);
+  assert.equal(resolveListeningBrief(brief,sounds.map(s=>({...s,cleanHold:['speech']}))).decision,'review');
+});
+
+test('a moving listener hears the discrete event from its emission position', async()=>{
+  const {resolveEmitter}=await import('../engine/acoustic-emitter.ts');
+  const result=resolveEmitter({recipe:tone,acoustics:{source:'thunder'},
+    placement:{position:[686,0,0],path:[{at:3,position:[0,0,0]}]}},
+    {position:[0,0,0],path:[{at:3,position:[1029,0,0]}]});
+  assert.equal(result.arrival.travelSec,1);
+  assert.deepEqual(result.placement.position,[686,0,0]);
+  assert.equal(result.placement.path,undefined);
 });

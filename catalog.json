@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2853,
+  "count": 2856,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -308,6 +308,9 @@
       "id": "air-pulse-prop-seal-vents-and-cools",
       "name": "Air-pulse prop seal vents and cools",
       "category": "Weapons",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Combat audio · Mechanisms and gear",
       "tags": [
         "air",
@@ -700,6 +703,10 @@
       "id": "alpine-treeline-after-dusk-loop",
       "name": "Alpine Treeline after Dusk",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Environment · Biome perspectives",
       "tags": [
         "alpine",
@@ -4191,6 +4198,9 @@
       "id": "armored-hatch-latch-dogs-engage",
       "name": "Armored hatch latch dogs engage",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "typing"
+      ],
       "collection": "Tracked · Movement and hull",
       "tags": [
         "armored",
@@ -4275,6 +4285,9 @@
       "id": "armored-suspension-pressure-bleed",
       "name": "Armored suspension pressure bleed",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Tracked · Movement and hull",
       "tags": [
         "armored",
@@ -4528,6 +4541,10 @@
       "id": "autumn-meadow-edge-after-dusk-loop",
       "name": "Autumn Meadow Edge after Dusk",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Environment · Biome perspectives",
       "tags": [
         "autumn",
@@ -5193,6 +5210,9 @@
       "id": "bees-moving-around-hanging-frames-loop",
       "name": "Bees moving around hanging frames loop",
       "category": "Animals",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "bee",
@@ -8006,6 +8026,9 @@
       "id": "broken-relay-chatters-then-dies",
       "name": "Broken Relay Chatters then Dies",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "broken",
@@ -9755,21 +9778,12 @@
       },
       "targetRmsDbfs": -23,
       "recording": {
-        "title": "A young calf is born during the night, he suck his mother pie with a lot of fly around.",
-        "author": "felix.blume",
-        "url": "https://freesound.org/people/felix.blume/sounds/197446/",
+        "title": "Cow - Moo 1 - 96kHz.wav",
+        "author": "JarredGibb",
+        "url": "https://freesound.org/people/JarredGibb/sounds/233130/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
-      "additionalRecordings": [
-        {
-          "title": "Moo 1 - Moo Moo the Cow",
-          "author": "manofham",
-          "url": "https://freesound.org/people/manofham/sounds/700378/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/calf-calling-under-a-barn-roof.ts"
     },
@@ -9797,17 +9811,17 @@
       "targetRmsDbfs": -24,
       "mixRole": "voice",
       "recording": {
-        "title": "A young calf is born during the night, he suck his mother pie with a lot of fly around.",
-        "author": "felix.blume",
-        "url": "https://freesound.org/people/felix.blume/sounds/197446/",
+        "title": "Cow - Moo 1 - 96kHz.wav",
+        "author": "JarredGibb",
+        "url": "https://freesound.org/people/JarredGibb/sounds/233130/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Cow - Moo 1 - 96kHz.wav",
-          "author": "JarredGibb",
-          "url": "https://freesound.org/people/JarredGibb/sounds/233130/",
+          "title": "Moo 1 - Moo Moo the Cow",
+          "author": "manofham",
+          "url": "https://freesound.org/people/manofham/sounds/700378/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -11580,6 +11594,9 @@
       "id": "car-exhaust-under-an-overpass",
       "name": "Car Exhaust under an Overpass",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Auto · Engines and passes",
       "tags": [
         "car",
@@ -12479,6 +12496,10 @@
       "id": "car-wet-braking-stop",
       "name": "Car Braking on Wet Road",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "bird",
+        "bird_squawk"
+      ],
       "collection": "Vehicles · Driving",
       "tags": [
         "car",
@@ -12941,6 +12962,11 @@
       "id": "cat-meow",
       "name": "Cat Meow",
       "category": "Animals",
+      "cleanHold": [
+        "bird_squawk",
+        "children_shouting",
+        "shout"
+      ],
       "collection": "Animals",
       "tags": [
         "cat",
@@ -13015,6 +13041,10 @@
       "id": "cat-settles-into-a-lap",
       "name": "Cat settles into a lap",
       "category": "Animals",
+      "cleanHold": [
+        "children_shouting",
+        "shout"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "cat",
@@ -13065,6 +13095,9 @@
       "id": "cat-stirs-beside-a-sleeping-player",
       "name": "Cat stirs beside a sleeping player",
       "category": "Animals",
+      "cleanHold": [
+        "children_shouting"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "cat",
@@ -13115,6 +13148,10 @@
       "id": "cattle-drift-past-a-trough",
       "name": "Cattle drift past a trough",
       "category": "Animals",
+      "cleanHold": [
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "cow",
@@ -16172,6 +16209,9 @@
       "id": "clipped-energy-shot-in-a-tunnel",
       "name": "Clipped Energy Shot in a Tunnel",
       "category": "Impacts",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "clipped",
@@ -17653,6 +17693,9 @@
       "id": "coin-counter-count-batch",
       "name": "Coin counter count batch",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "typing"
+      ],
       "collection": "Tactile feedback · coin counter",
       "tags": [
         "ui",
@@ -17996,6 +18039,10 @@
       "id": "cold-reed-shore-after-dusk-loop",
       "name": "Cold Reed Shore after Dusk",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Environment · Biome perspectives",
       "tags": [
         "cold",
@@ -18456,6 +18503,9 @@
       "id": "commuter-sedan-approach-to-a-pedestrian-crossing",
       "name": "Commuter sedan approach to a pedestrian crossing",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "shout"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -20235,6 +20285,9 @@
       "id": "compact-service-sidearm-pair-across-a-loading-court",
       "name": "Compact service sidearm — pair across a loading court",
       "category": "Weapons",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Field reports and reflections",
       "tags": [
         "weapon",
@@ -22251,9 +22304,9 @@
           "verifiedOn": "2026-11-21"
         },
         {
-          "title": "A young calf is born during the night, he suck his mother pie with a lot of fly around.",
-          "author": "felix.blume",
-          "url": "https://freesound.org/people/felix.blume/sounds/197446/",
+          "title": "Cow - Moo 1 - 96kHz.wav",
+          "author": "JarredGibb",
+          "url": "https://freesound.org/people/JarredGibb/sounds/233130/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -22354,6 +22407,9 @@
       "id": "cow-lifts-muzzle-from-feed",
       "name": "Cow lifts muzzle from feed",
       "category": "Animals",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "cow",
@@ -22428,6 +22484,11 @@
       "id": "cow-mouthful-of-pasture",
       "name": "Cow mouthful of pasture",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "cow",
@@ -22519,6 +22580,11 @@
       "id": "cows-chewing-beside-a-field-gate-loop",
       "name": "Cows chewing beside a field gate loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "cattle",
@@ -24129,6 +24195,12 @@
       "id": "crow-leaves-a-fence-post",
       "name": "Crow leaves a fence post",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "crow",
@@ -24178,6 +24250,12 @@
       "id": "crow-roost-on-a-forest-edge-loop",
       "name": "Crow roost on a forest edge loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "crow",
@@ -24228,6 +24306,9 @@
       "id": "crow-scolds-from-a-rooftop",
       "name": "Crow scolds from a rooftop",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "crow",
@@ -24270,6 +24351,9 @@
       "id": "crows-circling-above-a-clearing",
       "name": "Crows circling above a clearing",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "crow",
@@ -24919,6 +25003,9 @@
       "id": "dashboard-ignition-accessory-click",
       "name": "Dashboard Ignition Accessory Click",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Auto · Cabin controls",
       "tags": [
         "dashboard",
@@ -25022,6 +25109,11 @@
       "id": "dawn-at-a-cow-pasture-loop",
       "name": "Dawn at a Cow Pasture",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "dawn",
@@ -25102,6 +25194,9 @@
       "id": "decommissioned-conduit-arc",
       "name": "Decommissioned Conduit Arc",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "decommissioned",
@@ -25279,6 +25374,9 @@
       "id": "deep-space-anomaly-wake",
       "name": "Deep-Space Anomaly Wake",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "typing"
+      ],
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "deep",
@@ -26685,6 +26783,9 @@
       "id": "diesel-yard-loader-worksite-standstill-loop",
       "name": "Diesel yard loader worksite standstill loop",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -28644,6 +28745,9 @@
       "id": "double-elimination-double-seal",
       "name": "Double elimination double seal",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "typing"
+      ],
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
@@ -29349,6 +29453,9 @@
       "id": "drone-crossing-behind-a-wall",
       "name": "Drone Crossing behind a Wall",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Flight · Rotors and props",
       "tags": [
         "drone",
@@ -29413,6 +29520,9 @@
       "id": "drone-landing-gear-deploy",
       "name": "Drone Landing Gear Deploy",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "drone",
@@ -29763,6 +29873,11 @@
       "id": "dry-stone-wall-in-farmland-loop",
       "name": "Dry Stone Wall in Farmland",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "dry",
@@ -29829,6 +29944,9 @@
       "id": "ducati-twin-cold-starter-catch",
       "name": "Ducati twin cold starter catch",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "ducati",
@@ -30122,6 +30240,9 @@
       "id": "ducted-fan-scout-lifts-into-transit",
       "name": "Ducted fan scout lifts into transit",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Aviation · Flight and ground detail",
       "tags": [
         "ducted",
@@ -31980,6 +32101,11 @@
       "id": "electric-delivery-van-uphill-motor-load-loop",
       "name": "Electric delivery van uphill motor load loop",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "bird",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -33443,6 +33569,10 @@
       "id": "energy-shield-overload-collapse",
       "name": "Energy shield overload collapse",
       "category": "Weapons",
+      "cleanHold": [
+        "typing",
+        "typing_computer_keyboard"
+      ],
       "collection": "Combat audio · Surfaces and energy",
       "tags": [
         "energy",
@@ -34102,6 +34232,10 @@
       "id": "ewe-and-lamb-reunite",
       "name": "Ewe and lamb reunite",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "sheep",
@@ -34297,6 +34431,9 @@
       "id": "factory-crane-warning-single-close-buzzer",
       "name": "Factory crane warning single close buzzer",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "factory",
@@ -34334,6 +34471,9 @@
       "id": "factory-door-warning-two-unequal-buzzes",
       "name": "Factory door warning two unequal buzzes",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "factory",
@@ -35194,6 +35334,11 @@
       "id": "farm-market-between-customers-loop",
       "name": "Farm Market between Customers",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "farm",
@@ -38813,6 +38958,9 @@
       "id": "flat-bottom-riverboat-changing-throttle",
       "name": "Flat-bottom riverboat changing throttle",
       "category": "Water & Fire",
+      "cleanHold": [
+        "shout"
+      ],
       "collection": "Maritime · Motors and deck",
       "tags": [
         "flat",
@@ -42374,7 +42522,9 @@
       "id": "geese-lift-from-shallow-water",
       "name": "Geese lift from shallow water",
       "category": "Animals",
-      "backgroundChecked": true,
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "goose",
@@ -42431,6 +42581,9 @@
       "id": "geese-resting-at-a-river-bend-loop",
       "name": "Geese resting at a river bend loop",
       "category": "Animals",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "goose",
@@ -42607,6 +42760,9 @@
       "id": "glass-diagram-last-frame-tail",
       "name": "Glass Diagram Last Frame Tail",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Creator · Edit punctuation",
       "tags": [
         "glass",
@@ -44443,6 +44599,12 @@
       "id": "goat-browsing-a-leafy-stem",
       "name": "Goat Browsing a Leafy Stem",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Stable and livestock",
       "tags": [
         "goat",
@@ -44492,6 +44654,9 @@
       "id": "goat-calls-across-the-pen",
       "name": "Goat calls across the pen",
       "category": "Animals",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "goat",
@@ -44535,6 +44700,9 @@
       "id": "goat-double-bleat",
       "name": "Goat Double Bleat",
       "category": "Animals",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Animals",
       "tags": [
         "goat",
@@ -44567,6 +44735,10 @@
       "id": "goat-kids-calling-together",
       "name": "Goat Kids Calling Together",
       "category": "Animals",
+      "cleanHold": [
+        "baby_laughter",
+        "insect"
+      ],
       "collection": "Farm · Stable and livestock",
       "tags": [
         "goat",
@@ -45806,6 +45978,9 @@
       "id": "grizzly-feeding-in-low-brush-loop",
       "name": "Grizzly feeding in low brush loop",
       "category": "Animals",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "bear",
@@ -50754,6 +50929,9 @@
       "id": "hen-scratching-straw",
       "name": "Hen Scratching Straw",
       "category": "Animals",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Farm · Stable and livestock",
       "tags": [
         "hen",
@@ -51396,6 +51574,9 @@
       "id": "hive-lid-lifted-to-a-swarm",
       "name": "Hive lid lifted to a swarm",
       "category": "Animals",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "bee",
@@ -52785,6 +52966,10 @@
       "id": "horses-shifting-in-loose-straw-loop",
       "name": "Horses shifting in loose straw loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "horse",
@@ -53969,6 +54154,9 @@
       "id": "industrial-forklift-key-start-close",
       "name": "Industrial forklift key start close",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "laughter"
+      ],
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "industrial",
@@ -54029,6 +54217,9 @@
       "id": "inside-beehive-loop",
       "name": "Inside a Beehive",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Farm · Habitat loops",
       "tags": [
         "bee",
@@ -54064,6 +54255,9 @@
       "name": "Interceptor turbofan afterburner departure",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54117,6 +54311,9 @@
       "name": "Interceptor turbofan augmented exhaust roar loop",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54172,6 +54369,9 @@
       "name": "Interceptor turbofan canopy interior cruise loop",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54201,7 +54401,7 @@
           "default": 0.55
         }
       },
-      "targetRmsDbfs": -28,
+      "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
         "title": "F16 fighter jet start up.aif",
@@ -54227,6 +54427,9 @@
       "name": "Interceptor turbofan dry thrust cruise loop",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54281,6 +54484,9 @@
       "name": "Interceptor turbofan head-on flightline approach",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54335,6 +54541,9 @@
       "name": "Interceptor turbofan ramp idle loop",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54388,6 +54597,9 @@
       "name": "Interceptor turbofan rollout to taxi power",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54443,6 +54655,9 @@
       "name": "Interceptor turbofan throttle cut on descent",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54498,6 +54713,9 @@
       "name": "Interceptor turbofan turbine spool to takeoff",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -54553,6 +54771,9 @@
       "name": "Interceptor turbofan two thrust surges",
       "category": "Aircraft",
       "isolation": "isolated",
+      "components": [
+        "jet-engine"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -55515,6 +55736,9 @@
       "id": "jet-taxi-past-the-ramp",
       "name": "Jet Taxi Past the Ramp",
       "category": "Aircraft",
+      "cleanHold": [
+        "shout"
+      ],
       "collection": "Flight · Jet engines",
       "tags": [
         "jet",
@@ -56328,6 +56552,9 @@
       "id": "lamb-calls-from-beside-the-barn",
       "name": "Lamb calls from beside the barn",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "sheep",
@@ -56361,6 +56588,9 @@
       "id": "lamb-following-its-ewe",
       "name": "Lamb Following Its Ewe",
       "category": "Animals",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Farm · Stable and livestock",
       "tags": [
         "lamb",
@@ -56402,6 +56632,13 @@
       "id": "lambs-between-two-pasture-fences-loop",
       "name": "Lambs between two pasture fences loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization",
+        "insect"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "sheep",
@@ -59845,6 +60082,10 @@
       "id": "lions-beyond-a-night-camp-loop",
       "name": "Lions beyond a night camp loop",
       "category": "Animals",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "lion",
@@ -60332,6 +60573,9 @@
       "id": "local-streetcar-arriving-under-a-roof",
       "name": "Local Streetcar Arriving under a Roof",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Transit · Stations and rail motion",
       "tags": [
         "local",
@@ -60621,6 +60865,9 @@
       "id": "local-streetcar-rolling-off-a-platform",
       "name": "Local Streetcar Rolling off a Platform",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Transit · Stations and rail motion",
       "tags": [
         "local",
@@ -65270,6 +65517,9 @@
       "id": "micro-gravity-work-lamp-loses-power",
       "name": "Micro Gravity Work Lamp Loses Power",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Space · Fictional hardware",
       "tags": [
         "micro",
@@ -66004,6 +66254,9 @@
       "id": "moped-courtyard-rev-and-let-off",
       "name": "Moped courtyard rev and let-off",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "moped",
@@ -66664,9 +66917,9 @@
       },
       "targetRmsDbfs": -21,
       "recording": {
-        "title": "motorbike throttling.1.wav",
-        "author": "overmedium",
-        "url": "https://freesound.org/people/overmedium/sounds/651750/",
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
@@ -68496,6 +68749,11 @@
       "id": "open-pasture-at-first-frost-loop",
       "name": "Open Pasture at First Frost",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "open",
@@ -68630,9 +68888,9 @@
       "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
-        "title": "motorbike throttling.1.wav",
-        "author": "overmedium",
-        "url": "https://freesound.org/people/overmedium/sounds/651750/",
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
@@ -68676,9 +68934,9 @@
       "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
-        "title": "motorbike throttling.1.wav",
-        "author": "overmedium",
-        "url": "https://freesound.org/people/overmedium/sounds/651750/",
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
@@ -68899,6 +69157,13 @@
       "id": "orchard-at-dusk-loop",
       "name": "Orchard at Dusk",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_squawk",
+        "bird_vocalization",
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "orchard",
@@ -69632,6 +69897,9 @@
       "id": "owl-answers-from-across-a-field",
       "name": "Owl answers from across a field",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "owl",
@@ -69665,6 +69933,12 @@
       "id": "owl-departs-a-low-branch",
       "name": "Owl departs a low branch",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "owl",
@@ -73924,6 +74198,9 @@
       "id": "pigs-eating-in-a-timber-pen-loop",
       "name": "Pigs eating in a timber pen loop",
       "category": "Animals",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "pig",
@@ -76927,6 +77204,11 @@
       "id": "pond-surface-in-a-morning-breeze-loop",
       "name": "Pond Surface in a Morning Breeze",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "pond",
@@ -77980,6 +78262,9 @@
       "id": "prop-aircraft-brake-and-fairing-settle",
       "name": "Prop aircraft brake and fairing settle",
       "category": "Aircraft",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Aviation · Flight and ground detail",
       "tags": [
         "prop",
@@ -81453,6 +81738,46 @@
       "file": "recipes/rain-behind-a-closed-wooden-shutter-loop.ts"
     },
     {
+      "id": "rain-canopy-droplets-clean-loop",
+      "name": "Rain on canopy · isolated droplets",
+      "category": "Weather & Ambience",
+      "isolation": "isolated",
+      "components": [
+        "rain"
+      ],
+      "tags": [
+        "rain",
+        "storm",
+        "loop",
+        "rainfall",
+        "canopy",
+        "droplets",
+        "steady",
+        "heavy"
+      ],
+      "loopable": true,
+      "durationSec": 8.6,
+      "params": {
+        "intensity": {
+          "label": "Rain intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.56
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "08-24-rain-car-windscreen",
+        "author": "DanielHren",
+        "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/rain-canopy-droplets-clean-loop.ts"
+    },
+    {
       "id": "rain-filling-a-clay-pot-loop",
       "name": "Rain Filling a Clay Pot",
       "category": "Weather & Ambience",
@@ -81961,6 +82286,10 @@
       "id": "rain-on-a-parked-car-canopy-loop",
       "name": "Rain on a Parked Car Canopy",
       "category": "Weather & Ambience",
+      "isolation": "isolated",
+      "components": [
+        "rain"
+      ],
       "collection": "Atmosphere · Heights and places",
       "tags": [
         "rain",
@@ -81982,9 +82311,9 @@
       "targetRmsDbfs": -28,
       "mixRole": "ambience",
       "recording": {
-        "title": "Windshield wipers with rain in gusts in wind.wav",
-        "author": "evsecrets",
-        "url": "https://freesound.org/people/evsecrets/sounds/337152/",
+        "title": "08-24-rain-car-windscreen",
+        "author": "DanielHren",
+        "url": "https://freesound.org/people/DanielHren/sounds/750219/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
@@ -82053,6 +82382,10 @@
       "id": "rain-on-puddles-loop",
       "name": "Rain on Puddles",
       "category": "Weather & Ambience",
+      "isolation": "isolated",
+      "components": [
+        "rain"
+      ],
       "collection": "Weather",
       "tags": [
         "rain",
@@ -82069,6 +82402,13 @@
           "max": 1,
           "default": 0.66
         }
+      },
+      "recording": {
+        "title": "08-24-rain-car-windscreen",
+        "author": "DanielHren",
+        "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
       },
       "channels": 1,
       "file": "recipes/rain-on-puddles-loop.ts"
@@ -82629,6 +82969,46 @@
       "file": "recipes/raindrops-in-a-galvanized-feed-trough-shower-builds.ts"
     },
     {
+      "id": "rainfall-open-air-clean-loop",
+      "name": "Open-air rainfall · isolated steady shower",
+      "category": "Weather & Ambience",
+      "isolation": "isolated",
+      "components": [
+        "rain"
+      ],
+      "tags": [
+        "rain",
+        "storm",
+        "loop",
+        "rainfall",
+        "open",
+        "droplets",
+        "steady",
+        "heavy"
+      ],
+      "loopable": true,
+      "durationSec": 8.6,
+      "params": {
+        "intensity": {
+          "label": "Rain intensity",
+          "min": 0,
+          "max": 1,
+          "default": 0.56
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "08-24-rain-car-windscreen",
+        "author": "DanielHren",
+        "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/rainfall-open-air-clean-loop.ts"
+    },
+    {
       "id": "rainwater-passing-a-blocked-downspout-continuous-patter-loop",
       "name": "Rainwater passing a blocked downspout — continuous patter",
       "category": "Weather & Ambience",
@@ -82921,6 +83301,9 @@
       "id": "rally-upshift",
       "name": "Rally upshift",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Vehicles · Load and close mechanisms",
       "tags": [
         "rally",
@@ -83054,6 +83437,9 @@
       "id": "raven-answers-from-a-pine",
       "name": "Raven answers from a pine",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "raven",
@@ -83169,6 +83555,12 @@
       "id": "ravens-above-the-tree-line-loop",
       "name": "Ravens above the tree line loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "raven",
@@ -84250,6 +84642,9 @@
       "id": "regional-passenger-train-rolling-off-a-platform",
       "name": "Regional Passenger Train Rolling off a Platform",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "shout"
+      ],
       "collection": "Transit · Stations and rail motion",
       "tags": [
         "regional",
@@ -84285,6 +84680,9 @@
       "id": "relay-panel-brownout-warning",
       "name": "Relay panel brownout warning",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "relay",
@@ -84983,6 +85381,9 @@
       "id": "reward-drawer-delivered",
       "name": "Reward drawer delivered",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "typing"
+      ],
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
@@ -85361,6 +85762,12 @@
       "id": "robin-heard-through-a-hedgerow",
       "name": "Robin heard through a hedgerow",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "robin",
@@ -85923,7 +86330,9 @@
       "id": "rockpool-spill-over-a-low-lip-water-receding",
       "name": "Rockpool spill over a low lip — water receding",
       "category": "Water & Fire",
-      "backgroundChecked": true,
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -88895,6 +89304,9 @@
       "id": "sci-fi-interceptor-missile-camera-pass-and-tail",
       "name": "Sci-fi interceptor missile — camera pass and tail",
       "category": "Missiles",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Cinematic flight cues",
       "tags": [
         "flyby",
@@ -88949,6 +89361,9 @@
       "id": "sci-fi-interceptor-missile-flypast-beyond-a-concrete-wall",
       "name": "Sci-fi interceptor missile — flypast beyond a concrete wall",
       "category": "Missiles",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Cinematic flight cues",
       "tags": [
         "flyby",
@@ -90842,6 +91257,10 @@
       "id": "shaded-rocky-creek-after-dusk-loop",
       "name": "Shaded Rocky Creek after Dusk",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Environment · Biome perspectives",
       "tags": [
         "shaded",
@@ -92144,6 +92563,11 @@
       "id": "sheep-grazing-close",
       "name": "Sheep Grazing Close",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Stable and livestock",
       "tags": [
         "sheep",
@@ -95617,6 +96041,9 @@
       "id": "small-car-pull-out-across-a-driveway",
       "name": "Small Car Pull-out across a Driveway",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Auto · Engines and passes",
       "tags": [
         "small",
@@ -95803,6 +96230,9 @@
       "id": "small-drone-landing-and-power-down",
       "name": "Small Drone Landing and Power Down",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Flight · Rotors and props",
       "tags": [
         "small",
@@ -95837,6 +96267,9 @@
       "id": "small-drone-liftoff",
       "name": "Small Drone Liftoff",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Flight · Rotors and props",
       "tags": [
         "small",
@@ -98416,6 +98849,11 @@
       "id": "sparrow-hops-through-dead-leaves",
       "name": "Sparrow hops through dead leaves",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "sparrow",
@@ -98458,6 +98896,11 @@
       "id": "sparrows-in-a-garden-hedge-loop",
       "name": "Sparrows in a garden hedge loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "sparrow",
@@ -98500,6 +98943,12 @@
       "id": "sparrows-quarrel-on-a-sill",
       "name": "Sparrows quarrel on a sill",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "sparrow",
@@ -98542,6 +98991,12 @@
       "id": "sparrows-startle-out-of-ivy",
       "name": "Sparrows startle out of ivy",
       "category": "Animals",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "sparrow",
@@ -99380,6 +99835,9 @@
       "id": "sports-car-full-pull-from-driver-seat",
       "name": "Sports Car Full Pull from Driver Seat",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Auto · Engines and passes",
       "tags": [
         "sports",
@@ -100903,6 +101361,9 @@
       "id": "steel-tunnel-liner-fragments-skipping-across",
       "name": "Steel tunnel liner — fragments skipping across",
       "category": "Weapons",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -104106,6 +104567,9 @@
       "id": "survey-quadcopter-accelerate-away-from-camera",
       "name": "Survey quadcopter accelerate away from camera",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104160,6 +104624,9 @@
       "id": "survey-quadcopter-camera-approach-from-altitude",
       "name": "Survey quadcopter camera approach from altitude",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104267,6 +104734,9 @@
       "id": "survey-quadcopter-full-climb-rotor-loop",
       "name": "Survey quadcopter full climb rotor loop",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104321,6 +104791,9 @@
       "id": "survey-quadcopter-onboard-frame-vibration-loop",
       "name": "Survey quadcopter onboard frame vibration loop",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104481,6 +104954,9 @@
       "id": "survey-quadcopter-survey-cruise-loop",
       "name": "Survey quadcopter survey cruise loop",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104532,6 +105008,9 @@
       "id": "survey-quadcopter-two-altitude-corrections",
       "name": "Survey quadcopter two altitude corrections",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104585,6 +105064,9 @@
       "id": "survey-quadcopter-vertical-launch",
       "name": "Survey quadcopter vertical launch",
       "category": "Aircraft",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
         "aircraft",
@@ -104679,6 +105161,11 @@
       "id": "swallows-above-a-farmyard-loop",
       "name": "Swallows above a Farmyard",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "swallows",
@@ -105762,6 +106249,9 @@
       "id": "tawny-owl-beside-a-stream-loop",
       "name": "Tawny owl beside a stream loop",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "owl",
@@ -106297,6 +106787,9 @@
       "id": "terrain-proximity-warning-rough-buzz",
       "name": "Terrain proximity warning rough buzz",
       "category": "Sci-Fi & UI",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "terrain",
@@ -107286,6 +107779,52 @@
       "file": "recipes/thunder-inside-a-parked-car-split-peal-crossing-overhead.ts"
     },
     {
+      "id": "thunder-isolated-rolling-strike",
+      "name": "Thunder · isolated rolling strike",
+      "category": "Weather & Ambience",
+      "isolation": "isolated",
+      "components": [
+        "thunder"
+      ],
+      "tags": [
+        "lightning",
+        "thunder",
+        "strike",
+        "rumble",
+        "weather"
+      ],
+      "loopable": false,
+      "durationSec": 5.7,
+      "params": {
+        "force": {
+          "label": "Discharge strength",
+          "min": 0,
+          "max": 1,
+          "default": 0.63
+        }
+      },
+      "targetRmsDbfs": -20,
+      "mixRole": "impact",
+      "recording": {
+        "title": "Thunderclap",
+        "author": "Fission9",
+        "url": "https://freesound.org/people/Fission9/sounds/534023/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Thunderclap",
+          "author": "Fission9",
+          "url": "https://freesound.org/people/Fission9/sounds/534023/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/thunder-isolated-rolling-strike.ts"
+    },
+    {
       "id": "thunder-on-an-exposed-alpine-spur-long-rolling-front",
       "name": "Thunder on an exposed alpine spur — long rolling front",
       "category": "Weather & Ambience",
@@ -108162,6 +108701,9 @@
       "id": "tire-clearing-sticky-mud",
       "name": "Tire Clearing Sticky Mud",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Vehicles · Traction and work",
       "tags": [
         "tire",
@@ -108318,6 +108860,10 @@
       "id": "tire-skid-halt",
       "name": "Tire skid halt",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "bird",
+        "speech"
+      ],
       "markers": {
         "skidPeak": 0.56,
         "catch": 1.02
@@ -109121,6 +109667,9 @@
       "id": "tracked-earthmover-steady-steel-run-loop",
       "name": "Tracked earthmover steady steel run loop",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Tracked · Movement and hull",
       "tags": [
         "tracked",
@@ -109834,6 +110383,9 @@
       "id": "tractor-hitch-pin-dropped-into-hole",
       "name": "Tractor Hitch Pin Dropped into Hole",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Vehicles · Traction and work",
       "tags": [
         "tractor",
@@ -110759,6 +111311,9 @@
       "id": "tram-wheels-squeal-round-curve",
       "name": "Tram Wheels Squeal round Curve",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "speech"
+      ],
       "collection": "Transit · Rail and platforms",
       "tags": [
         "tram",
@@ -112650,6 +113205,10 @@
       "id": "twin-cylinder-road-bike-road-pace-engine-loop",
       "name": "Twin-cylinder road bike road pace engine loop",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect",
+        "speech"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -112761,6 +113320,9 @@
       "id": "twin-cylinder-road-bike-roll-to-junction-idle",
       "name": "Twin-cylinder road bike roll to junction idle",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -114280,6 +114842,9 @@
       "id": "two-ravens-trade-calls",
       "name": "Two ravens trade calls",
       "category": "Animals",
+      "cleanHold": [
+        "bird"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "raven",
@@ -114585,6 +115150,9 @@
       "id": "two-stroke-step-through-scooter-road-pace-engine-loop",
       "name": "Two-stroke step-through scooter road pace engine loop",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -114728,6 +115296,9 @@
       "id": "two-stroke-step-through-scooter-snap-throttle-closed",
       "name": "Two-stroke step-through scooter snap throttle closed",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -115881,6 +116452,9 @@
       "id": "v12-inspired-touring-coupe-grandstand-approach",
       "name": "V12-inspired touring coupe grandstand approach",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -116904,6 +117478,9 @@
       "id": "vintage-runabout-passing-on-loose-ground",
       "name": "Vintage Runabout Passing on Loose Ground",
       "category": "Vehicles & Engines",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Motion · Road and workshop",
       "tags": [
         "vintage",
@@ -117748,7 +118325,9 @@
       "id": "water-at-a-stony-ford-water-receding",
       "name": "Water at a stony ford — water receding",
       "category": "Water & Fire",
-      "backgroundChecked": true,
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -119896,6 +120475,9 @@
       "id": "wild-wolves-in-a-wooded-valley-loop",
       "name": "Wild wolves in a wooded valley loop",
       "category": "Animals",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Wildlife · Location beds",
       "tags": [
         "wolf",
@@ -120187,6 +120769,9 @@
       "id": "wind-at-a-saltmarsh-boardwalk-gust-front-arriving",
       "name": "Wind at a saltmarsh boardwalk — gust front arriving",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -120239,6 +120824,10 @@
       "id": "wind-at-a-saltmarsh-boardwalk-intermittent-lulls-loop",
       "name": "Wind at a saltmarsh boardwalk — intermittent lulls",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -120343,6 +120932,10 @@
       "id": "wind-at-a-saltmarsh-boardwalk-wind-dying-away",
       "name": "Wind at a saltmarsh boardwalk — wind dying away",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -120395,6 +120988,14 @@
       "id": "wind-in-a-bare-orchard-crown-gust-front-arriving",
       "name": "Wind in a bare orchard crown — gust front arriving",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization",
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -120447,6 +121048,11 @@
       "id": "wind-in-a-bare-orchard-crown-intermittent-lulls-loop",
       "name": "Wind in a bare orchard crown — intermittent lulls",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -120499,6 +121105,12 @@
       "id": "wind-in-a-bare-orchard-crown-sustained-current-loop",
       "name": "Wind in a bare orchard crown — sustained current",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -120551,6 +121163,12 @@
       "id": "wind-in-a-bare-orchard-crown-wind-dying-away",
       "name": "Wind in a bare orchard crown — wind dying away",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
       "collection": "Field ambiences — wind",
       "tags": [
         "wind",
@@ -121228,6 +121846,10 @@
       "id": "windward-headland-after-dusk-loop",
       "name": "Windward Headland after Dusk",
       "category": "Weather & Ambience",
+      "cleanHold": [
+        "cricket_chirp",
+        "insect"
+      ],
       "collection": "Environment · Biome perspectives",
       "tags": [
         "windward",
@@ -121712,6 +122334,10 @@
       "id": "wolf-pack-joins-a-valley-call",
       "name": "Wolf pack joins a valley call",
       "category": "Animals",
+      "cleanHold": [
+        "insect",
+        "shout"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "wolf",
@@ -121745,6 +122371,9 @@
       "id": "wolf-replies-over-moving-water",
       "name": "Wolf replies over moving water",
       "category": "Animals",
+      "cleanHold": [
+        "insect"
+      ],
       "collection": "Wildlife · Field performances",
       "tags": [
         "wolf",

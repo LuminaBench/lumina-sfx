@@ -4,13 +4,13 @@ A listening scene places sounds in metres and gives the mix a subject. Source au
 
 ## From a sentence to a mix
 
-1. Name the viewpoint, the sounds the listener should recognise and any intentional interruption. Use an empty subject list for an even ambience, multiple subjects for shared focus, or a timed moment to hand focus to another source.
+1. Choose one listener. Describe the foreground source, the source of each background sound, the distance in metres and the material between each source and the listener. Default briefs use natural balance. The engine, rain and thunder can all run at the same time. A focus label lets you measure masking. Request directed balance if the edit calls for a gain target or a handoff.
 2. Use one search phrase per audible event. Include the material/action in `query` and preferred recording characteristics in `prefer`. The agent interprets the sentence. The resolver searches the local catalog and returns a review result when the requested terms cannot be matched. Inspect any embedded sounds before adding support.
 3. Save the returned `design`, inspect it, and render. Report the foreground, distance, competing sources, most crowded time and any gain lock that prevents the requested balance. Audition the complete result and its mono fold. The measured margin is a starting point for judgement.
 
 ```sh
 node scripts/choose.mjs --brief references/listening-scenes/pilot.brief.json
-node scripts/remix.mjs --spec references/listening-scenes/cockpit-engine.json --format wav --dest ./mix --report ./mix/report.json --stems ./mix/stems
+node scripts/remix.mjs --spec references/listening-scenes/pilot-inside-canopy.json --format wav --dest ./mix --report ./mix/report.json --stems ./mix/stems
 node scripts/remix.mjs --spec references/listening-scenes/orbit-and-turn.json --dest ./game/src/audio --format ts
 npm run scene:install -- references/listening-scenes/orbit-and-turn.json --dest ./game/public/audio
 ```
@@ -29,7 +29,10 @@ For a revision, save a new scene ID and render to a new output path. A game-owne
 | `refDistance`, `rolloff`, `air`, `spread` | Full level within the reference radius. Higher rolloff reduces distant level. Air adds distance-dependent HF loss. Spread ranges from a localised mono point at 0 to the native stereo bed at 1. |
 | `innerAngle`, `outerAngle`, `outerGain` | Cone full angles and outside amplitude. Aim the source using its pose. |
 | `doppler`, `obstruction`, `room` | Optional radial-velocity pitch, obstruction from 0–1 or timed pairs, and early room reflections (`small_room` or `hangar`). Obstruction can follow an opening and closing door. Game code supplies the value. |
-| `focus.subjects`, `marginDb` | Subjects are layer labels. The mixer matches overlapping shared subjects by trimming louder ones. It measures the foreground against the summed stereo background at the listener, then applies a steady background trim per section. Default aim is 8 dB. |
+| `balance`, `scope`, `sourcePolicy` | Natural balance keeps fixed source levels. World scope rejects menu cues. Clean selection requires isolated inputs and excludes unresolved screening leads. Choose mixed scope for requested UI. Field policy permits explicitly selected field recordings. |
+| `acoustics` | Set `distanceM`, listener-relative `bearingDeg` and `elevationDeg` at emission, or supply a world position. Select `source` from turbine, vehicle, rainfall, thunder, foley or general. The presets approximate relative strength and reference radius. Through a canopy or wall, the path loses level and high frequencies. |
+| `event`, `travel` | Give each physical emitter an event ID. A world mix rejects overlapping copies of a source unless they are explicitly distinct events. One-shot thunder defaults to travel time at 343 m/s. A flash at 0.85 s and a strike 686 m away give an arrival at 2.85 s. Continuous beds start already audible. |
+| `focus.subjects`, `marginDb` | In directed balance, subjects are layer labels. The mixer matches overlapping shared subjects by trimming louder ones. It measures the foreground against the summed stereo background at the listener, then applies a steady background trim per section. Default aim is 8 dB. |
 | `focus.moments` | Non-overlapping `{from,to,subjects,marginDb?}` sections. For a thunderclap that briefly wins, name thunder during the strike and let the base focus resume afterward. Transitions ease within 100 ms. |
 | `gain`, `locked` | Gain is a linear multiplier. Lock a layer to protect its authored gain from automatic focus trimming. The final linked ceiling can attenuate the whole mix. |
 | `maskEq` | A small, steady cut in a competing layer. For a low-mid engine hidden by thunder, audition `{"hz":350,"cutDb":3,"q":0.9}` on the thunder. Check the combined and phone-band margins before changing the whole bed. |
@@ -68,13 +71,14 @@ Call `setPlacement(label, pose)` on an active emitter and `stop()` to end playba
 | Unreal | FromSceneMetres maps to centimetres. FromSceneFacing maps angles. Use separate Audio Components and the scene offsets. Choose native attenuation/cone settings or the project's spatialisation plug-in. |
 | Pygame | The helper applies stereo pan, listener yaw and distance. Use a binaural WAV for a fixed headphone scene. |
 
-Native engines retain their own rolloff curves and game event scheduling. The ready-made manifest player is for Web Audio. For native integration, apply the manifest's restore gain and region gains to dry files, or play the fixed export directly.
+The live manifest stores arrival offsets for the authored listener trajectory. In a game with an independently moving listener, schedule new events from their emission positions and the game clock. Native engines retain their own rolloff curves and game event scheduling. The ready-made manifest player is for Web Audio. For native integration, apply the manifest's restore gain and region gains to dry files, or play the fixed export directly.
 
 ## Examples to audition
 
-- **Engine or weather first.** Compare [engine](listening-scenes/cockpit-engine.json) and [weather](listening-scenes/cockpit-weather.json). They use identical sources, timing and seed. [The handoff](listening-scenes/thunder-handoff.json) gives thunder a short foreground moment.
+- **Natural cockpit.** Compare the [dry engine](listening-scenes/dry-cockpit.json) with the [same engine flying through weather](listening-scenes/pilot-inside-canopy.json). Only the wet scene has rain and thunder.
+- **Directed comparison.** Compare [engine](listening-scenes/cockpit-engine.json) and [weather](listening-scenes/cockpit-weather.json). They use identical sources, timing and seed. [The handoff](listening-scenes/thunder-handoff.json) gives thunder a short foreground moment.
 - **Different ears in the same setting.** Compare [inside the canopy](listening-scenes/pilot-inside-canopy.json) with [the beach](listening-scenes/beach-under-flightpath.json). These also change the chosen recordings.
-- **Orbit and turn.** The [turbine](listening-scenes/orbit-and-turn.json) travels around and above the listener, then holds its world position as the listener turns. Two menu ticks stay with the listener.
+- **Orbit and turn.** The [turbine](listening-scenes/orbit-and-turn.json) travels around and above the listener, then holds its world position as the listener turns. The orbit contains one turbine. Reuse its trajectory for any catalog source with `node scripts/remix.mjs <id> --orbit --format wav --dest ./audio`.
 - **One-line edit.** Compare [fire beside wind](listening-scenes/fire-on-beach.json) with [quieter wind](listening-scenes/fire-quieter-wind.json). All crackles stay in place. [The hangar door](listening-scenes/hangar-door.json) reversibly changes the rain's brightness and early reflections on the same clock.
 
 A [passing bell](listening-scenes/passing-bell.json) crops a single ding from a longer ring and places three contacts along one path. For vehicle load, compare [climbing](listening-scenes/hill-under-load.json) and [coasting](listening-scenes/coasting-in-gear.json). Both hold the same RPM and seed; power demand selects a different blend of motor textures.

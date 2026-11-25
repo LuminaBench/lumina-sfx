@@ -1,0 +1,856 @@
+{
+  "method": "Machine screening leads pending listening review. An entry excludes the cue from clean selection. sha256 identifies the default PCM master.",
+  "holds": {
+    "air-pulse-prop-seal-vents-and-cools": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "ff6fbed43c2f96a911e34ea74f708f1cf600398d208f15141eb64a51af50fe0e"
+    },
+    "alpine-treeline-after-dusk-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "895139faccc15aadb7e6229a59b50c94234d46ec7b710e3c5bc7ac3ced5067c9"
+    },
+    "armored-hatch-latch-dogs-engage": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "e8e1b374ef6d64bf0b6b5a09921cfa014226358b1b8384dab6a71ce35b105e4f"
+    },
+    "armored-suspension-pressure-bleed": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "46d3a45e76e3f85e8132a939cc938a82b5e37800f48c8c3f5655662098ac63f8"
+    },
+    "autumn-meadow-edge-after-dusk-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "c0d4f3113426173ca41214a61c06d54c81a0be67623422880039a81516000e53"
+    },
+    "bees-moving-around-hanging-frames-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "a0506c59cade1993a6e629516e927eaa8f099505ed558b62928d6a1c5b6b48c4"
+    },
+    "broken-relay-chatters-then-dies": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "d3eb04b1910e0a224317c90076588040383dd00925ed3476fdf12ddacb3d5953"
+    },
+    "car-exhaust-under-an-overpass": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "569439e68f3db80370311f7fcd808f30a7e12043a6793ac684c9155e25170ecf"
+    },
+    "car-wet-braking-stop": {
+      "labels": [
+        "bird",
+        "bird_squawk"
+      ],
+      "sha256": "abc9c77dc0e0245d3149dbb3f4a9421217b8b64aa4c40bb777ba07d36b46dc53"
+    },
+    "cat-meow": {
+      "labels": [
+        "bird_squawk",
+        "children_shouting",
+        "shout"
+      ],
+      "sha256": "5da433fbf0f8292ad50de0c73d5cca92b2cc15297a1786dc6f2b3ba03a0edc20"
+    },
+    "cat-settles-into-a-lap": {
+      "labels": [
+        "children_shouting",
+        "shout"
+      ],
+      "sha256": "689256cade63a0b25657ea07dc256dfa9c63076932a9e30057a7b413379a56af"
+    },
+    "cat-stirs-beside-a-sleeping-player": {
+      "labels": [
+        "children_shouting"
+      ],
+      "sha256": "678742056cc4e70f75f1c3310d3288213b6f1b4a1663cf7e58adb5988dcb8568"
+    },
+    "cattle-drift-past-a-trough": {
+      "labels": [
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "ab0d3dce8d6b3cb1f9750fb8a56c3a6bbd6bb3df23d1ef87c630ff9d302f7b90"
+    },
+    "clipped-energy-shot-in-a-tunnel": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "a345e785d4aeac0f89ee09a76f433eddc58f0966199d50f5344a845c87868b7d"
+    },
+    "coin-counter-count-batch": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "d9f2c3a00326d16100df1039230fc99964d63ebf1f4e302779dbff8ca5d08e8f"
+    },
+    "cold-reed-shore-after-dusk-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "c20260b645d4199f9d84930fbd270023ea6ab2c3d4684155b6eea6f4b01269ec"
+    },
+    "commuter-sedan-approach-to-a-pedestrian-crossing": {
+      "labels": [
+        "shout"
+      ],
+      "sha256": "33bba5014a496dc1affb4856d96a2379ae4c298c180672c74e0c224de25543d8"
+    },
+    "compact-service-sidearm-pair-across-a-loading-court": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "ac1eec4c5cc486536e8f15a61ff7b0a2a60c02c6a815c8f0a28e72d777110850"
+    },
+    "cow-lifts-muzzle-from-feed": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "6fb228291896d90a0eeacf473ac77b3a49f6604823729f8a42969463df4fbd22"
+    },
+    "cow-mouthful-of-pasture": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "7161dcaf0c09bc6e1e8fb9684e58015a2160b243c04c559529bf52ea699ba4a5"
+    },
+    "cows-chewing-beside-a-field-gate-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "554c453282f5d61439d15c1a35e84184e016c6766fa3f502be94800e07252da5"
+    },
+    "crow-leaves-a-fence-post": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "07faa67237d51448b02c673d7b2f68ea16d58e133711767f32c9a3b1f7ee7e24"
+    },
+    "crow-roost-on-a-forest-edge-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "e21960fd544c96b7b487d0864ec51c298b2e37c97024e5ab7187ab39a26cdf43"
+    },
+    "crow-scolds-from-a-rooftop": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "83fa3b39b8dcbd3f77a78e8d8a5a879238a8a134eecf9d10947d4b2b699d3be2"
+    },
+    "crows-circling-above-a-clearing": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "ff1268848ed535ab0793c57343da098e5f8059963f75783e98c008892dae8c71"
+    },
+    "dashboard-ignition-accessory-click": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "b4e851c7d72463be4a1694ee5fccb841bbbe67a61d7b15c540db8abacdc20707"
+    },
+    "dawn-at-a-cow-pasture-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "4eec033fb2e8b2a25a3016290c9eaceda0d473e70f37c34dd2fc11cafd4b4f1f"
+    },
+    "decommissioned-conduit-arc": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "6c44061f46b2f16dd484190cdc5b85a9d6a424425380c267be366b93a998323c"
+    },
+    "deep-space-anomaly-wake": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "ddad1c311b5beebf326c9051eb7ca345bd92b44ababbcb57a4359d5dde7b3b9c"
+    },
+    "diesel-yard-loader-worksite-standstill-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "a034a50c3640630136b04cc60c6669793cfcefeeccb2fc0a063e9afcbf525f37"
+    },
+    "double-elimination-double-seal": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "fc7f28d4bd4b97effc8ed263536deb1152f884151c8a1a88e14988d7f8a70b80"
+    },
+    "drone-crossing-behind-a-wall": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "0f513cd7cb79b9d40185401b40b931362f22e1240f93a0824285b6d361d65b67"
+    },
+    "drone-landing-gear-deploy": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "084bf743e1d7e0a622b5776c02375c4456e6370707a43ad717ee1624b04e8d36"
+    },
+    "dry-stone-wall-in-farmland-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "caf709b4a073c442c460f372cc29b331f30381958f9dcfd3031c7296d88be0eb"
+    },
+    "ducati-twin-cold-starter-catch": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "28c2ab0737c9667ef6eea9078762d36d073982c14c6146467438e1d5720ae4b6"
+    },
+    "ducted-fan-scout-lifts-into-transit": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "bc92b58442239e0205f0ad216cd686fa63110401a21262d83adef46f00f20b57"
+    },
+    "electric-delivery-van-uphill-motor-load-loop": {
+      "labels": [
+        "bird",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "8c230f05d0849fb69a561fda0acc6dfb2979d16565c9b4a3612e15ebcdf25bd2"
+    },
+    "energy-shield-overload-collapse": {
+      "labels": [
+        "typing",
+        "typing_computer_keyboard"
+      ],
+      "sha256": "a10424ec21e5dd9c3c768150e17052b8ee341db10941806c531194acdb342e4a"
+    },
+    "ewe-and-lamb-reunite": {
+      "labels": [
+        "bird",
+        "bird_vocalization"
+      ],
+      "sha256": "d7099d8fdbcd49d98e57e7034e3aff73db2b2c434bbf54e77caae2f21bbceb89"
+    },
+    "factory-crane-warning-single-close-buzzer": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "b855fdd429ce9f04f3abbdacec41e277cf8ca626b8879d5edae707302dbeccd7"
+    },
+    "factory-door-warning-two-unequal-buzzes": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "9cdc1aabc751e33e8d9b107d44dd94d134dabec5a002e923411fba114f753678"
+    },
+    "farm-market-between-customers-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "28463183478183aa2cbfc1655cc132c08a30a8ef3621b0b4ed547c2840ed8d5a"
+    },
+    "flat-bottom-riverboat-changing-throttle": {
+      "labels": [
+        "shout"
+      ],
+      "sha256": "127dd276b5fec6d8b99c031b4c572d8f3a185aca0d21222ee1fa5510a8cc1357"
+    },
+    "geese-lift-from-shallow-water": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "247a48c3906efd682a4bd649b92baaddc3d561c1993e4ed50bb3f0765f2dae0e"
+    },
+    "geese-resting-at-a-river-bend-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "d5087a692c07e715e7c57bf2be07e94cb23d289d13b1cfc3eba07fb51d08bae3"
+    },
+    "glass-diagram-last-frame-tail": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "86777f094826ab13ac390425411499f26fd7c489db3c8193a057617d6386ff4c"
+    },
+    "goat-browsing-a-leafy-stem": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "6c3c4cb70736398f6ce407a822c3f180190bd728a8c86e1be80fc2b637867b83"
+    },
+    "goat-calls-across-the-pen": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "654a1db083f9bb7ff351f463427c50c5a6a24e4fdee19e5ce7033072634205b6"
+    },
+    "goat-double-bleat": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "3b1b5582d08c0da76f90d23ffcb0545bad04ed5e8978df098cd240ea8de27d32"
+    },
+    "goat-kids-calling-together": {
+      "labels": [
+        "baby_laughter",
+        "insect"
+      ],
+      "sha256": "dc9415ba56662c44e78bb90a6e66c4ff3f95ec574107d12bf8700c6237b0786a"
+    },
+    "grizzly-feeding-in-low-brush-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "970277d4649f73da0a7abb0edcebbc32e14ff05c93000b8255425e1e44ccc2ee"
+    },
+    "hen-scratching-straw": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "a040a1f77b9367e6b42da1647c4f8c89541bb7c6ab69b59c78c2d1be9b79b94d"
+    },
+    "hive-lid-lifted-to-a-swarm": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "39c988df4702f57f485c1f5db151bacf2f7de7c266e89ade5127f4eb98a6c811"
+    },
+    "horses-shifting-in-loose-straw-loop": {
+      "labels": [
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "4d5aca5e02f398d936a37888a0fd3b4bef99b8cadfa65c84e814c73b4ac554a0"
+    },
+    "industrial-forklift-key-start-close": {
+      "labels": [
+        "laughter"
+      ],
+      "sha256": "a85424d78e82786cc33d1e174bb7b6592303259dfeb11ddca817584606755bc8"
+    },
+    "inside-beehive-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "1895844959890cb7bbcdb9310066842f30115167644fb319f676d7e78d1f9ddc"
+    },
+    "jet-taxi-past-the-ramp": {
+      "labels": [
+        "shout"
+      ],
+      "sha256": "564414071c03ff5f845a649a56633926cacb31fda0d07ae48d691c867e7cbd6c"
+    },
+    "lamb-calls-from-beside-the-barn": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "178627b3ff85f91d83ef0ea08d7a96367826453bf442d411a14c248107e6d915"
+    },
+    "lamb-following-its-ewe": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "0e1406cb9b159cefcfeaadfcf7ed14d6f22f86db792384eba58001508c032607"
+    },
+    "lambs-between-two-pasture-fences-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization",
+        "insect"
+      ],
+      "sha256": "fc73ea07a6689a6b4998d71433fcf7d7e6b86f92db01a9b5efba1840a518a0fb"
+    },
+    "lions-beyond-a-night-camp-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "135cbe845e482542ec76a10ed3e447f68aec9b1fa970a135feb66a280851e702"
+    },
+    "local-streetcar-arriving-under-a-roof": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "dfac66e54df76ccc9769a0a80cdf57042ea6d32b53e555e7380a836041b4e220"
+    },
+    "local-streetcar-rolling-off-a-platform": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "05c4582902377bf654fa2ccf70487cb9adb722d28bbce6dc6e730c531c628deb"
+    },
+    "micro-gravity-work-lamp-loses-power": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "cc39690fb004cf4d14c05e347d17c84423b3e3070b153417b83fb9941295e417"
+    },
+    "moped-courtyard-rev-and-let-off": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "95e732302d4590d2c86df37710b7fc225fab250f1f97b17b47df2f245a870483"
+    },
+    "open-pasture-at-first-frost-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "f0b4049157818aa3e669ea79d057c7372ad953b6c73579d14836ba4bbbd6c363"
+    },
+    "orchard-at-dusk-loop": {
+      "labels": [
+        "bird",
+        "bird_squawk",
+        "bird_vocalization",
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "2eddcc67f567ef384f692b99a4d638bf7a74a6956a5d4b5e713a23456c228c3c"
+    },
+    "owl-answers-from-across-a-field": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "6f7f620199be60e135ab3a54b0533b64c5591a6c7eb2de8d6712bc5a40eb6687"
+    },
+    "owl-departs-a-low-branch": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "4f5ea9e86a52d76f878215f0f867761c1a384ea9c1e884c58632c49aa6f0cf3c"
+    },
+    "pigs-eating-in-a-timber-pen-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "1026e0f2badad6e88182b593e51fbc81072c05bf2e32ae250a7c7778186032da"
+    },
+    "pond-surface-in-a-morning-breeze-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "ca3224927f1963eb82e28f96977fb184432c13863dfac8315850f507e50eb209"
+    },
+    "prop-aircraft-brake-and-fairing-settle": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "f3d117c26c003c92acb8087729aac48fd07d078393759f9b4d86b2bbb6146eb6"
+    },
+    "rally-upshift": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "2b9d2beb59167ce454411df4832c3527406099575389f61ee03140d4391952fe"
+    },
+    "raven-answers-from-a-pine": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "f3eac56c77c15ec959389267be588c0118afedbb5ff1950f071c9aab4cd0c397"
+    },
+    "ravens-above-the-tree-line-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "38f1948207a35a62669bf19922fa8c245bdf95f1e377b907f8b6f5290d2fe1b0"
+    },
+    "regional-passenger-train-rolling-off-a-platform": {
+      "labels": [
+        "shout"
+      ],
+      "sha256": "ad7c02861bc7741beb1ef725976e0444d7bbca9df3912e245214a0649a39aba3"
+    },
+    "relay-panel-brownout-warning": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "bce78e3429c7ed1a529fb4e301332d1fef9099d50d92f0ca983fcc120546c8a4"
+    },
+    "reward-drawer-delivered": {
+      "labels": [
+        "typing"
+      ],
+      "sha256": "223279f871601661bb824c78d79c496d1a498dff34c39c6e6394f4f96d02753f"
+    },
+    "robin-heard-through-a-hedgerow": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "f5a6886425aa04e06ff38d35dd8dad2255f172c5a8411cf3fb3d0a3de22bd885"
+    },
+    "rockpool-spill-over-a-low-lip-water-receding": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "af72cbf67de6d42e3cb1a7d55e8791427d8e1afa47d66ceccf37d9693cab2d27"
+    },
+    "sci-fi-interceptor-missile-camera-pass-and-tail": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "3075197c8944da10031ef352b7e833f85ea3bd689e42ff9afd11d42e0684fe68"
+    },
+    "sci-fi-interceptor-missile-flypast-beyond-a-concrete-wall": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "db4ff7f6debbd2b25426d9121fffabceca48f9a209f41fe5d00d2512a026034a"
+    },
+    "shaded-rocky-creek-after-dusk-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "fc5ad4402170c960dc04f65d503e2c3408128d1d6d97adf05277c6c01197415b"
+    },
+    "sheep-grazing-close": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "81e0f3930a0a0b29a9721e3d28f2c6473ae217235002341b14d6329471af124e"
+    },
+    "small-car-pull-out-across-a-driveway": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "9b0ff387c44d54a429ca1e9193d901d78cd7aa8ce6156db35e04c61106a03db4"
+    },
+    "small-drone-landing-and-power-down": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "c3c401d28475b5555ff11890fc0448a24821b06b6fa3025cd89f2f024910b296"
+    },
+    "small-drone-liftoff": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "135843e3bb8736124bbf5941e57d0393490da87d659b32008a47ec7142f09f55"
+    },
+    "sparrow-hops-through-dead-leaves": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "d27137e1626abc8ff2ca6bb444edf22edbadd6d97ef42fb724e0ff268225bba7"
+    },
+    "sparrows-in-a-garden-hedge-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "7f75c1e5aeda5b1ea1371e37d96033efe36065578072827c94fc2081976bc3e7"
+    },
+    "sparrows-quarrel-on-a-sill": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "a5e364145c8446ef6c3245e1b864ccbd191f815864d3b7b6395cb710034427ab"
+    },
+    "sparrows-startle-out-of-ivy": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "81c5a1bfdfa925c3f24e5792602a8a35e407981ee1e49489584f627f380b9c45"
+    },
+    "sports-car-full-pull-from-driver-seat": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "5c96c3059c169db47f8de7ee91adc6ca7f2a984e20254e83fa85c163157b82f8"
+    },
+    "steel-tunnel-liner-fragments-skipping-across": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "f09af56999b81998513c723f4c7e9c21bf24d6af1716a14671af4166d8610b39"
+    },
+    "survey-quadcopter-accelerate-away-from-camera": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "7af72a3365d70b24fb1f24d7d5ec64bcc56b81fac86e9d74982bb817ea429e1c"
+    },
+    "survey-quadcopter-camera-approach-from-altitude": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "c5eb93943b2b1b0abfab71b7020b5ecd5abe8cda5c652c6a4451b889d09de123"
+    },
+    "survey-quadcopter-full-climb-rotor-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "8c638d2e3eeafa0ea3918709c1df9a989f7b1b71e45101fdd4679ee079a84e29"
+    },
+    "survey-quadcopter-onboard-frame-vibration-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "b696a4a905d97b95dae367010f015f590ae424cf3f2c6996949903b3e9de4aaa"
+    },
+    "survey-quadcopter-survey-cruise-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "e322d754f53fb6a602d293c49f2c4bc507fd3a0e0ebd3ab7f3a8749d79a2e03a"
+    },
+    "survey-quadcopter-two-altitude-corrections": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "d91933147e24347e2f8f51fdaae282f91ef2b2136838c4fa66bcc8b14614b1d1"
+    },
+    "survey-quadcopter-vertical-launch": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "4b68537fb7536212273b593b50ff1fd4a666a9d24cad080c65b18862507b4c7f"
+    },
+    "swallows-above-a-farmyard-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "63e72e48ea14048db1260c6673c3db85c23d4053848e35f273ebf97b6bdd9f08"
+    },
+    "tawny-owl-beside-a-stream-loop": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "09958f0865fd99f1a151e1e02b94c177cc304866b71acebfd4b44091bb893e09"
+    },
+    "terrain-proximity-warning-rough-buzz": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "3d4c886403fc9edd785ef4e5b393d22f5bf6657410dafd85f51f8fef3bfcc3ee"
+    },
+    "tire-clearing-sticky-mud": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "22ec18f8003999090d4acddbceb7b3c669d0096dc97aa3c4b45a027a673a49d0"
+    },
+    "tire-skid-halt": {
+      "labels": [
+        "bird",
+        "speech"
+      ],
+      "sha256": "40ca0ee121596a368a618aed197f71446bc41c4b1a301eb49582a91463d69926"
+    },
+    "tracked-earthmover-steady-steel-run-loop": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "f8fd86dbbb2a7696b8c61e0ce912e1910bde578b4bf10e8858c133ebd1b612fb"
+    },
+    "tractor-hitch-pin-dropped-into-hole": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "edbd0a4ae31c6744012b41df86342071fe5ea2c7940896cc186a72c66c123f12"
+    },
+    "tram-wheels-squeal-round-curve": {
+      "labels": [
+        "speech"
+      ],
+      "sha256": "7fc81173cc4221264326648725c1551ce5e873f178912893eb656370c2a500ea"
+    },
+    "twin-cylinder-road-bike-road-pace-engine-loop": {
+      "labels": [
+        "insect",
+        "speech"
+      ],
+      "sha256": "ac1e213c997c015f3d7178d6075bbbbf4694bd3d93dbc1d21bef4f156aa46a70"
+    },
+    "twin-cylinder-road-bike-roll-to-junction-idle": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "1e3bb56307d87fbbc439db137d66609c6b0a762a07ebde12b25a76b4250d5f33"
+    },
+    "two-ravens-trade-calls": {
+      "labels": [
+        "bird"
+      ],
+      "sha256": "7d4ee99abc83a66658c21862508c2943e156af7f63edaf411f79923b2c30d306"
+    },
+    "two-stroke-step-through-scooter-road-pace-engine-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "589066e79426ebfef0f602e111cb96a3b42a89370bc134de3d2877c91eedf59e"
+    },
+    "two-stroke-step-through-scooter-snap-throttle-closed": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "d138c006c78aa88510caa4f3a6d4f48c14fd53a0de84db342410462eaa48ff1a"
+    },
+    "v12-inspired-touring-coupe-grandstand-approach": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "f4f9f5688575ee4f6acf25e7b97856a2f5ce7c12c0f2c07f090bb847d4406e48"
+    },
+    "vintage-runabout-passing-on-loose-ground": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "d217ca9aef42171f28bf44dba9b42934ab0b084bf6aff7cec8bec422185ec1a1"
+    },
+    "water-at-a-stony-ford-water-receding": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "3c3779375b035de53ba80121470b7e400877de19fb36d00f65b411f94c064201"
+    },
+    "wild-wolves-in-a-wooded-valley-loop": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "b5183f2a3c7c036b2298ddddf10ac1088fa738db2e556040fe1dcf630ad94a9d"
+    },
+    "wind-at-a-saltmarsh-boardwalk-gust-front-arriving": {
+      "labels": [
+        "cricket_chirp"
+      ],
+      "sha256": "0726bc2502f0bc59241dd8ed3a7ff13c944cbfeb87e4cf198554cd955f748676"
+    },
+    "wind-at-a-saltmarsh-boardwalk-intermittent-lulls-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "253700401c506fae1f4837d29dd6c3da20e1c41d8fdc35dd0114c6ef3a229c7b"
+    },
+    "wind-at-a-saltmarsh-boardwalk-wind-dying-away": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "4fdaed3187439a4fdf07569d5d88615c4a2c2272a57b6685b9463bb7e0670ce0"
+    },
+    "wind-in-a-bare-orchard-crown-gust-front-arriving": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization",
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "add6ae8d803d9bac282cfdadd2c0ce7358a51d04bdd74c5d321b701ac2a6ecd4"
+    },
+    "wind-in-a-bare-orchard-crown-intermittent-lulls-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_vocalization"
+      ],
+      "sha256": "a9c1d070d515baf912da941239b6cdc6aee7c38a7b5ecdc40138ccde3fa352fc"
+    },
+    "wind-in-a-bare-orchard-crown-sustained-current-loop": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "c7769dc2fb9b0d0fa51a38f05055b50f8bcab0c654f63949f78427c80a2a03cb"
+    },
+    "wind-in-a-bare-orchard-crown-wind-dying-away": {
+      "labels": [
+        "bird",
+        "bird_chirp_tweet",
+        "bird_squawk",
+        "bird_vocalization"
+      ],
+      "sha256": "63c5ada84a930289a72483e4ff8e28c4ef196d6177ab6342d5d67ef47a674eb9"
+    },
+    "windward-headland-after-dusk-loop": {
+      "labels": [
+        "cricket_chirp",
+        "insect"
+      ],
+      "sha256": "15e8c9d7f345d3f4783823531b150364de347961962fa11e4fde77669d678da5"
+    },
+    "wolf-pack-joins-a-valley-call": {
+      "labels": [
+        "insect",
+        "shout"
+      ],
+      "sha256": "7ecd605536e2f1ebe01367f44cf133d34820a43e99102cc396acd518b0eadb79"
+    },
+    "wolf-replies-over-moving-water": {
+      "labels": [
+        "insect"
+      ],
+      "sha256": "97b52d55836ce408dab79019cee5849be5e69f52313ee496996ea6aca456d026"
+    }
+  }
+}

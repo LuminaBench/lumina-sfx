@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "id": "cockpit-weather",
-  "viewpoint": "cockpit",
+  "viewpoint": "Pilot inside a canopy during a storm. Directed comparison of the engine and weather.",
   "output": "stereo",
   "focus": {
     "subjects": [
@@ -38,7 +38,7 @@
       }
     },
     {
-      "id": "heavy-storm-rain-loop",
+      "id": "rain-canopy-droplets-clean-loop",
       "durationSec": 8,
       "envelope": [
         [
@@ -66,11 +66,8 @@
       }
     },
     {
-      "id": "distant-rolling-thunder",
+      "id": "thunder-isolated-rolling-strike",
       "offsetSec": 2.25,
-      "params": {
-        "distance": 0.76
-      },
       "label": "thunder",
       "placement": {
         "kind": "point",
@@ -82,5 +79,8 @@
         "refDistance": 6
       }
     }
-  ]
+  ],
+  "balance": "directed",
+  "scope": "world",
+  "sourcePolicy": "clean"
 }

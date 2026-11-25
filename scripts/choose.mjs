@@ -4,15 +4,15 @@ import { readFile } from 'node:fs/promises';
 import { rankByIntent } from './intent-search.mjs';
 
 const { positionals, values } = parseArgs({ allowPositionals: true, options: {
-  brief:{type:'string'}, isolated: { type: 'boolean' }, scene: { type: 'boolean' }, exclude: { type: 'string' }, help: { type: 'boolean' },
+  brief:{type:'string'}, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, scene: { type: 'boolean' }, exclude: { type: 'string' }, help: { type: 'boolean' },
 } });
 if (values.help || (!values.brief && !positionals.length) || positionals.some(q => !q.trim())) {
-  console.log('node scripts/choose.mjs "requested cue" ["another cue"] [--scene] [--isolated] [--exclude "words"] or --brief brief.json');
+  console.log('node scripts/choose.mjs "requested cue" ["another cue"] [--scene] [--clean] [--isolated] [--exclude "words"] or --brief brief.json');
   process.exit(values.help ? 0 : 1);
 }
 const read = async url => JSON.parse(await readFile(url, 'utf8'));
 const catalog = await read(new URL('../catalog.json', import.meta.url));
-const bank = catalog.sounds.filter(s => !values.isolated || s.isolation === 'isolated');
+const bank = catalog.sounds.filter(s => (!values.isolated || s.isolation === 'isolated') && (!values.clean || (s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote)));
 if(values.brief){
   if(positionals.length || values.scene || values.exclude) throw Error('Supply queries and exclusions inside --brief');
   const {resolveListeningBrief}=await import('./listening-brief.mjs');

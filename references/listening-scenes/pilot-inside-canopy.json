@@ -1,80 +1,91 @@
 {
   "schemaVersion": 2,
   "id": "pilot-inside-canopy",
-  "viewpoint": "Pilot, rain on glazing",
-  "output": "stereo",
+  "viewpoint": "Pilot cruising through rain. A flash off the left bow precedes the distant roll.",
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean",
+  "output": "headphones",
   "focus": {
     "subjects": [
       "jet"
-    ],
-    "marginDb": 8
+    ]
   },
   "layers": [
     {
       "id": "interceptor-turbofan-canopy-interior-cruise-loop",
       "label": "jet",
-      "durationSec": 8,
+      "event": "aircraft",
+      "durationSec": 10.8,
       "envelope": [
         [
           0,
+          0
+        ],
+        [
+          0.18,
           1
         ],
         [
-          7.65,
+          10.35,
           1
         ],
         [
-          8,
+          10.8,
           0
         ]
       ],
-      "placement": {
-        "kind": "listener"
-      }
-    },
-    {
-      "id": "rain-on-a-parked-car-canopy-loop",
-      "durationSec": 8,
-      "envelope": [
-        [
-          0,
-          1
-        ],
-        [
-          7.65,
-          1
-        ],
-        [
-          8,
-          0
-        ]
-      ],
-      "label": "rain",
-      "placement": {
-        "kind": "area",
-        "position": [
-          -1.4,
-          0.9,
-          -1
-        ],
-        "spread": 0.8
-      }
-    },
-    {
-      "id": "distant-rolling-thunder",
-      "offsetSec": 2.25,
-      "params": {
-        "distance": 0.76
+      "acoustics": {
+        "source": "turbine",
+        "distanceM": 3.5,
+        "bearingDeg": 152,
+        "elevationDeg": -7
       },
-      "label": "thunder",
-      "placement": {
-        "kind": "point",
-        "position": [
-          -5,
-          4,
-          -7
+      "gain": 1
+    },
+    {
+      "id": "rain-canopy-droplets-clean-loop",
+      "label": "rain",
+      "event": "canopy-rain",
+      "durationSec": 10.8,
+      "envelope": [
+        [
+          0,
+          0
         ],
-        "refDistance": 6
+        [
+          0.18,
+          1
+        ],
+        [
+          10.35,
+          1
+        ],
+        [
+          10.8,
+          0
+        ]
+      ],
+      "acoustics": {
+        "source": "rainfall",
+        "distanceM": 1.4,
+        "bearingDeg": 8,
+        "elevationDeg": 39
+      },
+      "gain": 0.84
+    },
+    {
+      "id": "thunder-isolated-rolling-strike",
+      "label": "thunder",
+      "event": "discharge",
+      "offsetSec": 0.85,
+      "acoustics": {
+        "source": "thunder",
+        "distanceM": 686,
+        "bearingDeg": -37,
+        "elevationDeg": 12,
+        "through": "canopy",
+        "travel": true
       }
     }
   ]

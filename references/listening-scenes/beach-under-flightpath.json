@@ -10,7 +10,7 @@
   },
   "layers": [
     {
-      "id": "heavy-storm-rain-loop",
+      "id": "rainfall-open-air-clean-loop",
       "label": "rain",
       "placement": {
         "kind": "area",
@@ -70,5 +70,6 @@
       },
       "durationSec": 7
     }
-  ]
+  ],
+  "scope": "world"
 }

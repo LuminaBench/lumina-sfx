@@ -1,6 +1,6 @@
 import { readFile, realpath } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
-import { selectRecipes } from './install-files.mjs';
+import { checkIsolatedRecipes, selectRecipes } from './install-files.mjs';
 import { loadRecipes } from './recipes.mjs';
 import { composeRecipe } from '../engine/remix.ts';
 
@@ -36,19 +36,19 @@ const validId = (id) => typeof id === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.t
 // Resolve references relative to the containing design. The export embeds the arrangement,
 // so a game never depends on the original design JSON or any studio path.
 export async function loadDesign(input, directory = process.cwd(), mood, inspect) {
-  const ids = new Set();
+  const ids = new Set(), cleanIds = new Set();
   let leaves = 0;
   let spatial=false, headphones=false;
-  async function parse(input, directory, ancestors, depth) {
+  async function parse(input, directory, ancestors, depth, clean = false) {
     if (depth > 8) throw Error('A design supports eight nested groups');
     if (typeof input === 'string') {
       if (!input.endsWith('.json')) throw Error('Design references must be JSON files');
       const path = await realpath(resolve(directory, input));
       if (ancestors.includes(path)) throw Error('Circular design reference: ' + path);
-      return parse(JSON.parse(await readFile(path, 'utf8')), dirname(path), [...ancestors, path], depth);
+      return parse(JSON.parse(await readFile(path, 'utf8')), dirname(path), [...ancestors, path], depth, clean);
     }
     const listening=input?.schemaVersion===2;
-    fields(input, 'design', listening ? [...designKeys,'schemaVersion','viewpoint','focus','listener','output'] : designKeys);
+    fields(input, 'design', listening ? [...designKeys,'schemaVersion','viewpoint','balance','scope','sourcePolicy','focus','listener','output'] : designKeys);
     if (listening) {
       if(input.viewpoint!==undefined && typeof input.viewpoint!=='string') throw Error('Expected a viewpoint description');
       if(input.listener) {
@@ -66,9 +66,11 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
       throw Error('Expected a hyphenated sound id and optional name');
     if (!Array.isArray(layers) || layers.length < 1 || layers.length > (listening?32:4))
       throw Error('Invalid layer count for this design version');
+    clean ||= design.sourcePolicy === 'clean';
     const children = [];
     for (const layer of layers) {
-      fields(layer, 'layer', listening ? [...layerKeys,'placement','locked','maskEq'] : layerKeys);
+      fields(layer, 'layer', listening ? [...layerKeys,'placement','acoustics','event','locked','maskEq'] : layerKeys);
+      if(layer.acoustics) fields(layer.acoustics,'acoustics',['source','distanceM','bearingDeg','elevationDeg','through','travel']);
       if(layer.maskEq) fields(layer.maskEq,'mask EQ',['hz','cutDb','q']);
       if(layer.placement) {
         fields(layer.placement,'placement',['kind','position','path','yaw','pitch','roll','refDistance','rolloff','spread','innerAngle','outerAngle','outerGain','air','doppler','obstruction','room']);
@@ -85,11 +87,12 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
       if (settings.afterLayer !== undefined) fields(settings.afterLayer, 'end anchor', ['layer', 'shiftSec', 'crossfadeSec']);
       if (settings.muffle !== undefined) fields(settings.muffle, 'muffle', ['cutoffHz', 'envelope']);
       if (nested !== undefined)
-        children.push({ child: await parse(nested, directory, ancestors, depth + 1), settings });
+        children.push({ child: await parse(nested, directory, ancestors, depth + 1, clean), settings });
       else {
         if (!validId(id)) throw Error('Invalid base recipe id');
         if (++leaves > 64) throw Error('A design supports 64 source layers');
         ids.add(id);
+        if(clean) cleanIds.add(id);
         children.push({ id, settings });
       }
     }
@@ -100,6 +103,7 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
   if (mood !== undefined) root.design.mood = mood;
   if (ids.has(root.design.id)) throw Error('Choose an output ID distinct from its base recipes');
   const selected = await selectRecipes([...ids]);
+  if(cleanIds.size) await checkIsolatedRecipes(selected.filter(s => cleanIds.has(s.id)), {clean:true});
   const byId = new Map((await loadRecipes(ids)).map((recipe) => [recipe.id, recipe]));
   const imports = new Map(selected.map((r, i) => [r.id, 'layer' + (i + 1)]));
   const code = [

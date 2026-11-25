@@ -1,0 +1,189 @@
+{
+  "revisions": {
+    "calf-calling-under-a-barn-roof": {
+      "previous": "e7b05871bd5aa414641fceaee182a626a9a04f209572ed9fd14a15e0da2ddbac",
+      "current": "986620f0f624626310925007caf6407cc24f4ee953ebac034df1627ae8377bb8",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "calf-waits-for-its-mother": {
+      "previous": "cc1e6681080f0bb42d1fd48a4d55daf7fca2fd1f38e8687668dd5bfc47f0dcd0",
+      "current": "7010e23ce9bac4688b9eeb1b0192b8ef690885626d3311c6b0e0809bebfb1d0a",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "cow-calls-over-a-closing-rail": {
+      "previous": "d0a3a966f5d503568f06bcca2518147f704689711587993b42dd1bb283a6c0fd",
+      "current": "68dc8f10b3f6d40fa7822297c1fe12dc9bd7a1910c28e94c4cd2c2a282c61cdd",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "cow-moo": {
+      "previous": "2367691c48aba39ed44cf23e288f33f557f9e5710d79227f9fd0ef2dad9b0e71",
+      "current": "9d429554bce5f5d829db7cd6b128df69f170e2233c8c3130f621fea9ee332fee",
+      "reason": "Removed the fly-heavy calf recording or cropped the cattle call before its field tail."
+    },
+    "four-cylinder-sportbike-exhaust-receding-downhill": {
+      "previous": "2fed9b3b1c4496dc6d60ab58787df844fd8845867e3e6684b09180c5a1e8d4f9",
+      "current": "bb56dacefc6935ee68c60e104a28243714939eb888f5b390939ddb92b90d2254",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-hard-climb-throttle-loop": {
+      "previous": "657e5531ade0958c0cd0319d12729695bcf35df2062f351737743887c00aade4",
+      "current": "5631073cf4e2c8865567057645769378de8e5d75a351bef4a390095793a0e545",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-helmet-muffled-ride-loop": {
+      "previous": "11bf3a8f1e795564d9a095d506ab6aec7cefefd47b112c25205fa2ba080db1a7",
+      "current": "f10f174c8c072621123a86ae3c5d3fdac81dcf2a22e6baa359eca95fc1548b8f",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-kickstand-idle-loop": {
+      "previous": "4b19170d3f91a99cdf4f9e7d72821f7a2b42fe28c99607261a86c81c771bedb7",
+      "current": "de08b867edb3bf00fe3581ce5ef96abe5f0e0f392edd9d9a94c9661a12674ff6",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-rider-approaching-roadside": {
+      "previous": "f13cf81e333c085dbc96c554f0445f1c4c26b55e7485ebe3c615e6e0015763f7",
+      "current": "699102b3acdb4e8924b474cf369cc80d99005013c867d13943d56a478bf265f5",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-road-pace-engine-loop": {
+      "previous": "8e587b816f667836b19ce29cbf57c440271b7803f5e4cdb9ccbe5478fd6c5e58",
+      "current": "d257c891ea2037809afd301ca18c2a4666e569efbafb4fe7bfe3f8b2b30d225a",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-roll-on-through-a-bend": {
+      "previous": "7fe4da7137cea04f1d39b08a0f30ef826a01cb35a5e844b2a1dfea208728e1f6",
+      "current": "38dac16437fef79b12bc3522f9ce0a3064726c97e5506c1b215277c5114ffc39",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-roll-to-junction-idle": {
+      "previous": "85830ce997e6619884a249c29e71b3cafe621c7390a6f483d7ec8b3e9e4539d9",
+      "current": "133643546bf3e2c1933b5058a894de3b17f2b17e06cc8d98b99828b967699ad8",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-snap-throttle-closed": {
+      "previous": "19cb6f1d86a292f4f03054303bdae681be437da184ab40f897f621ae54adeff3",
+      "current": "1d7ce472b39a537cb9e37543f3033f10ce827b559a8d60728b47877c8ff2fd5c",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "four-cylinder-sportbike-two-throttle-blips": {
+      "previous": "2a0dbf62b708ba176f3f986118958cb0f5b30e31c0a61d14702055dd85021188",
+      "current": "03d812a187f72cba52a9b94191295f93a12a40cb608d407e3debb1b39c31b1a2",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "glass-elevator-interior-air-loop": {
+      "previous": "4792fdb99e36abc3b5e2df8ccc0331d478656ee380f3315eeaa150440b5a4764",
+      "current": "ce4407b5342cc1bcf9021209af4c44f033c527fd0fd9cac29f2f72dcfccfd80d",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "heritage-rail-coach-far-side-of-street-loop": {
+      "previous": "c0e87424595d918fccc8b42ca024cce55953d42ff930c692615fdb27ac61afc5",
+      "current": "dd60f0cdeddbeeaa2f6104e4ab6593bf7a130ca0d9aa8288dddda90d3991acbc",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "heritage-rail-coach-rattle-between-cars-loop": {
+      "previous": "2e60cdb970305048e651ac1e6a699eb551d4bba39c3c618e71151a45ae9ea588",
+      "current": "dc17746bc29ee2c47fa717efaad39edbe16219040ac7876dee9ddb0a525a92d9",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "interceptor-turbofan-canopy-interior-cruise-loop": {
+      "previous": "bf7f8ac08a137f7cfa39b932660250b0783bc988d9dd96eb1a7ab5d78ff7a4ff",
+      "current": "34e2c3eb2718ce7a819377855342cd332730c5698dc76214a11918a6524e1929",
+      "reason": "Rebuilt dry cockpit cruise around a sheltered, levelled real turbine."
+    },
+    "motorcycle-throttle-rev": {
+      "previous": "2d9996fec24cf097d24140038bacc066f520a6fa7224e62dd0af2528a32299f0",
+      "current": "d45302252a85be4b4a9d2597a3a83a59edaf45c4e8f9437e9fa1fdee6519a632",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "open-road-motorcycle-coming-out-of-a-garage": {
+      "previous": "2f632c904fa0333bdb94586d056911c711b900086a66258f04359bb288af7139",
+      "current": "18d001b16ac0b22223c8a90d072f98a606d7e3dca7d324f2eabc89e88a417f5d",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "open-road-motorcycle-first-power-under-load": {
+      "previous": "023bb55a21297da39ec4b613be3842bfe5d0439a2f9109c131a45f8646463e16",
+      "current": "a0f853ec0c8016f3a7aaec4fd94646f550e4233bd5d4d0112d9c941de3438e2f",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "rail-cabin-rolling-loop": {
+      "previous": "db49d97ed7a9bb36875212047fdfcb52ca3f180d23514508d2499da47bf09036",
+      "current": "5370060a35817de17577369789bb0e4b4f4563ce284721ff691f657e508d7226",
+      "reason": "Rebuilt the rolling carriage texture without replaying the station recording timeline."
+    },
+    "rain-on-a-parked-car-canopy-loop": {
+      "previous": "d4eaef13364886918f12e5ae30c0e3f24084715f8b1e52e2d7e4a548736dc85c",
+      "current": "ee97efe8762843261b85f733b605dc39cb0c9c04b624c6a814d6d2a5e6e75315",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "rain-on-puddles-loop": {
+      "previous": "3ebe17a9662a68dc5d111051c2273e9a38b8df5563e8fb33f39305a6d026c2e7",
+      "current": "1bc30cc1ca6f55b5e76e0c6b9258393561bb9130b20ea0a14162d1ec7825556a",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "regional-passenger-train-far-side-of-street-loop": {
+      "previous": "619d1b8e974d08f47d4c234f22213c9afbbba69fd8ca6f1aae8cbd7693c487f0",
+      "current": "e66d355eb9beaeceffabd2d202ad3aebe0eac9852a17d5545b58711c7508f5fb",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "regional-passenger-train-rattle-between-cars-loop": {
+      "previous": "83d6eac016411f0c9ee3b8f19f0b8781ecf695dd4d762be5c24fd1978cd3408c",
+      "current": "5ed744a67fc50e3ea36329cd148cc4bb9ed7ca4bb6fb3f687c6858fe0bcf5c35",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "train-concourse-quiet-night-loop": {
+      "previous": "fe0c87a779819010055a32d938118ca0ab197b4c0e76fde794237fc75dd43cad",
+      "current": "62f15e929df32dc89664a8aa4b23ef3b819c16f106ef529776131aa9b55537e8",
+      "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "twin-cylinder-road-bike-exhaust-receding-downhill": {
+      "previous": "54236b8c16d1df6871a42c01ffeaca57c0f44a89e03af7147d5c03ba33a5e6d8",
+      "current": "dd9610643d59958b11e55190dc02f261d02d860adbefa94f82850194034a092a",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-hard-climb-throttle-loop": {
+      "previous": "0f080ae6d7153d1940dc7f001d7c3800bdd7b5818cd4a07a459140958954086c",
+      "current": "dd73c5918212f8f13d837e38620229985d26731dbfb5fa741c932177d3568fe7",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-helmet-muffled-ride-loop": {
+      "previous": "51f34c847c62dea965747996adb98ee5b6ccb147ba1867c1892048e893e0eb25",
+      "current": "ce196a8ccad6baf139fc9a2371817c86c2e202ec7e38e23367f22ffefe0542af",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-kickstand-idle-loop": {
+      "previous": "d2a6087f602d8a56497da1675cb2eb47ce3780ea8c99f8aa86e6251d3fed2a35",
+      "current": "8d2ad9fe220fb65ce4b698b467bdaf966712f592117f89e4fa66ff61fb6a2fa6",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-rider-approaching-roadside": {
+      "previous": "475fa8be90d133713e0dbec2ac0f7b8439568390b7ce58cfba767044a8dc2d89",
+      "current": "a43c1530e61e5d14e239d2e5dddac750d3675370ba770e3225ac218d99d2db86",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-road-pace-engine-loop": {
+      "previous": "6805f5a5e3e16c9ca4a78896f63357fc8b90b9b710398c7e5ce73adf820bd340",
+      "current": "ac1e213c997c015f3d7178d6075bbbbf4694bd3d93dbc1d21bef4f156aa46a70",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-roll-on-through-a-bend": {
+      "previous": "8a0ebd8a879910ad49cd08770df33b640917bdd9c3396e81a532501d42c8e360",
+      "current": "ce8b202cd5cd96d67dfd18e7ba30eeb9010020af4a333bb978bdbd12f273effd",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-roll-to-junction-idle": {
+      "previous": "221b5e19b80fc0f16f8a5e43dc85f8328479a7cecc6add686ec25d63778f6b28",
+      "current": "1e3bb56307d87fbbc439db137d66609c6b0a762a07ebde12b25a76b4250d5f33",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-snap-throttle-closed": {
+      "previous": "350f768718563a857b2cb249f8acece021937ad7455d50e9f08654789849ec95",
+      "current": "0d55e9b58acb4de31aa3eb2bf3e74d46c6bb6779835831f4057f8523bbe0b368",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "twin-cylinder-road-bike-two-throttle-blips": {
+      "previous": "1528987b2056e3453051ce2b42c15cf6426424b91769b56a994f70a27c56e222",
+      "current": "653e82e6ca59e9bf1fb6bd8286894815cbe2886b50aad3b1b55cddbf6331a71f",
+      "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    }
+  }
+}

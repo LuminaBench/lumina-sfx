@@ -7,7 +7,9 @@
     "demo-turbine-idle",
     "motion-flatboat-throttle",
     "motion-outboard-cranking",
-    "response-diesel-loaded"
+    "response-diesel-loaded",
+    "demo-carriage-bed",
+    "milestone-train"
   ],
   "transient": [
     "clarity-pistol",
@@ -136,6 +138,109 @@
           3,
           0.073,
           0.147
+        ]
+      ]
+    },
+    "canopy-droplets": {
+      "source": "atlas-glass",
+      "cuts": [
+        [
+          0,
+          3.266,
+          0.044
+        ],
+        [
+          0,
+          2.612,
+          0.058
+        ],
+        [
+          0,
+          1.004,
+          0.07
+        ],
+        [
+          0,
+          0.002,
+          0.049
+        ],
+        [
+          0,
+          2.954,
+          0.063
+        ],
+        [
+          1,
+          0.002,
+          0.044
+        ],
+        [
+          1,
+          0.98,
+          0.058
+        ],
+        [
+          1,
+          2.03,
+          0.07
+        ],
+        [
+          1,
+          1.64,
+          0.049
+        ],
+        [
+          1,
+          0.422,
+          0.063
+        ]
+      ],
+      "matchStrike": false
+    },
+    "thunder-attack": {
+      "source": "atlas-thunder-left",
+      "cuts": [
+        [
+          0,
+          0.24,
+          1.19
+        ]
+      ],
+      "matchStrike": false,
+      "noiseFloor": {
+        "source": "atlas-thunder-roll",
+        "take": 0,
+        "start": 3.55,
+        "duration": 0.85
+      }
+    },
+    "barn-call": {
+      "source": "cow-moo",
+      "cuts": [
+        [
+          0,
+          0.015,
+          1.16
+        ]
+      ]
+    },
+    "turbine-core": {
+      "source": "demo-fighter-rise",
+      "cuts": [
+        [
+          0,
+          2.65,
+          1.53
+        ]
+      ]
+    },
+    "bike-idle-core": {
+      "source": "motorcycle-throttle-rev",
+      "cuts": [
+        [
+          0,
+          0.08,
+          1.12
         ]
       ]
     }

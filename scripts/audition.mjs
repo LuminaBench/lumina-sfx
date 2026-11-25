@@ -13,7 +13,7 @@ import { sceneStyles } from '../engine/remix.ts';
 const { positionals: inputs, values } = parseArgs({
   allowPositionals: true,
   options: {
-    isolated: { type: 'boolean' },
+    clean: { type:'boolean' }, isolated: { type: 'boolean' },
     moods: { type: 'boolean' },
     styles: { type: 'boolean' },
     bed: { type: 'string' },
@@ -23,9 +23,14 @@ const { positionals: inputs, values } = parseArgs({
 });
 if (values.help) {
   console.log(
-    'npm run audition -- <id-or-design.json> <id-or-design.json> [third] (or one candidate with --styles or --moods) [--isolated] --bed <loop-id> --out <desk.html>',
+    'npm run audition -- <id-or-design.json> <id-or-design.json> [third] (or one candidate with --styles or --moods) [--clean] [--isolated] --bed <loop-id> --out <desk.html>',
   );
   process.exit(0);
+}
+const performances = new Set(), components = new Set();
+function remember(source){
+  performances.add(source.id);
+  for(const component of source.components??[])components.add(component);
 }
 if (values.styles && values.moods) throw Error('Compare either styles or moods');
 if ((values.styles || values.moods ? inputs.length !== 1 : ![2, 3].includes(inputs.length)) || !values.out)
@@ -38,7 +43,8 @@ async function recipe(id) {
 async function candidate(input, style, mood) {
   async function group(design, directory) {
     const {recipe, selected} = await loadDesign(design, directory);
-    if (values.isolated) await checkIsolatedRecipes(selected);
+    if (values.clean || values.isolated) await checkIsolatedRecipes(selected, {clean:values.clean});
+    selected.forEach(remember);
     return recipe;
   }
   if (mood) {
@@ -48,7 +54,8 @@ async function candidate(input, style, mood) {
   }
   if (!input.endsWith('.json')) {
     const base = await recipe(input);
-    if (values.isolated) await checkIsolatedRecipes(await selectRecipes([input]));
+    remember(base);
+    if (values.clean || values.isolated) await checkIsolatedRecipes(await selectRecipes([input]), {clean:values.clean});
     if (!style) return base;
     return { ...base, id: base.id + '-' + style, macros: { ...sceneStyles[style], ...base.macros } };
   }
@@ -89,12 +96,19 @@ const choices = sounds.map((sound, index) => ({
     wav(channels.map((c) => c.map((s) => s * 10 ** ((target - level) / 20) * 0.7))),
   ),
 }));
-const bed = await recipe(values.bed ?? 'light-rain-loop');
-if (!bed.loopable) throw Error('Choose a loopable background');
-const bedAudio = renderChannels(bed, { level: 'balanced' });
-const bedLevel = Math.max(...bedAudio.map((c) => measureLevel(c, SAMPLE_RATE).activeDb));
-const bedGain = Math.min(0.27, 0.7 * 10 ** ((target - 8 - bedLevel) / 20));
-const data = { startDry: Boolean(values.isolated || (sounds.some(s=>s.preserveTimeline) && !values.bed) || (values.moods && !values.bed)), choices, bedId: bed.id, bed: wav(bedAudio.map((c) => c.map((s) => s * bedGain))) };
+let background = null;
+if (values.bed) {
+  const bed = await recipe(values.bed);
+  if (!bed.loopable) throw Error('Choose a loopable background');
+  if(performances.has(bed.id) || bed.components?.some(c=>components.has(c)))
+    throw Error('The review background already occurs in a candidate. Audition the existing mix solo.');
+  if(values.clean) await checkIsolatedRecipes(await selectRecipes([bed.id]), {clean:true});
+  const channels = renderChannels(bed, { level:'balanced' });
+  const level = Math.max(...channels.map(c=>measureLevel(c,SAMPLE_RATE).activeDb));
+  const gain = Math.min(.27,.7*10**((target-8-level)/20));
+  background = wav(channels.map(c=>c.map(x=>x*gain)));
+}
+const data = {startDry:!background || Boolean(values.clean || values.isolated), choices, bedId:values.bed??null,bed:background};
 const reel = createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0, 16);
 const payload = JSON.stringify({ reel, ...data }).replaceAll('<', '\\u003c');
 const player = await readFile(new URL('./audition-player.js', import.meta.url), 'utf8');
@@ -111,6 +125,6 @@ console.log(
     candidates: sounds.map((r) => r.id),
     takes: takes.map(t=>t.length),
     matchedActiveDb: target,
-    bed: bed.id,
+    bed: data.bedId,
   }),
 );

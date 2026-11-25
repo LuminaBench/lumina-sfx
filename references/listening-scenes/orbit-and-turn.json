@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "id": "orbit-and-turn",
-  "viewpoint": "A turbine arcs around you, then you turn towards it. The menu ticks stay centred.",
+  "viewpoint": "One idling turbine orbits the airport listener, who turns toward it.",
   "output": "headphones",
   "listener": {
     "position": [
@@ -106,25 +106,11 @@
           7,
           0
         ]
-      ]
-    },
-    {
-      "id": "menu-tab-switches-with-rocker",
-      "label": "click-a",
-      "placement": {
-        "kind": "listener"
-      },
-      "gain": 0.45,
-      "offsetSec": 1
-    },
-    {
-      "id": "menu-tab-switches-with-rocker",
-      "label": "click-b",
-      "placement": {
-        "kind": "listener"
-      },
-      "gain": 0.45,
-      "offsetSec": 6.3
+      ],
+      "event": "aircraft"
     }
-  ]
+  ],
+  "balance": "natural",
+  "scope": "world",
+  "sourcePolicy": "clean"
 }

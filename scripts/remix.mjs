@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { digest, encodeDelivery, publishAsset } from './audio-export.mjs';
 import { spawnSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
-import { checkIsolatedRecipes, installRecipes } from './install-files.mjs';
+import { checkIsolatedRecipes, installRecipes, selectRecipes } from './install-files.mjs';
 
 
 const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --dest <game/audio>
@@ -19,6 +19,8 @@ const usage = `node scripts/remix.mjs <base-id> [base-id ...] --id <new-id> --de
   --format ts|wav|ogg|opus (default ts)
   --report path/to/report.json (listener-level focus diagnostics for a version 2 scene)
   --stems path/to/stems (dry independent sources, positioned solos and playback manifest)
+  --orbit (move a single unmodified catalog performance around the listener on headphones)
+  --clean (require isolated sources with no open background-review flag)
   --isolated (require isolated source layers)
   --extremes (also test native control limits)
 `;
@@ -32,7 +34,8 @@ async function main() {
     options: {
       ...options,
       help: { type: 'boolean' },
-      isolated: { type: 'boolean' },
+      orbit: { type: 'boolean' },
+      clean: { type:'boolean' }, isolated: { type: 'boolean' },
       extremes: { type: 'boolean' },
     },
   });
@@ -45,6 +48,8 @@ async function main() {
   if (!['ts','wav','ogg','opus'].includes(format)) throw Error('Expected --format ts, wav, ogg or opus');
   let spec;
   const fit = v['fit-seconds'];
+  if (v.orbit && (v.spec || positionals.length !== 1 || fit || v.params || v.mood || v.style || names.some(k => v[k] !== undefined)))
+    throw Error('--orbit takes one catalog id. Use a listening design for a custom trajectory or timing.');
   if (v.spec) {
     if (positionals.length || [fit, v.id, v.name, v.params, v.style, ...names.map((k) => v[k])].some((x) => x !== undefined)) {
       throw Error('Supply the design in either --spec or command-line options');
@@ -69,6 +74,11 @@ async function main() {
       })),
     };
   }
+  if(v.orbit){
+    const [entry]=await selectRecipes(positionals);
+    const {orbitDesign}=await import('./orbit-design.mjs');
+    spec=await orbitDesign(entry,{id:entry.id},{id:v.id,name:v.name,clean:v.clean});
+  }
   const { loadDesign } = await import('./remix-design.mjs');
   const { renderDurationSec } = await import('../engine/sculpt.ts');
   const { checkRecipe } = await import('../qa/check-recipe.mjs');
@@ -76,8 +86,8 @@ async function main() {
   const capture=v.report || v.stems ? x=>{if(!scene) scene=x;} : undefined;
   const { recipe, selected, source, dependencies } = await loadDesign(spec, process.cwd(), v.mood,capture);
   if(capture && !recipe.preserveTimeline) throw Error('--report and --stems require a version 2 scene');
-  if (v.isolated) {
-    await checkIsolatedRecipes(selected);
+  if (v.clean || v.isolated) {
+    await checkIsolatedRecipes(selected, {clean:v.clean});
     if (recipe.isolation !== 'isolated') throw Error('A source recipe no longer declares isolation');
   }
   const temp = await mkdtemp(join(tmpdir(), 'lumina-remix-'));

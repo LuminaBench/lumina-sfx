@@ -60,6 +60,7 @@ export interface SoundRecipe {
   preserveTimeline?: boolean;
   readonly isolation?: 'isolated';
   readonly markers?: Readonly<Record<string, number>>;
+  readonly components?:readonly string[];
   readonly contains?: readonly string[];
   readonly perspective?: string;
   readonly macros?: Readonly<DesignMacros>;

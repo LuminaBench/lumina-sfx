@@ -2,6 +2,7 @@
 import { biquad } from './dsp.ts';
 import { composeRecipe, sceneStyles } from './remix.ts';
 import type { RemixDesign, RemixLayer, TimedStem } from './remix.ts';
+import { resolveEmitter, type Acoustics, type Arrival } from './acoustic-emitter.ts';
 import { bounded, placeAudio, validatePlacement, validateTrajectory } from './spatial.ts';
 import type { HeadResponse, OutputMode, Placement, Trajectory } from './spatial.ts';
 import { resolveMacros } from './sculpt.ts';
@@ -18,11 +19,16 @@ export interface Moment extends Focus {
 export interface ListeningDesign extends RemixDesign {
   schemaVersion: 2;
   viewpoint?: string;
+  balance?: 'natural'|'directed';
+  scope?: 'world'|'mixed';
+  sourcePolicy?: 'clean'|'field';
   listener?: Trajectory;
   output?: OutputMode;
   focus?: Focus & { moments?: readonly Moment[] };
 }
 export interface ListeningLayer extends RemixLayer {
+  acoustics?:Acoustics;
+  event?:string;
   placement?: Placement;
   locked?: boolean;
   maskEq?: { hz: number; cutDb: number; q?: number };
@@ -33,6 +39,9 @@ export interface Stem {
   placement: Placement;
   locked: boolean;
   offset: number;
+  event?:string;
+  components?:readonly string[];
+  arrival?:Arrival;
   dry: Float32Array[];
   ears: Float32Array[];
 }
@@ -40,7 +49,7 @@ export interface Region {
   from: number;
   to: number;
   subjects: readonly string[];
-  marginDb: number;
+  marginDb: number | null;
   gain: Record<string, number>;
   measuredBeforeDb: number | null;
   measuredAfterDb: number | null;
@@ -58,6 +67,7 @@ export interface Region {
   };
 }
 export interface SceneInspection {
+  balance:'natural'|'directed';
   masterGain: number;
   rate: number;
   seed: number;
@@ -267,6 +277,11 @@ function auditRegion(stems: Stem[], regions: Region[], k: number, rate: number) 
   const gap = (f: number, b: number) => levelDb(f) - levelDb(b);
   const worst = active.reduce((a, b) => (gap(a.f, a.b) < gap(b.f, b.b) ? a : b));
   const phones = active.filter((w) => w.pb > 1e-12).map((w) => gap(w.pf, w.pb));
+  if(r.marginDb === null){
+    r.overlapWindows=active.length;
+    r.measuredBeforeDb=r.measuredAfterDb=quantile(active.map(w=>gap(w.f,w.b)),.05);
+    r.worstTimeSec=worst.t;
+  }
   r.delivered = {
     activeWindows: active.length,
     focusDbfs: levelDb(worst.f),
@@ -304,8 +319,13 @@ export function composeListeningScene(
     throw Error('Unknown scene style');
   const palette = { ...(design.style ? sceneStyles[design.style] : {}), ...design.macros };
   resolveMacros(palette);
+  const balance=design.balance??(design.focus?.marginDb!==undefined || design.focus?.moments?.length?'directed':'natural');
+  if(!['natural','directed'].includes(balance))throw Error('Unknown scene balance');
+  if(!['mixed','world'].includes(design.scope??'mixed'))throw Error('Unknown scene scope');
+  if(!['clean','field'].includes(design.sourcePolicy??'field'))throw Error('Unknown source policy');
   const named = layers.map((l) => ({
     ...l,
+    ...resolveEmitter(l,listener),
     macros: { ...palette, ...l.macros },
     label:
       l.label ??
@@ -316,6 +336,10 @@ export function composeListeningScene(
   const labels = new Set(named.map((l) => l.label));
   if (labels.size !== layers.length) throw Error('Repeated sources need unique labels');
   for (const l of named) {
+    if(l.event!==undefined && (typeof l.event!=='string' || !/^[a-z][a-z0-9-]*$/.test(l.event)))throw Error('Invalid physical event identity');
+    if(design.sourcePolicy==='clean' && l.recipe.isolation!=='isolated')throw Error('Clean scene needs an isolated source: '+l.recipe.id);
+    if(design.scope==='world' && (l.recipe.mixRole==='interface' || l.recipe.tags.some(t=>['menu','cursor'].includes(t))))
+      throw Error('World scene contains an interface cue: '+l.recipe.id);
     if (l.maskEq) {
       bounded(l.maskEq.hz, 50, 12000, 'maskEq centre frequency');
       bounded(l.maskEq.cutDb, 0, 9, 'maskEq cutDb');
@@ -336,6 +360,7 @@ export function composeListeningScene(
   }
   validateFocus(focus);
   const moments = focus.moments ?? [];
+  if(balance==='natural' && (moments.length || focus.marginDb!==undefined)) throw Error('An explicit focus margin or handoff uses directed balance');
   let last = 0;
   for (const m of moments) {
     validateFocus(m);
@@ -353,6 +378,10 @@ export function composeListeningScene(
         .map(({ index, offset, channels }) => {
           const l = named[index],
             placement = l.placement ?? { kind: 'listener' as const };
+          if(l.arrival && l.arrival.sourceTrimDb!==0){
+            const strength=10**(l.arrival.sourceTrimDb/20);
+            channels=channels.map(channel=>channel.map(x=>x*strength));
+          }
           if (l.maskEq && l.maskEq.cutDb > 0) {
             const cut = 1 - 10 ** (-l.maskEq.cutDb / 20);
             channels = channels.map((c) => {
@@ -363,6 +392,7 @@ export function composeListeningScene(
           return {
             label: l.label,
             source: l.recipe.id,
+            event:l.event, components:l.recipe.components, arrival:l.arrival,
             placement,
             locked: l.locked ?? false,
             offset,
@@ -379,6 +409,18 @@ export function composeListeningScene(
           };
         })
         .sort((a, b) => (a.label < b.label ? -1 : 1));
+      if(design.scope==='world' || balance==='natural' || design.sourcePolicy==='clean'){
+        for(let i=0;i<stems.length;i++) for(const b of stems.slice(i+1)){
+          const a=stems[i];
+          if(a.offset+a.dry[0].length<=b.offset || b.offset+b.dry[0].length<=a.offset)continue;
+          if(a.event && b.event && a.event!==b.event)continue;
+          const shared=a.components?.some(c=>b.components?.includes(c));
+          const repeated=a.source===b.source;
+          if((a.event && a.event===b.event && (shared || a.source===b.source)) ||
+            ((!a.event || !b.event) && (repeated || shared)))
+            throw Error('Overlapping copies of '+a.label+' and '+b.label+'; choose a single performance or identify distinct physical emitters');
+        }
+      }
       const regions: Region[] = [];
       let t = 0;
       for (const m of moments) {
@@ -386,7 +428,11 @@ export function composeListeningScene(
         regions.push(measure(stems, { ...m, marginDb: m.marginDb ?? focus.marginDb }, rate));
         t = m.to;
       }
-      if (t < frames / rate) regions.push(measure(stems, { ...focus, from: t, to: frames / rate }, rate));
+      if(t<frames/rate){
+        const region=measure(stems,{...focus,subjects:balance==='natural'?[]:focus.subjects,from:t,to:frames/rate},rate);
+        if(balance==='natural'){region.subjects=focus.subjects;region.marginDb=null;}
+        regions.push(region);
+      }
       const mix = Array.from({ length: output === 'mono' ? 1 : 2 }, () => new Float32Array(frames));
       for (const s of stems) {
         for (const [k, r] of regions.entries()) {
@@ -414,7 +460,7 @@ export function composeListeningScene(
             r.delivered.backgroundDbfs += trimDb;
           }
         inspect({
-          masterGain,
+          balance,masterGain,
           rate,
           seed,
           output,
