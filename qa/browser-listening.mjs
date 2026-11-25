@@ -34,7 +34,8 @@ const server = createServer(async (req, res) => {
     }
     if (['/live-listening.js', '/spatial.js'].includes(path)) {
       res.setHeader('Content-Type', 'text/javascript');
-      const code = await readFile(new URL(path.slice(1).replace('.js', '.ts'), root), 'utf8');
+      const filename = path.slice(1).replace('.js', '.ts');
+      const code = await readFile(prepared ? join(prepared, filename) : new URL(filename, root), 'utf8');
       res.end(
         ts
           .transpileModule(code, {
@@ -167,12 +168,59 @@ try {
           rightAcross: energy(1, 2.3, 2.6),
         });
       }
+    const sim = new OfflineAudioContext(2, 44100, 44100),
+      tone = sim.createBuffer(1, 44100, 44100);
+    tone
+      .getChannelData(0)
+      .set(Float32Array.from({ length: 44100 }, (_, i) => 0.12 * Math.sin((2 * Math.PI * 770 * i) / 44100)));
+    const source = {
+      label: 'bell',
+      offsetSec: 0,
+      dry: { file: 'fixture.wav', restoreGain: 1 },
+      placement: { position: [-2, 0, -1] },
+    };
+    const control = new ListeningPlayer(
+      sim,
+      {
+        schemaVersion: 2,
+        output: 'stereo',
+        rate: 44100,
+        frames: 44100,
+        listener: { position: [0, 0, 0] },
+        sources: [source],
+        regions: [{ from: 0, to: 1, gain: { bell: 1 } }],
+      },
+      new Map([['bell', tone]]),
+    );
+    control.play(0);
+    const turn = sim.suspend(0.25),
+      move = sim.suspend(0.65),
+      rendering = sim.startRendering();
+    await turn;
+    control.setListener({ position: [0, 0, 0], yaw: 180 });
+    await sim.resume();
+    await move;
+    control.setPlacement('bell', { position: [2, 0, -1] });
+    await sim.resume();
+    const controlled = await rendering;
+    const sideDb = (lo) => {
+      const energy = (ch) =>
+        controlled
+          .getChannelData(ch)
+          .subarray(Math.round(lo * 44100), Math.round((lo + 0.1) * 44100))
+          .reduce((sum, x) => sum + x * x, 0);
+      return 10 * Math.log10(energy(1) / energy(0));
+    };
+    const turns = [0.08, 0.45, 0.85].map(sideDb);
     await ctx.close();
-    return { unlockMs, rate: ctx.sampleRate, result, pack };
+    return { unlockMs, rate: ctx.sampleRate, result, pack, turns };
   }, Boolean(prepared));
   const pass =
     !errors.length &&
     results.result.every((t) => t.peak > 0 && t.gapFrames === 0) &&
+    results.turns[0] < -6 &&
+    results.turns[1] > 6 &&
+    results.turns[2] < -6 &&
     results.pack.every((t) => t.leftStart > t.rightStart && t.rightAcross > t.leftAcross);
   console.log(JSON.stringify({ pass, errors, ...results }, null, 2));
   process.exitCode = Number(!pass);

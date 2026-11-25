@@ -77,4 +77,6 @@ Native engines retain their own rolloff curves and game event scheduling. The re
 - **Orbit and turn.** The [turbine](listening-scenes/orbit-and-turn.json) travels around and above the listener, then holds its world position as the listener turns. Two menu ticks stay with the listener.
 - **One-line edit.** Compare [fire beside wind](listening-scenes/fire-on-beach.json) with [quieter wind](listening-scenes/fire-quieter-wind.json). All crackles stay in place. [The hangar door](listening-scenes/hangar-door.json) reversibly changes the rain's brightness and early reflections on the same clock.
 
+A [passing bell](listening-scenes/passing-bell.json) crops a single ding from a longer ring and places three contacts along one path. For vehicle load, compare [climbing](listening-scenes/hill-under-load.json) and [coasting](listening-scenes/coasting-in-gear.json). Both hold the same RPM and seed; power demand selects a different blend of motor textures.
+
 If a distant subject disappears, solo it and check for a recording that already sounds far away. Adjust the competing beds first. If a wide source becomes thin in mono, inspect the source's native stereo fold and narrow its spread or choose a more mono-compatible recording. For moving assets with baked-in pitch changes, leave additional Doppler off.

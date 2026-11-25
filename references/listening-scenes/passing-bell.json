@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 2,
+  "id": "passing-bell",
+  "output": "headphones",
+  "viewpoint": "By a path as a bell approaches and passes",
+  "focus": {
+    "subjects": []
+  },
+  "layers": [
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-left",
+      "offsetSec": 0,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          -3,
+          0.3,
+          -1
+        ],
+        "refDistance": 1.4,
+        "path": [
+          {
+            "at": 1,
+            "position": [
+              0,
+              0.3,
+              -1.4
+            ]
+          },
+          {
+            "at": 1.9,
+            "position": [
+              2,
+              0.3,
+              -0.6
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-near",
+      "offsetSec": 0.85,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          -3,
+          0.3,
+          -1
+        ],
+        "refDistance": 1.4,
+        "path": [
+          {
+            "at": 1,
+            "position": [
+              0,
+              0.3,
+              -1.4
+            ]
+          },
+          {
+            "at": 1.9,
+            "position": [
+              2,
+              0.3,
+              -0.6
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-right",
+      "offsetSec": 1.6,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          -3,
+          0.3,
+          -1
+        ],
+        "refDistance": 1.4,
+        "path": [
+          {
+            "at": 1,
+            "position": [
+              0,
+              0.3,
+              -1.4
+            ]
+          },
+          {
+            "at": 1.9,
+            "position": [
+              2,
+              0.3,
+              -0.6
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

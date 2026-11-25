@@ -70,6 +70,19 @@ export function prepareHeadphones(rate: number) {
   }
   return ready;
 }
+// Smooth updates from a game camera over one control interval. Explicit scene-clock
+// paths retain their authored timing; a pose change also supplies radial velocity.
+function moveTo(previous: Partial<Trajectory>, requested: Partial<Trajectory>, clock: number): Trajectory {
+  if (requested.path?.length) return { ...requested, position: requested.position ?? [0, 0, 0] };
+  const start = poseAt(previous, clock),
+    end = poseAt(requested, 0);
+  return { ...start, path: [...(clock > 0 ? [{ ...start, at: clock }] : []), { ...end, at: clock + 0.025 }] };
+}
+function lastMove(p: Placement) {
+  const curve = p.obstruction;
+  const end = Array.isArray(curve) ? (curve.at(-1)?.[0] ?? 0) : 0;
+  return Math.max(end, p.path?.at(-1)?.at ?? 0);
+}
 export class ListeningPlayer {
   readonly context: BaseAudioContext;
   readonly manifest: ListeningManifest;
@@ -174,9 +187,10 @@ export class ListeningPlayer {
   private schedule(start: number, voices: LiveVoice[], scheduleEar: boolean, until = Infinity) {
     const length = this.manifest.frames / this.manifest.rate,
       end = Math.min(until, this.epoch + length);
-    const moving =
-      this.listener.path?.length ||
-      voices.some((v) => v.placement.path?.length || Array.isArray(v.placement.obstruction));
+    const movingUntil = Math.max(
+      this.listener.path?.at(-1)?.at ?? 0,
+      ...voices.map((v) => lastMove(v.placement)),
+    );
     for (let n = 0; ; n++) {
       const t = Math.min(end, start + n * 0.025);
       if (scheduleEar && (n === 0 || this.listener.path?.length))
@@ -189,7 +203,7 @@ export class ListeningPlayer {
           Array.isArray(v.placement.obstruction)
         )
           this.place(v, t, n === 0);
-      if (!moving || t >= end) break;
+      if (t - this.epoch >= movingUntil || t >= end) break;
     }
   }
   play(when = this.context.currentTime + 0.035) {
@@ -276,12 +290,10 @@ export class ListeningPlayer {
       src.stop(when + s.offsetSec + src.buffer.duration);
     }
     const live = 'resume' in this.context && !('startRendering' in this.context);
-    const moving =
-      this.listener.path?.length ||
-      this.voices.some((v) => v.placement.path?.length || Array.isArray(v.placement.obstruction));
+
     this.scheduledUntil = live ? when + 0.35 : Infinity;
     this.schedule(when, this.voices, true, this.scheduledUntil);
-    if (live && moving)
+    if (live)
       this.timer = setInterval(() => {
         const now = this.context.currentTime,
           end = this.epoch + this.manifest.frames / this.manifest.rate;
@@ -292,15 +304,22 @@ export class ListeningPlayer {
         const start = Math.max(now, this.scheduledUntil),
           next = now + 0.35;
         if (next > start) {
-          this.schedule(start, this.voices, true, next);
+          if (
+            (this.listener.path?.at(-1)?.at ?? 0) > start - this.epoch ||
+            this.voices.some((v) => lastMove(v.placement) > start - this.epoch)
+          )
+            this.schedule(start, this.voices, true, next);
           this.scheduledUntil = next;
         }
       }, 100);
   }
   setListener(listener: Trajectory) {
     validateTrajectory(listener);
-    this.listener = listener;
-    if (!this.running) return;
+    if (!this.running) {
+      this.listener = listener;
+      return;
+    }
+    this.listener = moveTo(this.listener, listener, Math.max(0, this.context.currentTime - this.epoch));
     const now = Math.max(this.context.currentTime, this.epoch);
     if (now >= this.epoch + this.manifest.frames / this.manifest.rate) return;
     const l = this.context.listener;
@@ -339,7 +358,7 @@ export class ListeningPlayer {
     if (p.room !== v.placement.room) throw Error('Restart to change room geometry');
     if ((p.kind === 'listener') !== (v.placement.kind === 'listener'))
       throw Error('Restart to switch listener anchoring');
-    v.placement = p;
+    v.placement = { ...p, ...moveTo(v.placement, p, Math.max(0, this.context.currentTime - this.epoch)) };
     const now = Math.max(this.context.currentTime, this.epoch);
     if (now >= this.epoch + this.manifest.frames / this.manifest.rate) return;
     this.cancelPlacement(v, now);
