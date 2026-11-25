@@ -1,7 +1,11 @@
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { readFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { rankByIntent } from '../scripts/intent-search.mjs';
+import { resolveListeningBrief } from '../scripts/listening-brief.mjs';
 import { renderDurationSec } from '../engine/sculpt.ts';
 import { loadDesign } from '../scripts/remix-design.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -44,3 +48,59 @@ for (const [query, id] of [
   ['light rain','light-rain-loop'], ['heavy rain','heavy-storm-rain-loop'],
 ]) assert.equal(choose(query,'--clean').cues[0].id, id);
 assert.equal(choose('rain only','--clean').cues.length, 1);
+
+const { sounds: bank } = JSON.parse(await readFile(new URL('../catalog.json', import.meta.url)));
+for (const [prompt, expected] of [
+  ['one clean UI click', 'mechanical-ui-click'],
+  ['a UI click for my fantasy game', 'mechanical-ui-click'],
+  ['menu tab in my jet game', 'settings-tab-walnut-detent'],
+  ['switch between tabs in the settings menu', 'settings-tab-walnut-detent'],
+  ['understated menu hover', 'settings-focus-felt-tick'],
+  ['panel slides into view', 'silk-swipe-right'],
+  ['logo sting', 'delicate-logo-close'],
+  ['cinematic product trailer impact', 'clean-title-reveal-with-soft-hit'],
+  ['trailer riser', 'silk-title-rise'],
+  ['soft logo outro', 'delicate-logo-close'],
+  ['title card lands', 'clean-title-reveal-with-soft-hit'],
+  ['high energy product trailer transition', 'silk-whip-cut'],
+  ['quick swish for a product demo', 'silk-whip-cut'],
+  ['left to right swipe for a trailer', 'silk-swipe-right'],
+  ['right to left swipe for a trailer', 'silk-swipe-left'],
+  ['typed word in a product demo', 'gasket-mount-keyboard-typed-word'],
+  ['single mouse click in a product video', 'desktop-mouse-press'],
+  ['a toggle turns off', 'settings-toggle-off-cork'],
+  ['soft UI notification', 'menu-confirm-pluck'],
+]) {
+  const matches = rankByIntent(bank, prompt, '', true);
+  assert.equal(matches[0]?.id, expected, prompt);
+  assert.deepEqual(matches[0].missing, [], prompt);
+  assert.ok(matches.every(s => s.editorialAction && s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote), prompt);
+}
+assert.equal(choose('clean professional trailer').decision, 'review');
+assert.equal(rankByIntent(bank, 'epic cinematic trailer sound').length, 0);
+assert.equal(choose('a portal opening in a product trailer', '--clean').cues[0].id, 'portal-unfold');
+assert.equal(choose('farm-trailer-coupling').cues[0].id, 'farm-trailer-coupling');
+assert.equal(rankByIntent(bank, 'tractor trailer coupling')[0].id, 'farm-trailer-coupling');
+assert.equal(choose('keyboard typing', 'silk swipe left', 'title card lands', '--scene', '--clean').scene.id, 'product-trailer-interface-edit');
+const resolved = resolveListeningBrief({ schemaVersion:2, scope:'mixed', layers:[
+  {label:'contact', query:'clean UI click', prefer:'portal', exclude:'sci-fi'},
+]}, bank);
+assert.equal(resolved.design.layers[0].id, 'mechanical-ui-click');
+const held = bank.map(s => s.id === 'mechanical-ui-click' ? {...s, cleanHold:['voice']} : s);
+assert.equal(rankByIntent(held, 'clean UI click')[0].id, 'desktop-mouse-press');
+
+const temp = await mkdtemp(join(tmpdir(), 'lumina-editorial-votes-'));
+try {
+  const file = join(temp, 'votes.json');
+  const ballots = { 'portal-unfold': {revision:3, decision:'yes'}, 'mechanical-ui-click': {decision:'no'} };
+  await writeFile(file, JSON.stringify({votes:ballots}));
+  const current = search('--intent', 'clean UI click', '--votes', file);
+  assert.equal(current[0].id, 'mechanical-ui-click');
+  assert.equal(current[0].review.currentRevision, false);
+  assert.ok(current.every(s => s.editorialAction === 'press'));
+  ballots['mechanical-ui-click'].revision = current[0].revision;
+  await writeFile(file, JSON.stringify({votes:ballots}));
+  assert.equal(search('--intent', 'clean UI click', '--votes', file)[0].id, 'desktop-mouse-press');
+} finally {
+  await rm(temp, {recursive:true, force:true});
+}

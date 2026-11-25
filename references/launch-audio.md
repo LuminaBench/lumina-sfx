@@ -7,13 +7,23 @@ Cut to the gesture the viewer sees. One key-down fits one appearing character. U
 | A close shot of a real keyboard | Search for its mechanism and the action, such as `office membrane return`, `laptop scissor key down` or `click jacket typed word`. |
 | A cursor lands or clicks | Pick the actual input, such as a mouse press, trackpad press or stylus release. One UI activation normally needs one contact. |
 | The layout moves | Use a left or right swipe for travel, a whip for a fast cut or a page wipe for a longer handoff. The swipe direction describes the direction of the sound. |
-| A title settles on a frame | Search a panel reveal, title rise or pull away. Align the `apex` marker to the frame. Audition under dialogue or music at delivery volume. |
+| A title settles on a frame | Ask for “title card lands”. Align the `settle` marker to the landing frame. Use a title rise for upward motion, or a logo close for an end card. Audition under dialogue or music at delivery volume. |
 
 ```sh
 node scripts/search.mjs --isolated --collection "Launch video" --intent "quiet laptop keyboard key down" --limit 3
 node scripts/search.mjs --isolated --intent "silk swipe left" --limit 2
 node scripts/remix.mjs silk-panel-reveal --id title-arrives --fit-seconds 0.32 --isolated --format wav --dest /absolute/edit/audio
 ```
+
+An energetic cut calls for a faster pass. A portal opening on camera calls for the sound of the portal. When the brief only names the medium, inspect the picture or ask what moves. The edit can stay quiet while text is being read.
+
+| Picture cue | Listen for |
+| --- | --- |
+| Focus, then a tab change | A light tick on each actual focus change. The tab gets a firmer contact. Check three changes in quick succession for fatigue. |
+| Apply or save | One seated click timed to acceptance. A pitched notification belongs with an arriving message or an explicit request for that color. |
+| Typing, a panel slide, then a title | Type a short word, leave room, move across the frame, land once. The [three-cue product trailer](scenes/product-trailer-interface-edit.json) has independent levels and sync points. |
+
+A listening vote applies to the take as heard. With `search.mjs --intent ... --votes votes.json --json`, check `review.currentRevision`. A remaster needs a new listen. Compare the alternatives for the same visible action over the actual edit at delivery volume.
 
 ## Decide what belongs in the mix
 

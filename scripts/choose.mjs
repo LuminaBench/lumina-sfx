@@ -2,6 +2,7 @@
 import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 import { leafIds } from './scene-leaves.mjs';
+import { editorialPurpose } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 
 const { positionals, values } = parseArgs({ allowPositionals: true, options: {
@@ -70,6 +71,8 @@ const cues = shared ? [{ id:shared.id, covers:positionals, contains:shared.conta
     { request:r.query, closest:r.closest ?? null });
 // A matched stride supplies one contact. Give agents the entry points for a walk or a live character.
 for (const cue of cues) {
+  const action = bank.find(s => s.id === cue.id)?.editorialAction;
+  if (action) cue.editorial = {action, use:editorialPurpose(action)};
   if (!cue.id?.startsWith('stride-')) continue;
   const source = bank.find(s => s.id === cue.id);
   if (source?.takeCount) cue.movement = {
@@ -77,4 +80,7 @@ for (const cue of cues) {
     sequence: 'scripts/footsteps.mjs', live: 'engine/footsteps.ts', guide: 'references/footsteps.md',
   };
 }
-console.log(JSON.stringify({ decision, scene, cues }, null, 2));
+const guidance = unresolved && requests.some(r => !r.closest && /\b(?:trailer|video|ui|interface|menu|teaser|promo|demo)\b/i.test(r.query))
+  ? 'Specify the audible action, for example a tab switch, a title landing or a physical source in the shot.'
+  : undefined;
+console.log(JSON.stringify({ decision, scene, cues, guidance }, null, 2));

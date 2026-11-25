@@ -125,6 +125,11 @@
       "current": "4ed0620808dad78679f35c5de1e7eedfe38de8b06173648001450e0c4da1c9db",
       "reason": "Replace the misidentified film-winding source with wind."
     },
+    "clean-title-reveal-with-soft-hit": {
+      "previous": "90d2d2912893a0dbeea8797e501e5afb547c98e9653bcc503071eda839b1d97b",
+      "current": "e10f573c316c9d11222e00981a5a1a651b010993956f649536ff65927b02ce83",
+      "reason": "Use an airy picture transition and a short physical resolve for product edits."
+    },
     "click-jacket-keyboard-typed-word": {
       "previous": "afd289fc180af1471479ed18c1fb8a69dcdaaee739e462bdde9ed830050eb889",
       "current": "2e25eb01405a25a71b407ee4230c91f257dda2a27fd205c70d4b151c092b9e5d",
@@ -189,6 +194,11 @@
       "previous": "af869b96e4c5d1562e3e8495452d61cb1facab0d43fd66f034ea622c66fc23ba",
       "current": "785391579a931b4cc2cc97630a689549c424a5c8e51f47b561bb44211f44f44c",
       "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "delicate-logo-close": {
+      "previous": "2a71c045d76e28054776e13379e9c909a0935807dfdf4fc8209ce7a2579e1b60",
+      "current": "5403bd822046287ad753fb1440403c076c0eb2ae69185340c73b1b369488813a",
+      "reason": "Use an airy picture transition and a short physical resolve for product edits."
     },
     "distant-rolling-thunder": {
       "previous": "dd620fbaef2114f69fca3157b2b5d8a9a040d2931ce5d7c6369cd5aab10884c0",
@@ -274,6 +284,16 @@
       "previous": "af5acb6452a00286216d481a31e8716baea31a0ec38ea67e1dca95d703bb44e5",
       "current": "94db24fcf623e2a100af65f433afcd2b1045d5b19aab7fea9b0090b1bae77734",
       "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "energy-shield-block": {
+      "previous": "899949fd2706c576cfd532ac7c2bfb9ec58f67a6a8bf37d43aa89cde4c057d42",
+      "current": "8751e0b1d9d1fe9ec1572dfef4b9284dd8f128157fdb6e6e8ab27db25bf3ff5a",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "energy-shield-collapse": {
+      "previous": "99676b15b6936b6698ebd1f61ef722542ccb12349ac04c83fd5d1aa8d09c193e",
+      "current": "31850fdf77029dd36ef70120b699fba13213a8b94f2b8a32f88be5f682ceb796",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
     },
     "ewe-and-lamb-reunite": {
       "previous": "d7099d8fdbcd49d98e57e7034e3aff73db2b2c434bbf54e77caae2f21bbceb89",
@@ -655,6 +675,16 @@
       "current": "852b14149f7311db399b469339862e4d5b93a8f0059f651a05adbfcd9f1d6cb0",
       "reason": "Replace the misidentified film-winding source with wind."
     },
+    "mechanical-ui-click": {
+      "previous": "ba344fe10fdf4df04d52fd4a33d9bbbfdba4a27ae7326d7e9007268d705c7e15",
+      "current": "a8d84f17c9d6e1f5a8750cc89ea7acebc4833efd736985643fb06e3090b02d18",
+      "reason": "Seat the recorded mechanical contact in a short damped housing."
+    },
+    "menu-confirm-spring-detent": {
+      "previous": "9bc94856abd72f655df55ee46238e68daacd00f452130b380dba1abcb553de60",
+      "current": "ecad9708c7a87003d0c1c427cdb15d07a0938c5743412c13eb6b84be93122b7b",
+      "reason": "Seat the recorded mechanical contact in a short damped housing."
+    },
     "motorcycle-throttle-rev": {
       "previous": "2d9996fec24cf097d24140038bacc066f520a6fa7224e62dd0af2528a32299f0",
       "current": "d45302252a85be4b4a9d2597a3a83a59edaf45c4e8f9437e9fa1fdee6519a632",
@@ -694,6 +724,16 @@
       "previous": "023bb55a21297da39ec4b613be3842bfe5d0439a2f9109c131a45f8646463e16",
       "current": "a0f853ec0c8016f3a7aaec4fd94646f550e4233bd5d4d0112d9c941de3438e2f",
       "reason": "Replaced the multi-bike street recording with a cropped engine texture or a single motor performance."
+    },
+    "portal-snap-closed": {
+      "previous": "b2d8bb3a664530d7ea65bb88d9463f99f624be7d5ba65f1d58d49166abab062c",
+      "current": "5bef84555ba76728dd73988a73f38d5025dff8eedc14f4dd2b5e905aee57c688",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "portal-unfold": {
+      "previous": "907bc8ac5655e12f5f2a096a0e26b5892ecdf7e0a389e36d1b4b2d0611b23079",
+      "current": "6a505fe53ecfd0ecbb480bf863cbf2c45e9105968a883538794e50b308b7477a",
+      "reason": "Shape the fictional event with recorded friction and damped impacts."
     },
     "rail-cabin-rolling-loop": {
       "previous": "db49d97ed7a9bb36875212047fdfcb52ca3f180d23514508d2499da47bf09036",
@@ -1299,6 +1339,11 @@
       "previous": "1c684997e50eeef7334dcd92348e338ec2f99b34f13452d2b14aad1b942dccf5",
       "current": "ad22fa44ed6fe0cf417b80df1bc739c648651f2cd74bcb4a435b2247b9e9112b",
       "reason": "Use tire friction in place of the take containing an incidental bird call."
+    },
+    "wide-product-reveal-swell": {
+      "previous": "8a8123b65f8c6038c9477253955d8ea8d856018fdefc2e6a028f238c633085f5",
+      "current": "041568905b8eafcd6dc97ff8e051f2a8168a251b7b6136c5faacd31c34408acb",
+      "reason": "Use an airy picture transition and a short physical resolve for product edits."
     },
     "wind-against-a-sail-locker-hatch-gust-front-arriving": {
       "previous": "93fb1ecf05d064488a4e36e699254ce3dc4045214213c589438eb04784f3ff1c",

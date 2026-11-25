@@ -90,8 +90,10 @@ const takes = sounds.map((sound) =>
   }),
 );
 const target = Math.min(...takes.flat().map((t) => t.level));
+const bank = JSON.parse(await readFile(new URL('../catalog.json', import.meta.url), 'utf8')).sounds;
+const revisions = new Map(bank.map(s => [s.id, s.revision ?? 1]));
 const choices = sounds.map((sound, index) => ({
-  id: sound.id,
+  id: sound.id, revision: revisions.get(sound.id),
   takes: takes[index].map(({ channels, level }) =>
     wav(channels.map((c) => c.map((s) => s * 10 ** ((target - level) / 20) * 0.7))),
   ),

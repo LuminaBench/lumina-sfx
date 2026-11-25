@@ -672,6 +672,7 @@
       "id": "alley-double-report",
       "name": "Alley Double Report",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -902,6 +903,7 @@
       "id": "aluminum-plate-keyboard-backspace-pair",
       "name": "Aluminum-plate keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -949,6 +951,7 @@
       "id": "aluminum-plate-keyboard-command-line",
       "name": "Aluminum-plate keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -997,6 +1000,8 @@
       "id": "aluminum-plate-keyboard-key-down",
       "name": "Aluminum-plate keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -1044,6 +1049,7 @@
       "id": "aluminum-plate-keyboard-key-up",
       "name": "Aluminum-plate keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -1091,6 +1097,7 @@
       "id": "aluminum-plate-keyboard-return",
       "name": "Aluminum-plate keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -1137,6 +1144,7 @@
       "id": "aluminum-plate-keyboard-shortcut",
       "name": "Aluminum-plate keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -1184,6 +1192,7 @@
       "id": "aluminum-plate-keyboard-spacebar",
       "name": "Aluminum-plate keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -1231,6 +1240,8 @@
       "id": "aluminum-plate-keyboard-typed-word",
       "name": "Aluminum-plate keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -1382,6 +1393,7 @@
       "id": "anchored-sailboat-stern-cabin-swell-loop",
       "name": "Anchored sailboat stern-cabin swell loop",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Maritime · Motors and deck",
       "tags": [
@@ -1840,6 +1852,7 @@
       "id": "arcade-cannon-reservoir-discharge",
       "name": "Arcade Cannon Reservoir Discharge",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "arcade",
@@ -1942,6 +1955,7 @@
       "id": "arcade-cracker-pop",
       "name": "Arcade Cracker Pop",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "blast",
@@ -3116,6 +3130,7 @@
       "id": "arcade-scatter-blast",
       "name": "Arcade Scatter Blast",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -3364,6 +3379,7 @@
       "id": "arcade-sidearm-pop",
       "name": "Arcade Sidearm Pop",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -5556,6 +5572,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-constant-movement-loop",
       "name": "Bilge water sloshing beneath floorboards — constant movement",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -5609,6 +5626,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-gentle-laps-loop",
       "name": "Bilge water sloshing beneath floorboards — gentle laps",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -5662,6 +5680,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-water-receding",
       "name": "Bilge water sloshing beneath floorboards — water receding",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -5715,6 +5734,7 @@
       "id": "bilge-water-sloshing-beneath-floorboards-water-surging-in",
       "name": "Bilge water sloshing beneath floorboards — water surging in",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -5986,6 +6006,7 @@
       "id": "blast-across-a-rainy-rooftop",
       "name": "Blast across a Rainy Rooftop",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "blast",
@@ -6018,6 +6039,7 @@
       "id": "blast-behind-a-heavy-steel-bulkhead",
       "name": "Blast behind a Heavy Steel Bulkhead",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "blast",
@@ -6059,6 +6081,7 @@
       "id": "blast-behind-a-wooden-barricade",
       "name": "Blast Behind a Wooden Barricade",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "blast",
@@ -6090,6 +6113,7 @@
       "id": "blast-beneath-a-metal-catwalk",
       "name": "Blast Beneath a Metal Catwalk",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "blast",
@@ -6121,6 +6145,7 @@
       "id": "blast-from-inside-a-vehicle-cabin",
       "name": "Blast from inside a Vehicle Cabin",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "blast",
@@ -6153,6 +6178,7 @@
       "id": "blast-through-a-timber-partition",
       "name": "Blast Through a Timber Partition",
       "category": "Impacts",
+      "revision": 1,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "blast",
@@ -6220,6 +6246,7 @@
       "id": "blink-teleport",
       "name": "Blink Teleport",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "collection": "Fantasy · Spells & Pickups",
       "tags": [
         "blink",
@@ -6372,6 +6399,7 @@
       "id": "boat-rub-rail-bumps-dock-then-recoils",
       "name": "Boat rub rail bumps dock then recoils",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -8073,6 +8101,8 @@
       "id": "brushed-metal-match-cut",
       "name": "Brushed metal match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -8114,6 +8144,8 @@
       "id": "brushed-metal-page-wipe",
       "name": "Brushed metal page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -8154,6 +8186,8 @@
       "id": "brushed-metal-panel-reveal",
       "name": "Brushed metal panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -8194,6 +8228,7 @@
       "id": "brushed-metal-pull-away",
       "name": "Brushed metal pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -8234,6 +8269,8 @@
       "id": "brushed-metal-swipe-left",
       "name": "Brushed metal leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -8274,6 +8311,8 @@
       "id": "brushed-metal-swipe-right",
       "name": "Brushed metal rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -8314,6 +8353,8 @@
       "id": "brushed-metal-title-rise",
       "name": "Brushed metal title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -8354,6 +8395,8 @@
       "id": "brushed-metal-whip-cut",
       "name": "Brushed metal whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -9873,6 +9916,7 @@
       "id": "camera-shutter-button-double-click",
       "name": "Camera shutter button double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -9918,6 +9962,7 @@
       "id": "camera-shutter-button-press-and-hold",
       "name": "Camera shutter button press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -9964,6 +10009,8 @@
       "id": "camera-shutter-button-press",
       "name": "Camera shutter button single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -10010,6 +10057,7 @@
       "id": "camera-shutter-button-release",
       "name": "Camera shutter button release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -10055,6 +10103,7 @@
       "id": "camera-shutter-button-three-taps",
       "name": "Camera shutter button three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -10797,6 +10846,7 @@
       "id": "canyon-single-report",
       "name": "Canyon Single Report",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -10914,6 +10964,7 @@
       "id": "car-bumper-bump",
       "name": "Car Bumper Bump",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "collection": "Blasts & crashes",
       "tags": [
         "car",
@@ -11078,6 +11129,7 @@
       "id": "car-crash-metal-glass",
       "name": "Car Crash · Metal & Glass",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "collection": "Blasts & crashes",
       "tags": [
         "car",
@@ -12301,6 +12353,7 @@
       "id": "car-sideswipe-scrape",
       "name": "Car Sideswipe Scrape",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "collection": "Blasts & crashes",
       "tags": [
         "car",
@@ -12898,6 +12951,7 @@
       "id": "cat-meow",
       "name": "Cat Meow",
       "category": "Animals",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "cat-call"
@@ -13214,6 +13268,8 @@
       "id": "celluloid-match-cut",
       "name": "Celluloid match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.02945
@@ -13255,6 +13311,8 @@
       "id": "celluloid-page-wipe",
       "name": "Celluloid page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -13295,6 +13353,8 @@
       "id": "celluloid-panel-reveal",
       "name": "Celluloid panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -13335,6 +13395,7 @@
       "id": "celluloid-pull-away",
       "name": "Celluloid pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -13375,6 +13436,8 @@
       "id": "celluloid-swipe-left",
       "name": "Celluloid leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -13415,6 +13478,8 @@
       "id": "celluloid-swipe-right",
       "name": "Celluloid rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -13455,6 +13520,8 @@
       "id": "celluloid-title-rise",
       "name": "Celluloid title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -13495,6 +13562,8 @@
       "id": "celluloid-whip-cut",
       "name": "Celluloid whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0144
@@ -14564,6 +14633,7 @@
       "id": "chicken-clucks",
       "name": "Chicken Clucks",
       "category": "Animals",
+      "revision": 3,
       "collection": "Animals",
       "tags": [
         "bird",
@@ -14757,6 +14827,7 @@
       "id": "chiclet-keyboard-backspace-pair",
       "name": "Compact chiclet keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -14804,6 +14875,7 @@
       "id": "chiclet-keyboard-command-line",
       "name": "Compact chiclet keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -14852,6 +14924,8 @@
       "id": "chiclet-keyboard-key-down",
       "name": "Compact chiclet keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -14899,6 +14973,7 @@
       "id": "chiclet-keyboard-key-up",
       "name": "Compact chiclet keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -14946,6 +15021,7 @@
       "id": "chiclet-keyboard-return",
       "name": "Compact chiclet keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -14992,6 +15068,7 @@
       "id": "chiclet-keyboard-shortcut",
       "name": "Compact chiclet keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15039,6 +15116,7 @@
       "id": "chiclet-keyboard-spacebar",
       "name": "Compact chiclet keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15086,6 +15164,8 @@
       "id": "chiclet-keyboard-typed-word",
       "name": "Compact chiclet keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15209,6 +15289,7 @@
       "id": "cinematic-c4-pressure-front",
       "name": "Cinematic C4 Pressure Front",
       "category": "Impacts",
+      "revision": 1,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "blast",
@@ -15295,6 +15376,7 @@
       "id": "cinematic-petrol-flare-and-falling-cinders",
       "name": "Cinematic Petrol Flare and Falling Cinders",
       "category": "Water & Fire",
+      "revision": 1,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "fire",
@@ -15635,13 +15717,30 @@
       "id": "clean-title-reveal-with-soft-hit",
       "name": "Clean Title Reveal with Soft Hit",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "land",
+      "isolation": "isolated",
+      "markers": {
+        "apex": 0.532,
+        "settle": 0.53
+      },
+      "contains": [
+        "air swell",
+        "soft landing contact"
+      ],
+      "perspective": "editorial transition",
       "collection": "Creator · Reveals and transitions",
       "tags": [
         "clean",
         "title",
         "reveal",
         "soft",
-        "hit"
+        "hit",
+        "editorial",
+        "title card",
+        "landing",
+        "trailer",
+        "dry"
       ],
       "loopable": false,
       "durationSec": 1.52,
@@ -15655,6 +15754,22 @@
       },
       "targetRmsDbfs": -23,
       "mixRole": "interface",
+      "recording": {
+        "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Keyboard typing",
+          "author": "Breviceps",
+          "url": "https://freesound.org/people/Breviceps/sounds/447909/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/clean-title-reveal-with-soft-hit.ts"
     },
@@ -15662,6 +15777,7 @@
       "id": "click-jacket-keyboard-backspace-pair",
       "name": "Click-jacket mechanical keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15709,6 +15825,7 @@
       "id": "click-jacket-keyboard-command-line",
       "name": "Click-jacket mechanical keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15757,6 +15874,8 @@
       "id": "click-jacket-keyboard-key-down",
       "name": "Click-jacket mechanical keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15804,6 +15923,7 @@
       "id": "click-jacket-keyboard-key-up",
       "name": "Click-jacket mechanical keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15851,6 +15971,7 @@
       "id": "click-jacket-keyboard-return",
       "name": "Click-jacket mechanical keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15897,6 +16018,7 @@
       "id": "click-jacket-keyboard-shortcut",
       "name": "Click-jacket mechanical keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15944,6 +16066,7 @@
       "id": "click-jacket-keyboard-spacebar",
       "name": "Click-jacket mechanical keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -15991,6 +16114,8 @@
       "id": "click-jacket-keyboard-typed-word",
       "name": "Click-jacket mechanical keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "cleanHold": [
         "insect"
       ],
@@ -16377,6 +16502,7 @@
       "id": "close-concussion-wave",
       "name": "Close Concussion Wave",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "explosion",
@@ -16418,6 +16544,7 @@
       "id": "close-lightning-thunder",
       "name": "Close Lightning & Thunder",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "thunder"
@@ -22400,6 +22527,7 @@
       "id": "cow-moo",
       "name": "Cow Moo",
       "category": "Animals",
+      "revision": 2,
       "cleanHold": [
         "mosquito_buzz"
       ],
@@ -23089,6 +23217,7 @@
       "id": "crevasse-ice-break",
       "name": "Crevasse Ice Break",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "ice",
@@ -24343,6 +24472,7 @@
       "id": "current-beneath-a-moored-hull-constant-movement-loop",
       "name": "Current beneath a moored hull — constant movement",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -24397,6 +24527,7 @@
       "id": "current-beneath-a-moored-hull-gentle-laps-loop",
       "name": "Current beneath a moored hull — gentle laps",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -24451,6 +24582,7 @@
       "id": "current-beneath-a-moored-hull-water-receding",
       "name": "Current beneath a moored hull — water receding",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -24505,6 +24637,7 @@
       "id": "current-beneath-a-moored-hull-water-surging-in",
       "name": "Current beneath a moored hull — water surging in",
       "category": "Water & Fire",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
@@ -25050,6 +25183,7 @@
       "id": "debris-falling-after-a-distant-blast",
       "name": "Debris Falling after a Distant Blast",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "debris",
@@ -25290,11 +25424,27 @@
       "id": "delicate-logo-close",
       "name": "Delicate Logo Close",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "close",
+      "isolation": "isolated",
+      "markers": {
+        "apex": 0.299,
+        "settle": 0.32
+      },
+      "contains": [
+        "short receding air",
+        "soft final contact"
+      ],
+      "perspective": "editorial transition",
       "collection": "Creator · Reveals and transitions",
       "tags": [
         "delicate",
         "logo",
-        "close"
+        "close",
+        "editorial",
+        "trailer",
+        "end card",
+        "settle"
       ],
       "loopable": false,
       "durationSec": 1.15,
@@ -25308,6 +25458,22 @@
       },
       "targetRmsDbfs": -28,
       "mixRole": "interface",
+      "recording": {
+        "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "SWITCH BUTTON PRESSING.wav",
+          "author": "EricsSoundschmiede",
+          "url": "https://freesound.org/people/EricsSoundschmiede/sounds/457411/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/delicate-logo-close.ts"
     },
@@ -25677,6 +25843,7 @@
       "id": "desktop-mouse-double-click",
       "name": "Desktop mouse double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -25722,6 +25889,7 @@
       "id": "desktop-mouse-press-and-hold",
       "name": "Desktop mouse press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -25768,6 +25936,8 @@
       "id": "desktop-mouse-press",
       "name": "Desktop mouse single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -25814,6 +25984,7 @@
       "id": "desktop-mouse-release",
       "name": "Desktop mouse release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -25859,6 +26030,7 @@
       "id": "desktop-mouse-three-taps",
       "name": "Desktop mouse three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -26820,6 +26992,7 @@
       "id": "dirt-mound-eruption",
       "name": "Dirt Mound Eruption",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "explosion",
@@ -27259,6 +27432,7 @@
       "id": "displacement-cargo-vessel-approach-to-breakwater",
       "name": "Displacement cargo vessel approach to breakwater",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27313,6 +27487,7 @@
       "id": "displacement-cargo-vessel-departure-beyond-harbor-mouth",
       "name": "Displacement cargo vessel departure beyond harbor mouth",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27369,6 +27544,7 @@
       "id": "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop",
       "name": "Displacement cargo vessel enclosed wheelhouse vibration loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27425,6 +27601,7 @@
       "id": "displacement-cargo-vessel-harbor-idle-machinery-loop",
       "name": "Displacement cargo vessel harbor idle machinery loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27480,6 +27657,7 @@
       "id": "displacement-cargo-vessel-loaded-shaft-propulsion-loop",
       "name": "Displacement cargo vessel loaded shaft propulsion loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27536,6 +27714,7 @@
       "id": "displacement-cargo-vessel-passage-cruise-loop",
       "name": "Displacement cargo vessel passage cruise loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27590,6 +27769,7 @@
       "id": "displacement-cargo-vessel-reduce-to-harbor-speed",
       "name": "Displacement cargo vessel reduce to harbor speed",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27646,6 +27826,7 @@
       "id": "displacement-cargo-vessel-ring-up-full-ahead",
       "name": "Displacement cargo vessel ring up full ahead",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27702,6 +27883,7 @@
       "id": "displacement-cargo-vessel-settle-alongside-berth",
       "name": "Displacement cargo vessel settle alongside berth",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27756,6 +27938,7 @@
       "id": "displacement-cargo-vessel-two-docking-throttle-corrections",
       "name": "Displacement cargo vessel two docking throttle corrections",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -28093,6 +28276,7 @@
       "id": "dive-breaks-the-surface",
       "name": "Dive breaks the water surface",
       "category": "Water & Fire",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "entry": 0,
@@ -28269,6 +28453,7 @@
       "id": "dog-double-bark",
       "name": "Dog Double Bark",
       "category": "Animals",
+      "revision": 2,
       "collection": "Animals",
       "tags": [
         "dog",
@@ -29421,6 +29606,7 @@
       "id": "drop-root-crops-crate",
       "name": "Roots Dropping into a Slatted Crate",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Harvest",
       "tags": [
         "crop",
@@ -30863,6 +31049,7 @@
       "id": "dust-burst-from-a-broken-wall",
       "name": "Dust Burst from a Broken Wall",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "dust",
@@ -31159,6 +31346,7 @@
       "id": "editing-keypad-double-click",
       "name": "Editing keypad double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -31205,6 +31393,7 @@
       "id": "editing-keypad-press-and-hold",
       "name": "Editing keypad press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -31252,6 +31441,8 @@
       "id": "editing-keypad-press",
       "name": "Editing keypad single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -31299,6 +31490,7 @@
       "id": "editing-keypad-release",
       "name": "Editing keypad release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -31345,6 +31537,7 @@
       "id": "editing-keypad-three-taps",
       "name": "Editing keypad three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -33099,6 +33292,7 @@
       "id": "energy-blade-hum-loop",
       "name": "Energy Blade Hum",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "collection": "Sci-fi",
       "tags": [
         "sci-fi",
@@ -33285,12 +33479,16 @@
       "id": "energy-shield-block",
       "name": "Energy Shield Block",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "isolation": "isolated",
       "collection": "Sci-Fi · Devices & Energy",
       "tags": [
         "shield",
         "block",
         "deflect",
-        "energy"
+        "energy",
+        "sci-fi",
+        "impact"
       ],
       "loopable": false,
       "durationSec": 0.54,
@@ -33303,6 +33501,22 @@
         }
       },
       "targetRmsDbfs": -21,
+      "recording": {
+        "title": "Car peels off",
+        "author": "therisingorder",
+        "url": "https://freesound.org/people/therisingorder/sounds/271337/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Wooden Chest Lid Latches Open.wav",
+          "author": "The_Frisbee_of_Peace",
+          "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/energy-shield-block.ts"
     },
@@ -33310,12 +33524,16 @@
       "id": "energy-shield-collapse",
       "name": "Energy Shield Collapse",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "isolation": "isolated",
       "collection": "Sci-Fi · Devices & Energy",
       "tags": [
         "shield",
         "barrier",
         "failure",
-        "energy"
+        "energy",
+        "sci-fi",
+        "collapse"
       ],
       "loopable": false,
       "durationSec": 0.73,
@@ -33328,6 +33546,22 @@
         }
       },
       "targetRmsDbfs": -21,
+      "recording": {
+        "title": "Squeaking tram departing.wav",
+        "author": "dersinnsspace",
+        "url": "https://freesound.org/people/dersinnsspace/sounds/417657/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch On Off.flac",
+          "author": "qubodup",
+          "url": "https://freesound.org/people/qubodup/sounds/183994/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/energy-shield-collapse.ts"
     },
@@ -34551,6 +34785,7 @@
       "id": "far-side-muffled-blast",
       "name": "Far-Side Muffled Blast",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "explosion",
@@ -37060,6 +37295,8 @@
       "id": "fine-grain-match-cut",
       "name": "Fine grain match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -37101,6 +37338,8 @@
       "id": "fine-grain-page-wipe",
       "name": "Fine grain page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -37141,6 +37380,8 @@
       "id": "fine-grain-panel-reveal",
       "name": "Fine grain panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -37181,6 +37422,7 @@
       "id": "fine-grain-pull-away",
       "name": "Fine grain pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -37221,6 +37463,8 @@
       "id": "fine-grain-swipe-left",
       "name": "Fine grain leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -37261,6 +37505,8 @@
       "id": "fine-grain-swipe-right",
       "name": "Fine grain rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -37301,6 +37547,8 @@
       "id": "fine-grain-title-rise",
       "name": "Fine grain title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -37341,6 +37589,8 @@
       "id": "fine-grain-whip-cut",
       "name": "Fine grain whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -37739,6 +37989,7 @@
       "id": "fishing-skiff-tiller-motor-approach-from-open-water",
       "name": "Fishing skiff tiller motor approach from open water",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -37786,6 +38037,7 @@
       "id": "fishing-skiff-tiller-motor-channel-cruise-loop",
       "name": "Fishing skiff tiller motor channel cruise loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -37832,6 +38084,7 @@
       "id": "fishing-skiff-tiller-motor-climb-onto-plane",
       "name": "Fishing skiff tiller motor climb onto plane",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -37879,6 +38132,7 @@
       "id": "fishing-skiff-tiller-motor-come-off-plane",
       "name": "Fishing skiff tiller motor come off plane",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -37926,6 +38180,7 @@
       "id": "fishing-skiff-tiller-motor-helm-shelter-vibration-loop",
       "name": "Fishing skiff tiller motor helm shelter vibration loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -37974,6 +38229,7 @@
       "id": "fishing-skiff-tiller-motor-mooring-idle-loop",
       "name": "Fishing skiff tiller motor mooring idle loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38020,6 +38276,7 @@
       "id": "fishing-skiff-tiller-motor-planing-throttle-loop",
       "name": "Fishing skiff tiller motor planing throttle loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38067,6 +38324,7 @@
       "id": "fishing-skiff-tiller-motor-return-to-idle-at-pontoon",
       "name": "Fishing skiff tiller motor return to idle at pontoon",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38116,6 +38374,7 @@
       "id": "fishing-skiff-tiller-motor-two-throttle-corrections",
       "name": "Fishing skiff tiller motor two throttle corrections",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38163,6 +38422,7 @@
       "id": "fishing-skiff-tiller-motor-wake-recedes-past-dock",
       "name": "Fishing skiff tiller motor wake recedes past dock",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38543,6 +38803,7 @@
       "id": "flash-blast-in-a-narrow-hall",
       "name": "Flash Blast in a Narrow Hall",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "flash",
@@ -39289,6 +39550,7 @@
       "id": "forked-lightning-with-a-late-hill-return",
       "name": "Forked Lightning with a Late Hill Return",
       "category": "Weather & Ambience",
+      "revision": 1,
       "isolation": "isolated",
       "components": [
         "thunder"
@@ -40379,6 +40641,7 @@
       "id": "frost-spell-cast",
       "name": "Frost Spell Cast",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "collection": "Fantasy · Spells & Pickups",
       "tags": [
         "frost",
@@ -41809,6 +42072,7 @@
       "id": "gasket-mount-keyboard-backspace-pair",
       "name": "Gasket-mounted keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -41856,6 +42120,7 @@
       "id": "gasket-mount-keyboard-command-line",
       "name": "Gasket-mounted keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -41904,6 +42169,8 @@
       "id": "gasket-mount-keyboard-key-down",
       "name": "Gasket-mounted keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -41951,6 +42218,7 @@
       "id": "gasket-mount-keyboard-key-up",
       "name": "Gasket-mounted keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -41998,6 +42266,7 @@
       "id": "gasket-mount-keyboard-return",
       "name": "Gasket-mounted keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -42044,6 +42313,7 @@
       "id": "gasket-mount-keyboard-shortcut",
       "name": "Gasket-mounted keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -42091,6 +42361,7 @@
       "id": "gasket-mount-keyboard-spacebar",
       "name": "Gasket-mounted keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -42138,6 +42409,8 @@
       "id": "gasket-mount-keyboard-typed-word",
       "name": "Gasket-mounted keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -42333,6 +42606,7 @@
       "id": "geyser-lifts-then-rains-back",
       "name": "Geyser Lifts Then Rains Back",
       "category": "Water & Fire",
+      "revision": 1,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "geyser",
@@ -42523,6 +42797,8 @@
       "id": "glass-edge-match-cut",
       "name": "Glass edge match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -42564,6 +42840,8 @@
       "id": "glass-edge-page-wipe",
       "name": "Glass edge page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -42604,6 +42882,8 @@
       "id": "glass-edge-panel-reveal",
       "name": "Glass edge panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -42644,6 +42924,7 @@
       "id": "glass-edge-pull-away",
       "name": "Glass edge pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -42684,6 +42965,8 @@
       "id": "glass-edge-swipe-left",
       "name": "Glass edge leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -42724,6 +43007,8 @@
       "id": "glass-edge-swipe-right",
       "name": "Glass edge rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -42764,6 +43049,8 @@
       "id": "glass-edge-title-rise",
       "name": "Glass edge title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -42804,6 +43091,8 @@
       "id": "glass-edge-whip-cut",
       "name": "Glass edge whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -43258,6 +43547,7 @@
       "id": "glass-trackpad-double-click",
       "name": "Glass trackpad double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -43304,6 +43594,7 @@
       "id": "glass-trackpad-press-and-hold",
       "name": "Glass trackpad press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -43351,6 +43642,8 @@
       "id": "glass-trackpad-press",
       "name": "Glass trackpad single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -43398,6 +43691,7 @@
       "id": "glass-trackpad-release",
       "name": "Glass trackpad release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -43444,6 +43738,7 @@
       "id": "glass-trackpad-three-taps",
       "name": "Glass trackpad three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -43490,6 +43785,7 @@
       "id": "glass-wall-collapse",
       "name": "Glass Wall Collapse",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "collapse",
@@ -44360,6 +44656,7 @@
       "id": "goat-double-bleat",
       "name": "Goat Double Bleat",
       "category": "Animals",
+      "revision": 2,
       "cleanHold": [
         "speech"
       ],
@@ -44779,6 +45076,7 @@
       "id": "gravel-footstep",
       "name": "Gravel Footstep",
       "category": "Footsteps & UI",
+      "revision": 2,
       "markers": {
         "plant": 0.03
       },
@@ -45596,6 +45894,7 @@
       "id": "grenade-explosion",
       "name": "Grenade Explosion",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Studio originals · Weapons",
       "tags": [
         "grenade",
@@ -46942,6 +47241,7 @@
       "id": "hallway-report",
       "name": "Hallway Report",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -47582,6 +47882,7 @@
       "id": "harbor-launch-inboard-approach-from-open-water",
       "name": "Harbor launch inboard approach from open water",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47637,6 +47938,7 @@
       "id": "harbor-launch-inboard-channel-cruise-loop",
       "name": "Harbor launch inboard channel cruise loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47692,6 +47994,7 @@
       "id": "harbor-launch-inboard-climb-onto-plane",
       "name": "Harbor launch inboard climb onto plane",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47747,6 +48050,7 @@
       "id": "harbor-launch-inboard-come-off-plane",
       "name": "Harbor launch inboard come off plane",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47802,6 +48106,7 @@
       "id": "harbor-launch-inboard-helm-shelter-vibration-loop",
       "name": "Harbor launch inboard helm shelter vibration loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47858,6 +48163,7 @@
       "id": "harbor-launch-inboard-mooring-idle-loop",
       "name": "Harbor launch inboard mooring idle loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47912,6 +48218,7 @@
       "id": "harbor-launch-inboard-planing-throttle-loop",
       "name": "Harbor launch inboard planing throttle loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -47967,6 +48274,7 @@
       "id": "harbor-launch-inboard-return-to-idle-at-pontoon",
       "name": "Harbor launch inboard return to idle at pontoon",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -48024,6 +48332,7 @@
       "id": "harbor-launch-inboard-two-throttle-corrections",
       "name": "Harbor launch inboard two throttle corrections",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -48079,6 +48388,7 @@
       "id": "harbor-launch-inboard-wake-recedes-past-dock",
       "name": "Harbor launch inboard wake recedes past dock",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -48135,6 +48445,7 @@
       "id": "harbor-motor-through-hydrophone-loop",
       "name": "Harbor motor through hydrophone loop",
       "category": "Water & Fire",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "bed": 0
@@ -49004,6 +49315,7 @@
       "id": "heavy-arcade-energy-report",
       "name": "Heavy Arcade Energy Report",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "heavy",
@@ -51843,6 +52155,7 @@
       "id": "hollow-metal-to-wood-planks-walking-transition",
       "name": "Hollow metal to wood planks walking transition",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface crossings",
       "tags": [
         "catwalk",
@@ -52553,6 +52866,7 @@
       "id": "horse-whinny",
       "name": "Horse Whinny",
       "category": "Animals",
+      "revision": 2,
       "collection": "Animals",
       "tags": [
         "horse",
@@ -53603,6 +53917,7 @@
       "id": "indoor-floorboard-brief-flex",
       "name": "Quiet indoor floorboard creak under weight",
       "category": "Props & Interactions",
+      "revision": 1,
       "isolation": "isolated",
       "contains": [
         "brief wood flex"
@@ -53637,6 +53952,7 @@
       "id": "indoor-hardwood-shoe-step",
       "name": "Indoor shoe footstep on a wooden floor",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "heel": 0,
@@ -53848,6 +54164,7 @@
       "id": "interceptor-turbofan-afterburner-departure",
       "name": "Interceptor turbofan afterburner departure",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -53904,6 +54221,7 @@
       "id": "interceptor-turbofan-augmented-exhaust-roar-loop",
       "name": "Interceptor turbofan augmented exhaust roar loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -53962,6 +54280,7 @@
       "id": "interceptor-turbofan-canopy-interior-cruise-loop",
       "name": "Interceptor turbofan canopy interior cruise loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "soloQueries": [
         "cockpit",
@@ -54028,6 +54347,7 @@
       "id": "interceptor-turbofan-dry-thrust-cruise-loop",
       "name": "Interceptor turbofan dry thrust cruise loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54085,6 +54405,7 @@
       "id": "interceptor-turbofan-head-on-flightline-approach",
       "name": "Interceptor turbofan head-on flightline approach",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54142,6 +54463,7 @@
       "id": "interceptor-turbofan-ramp-idle-loop",
       "name": "Interceptor turbofan ramp idle loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54198,6 +54520,7 @@
       "id": "interceptor-turbofan-rollout-to-taxi-power",
       "name": "Interceptor turbofan rollout to taxi power",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54256,6 +54579,7 @@
       "id": "interceptor-turbofan-throttle-cut-on-descent",
       "name": "Interceptor turbofan throttle cut on descent",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54314,6 +54638,7 @@
       "id": "interceptor-turbofan-turbine-spool-to-takeoff",
       "name": "Interceptor turbofan turbine spool to takeoff",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54372,6 +54697,7 @@
       "id": "interceptor-turbofan-two-thrust-surges",
       "name": "Interceptor turbofan two thrust surges",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "jet-engine"
@@ -54548,6 +54874,7 @@
       "id": "inventory-magnet-seat",
       "name": "Magnetic seat · inventory drop",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "seat": 0.061
@@ -54763,6 +55090,7 @@
       "id": "irrigation-valve-open",
       "name": "Opening an Irrigation Valve",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Watering",
       "tags": [
         "irrigation",
@@ -54796,6 +55124,7 @@
       "id": "irrigation-valve-shut",
       "name": "Closing an Irrigation Valve",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Watering",
       "tags": [
         "irrigation",
@@ -56107,6 +56436,7 @@
       "id": "lagoon-ripples-against-a-stone-step-loop",
       "name": "Lagoon Ripples Against a Stone Step (Loop)",
       "category": "Water & Fire",
+      "revision": 1,
       "auditionNote": "Check a brief change in the water texture near the middle of the default loop.",
       "collection": "Physics · Water, weather and impacts",
       "tags": [
@@ -56297,6 +56627,7 @@
       "id": "laptop-scissor-keyboard-backspace-pair",
       "name": "Laptop scissor keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56344,6 +56675,7 @@
       "id": "laptop-scissor-keyboard-command-line",
       "name": "Laptop scissor keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56392,6 +56724,8 @@
       "id": "laptop-scissor-keyboard-key-down",
       "name": "Laptop scissor keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56439,6 +56773,7 @@
       "id": "laptop-scissor-keyboard-key-up",
       "name": "Laptop scissor keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56486,6 +56821,7 @@
       "id": "laptop-scissor-keyboard-return",
       "name": "Laptop scissor keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56532,6 +56868,7 @@
       "id": "laptop-scissor-keyboard-shortcut",
       "name": "Laptop scissor keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56579,6 +56916,7 @@
       "id": "laptop-scissor-keyboard-spacebar",
       "name": "Laptop scissor keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56626,6 +56964,8 @@
       "id": "laptop-scissor-keyboard-typed-word",
       "name": "Laptop scissor keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -56809,6 +57149,7 @@
       "id": "launch-bow-cuts-a-cross-wake",
       "name": "Launch Bow Cuts a Cross-Wake",
       "category": "Water & Fire",
+      "revision": 1,
       "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
@@ -58870,6 +59211,7 @@
       "id": "linear-mechanical-keyboard-backspace-pair",
       "name": "Linear mechanical keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -58916,6 +59258,7 @@
       "id": "linear-mechanical-keyboard-command-line",
       "name": "Linear mechanical keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -58963,6 +59306,8 @@
       "id": "linear-mechanical-keyboard-key-down",
       "name": "Linear mechanical keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59009,6 +59354,7 @@
       "id": "linear-mechanical-keyboard-key-up",
       "name": "Linear mechanical keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59055,6 +59401,7 @@
       "id": "linear-mechanical-keyboard-return",
       "name": "Linear mechanical keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59100,6 +59447,7 @@
       "id": "linear-mechanical-keyboard-shortcut",
       "name": "Linear mechanical keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59146,6 +59494,7 @@
       "id": "linear-mechanical-keyboard-spacebar",
       "name": "Linear mechanical keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59192,6 +59541,8 @@
       "id": "linear-mechanical-keyboard-typed-word",
       "name": "Linear mechanical keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59239,6 +59590,8 @@
       "id": "linen-match-cut",
       "name": "Linen match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -59287,6 +59640,8 @@
       "id": "linen-page-wipe",
       "name": "Linen page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -59334,6 +59689,8 @@
       "id": "linen-panel-reveal",
       "name": "Linen panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -59381,6 +59738,7 @@
       "id": "linen-pull-away",
       "name": "Linen pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -59428,6 +59786,8 @@
       "id": "linen-swipe-left",
       "name": "Linen leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -59475,6 +59835,8 @@
       "id": "linen-swipe-right",
       "name": "Linen rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -59522,6 +59884,8 @@
       "id": "linen-title-rise",
       "name": "Linen title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -59569,6 +59933,8 @@
       "id": "linen-whip-cut",
       "name": "Linen whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -61166,6 +61532,7 @@
       "id": "long-rifle-shot",
       "name": "Long Rifle Shot",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Weapon variants",
       "tags": [
         "rifle",
@@ -61422,6 +61789,7 @@
       "id": "long-valley-report",
       "name": "Long Valley Report",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -62133,6 +62501,7 @@
       "id": "loose-gravel-to-wood-planks-walking-transition",
       "name": "Loose gravel to wood planks walking transition",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface crossings",
       "tags": [
         "grit",
@@ -62526,6 +62895,7 @@
       "id": "low-jet-downwash-churns-the-inlet",
       "name": "Low Jet Downwash Churns the Inlet",
       "category": "Aircraft",
+      "revision": 1,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "jet",
@@ -62643,6 +63013,8 @@
       "id": "low-pass-match-cut",
       "name": "Low pass match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -62684,6 +63056,8 @@
       "id": "low-pass-page-wipe",
       "name": "Low pass page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -62724,6 +63098,8 @@
       "id": "low-pass-panel-reveal",
       "name": "Low pass panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -62764,6 +63140,7 @@
       "id": "low-pass-pull-away",
       "name": "Low pass pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -62804,6 +63181,8 @@
       "id": "low-pass-swipe-left",
       "name": "Low pass leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -62844,6 +63223,8 @@
       "id": "low-pass-swipe-right",
       "name": "Low pass rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -62884,6 +63265,8 @@
       "id": "low-pass-title-rise",
       "name": "Low pass title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -62924,6 +63307,8 @@
       "id": "low-pass-whip-cut",
       "name": "Low pass whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -64113,6 +64498,7 @@
       "id": "masonry-dust-blast",
       "name": "Masonry Dust Blast",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "explosion",
@@ -64246,6 +64632,9 @@
       "id": "mechanical-ui-click",
       "name": "Mechanical UI Click",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
+      "isolation": "isolated",
       "collection": "Studio originals · Footsteps & UI",
       "tags": [
         "click",
@@ -64263,6 +64652,15 @@
           "max": 1,
           "default": 0.77
         }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
       },
       "channels": 1,
       "file": "recipes/mechanical-ui-click.ts"
@@ -64458,6 +64856,8 @@
       "id": "menu-confirm-pluck",
       "name": "Menu Confirm Pluck",
       "category": "Footsteps & UI",
+      "editorialAction": "notice",
+      "isolation": "isolated",
       "collection": "Interface · Navigation",
       "tags": [
         "menu",
@@ -64486,6 +64886,9 @@
       "id": "menu-confirm-spring-detent",
       "name": "Menu confirm spring detent",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "confirm",
+      "isolation": "isolated",
       "collection": "Feedback · Menu and interaction",
       "tags": [
         "menu",
@@ -64521,6 +64924,8 @@
       "id": "menu-focus-tap",
       "name": "Menu Focus Tap",
       "category": "Footsteps & UI",
+      "editorialAction": "focus",
+      "isolation": "isolated",
       "collection": "Interface · Navigation",
       "tags": [
         "menu",
@@ -67250,6 +67655,7 @@
       "id": "muffled-report-behind-wall",
       "name": "Muffled Report Behind a Wall",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -67619,6 +68025,7 @@
       "id": "ocean-breaker-at-a-rock-ledge",
       "name": "Ocean Breaker at a Rock Ledge",
       "category": "Water & Fire",
+      "revision": 1,
       "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
@@ -67693,6 +68100,7 @@
       "id": "office-membrane-keyboard-backspace-pair",
       "name": "Office membrane keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -67741,6 +68149,7 @@
       "id": "office-membrane-keyboard-command-line",
       "name": "Office membrane keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -67790,6 +68199,8 @@
       "id": "office-membrane-keyboard-key-down",
       "name": "Office membrane keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -67838,6 +68249,7 @@
       "id": "office-membrane-keyboard-key-up",
       "name": "Office membrane keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -67886,6 +68298,7 @@
       "id": "office-membrane-keyboard-return",
       "name": "Office membrane keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -67933,6 +68346,7 @@
       "id": "office-membrane-keyboard-shortcut",
       "name": "Office membrane keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -67981,6 +68395,7 @@
       "id": "office-membrane-keyboard-spacebar",
       "name": "Office membrane keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -68029,6 +68444,8 @@
       "id": "office-membrane-keyboard-typed-word",
       "name": "Office membrane keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -69340,6 +69757,7 @@
       "id": "outboard-aerated-wake-layer-loop",
       "name": "Outboard aerated wake layer loop",
       "category": "Water & Fire",
+      "revision": 2,
       "auditionNote": "The speech-like tail was repaired. Audition the replacement motor and water loop at sustained foreground gain.",
       "collection": "Maritime · Motors and deck",
       "tags": [
@@ -69469,6 +69887,7 @@
       "id": "outdoor-three-shot-burst",
       "name": "Outdoor Three-Shot Burst",
       "category": "Weapons",
+      "revision": 2,
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -70327,6 +70746,7 @@
       "id": "packed-snow-to-wood-planks-walking-transition",
       "name": "Packed snow to wood planks walking transition",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface crossings",
       "tags": [
         "snow",
@@ -73564,6 +73984,7 @@
       "id": "pig-grunts",
       "name": "Pig Grunts",
       "category": "Animals",
+      "revision": 2,
       "collection": "Animals",
       "tags": [
         "pig",
@@ -74913,6 +75334,7 @@
       "id": "plant-large-seeds",
       "name": "Large Seeds Dropped by Hand",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Sowing & soil",
       "tags": [
         "bean",
@@ -76973,12 +77395,16 @@
       "id": "portal-snap-closed",
       "name": "Portal Snap Closed",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "isolation": "isolated",
       "collection": "Fantasy · Spells & Pickups",
       "tags": [
         "portal",
         "close",
         "warp",
-        "spell"
+        "spell",
+        "energy",
+        "fantasy"
       ],
       "loopable": false,
       "durationSec": 0.76,
@@ -76991,6 +77417,22 @@
         }
       },
       "targetRmsDbfs": -22,
+      "recording": {
+        "title": "Tent Fabric Blow in Light Wind.wav",
+        "author": "bmacphail",
+        "url": "https://freesound.org/people/bmacphail/sounds/569538/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Wooden Chest Lid Latches Open.wav",
+          "author": "The_Frisbee_of_Peace",
+          "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/portal-snap-closed.ts"
     },
@@ -76998,13 +77440,17 @@
       "id": "portal-unfold",
       "name": "Portal Unfold",
       "category": "Sci-Fi & UI",
+      "revision": 3,
+      "isolation": "isolated",
       "collection": "Fantasy · Spells & Pickups",
       "tags": [
         "portal",
         "unfold",
         "opening",
         "spell",
-        "space"
+        "space",
+        "energy",
+        "fantasy"
       ],
       "loopable": false,
       "durationSec": 1.76,
@@ -77017,6 +77463,22 @@
         }
       },
       "targetRmsDbfs": -22,
+      "recording": {
+        "title": "Squeaking tram departing.wav",
+        "author": "dersinnsspace",
+        "url": "https://freesound.org/people/dersinnsspace/sounds/417657/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Wooden Chest Lid Latches Open.wav",
+          "author": "The_Frisbee_of_Peace",
+          "url": "https://freesound.org/people/The_Frisbee_of_Peace/sounds/573653/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/portal-unfold.ts"
     },
@@ -77345,6 +77807,7 @@
       "id": "presentation-remote-double-click",
       "name": "Presentation remote double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -77390,6 +77853,7 @@
       "id": "presentation-remote-press-and-hold",
       "name": "Presentation remote press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -77436,6 +77900,8 @@
       "id": "presentation-remote-press",
       "name": "Presentation remote single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -77482,6 +77948,7 @@
       "id": "presentation-remote-release",
       "name": "Presentation remote release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -77527,6 +77994,7 @@
       "id": "presentation-remote-three-taps",
       "name": "Presentation remote three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -78164,6 +78632,7 @@
       "id": "pull-carrot-from-loam",
       "name": "Pulling a Carrot from Loam",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Harvest",
       "tags": [
         "carrot",
@@ -79112,6 +79581,7 @@
       "id": "quick-response-siren-loop",
       "name": "Quick Response Siren",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "collection": "Alerts & phones",
       "tags": [
         "siren",
@@ -79409,6 +79879,7 @@
       "id": "quiet-mouse-double-click",
       "name": "Silent mouse double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -79454,6 +79925,7 @@
       "id": "quiet-mouse-press-and-hold",
       "name": "Silent mouse press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -79500,6 +79972,8 @@
       "id": "quiet-mouse-press",
       "name": "Silent mouse single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -79546,6 +80020,7 @@
       "id": "quiet-mouse-release",
       "name": "Silent mouse release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -79591,6 +80066,7 @@
       "id": "quiet-mouse-three-taps",
       "name": "Silent mouse three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -80145,6 +80621,7 @@
       "id": "radar-hard-lock-warning-dry-double-burst",
       "name": "Radar hard lock warning dry double burst",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Alerts · Warnings from hardware",
       "tags": [
@@ -85915,6 +86392,7 @@
       "id": "rooster-crow",
       "name": "Rooster Crow",
       "category": "Animals",
+      "revision": 2,
       "collection": "Animals",
       "tags": [
         "bird",
@@ -87383,6 +87861,7 @@
       "id": "runabout-bow-lands-flat-off-wake",
       "name": "Runabout bow lands flat off wake",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
@@ -90066,6 +90545,8 @@
       "id": "settings-apply-overcentre-latch",
       "name": "Over-centre latch · apply changes",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "confirm",
       "isolation": "isolated",
       "markers": {
         "commit": 0.071
@@ -90113,6 +90594,8 @@
       "id": "settings-back-suede-release",
       "name": "Suede release · back to parent",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "back",
       "isolation": "isolated",
       "markers": {
         "release": 0.05
@@ -90160,6 +90643,8 @@
       "id": "settings-focus-felt-tick",
       "name": "Felt tick · settings focus",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "focus",
       "isolation": "isolated",
       "markers": {
         "focus": 0
@@ -90207,6 +90692,7 @@
       "id": "settings-list-edge-felt-bumper",
       "name": "Felt bumper · end of list",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "stop": 0.059
@@ -90254,6 +90740,8 @@
       "id": "settings-slider-knurled-index",
       "name": "Knurled dial · slider step",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "scroll",
       "isolation": "isolated",
       "markers": {
         "step": 0
@@ -90302,6 +90790,8 @@
       "id": "settings-subtab-porcelain-tip",
       "name": "Porcelain tip · select subtab",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "tab",
       "isolation": "isolated",
       "markers": {
         "seat": 0.014
@@ -90349,6 +90839,8 @@
       "id": "settings-tab-walnut-detent",
       "name": "Walnut detent · switch settings tab",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "tab",
       "isolation": "isolated",
       "markers": {
         "seat": 0.028
@@ -90396,6 +90888,8 @@
       "id": "settings-toggle-engage-brass",
       "name": "Brass rocker · toggle on",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "toggle",
       "isolation": "isolated",
       "markers": {
         "seat": 0.033
@@ -90442,6 +90936,8 @@
       "id": "settings-toggle-off-cork",
       "name": "Cork stop · toggle off",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "toggle",
       "isolation": "isolated",
       "markers": {
         "seat": 0.041
@@ -90820,6 +91316,7 @@
       "id": "shake-soil-off-roots",
       "name": "Shaking Soil off Roots",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Harvest",
       "tags": [
         "root",
@@ -91544,6 +92041,7 @@
       "id": "shallow-puddles-to-wood-planks-walking-transition",
       "name": "Shallow puddles to wood planks walking transition",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface crossings",
       "tags": [
         "water",
@@ -91643,6 +92141,7 @@
       "id": "shallow-water-burst",
       "name": "Shallow Water Burst",
       "category": "Impacts",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
@@ -91824,6 +92323,7 @@
       "id": "sheep-bleat",
       "name": "Sheep Bleat",
       "category": "Animals",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Animals",
       "tags": [
@@ -93097,6 +93597,7 @@
       "id": "silent-linear-keyboard-backspace-pair",
       "name": "Damped linear keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93144,6 +93645,7 @@
       "id": "silent-linear-keyboard-command-line",
       "name": "Damped linear keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93192,6 +93694,8 @@
       "id": "silent-linear-keyboard-key-down",
       "name": "Damped linear keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93239,6 +93743,7 @@
       "id": "silent-linear-keyboard-key-up",
       "name": "Damped linear keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93286,6 +93791,7 @@
       "id": "silent-linear-keyboard-return",
       "name": "Damped linear keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93332,6 +93838,7 @@
       "id": "silent-linear-keyboard-shortcut",
       "name": "Damped linear keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93379,6 +93886,7 @@
       "id": "silent-linear-keyboard-spacebar",
       "name": "Damped linear keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93426,6 +93934,8 @@
       "id": "silent-linear-keyboard-typed-word",
       "name": "Damped linear keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -93474,6 +93984,8 @@
       "id": "silk-match-cut",
       "name": "Silk match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -93522,6 +94034,8 @@
       "id": "silk-page-wipe",
       "name": "Silk page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -93569,6 +94083,8 @@
       "id": "silk-panel-reveal",
       "name": "Silk panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -93616,6 +94132,7 @@
       "id": "silk-pull-away",
       "name": "Silk pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -93663,6 +94180,8 @@
       "id": "silk-swipe-left",
       "name": "Silk leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -93710,6 +94229,8 @@
       "id": "silk-swipe-right",
       "name": "Silk rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -93757,6 +94278,8 @@
       "id": "silk-title-rise",
       "name": "Silk title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -93804,6 +94327,8 @@
       "id": "silk-whip-cut",
       "name": "Silk whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -93852,6 +94377,7 @@
       "id": "single-blast-through-a-cave-mouth",
       "name": "Single Blast through a Cave Mouth",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "single",
@@ -95176,6 +95702,7 @@
       "id": "slow-city-siren-loop",
       "name": "Slow City Siren",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "collection": "Alerts & phones",
       "tags": [
         "siren",
@@ -95881,6 +96408,7 @@
       "id": "small-tank-like-arcade-hull-rupture",
       "name": "Small Tank-like Arcade Hull Rupture",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "small",
@@ -96253,6 +96781,8 @@
       "id": "soft-air-match-cut",
       "name": "Soft air match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -96294,6 +96824,8 @@
       "id": "soft-air-page-wipe",
       "name": "Soft air page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -96334,6 +96866,8 @@
       "id": "soft-air-panel-reveal",
       "name": "Soft air panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -96374,6 +96908,7 @@
       "id": "soft-air-pull-away",
       "name": "Soft air pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -96414,6 +96949,8 @@
       "id": "soft-air-swipe-left",
       "name": "Soft air leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -96454,6 +96991,8 @@
       "id": "soft-air-swipe-right",
       "name": "Soft air rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -96494,6 +97033,8 @@
       "id": "soft-air-title-rise",
       "name": "Soft air title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -96534,6 +97075,8 @@
       "id": "soft-air-whip-cut",
       "name": "Soft air whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -97599,6 +98142,7 @@
       "id": "sonic-boom-doublet-over-open-water",
       "name": "Sonic Boom Doublet Over Open Water",
       "category": "Aircraft",
+      "revision": 1,
       "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
@@ -99669,6 +100213,7 @@
       "id": "steel-drum-burst",
       "name": "Steel Drum Burst",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "explosion",
@@ -99822,6 +100367,7 @@
       "id": "steel-patrol-cutter-approach-to-breakwater",
       "name": "Steel patrol cutter approach to breakwater",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -99876,6 +100422,7 @@
       "id": "steel-patrol-cutter-departure-beyond-harbor-mouth",
       "name": "Steel patrol cutter departure beyond harbor mouth",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -99932,6 +100479,7 @@
       "id": "steel-patrol-cutter-enclosed-wheelhouse-vibration-loop",
       "name": "Steel patrol cutter enclosed wheelhouse vibration loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -99988,6 +100536,7 @@
       "id": "steel-patrol-cutter-harbor-idle-machinery-loop",
       "name": "Steel patrol cutter harbor idle machinery loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -100043,6 +100592,7 @@
       "id": "steel-patrol-cutter-loaded-shaft-propulsion-loop",
       "name": "Steel patrol cutter loaded shaft propulsion loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -100099,6 +100649,7 @@
       "id": "steel-patrol-cutter-passage-cruise-loop",
       "name": "Steel patrol cutter passage cruise loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -100153,6 +100704,7 @@
       "id": "steel-patrol-cutter-reduce-to-harbor-speed",
       "name": "Steel patrol cutter reduce to harbor speed",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -100209,6 +100761,7 @@
       "id": "steel-patrol-cutter-ring-up-full-ahead",
       "name": "Steel patrol cutter ring up full ahead",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -100265,6 +100818,7 @@
       "id": "steel-patrol-cutter-settle-alongside-berth",
       "name": "Steel patrol cutter settle alongside berth",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -100319,6 +100873,7 @@
       "id": "steel-patrol-cutter-two-docking-throttle-corrections",
       "name": "Steel patrol cutter two docking throttle corrections",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -101410,6 +101965,7 @@
       "id": "sticky-mud-to-wood-planks-walking-transition",
       "name": "Sticky mud to wood planks walking transition",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface crossings",
       "tags": [
         "mud",
@@ -101548,6 +102104,7 @@
       "id": "stone-archway-concussion",
       "name": "Stone Archway Concussion",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "stone",
@@ -101780,6 +102337,7 @@
       "id": "stone-rubble-slide-after-collapse",
       "name": "Stone Rubble Slide after Collapse",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "stone",
@@ -101913,6 +102471,7 @@
       "id": "stride-concrete",
       "name": "Concrete alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -101994,6 +102553,7 @@
       "id": "stride-grass",
       "name": "Grass alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102067,6 +102627,7 @@
       "id": "stride-gravel",
       "name": "Gravel alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102139,6 +102700,7 @@
       "id": "stride-hardwood",
       "name": "Hardwood alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102221,6 +102783,7 @@
       "id": "stride-metal-stairs",
       "name": "Metal stairs alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102316,6 +102879,7 @@
       "id": "stride-mud",
       "name": "Mud alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102400,6 +102964,7 @@
       "id": "stride-puddle",
       "name": "Puddle alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102473,6 +103038,7 @@
       "id": "stride-sand",
       "name": "Sand alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102548,6 +103114,7 @@
       "id": "stride-snow",
       "name": "Snow alternating foot contact",
       "category": "Footsteps & UI",
+      "revision": 1,
       "markers": {
         "plant": 0
       },
@@ -102631,6 +103198,7 @@
       "id": "stylus-barrel-double-click",
       "name": "Stylus barrel button double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -102676,6 +103244,7 @@
       "id": "stylus-barrel-press-and-hold",
       "name": "Stylus barrel button press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -102722,6 +103291,8 @@
       "id": "stylus-barrel-press",
       "name": "Stylus barrel button single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -102768,6 +103339,7 @@
       "id": "stylus-barrel-release",
       "name": "Stylus barrel button release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -102813,6 +103385,7 @@
       "id": "stylus-barrel-three-taps",
       "name": "Stylus barrel button three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -104465,6 +105038,7 @@
       "id": "swimmer-breaks-into-air",
       "name": "Swimmer breaks back into open air",
       "category": "Water & Fire",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "surface": 0.2,
@@ -104939,6 +105513,7 @@
       "id": "tactile-mechanical-keyboard-backspace-pair",
       "name": "Tactile mechanical keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -104985,6 +105560,7 @@
       "id": "tactile-mechanical-keyboard-command-line",
       "name": "Tactile mechanical keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -105032,6 +105608,8 @@
       "id": "tactile-mechanical-keyboard-key-down",
       "name": "Tactile mechanical keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -105078,6 +105656,7 @@
       "id": "tactile-mechanical-keyboard-key-up",
       "name": "Tactile mechanical keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -105124,6 +105703,7 @@
       "id": "tactile-mechanical-keyboard-return",
       "name": "Tactile mechanical keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -105169,6 +105749,7 @@
       "id": "tactile-mechanical-keyboard-shortcut",
       "name": "Tactile mechanical keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -105215,6 +105796,7 @@
       "id": "tactile-mechanical-keyboard-spacebar",
       "name": "Tactile mechanical keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -105261,6 +105843,8 @@
       "id": "tactile-mechanical-keyboard-typed-word",
       "name": "Tactile mechanical keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -108090,6 +108674,7 @@
       "id": "tire-floats-then-finds-wet-asphalt",
       "name": "Tire Floats Then Finds Wet Asphalt",
       "category": "Vehicles & Engines",
+      "revision": 1,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
         "tire",
@@ -108416,6 +109001,8 @@
       "id": "tracing-paper-match-cut",
       "name": "Tracing paper match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -108457,6 +109044,8 @@
       "id": "tracing-paper-page-wipe",
       "name": "Tracing paper page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -108497,6 +109086,8 @@
       "id": "tracing-paper-panel-reveal",
       "name": "Tracing paper panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -108537,6 +109128,7 @@
       "id": "tracing-paper-pull-away",
       "name": "Tracing paper pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "cleanHold": [
         "mosquito_buzz"
       ],
@@ -108580,6 +109172,8 @@
       "id": "tracing-paper-swipe-left",
       "name": "Tracing paper leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -108620,6 +109214,8 @@
       "id": "tracing-paper-swipe-right",
       "name": "Tracing paper rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -108660,6 +109256,8 @@
       "id": "tracing-paper-title-rise",
       "name": "Tracing paper title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -108700,6 +109298,8 @@
       "id": "tracing-paper-whip-cut",
       "name": "Tracing paper whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -108741,6 +109341,7 @@
       "id": "trackball-double-click",
       "name": "Trackball button double click",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -108786,6 +109387,7 @@
       "id": "trackball-press-and-hold",
       "name": "Trackball button press, hold and release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -108832,6 +109434,8 @@
       "id": "trackball-press",
       "name": "Trackball button single press",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -108878,6 +109482,7 @@
       "id": "trackball-release",
       "name": "Trackball button release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -108923,6 +109528,7 @@
       "id": "trackball-three-taps",
       "name": "Trackball button three deliberate taps",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -113049,6 +113655,7 @@
       "id": "twin-outboard-speedboat-approach-from-open-water",
       "name": "Twin-outboard speedboat approach from open water",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113103,6 +113710,7 @@
       "id": "twin-outboard-speedboat-channel-cruise-loop",
       "name": "Twin-outboard speedboat channel cruise loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113156,6 +113764,7 @@
       "id": "twin-outboard-speedboat-climb-onto-plane",
       "name": "Twin-outboard speedboat climb onto plane",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113210,6 +113819,7 @@
       "id": "twin-outboard-speedboat-come-off-plane",
       "name": "Twin-outboard speedboat come off plane",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113264,6 +113874,7 @@
       "id": "twin-outboard-speedboat-helm-shelter-vibration-loop",
       "name": "Twin-outboard speedboat helm shelter vibration loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113319,6 +113930,7 @@
       "id": "twin-outboard-speedboat-mooring-idle-loop",
       "name": "Twin-outboard speedboat mooring idle loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113372,6 +113984,7 @@
       "id": "twin-outboard-speedboat-planing-throttle-loop",
       "name": "Twin-outboard speedboat planing throttle loop",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113426,6 +114039,7 @@
       "id": "twin-outboard-speedboat-return-to-idle-at-pontoon",
       "name": "Twin-outboard speedboat return to idle at pontoon",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113482,6 +114096,7 @@
       "id": "twin-outboard-speedboat-two-throttle-corrections",
       "name": "Twin-outboard speedboat two throttle corrections",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -113536,6 +114151,7 @@
       "id": "twin-outboard-speedboat-wake-recedes-past-dock",
       "name": "Twin-outboard speedboat wake recedes past dock",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -116252,6 +116868,8 @@
       "id": "velvet-match-cut",
       "name": "Velvet match cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "cut",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0399
@@ -116300,6 +116918,8 @@
       "id": "velvet-page-wipe",
       "name": "Velvet page wipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "wipe",
       "isolation": "isolated",
       "markers": {
         "apex": 0.24779999999999996
@@ -116347,6 +116967,8 @@
       "id": "velvet-panel-reveal",
       "name": "Velvet panel reveal",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
         "apex": 0.1824
@@ -116394,6 +117016,7 @@
       "id": "velvet-pull-away",
       "name": "Velvet pull away",
       "category": "Sci-Fi & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -116441,6 +117064,8 @@
       "id": "velvet-swipe-left",
       "name": "Velvet leftward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -116488,6 +117113,8 @@
       "id": "velvet-swipe-right",
       "name": "Velvet rightward swipe",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "slide",
       "isolation": "isolated",
       "markers": {
         "apex": 0.056999999999999995
@@ -116535,6 +117162,8 @@
       "id": "velvet-title-rise",
       "name": "Velvet title rise",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "rise",
       "isolation": "isolated",
       "markers": {
         "apex": 0.5903999999999999
@@ -116582,6 +117211,8 @@
       "id": "velvet-whip-cut",
       "name": "Velvet whip cut",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0192
@@ -116922,6 +117553,7 @@
       "id": "vintage-spring-keyboard-backspace-pair",
       "name": "Buckling-spring keyboard two backspaces",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -116969,6 +117601,7 @@
       "id": "vintage-spring-keyboard-command-line",
       "name": "Buckling-spring keyboard command then Return",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117017,6 +117650,8 @@
       "id": "vintage-spring-keyboard-key-down",
       "name": "Buckling-spring keyboard letter key down",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117064,6 +117699,7 @@
       "id": "vintage-spring-keyboard-key-up",
       "name": "Buckling-spring keyboard letter key release",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117111,6 +117747,7 @@
       "id": "vintage-spring-keyboard-return",
       "name": "Buckling-spring keyboard Return key",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117157,6 +117794,7 @@
       "id": "vintage-spring-keyboard-shortcut",
       "name": "Buckling-spring keyboard modifier and shortcut",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117204,6 +117842,7 @@
       "id": "vintage-spring-keyboard-spacebar",
       "name": "Buckling-spring keyboard spacebar tap",
       "category": "Footsteps & UI",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117251,6 +117890,8 @@
       "id": "vintage-spring-keyboard-typed-word",
       "name": "Buckling-spring keyboard four-letter word",
       "category": "Footsteps & UI",
+      "revision": 2,
+      "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -117299,6 +117940,7 @@
       "id": "wake-rattles-an-aluminum-skiff-floor",
       "name": "Wake rattles an aluminum skiff floor",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "backgroundChecked": true,
       "collection": "Propulsion · Contacts and transitions",
       "tags": [
@@ -117802,6 +118444,7 @@
       "id": "water-drops-from-spout",
       "name": "Water Drops from a Spout",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Watering",
       "tags": [
         "water",
@@ -118565,6 +119208,7 @@
       "id": "well-bucket-lower",
       "name": "Lowering the Well Bucket",
       "category": "Farming",
+      "revision": 2,
       "collection": "Farm · Watering",
       "tags": [
         "well",
@@ -119711,6 +120355,7 @@
       "id": "wheel-arch-throws-a-sheet-of-spray",
       "name": "Wheel Arch Throws a Sheet of Spray",
       "category": "Vehicles & Engines",
+      "revision": 1,
       "backgroundChecked": true,
       "collection": "Physics · Water, weather and impacts",
       "tags": [
@@ -119778,12 +120423,27 @@
       "id": "wide-product-reveal-swell",
       "name": "Wide Product Reveal Swell",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "swell",
+      "isolation": "isolated",
+      "markers": {
+        "apex": 1.3688
+      },
+      "contains": [
+        "one continuous air swell"
+      ],
+      "perspective": "editorial transition",
       "collection": "Creator · Reveals and transitions",
       "tags": [
         "wide",
         "product",
         "reveal",
-        "swell"
+        "swell",
+        "trailer",
+        "editorial",
+        "soft",
+        "air",
+        "untuned"
       ],
       "loopable": false,
       "durationSec": 2.32,
@@ -119797,6 +120457,13 @@
       },
       "targetRmsDbfs": -24,
       "mixRole": "interface",
+      "recording": {
+        "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
+        "author": "Nox_Sound",
+        "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "channels": 1,
       "file": "recipes/wide-product-reveal-swell.ts"
     },
@@ -119853,6 +120520,7 @@
       "id": "wind-against-a-sail-locker-hatch-gust-front-arriving",
       "name": "Wind against a sail locker hatch — gust front arriving",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "wind"
@@ -119902,6 +120570,7 @@
       "id": "wind-against-a-sail-locker-hatch-intermittent-lulls-loop",
       "name": "Wind against a sail locker hatch — intermittent lulls",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "wind"
@@ -119951,6 +120620,7 @@
       "id": "wind-against-a-sail-locker-hatch-sustained-current-loop",
       "name": "Wind against a sail locker hatch — sustained current",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "wind"
@@ -120001,6 +120671,7 @@
       "id": "wind-against-a-sail-locker-hatch-wind-dying-away",
       "name": "Wind against a sail locker hatch — wind dying away",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "wind"
@@ -121681,6 +122352,7 @@
       "id": "wood-planks-braking-skid-to-a-stop",
       "name": "Wood planks braking skid to a stop",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -121728,6 +122400,7 @@
       "id": "wood-planks-careful-toe-placement",
       "name": "Wood planks careful toe placement",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -121775,6 +122448,7 @@
       "id": "wood-planks-drop-landing-and-recovery",
       "name": "Wood planks drop landing and recovery",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -121907,6 +122581,7 @@
       "id": "wood-planks-limping-gait",
       "name": "Wood planks limping gait",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -121946,6 +122621,7 @@
       "id": "wood-planks-running-push-off",
       "name": "Wood planks running push off",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -121993,6 +122669,7 @@
       "id": "wood-planks-short-hop-landing",
       "name": "Wood planks short hop landing",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -122039,6 +122716,7 @@
       "id": "wood-planks-slow-stalking-approach",
       "name": "Wood planks slow stalking approach",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -122086,6 +122764,7 @@
       "id": "wood-planks-stagger-and-catch",
       "name": "Wood planks stagger and catch",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -122132,6 +122811,7 @@
       "id": "wood-planks-tight-turning-pivot",
       "name": "Wood planks tight turning pivot",
       "category": "Footsteps & UI",
+      "revision": 2,
       "collection": "Movement · Surface performances",
       "tags": [
         "boardwalk",
@@ -123104,6 +123784,7 @@
       "id": "wooden-gate-collapse",
       "name": "Wooden Gate Collapse",
       "category": "Impacts",
+      "revision": 2,
       "collection": "Game Combat · Blasts & Debris",
       "tags": [
         "gate",
@@ -123386,6 +124067,7 @@
       "id": "working-motorboat-steady-offshore-loop",
       "name": "Working motorboat steady offshore loop",
       "category": "Water & Fire",
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "handoff": 1.48

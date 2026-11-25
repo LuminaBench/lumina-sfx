@@ -2355,7 +2355,8 @@
       "durationSec": 0.54,
       "loopable": false,
       "brief": "Energy Shield Block",
-      "acceptance": "Short crack and a springy double resonance after the impact."
+      "acceptance": "Short crack and a springy double resonance after the impact.",
+      "revision": 2
     },
     {
       "id": "energy-shield-collapse",
@@ -2365,7 +2366,8 @@
       "durationSec": 0.73,
       "loopable": false,
       "brief": "Energy Shield Collapse",
-      "acceptance": "A bright rupture drops away through several lower sputters."
+      "acceptance": "A bright rupture drops away through several lower sputters.",
+      "revision": 2
     },
     {
       "id": "hardwood-footstep",
@@ -3106,7 +3108,7 @@
       "loopable": false,
       "brief": "Portal Unfold",
       "acceptance": "A slow tearing swell settles into a low harmonic lock distinct from teleportation.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "portal-snap-closed",
@@ -3116,7 +3118,8 @@
       "durationSec": 0.76,
       "loopable": false,
       "brief": "Portal Snap Closed",
-      "acceptance": "A broad downward fold ends in a brief, pitched closure."
+      "acceptance": "A broad downward fold ends in a brief, pitched closure.",
+      "revision": 2
     },
     {
       "id": "blink-teleport",
@@ -6725,7 +6728,8 @@
       "brief": "Clean Title Reveal with Soft Hit",
       "durationSec": 1.52,
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "wide-product-reveal-swell",
@@ -6736,7 +6740,8 @@
       "brief": "Wide Product Reveal Swell",
       "durationSec": 2.32,
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "quick-blur-cut",
@@ -6835,7 +6840,8 @@
       "brief": "Delicate Logo Close",
       "durationSec": 1.15,
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "cinematic-chapter-card-thump",
@@ -12464,7 +12470,8 @@
       "durationSec": 0.174,
       "mixRole": "interface",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "menu-cancel-felt-stop",
@@ -26312,7 +26319,8 @@
       "collection": "Studio originals · Footsteps & UI",
       "durationSec": 0.18,
       "loopable": false,
-      "brief": "Mechanical UI Click"
+      "brief": "Mechanical UI Click",
+      "revision": 2
     },
     {
       "id": "melee-swing",

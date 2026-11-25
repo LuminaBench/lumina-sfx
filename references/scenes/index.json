@@ -22,6 +22,26 @@
     "durationSec": 1.153
   },
   {
+    "id": "product-trailer-interface-edit",
+    "name": "Product trailer · typing, panel swipe and title landing",
+    "category": "UI",
+    "tags": [
+      "product",
+      "trailer",
+      "typing",
+      "panel",
+      "swipe",
+      "title",
+      "card",
+      "landing"
+    ],
+    "kind": "design",
+    "file": "references/scenes/product-trailer-interface-edit.json",
+    "isolation": "isolated",
+    "loopable": false,
+    "durationSec": 3.34
+  },
+  {
     "id": "jet-elimination-dry-latch",
     "name": "Dry HUD latch for a confirmed elimination",
     "category": "UI",

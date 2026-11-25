@@ -19,58 +19,60 @@ export interface Gesture {
   echo: number;
 }
 
-export function editorSweep(id: string, name: string, tags: string[], texture: SweepTexture, gesture: Gesture, friction?: RecordedClip): SoundRecipe {
-  function sweep(ctx: RenderContext, detail: number, seed: number) {
-    const colored = noise(ctx.random, 'pink');
-    const body = biquad('bandpass', texture.lowHz * (.78 + .28 * detail), .72, ctx.sampleRate);
-    const airLimit = biquad('lowpass', Math.min(12200, 2800 + texture.highHz * .88), .66, ctx.sampleRate);
-    const signal = new Float32Array(ctx.frames);
-    const rubbing = friction && renderRecording(ctx, friction, { seed, speed: .86 + .22 * ctx.random(),
-      cutoffHz: Math.min(7600, texture.highHz * 1.22) });
-    const rubStart = Math.max(0, Math.round((gesture.apex * gesture.duration - .069) * ctx.sampleRate));
-    let bandState = 0, lowState = 0, grain = 0, grainTarget = 0, remaining = 0, g = 0;
-    const grainFollow = 1 - Math.exp(-texture.grainHz * 3 / ctx.sampleRate);
-    const delay = Math.max(1, Math.round(.046 * ctx.sampleRate));
-    for (let i = 0; i < signal.length; i++) {
-      const u = i / Math.max(1, signal.length - 1);
-      const rise = Math.min(1, u / gesture.apex);
-      const fall = Math.max(0, (u - gesture.apex) / (1 - gesture.apex));
-      const weight = (.04 + .96 * Math.sin(Math.PI * .5 * rise) ** 1.65) * (1 - fall) ** 2.45;
-      const motion = gesture.reverse ? 1 - u : u;
-      if (remaining-- <= 0) {
-        grainTarget = ctx.random() * 2 - 1;
-        remaining = Math.round(ctx.sampleRate / texture.grainHz * (.58 + ctx.random()*.91));
-      }
-      grain += grainFollow * (grainTarget - grain);
-      // A swept state-variable filter keeps its history as the pass moves through the frame.
-      if ((i & 15) === 0) {
-        const center = texture.lowHz * 1.13 * (texture.highHz / texture.lowHz) ** (.13 + .74 * motion);
-        g = Math.tan(Math.PI * clamp(center * (.82 + detail*.36), 80, ctx.sampleRate*.43) / ctx.sampleRate);
-      }
-      const excitation = airLimit(ctx.random() * 2 - 1);
-      const band = (bandState + g * (excitation - lowState)) / (1 + g*(g+1.25));
-      const low = lowState + g * band;
-      bandState = 2 * band - bandState;
-      lowState = 2 * low - lowState;
-      const textureLevel = 1 + grain * texture.grainDepth * .64;
-      const air = .67 * band + texture.air * .48 * excitation;
-      const brush = rubbing && i >= rubStart ? rubbing[i-rubStart] : 0;
-      signal[i] = weight * (textureLevel * (air + body(colored()) * texture.body * (.86-.33*motion)) +
-        brush * 1.35) + (i >= delay ? signal[i-delay] * gesture.echo * .65 : 0);
+export function sweepAudio(ctx: RenderContext, detail: number, seed: number, texture: SweepTexture,
+  gesture: Pick<Gesture, 'duration' | 'apex' | 'reverse' | 'echo'>, friction?: RecordedClip) {
+  const colored = noise(ctx.random, 'pink');
+  const body = biquad('bandpass', texture.lowHz * (.78 + .28 * detail), .72, ctx.sampleRate);
+  const airLimit = biquad('lowpass', Math.min(12200, 2800 + texture.highHz * .88), .66, ctx.sampleRate);
+  const signal = new Float32Array(ctx.frames);
+  const rubbing = friction && renderRecording(ctx, friction, { seed, speed: .86 + .22 * ctx.random(),
+    cutoffHz: Math.min(7600, texture.highHz * 1.22) });
+  const rubStart = Math.max(0, Math.round((gesture.apex * gesture.duration - .069) * ctx.sampleRate));
+  let bandState = 0, lowState = 0, grain = 0, grainTarget = 0, remaining = 0, g = 0;
+  const grainFollow = 1 - Math.exp(-texture.grainHz * 3 / ctx.sampleRate);
+  const delay = Math.max(1, Math.round(.046 * ctx.sampleRate));
+  for (let i = 0; i < signal.length; i++) {
+    const u = i / Math.max(1, signal.length - 1);
+    const rise = Math.min(1, u / gesture.apex);
+    const fall = Math.max(0, (u - gesture.apex) / (1 - gesture.apex));
+    const weight = (.04 + .96 * Math.sin(Math.PI * .5 * rise) ** 1.65) * (1 - fall) ** 2.45;
+    const motion = gesture.reverse ? 1 - u : u;
+    if (remaining-- <= 0) {
+      grainTarget = ctx.random() * 2 - 1;
+      remaining = Math.round(ctx.sampleRate / texture.grainHz * (.58 + ctx.random()*.91));
     }
-    return signal;
+    grain += grainFollow * (grainTarget - grain);
+    // A swept state-variable filter keeps its history as the pass moves through the frame.
+    if ((i & 15) === 0) {
+      const center = texture.lowHz * 1.13 * (texture.highHz / texture.lowHz) ** (.13 + .74 * motion);
+      g = Math.tan(Math.PI * clamp(center * (.82 + detail*.36), 80, ctx.sampleRate*.43) / ctx.sampleRate);
+    }
+    const excitation = airLimit(ctx.random() * 2 - 1);
+    const band = (bandState + g * (excitation - lowState)) / (1 + g*(g+1.25));
+    const low = lowState + g * band;
+    bandState = 2 * band - bandState;
+    lowState = 2 * low - lowState;
+    const textureLevel = 1 + grain * texture.grainDepth * .64;
+    const air = .67 * band + texture.air * .48 * excitation;
+    const brush = rubbing && i >= rubStart ? rubbing[i-rubStart] : 0;
+    signal[i] = weight * (textureLevel * (air + body(colored()) * texture.body * (.86-.33*motion)) +
+      brush * 1.35) + (i >= delay ? signal[i-delay] * gesture.echo * .65 : 0);
   }
+  return signal;
+}
+
+export function editorSweep(id: string, name: string, tags: string[], texture: SweepTexture, gesture: Gesture, friction?: RecordedClip): SoundRecipe {
   const recipe: SoundRecipe = {
     id, name, tags, durationSec: gesture.duration, isolation: 'isolated', loopable: false, category: 'Sci-Fi & UI',
     perspective: 'editorial transition', contains: ['one continuous gesture'], mixRole: 'interface', targetRmsDbfs: -26,
     recording: friction?.credit,
     markers: { apex: gesture.duration * gesture.apex },
     params: { detail: { label: 'Texture brightness', min: 0, max: 1, default: .46 } },
-    render(ctx, { params, seed }) { return sweep(ctx, params.detail, seed); },
+    render(ctx, { params, seed }) { return sweepAudio(ctx, params.detail, seed, texture, gesture, friction); },
   };
   if (!gesture.direction) return recipe;
   return { ...recipe, renderStereo(ctx, { params, seed }) {
-    const mono = sweep(ctx, params.detail, seed);
+    const mono = sweepAudio(ctx, params.detail, seed, texture, gesture, friction);
     const left = new Float32Array(mono.length), right = new Float32Array(mono.length);
     for (let i = 0; i < mono.length; i++) {
       const travel = Math.cos(Math.PI * i / Math.max(1, mono.length - 1));

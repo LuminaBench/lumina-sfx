@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { editorialAction } from './editorial-intent.mjs';
 import { createHash } from 'node:crypto';
 import { renderChannels, DEFAULT_SEED } from '../engine/render.ts';
 import { encodeWav } from '../engine/wav.ts';
@@ -12,7 +13,7 @@ import { macroControls, renderDurationSec } from '../engine/sculpt.ts';
 const recipes = await loadRecipes();
 if (!recipes.length) throw new Error('No recipes found');
 const { tickets } = JSON.parse(await readFile(new URL('../tasks/queue.json', import.meta.url), 'utf8'));
-const collections = new Map(tickets.map(({ id, collection }) => [id, collection]));
+const byId = new Map(tickets.map(ticket => [ticket.id, ticket]));
 const review = JSON.parse(await readFile(new URL('../qa/background-review.json', import.meta.url), 'utf8'));
 const holds=JSON.parse(await readFile(new URL('../qa/source-holds.json',import.meta.url),'utf8')).holds;
 const reviewed = new Map([...review.sounds, ...review.relatedRepairs].map(entry => [entry.id, entry]));
@@ -31,11 +32,13 @@ function matchesReviewedAudio(recipe, fingerprint) {
 }
 const sounds = recipes.map(recipe => {
   const { id, name, category, tags, loopable, macros, params, targetRmsDbfs, mixRole, recording, additionalRecordings, spectrum, renderStereo } = recipe;
+  const ticket = byId.get(id);
   const entry = reviewed.get(id);
   const current = matchesReviewedAudio(recipe, entry?.variantsSha256);
   return {
-    id, name, category, cleanHold:holds[id]?.labels, isolation: recipe.isolation, backgroundChecked: current && !entry.auditionNote && !holds[id] || undefined,
-    auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, soloQueries:recipe.soloQueries, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: collections.get(id), tags, loopable, sustainMode:recipe.sustainMode, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
+    id, name, category, revision: ticket?.revision, editorialAction: editorialAction(id, ticket?.collection),
+    cleanHold:holds[id]?.labels, isolation: recipe.isolation, backgroundChecked: current && !entry.auditionNote && !holds[id] || undefined,
+    auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, soloQueries:recipe.soloQueries, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: ticket?.collection, tags, loopable, sustainMode:recipe.sustainMode, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
     additionalRecordings, takeCount: recipe.takeCount, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
   };
 });

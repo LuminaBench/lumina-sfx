@@ -39,20 +39,23 @@ if (values.help) {
     }
     sounds = checked;
   }
-  if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude);
+  let votes;
+  let review;
   if (values.votes) {
-    const review = JSON.parse(await readFile(values.votes, 'utf8'));
-    const votes = review.votes ?? review.reviews;
+    review = JSON.parse(await readFile(values.votes, 'utf8'));
+    votes = review.votes ?? review.reviews;
     if (!votes || typeof votes !== 'object' || Array.isArray(votes)) throw Error('Expected listening votes or studio reviews');
     const rank = { yes: 0, approved: 0, no: 2, rejected: 2 };
-    const score = sound => rank[votes[sound.id]?.decision] ?? 1;
-    sounds.sort((a, b) => score(a) - score(b));
+    const matchesRevision = sound => (votes[sound.id]?.revision ?? 1) === (sound.revision ?? 1);
+    const score = sound => matchesRevision(sound) ? rank[votes[sound.id]?.decision] ?? 1 : 1;
+    if (values.intent === undefined) sounds.sort((a, b) => score(a) - score(b));
     for (const sound of sounds) if (Object.hasOwn(votes, sound.id)) {
       const v = votes[sound.id];
-      sound.review = { decision: v.decision, reason: v.reason ?? v.note, heard: v.heard, phone: v.phone,
+      sound.review = { currentRevision: matchesRevision(sound), decision: v.decision, reason: v.reason ?? v.note, heard: v.heard, phone: v.phone,
         background: v.background ? review.bed : undefined };
     }
   }
+  if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude, false, votes);
   if (limit !== undefined) sounds = sounds.slice(0, limit);
   if (values.json) console.log(JSON.stringify(sounds, null, 2));
   else if (!sounds.length) console.log('No matching recipes');
