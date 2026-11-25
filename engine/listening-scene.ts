@@ -407,6 +407,12 @@ export function composeListeningScene(
         let peak = 0;
         for (const channel of mix) for (const x of channel) peak = Math.max(peak, Math.abs(x));
         const masterGain = Math.min(1, 10 ** (-0.58 / 20) / Math.max(peak, 1e-12));
+        const trimDb = 20 * Math.log10(masterGain);
+        for (const r of regions)
+          if (r.delivered) {
+            r.delivered.focusDbfs += trimDb;
+            r.delivered.backgroundDbfs += trimDb;
+          }
         inspect({
           masterGain,
           rate,
