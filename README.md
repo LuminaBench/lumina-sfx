@@ -12,6 +12,8 @@ Describe where the listener is and what they should hear first. A pilot can foll
 | [▶ Three shots on steel](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/pistol-steel-ricochet.mp3) · 2.85 s | Three sharp reports, each answered by a steel impact and a ricochet. |
 | [▶ Fireside storm](https://cdn.jsdelivr.net/gh/LuminaBench/lumina-sfx@9451678849c2d3af804f4c8d347f0ae9cc015b28/.github/previews/fireside-distant-thunder.mp3) · 10 s | The fire crackles up close. Thunder rolls in the distance. |
 
+For a demo video, the skill can spot gestures to picture, reuse a recorded click and deliver a separate effects track. [Score a demo edit](references/launch-audio.md#score-a-finished-edit)
+
 ## Install
 
 With Git and Node.js 22.20 or newer installed, run this command and select your coding agent.

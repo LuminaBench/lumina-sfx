@@ -105,6 +105,6 @@ for (const cue of cues) {
   };
 }
 const guidance = unresolved && requests.some(r => !r.silent && !r.closest && /\b(?:trailer|video|ui|interface|menu|teaser|promo|demo)\b/i.test(r.query))
-  ? 'Specify the audible action, for example a tab switch, a title landing or a physical source in the shot.'
+  ? 'For a whole demo, inspect the clip or edit timeline and use scripts/score-edit.mjs. With only a brief, ask what visibly changes. For one cue, specify the action.'
   : undefined;
 console.log(JSON.stringify({ decision, scene, cues, guidance }, null, 2));

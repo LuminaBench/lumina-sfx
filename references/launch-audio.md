@@ -25,6 +25,47 @@ An energetic cut calls for a faster pass. A portal opening on camera calls for t
 
 A listening vote applies to the take as heard. With `search.mjs --intent ... --votes votes.json --json`, check `review.currentRevision`. A remaster needs a new listen. Compare the alternatives for the same visible action over the actual edit at delivery volume.
 
+## Score a finished edit
+
+1. Inspect the supplied cut. `inspect` writes a contact sheet, its presentation timestamps, and a listening copy of the first original audio track when present. Open the sheet, play the audio, and scrub to individual frames for precise contacts. Use the edit's project frame rate, including fractional rates such as `"30000/1001"`. A contact sheet samples a movie and cannot infer its actions. When existing input audio is ambiguous, mark it for review.
+2. Write the observed gestures into a JSON timeline. [Generate and Settings](edits/generate-settings.json) and [Palette study](edits/palette-study.json) are complete examples. The first edit needs three contacts over ten seconds. Text generation and the logo fade stay quiet. The second needs irregular mechanical typing, a pickup, a snap and an intentional sweep. Its Preview click is already in the original.
+3. Render the planned stem, mix it with the source and audition the whole cut at normal listening volume. Compare the optional accent against removing it. Check a phone or mono fold for clarity. Preserve any original music, narration or Foley at normal level. A film can use a single contact or stay silent for an entire passage.
+
+From the skill directory:
+
+```sh
+npm run score:edit -- inspect source.mp4 --out picture-review
+npm run score:edit -- plan events.json --out cues.json
+npm run score:edit -- render cues.json --out sfx.wav
+npm run score:edit -- mix source.mp4 --stem sfx.wav --out scored.mp4
+```
+
+Planning and WAV rendering use Node. Picture inspection and MP4 delivery additionally use local FFmpeg. Set `FFMPEG_PATH` if it is outside PATH. `mix` uses the first video and audio stream and accepts a zero-based `--audio-stream` choice for another soundtrack. It creates a new MP4 and keeps the independent SFX stem available. The output directory for inspection and the output media filenames must be new.
+
+| Timeline field | How to spot it |
+| --- | --- |
+| `id`, `fps`, `durationFrames`, `events` | Use a stable project name, the edit clock and an ordered list of observations. Frame zero is the first video frame. `format` can describe a product, trailer or game menu. |
+| Event `id`, `frame`, `action` | Give the action a durable ID. Contacts include `press`, `tab`, `toggle-on`, `toggle-off`, `drag`, `snap`, `confirm`, `back`, `undo` and `redo`. A `label` records what appears on screen. |
+| `gesture` | Share this ID between a physical press and its UI consequences. The scorer also recognizes an unambiguous simultaneous press and state change, or successive events on the same named `target` within 80 ms. The most informative change owns the contact. A separate accented movement deserves its own ID when the picture supports it. |
+| `type`, `paste`, `stream` | For visible typing, give `keyFrames` as the observed absolute frame of each contact and specify the physical `device`. A paste gets one gesture. Streamed or autofilled text stays quiet. |
+| `sourceContact`, `speech` | Use `true` for a contact already in the original or `"uncertain"` to flag a listening decision. Optional project `speech` ranges are half-open frame pairs. `underSpeech: true` softens an individual cue. |
+| `syncFrame`, `endFrame`, `direction` | Set the seat or apex to a picture frame. For a moving panel give left/right travel and the motion interval. A brief accent can occupy just the fastest part of a long move. |
+| `accent`, `muted` | Optical cuts, panel motion and logos default to quiet. Use `accent: true` for an intentional editorial gesture. Controller focus changes can use a light detent. Passive cursor travel stays quiet. |
+| `soundId` | An explicitly selected clean catalog ID can override the product palette for a specific event. Use this when the object, character or visual style warrants it. |
+
+The plan reports `play`, `reuse`, `silence` or `review` per event. Resolve outstanding reviews against the picture before delivery. A project profile can set `palette`, `keyboard`, `useCase`, a relative vote file and `bindings` such as `{"tab":"settings-tab-walnut-detent"}` for a preferred candidate. A specified device on camera takes precedence. Rejections are scoped to the use case and source revision.
+
+For a targeted revision, an array such as `[{"action":"tab","trimDb":-3},{"id":"reveal","mute":true}]` softens all tab contacts and removes one sweep. A cue ID also accepts `soundId`, `gainDb` or `shiftFrames`. The other performances retain their event time, gain and seed.
+
+```sh
+npm run score:edit -- revise cues.json --changes changes.json --out revised-cues.json
+npm run score:edit -- render revised-cues.json --out revised-sfx.wav
+npm run score:edit -- mix source.mp4 --stem revised-sfx.wav --out revised.mp4
+npm run score:edit -- compare scored.mp4 --against revised.mp4 --out compare.html
+```
+
+Open the local comparison desk to switch between the two complete mixes at the same point in the picture. Reveal the choices after listening. Keep the quieter version whenever its gesture is equally clear.
+
 ## Decide what belongs in the mix
 
 Solo the closest complete performance first. For an indoor wooden step, try `indoor-hardwood-shoe-step` or `hardwood-footstep`. The heel and sole already belong to one step. For a walk, time several takes to the visible feet. A creaky old house can warrant `indoor-floorboard-brief-flex` on a particular weight shift. A normal floor needs no extra cue.

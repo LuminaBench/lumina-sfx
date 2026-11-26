@@ -12,6 +12,9 @@ export async function selectionProfile(path) {
     throw Error('Expected a useCase string');
   if (profile.votes !== undefined && typeof profile.votes !== 'string')
     throw Error('Expected a path to listening votes');
+  if (profile.keyboard !== undefined && !['mechanical','laptop'].includes(profile.keyboard)) throw Error('Choose a mechanical or laptop keyboard');
+  if (profile.bindings !== undefined && (!profile.bindings || typeof profile.bindings!=='object' || Array.isArray(profile.bindings) ||
+      Object.values(profile.bindings).some(v=>typeof v!=='string'))) throw Error('Expected action-to-recipe bindings');
   return { ...profile, votes: profile.votes && resolve(dirname(path), profile.votes) };
 }
 

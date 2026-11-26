@@ -1,11 +1,15 @@
 ---
 name: lumina-sfx
-description: Find, sculpt, layer, invent and verify offline game sound effects. Use for launch videos, keyboards, swipes, tactile menus, non-vocal alerts, scene focus, listener perspective, 3D headphone audio, moving emitters, timed focus handoffs, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, animation-driven footsteps, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
+description: Find, sculpt, layer, invent and verify offline game sound effects. Use for picture-synced demo edits, screen recordings, launch videos, keyboards, swipes, tactile menus, non-vocal alerts, scene focus, listener perspective, 3D headphone audio, moving emitters, timed focus handoffs, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, animation-driven footsteps, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
 # Lumina SFX
 
 Run the studio commands from this skill's directory using Node.js 22.12+. Pass the absolute game path to `--project` or `--dest`. Core search, WAV rendering, selective install and QA work offline from the checkout. The game uses the assets or code you install. The user can keep their existing audio manager. When shipping runtime code, include its MIT notice. The sound license permits commercial project use without audio attribution and restricts competing library distribution. [License](LICENSE)
+
+## Score a video edit
+
+For a product demo, screen recording or trailer, inspect the picture and listen to its original audio first. With a clip, use `npm run score:edit -- inspect clip.mp4 --out picture-review`; with an editor timeline, use its frame rate and event markers directly. If neither is available, ask for the clip or the timed actions. Use [the picture-scoring workflow](references/launch-audio.md#score-a-finished-edit) to mark visible gestures, render a separate SFX track and audition it under the original soundtrack. A button label describes the interface. Select its physical action. Spot manual typing, paste and streamed output separately. Keep approved cue IDs when revising an edit.
 
 ## Place the listener and choose what matters
 
