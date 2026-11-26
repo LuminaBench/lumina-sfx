@@ -1,3 +1,4 @@
+import { silentTouchRequest, stripButtonLabel } from './edit-device.mjs';
 // Action families describe what is visible at the edit. The ordered picks are
 // listening references; material, direction, input device and timing stay searchable.
 const profiles = {
@@ -47,7 +48,7 @@ export function editorialAction(id, collection) {
 }
 
 const medium = new Set('product software app application saas launch trailer teaser video demo film promo screen recording screenrecording interface ui ux menu web website motion graphics edit editorial animation'.split(' '));
-const presentation = new Set('clean professional polished premium tasteful minimalist minimal soft warm restrained modern subtle smooth understated gentle quiet crisp cinematic nice elegant simple sleek epic powerful bold punchy'.split(' '));
+const presentation = new Set('discreet tasteful clean professional polished premium minimalist minimal soft warm restrained modern subtle smooth understated gentle quiet crisp cinematic nice elegant simple sleek epic powerful bold punchy'.split(' '));
 const onScreen = new Set('ui ux menu interface tab settings cursor keyboard key typing mouse trackpad stylus toggle slider panel toast notification timeline playhead drag undo redo slot grid card field logo endcard title typography swipe whoosh transition'.split(' '));
 const fiction = new Set('magic magical spell portal warp shield blaster laser synth glitch chime beep jingle electricity electric charged discharge recharge'.split(' '));
 const world = new Set('jet plane rocket sword blade knife horse ocean surf thunder lightning rain footsteps footstep gunshot motorcycle helicopter explosion barn'.split(' '));
@@ -91,7 +92,7 @@ export function editorialBrief(terms) {
   else if (has('swipe','slide')) action = has('left','right','panel','screen') ? 'slide' : 'cut';
   else if (has('cut','transition','whoosh')) action = 'cut';
   if (!action) return loneMedium ? {terms:[], needsGesture:true} : undefined;
-  const qualifiers = terms.filter(t => !medium.has(t) && !presentation.has(t) &&
+  const qualifiers = terms.filter(t => !(t === 'fast' && ['press','tab','focus','toggle'].includes(action)) && !medium.has(t) && !presentation.has(t) &&
     !['high','energy','energetic','controller','go','short','visual','frame','turn','motion','single','between','into','view','graphic','sci','fi','scifi','futuristic','fantasy'].includes(t));
   return {action, terms:[...new Set([...qualifiers, action])]};
 }
@@ -111,6 +112,8 @@ export function listeningOrder(id) {
 // Only explicit silence or uneventful screen movement qualifies. A quiet switch and a
 // silent-mouse press still have an audible action.
 export function silentGesture(query) {
+  query = stripButtonLabel(query);
+  if (silentTouchRequest(query) || /\b(?:no|without) (?:added |audio |audible )?feedback\b/i.test(query)) return true;
   if (/\b(?:no (?:added sound|sound|feedback)|in silence|leave .{0,32}silent|keep .{0,32}silent)\b/i.test(query)) return true;
   return /\b(?:cursor|pointer)\b.*\b(?:static text|empty space|blank canvas)\b/i.test(query)
     && !/\b(?:click|hover feedback|press|tick|swipe)\b/i.test(query);

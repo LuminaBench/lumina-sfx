@@ -338,7 +338,9 @@ export function composeListeningScene(
   for (const l of named) {
     if(l.event!==undefined && (typeof l.event!=='string' || !/^[a-z][a-z0-9-]*$/.test(l.event)))throw Error('Invalid physical event identity');
     if(design.sourcePolicy==='clean' && l.recipe.isolation!=='isolated')throw Error('Clean scene needs an isolated source: '+l.recipe.id);
-    if(design.scope==='world' && (l.recipe.mixRole==='interface' || l.recipe.tags.some(t=>['menu','cursor'].includes(t))))
+    const locatedInput = l.recipe.tags.includes('launch') && l.recipe.tags.some(t=>t==='keyboard' || t==='device') &&
+      l.placement !== undefined && l.placement.kind!=='listener';
+    if(design.scope==='world' && !locatedInput && (l.recipe.mixRole==='interface' || l.recipe.tags.some(t=>['menu','cursor'].includes(t))))
       throw Error('World scene contains an interface cue: '+l.recipe.id);
     if (l.maskEq) {
       bounded(l.maskEq.hz, 50, 12000, 'maskEq centre frequency');

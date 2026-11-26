@@ -1,3 +1,4 @@
+import { geometryConflict, sourcePerspective } from './source-perspective.mjs';
 // The coding agent supplies action, viewpoint and emphasis from the user's words.
 // Resolve requested performances against the installed catalog before rendering anything.
 import { silentGesture } from './editorial-intent.mjs';
@@ -46,18 +47,25 @@ export function resolveListeningBrief(brief, bank, profile={}) {
     hits.sort((a, b) => Number(b.id === query) - Number(a.id === query) || preference(b) - preference(a));
     if (design.scope === 'world') {
       for (let i = hits.length - 1; i >= 0; i--)
-        if (hits[i].mixRole === 'interface' || hits[i].tags.some((t) => ['cursor', 'menu'].includes(t)))
+        if ((sourcePerspective(hits[i]).local || hits[i].tags.includes('menu')) &&
+            !(sourcePerspective(hits[i]).physicalInput && (settings.acoustics ||
+              (settings.placement && settings.placement.kind !== 'listener'))))
           hits.splice(i, 1);
     }
-    if (!hits.length) {
+    const conflict = hits.length && geometryConflict(hits[0],settings);
+    const compatible = hits.filter(s=>!geometryConflict(s,settings));
+    if (!compatible.length) {
       missing.push({
         query,
         label: layer.label,
-        reason: 'No eligible source matched the requested action and source policy',
+        reason: conflict || 'No eligible source matched the requested action and source policy',
       });
       continue;
     }
-    const hit = hits[0];
+    const hit = compatible[0];
+    if(sourcePerspective(hit).local && !settings.placement && !settings.acoustics)
+      settings.placement={kind:'listener'};
+    if(sourcePerspective(hit).local) settings.placement ??= {kind:'listener'};
     if (
       !settings.placement &&
       !settings.acoustics &&
@@ -65,7 +73,7 @@ export function resolveListeningBrief(brief, bank, profile={}) {
     ) {
       if (hit.tags.includes('turbofan'))
         settings.acoustics = { source: 'turbine', distanceM: 3.5, bearingDeg: 150, elevationDeg: -7 };
-      else if (hit.tags.includes('thunder'))
+      else if (hit.tags.includes('thunder') && !sourcePerspective(hit).distance)
         settings.acoustics = {
           source: 'thunder',
           distanceM: 686,

@@ -35,12 +35,12 @@ From the skill directory:
 
 ```sh
 npm run score:edit -- inspect source.mp4 --out picture-review
-npm run score:edit -- plan events.json --out cues.json
+npm run score:edit -- plan events.json --source source.mp4 --out cues.json
 npm run score:edit -- render cues.json --out sfx.wav
 npm run score:edit -- mix source.mp4 --stem sfx.wav --out scored.mp4
 ```
 
-Planning and WAV rendering use Node. Picture inspection and MP4 delivery additionally use local FFmpeg. Set `FFMPEG_PATH` if it is outside PATH. `mix` uses the first video and audio stream and accepts a zero-based `--audio-stream` choice for another soundtrack. It creates a new MP4 and keeps the independent SFX stem available. The output directory for inspection and the output media filenames must be new.
+Planning from markers and WAV rendering use Node. With `--source`, the planner measures stereo energy and peaks in 50 ms windows around each contact using FFmpeg. Mark speech spans independently. With markers alone it can apply a 6 dB speech trim. Picture inspection and MP4 delivery additionally use local FFmpeg. Set `FFMPEG_PATH` if it is outside PATH. `mix` uses the first video and audio stream and accepts a zero-based `--audio-stream` choice for another soundtrack. It creates a new MP4 and keeps the independent SFX stem available. The output directory for inspection and the output media filenames must be new.
 
 | Timeline field | How to spot it |
 | --- | --- |
@@ -48,12 +48,23 @@ Planning and WAV rendering use Node. Picture inspection and MP4 delivery additio
 | Event `id`, `frame`, `action` | Give the action a durable ID. Contacts include `press`, `tab`, `toggle-on`, `toggle-off`, `drag`, `snap`, `confirm`, `back`, `undo` and `redo`. A `label` records what appears on screen. |
 | `gesture` | Share this ID between a physical press and its UI consequences. The scorer also recognizes an unambiguous simultaneous press and state change, or successive events on the same named `target` within 80 ms. The most informative change owns the contact. A separate accented movement deserves its own ID when the picture supports it. |
 | `type`, `paste`, `stream` | For visible typing, give `keyFrames` as the observed absolute frame of each contact and specify the physical `device`. A paste gets one gesture. Streamed or autofilled text stays quiet. |
+| Project or event `device`, `feedback`, `avoid` | Specify mouse, trackpad, mechanical keyboard, touchscreen, onscreen keyboard, stylus or pen side button. A paired state inherits the device. Use `feedback: "subtle"` for deliberate digital feedback, `"none"` for silence, or `avoid: ["chime"]` to veto a timbre. |
+| Event `physicalContact` | Mark true for a close shot where the finger pad or stylus tip should be heard striking glass. Use `sourceContact: true` when the original already carries that contact. A stylus with an unidentified mechanism goes to review. |
+| `context`, `maxAddedContacts` | `rapid`, `hero` and `speech` rank compatible takes using measured brightness and decay. The planner infers rapid repeats and marked speech. A timeline-wide contact limit reserves higher-priority gestures and keeps manual typing phrases intact. |
 | `sourceContact`, `speech` | Use `true` for a contact already in the original or `"uncertain"` to flag a listening decision. Optional project `speech` ranges are half-open frame pairs. `underSpeech: true` softens an individual cue. |
 | `syncFrame`, `endFrame`, `direction` | Set the seat or apex to a picture frame. For a moving panel give left/right travel and the motion interval. A brief accent can occupy just the fastest part of a long move. |
 | `accent`, `muted` | Optical cuts, panel motion and logos default to quiet. Use `accent: true` for an intentional editorial gesture. Controller focus changes can use a light detent. Passive cursor travel stays quiet. |
 | `soundId` | An explicitly selected clean catalog ID can override the product palette for a specific event. Use this when the object, character or visual style warrants it. |
 
 The plan reports `play`, `reuse`, `silence` or `review` per event. Resolve outstanding reviews against the picture before delivery. A project profile can set `palette`, `keyboard`, `useCase`, a relative vote file and `bindings` such as `{"tab":"settings-tab-walnut-detent"}` for a preferred candidate. A specified device on camera takes precedence. Rejections are scoped to the use case and source revision.
+
+To judge a tab, open `listen.html` from the command below. Switch mixes at the same picture time. Only the named cue changes. Alternatives are matched on their measured active level over 35 ms. The omission leaves the original soundtrack audible. **Save choice** downloads a cue-specific change for `revise --changes`. When the cue has one eligible take, the desk compares it with omission.
+
+```sh
+npm run score:edit -- audition cues.json --cue settings-tab --source source.mp4 --out tab-listen
+```
+
+Approve a cue with `{"id":"settings-tab","lock":true}`. Revisions by action skip locked cues. Use `{"id":"settings-tab","character":"less-bright"}` for a single sharp contact. The scorer selects a compatible darker take or attenuates the high frequencies on the selected take. An explicit `lock:false` reopens an approved decision.
 
 For a targeted revision, an array such as `[{"action":"tab","trimDb":-3},{"id":"reveal","mute":true}]` softens all tab contacts and removes one sweep. A cue ID also accepts `soundId`, `gainDb` or `shiftFrames`. The other performances retain their event time, gain and seed.
 

@@ -30,7 +30,7 @@ a mouse double click	mouse-double-click
 mouse button release	mouse-release
 press a glass trackpad	glass-trackpad-press$
 trackpad double click	trackpad-double-click
-a stylus press	stylus.*-press$
+a stylus press	!review
 hold the mouse button	mouse-press$
 typing a word on a mechanical keyboard	keyboard-typed-word
 a title card lands	@land

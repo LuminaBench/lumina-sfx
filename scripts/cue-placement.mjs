@@ -1,5 +1,9 @@
+import { sourcePerspective } from './source-perspective.mjs';
 // Named field perspectives already contain their distance. Treat a dry point source as placeable.
 export function cuePlacement(sound, request, moving) {
+  const evidence=sourcePerspective(sound);
+  if (evidence.local && !(evidence.physicalInput && (moving || /distant|far away/i.test(request)))) return {motion:'listener-fixed',placement:{kind:'listener'}};
+  if (moving && evidence.motion) return {motion:'in-source',guide:'references/listening-scenes.md'};
   if (moving && sound.id === 'phone-ring-bell') {
     return { motion: 'pass-by', file: 'references/listening-scenes/passing-bell.json' };
   }

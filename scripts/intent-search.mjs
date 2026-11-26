@@ -1,3 +1,5 @@
+import { contextOrder, unpackContext } from './edit-context.mjs';
+import { contactQuery, excludedTraits, ambiguousPenRequest } from './edit-device.mjs';
 import {eligibleForIntent} from './source-policy.mjs';
 import { editorialBrief, editorialTerms, listeningOrder, paletteAffinity, silentGesture } from './editorial-intent.mjs';
 
@@ -41,6 +43,9 @@ function words(value) {
 
 export function rankByIntent(sounds, query, exclude = '', explain = false, votes = {}, options = {}) {
   if (silentGesture(query)) return [];
+  const spotted=unpackContext(query);
+  query = contactQuery(spotted.query);
+  if (silentGesture(query) || ambiguousPenRequest(query)) return [];
   if (options.palette && !['soft','crisp'].includes(options.palette)) throw Error('Expected palette soft or crisp');
   const directedQuery = query.replace(/\b(left|right)\s+to\s+(left|right)\b/gi, (_, start, end) => end);
   const queryWords = words(directedQuery.replace(/\bsliding (panel|screen|page)/gi, 'slide $1').replace(/\bon (?:a|an|the)\b/gi, ' '));
@@ -98,12 +103,15 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
   if (pointerAction === 'press-and-hold') terms = terms.filter(term => term !== 'release');
   const vehicleTrailer = !editorial && terms.includes('trailer') && terms.some(t => ['truck','tractor','tow','hitch','coupling','axle','cargo','flatbed'].includes(t));
   const subjectNoun = terms.includes('portal') ? 'portal' : terms.includes('shield') && terms.includes('energy') ? 'shield' : undefined;
-  const excluded = [...words(exclude), ...negated.filter(term => !isMood(term))];
+  const excluded = excludedTraits([...words(exclude), ...negated.filter(term => !isMood(term))]);
+  const tactileNotice = editorial?.action === 'notice' && excluded.includes('chime');
+  const validAction = sound => sound.editorialAction === editorial.action ||
+    (tactileNotice && sound.id === 'menu-confirm-spring-detent');
   const documents = sounds.map(sound => {
     const aliases = (sound.soloQueries ?? []).map(q => words(q).filter(w => !stopWords.has(w)));
     const title = new Set([...words(sound.id + ' ' + sound.name), ...aliases.flat()]);
     const tags = new Set(words([...sound.tags,...(sound.fieldContents??[])].join(' ')));
-    if (editorial?.action && sound.editorialAction === editorial.action) {
+    if (editorial?.action && validAction(sound)) {
       for (const term of editorialTerms(editorial.action)) tags.add(term);
     }
     const context = new Set(words([sound.category, sound.collection, sound.perspective, ...(sound.contains ?? [])].join(' ')));
@@ -117,7 +125,7 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
     (terms.includes('floor') || terms.includes('wood'));
   const scored = [];
   for (const { sound, title, tags, context, aliases } of documents) {
-    if (editorial?.action && (sound.editorialAction !== editorial.action || sound.cleanHold ||
+    if (editorial?.action && (!validAction(sound) || sound.cleanHold ||
         sound.auditionNote || sound.isolation !== 'isolated')) continue;
     if (!eligibleForIntent(sound,query)) continue;
     if (keyAction && !sound.id.endsWith('-'+keyAction) && !sound.id.includes('-'+keyAction+'-')) continue;
@@ -156,6 +164,11 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
     const order = editorial ? listeningOrder(sound.id) : 0;
     const character = editorial ? subject.filter(t => ['quiet','soft','warm','crisp','gentle','minimal','energetic','energy'].includes(t) && (title.has(t) || tags.has(t))).length : 0;
     scored.push({ sound: result, solo, surfaceStep, continuous, familyFit, signature, hits, preference, order, character, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
+  }
+  if (spotted.context && editorial) {
+    const familiar=scored.filter(x=>x.order<100 || /quiet-mouse-press|velvet-swipe|linen-match-cut/.test(x.sound.id));
+    const order=contextOrder(familiar.map(x=>x.sound.id),spotted.context);
+    for (const x of familiar) x.order=order.indexOf(x.sound.id);
   }
   return scored.sort((a, b) => Number(b.exact) - Number(a.exact) || Number(b.solo) - Number(a.solo) ||
     b.hits - a.hits || b.surfaceStep-a.surfaceStep || b.continuous-a.continuous || Number(a.preference < 0) - Number(b.preference < 0) || b.familyFit-a.familyFit || b.signature - a.signature || b.character - a.character ||

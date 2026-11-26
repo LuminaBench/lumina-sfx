@@ -1,3 +1,6 @@
+import { deviceKind, feedbackFor, excludedTraits } from './edit-device.mjs';
+import { contextOrder, levelMatch, scoreGain, softerEdge } from './edit-context.mjs';
+
 // A picture event owns its sound. Words printed inside the interface do not describe the source.
 const basic = {
   press: ['desktop-mouse-press', 'glass-trackpad-press'],
@@ -20,7 +23,20 @@ const optional = {
   redo: 'edit-redo-seat',
   disabled: 'settings-list-edge-felt-bumper',
 };
-const quiet = new Set(['stream', 'hold', 'hover', 'cursor', 'reading', 'code-output', 'autofill']);
+const quiet = new Set([
+  'stream',
+  'hold',
+  'hover',
+  'cursor',
+  'reading',
+  'code-output',
+  'autofill',
+  'spinner',
+  'progress',
+  'loading',
+  'animation',
+  'auto-reveal',
+]);
 const optIn = new Set(['slide', 'cut', 'logo', 'focus', 'scroll']);
 const weight = {
   snap: 8,
@@ -38,6 +54,9 @@ const weight = {
   cut: 1,
   logo: 1,
 };
+function eventPriority(event) {
+  return event.priority ?? (event.physicalContact ? 9 : (weight[event.action] ?? 0));
+}
 const db = {
   press: -1,
   tab: -1,
@@ -87,7 +106,7 @@ function checkEvent(e, ids, durationFrames) {
       e.frame,
       e.endFrame === undefined ? durationFrames - 1 : Math.min(e.endFrame, durationFrames - 1),
     );
-  for (const field of ['accent', 'underSpeech', 'muted'])
+  for (const field of ['accent', 'underSpeech', 'muted', 'physicalContact'])
     if (e[field] !== undefined && typeof e[field] !== 'boolean') throw Error('Expected boolean ' + field);
   if (e.gesture !== undefined && (typeof e.gesture !== 'string' || !e.gesture))
     throw Error('Supply a gesture ID');
@@ -111,29 +130,59 @@ function checkEvent(e, ids, durationFrames) {
 }
 function optionsFor(e, palette) {
   if (e.soundId) return [e.soundId];
-  const device = (e.device ?? '').toLowerCase();
-  if (e.action === 'paste')
-    return device.includes('mechanical')
-      ? ['gasket-mount-keyboard-shortcut']
-      : device.includes('keyboard') || device === 'laptop'
-        ? ['laptop-scissor-keyboard-shortcut']
-        : device.includes('trackpad')
-          ? [basic.press[1]]
-          : [basic.press[0]];
-  if (e.action === 'press') return device.includes('trackpad') ? [basic.press[1]] : [basic.press[0]];
-  if (e.action === 'type') return device.includes('mechanical') ? [basic.type[1]] : [basic.type[0]];
+  if (feedbackFor(e, e.deviceKind) === 'surface')
+    return [e.deviceKind === 'touch' ? 'fingertip-on-display-glass' : 'stylus-tip-on-tablet-glass'];
+  if (feedbackFor(e, e.deviceKind) === 'digital') return ['settings-focus-felt-tick'];
+  const physical = {
+    'pen-button': ['stylus-barrel-press'],
+    trackball: ['trackball-press'],
+    trackpad: [basic.press[1]],
+    mouse: [basic.press[0], 'quiet-mouse-press'],
+    unspecified: [basic.press[0], 'quiet-mouse-press'],
+    keyboard: [basic.type[0]],
+    mechanical: [basic.type[1]],
+    controller: ['settings-focus-felt-tick'],
+  };
+  if (e.action === 'paste' && ['keyboard', 'mechanical'].includes(e.deviceKind))
+    return [
+      e.deviceKind === 'mechanical' ? 'gasket-mount-keyboard-shortcut' : 'laptop-scissor-keyboard-shortcut',
+    ];
+  if (e.action === 'press' || e.action === 'paste') return physical[e.deviceKind] ?? [];
+  if (e.action === 'type')
+    return e.deviceKind === 'mechanical'
+      ? [basic.type[1]]
+      : ['unspecified', 'keyboard'].includes(e.deviceKind)
+        ? [basic.type[0]]
+        : [];
   if (e.action === 'slide')
-    return ['left', 'right'].includes(e.direction) ? [basic.slide[Number(e.direction === 'right')]] : [];
+    return ['left', 'right'].includes(e.direction)
+      ? ['silk-swipe-' + e.direction, 'velvet-swipe-' + e.direction]
+      : [];
   if (e.action === 'tab' && palette === 'crisp') return [...basic.tab].reverse();
+  if (e.action === 'notice') return ['menu-confirm-pluck', 'menu-confirm-spring-detent'];
+  if (e.action === 'confirm') return [...basic.confirm, 'menu-confirm-spring-detent'];
+  if (e.action === 'cut') return [...basic.cut, 'linen-match-cut'];
+  if (e.action === 'logo') return [...basic.logo, 'delicate-logo-close'];
   return [...(basic[e.action] ?? (optional[e.action] ? [optional[e.action]] : []))];
 }
-function pick(e, profile, votes, bank) {
-  const physical = e.device || (e.action === 'type' || e.action === 'paste' ? profile.keyboard : undefined);
-  const baseIds = optionsFor({ ...e, device: physical }, profile.palette);
+function pick(e, profile, votes, bank, mode) {
+  const baseIds = contextOrder(optionsFor(e, profile.palette), mode);
   const preferred = profile.bindings?.[e.action];
   if (!e.soundId && preferred && baseIds.includes(preferred))
     baseIds.splice(0, baseIds.length, preferred, ...baseIds.filter((id) => id !== preferred));
-  const choices = baseIds.map((id) => bank.get(id)).filter(eligible);
+  const choices = baseIds
+    .map((id) => bank.get(id))
+    .filter(eligible)
+    .filter(
+      (s) =>
+        !excludedTraits(e.avoid).some((word) =>
+          [s.id, ...s.tags]
+            .join(' ')
+            .toLowerCase()
+            .split(/[\s-]+/)
+            .includes(word),
+        ),
+    );
   const use = profile.useCase;
   const preference = (s) => {
     const ballot = votes[s.id];
@@ -145,9 +194,9 @@ function pick(e, profile, votes, bank) {
         ? 1
         : 0;
   };
-  return choices.filter((s) => preference(s) >= 0).sort((a, b) => preference(b) - preference(a))[0];
+  return choices.filter((s) => preference(s) >= 0).sort((a, b) => preference(b) - preference(a));
 }
-function performance(e, s, fps, project) {
+function performance(e, s, fps, project, mode, speechAt, track) {
   const speed =
     e.action === 'slide' && e.endFrame !== undefined
       ? Math.max(0.85, Math.min(1.25, (s.durationSec * fps) / (e.endFrame - e.frame)))
@@ -159,6 +208,8 @@ function performance(e, s, fps, project) {
   const frame =
     e.syncFrame ??
     (e.action === 'slide' && e.endFrame !== undefined ? Math.floor((e.frame + e.endFrame) / 2) : e.frame);
+  const base = (db[e.action] ?? -2) + (e.deviceKind === 'touch' ? -4 : 0);
+  const gainAt = (f) => scoreGain(base, s.id, f, fps, mode, speechAt(f), track);
   return {
     soundId: s.id,
     revision: s.revision ?? 1,
@@ -166,7 +217,10 @@ function performance(e, s, fps, project) {
     syncFrame: frame,
     markerSec,
     speed,
-    gainDb: (db[e.action] ?? -2) - (e.underSpeech ? 6 : 0),
+    gainDb: gainAt(e.keyFrames?.[0] ?? frame),
+    ...(e.keyFrames?.length && track
+      ? { keyGainOffsets: e.keyFrames.map((f) => Number((gainAt(f) - gainAt(e.keyFrames[0])).toFixed(2))) }
+      : {}),
     ...(e.keyFrames ? { keyFrames: e.keyFrames } : {}),
   };
 }
@@ -196,7 +250,7 @@ function inputOwners(events, fps) {
   for (const [state, presses] of matches) if (presses.length === 1) paired.set(presses[0], state);
   return paired;
 }
-export function planEdit(input, catalog, profile = {}, votes = {}) {
+export function planEdit(input, catalog, profile = {}, votes = {}, track) {
   const { fps, durationFrames } = clock(input);
   if (!Array.isArray(input.events))
     throw Error('Supply observed picture events; an empty list scores a silent edit.');
@@ -213,6 +267,21 @@ export function planEdit(input, catalog, profile = {}, votes = {}) {
   }
   const style = { ...profile, useCase: profile.useCase ?? input.format ?? 'product' };
   for (const e of input.events) checkEvent(e, ids, durationFrames);
+  for (const config of [input, ...input.events]) {
+    if (config.feedback !== undefined && !['natural', 'none', 'subtle'].includes(config.feedback))
+      throw Error('Unknown feedback policy');
+    if (
+      config.avoid !== undefined &&
+      (!Array.isArray(config.avoid) || config.avoid.some((s) => typeof s !== 'string' || !s.trim()))
+    )
+      throw Error('Expected an array of excluded sound traits');
+    if (config.device !== undefined && typeof config.device !== 'string')
+      throw Error('Expected a device name');
+    if (config.context !== undefined && !['normal', 'rapid', 'hero', 'speech'].includes(config.context))
+      throw Error('Unknown audition context');
+  }
+  if (input.maxAddedContacts !== undefined)
+    integer(input.maxAddedContacts, 'added-contact budget', 0, Number.MAX_SAFE_INTEGER);
   const paired = inputOwners(input.events, fps);
   for (const e of input.events) {
     const group = e.gesture ? 'gesture/' + e.gesture : 'cue/' + (paired.get(e.id) ?? e.id);
@@ -220,15 +289,31 @@ export function planEdit(input, catalog, profile = {}, votes = {}) {
     groups.get(group).push(e);
   }
   const cues = [];
+  const priority = new Map(input.events.map((e) => [e.id, eventPriority(e)]));
   for (const events of groups.values()) {
-    const ranked = [...events].sort(
-      (a, b) =>
-        (b.priority ?? weight[b.action] ?? 0) - (a.priority ?? weight[a.action] ?? 0) || a.frame - b.frame,
-    );
+    const ranked = [...events].sort((a, b) => eventPriority(b) - eventPriority(a) || a.frame - b.frame);
     const existing = ranked.find((e) => e.sourceContact === true);
     const uncertain = ranked.find((e) => e.sourceContact === 'uncertain');
+    const contact = ranked.find((x) => ['press', 'type', 'paste'].includes(x.action) && x.device);
+    const avoid = [...(input.avoid ?? []), ...events.flatMap((x) => x.avoid ?? [])].map((x) =>
+      x.trim().toLowerCase(),
+    );
+    const quietGesture = ranked.some((x) => x.feedback === 'none');
     let owner;
-    for (const e of ranked) {
+    for (const event of ranked) {
+      const device =
+        event.device ??
+        contact?.device ??
+        input.device ??
+        (['type', 'paste'].includes(event.action) ? style.keyboard : undefined);
+      const e = {
+        ...event,
+        device,
+        deviceKind: deviceKind(device),
+        feedback: quietGesture ? 'none' : (event.feedback ?? contact?.feedback ?? input.feedback),
+        avoid,
+      };
+      const policy = feedbackFor(e, e.deviceKind);
       const out = {
         id: e.id,
         frame: e.frame,
@@ -237,22 +322,45 @@ export function planEdit(input, catalog, profile = {}, votes = {}) {
         ...(e.label ? { label: e.label } : {}),
       };
       const navigation =
-        ['controller', 'gamepad', 'keyboard'].includes(e.device) && ['scroll', 'focus'].includes(e.action);
+        ['controller', 'keyboard', 'mechanical'].includes(e.deviceKind) &&
+        ['scroll', 'focus'].includes(e.action);
       const silent =
-        e.muted || quiet.has(e.action) || (optIn.has(e.action) && !navigation && !e.accent && !e.soundId);
+        e.muted ||
+        policy === 'silence' ||
+        quiet.has(e.action) ||
+        (optIn.has(e.action) && !navigation && !e.accent && !e.soundId);
       if (existing)
         Object.assign(out, {
-          decision: e === existing ? 'reuse' : 'silence',
+          decision: event === existing ? 'reuse' : 'silence',
           reason: 'Original audio carries this gesture',
         });
       else if (silent) Object.assign(out, { decision: 'silence', reason: 'Picture carries this beat' });
-      else if (uncertain || owner)
+      else if (uncertain || owner || policy === 'review')
         Object.assign(out, {
           decision: owner ? 'silence' : 'review',
-          reason: owner ? 'Covered by ' + owner : 'Check source audio at this gesture',
+          reason: owner
+            ? 'Covered by ' + owner
+            : uncertain
+              ? 'Check source audio at this gesture'
+              : 'Identify the physical contact or reuse the original',
         });
       else {
-        const sound = pick(e, style, votes, bank);
+        const speechAt = (f) =>
+          event.underSpeech ??
+          (events.some((x) => x.underSpeech) || speech.some(([lo, hi]) => lo <= f && f < hi));
+        const underSpeech = (e.keyFrames ?? [e.syncFrame ?? e.frame]).some(speechAt);
+        const nearby =
+          ['tab', 'focus', 'scroll', 'press'].includes(e.action) &&
+          input.events.some(
+            (x) =>
+              x.action === e.action &&
+              x.id !== e.id &&
+              !events.includes(x) &&
+              !x.muted &&
+              Math.abs(x.frame - e.frame) / fps < 0.45,
+          );
+        const mode = e.context ?? input.context ?? (underSpeech ? 'speech' : nearby ? 'rapid' : undefined);
+        const [sound, ...alternatives] = pick(e, style, votes, bank, mode === 'normal' ? undefined : mode);
         if (!sound || (e.action === 'type' && !e.keyFrames && e.endFrame !== undefined)) {
           Object.assign(out, {
             decision: 'review',
@@ -261,18 +369,48 @@ export function planEdit(input, catalog, profile = {}, votes = {}) {
               : 'Choose a clean match for this action or direction',
           });
         } else {
-          const soundsUnderSpeech =
-            e.underSpeech ??
-            (events.some((other) => other.underSpeech) ||
-              speech.some(([lo, hi]) => lo <= (e.endFrame ?? e.frame) && hi > e.frame));
           owner = e.id;
           Object.assign(out, {
             decision: 'play',
-            ...performance({ ...e, underSpeech: soundsUnderSpeech }, sound, fps, project),
+            ...performance(e, sound, fps, project, mode, speechAt, track),
+            perspective: 'listener',
+            device: e.deviceKind,
+            context: mode ?? 'normal',
+            alternatives: alternatives.map((s) => s.id),
           });
         }
       }
       cues.push(out);
+    }
+  }
+  if (input.maxAddedContacts !== undefined) {
+    let remaining = input.maxAddedContacts;
+    const ordered = cues
+      .filter((c) => c.decision === 'play')
+      .sort((a, b) => priority.get(b.id) - priority.get(a.id) || a.frame - b.frame);
+    for (const cue of ordered) {
+      const count = cue.keyFrames?.length ?? 1;
+      if (count <= remaining) remaining -= count;
+      else {
+        // A typed phrase is one observed performance. Keep its timing intact when the budget is too small.
+        for (const field of [
+          'soundId',
+          'revision',
+          'seed',
+          'syncFrame',
+          'markerSec',
+          'speed',
+          'gainDb',
+          'keyFrames',
+          'keyGainOffsets',
+          'alternatives',
+        ])
+          delete cue[field];
+        Object.assign(cue, {
+          decision: 'silence',
+          reason: 'Reserved the requested contacts for higher-priority gestures',
+        });
+      }
     }
   }
   return {
@@ -294,27 +432,59 @@ export function reviseEdit(plan, changes, catalog) {
     if (!change.action) return [change];
     if (change.id) throw Error('Address a cue by id or action');
     const { action, ...settings } = change;
-    const matches = next.cues.filter((c) => c.action === action && (c.decision === 'play' || c.muted));
+    const matches = next.cues.filter(
+      (c) => !c.locked && c.action === action && (c.decision === 'play' || c.muted),
+    );
     if (!matches.length) throw Error('No scored cues for ' + action);
     return matches.map((c) => ({ ...settings, id: c.id }));
   });
   for (const change of expanded) {
-    const { id, mute, gainDb, trimDb, shiftFrames, soundId, ...other } = change;
+    const {
+      id,
+      mute,
+      gainDb,
+      trimDb,
+      shiftFrames,
+      soundId: requestedSound,
+      lock,
+      character,
+      ...other
+    } = change;
+    let soundId = requestedSound;
     const cue = next.cues.find((c) => c.id === id);
     if (
       !cue ||
       seen.has(id) ||
       Object.keys(other).length ||
-      [mute, gainDb, trimDb, shiftFrames, soundId].every((v) => v === undefined)
+      [mute, gainDb, trimDb, shiftFrames, soundId, lock, character].every((v) => v === undefined)
     )
       throw Error('Invalid edit for ' + id);
     seen.add(id);
+    if (lock !== undefined && typeof lock !== 'boolean') throw Error('Expected boolean lock');
+    if (
+      cue.locked &&
+      lock !== false &&
+      [mute, gainDb, trimDb, shiftFrames, soundId, character].some((x) => x !== undefined)
+    )
+      throw Error('Unlock the approved cue before revising ' + id);
+    if (lock !== undefined) cue.locked = lock;
+    if ([mute, gainDb, trimDb, shiftFrames, soundId, character].every((x) => x === undefined)) continue;
     if (mute !== undefined && typeof mute !== 'boolean') throw Error('Expected boolean mute');
     if (cue.decision !== 'play' && !(cue.soundId && cue.muted))
       throw Error('Revise source observations before adding sound to ' + id);
+    if (character !== undefined) {
+      if (character !== 'less-bright' || soundId !== undefined)
+        throw Error('Specify less-bright or a replacement take');
+      soundId = softerEdge(cue.soundId, cue.alternatives ?? []);
+      if (!soundId) cue.edgeDb = Math.max(-12, (cue.edgeDb ?? 0) - 4);
+    }
     if (soundId !== undefined) {
       const sound = catalog.find((s) => s.id === soundId);
       if (!eligible(sound)) throw Error('Replacement needs a clean, reviewed source for ' + id);
+      if (cue.alternatives?.includes(sound.id)) {
+        cue.gainDb = Math.max(-80, Math.min(12, cue.gainDb + levelMatch(cue.soundId, sound.id)));
+        cue.alternatives = [cue.soundId, ...cue.alternatives.filter((id) => id !== sound.id)];
+      } else if (cue.soundId !== sound.id) cue.alternatives = [];
       cue.soundId = sound.id;
       cue.revision = sound.revision ?? 1;
       const m = sound.markers ?? {};

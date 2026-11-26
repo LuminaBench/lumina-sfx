@@ -8,13 +8,14 @@ main{max-width:940px;margin:4vh auto;padding:0 16px}h1{font-size:1.4rem}video{di
 </style>
 <main><h1>Picture mix comparison</h1><video id="picture" playsinline preload="auto"></video><video id="other" playsinline preload="auto" hidden style="display:none"></video>
 <div class="controls"><button id="play">Play</button><input id="seek" type="range" min="0" max="1" step=".01" value="0" aria-label="Picture time">
-<button id="a" aria-pressed="true">Mix A</button><button id="b" aria-pressed="false">Mix B</button><button id="reveal">Reveal mixes</button></div><output id="status" aria-live="polite"></output></main>
-<script type="application/json" id="files"><!--MIXES--></script>
+<button id="a" aria-pressed="true">Mix A</button><button id="b" aria-pressed="false">Mix B</button><button id="c" hidden aria-pressed="false">Mix C</button><button id="keep" hidden>Save choice</button><button id="reveal">Reveal mixes</button></div><output id="status" aria-live="polite"></output></main>
+<script type="application/json" id="ballot"><!--BALLOT--></script><script type="application/json" id="files"><!--MIXES--></script>
 <script>
 const $=id=>document.getElementById(id), files=JSON.parse($('files').textContent), tracks=[$('picture'),$('other')];
-if(crypto.getRandomValues(new Uint8Array(1))[0]%2)files.reverse();
+for(let i=files.length-1;i>0;i--){const j=crypto.getRandomValues(new Uint32Array(1))[0]%(i+1);[files[i],files[j]]=[files[j],files[i]];}
+if(files.length===3){const third=$('other').cloneNode();third.removeAttribute('id');$('other').after(third);tracks.push(third);$('c').hidden=false;}
 let current=0,operation=0;
-function display(i){tracks.forEach((v,k)=>{v.style.display=k===i?'block':'none';v.hidden=k!==i;v.muted=k!==i;});$('a').setAttribute('aria-pressed',String(i===0));$('b').setAttribute('aria-pressed',String(i===1));}
+function display(i){tracks.forEach((v,k)=>{v.style.display=k===i?'block':'none';v.hidden=k!==i;v.muted=k!==i;});$('a').setAttribute('aria-pressed',String(i===0));$('b').setAttribute('aria-pressed',String(i===1));$('c').setAttribute('aria-pressed',String(i===2));}
 tracks.forEach((v,k)=>{
  v.src=files[k];v.addEventListener('loadedmetadata',()=>{$('seek').max=v.duration;});
  v.addEventListener('timeupdate',()=>{if(k===current)$('seek').value=v.currentTime;});
@@ -22,6 +23,13 @@ tracks.forEach((v,k)=>{
  v.addEventListener('pause',()=>{if(k===current)$('play').textContent='Play';});
  v.addEventListener('error',()=>{$('status').textContent='Keep both movie files at their original paths.';});
 });
+const ballot=JSON.parse($('ballot').textContent);
+if(ballot){$('keep').hidden=false;$('keep').onclick=()=>{
+ const choice=ballot[decodeURIComponent(files[current].split('/').pop())];
+ const url=URL.createObjectURL(new Blob([JSON.stringify(choice,null,2)],{type:'application/json'}));
+ const a=document.createElement('a');a.href=url;a.download='cue-choice.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+ $('status').textContent='Choice saved for this cue.';
+};}
 display(0);
 async function select(i){
  if(i===current)return;
@@ -32,6 +40,6 @@ async function select(i){
 }
 $('play').onclick=()=>{operation++;const v=tracks[current];if(v.paused)v.play();else v.pause();};
 $('seek').oninput=e=>{tracks[current].currentTime=Number(e.target.value);};
-$('a').onclick=()=>select(0);$('b').onclick=()=>select(1);
-$('reveal').onclick=()=>{$('status').textContent=files.map((x,i)=>'Mix '+(i?'B':'A')+' · '+decodeURIComponent(x.split('/').pop())).join('     ');};
+$('a').onclick=()=>select(0);$('b').onclick=()=>select(1);$('c').onclick=()=>select(2);
+$('reveal').onclick=()=>{$('status').textContent=files.map((x,i)=>'Mix '+'ABC'[i]+' · '+decodeURIComponent(x.split('/').pop())).join('     ');};
 </script></html>

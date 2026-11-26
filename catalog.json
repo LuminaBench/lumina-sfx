@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2859,
+  "count": 2861,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -37770,6 +37770,48 @@
       "mixRole": "interface",
       "channels": 2,
       "file": "recipes/fine-grain-whip-cut.ts"
+    },
+    {
+      "id": "fingertip-on-display-glass",
+      "name": "Close fingertip contact on display glass",
+      "category": "Footsteps & UI",
+      "revision": 1,
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "one damped finger-pad contact on display glass"
+      ],
+      "perspective": "close dry contact",
+      "collection": "Launch video · Device clicks",
+      "tags": [
+        "finger",
+        "fingertip",
+        "glass",
+        "display",
+        "touchscreen",
+        "hardware",
+        "close",
+        "single",
+        "soft",
+        "contact",
+        "tap"
+      ],
+      "loopable": false,
+      "durationSec": 0.062,
+      "params": {
+        "pressure": {
+          "label": "Finger pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.52
+        }
+      },
+      "targetRmsDbfs": -34,
+      "mixRole": "foley",
+      "channels": 1,
+      "file": "recipes/fingertip-on-display-glass.ts"
     },
     {
       "id": "finisher-confirm-low-grate-snap",
@@ -103586,6 +103628,48 @@
       },
       "channels": 1,
       "file": "recipes/stylus-barrel-three-taps.ts"
+    },
+    {
+      "id": "stylus-tip-on-tablet-glass",
+      "name": "Polymer pen tip on tablet glass",
+      "category": "Footsteps & UI",
+      "revision": 1,
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "one polymer nib tap on tablet glass"
+      ],
+      "perspective": "close dry contact",
+      "collection": "Launch video · Device clicks",
+      "tags": [
+        "stylus",
+        "pen",
+        "nib",
+        "tip",
+        "tablet",
+        "glass",
+        "hardware",
+        "single",
+        "tap",
+        "contact",
+        "close"
+      ],
+      "loopable": false,
+      "durationSec": 0.054,
+      "params": {
+        "pressure": {
+          "label": "Nib pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.46
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "foley",
+      "channels": 1,
+      "file": "recipes/stylus-tip-on-tablet-glass.ts"
     },
     {
       "id": "subway-distant-blast",

@@ -3,6 +3,7 @@ import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 import { selectionProfile, listeningVotes } from './selection-profile.mjs';
 import {eligibleForIntent} from './source-policy.mjs';
+import { ambiguousPenRequest } from './edit-device.mjs';
 import { cuePlacement } from './cue-placement.mjs';
 import { leafIds } from './scene-leaves.mjs';
 import { editorialPurpose, silentGesture } from './editorial-intent.mjs';
@@ -32,6 +33,8 @@ if(values.brief){
 const passBy = /\s+(?:passing|moving|travelling|traveling|flying)\s+(?:past\s+)?(?:the\s+)?listener$/i;
 const requests = positionals.map(query => {
   if (silentGesture(query)) return {query, silent:true, matches:new Set()};
+  if (ambiguousPenRequest(query))
+    return {query,matches:new Set(),missing:['tip contact or barrel button']};
   const solo = /\b(?:only|alone|without)\b/i.test(query) && !/\b(?:menu|ui|settings|trailer)\b/i.test(query);
   const candidates = bank.filter(s => eligibleForIntent(s,query) && (!solo || s.isolation==='isolated'));
   const moving = passBy.test(query);

@@ -29120,6 +29120,26 @@
       "category": "Footsteps & UI",
       "durationSec": 0.58,
       "loopable": false
+    },
+    {
+      "id": "stylus-tip-on-tablet-glass",
+      "brief": "Close tablet pen tip contact",
+      "collection": "Launch video \u00b7 Device clicks",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.054,
+      "loopable": false,
+      "revision": 1
+    },
+    {
+      "id": "fingertip-on-display-glass",
+      "brief": "Close finger pad contact on glass",
+      "collection": "Launch video \u00b7 Device clicks",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.062,
+      "loopable": false,
+      "revision": 1
     }
   ]
 }

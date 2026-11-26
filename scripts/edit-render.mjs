@@ -35,6 +35,15 @@ export async function renderEdit(plan, catalog, out) {
       cue.markerSec > s.durationSec
     )
       throw Error('Invalid performance ' + cue.id);
+    if (cue.edgeDb !== undefined && (!Number.isFinite(cue.edgeDb) || cue.edgeDb < -12 || cue.edgeDb > 0))
+      throw Error('Invalid edge trim');
+    if (
+      cue.keyGainOffsets !== undefined &&
+      (!Array.isArray(cue.keyGainOffsets) ||
+        cue.keyGainOffsets.length !== cue.keyFrames?.length ||
+        cue.keyGainOffsets.some((v) => !Number.isFinite(v) || Math.abs(v) > 60))
+    )
+      throw Error('Invalid per-key gain offsets');
     const { default: recipe } = await import('../recipes/' + s.id + '.ts');
     for (const [i, frame] of (cue.keyFrames ?? [cue.syncFrame]).entries()) {
       if (!Number.isSafeInteger(frame) || frame < 0 || frame >= durationFrames)
@@ -44,7 +53,8 @@ export async function renderEdit(plan, catalog, out) {
         recipe,
         seed: (cue.seed + Math.imul(i, 8191)) >>> 0,
         speed: cue.speed,
-        gain: 10 ** (cue.gainDb / 20),
+        edgeDb: cue.edgeDb,
+        gain: 10 ** (Math.max(-80, Math.min(12, cue.gainDb + (cue.keyGainOffsets?.[i] ?? 0))) / 20),
       });
     }
   }
@@ -71,6 +81,17 @@ export async function renderEdit(plan, catalog, out) {
         while (idx < events.length && events[idx].start < at + n) {
           const e = events[idx++],
             pcm = renderChannels(e.recipe, { seed: e.seed, level: 'balanced', macros: { speed: e.speed } });
+          if (e.edgeDb) {
+            const edge = 10 ** (e.edgeDb / 20),
+              alpha = 1 - Math.exp((-2 * Math.PI * 2400) / rate);
+            for (const channel of pcm) {
+              let low = 0;
+              for (let i = 0; i < channel.length; i++) {
+                low += alpha * (channel[i] - low);
+                channel[i] = low + (channel[i] - low) * edge;
+              }
+            }
+          }
           active.push({ ...e, pcm, end: e.start + pcm[0].length });
         }
         for (const e of active) {

@@ -173,20 +173,25 @@ export async function mixPicture(file, stem, out, audioStream = 0) {
 }
 
 // One picture and a common transport, so an A/B switch never moves the viewer to another beat.
-export async function comparePictures(a, b, out) {
-  const [first, second] = await Promise.all([mediaInfo(a, true), mediaInfo(b, true)]);
-  if (Math.abs(first.seconds - second.seconds) > 0.055)
+export async function comparePictures(a, b, out, c, ballot) {
+  const files = [a, b, ...(c ? [c] : [])];
+  const [first, ...others] = await Promise.all(files.map((f) => mediaInfo(f, true)));
+  if (others.some((x) => Math.abs(first.seconds - x.seconds) > 0.055))
     throw Error('Compare two mixes of the same cut and duration');
   const local = (file) =>
     relative(dirname(resolve(out)), resolve(file))
       .split(sep)
       .map((s) => encodeURIComponent(s))
       .join('/');
-  const [one, two] = [local(a), local(b)];
+
   const template = await readFile(new URL('../references/edit-comparison.html', import.meta.url), 'utf8');
   await publishAsset(
     resolve(out),
-    Buffer.from(template.replace('<!--MIXES-->', JSON.stringify([one, two]).replaceAll('<', '\\u003c'))),
+    Buffer.from(
+      template
+        .replace('<!--BALLOT-->', JSON.stringify(ballot ?? null).replaceAll('<', '\\u003c'))
+        .replace('<!--MIXES-->', JSON.stringify(files.map(local)).replaceAll('<', '\\u003c')),
+    ),
   );
   return { file: resolve(out), duration: first.seconds };
 }

@@ -2,6 +2,8 @@
 
 A listening scene places sounds in metres and gives the mix a subject. Source audio, position and emphasis are independently editable. Use one source when one performance already contains the requested event. Keep UI clicks attached to the listener unless they come from a physical control in the world.
 
+The brief resolver keeps screen feedback attached to the listener. A physical keyboard filmed across a room can take a world position. A source named as a flyby, distant take or echo already carries part of its perspective. For a new trajectory, distance or room, the resolver checks compatible alternatives and flags conflicting source evidence for review. Unannotated recordings still need a listen.
+
 ## Continuous weather and waterlines
 
 For a long take, give one evolving rain or fire layer the duration of the shot. The renderer can carry the performance across the whole scene and keep the same result for a given seed. Inspect the dry stem across at least three nominal loop lengths. Listen for the same prominent drop, pop or swell at regular intervals.

@@ -1,0 +1,188 @@
+{
+  "delicate-logo-close": {
+    "peakDb": -8.34,
+    "activeDb": -21.04,
+    "tailMs": 517.8,
+    "bright": 0.1027
+  },
+  "desktop-mouse-press": {
+    "peakDb": -12.17,
+    "activeDb": -26.51,
+    "tailMs": 7.1,
+    "bright": 0.3117
+  },
+  "fingertip-on-display-glass": {
+    "peakDb": -11.87,
+    "activeDb": -28.42,
+    "tailMs": 9.8,
+    "bright": 0.1104
+  },
+  "gasket-mount-keyboard-key-down": {
+    "peakDb": -12.43,
+    "activeDb": -25.84,
+    "tailMs": 26.3,
+    "bright": 0.2202
+  },
+  "gasket-mount-keyboard-shortcut": {
+    "peakDb": -9.11,
+    "activeDb": -22,
+    "tailMs": 181.6,
+    "bright": 0.163
+  },
+  "glass-trackpad-press": {
+    "peakDb": -12.19,
+    "activeDb": -26.43,
+    "tailMs": 7.1,
+    "bright": 0.3008
+  },
+  "laptop-scissor-keyboard-key-down": {
+    "peakDb": -10.82,
+    "activeDb": -26.45,
+    "tailMs": 15.8,
+    "bright": 0.3052
+  },
+  "laptop-scissor-keyboard-shortcut": {
+    "peakDb": -7.26,
+    "activeDb": -23.48,
+    "tailMs": 216.2,
+    "bright": 0.2434
+  },
+  "linen-match-cut": {
+    "peakDb": -12.13,
+    "activeDb": -22.58,
+    "tailMs": 57.6,
+    "bright": 0.107
+  },
+  "logo-felt-signature": {
+    "peakDb": -14.69,
+    "activeDb": -21.56,
+    "tailMs": 119.3,
+    "bright": 0.0165
+  },
+  "menu-confirm-pluck": {
+    "peakDb": -13.35,
+    "activeDb": -23.05,
+    "tailMs": 65.5,
+    "bright": 0.0405
+  },
+  "menu-confirm-spring-detent": {
+    "peakDb": -11.59,
+    "activeDb": -24.68,
+    "tailMs": 27.1,
+    "bright": 0.0598
+  },
+  "menu-item-lifted-for-dragging": {
+    "peakDb": -9.23,
+    "activeDb": -26.29,
+    "tailMs": 14.9,
+    "bright": 0.2892
+  },
+  "menu-item-snaps-into-a-slot": {
+    "peakDb": -10.65,
+    "activeDb": -25.19,
+    "tailMs": 15.3,
+    "bright": 0.1397
+  },
+  "quiet-mouse-press": {
+    "peakDb": -11.39,
+    "activeDb": -26.18,
+    "tailMs": 9.6,
+    "bright": 0.266
+  },
+  "settings-apply-overcentre-latch": {
+    "peakDb": -8.1,
+    "activeDb": -23.64,
+    "tailMs": 82.5,
+    "bright": 0.1776
+  },
+  "settings-back-suede-release": {
+    "peakDb": -6.88,
+    "activeDb": -22.73,
+    "tailMs": 55.9,
+    "bright": 0.1434
+  },
+  "settings-focus-felt-tick": {
+    "peakDb": -9.95,
+    "activeDb": -26.43,
+    "tailMs": 7.3,
+    "bright": 0.2944
+  },
+  "settings-slider-knurled-index": {
+    "peakDb": -10.75,
+    "activeDb": -26.59,
+    "tailMs": 7.4,
+    "bright": 0.3088
+  },
+  "settings-subtab-porcelain-tip": {
+    "peakDb": -10.86,
+    "activeDb": -26.6,
+    "tailMs": 15.2,
+    "bright": 0.3254
+  },
+  "settings-tab-walnut-detent": {
+    "peakDb": -10.04,
+    "activeDb": -25.89,
+    "tailMs": 13.7,
+    "bright": 0.2317
+  },
+  "settings-toggle-engage-brass": {
+    "peakDb": -7.82,
+    "activeDb": -26.33,
+    "tailMs": 37.2,
+    "bright": 0.2535
+  },
+  "settings-toggle-off-cork": {
+    "peakDb": -12.39,
+    "activeDb": -25.8,
+    "tailMs": 46.5,
+    "bright": 0.1327
+  },
+  "silk-swipe-left": {
+    "peakDb": -12.54,
+    "activeDb": -24.92,
+    "tailMs": 88.5,
+    "bright": 0.0573
+  },
+  "silk-swipe-right": {
+    "peakDb": -12.54,
+    "activeDb": -24.92,
+    "tailMs": 88.5,
+    "bright": 0.0573
+  },
+  "soft-air-match-cut": {
+    "peakDb": -11.22,
+    "activeDb": -21.94,
+    "tailMs": 54.6,
+    "bright": 0.0435
+  },
+  "stylus-barrel-press": {
+    "peakDb": -11.22,
+    "activeDb": -26.1,
+    "tailMs": 12.4,
+    "bright": 0.2662
+  },
+  "stylus-tip-on-tablet-glass": {
+    "peakDb": -7.53,
+    "activeDb": -24.79,
+    "tailMs": 9,
+    "bright": 0.2261
+  },
+  "trackball-press": {
+    "peakDb": -10.63,
+    "activeDb": -25.3,
+    "tailMs": 14.2,
+    "bright": 0.1584
+  },
+  "velvet-swipe-left": {
+    "peakDb": -13.36,
+    "activeDb": -24.94,
+    "tailMs": 93.6,
+    "bright": 0.0226
+  },
+  "velvet-swipe-right": {
+    "peakDb": -13.36,
+    "activeDb": -24.94,
+    "tailMs": 93.6,
+    "bright": 0.0226
+  }
+}
