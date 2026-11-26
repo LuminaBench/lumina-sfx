@@ -57,12 +57,12 @@ for (const [prompt, expected] of [
   ['switch between tabs in the settings menu', 'settings-tab-walnut-detent'],
   ['understated menu hover', 'settings-focus-felt-tick'],
   ['panel slides into view', 'silk-swipe-right'],
-  ['logo sting', 'delicate-logo-close'],
+  ['logo sting', 'logo-felt-signature'],
   ['cinematic product trailer impact', 'clean-title-reveal-with-soft-hit'],
   ['trailer riser', 'silk-title-rise'],
   ['soft logo outro', 'delicate-logo-close'],
   ['title card lands', 'clean-title-reveal-with-soft-hit'],
-  ['high energy product trailer transition', 'silk-whip-cut'],
+  ['high energy product trailer transition', 'celluloid-whip-cut'],
   ['quick swish for a product demo', 'silk-whip-cut'],
   ['left to right swipe for a trailer', 'silk-swipe-right'],
   ['right to left swipe for a trailer', 'silk-swipe-left'],
@@ -104,3 +104,28 @@ try {
 } finally {
   await rm(temp, {recursive:true, force:true});
 }
+
+const profileDir=await mkdtemp(join(tmpdir(),'lumina-palette-'));
+try {
+  const profileFile=join(profileDir,'project.json');
+  await writeFile(profileFile,JSON.stringify({palette:'crisp',useCase:'settings',votes:'ear.json'}));
+  await writeFile(join(profileDir,'ear.json'),JSON.stringify({votes:{'settings-subtab-porcelain-tip':{decision:'no',useCase:'trailer'}}}));
+  assert.equal(choose('--profile',profileFile,'settings tab').cues[0].id,'settings-subtab-porcelain-tip');
+  await writeFile(join(profileDir,'ear.json'),JSON.stringify({votes:{'settings-subtab-porcelain-tip':{decision:'no',useCase:'settings',revision:bank.find(s=>s.id==='settings-subtab-porcelain-tip').revision??1}}}));
+  assert.equal(choose('--profile',profileFile,'settings tab').cues[0].id,'settings-tab-walnut-detent');
+} finally {await rm(profileDir,{recursive:true,force:true});}
+assert.equal(choose('cursor moves across static text').decision,'silence');
+assert.equal(choose('a disabled toggle gives no feedback').decision,'silence');
+assert.equal(choose('release a UI drag handle').cues[0].editorial.action,'drop');
+assert.equal(choose('nothing resembling an uncut sapphire biplane').cues[0].closest,null);
+assert.equal(choose('a bell passing the listener').cues[0].spatial.file,'references/listening-scenes/passing-bell.json');
+assert.ok(rankByIntent(bank,'pasture birds').some(x=>x.sourceReview==='field'));
+assert.ok(!rankByIntent(bank,'pasture without birds').some(x=>x.sourceReview==='field'));
+assert.equal(choose('hold the mouse button').cues[0].id, 'desktop-mouse-press');
+assert.equal(choose('desktop-mouse-press-and-hold').cues[0].id, 'desktop-mouse-press-and-hold');
+const movingFan = choose('dry cockpit moving past the listener').cues[0].spatial.design;
+assert.equal(movingFan.layers.length, 1);
+assert.ok(movingFan.layers[0].placement.position[0] < 0 && movingFan.layers[0].placement.path[0].position[0] > 0);
+assert.ok(choose('a distant rolling jet flyby').cues[0].spatial.design.layers[0].placement.position[2] < -10);
+assert.match(choose('rain patter on a loose garage door').cues[0].id, /garage-door-downpour-recedes$/);
+assert.ok(!rankByIntent(bank, 'garage door rain').some(s => s.id.endsWith('garage-door-continuous-patter-loop')));

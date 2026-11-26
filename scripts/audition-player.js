@@ -107,7 +107,7 @@ function vote(decision) {
   }
   const item = choices[index];
   votes[item.id] = {
-    decision, revision: item.revision,
+    decision, revision: item.revision, useCase:data.useCase,
     heard: el('heard').value,
     reason: el('reason').value,
     background: el('bed').checked,

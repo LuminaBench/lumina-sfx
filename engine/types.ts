@@ -60,6 +60,8 @@ export interface RecordingCredit {
 export interface SoundRecipe {
   /** A scene owns its event clock and relative listening level. */
   preserveTimeline?: boolean;
+  /** Audible issue that should exclude this take from automatic and clean selection. */
+  readonly auditionNote?: string;
   readonly isolation?: 'isolated';
   readonly markers?: Readonly<Record<string, number>>;
   readonly soloQueries?: readonly string[];

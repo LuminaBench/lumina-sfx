@@ -1,6 +1,6 @@
 {
   "name": "lumina-sfx-studio",
-  "version": "1.5.0-rc.5",
+  "version": "1.5.0-rc.6",
   "private": true,
   "type": "module",
   "engines": {
@@ -25,7 +25,9 @@
     "footsteps": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/footsteps.mjs",
     "test:movement": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/footsteps.test.mjs",
     "test:listening": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/listening-scene.test.mjs",
-    "qa:legacy": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/verify-legacy.mjs"
+    "qa:legacy": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/verify-legacy.mjs",
+    "qa:selection": "node qa/selection-benchmark.mjs",
+    "qa:repeats": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/repeated-use.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

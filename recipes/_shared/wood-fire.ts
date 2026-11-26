@@ -16,9 +16,10 @@ export function woodFire(
   space: AcousticSpace,
   movement: Movement,
   brightness: number,
+  variedWindows = false,
 ) {
   const rate = ctx.sampleRate;
-  const source = sustain(ctx, burn, seed, .87 + .17 * size, 5500 + 3100 * brightness);
+  const source = sustain(ctx, burn, seed, .87 + .17 * size, 5500 + 3100 * brightness, variedWindows);
   const rumbleCut = biquad('highpass', 47 + 27 * (1 - size), .68, rate);
   const warmth = biquad('lowpass', 410 + 260 * size, .67, rate);
   const mid = biquad('lowpass', 1450 + 1050 * brightness, .68, rate);

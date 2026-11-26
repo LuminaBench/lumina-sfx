@@ -6,6 +6,8 @@ import source from './_recordings/isolated-rain-roof.ts';
 export default {
   id: "windblown-rain-on-a-loose-garage-door-downpour-recedes", name: "Windblown rain on a loose garage door — downpour recedes", category: "Weather & Ambience",
   tags: ["rain", "field-recording", "interior", "downpour recedes", "windblown", "on", "a"], loopable: false, durationSec: 4.78,
+  soloQueries: ['garage door rain patter', 'rain on a loose metal door', 'rain patter on a loose garage door'],
+  contains: ['rain patter on sheet metal', 'loose door rattle'],
   mixRole: "ambience", targetRmsDbfs: -25,
   params: { intensity: { label: "Intensity", min: 0, max: 1, default: 0.52 } },
   ...sceneCredits(source), isolation: 'isolated', components: ['rain'],

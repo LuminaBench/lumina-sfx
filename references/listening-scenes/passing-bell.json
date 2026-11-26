@@ -9,7 +9,7 @@
   "layers": [
     {
       "id": "phone-ring-bell",
-      "label": "ring-left",
+      "label": "ring-1",
       "offsetSec": 0,
       "durationSec": 0.222,
       "macros": {
@@ -18,35 +18,17 @@
       "placement": {
         "kind": "point",
         "position": [
-          -3,
+          -4,
           0.3,
-          -1
+          -1.7
         ],
-        "refDistance": 1.4,
-        "path": [
-          {
-            "at": 1,
-            "position": [
-              0,
-              0.3,
-              -1.4
-            ]
-          },
-          {
-            "at": 1.9,
-            "position": [
-              2,
-              0.3,
-              -0.6
-            ]
-          }
-        ]
+        "refDistance": 1.4
       }
     },
     {
       "id": "phone-ring-bell",
-      "label": "ring-near",
-      "offsetSec": 0.85,
+      "label": "ring-2",
+      "offsetSec": 0.58,
       "durationSec": 0.222,
       "macros": {
         "pitchShift": 5
@@ -54,35 +36,17 @@
       "placement": {
         "kind": "point",
         "position": [
-          -3,
+          -2,
           0.3,
-          -1
+          -1.7
         ],
-        "refDistance": 1.4,
-        "path": [
-          {
-            "at": 1,
-            "position": [
-              0,
-              0.3,
-              -1.4
-            ]
-          },
-          {
-            "at": 1.9,
-            "position": [
-              2,
-              0.3,
-              -0.6
-            ]
-          }
-        ]
+        "refDistance": 1.4
       }
     },
     {
       "id": "phone-ring-bell",
-      "label": "ring-right",
-      "offsetSec": 1.6,
+      "label": "ring-3",
+      "offsetSec": 1.14,
       "durationSec": 0.222,
       "macros": {
         "pitchShift": 5
@@ -90,29 +54,47 @@
       "placement": {
         "kind": "point",
         "position": [
-          -3,
+          -0.4,
           0.3,
-          -1
+          -1.7
         ],
-        "refDistance": 1.4,
-        "path": [
-          {
-            "at": 1,
-            "position": [
-              0,
-              0.3,
-              -1.4
-            ]
-          },
-          {
-            "at": 1.9,
-            "position": [
-              2,
-              0.3,
-              -0.6
-            ]
-          }
-        ]
+        "refDistance": 1.4
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-4",
+      "offsetSec": 1.7,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          1.9,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
+      }
+    },
+    {
+      "id": "phone-ring-bell",
+      "label": "ring-5",
+      "offsetSec": 2.28,
+      "durationSec": 0.222,
+      "macros": {
+        "pitchShift": 5
+      },
+      "placement": {
+        "kind": "point",
+        "position": [
+          4.6,
+          0.3,
+          -1.7
+        ],
+        "refDistance": 1.4
       }
     }
   ]

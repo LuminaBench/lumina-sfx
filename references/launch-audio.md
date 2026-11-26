@@ -51,3 +51,17 @@ node scripts/choose.mjs "fire crackle" "distant thunder" --scene
 Each quoted phrase describes one audible requirement. In a fixed scene, the selector first looks for a single performance whose `contains` metadata covers every requested component. For example `"heel" "sole" --scene --isolated` selects one indoor step. Put material and direction in the same phrase as the gesture. A keyboard playing under narration still needs a keyboard cue; use gain and filtering to place it under the voice. The selector checks wording against catalog metadata. Its result is a shortlist decision, and an unmatched word is a reason to inspect the candidate.
 
 For a single tab change, compare the chosen cue solo and at the fastest repeat rate players can trigger. Keep one contact per state change. For a shot with both camera movement and a control seating, audition the contact alone first, then compare the version with the swipe at matched foreground level. Keep the second layer if it makes the movement or seating clearer. Align the swipe apex and contact marker to picture. Saved scenes have authored timing; independent game events still need independent triggers.
+
+## Keep an interface consistent
+
+Use `--palette soft` for felt, wood and damped contacts, or `--palette crisp` for glass, porcelain and brighter switches. A project can save its choice and its blind listening votes in a small JSON file.
+
+```json
+{"palette":"soft","useCase":"settings","votes":"settings-votes.json"}
+```
+
+The votes path is relative to the profile. Omit it until you have votes. Use `scripts/choose.mjs --profile /path/to/project-audio.json "drag handle grabs"` or pass the same profile to search. Create votes with `npm run audition -- settings-tab-walnut-detent settings-subtab-porcelain-tip --clean --use-case settings --out /tmp/settings.html`. Votes apply to that use and recipe revision. A brief can override the project palette.
+
+Use one accepted input event for a timeline tick. Pair grab with release, and choose a snap only when the object actually seats. `silence` skips an uneventful gesture. `review` carries the words that still need a performance. For a version 2 scene, run `npm run compare -- /path/to/scene.json --omit wind --clean --out /tmp/without-wind.html` to hear whether the named support layer improves the mix. The level-matched blind desk compares both renders.
+
+Intent search groups close takes that were checked in listening pairs. Pass `--all-takes` when choosing round-robin variants. Left and right swipes remain available independently. Field ambience can surface when its incidental birds or insects are requested. The clean source policy continues to require isolated inputs.

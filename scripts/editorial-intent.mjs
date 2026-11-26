@@ -1,12 +1,19 @@
 // Action families describe what is visible at the edit. The ordered picks are
 // listening references; material, direction, input device and timing stay searchable.
 const profiles = {
-  focus: ['Pointer or controller focus changes', 'focus hover navigation highlight', ['settings-focus-felt-tick','menu-focus-tap']],
-  scroll: ['One scroll detent or slider notch', 'scroll list slider notch adjustment', ['settings-slider-knurled-index']],
-  tab: ['One tab changes', 'tab switch navigation select', ['settings-tab-walnut-detent','settings-subtab-porcelain-tip']],
+  scrub: ['One timeline frame or playhead detent', 'timeline scrub frame playhead jog marker', ['timeline-playhead-set']],
+  grab: ['A draggable item is picked up', 'drag handle grab pickup lift', ['menu-item-lifted-for-dragging']],
+  drop: ['A dragged item is released', 'drag handle drop release seat', ['inventory-magnet-seat']],
+  snap: ['A card seats in a grid or slot', 'card slot grid snap align place seat', ['menu-item-snaps-into-a-slot']],
+  disabled: ['A control rejects an input', 'disabled unavailable forbidden blocked toggle button attempt try', ['settings-list-edge-felt-bumper']],
+  undo: ['A previous edit is undone', 'undo history reverse last', ['edit-undo-return']],
+  redo: ['A previous edit is reapplied', 'redo history forward last', ['edit-redo-seat']],
+  focus: ['Pointer or controller focus changes', 'focus hover navigation highlight field text gain control', ['settings-focus-felt-tick','menu-focus-tap']],
+  scroll: ['One scroll detent or slider notch', 'scroll list slider notch adjustment down up move', ['settings-slider-knurled-index']],
+  tab: ['One tab changes', 'tab switch navigation select open next change', ['settings-tab-walnut-detent','settings-subtab-porcelain-tip']],
   press: ['One dry button contact', 'button click tap press select activation', ['mechanical-ui-click','desktop-mouse-press']],
-  confirm: ['A change commits', 'confirm positive success apply commit save accept', ['settings-apply-overcentre-latch','menu-confirm-spring-detent']],
-  notice: ['A quiet notification arrives', 'notice notification toast message arrival', ['menu-confirm-pluck']],
+  confirm: ['A change commits', 'confirm positive success apply commit save accept change', ['settings-apply-overcentre-latch','menu-confirm-spring-detent']],
+  notice: ['A quiet notification arrives', 'notice notification toast message arrival arrive', ['menu-confirm-pluck']],
   back: ['Return to the previous view', 'back return cancel dismiss', ['settings-back-suede-release']],
   toggle: ['A switch changes state', 'toggle switch', ['settings-toggle-engage-brass','settings-toggle-off-cork']],
   slide: ['A panel travels across the frame', 'panel screen swipe slide whoosh transition', ['silk-swipe-right','silk-swipe-left']],
@@ -16,7 +23,7 @@ const profiles = {
   reveal: ['A panel or logo comes into view', 'panel reveal entrance logo transition intro', ['silk-panel-reveal','soft-air-panel-reveal']],
   land: ['A title card settles on frame', 'title card land settle hit impact reveal', ['clean-title-reveal-with-soft-hit']],
   rise: ['A title rises into view', 'title card rise riser transition', ['silk-title-rise','linen-title-rise']],
-  close: ['A logo or end card signs off', 'logo end card close outro finish sting stinger', ['delicate-logo-close']],
+  close: ['A logo or end card signs off', 'logo end card close outro finish sting stinger', ['delicate-logo-close','logo-felt-signature']],
   swell: ['A longer product reveal builds', 'wide product reveal swell build', ['wide-product-reveal-swell']],
   key: ['One key goes down', 'key keyboard single press down', ['gasket-mount-keyboard-key-down','laptop-scissor-keyboard-key-down']],
   typing: ['Several keystrokes type text', 'keyboard type typing word text phrase', ['gasket-mount-keyboard-typed-word','laptop-scissor-keyboard-typed-word']],
@@ -41,7 +48,7 @@ export function editorialAction(id, collection) {
 
 const medium = new Set('product software app application saas launch trailer teaser video demo film promo screen recording screenrecording interface ui ux menu web website motion graphics edit editorial animation'.split(' '));
 const presentation = new Set('clean professional polished premium tasteful minimalist minimal soft warm restrained modern subtle smooth understated gentle quiet crisp cinematic nice elegant simple sleek epic powerful bold punchy'.split(' '));
-const onScreen = new Set('ui ux menu interface tab settings cursor keyboard key typing mouse trackpad stylus toggle slider panel logo endcard title typography swipe whoosh transition'.split(' '));
+const onScreen = new Set('ui ux menu interface tab settings cursor keyboard key typing mouse trackpad stylus toggle slider panel toast notification timeline playhead drag undo redo slot grid card field logo endcard title typography swipe whoosh transition'.split(' '));
 const fiction = new Set('magic magical spell portal warp shield blaster laser synth glitch chime beep jingle electricity electric charged discharge recharge'.split(' '));
 const world = new Set('jet plane rocket sword blade knife horse ocean surf thunder lightning rain footsteps footstep gunshot motorcycle helicopter explosion barn'.split(' '));
 const vehicle = new Set('truck car caravan tow towing hitch coupling axle diesel tractor farm cargo haul flatbed'.split(' '));
@@ -55,7 +62,14 @@ export function editorialBrief(terms) {
   if (!editOnly && !film && !terms.some(w => onScreen.has(w)) && !has('brand','branding','app','button')) return;
   const loneMedium = terms.every(w => medium.has(w) || presentation.has(w) || ['high','energy','energetic','movie','launch'].includes(w));
   let action;
-  if (has('keyboard','key','typing') || (has('word','text') && has('type'))) {
+  if (has('disabled','unavailable','blocked') && has('toggle','button','control','option')) action = 'disabled';
+  else if (has('timeline','playhead') && has('scrub','frame','jog','playhead')) action = 'scrub';
+  else if (has('undo')) action = 'undo';
+  else if (has('redo')) action = 'redo';
+  else if (has('drag','draggable','handle') && has('grab','lift','pickup','pick')) action = 'grab';
+  else if (has('drag','draggable','handle') && has('drop','release')) action = 'drop';
+  else if (has('card','slot','grid') && has('snap','seat','align')) action = 'snap';
+  else if (has('keyboard','key','typing') || (has('word','text') && has('type'))) {
     if (has('release','up','spacebar','chord','shortcut','double','pair','backspace','hold','command','return'))
       return;
     action = has('typing','text','word','phrase') ? 'typing' : 'key';
@@ -78,7 +92,7 @@ export function editorialBrief(terms) {
   else if (has('cut','transition','whoosh')) action = 'cut';
   if (!action) return loneMedium ? {terms:[], needsGesture:true} : undefined;
   const qualifiers = terms.filter(t => !medium.has(t) && !presentation.has(t) &&
-    !['high','energy','energetic','visual','frame','turn','motion','single','between','into','view','graphic','sci','fi','scifi','futuristic','fantasy'].includes(t));
+    !['high','energy','energetic','controller','go','short','visual','frame','turn','motion','single','between','into','view','graphic','sci','fi','scifi','futuristic','fantasy'].includes(t));
   return {action, terms:[...new Set([...qualifiers, action])]};
 }
 
@@ -92,4 +106,20 @@ export function editorialPurpose(action) {
 
 export function listeningOrder(id) {
   return curated.get(id)?.index ?? 100;
+}
+
+// Only explicit silence or uneventful screen movement qualifies. A quiet switch and a
+// silent-mouse press still have an audible action.
+export function silentGesture(query) {
+  if (/\b(?:no (?:added sound|sound|feedback)|in silence|leave .{0,32}silent|keep .{0,32}silent)\b/i.test(query)) return true;
+  return /\b(?:cursor|pointer)\b.*\b(?:static text|empty space|blank canvas)\b/i.test(query)
+    && !/\b(?:click|hover feedback|press|tick|swipe)\b/i.test(query);
+}
+
+export function paletteAffinity(sound, palette) {
+  if (!sound.editorialAction || !palette) return 0;
+  const material = palette === 'soft' ? /felt|suede|walnut|cork|damped|linen|quiet|soft|gasket/ :
+    /porcelain|crisp|glass|knurled|brass|mechanical|aluminum|switch|detent/;
+  const family = palette === 'soft' ? /felt|suede|walnut|cork|gasket|quiet-mouse/ : /porcelain|glass|aluminum|knurled|brass/;
+  return 2*Number(family.test(sound.id))+Number(material.test([sound.id,...sound.tags].join(' ')));
 }

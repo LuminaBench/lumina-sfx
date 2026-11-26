@@ -67,8 +67,8 @@
     },
     "campfire-crackle-loop": {
       "previous": "e8f13a9b7487deb00fb07c461582b4249da7e4664c526598e6ed25b005ffce1c",
-      "current": "a361a97b443676bb7abf504e47e3978c827617279684d1a8d8a37a3aa6e506c2",
-      "reason": "Restore low wood-flame body and soften short bright snaps."
+      "current": "b471df64957ed7dfe1fe2d7dabb111f060cac4a4c37dfacd2f4075a0e25f867e",
+      "reason": "Reduce short-period modulation in the held weather or engine performance."
     },
     "canopy-rain-on-broad-banana-leaves-continuous-patter-loop": {
       "previous": "988c81311a11196dc1a5cd3e0295694250d1731e831e9aafa364956746965335",
@@ -120,6 +120,11 @@
       "current": "8533f4bf905cb63fa731205f9e79bbaa79c9d5cdb83915a73d5205730e3ec039",
       "reason": "Use species-specific takes and remove competing background events."
     },
+    "celluloid-whip-cut": {
+      "previous": "77ece7a0d6b98985ea50f10dbcc3b9f8f54238bf3e46f0a02230776ecbd94b1e",
+      "current": "ba7bca5577e372148d6f792e522d54d57552470d90ce10b93514d86d5f0a95ec",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
     "cinematic-c4-pressure-front": {
       "previous": "65c70fcde82306b42e664495ad9430b8a869b10dfb1c5526a2f035a289254cfd",
       "current": "4ed0620808dad78679f35c5de1e7eedfe38de8b06173648001450e0c4da1c9db",
@@ -134,6 +139,11 @@
       "previous": "afd289fc180af1471479ed18c1fb8a69dcdaaee739e462bdde9ed830050eb889",
       "current": "2e25eb01405a25a71b407ee4230c91f257dda2a27fd205c70d4b151c092b9e5d",
       "reason": "Shorten the keyboard case ring and temper the spring transient."
+    },
+    "clipped-energy-shot-in-a-tunnel": {
+      "previous": "a345e785d4aeac0f89ee09a76f433eddc58f0966199d50f5344a845c87868b7d",
+      "current": "bb78e5312cbd1a641b20c6284b6148c2a5e15eeadadfe52eecc8012c6ff2a95f",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "close-lightning-thunder": {
       "previous": "3628076ff96652f2a3ec64bc84ee97c868f374693e1fb474c735180253fc2ba3",
@@ -194,6 +204,11 @@
       "previous": "af869b96e4c5d1562e3e8495452d61cb1facab0d43fd66f034ea622c66fc23ba",
       "current": "785391579a931b4cc2cc97630a689549c424a5c8e51f47b561bb44211f44f44c",
       "reason": "Remove unrelated field or mechanical events from the wind performance."
+    },
+    "decommissioned-conduit-arc": {
+      "previous": "6c44061f46b2f16dd484190cdc5b85a9d6a424425380c267be366b93a998323c",
+      "current": "d5528f13ca6a35de08ae047d388dcb8755d37e046990187a60b6058f3b830141",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "delicate-logo-close": {
       "previous": "2a71c045d76e28054776e13379e9c909a0935807dfdf4fc8209ce7a2579e1b60",
@@ -295,6 +310,11 @@
       "current": "31850fdf77029dd36ef70120b699fba13213a8b94f2b8a32f88be5f682ceb796",
       "reason": "Shape the fictional event with recorded friction and damped impacts."
     },
+    "energy-shield-overload-collapse": {
+      "previous": "a10424ec21e5dd9c3c768150e17052b8ee341db10941806c531194acdb342e4a",
+      "current": "2a15c5b36c43207e7b19f7841779bc8ad68b9758d1eefd2bc38cbfffba525118",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
     "ewe-and-lamb-reunite": {
       "previous": "d7099d8fdbcd49d98e57e7034e3aff73db2b2c434bbf54e77caae2f21bbceb89",
       "current": "d782b35655e5a6a56951b2170a5154986cd877a33f566380564f6932776df424",
@@ -304,6 +324,11 @@
       "previous": "7d2be447875b1ed7e3e69a72868a876d2eedd382bcd06faf15634e982eebffc2",
       "current": "23bd21197ec93cf30d9165459b026cf3418bd57c8d0d773a7a324d2334b538e9",
       "reason": "Use species-specific takes and remove competing background events."
+    },
+    "fictional-arc-blade-emergency-power-down": {
+      "previous": "bd5d4a693900bdddf483273bcf32aeae63b34f68b2c3a5a0e8f7d69a1341097a",
+      "current": "631f1a5a0f52b60821bb5adc78f40a708c197882f0b6c9560f3dcb0668f90bd9",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "fine-grain-pull-away": {
       "previous": "6c3a5818c140a241872c5dd93ca737dabd1bceedda228e937eced0649d058ea2",
@@ -465,6 +490,11 @@
       "current": "47868b55a65ec612d6801d4a1c3d77f4e070380a79e6b4135766a38e8e3ff972",
       "reason": "Replace the misidentified film-winding source with wind."
     },
+    "glass-diagram-last-frame-tail": {
+      "previous": "86777f094826ab13ac390425411499f26fd7c489db3c8193a057617d6386ff4c",
+      "current": "d7ac01c2f49ccc7bbdba640032344529aceaba48b788d74440bb0ab23c983fe2",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
     "glass-elevator-interior-air-loop": {
       "previous": "4792fdb99e36abc3b5e2df8ccc0331d478656ee380f3315eeaa150440b5a4764",
       "current": "ce4407b5342cc1bcf9021209af4c44f033c527fd0fd9cac29f2f72dcfccfd80d",
@@ -602,8 +632,13 @@
     },
     "interceptor-turbofan-canopy-interior-cruise-loop": {
       "previous": "bf7f8ac08a137f7cfa39b932660250b0783bc988d9dd96eb1a7ab5d78ff7a4ff",
-      "current": "34e2c3eb2718ce7a819377855342cd332730c5698dc76214a11918a6524e1929",
-      "reason": "Rebuilt dry cockpit cruise around a sheltered, levelled real turbine."
+      "current": "c7884b706b6509317f2957552cdfe6321bf9f6177d3b8afea215f57832a3c813",
+      "reason": "Reduce short-period modulation in the held weather or engine performance."
+    },
+    "jet-pass-overhead": {
+      "previous": "42978f89942146b9eeefd2631a31ae1de37f518dee9e275f441dfd524d2e3884",
+      "current": "de4740b7a94be79767e5890e2de5e7c54f1e9a9948f3d14f3ffd6d4fc63d3776",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "jet-taxi-past-the-ramp": {
       "previous": "564414071c03ff5f845a649a56633926cacb31fda0d07ae48d691c867e7cbd6c",
@@ -637,8 +672,8 @@
     },
     "light-rain-loop": {
       "previous": "789a8d61b5c46f7a94a69e8443a63ce9adf2655786302342ef105fa6218405b6",
-      "current": "f22fff5124e38e34afde96ed66049eeb39fc64ef2c75a44eef960324ee41496d",
-      "reason": "Keep only rainfall and its specified impact surface."
+      "current": "aa9ffdafca5ef69bdffebcf5d9c81f31100faf3ed1e1e9adc232883060193ce3",
+      "reason": "Reduce short-period modulation in the held weather or engine performance."
     },
     "light-rain-on-dry-straw-loop": {
       "previous": "3a4ca63590e39c387effdec8330c500ad4d5118757628ef44570af610063dd04",
@@ -684,6 +719,16 @@
       "previous": "9bc94856abd72f655df55ee46238e68daacd00f452130b380dba1abcb553de60",
       "current": "ecad9708c7a87003d0c1c427cdb15d07a0938c5743412c13eb6b84be93122b7b",
       "reason": "Seat the recorded mechanical contact in a short damped housing."
+    },
+    "menu-item-lifted-for-dragging": {
+      "previous": "8cbbf6a625c156d759e6b77ea4003b2995281684d493c3e8d69265e75a2a1e85",
+      "current": "33f392fd29a311876c2eaca28e1a030bde8e06f465a6b99c935be07cdd7fe764",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "menu-item-snaps-into-a-slot": {
+      "previous": "1b9aa89728ff41224c37ab59b0b37caf180fd688d9078560a035e80651da7c11",
+      "current": "e702ca3fef25548fe70ba67a2023e891339d38ad00d1445bf8c1e307c2410b66",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "motorcycle-throttle-rev": {
       "previous": "2d9996fec24cf097d24140038bacc066f520a6fa7224e62dd0af2528a32299f0",
@@ -734,6 +779,11 @@
       "previous": "907bc8ac5655e12f5f2a096a0e26b5892ecdf7e0a389e36d1b4b2d0611b23079",
       "current": "6a505fe53ecfd0ecbb480bf863cbf2c45e9105968a883538794e50b308b7477a",
       "reason": "Shape the fictional event with recorded friction and damped impacts."
+    },
+    "quiet-interview-split-view-slide": {
+      "previous": "785facb9fb53d2e9dd94b1262e56c89711a59f686bdb811f62b3820db597c2b3",
+      "current": "a02e04b3e93f2888684f7ed1de92f100b6c8fc7b7fdda29f8352254594926a3a",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "rail-cabin-rolling-loop": {
       "previous": "db49d97ed7a9bb36875212047fdfcb52ca3f180d23514508d2499da47bf09036",
@@ -985,6 +1035,11 @@
       "current": "374855f0fef43c361fec0241c0d657c856c754053304b558d9ec95017d4d4b29",
       "reason": "Use species-specific takes and remove competing background events."
     },
+    "scatter-feed-trough": {
+      "previous": "fe0c29114e9d634b2f8f4e7b272fc88104023445ac3d0f27a1c9a9213d1ad4d5",
+      "current": "d6ce3ed76af8b3274bd92ff15abbc4aeb53555a08ad1074dd08c4b19ceab4138",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
     "shaded-rocky-creek-scattered-rain-loop": {
       "previous": "a884e9bca10a005afb79b61640cacc8a9ef59389b36be569261f3ac429849ff3",
       "current": "4d1f65934a422e969f8b5481028aba2f56b1f2dc8d7e687146172b782a0b79c3",
@@ -1030,6 +1085,16 @@
       "current": "4c4bb143d0b3215ea4f1ec46ee63b935bbe614567623060424a635dda732e935",
       "reason": "Keep only rainfall and its specified impact surface."
     },
+    "silk-panel-reveal": {
+      "previous": "a65ab61bc1c3559e3831039d4370e485f4935b18bf6474ab9bc31d3f6c2d6764",
+      "current": "d3ff45970ad621e9595fa88ba3855a85757057a11590dd38cc0a0cfacff6206f",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "silk-whip-cut": {
+      "previous": "7077591fb093c6857462d3a4c61a3f07bb46b85c269bb9cf41b10c9bf958ece6",
+      "current": "96ebbf3829198a08fc30435594028614c521294ae4bab67ddb0d6849e2c34b70",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
     "small-drone-close-hover-loop": {
       "previous": "74e9006b06ef8f3a23bf192bf479f25ae035c4d67665d7f98a8e4b97a5d20270",
       "current": "0bd785c76bbaee54541ae65cb373c4f6198f659cf0f907992c87fd1725ee01c0",
@@ -1040,10 +1105,20 @@
       "current": "12db6270dba60b1e0afec516aaa3c8849d0109677eab18f8c2cdd8bb77fa0dd4",
       "reason": "Rebuild propulsion from the intended motor texture and motion."
     },
+    "stall-straw-fork-toss": {
+      "previous": "2b7b658e98cc9a7f3aa83b729e74d0b347ba647d2571151ab4deacb80d7f4f07",
+      "current": "780878272931d50d94c1118bf57e67601b591b8a24a53f29e5092fb67d10a82c",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
     "streetcar-departure-through-a-junction": {
       "previous": "4e8478592fea32c9d525d3caaf0a55a2fba874117119c06837d313507005fd5f",
       "current": "d5bb4e48e6de99e9d427fc910cbc9e9038d6825e2ba20b1667d426e9dd402ca9",
       "reason": "Use a rail-only window or texture in place of the full location recording."
+    },
+    "survey-drone-bay-loses-power": {
+      "previous": "1892351eeff59e6fb79f806b5c36da2f028c661d32aac3febe048fcc65bce0de",
+      "current": "3927d6cc90cfe6a347aeaa3a78e2a36e1d483cb8158b345f09c50769d8439b0a",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "survey-quadcopter-accelerate-away-from-camera": {
       "previous": "7af72a3365d70b24fb1f24d7d5ec64bcc56b81fac86e9d74982bb817ea429e1c",
@@ -1234,6 +1309,11 @@
       "previous": "719092be43dd09ba9c95d7d4ad9b55a9e45e81475a5383d332e29459829f3c5e",
       "current": "b87935fa2a8a0638289ca710532040ae3cf717120c5b2d7cb2eefb05219a3f82",
       "reason": "Isolate the thunder discharge and rolling tail from the recording floor."
+    },
+    "timeline-playhead-set": {
+      "previous": "8d5487bce215431495bc38dc5f71dba086097ba7e618ac5ce0b209430446b382",
+      "current": "ded16eb5813519cf587bfc1000facc25be0b2dc7b1588d8926d1d5d56223b3b4",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "tire-floats-then-finds-wet-asphalt": {
       "previous": "175403c511712468476f3ae56b4204a4c29142b9d7b8b818be96a8b1984495d6",
@@ -1432,8 +1512,8 @@
     },
     "windblown-rain-on-a-loose-garage-door-continuous-patter-loop": {
       "previous": "98cb2c54ebd6285b042634f16b9b503cc7c746d76e98431af0950925bbda6e0a",
-      "current": "e720e28cf18cddfe69fd32f91ef737f85e292e62df195ff19d116e6950120f4e",
-      "reason": "Keep only rainfall and its specified impact surface."
+      "current": "3ecd8fd941ed59c9250796eedf45291328538883faadeb22ef24077437eb846f",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     },
     "windblown-rain-on-a-loose-garage-door-downpour-recedes": {
       "previous": "fd714f12022b81ddb53cfd0acfc2d9adc33607c324d5369238792cbc14095233",
@@ -1474,6 +1554,11 @@
       "previous": "f1ed86b5b0fc20041797b2982b55315107d312a1b47220402f62744d10a4a207",
       "current": "e2250a876f6dd333f88bf99c8dc86177d280771fbd8dd20f612d9cedf026b718",
       "reason": "Restore low wood-flame body and soften short bright snaps."
+    },
+    "working-motorboat-steady-offshore-loop": {
+      "previous": "75ff98d2f90cb51ad8ef2db2da690f0efda16d0c220166cc6f4e35100de8734b",
+      "current": "55be90d88c5a636fbcb47d5dd630f7b21eb34a411a8aafd8b0c3b08bf2c6bbed",
+      "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
     }
   }
 }

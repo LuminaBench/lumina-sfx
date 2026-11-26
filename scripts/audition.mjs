@@ -13,7 +13,7 @@ import { sceneStyles } from '../engine/remix.ts';
 const { positionals: inputs, values } = parseArgs({
   allowPositionals: true,
   options: {
-    clean: { type:'boolean' }, isolated: { type: 'boolean' },
+    'use-case':{type:'string'}, clean: { type:'boolean' }, isolated: { type: 'boolean' },
     moods: { type: 'boolean' },
     styles: { type: 'boolean' },
     bed: { type: 'string' },
@@ -110,7 +110,7 @@ if (values.bed) {
   const gain = Math.min(.27,.7*10**((target-8-level)/20));
   background = wav(channels.map(c=>c.map(x=>x*gain)));
 }
-const data = {startDry:!background || Boolean(values.clean || values.isolated), choices, bedId:values.bed??null,bed:background};
+const data = {useCase:values['use-case']?.trim(),startDry:!background || Boolean(values.clean || values.isolated), choices, bedId:values.bed??null,bed:background};
 const reel = createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0, 16);
 const payload = JSON.stringify({ reel, ...data }).replaceAll('<', '\\u003c');
 const player = await readFile(new URL('./audition-player.js', import.meta.url), 'utf8');

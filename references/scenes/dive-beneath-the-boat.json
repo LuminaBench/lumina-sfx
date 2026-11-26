@@ -32,7 +32,7 @@
         ]
       ],
       "muffle": {
-        "cutoffHz": 360,
+        "cutoffHz": 255,
         "envelope": [
           [
             0,

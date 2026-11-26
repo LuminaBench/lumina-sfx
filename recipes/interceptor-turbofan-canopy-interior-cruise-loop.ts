@@ -8,7 +8,14 @@ import idle from './_recordings/isolated-demo-turbine-idle.ts';
 import loaded from './_recordings/isolated-demo-fighter-rise.ts';
 
 export default {
-  soloQueries: ["cockpit", "cockpit engine", "jet cockpit", "inside a cockpit", "dry cockpit", "cockpit ambience"],
+  soloQueries: [
+    'cockpit',
+    'cockpit engine',
+    'jet cockpit',
+    'inside a cockpit',
+    'dry cockpit',
+    'cockpit ambience',
+  ],
   isolation: 'isolated',
   components: ['jet-engine'],
   id: 'interceptor-turbofan-canopy-interior-cruise-loop',
@@ -27,6 +34,7 @@ export default {
     'loop',
   ],
   loopable: true,
+  sustainMode: 'evolving',
   durationSec: 4.19,
   targetRmsDbfs: -25,
   mixRole: 'vehicle',
@@ -34,7 +42,7 @@ export default {
     rpm: { label: 'Normalized shaft speed', min: 0, max: 1, default: 0.5 },
     intensity: { label: 'Power demand', min: 0, max: 1, default: 0.55 },
   },
-  ...sceneCredits(idle, loaded),
+  ...sceneCredits(idle, loaded, core),
   render(ctx, { seed, params }) {
     const wash = propulsion(
       ctx,
@@ -73,16 +81,43 @@ export default {
       const local = Math.sqrt((power[hi] - power[lo]) / (hi - lo));
       corePcm[i] *= Math.min(2, Math.max(0.24, (rms / Math.max(0.012, local)) ** 0.82));
     }
-    const overlap = Math.floor(rate * 0.19),
-      period = length - overlap;
-    const structure = biquad('lowpass', 560 + 220 * params.rpm, 0.65, rate);
-    const phase = Math.floor(ctx.random() * period);
-    return wash.map((bed, i) => {
-      const j = (i + phase) % period;
-      const w = Math.min(1, j / overlap);
-      const blend = w * w * (3 - 2 * w);
-      const engine = j < overlap ? corePcm[j] * blend + corePcm[period + j] * (1 - blend) : corePcm[j];
-      return 0.46 * bed + 0.77 * engine + 0.35 * structure(engine);
-    });
+    // Alternate overlapping windows from different points in the steady core. The
+    // source's microscopic blade texture survives without replaying its pass-by envelope.
+    const bed = new Float32Array(ctx.frames);
+    let start = 0,
+      overlap = 0;
+    while (start < bed.length) {
+      const span = Math.round((0.38 + 0.29 * ctx.random()) * rate);
+      const next = Math.round((0.11 + 0.065 * ctx.random()) * rate);
+      const source = Math.floor(ctx.random() * (length - span - 1));
+      const count = Math.min(span, bed.length - start);
+      for (let j = 0; j < count; j++) {
+        const fade = Math.min(1, overlap ? j / overlap : 1, (span - j) / next);
+        bed[start + j] += corePcm[source + j] * Math.sin(fade * Math.PI * 0.5);
+      }
+      start += span - next;
+      overlap = next;
+    }
+    const structure = biquad('lowpass', 1300 + params.rpm * 440, 0.68, rate);
+    const induction = biquad('bandpass', 890 + params.rpm * 330, 1.7, rate);
+    const shaftHz = 420 + 300 * params.rpm;
+    let phase = ctx.random() * 2 * Math.PI,
+      trim = 1,
+      demanded = 1,
+      next = 0;
+    const glide = 1 - Math.exp(-1 / (0.82 * rate));
+    for (let i = 0; i < bed.length; i++) {
+      if (i >= next) {
+        demanded = 0.992 + 0.016 * ctx.random();
+        next = i + Math.round((0.9 + 2.4 * ctx.random()) * rate);
+      }
+      trim += (demanded - trim) * glide;
+      phase = (phase + (2 * Math.PI * shaftHz * trim) / rate) % (2 * Math.PI);
+      const core = bed[i];
+      // Two quiet blade orders stay coupled to shaft speed under the recorded intake wash.
+      const blades = 0.0075 * Math.sin(phase) + 0.0026 * Math.sin(phase * 2);
+      bed[i] = 0.23 * wash[i] + 0.68 * core + 0.54 * structure(core) + 0.28 * induction(core) + blades;
+    }
+    return bed;
   },
 } satisfies SoundRecipe;

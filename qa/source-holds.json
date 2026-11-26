@@ -1,5 +1,5 @@
 {
-  "method": "Machine screening leads pending listening review. An entry excludes the cue from clean selection. sha256 identifies the default PCM master.",
+  "method": "Machine screening leads. Apply the two-seed listening dispositions in qa/flag-auditions.json before clean selection. sha256 identifies the screened default PCM master.",
   "holds": {
     "air-pulse-prop-seal-vents-and-cools": {
       "labels": [

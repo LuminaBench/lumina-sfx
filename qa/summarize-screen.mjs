@@ -27,4 +27,4 @@ for (const id of [...entries.keys()].sort()) {
   const { labels, hash } = entries.get(id);
   if (labels.size) holds[id] = { labels: [...labels].sort(), sha256: hash };
 }
-console.log(JSON.stringify({method:'Machine screening leads pending listening review. An entry excludes the cue from clean selection. sha256 identifies the default PCM master.',holds},null,2));
+console.log(JSON.stringify({method:'Machine screening leads. Apply the two-seed listening dispositions in qa/flag-auditions.json before clean selection. sha256 identifies the screened default PCM master.',holds},null,2));

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {relatedTakes} from './related-takes.mjs';
+import { resolveSourceReview } from './source-review.mjs';
 import { editorialAction } from './editorial-intent.mjs';
 import { createHash } from 'node:crypto';
 import { renderChannels, DEFAULT_SEED } from '../engine/render.ts';
@@ -16,6 +18,7 @@ const { tickets } = JSON.parse(await readFile(new URL('../tasks/queue.json', imp
 const byId = new Map(tickets.map(ticket => [ticket.id, ticket]));
 const review = JSON.parse(await readFile(new URL('../qa/background-review.json', import.meta.url), 'utf8'));
 const holds=JSON.parse(await readFile(new URL('../qa/source-holds.json',import.meta.url),'utf8')).holds;
+const auditions=JSON.parse(await readFile(new URL('../qa/flag-auditions.json',import.meta.url)));
 const reviewed = new Map([...review.sounds, ...review.relatedRepairs].map(entry => [entry.id, entry]));
 // A new seed response or a changed recording invalidates the badge even if the default master matches.
 function matchesReviewedAudio(recipe, fingerprint) {
@@ -35,10 +38,11 @@ const sounds = recipes.map(recipe => {
   const ticket = byId.get(id);
   const entry = reviewed.get(id);
   const current = matchesReviewedAudio(recipe, entry?.variantsSha256);
+  const disposition=resolveSourceReview(recipe,holds[id],auditions.auditions[id],auditions.seeds);
   return {
     id, name, category, revision: ticket?.revision, editorialAction: editorialAction(id, ticket?.collection),
-    cleanHold:holds[id]?.labels, isolation: recipe.isolation, backgroundChecked: current && !entry.auditionNote && !holds[id] || undefined,
-    auditionNote: current ? entry.auditionNote : undefined, markers: recipe.markers, soloQueries:recipe.soloQueries, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: ticket?.collection, tags, loopable, sustainMode:recipe.sustainMode, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
+    ...disposition, relatedTakes:relatedTakes.find(group=>group.includes(id))?.filter(other=>other!==id), isolation: recipe.isolation, backgroundChecked: current && !recipe.auditionNote && !entry.auditionNote && !disposition.cleanHold || undefined,
+    auditionNote: recipe.auditionNote ?? (current ? entry.auditionNote : undefined), markers: recipe.markers, soloQueries:recipe.soloQueries, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: ticket?.collection, tags, loopable, sustainMode:recipe.sustainMode, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
     additionalRecordings, takeCount: recipe.takeCount, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
   };
 });

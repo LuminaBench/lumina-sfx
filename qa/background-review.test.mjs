@@ -7,7 +7,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const json = async path => JSON.parse(await readFile(new URL(path, import.meta.url)));
 const audit = await json('./background-review.json');
 const { masters } = await json('./release-masters.json');
-const {holds} = await json('./source-holds.json');
+const holds=Object.fromEntries((await json('../catalog.json')).sounds.filter(s=>s.cleanHold).map(s=>[s.id,s.cleanHold]));
 const {revisions} = await json('./master-revisions.json');
 const entries = [...audit.sounds, ...audit.relatedRepairs];
 assert.equal(audit.scope.flaggedRecipes, audit.sounds.length);
@@ -26,3 +26,15 @@ const matches = JSON.parse(execFileSync(process.execPath,
 assert.deepEqual(matches.map(sound => sound.id).sort(), entries.filter(entry => !entry.auditionNote && !entry.supersededReason && !holds[entry.id] && !revisions[entry.id]).map(entry => entry.id).sort());
 assert.ok(matches.every(sound => sound.backgroundChecked === true));
 console.log('Verified review IDs, master checksums, repair reproducibility and catalog search for ' + entries.length + ' cues.');
+
+const raw = (await json('./source-holds.json')).holds;
+const { seeds, auditions } = await json('./flag-auditions.json');
+assert.deepEqual(Object.keys(auditions).sort(), Object.keys(raw).sort());
+assert.equal(new Set(seeds).size, 2);
+for (const [id, evidence] of Object.entries(auditions)) {
+  assert.deepEqual(evidence.heard.map(([seed]) => seed).sort(), [...seeds].sort(), id);
+  assert.equal(evidence.hashes.length, seeds.length, id);
+  assert.ok(evidence.hashes.every(hash => /^[a-f0-9]{64}$/.test(hash)), id);
+  assert.ok(['hold', 'field', 'retained', 'repaired'].includes(evidence.status), id);
+  if (evidence.status === 'repaired') assert.equal(evidence.retest[0], 'yes', id);
+}

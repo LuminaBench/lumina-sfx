@@ -1177,7 +1177,8 @@
       "durationSec": 0.69,
       "loopable": false,
       "brief": "Grain Scatter into a Feed Trough",
-      "acceptance": "Dry grains rattle brightly on a hollow feeding trough."
+      "acceptance": "Dry grains rattle brightly on a hollow feeding trough.",
+      "revision": 2
     },
     {
       "id": "shake-straw-bedding",
@@ -3953,7 +3954,8 @@
       "loopable": false,
       "brief": "Stall Straw Fork Toss",
       "blueprint": "pig-feeding-at-trough",
-      "acceptance": "Close fibrous rush reaches a larger bedding pile."
+      "acceptance": "Close fibrous rush reaches a larger bedding pile.",
+      "revision": 2
     },
     {
       "id": "leather-halter-buckle-fasten",
@@ -5460,7 +5462,8 @@
       "loopable": false,
       "brief": "Decommissioned Conduit Arc",
       "blueprint": "energy-blade-hum-loop",
-      "acceptance": "Uneven isolated sputters with a dark pitch fall."
+      "acceptance": "Uneven isolated sputters with a dark pitch fall.",
+      "revision": 2
     },
     {
       "id": "overloaded-cable-loop",
@@ -5814,7 +5817,8 @@
       "loopable": false,
       "brief": "Clipped Energy Shot in a Tunnel",
       "blueprint": "deep-industrial-blast",
-      "acceptance": "A quick dry report and clearly separated spaced repeats."
+      "acceptance": "A quick dry report and clearly separated spaced repeats.",
+      "revision": 2
     },
     {
       "id": "bright-energy-impact-on-armor",
@@ -8854,7 +8858,8 @@
       "status": "review",
       "durationSec": 1.17,
       "loopable": false,
-      "acceptance": "The close reads as a descending ending with soft trailing detail."
+      "acceptance": "The close reads as a descending ending with soft trailing detail.",
+      "revision": 2
     },
     {
       "id": "quiet-interview-short-entry",
@@ -8887,7 +8892,8 @@
       "status": "review",
       "durationSec": 1.01,
       "loopable": false,
-      "acceptance": "One directional texture crosses a softer secondary material layer."
+      "acceptance": "One directional texture crosses a softer secondary material layer.",
+      "revision": 2
     },
     {
       "id": "quiet-interview-last-frame-tail",
@@ -10284,7 +10290,8 @@
       "status": "review",
       "durationSec": 1.21,
       "loopable": false,
-      "acceptance": "The drive fades through an electrical fall and a soft physical discharge."
+      "acceptance": "The drive fades through an electrical fall and a soft physical discharge.",
+      "revision": 2
     },
     {
       "id": "ceramic-shield-frame-connects",
@@ -10612,7 +10619,8 @@
       "durationSec": 3.64,
       "mixRole": "vehicle",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "rocket-launch-whoosh",
@@ -11629,7 +11637,7 @@
       "mixRole": "vehicle",
       "status": "review",
       "loopable": true,
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "outboard-primer-cranks-and-catches",
@@ -12386,7 +12394,8 @@
       "durationSec": 1.67,
       "mixRole": "impact",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "prism-repeater-capacitor-charge-loop",
@@ -12434,7 +12443,8 @@
       "durationSec": 1.2,
       "mixRole": "vehicle",
       "status": "review",
-      "loopable": false
+      "loopable": false,
+      "revision": 2
     },
     {
       "id": "menu-option-focus-microswitch",
@@ -19016,7 +19026,7 @@
       "durationSec": 4.19,
       "loopable": true,
       "brief": "Interceptor turbofan canopy interior cruise loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "interceptor-turbofan-dry-thrust-cruise-loop",
@@ -20014,7 +20024,8 @@
       "collection": "Interface · Tactile decisions",
       "durationSec": 0.205,
       "loopable": false,
-      "brief": "Menu item lifted for dragging"
+      "brief": "Menu item lifted for dragging",
+      "revision": 2
     },
     {
       "id": "menu-item-snaps-into-a-slot",
@@ -20023,7 +20034,8 @@
       "collection": "Interface · Tactile decisions",
       "durationSec": 0.204,
       "loopable": false,
-      "brief": "Menu item snaps into a slot"
+      "brief": "Menu item snaps into a slot",
+      "revision": 2
     },
     {
       "id": "metal-tin-opened-with-a-tool",
@@ -24465,7 +24477,8 @@
       "collection": "Interface · Tactile decisions",
       "durationSec": 0.132,
       "loopable": false,
-      "brief": "Timeline playhead set"
+      "brief": "Timeline playhead set",
+      "revision": 2
     },
     {
       "id": "tire-sidewall-scrubs-a-wet-curb",
@@ -25812,7 +25825,8 @@
       "collection": "Field ambiences — rain",
       "durationSec": 6.98,
       "loopable": true,
-      "brief": "Windblown rain on a loose garage door — continuous patter"
+      "brief": "Windblown rain on a loose garage door — continuous patter",
+      "revision": 2
     },
     {
       "id": "windblown-rain-on-a-loose-garage-door-downpour-recedes",
@@ -26217,7 +26231,8 @@
       "collection": "Studio originals · Weather & Ambience",
       "durationSec": 7,
       "loopable": true,
-      "brief": "Campfire Crackle"
+      "brief": "Campfire Crackle",
+      "revision": 2
     },
     {
       "id": "close-lightning-thunder",
@@ -26301,7 +26316,8 @@
       "collection": "Studio originals · Weather & Ambience",
       "durationSec": 6,
       "loopable": true,
-      "brief": "Light Rain"
+      "brief": "Light Rain",
+      "revision": 2
     },
     {
       "id": "low-health-heartbeat-loop",
@@ -28108,7 +28124,7 @@
       "loopable": false,
       "brief": "Silk whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "silk-panel-reveal",
@@ -28119,7 +28135,7 @@
       "loopable": false,
       "brief": "Silk panel reveal",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "silk-pull-away",
@@ -28368,11 +28384,11 @@
       "category": "Sci-Fi & UI",
       "status": "review",
       "collection": "Launch video · Transitions",
-      "durationSec": 0.12,
+      "durationSec": 0.29,
       "loopable": false,
       "brief": "Celluloid whip cut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "celluloid-panel-reveal",
@@ -29077,6 +29093,33 @@
       "brief": "One recorded foot plant on sand.",
       "acceptance": "One plant per marker, distinct takes for each foot and a natural release at walking and running pace.",
       "revision": 1
+    },
+    {
+      "id": "edit-undo-return",
+      "collection": "Tactile menus · Editing",
+      "brief": "Undo · felt key return",
+      "category": "Footsteps & UI",
+      "durationSec": 0.097,
+      "loopable": false,
+      "status": "review"
+    },
+    {
+      "id": "edit-redo-seat",
+      "collection": "Tactile menus · Editing",
+      "brief": "Redo · forward index detent",
+      "category": "Footsteps & UI",
+      "durationSec": 0.115,
+      "loopable": false,
+      "status": "review"
+    },
+    {
+      "id": "logo-felt-signature",
+      "brief": "Damped felt signature for a logo sting",
+      "collection": "Launch video · Titles",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.58,
+      "loopable": false
     }
   ]
 }

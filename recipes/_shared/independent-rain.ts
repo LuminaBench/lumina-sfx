@@ -3,7 +3,7 @@ import { renderRecording } from '../../engine/recording.ts';
 import type { RenderContext } from '../../engine/types.ts';
 import drops from '../_recordings/isolated-canopy-droplets.ts';
 
-export function independentRain(ctx: RenderContext, intensity: number, canopy: boolean) {
+export function independentRain(ctx: RenderContext, intensity: number, canopy: boolean, drizzle = false) {
   const { sampleRate: rate, frames, random } = ctx;
   const out = new Float32Array(frames),
     white = noise(random, 'white'),
@@ -26,8 +26,9 @@ export function independentRain(ctx: RenderContext, intensity: number, canopy: b
       (0.19 * wash(n) + 0.1 * pink() + 0.12 * air(n)) * (0.4 + 0.6 * intensity) * (0.73 + 0.29 * gust),
     );
   }
+  if (drizzle) for (let i = 0; i < frames; i++) out[i] *= .14;
   // Independent arrivals. A few large drops have weight without making a rhythmic typewriter.
-  const arrivals = canopy ? 24 + 55 * intensity : 65 + 100 * intensity;
+  const arrivals = drizzle ? 10 + 18 * intensity : canopy ? 24 + 55 * intensity : 65 + 100 * intensity;
   for (let at = 0; at < frames;) {
     const take = random(),
       weight = random() ** 2;
@@ -36,7 +37,7 @@ export function independentRain(ctx: RenderContext, intensity: number, canopy: b
     const drop = renderRecording({ ...ctx, frames: length }, drops, {
       seed: Math.floor(take * drops.takes.length),
       speed,
-      cutoffHz: canopy ? 2650 + 1000 * weight : 6000,
+      cutoffHz: drizzle ? 3300 + 1100 * weight : canopy ? 2650 + 1000 * weight : 6000,
     });
     const g = (0.28 + weight * 0.8) * (canopy ? 0.92 : 0.57);
     for (let j = 0; j < drop.length && at + j < frames; j++) out[at + j] += g * drop[j];

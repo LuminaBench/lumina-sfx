@@ -1,6 +1,6 @@
 # Lumina SFX
 
-An offline sound studio for coding agents. Find a sound among 2,856 editable effects, layer it with others, and export a WAV or wire it into your game.
+An offline sound studio for coding agents. Find a sound among 2,859 editable effects, layer it with others, and export a WAV or wire it into your game.
 
 Describe where the listener is and what they should hear first. A pilot can follow an engine through rain while someone on the beach hears the same aircraft pass overhead. Choose a speaker mix, binaural headphone WAV or independently moving game emitters. [Spatial audio and scene mixing](references/listening-scenes.md)
 
@@ -58,6 +58,7 @@ Run these from the installed skill directory or a clone of this repository. Repl
 
 ```sh
 node scripts/choose.mjs "thocky mechanical keyboard click" --isolated
+node scripts/choose.mjs "settings tab" --palette soft
 node scripts/choose.mjs "fire crackle" "distant thunder" --scene
 node scripts/search.mjs rain --loop
 node scripts/search.mjs moored hull --background-checked

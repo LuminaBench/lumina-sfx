@@ -1,7 +1,8 @@
 // The coding agent supplies action, viewpoint and emphasis from the user's words.
 // Resolve requested performances against the installed catalog before rendering anything.
+import { silentGesture } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
-export function resolveListeningBrief(brief, bank) {
+export function resolveListeningBrief(brief, bank, profile={}) {
   if (
     brief.schemaVersion !== 2 ||
     !Array.isArray(brief.layers) ||
@@ -9,7 +10,8 @@ export function resolveListeningBrief(brief, bank) {
     brief.layers.length > 32
   )
     throw Error('Expected a version 2 brief with 1–32 named layers');
-  const { layers, ...design } = brief;
+  const { layers, palette, ...design } = brief;
+  if ((palette??profile.palette) && !['soft','crisp'].includes(palette??profile.palette)) throw Error('Choose a soft or crisp palette');
   design.balance ??=
     design.focus?.marginDb !== undefined || design.focus?.moments?.length ? 'directed' : 'natural';
   design.sourcePolicy ??= 'clean';
@@ -24,7 +26,8 @@ export function resolveListeningBrief(brief, bank) {
     const { query, prefer, exclude, ...settings } = layer;
     if (typeof query !== 'string' || !query.trim() || settings.id !== undefined)
       throw Error('Use one audible query per brief layer');
-    const hits = rankByIntent(cleanBank, query, exclude ?? '', true).filter(
+    if(silentGesture(query)){warnings.push({label:layer.label, decision:'silence'});continue;}
+    const hits = rankByIntent(cleanBank, query, exclude ?? '', true, profile.votes, {palette:palette??profile.palette,useCase:profile.useCase}).filter(
       (hit) => hit.id === query || !hit.missing.length,
     );
     const terms =
@@ -100,6 +103,7 @@ export function resolveListeningBrief(brief, bank) {
     resolved.push({ id: hit.id, ...settings });
     if (hit.contains?.length) warnings.push({ label: layer.label, alreadyContains: hit.contains });
   }
+  if (!resolved.length && !missing.length) return {decision:'silence', design:null, warnings, missing};
   if (!design.scope)
     design.scope = resolved.some((l) => cleanBank.find((s) => s.id === l.id)?.mixRole === 'interface')
       ? 'mixed'

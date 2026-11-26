@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2856,
+  "count": 2859,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -312,9 +312,7 @@
       "id": "air-pulse-prop-seal-vents-and-cools",
       "name": "Air-pulse prop seal vents and cools",
       "category": "Weapons",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Combat audio · Mechanisms and gear",
       "tags": [
         "air",
@@ -831,6 +829,9 @@
       "id": "alpine-treeline-scattered-rain-loop",
       "name": "Alpine Treeline Scattered Rain",
       "category": "Weather & Ambience",
+      "relatedTakes": [
+        "autumn-meadow-edge-scattered-rain-loop"
+      ],
       "isolation": "isolated",
       "components": [
         "rain"
@@ -1316,10 +1317,7 @@
       "id": "amber-guidance-console-loses-power",
       "name": "Amber Guidance Console Loses Power",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Space · Fictional hardware",
       "tags": [
         "amber",
@@ -1981,10 +1979,7 @@
       "id": "arcade-drum-fed-support-gun-close-dry-report",
       "name": "Arcade drum-fed support gun — close dry report",
       "category": "Weapons",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Field reports and reflections",
       "tags": [
         "weapon",
@@ -2783,9 +2778,7 @@
       "id": "arcade-ricochet-on-hanging-steel-panel",
       "name": "Arcade ricochet on hanging steel panel",
       "category": "Weapons",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Combat audio · Surfaces and energy",
       "tags": [
         "arcade",
@@ -4200,6 +4193,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Tracked · Movement and hull",
       "tags": [
         "armored",
@@ -4238,9 +4232,7 @@
       "id": "armored-hatch-latch-dogs-engage",
       "name": "Armored hatch latch dogs engage",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Tracked · Movement and hull",
       "tags": [
         "armored",
@@ -4329,6 +4321,7 @@
         "mosquito_buzz",
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Tracked · Movement and hull",
       "tags": [
         "armored",
@@ -4708,6 +4701,9 @@
       "id": "autumn-meadow-edge-scattered-rain-loop",
       "name": "Autumn Meadow Edge Scattered Rain",
       "category": "Weather & Ambience",
+      "relatedTakes": [
+        "alpine-treeline-scattered-rain-loop"
+      ],
       "isolation": "isolated",
       "components": [
         "rain"
@@ -8073,9 +8069,7 @@
       "id": "broken-relay-chatters-then-dies",
       "name": "Broken Relay Chatters then Dies",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "broken",
@@ -10191,6 +10185,7 @@
       "id": "campfire-crackle-loop",
       "name": "Campfire · steady wood flame",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "soloQueries": [
         "fire",
@@ -10234,6 +10229,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-25"
       },
+      "additionalRecordings": [
+        {
+          "title": "Fireplace wood crackling",
+          "author": "Sadiquecat",
+          "url": "https://freesound.org/people/Sadiquecat/sounds/707262/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-25"
+        }
+      ],
       "channels": 1,
       "file": "recipes/campfire-crackle-loop.ts"
     },
@@ -10290,6 +10294,9 @@
       ],
       "collection": "Field ambiences — rain",
       "tags": [
+        "steady",
+        "downpour",
+        "leaves",
         "rain",
         "field-recording",
         "open",
@@ -11581,10 +11588,7 @@
       "id": "car-exhaust-under-an-overpass",
       "name": "Car Exhaust under an Overpass",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Auto · Engines and passes",
       "tags": [
         "car",
@@ -13562,11 +13566,11 @@
       "id": "celluloid-whip-cut",
       "name": "Celluloid whip cut",
       "category": "Sci-Fi & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
-        "apex": 0.0144
+        "apex": 0.1537
       },
       "contains": [
         "one continuous gesture"
@@ -13581,13 +13585,15 @@
         "film",
         "strip",
         "flutter",
+        "energetic",
+        "high energy",
         "fast",
         "cut",
         "whip",
         "pan"
       ],
       "loopable": false,
-      "durationSec": 0.12,
+      "durationSec": 0.29,
       "params": {
         "detail": {
           "label": "Texture brightness",
@@ -14035,6 +14041,7 @@
       "cleanHold": [
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Space · Fictional hardware",
       "tags": [
         "ceramic",
@@ -16116,9 +16123,7 @@
       "category": "Footsteps & UI",
       "revision": 2,
       "editorialAction": "typing",
-      "cleanHold": [
-        "insect"
-      ],
+      "sourceReview": "retained",
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -16264,9 +16269,9 @@
       "id": "clipped-energy-shot-in-a-tunnel",
       "name": "Clipped Energy Shot in a Tunnel",
       "category": "Impacts",
-      "cleanHold": [
-        "speech"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Game Combat · Arcade scenes",
       "tags": [
         "clipped",
@@ -16285,6 +16290,22 @@
         }
       },
       "targetRmsDbfs": -22,
+      "recording": {
+        "title": "Squeaking tram departing.wav",
+        "author": "dersinnsspace",
+        "url": "https://freesound.org/people/dersinnsspace/sounds/417657/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/clipped-energy-shot-in-a-tunnel.ts"
     },
@@ -17385,6 +17406,9 @@
       "id": "coastal-floatplane-heard-from-inside-a-shelter",
       "name": "Coastal Floatplane Heard from Inside a Shelter",
       "category": "Aircraft",
+      "relatedTakes": [
+        "piston-trainer-heard-from-inside-a-shelter"
+      ],
       "collection": "Aviation · Airframes and airfields",
       "tags": [
         "coastal",
@@ -17757,6 +17781,7 @@
       "cleanHold": [
         "typing"
       ],
+      "sourceReview": "hold",
       "collection": "Tactile feedback · coin counter",
       "tags": [
         "ui",
@@ -18061,6 +18086,7 @@
       "cleanHold": [
         "typing"
       ],
+      "sourceReview": "hold",
       "collection": "Foley · Hands and equipment",
       "tags": [
         "inventory",
@@ -18571,9 +18597,7 @@
       "id": "commuter-sedan-approach-to-a-pedestrian-crossing",
       "name": "Commuter sedan approach to a pedestrian crossing",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "shout"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -18895,9 +18919,7 @@
       "id": "commuter-sedan-traffic-light-pullaway",
       "name": "Commuter sedan traffic light pullaway",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -20250,9 +20272,7 @@
       "id": "compact-service-sidearm-close-dry-report",
       "name": "Compact service sidearm — close dry report",
       "category": "Weapons",
-      "cleanHold": [
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Field reports and reflections",
       "tags": [
         "weapon",
@@ -20362,6 +20382,7 @@
       "cleanHold": [
         "insect"
       ],
+      "sourceReview": "hold",
       "collection": "Field reports and reflections",
       "tags": [
         "weapon",
@@ -22485,6 +22506,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "cow",
@@ -22528,8 +22550,10 @@
       "name": "Cow Moo",
       "category": "Animals",
       "revision": 2,
-      "cleanHold": [
-        "mosquito_buzz"
+      "sourceReview": "retained",
+      "isolation": "isolated",
+      "components": [
+        "cow"
       ],
       "collection": "Animals",
       "tags": [
@@ -25022,11 +25046,7 @@
       "id": "dashboard-ignition-accessory-click",
       "name": "Dashboard Ignition Accessory Click",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "fly_buzz",
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Auto · Cabin controls",
       "tags": [
         "dashboard",
@@ -25135,6 +25155,10 @@
         "bird_chirp_tweet",
         "bird_vocalization"
       ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "dawn",
@@ -25216,9 +25240,9 @@
       "id": "decommissioned-conduit-arc",
       "name": "Decommissioned Conduit Arc",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "speech"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "decommissioned",
@@ -25236,6 +25260,13 @@
         }
       },
       "targetRmsDbfs": -25,
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "channels": 1,
       "file": "recipes/decommissioned-conduit-arc.ts"
     },
@@ -25396,9 +25427,7 @@
       "id": "deep-space-anomaly-wake",
       "name": "Deep-Space Anomaly Wake",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "deep",
@@ -26263,6 +26292,7 @@
       "cleanHold": [
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Vehicles · Engines",
       "tags": [
         "truck",
@@ -26737,9 +26767,7 @@
       "id": "diesel-yard-loader-take-up-a-heavy-load",
       "name": "Diesel yard loader take up a heavy load",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -26849,9 +26877,7 @@
       "id": "diesel-yard-loader-worksite-standstill-loop",
       "name": "Diesel yard loader worksite standstill loop",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -28574,6 +28600,7 @@
         "bird",
         "crow_caw"
       ],
+      "sourceReview": "hold",
       "collection": "Farm · Animal voices",
       "tags": [
         "donkey",
@@ -28611,6 +28638,7 @@
         "bird",
         "crow_caw"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "donkey",
@@ -28847,9 +28875,7 @@
       "id": "double-elimination-double-seal",
       "name": "Double elimination double seal",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
@@ -29469,10 +29495,7 @@
       "id": "drone-crossing-behind-a-wall",
       "name": "Drone Crossing behind a Wall",
       "category": "Aircraft",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Flight · Rotors and props",
       "tags": [
         "drone",
@@ -29537,10 +29560,7 @@
       "id": "drone-landing-gear-deploy",
       "name": "Drone Landing Gear Deploy",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Sci-fi · Systems and anomalies",
       "tags": [
         "drone",
@@ -29897,6 +29917,10 @@
         "bird_chirp_tweet",
         "bird_vocalization"
       ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "dry",
@@ -29963,10 +29987,7 @@
       "id": "ducati-twin-cold-starter-catch",
       "name": "Ducati twin cold starter catch",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "ducati",
@@ -30214,6 +30235,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Location beds",
       "tags": [
         "duck",
@@ -31343,6 +31365,97 @@
       "file": "recipes/eddy-in-a-rocky-culvert-water-surging-in.ts"
     },
     {
+      "id": "edit-redo-seat",
+      "name": "Redo · forward index detent",
+      "category": "Footsteps & UI",
+      "editorialAction": "redo",
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "device contact"
+      ],
+      "perspective": "close and dry",
+      "collection": "Tactile menus · Editing",
+      "tags": [
+        "ui",
+        "menu",
+        "history",
+        "redo",
+        "forward",
+        "detent",
+        "crisp"
+      ],
+      "loopable": false,
+      "durationSec": 0.115,
+      "params": {
+        "pressure": {
+          "label": "Contact pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.45
+        }
+      },
+      "targetRmsDbfs": -28,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/edit-redo-seat.ts"
+    },
+    {
+      "id": "edit-undo-return",
+      "name": "Undo · felt key return",
+      "category": "Footsteps & UI",
+      "editorialAction": "undo",
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "device contact"
+      ],
+      "perspective": "close and dry",
+      "collection": "Tactile menus · Editing",
+      "tags": [
+        "ui",
+        "menu",
+        "history",
+        "undo",
+        "reverse",
+        "return",
+        "soft",
+        "felt"
+      ],
+      "loopable": false,
+      "durationSec": 0.097,
+      "params": {
+        "pressure": {
+          "label": "Contact pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.45
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Light Switch ON / OFF",
+        "author": "FillSoko",
+        "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/edit-undo-return.ts"
+    },
+    {
       "id": "editing-keypad-double-click",
       "name": "Editing keypad double click",
       "category": "Footsteps & UI",
@@ -32134,6 +32247,7 @@
         "bird_squawk",
         "bird_vocalization"
       ],
+      "sourceReview": "hold",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -33368,9 +33482,7 @@
       "id": "energy-cell-seating",
       "name": "Energy Cell Seating",
       "category": "Weapons",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Game Combat · Reports & Actions",
       "tags": [
         "game",
@@ -33623,10 +33735,9 @@
       "id": "energy-shield-overload-collapse",
       "name": "Energy shield overload collapse",
       "category": "Weapons",
-      "cleanHold": [
-        "typing",
-        "typing_computer_keyboard"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Combat audio · Surfaces and energy",
       "tags": [
         "energy",
@@ -33646,6 +33757,22 @@
       },
       "targetRmsDbfs": -22.5,
       "mixRole": "impact",
+      "recording": {
+        "title": "Squeaking tram departing.wav",
+        "author": "dersinnsspace",
+        "url": "https://freesound.org/people/dersinnsspace/sounds/417657/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/energy-shield-overload-collapse.ts"
     },
@@ -34098,6 +34225,9 @@
       "id": "equipment-wheel-slot-focus",
       "name": "Equipment wheel slot focus",
       "category": "Sci-Fi & UI",
+      "relatedTakes": [
+        "mix-desk-channel-focus"
+      ],
       "collection": "Tactile feedback · equipment wheel",
       "tags": [
         "ui",
@@ -34481,10 +34611,7 @@
       "id": "factory-crane-warning-single-close-buzzer",
       "name": "Factory crane warning single close buzzer",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "factory",
@@ -34522,11 +34649,7 @@
       "id": "factory-door-warning-two-unequal-buzzes",
       "name": "Factory door warning two unequal buzzes",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "fly_buzz",
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "factory",
@@ -35393,6 +35516,10 @@
         "bird_chirp_tweet",
         "bird_vocalization"
       ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "farm",
@@ -35996,9 +36123,9 @@
       "id": "fictional-arc-blade-emergency-power-down",
       "name": "Fictional arc blade emergency power down",
       "category": "Weapons",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Combat audio · Surfaces and energy",
       "tags": [
         "fictional",
@@ -36020,6 +36147,22 @@
       },
       "targetRmsDbfs": -25.5,
       "mixRole": "vehicle",
+      "recording": {
+        "title": "Car peels off",
+        "author": "therisingorder",
+        "url": "https://freesound.org/people/therisingorder/sounds/271337/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fictional-arc-blade-emergency-power-down.ts"
     },
@@ -39638,6 +39781,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "forklift",
@@ -40459,6 +40603,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "frog",
@@ -40505,6 +40650,11 @@
         "cricket_chirp",
         "insect",
         "owl_hoot"
+      ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird",
+        "insect"
       ],
       "collection": "Wildlife · Location beds",
       "tags": [
@@ -40560,6 +40710,7 @@
         "cricket_chirp",
         "insect"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "frog",
@@ -42462,6 +42613,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "goose",
@@ -42523,6 +42675,7 @@
         "mosquito_buzz",
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Location beds",
       "tags": [
         "goose",
@@ -42699,10 +42852,9 @@
       "id": "glass-diagram-last-frame-tail",
       "name": "Glass Diagram Last Frame Tail",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Creator · Edit punctuation",
       "tags": [
         "glass",
@@ -42721,8 +42873,15 @@
           "default": 0.55
         }
       },
-      "targetRmsDbfs": -26,
+      "targetRmsDbfs": -29,
       "mixRole": "interface",
+      "recording": {
+        "title": "Normal click",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "channels": 1,
       "file": "recipes/glass-diagram-last-frame-tail.ts"
     },
@@ -44610,9 +44769,7 @@
       "id": "goat-calls-across-the-pen",
       "name": "Goat calls across the pen",
       "category": "Animals",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Wildlife · Field performances",
       "tags": [
         "goat",
@@ -44657,9 +44814,7 @@
       "name": "Goat Double Bleat",
       "category": "Animals",
       "revision": 2,
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Animals",
       "tags": [
         "goat",
@@ -44692,11 +44847,7 @@
       "id": "goat-kids-calling-together",
       "name": "Goat Kids Calling Together",
       "category": "Animals",
-      "cleanHold": [
-        "fly_buzz",
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Farm · Stable and livestock",
       "tags": [
         "goat",
@@ -44742,6 +44893,7 @@
       "cleanHold": [
         "fly_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "goat",
@@ -45945,6 +46097,7 @@
         "mosquito_buzz",
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Location beds",
       "tags": [
         "bear",
@@ -50861,6 +51014,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Farm · Stable and livestock",
       "tags": [
         "hen",
@@ -51503,11 +51657,7 @@
       "id": "hive-lid-lifted-to-a-swarm",
       "name": "Hive lid lifted to a swarm",
       "category": "Animals",
-      "cleanHold": [
-        "fly_buzz",
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Wildlife · Field performances",
       "tags": [
         "bee",
@@ -54067,9 +54217,7 @@
       "id": "industrial-forklift-key-start-close",
       "name": "Industrial forklift key start close",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "laughter"
-      ],
+      "sourceReview": "retained",
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "industrial",
@@ -54280,7 +54428,7 @@
       "id": "interceptor-turbofan-canopy-interior-cruise-loop",
       "name": "Interceptor turbofan canopy interior cruise loop",
       "category": "Aircraft",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "soloQueries": [
         "cockpit",
@@ -54307,6 +54455,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 4.19,
       "params": {
         "rpm": {
@@ -54365,6 +54514,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 4.67,
       "params": {
         "rpm": {
@@ -54875,6 +55025,7 @@
       "name": "Magnetic seat · inventory drop",
       "category": "Footsteps & UI",
       "revision": 2,
+      "editorialAction": "drop",
       "isolation": "isolated",
       "markers": {
         "seat": 0.061
@@ -54989,6 +55140,7 @@
       "cleanHold": [
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Sci-fi",
       "tags": [
         "sci-fi",
@@ -55638,8 +55790,12 @@
       "id": "jet-pass-overhead",
       "name": "Jet pass overhead",
       "category": "Aircraft",
+      "revision": 2,
       "collection": "Flight · Supersonic and airframe",
       "tags": [
+        "flyby",
+        "distant",
+        "roll",
         "jet",
         "pass",
         "overhead"
@@ -56087,9 +56243,7 @@
       "id": "key-turn-in-lock",
       "name": "Key Turn in Lock",
       "category": "Props & Interactions",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Props · Doors & Storage",
       "tags": [
         "keys",
@@ -56579,10 +56733,7 @@
       "id": "lambs-between-two-pasture-fences-loop",
       "name": "Lambs between two pasture fences loop",
       "category": "Animals",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "isolation": "isolated",
       "collection": "Wildlife · Location beds",
       "tags": [
@@ -59044,6 +59195,7 @@
       "id": "light-rain-loop",
       "name": "Light Rain",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "soloQueries": [
         "light rain"
@@ -59069,6 +59221,8 @@
           "default": 0.62
         }
       },
+      "targetRmsDbfs": -34,
+      "mixRole": "ambience",
       "recording": {
         "title": "08-24-rain-car-windscreen",
         "author": "DanielHren",
@@ -59983,10 +60137,7 @@
       "id": "lion-calls-into-the-dark",
       "name": "Lion calls into the dark",
       "category": "Animals",
-      "cleanHold": [
-        "cricket_chirp",
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Wildlife · Field performances",
       "tags": [
         "lion",
@@ -60057,6 +60208,11 @@
         "cricket_chirp",
         "insect",
         "owl_hoot"
+      ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird",
+        "insect"
       ],
       "collection": "Wildlife · Location beds",
       "tags": [
@@ -60545,9 +60701,7 @@
       "id": "local-streetcar-arriving-under-a-roof",
       "name": "Local Streetcar Arriving under a Roof",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Transit · Stations and rail motion",
       "tags": [
         "local",
@@ -60752,6 +60906,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Transit · Stations and rail motion",
       "tags": [
         "local",
@@ -60840,9 +60995,7 @@
       "id": "local-streetcar-rolling-off-a-platform",
       "name": "Local Streetcar Rolling off a Platform",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Transit · Stations and rail motion",
       "tags": [
         "local",
@@ -60877,9 +61030,7 @@
       "id": "lock-opens-and-chain-slips-loose",
       "name": "Lock opens and chain slips loose",
       "category": "Props & Interactions",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Foley · Hands and equipment",
       "tags": [
         "door",
@@ -60924,6 +61075,44 @@
       ],
       "channels": 1,
       "file": "recipes/lock-opens-and-chain-slips-loose.ts"
+    },
+    {
+      "id": "logo-felt-signature",
+      "name": "End card · felt signature",
+      "category": "Footsteps & UI",
+      "editorialAction": "close",
+      "isolation": "isolated",
+      "collection": "Launch video · Titles",
+      "tags": [
+        "logo",
+        "sting",
+        "end",
+        "card",
+        "editorial",
+        "signature",
+        "felt"
+      ],
+      "loopable": false,
+      "durationSec": 0.58,
+      "params": {
+        "pressure": {
+          "label": "Felt pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -27,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Keyboard typing",
+        "author": "Breviceps",
+        "url": "https://freesound.org/people/Breviceps/sounds/447909/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/logo-felt-signature.ts"
     },
     {
       "id": "long-haul-road-tractor-arterial-road-cruise-loop",
@@ -62982,9 +63171,7 @@
       "id": "low-orbit-recovery-beacon-loses-power",
       "name": "Low Orbit Recovery Beacon Loses Power",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Space · Fictional hardware",
       "tags": [
         "low",
@@ -64248,10 +64435,7 @@
       "id": "marksman-rifle-close-dry-report",
       "name": "Marksman rifle — close dry report",
       "category": "Weapons",
-      "cleanHold": [
-        "cricket_chirp",
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Field reports and reflections",
       "tags": [
         "weapon",
@@ -64460,10 +64644,7 @@
       "id": "marsh-frogs-night-loop",
       "name": "Marsh Frogs at Night",
       "category": "Weather & Ambience",
-      "cleanHold": [
-        "cricket_chirp",
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Farm · Habitat loops",
       "tags": [
         "frog",
@@ -65004,13 +65185,26 @@
       "id": "menu-item-lifted-for-dragging",
       "name": "Menu item lifted for dragging",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "grab",
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "device contact"
+      ],
+      "perspective": "close and dry",
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
         "menu",
         "drag",
+        "handle",
         "grab",
-        "pickup"
+        "pickup",
+        "lift",
+        "soft"
       ],
       "loopable": false,
       "durationSec": 0.205,
@@ -65022,24 +65216,15 @@
           "default": 0.52
         }
       },
-      "targetRmsDbfs": -28,
+      "targetRmsDbfs": -29,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
+        "title": "Keyboard typing",
         "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "url": "https://freesound.org/people/Breviceps/sounds/447909/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
-      "additionalRecordings": [
-        {
-          "title": "Leather",
-          "author": "Vendarro",
-          "url": "https://freesound.org/people/Vendarro/sounds/399540/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/menu-item-lifted-for-dragging.ts"
     },
@@ -65047,14 +65232,27 @@
       "id": "menu-item-snaps-into-a-slot",
       "name": "Menu item snaps into a slot",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "snap",
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "device contact"
+      ],
+      "perspective": "close and dry",
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
         "menu",
-        "drop",
-        "drag",
+        "slot",
         "snap",
-        "slot"
+        "grid",
+        "align",
+        "seat",
+        "card",
+        "magnet"
       ],
       "loopable": false,
       "durationSec": 0.204,
@@ -65066,7 +65264,7 @@
           "default": 0.52
         }
       },
-      "targetRmsDbfs": -25,
+      "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
         "title": "SWITCH BUTTON PRESSING.wav",
@@ -65075,15 +65273,6 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
-      "additionalRecordings": [
-        {
-          "title": "Tapedeck open and closing",
-          "author": "stecman",
-          "url": "https://freesound.org/people/stecman/sounds/376059/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/menu-item-snaps-into-a-slot.ts"
     },
@@ -65545,9 +65734,7 @@
       "id": "micro-gravity-work-lamp-loses-power",
       "name": "Micro Gravity Work Lamp Loses Power",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Space · Fictional hardware",
       "tags": [
         "micro",
@@ -65831,6 +66018,9 @@
       "id": "mix-desk-channel-focus",
       "name": "Mix desk channel focus",
       "category": "Sci-Fi & UI",
+      "relatedTakes": [
+        "equipment-wheel-slot-focus"
+      ],
       "collection": "Tactile feedback · mix desk",
       "tags": [
         "ui",
@@ -66282,11 +66472,7 @@
       "id": "moped-courtyard-rev-and-let-off",
       "name": "Moped courtyard rev and let-off",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "fly_buzz",
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Utility · Motorcycles and plant",
       "tags": [
         "moped",
@@ -67701,6 +67887,7 @@
       "cleanHold": [
         "owl_hoot"
       ],
+      "sourceReview": "hold",
       "contains": [
         "night insects",
         "crickets"
@@ -68796,6 +68983,10 @@
         "bird_chirp_tweet",
         "bird_vocalization"
       ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "open",
@@ -69204,6 +69395,11 @@
         "bird_squawk",
         "bird_vocalization",
         "cricket_chirp",
+        "insect"
+      ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird",
         "insect"
       ],
       "collection": "Farm · Rural places",
@@ -74242,6 +74438,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Location beds",
       "tags": [
         "pig",
@@ -75030,6 +75227,9 @@
       "id": "piston-trainer-heard-from-inside-a-shelter",
       "name": "Piston Trainer Heard from Inside a Shelter",
       "category": "Aircraft",
+      "relatedTakes": [
+        "coastal-floatplane-heard-from-inside-a-shelter"
+      ],
       "collection": "Aviation · Airframes and airfields",
       "tags": [
         "piston",
@@ -77251,6 +77451,7 @@
         "bird_chirp_tweet",
         "bird_vocalization"
       ],
+      "sourceReview": "hold",
       "collection": "Farm · Rural places",
       "tags": [
         "pond",
@@ -78144,6 +78345,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Farm · Homestead production",
       "tags": [
         "pressing",
@@ -78357,6 +78559,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Aviation · Flight and ground detail",
       "tags": [
         "prop",
@@ -79842,9 +80045,9 @@
       "id": "quiet-interview-split-view-slide",
       "name": "Quiet Interview Split View Slide",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Creator · Edit punctuation",
       "tags": [
         "quiet",
@@ -79863,7 +80066,7 @@
           "default": 0.55
         }
       },
-      "targetRmsDbfs": -26,
+      "targetRmsDbfs": -32,
       "mixRole": "interface",
       "recording": {
         "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
@@ -80656,9 +80859,7 @@
       "id": "radar-warning-beep",
       "name": "Radar Warning Beep",
       "category": "Footsteps & UI",
-      "cleanHold": [
-        "owl_hoot"
-      ],
+      "sourceReview": "retained",
       "collection": "Studio originals · Footsteps & UI",
       "tags": [
         "radar",
@@ -83070,10 +83271,7 @@
       "id": "rally-upshift",
       "name": "Rally upshift",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Vehicles · Load and close mechanisms",
       "tags": [
         "rally",
@@ -84438,10 +84636,7 @@
       "id": "relay-panel-brownout-warning",
       "name": "Relay panel brownout warning",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "relay",
@@ -85140,9 +85335,7 @@
       "id": "reward-drawer-delivered",
       "name": "Reward drawer delivered",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "typing"
-      ],
+      "sourceReview": "retained",
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
@@ -86030,9 +86223,8 @@
       "id": "rockpool-spill-over-a-low-lip-gentle-laps-loop",
       "name": "Rockpool spill over a low lip — gentle laps",
       "category": "Water & Fire",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -86086,10 +86278,8 @@
       "id": "rockpool-spill-over-a-low-lip-water-receding",
       "name": "Rockpool spill over a low lip — water receding",
       "category": "Water & Fire",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -87613,6 +87803,9 @@
       "id": "rowboat-at-reed-bank-seen-from-below-the-waterline-loop",
       "name": "Rowboat at Reed Bank Seen from Below the Waterline",
       "category": "Water & Fire",
+      "relatedTakes": [
+        "wooden-dinghy-at-a-dock-seen-from-below-the-waterline-loop"
+      ],
       "collection": "Water · Boats and shore",
       "tags": [
         "rowboat",
@@ -88791,10 +88984,8 @@
       "id": "scatter-feed-trough",
       "name": "Grain Scatter into a Feed Trough",
       "category": "Farming",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
       "collection": "Farm · Animal care",
       "tags": [
         "grain",
@@ -88815,6 +89006,13 @@
         }
       },
       "targetRmsDbfs": -25,
+      "recording": {
+        "title": "pour Coffee seed into plastic jar in a forest",
+        "author": "sszy",
+        "url": "https://freesound.org/people/sszy/sounds/828577/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
       "channels": 1,
       "file": "recipes/scatter-feed-trough.ts"
     },
@@ -89074,6 +89272,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Cinematic flight cues",
       "tags": [
         "flyby",
@@ -89132,6 +89331,7 @@
         "mosquito_buzz",
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Cinematic flight cues",
       "tags": [
         "flyby",
@@ -90693,6 +90893,7 @@
       "name": "Felt bumper · end of list",
       "category": "Footsteps & UI",
       "revision": 2,
+      "editorialAction": "disabled",
       "isolation": "isolated",
       "markers": {
         "stop": 0.059
@@ -92398,9 +92599,7 @@
       "id": "sheep-moves-from-straw-pen",
       "name": "Sheep moves from straw pen",
       "category": "Animals",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Wildlife · Field performances",
       "tags": [
         "sheep",
@@ -94083,7 +94282,7 @@
       "id": "silk-panel-reveal",
       "name": "Silk panel reveal",
       "category": "Sci-Fi & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "reveal",
       "isolation": "isolated",
       "markers": {
@@ -94118,13 +94317,6 @@
       },
       "targetRmsDbfs": -26,
       "mixRole": "interface",
-      "recording": {
-        "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
-        "author": "Nox_Sound",
-        "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
       "channels": 1,
       "file": "recipes/silk-panel-reveal.ts"
     },
@@ -94327,11 +94519,11 @@
       "id": "silk-whip-cut",
       "name": "Silk whip cut",
       "category": "Sci-Fi & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "whip",
       "isolation": "isolated",
       "markers": {
-        "apex": 0.0192
+        "apex": 0.06
       },
       "contains": [
         "one continuous gesture"
@@ -94363,13 +94555,6 @@
       },
       "targetRmsDbfs": -26,
       "mixRole": "interface",
-      "recording": {
-        "title": "Foley_Clothes_Jacket_Whoosh_Sequence_Stereo.wav",
-        "author": "Nox_Sound",
-        "url": "https://freesound.org/people/Nox_Sound/sounds/495390/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
       "channels": 2,
       "file": "recipes/silk-whip-cut.ts"
     },
@@ -95812,6 +95997,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Auto · Engines and passes",
       "tags": [
         "small",
@@ -96003,6 +96189,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Flight · Rotors and props",
       "tags": [
         "small",
@@ -99563,9 +99750,7 @@
       "id": "sports-car-distant-acceleration",
       "name": "Sports Car Distant Acceleration",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Auto · Engines and passes",
       "tags": [
         "sports",
@@ -99600,11 +99785,7 @@
       "id": "sports-car-full-pull-from-driver-seat",
       "name": "Sports Car Full Pull from Driver Seat",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "fly_buzz",
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Auto · Engines and passes",
       "tags": [
         "sports",
@@ -99916,8 +100097,11 @@
       "id": "stall-straw-fork-toss",
       "name": "Stall Straw Fork Toss",
       "category": "Animals",
+      "revision": 2,
       "collection": "Farm · Stable and livestock",
       "tags": [
+        "hay",
+        "scatter",
         "stall",
         "straw",
         "fork",
@@ -99942,22 +100126,6 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
-      "additionalRecordings": [
-        {
-          "title": "SHOVELING.WAV",
-          "author": "ernstBWP",
-          "url": "https://freesound.org/people/ernstBWP/sounds/568846/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        },
-        {
-          "title": "Chickens_being_fed_spreading_feed_scrapping_wind_distant_traffic",
-          "author": "nickmaysoundmusic",
-          "url": "https://freesound.org/people/nickmaysoundmusic/sounds/724213/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/stall-straw-fork-toss.ts"
     },
@@ -100312,9 +100480,7 @@
       "id": "steel-parry-and-release",
       "name": "Steel parry with a brief ringing release",
       "category": "Impacts",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "markers": {
         "contact": 0,
         "release": 0.24
@@ -100983,9 +101149,7 @@
       "id": "steel-shelving-unit-first-piece-gives-way",
       "name": "Steel shelving unit — first piece gives way",
       "category": "Impacts",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Destructible scenery",
       "tags": [
         "debris",
@@ -101145,10 +101309,7 @@
       "id": "steel-tunnel-liner-fragments-skipping-across",
       "name": "Steel tunnel liner — fragments skipping across",
       "category": "Weapons",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -101202,9 +101363,7 @@
       "id": "steel-tunnel-liner-glancing-projectile-hit",
       "name": "Steel tunnel liner — glancing projectile hit",
       "category": "Weapons",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -102429,6 +102588,7 @@
       "cleanHold": [
         "speech"
       ],
+      "sourceReview": "hold",
       "collection": "Transit · Rail and platforms",
       "tags": [
         "streetcar",
@@ -104349,9 +104509,9 @@
       "id": "survey-drone-bay-loses-power",
       "name": "Survey Drone Bay Loses Power",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "revision": 2,
+      "sourceReview": "repaired",
+      "isolation": "isolated",
       "collection": "Space · Fictional hardware",
       "tags": [
         "survey",
@@ -104372,6 +104532,22 @@
       },
       "targetRmsDbfs": -26,
       "mixRole": "interface",
+      "recording": {
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Light Switch ON / OFF",
+          "author": "FillSoko",
+          "url": "https://freesound.org/people/FillSoko/sounds/257958/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/survey-drone-bay-loses-power.ts"
     },
@@ -104957,6 +105133,10 @@
         "bird_chirp_tweet",
         "bird_vocalization"
       ],
+      "sourceReview": "field",
+      "fieldContents": [
+        "bird"
+      ],
       "collection": "Farm · Rural places",
       "tags": [
         "swallows",
@@ -105189,10 +105369,7 @@
       "id": "swinging-chain-gate-hard-impact-and-scatter",
       "name": "Swinging chain gate — hard impact and scatter",
       "category": "Weapons",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Projectile surface responses",
       "tags": [
         "game-projectile",
@@ -105919,9 +106096,7 @@
       "id": "tactile-suit-wrist-module-loses-power",
       "name": "Tactile Suit Wrist Module Loses Power",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Space · Fictional hardware",
       "tags": [
         "tactile",
@@ -106600,9 +106775,7 @@
       "id": "terrain-proximity-warning-rough-buzz",
       "name": "Terrain proximity warning rough buzz",
       "category": "Sci-Fi & UI",
-      "cleanHold": [
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Alerts · Warnings from hardware",
       "tags": [
         "terrain",
@@ -108528,13 +108701,25 @@
       "id": "timeline-playhead-set",
       "name": "Timeline playhead set",
       "category": "Sci-Fi & UI",
+      "revision": 2,
+      "editorialAction": "scrub",
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "device contact"
+      ],
+      "perspective": "close and dry",
       "collection": "Interface · Tactile decisions",
       "tags": [
         "ui",
-        "editor",
-        "scrub",
         "timeline",
-        "marker"
+        "scrub",
+        "frame",
+        "playhead",
+        "marker",
+        "single"
       ],
       "loopable": false,
       "durationSec": 0.132,
@@ -108546,7 +108731,7 @@
           "default": 0.52
         }
       },
-      "targetRmsDbfs": -29,
+      "targetRmsDbfs": -32,
       "mixRole": "interface",
       "recording": {
         "title": "Normal click",
@@ -108555,15 +108740,6 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
-      "additionalRecordings": [
-        {
-          "title": "Keyboard Typing 001.wav",
-          "author": "ristooooo1",
-          "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/timeline-playhead-set.ts"
     },
@@ -108632,6 +108808,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Vehicles · Traction and work",
       "tags": [
         "tire",
@@ -109132,6 +109309,7 @@
       "cleanHold": [
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "isolation": "isolated",
       "markers": {
         "apex": 0.0576
@@ -109608,9 +109786,7 @@
       "id": "tracked-earthmover-steady-steel-run-loop",
       "name": "Tracked earthmover steady steel run loop",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Tracked · Movement and hull",
       "tags": [
         "tracked",
@@ -110324,10 +110500,7 @@
       "id": "tractor-hitch-pin-dropped-into-hole",
       "name": "Tractor Hitch Pin Dropped into Hole",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Vehicles · Traction and work",
       "tags": [
         "tractor",
@@ -111253,9 +111426,7 @@
       "id": "tram-wheels-squeal-round-curve",
       "name": "Tram Wheels Squeal round Curve",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Transit · Rail and platforms",
       "tags": [
         "tram",
@@ -112044,9 +112215,7 @@
       "id": "turbo-straight-six-rally-car-corner-exit-throttle-roll-on",
       "name": "Turbo straight-six rally car corner exit throttle roll-on",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -112163,10 +112332,7 @@
       "id": "turbo-straight-six-rally-car-grandstand-approach",
       "name": "Turbo straight-six rally car grandstand approach",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -112450,9 +112616,7 @@
       "id": "turbo-straight-six-rally-car-wide-open-exhaust-loop",
       "name": "Turbo straight-six rally car wide-open exhaust loop",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -113157,11 +113321,7 @@
       "id": "twin-cylinder-road-bike-road-pace-engine-loop",
       "name": "Twin-cylinder road bike road pace engine loop",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz",
-        "speech"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -113273,10 +113433,7 @@
       "id": "twin-cylinder-road-bike-roll-to-junction-idle",
       "name": "Twin-cylinder road bike roll to junction idle",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -114773,10 +114930,7 @@
       "id": "two-lions-call-across-an-enclosure",
       "name": "Two lions call across an enclosure",
       "category": "Animals",
-      "cleanHold": [
-        "cricket_chirp",
-        "insect"
-      ],
+      "sourceReview": "retained",
       "collection": "Wildlife · Field performances",
       "tags": [
         "lion",
@@ -115068,9 +115222,7 @@
       "id": "two-stroke-step-through-scooter-rider-approaching-roadside",
       "name": "Two-stroke step-through scooter rider approaching roadside",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -115118,10 +115270,7 @@
       "id": "two-stroke-step-through-scooter-road-pace-engine-loop",
       "name": "Two-stroke step-through scooter road pace engine loop",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -115217,9 +115366,7 @@
       "id": "two-stroke-step-through-scooter-roll-to-junction-idle",
       "name": "Two-stroke step-through scooter roll to junction idle",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -115268,10 +115415,7 @@
       "id": "two-stroke-step-through-scooter-snap-throttle-closed",
       "name": "Two-stroke step-through scooter snap throttle closed",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -115319,10 +115463,7 @@
       "id": "two-stroke-step-through-scooter-two-throttle-blips",
       "name": "Two-stroke step-through scooter two throttle blips",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -116372,9 +116513,7 @@
       "id": "v12-inspired-touring-coupe-full-power-pit-wall-departure",
       "name": "V12-inspired touring coupe full power pit wall departure",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -116432,10 +116571,7 @@
       "id": "v12-inspired-touring-coupe-grandstand-approach",
       "name": "V12-inspired touring coupe grandstand approach",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "insect",
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -116714,9 +116850,7 @@
       "id": "v12-inspired-touring-coupe-wide-open-exhaust-loop",
       "name": "V12-inspired touring coupe wide-open exhaust loop",
       "category": "Vehicles & Engines",
-      "cleanHold": [
-        "mosquito_buzz"
-      ],
+      "sourceReview": "retained",
       "collection": "Propulsion · Road and machinery",
       "tags": [
         "vehicle",
@@ -117481,6 +117615,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Motion · Road and workshop",
       "tags": [
         "vintage",
@@ -118336,9 +118471,8 @@
       "id": "water-at-a-stony-ford-water-receding",
       "name": "Water at a stony ford — water receding",
       "category": "Water & Fire",
-      "cleanHold": [
-        "insect"
-      ],
+      "sourceReview": "retained",
+      "backgroundChecked": true,
       "collection": "Field ambiences — water",
       "tags": [
         "water",
@@ -119157,6 +119291,8 @@
       "category": "Water & Fire",
       "collection": "Field ambiences — water",
       "tags": [
+        "shore",
+        "break",
         "water",
         "field-recording",
         "open",
@@ -120106,6 +120242,7 @@
       "cleanHold": [
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Movement · Gear and unusual surfaces",
       "tags": [
         "wet",
@@ -120476,6 +120613,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Location beds",
       "tags": [
         "wolf",
@@ -121482,7 +121620,9 @@
       "id": "windblown-rain-on-a-loose-garage-door-continuous-patter-loop",
       "name": "Windblown rain on a loose garage door — continuous patter",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
+      "auditionNote": "The sustained wash masks individual drops in blind auditions. For short rain on a metal door, use the receding downpour take.",
       "components": [
         "rain"
       ],
@@ -121493,8 +121633,9 @@
         "interior",
         "continuous patter",
         "windblown",
-        "on",
-        "a"
+        "rain on metal",
+        "door",
+        "sheet steel"
       ],
       "loopable": true,
       "sustainMode": "evolving",
@@ -121516,6 +121657,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "08-24-rain-car-windscreen",
+          "author": "DanielHren",
+          "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/windblown-rain-on-a-loose-garage-door-continuous-patter-loop.ts"
     },
@@ -121524,8 +121674,17 @@
       "name": "Windblown rain on a loose garage door — downpour recedes",
       "category": "Weather & Ambience",
       "isolation": "isolated",
+      "soloQueries": [
+        "garage door rain patter",
+        "rain on a loose metal door",
+        "rain patter on a loose garage door"
+      ],
       "components": [
         "rain"
+      ],
+      "contains": [
+        "rain patter on sheet metal",
+        "loose door rattle"
       ],
       "collection": "Field ambiences — rain",
       "tags": [
@@ -122084,6 +122243,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "wolf",
@@ -122132,6 +122292,7 @@
         "mosquito_buzz",
         "shout"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "wolf",
@@ -122169,6 +122330,7 @@
         "insect",
         "mosquito_buzz"
       ],
+      "sourceReview": "hold",
       "collection": "Wildlife · Field performances",
       "tags": [
         "wolf",
@@ -123582,6 +123744,9 @@
       "id": "wooden-dinghy-at-a-dock-seen-from-below-the-waterline-loop",
       "name": "Wooden Dinghy at a Dock Seen from Below the Waterline",
       "category": "Water & Fire",
+      "relatedTakes": [
+        "rowboat-at-reed-bank-seen-from-below-the-waterline-loop"
+      ],
       "collection": "Water · Boats and shore",
       "tags": [
         "wooden",
@@ -124067,7 +124232,7 @@
       "id": "working-motorboat-steady-offshore-loop",
       "name": "Working motorboat steady offshore loop",
       "category": "Water & Fire",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "handoff": 1.48
@@ -124078,6 +124243,7 @@
       "perspective": "above water",
       "collection": "Maritime · Motors and deck",
       "tags": [
+        "cruise",
         "working",
         "motorboat",
         "steady",
@@ -124086,6 +124252,7 @@
         "marine"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.25,
       "params": {
         "intensity": {

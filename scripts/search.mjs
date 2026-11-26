@@ -1,11 +1,13 @@
 #!/usr/bin/env node
+import { listeningVotes, selectionProfile } from './selection-profile.mjs';
+import { distinctChoices } from './related-takes.mjs';
 import { leafIds } from './scene-leaves.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 
 const { values, positionals } = parseArgs({
-  options: { designs: { type: 'boolean' }, intent: { type: 'string' }, exclude: { type: 'string' }, limit: { type: 'string' }, 'background-checked': { type: 'boolean' }, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
+  options: { 'all-takes':{type:'boolean'}, profile:{type:'string'}, 'use-case':{type:'string'}, palette:{type:'string'}, designs: { type: 'boolean' }, intent: { type: 'string' }, exclude: { type: 'string' }, limit: { type: 'string' }, 'background-checked': { type: 'boolean' }, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
   allowPositionals: true,
 });
 
@@ -21,7 +23,7 @@ if (values.help) {
   const limit = values.limit === undefined ? undefined : Number(values.limit);
   if (limit !== undefined && (!Number.isSafeInteger(limit) || limit < 1)) throw Error('--limit requires a positive integer');
   let sounds = candidates.filter((sound) => {
-    const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.soloQueries ?? []), ...(sound.contains ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
+    const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.fieldContents??[]), ...(sound.soloQueries ?? []), ...(sound.contains ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
     return (!values.clean || (sound.isolation === 'isolated' && !sound.cleanHold && !sound.auditionNote)) && terms.every((term) => text.includes(term)) &&
       (!values.category || sound.category.toLowerCase().includes(values.category.toLowerCase())) &&
       (!values.collection || sound.collection?.toLowerCase().includes(values.collection.toLowerCase())) &&
@@ -39,23 +41,23 @@ if (values.help) {
     }
     sounds = checked;
   }
-  let votes;
-  let review;
-  if (values.votes) {
-    review = JSON.parse(await readFile(values.votes, 'utf8'));
-    votes = review.votes ?? review.reviews;
-    if (!votes || typeof votes !== 'object' || Array.isArray(votes)) throw Error('Expected listening votes or studio reviews');
+  const profile=await selectionProfile(values.profile);
+  const useCase=values['use-case']??profile.useCase, palette=values.palette??profile.palette;
+  if(palette && !['soft','crisp'].includes(palette)) throw Error('Choose a soft or crisp palette');
+  const {votes,review}=await listeningVotes(values.votes??profile.votes);
+  if(votes){
     const rank = { yes: 0, approved: 0, no: 2, rejected: 2 };
     const matchesRevision = sound => (votes[sound.id]?.revision ?? 1) === (sound.revision ?? 1);
-    const score = sound => matchesRevision(sound) ? rank[votes[sound.id]?.decision] ?? 1 : 1;
+    const score = sound => matchesRevision(sound) && (!votes[sound.id]?.useCase || votes[sound.id].useCase===useCase) ? rank[votes[sound.id]?.decision] ?? 1 : 1;
     if (values.intent === undefined) sounds.sort((a, b) => score(a) - score(b));
     for (const sound of sounds) if (Object.hasOwn(votes, sound.id)) {
       const v = votes[sound.id];
-      sound.review = { currentRevision: matchesRevision(sound), decision: v.decision, reason: v.reason ?? v.note, heard: v.heard, phone: v.phone,
+      sound.review = { useCase:v.useCase, currentRevision: matchesRevision(sound), decision: v.decision, reason: v.reason ?? v.note, heard: v.heard, phone: v.phone,
         background: v.background ? review.bed : undefined };
     }
   }
-  if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude, false, votes);
+  if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude, false, votes, {palette,useCase});
+  if(values.intent && !values.designs && !values['all-takes']) sounds=distinctChoices(sounds);
   if (limit !== undefined) sounds = sounds.slice(0, limit);
   if (values.json) console.log(JSON.stringify(sounds, null, 2));
   else if (!sounds.length) console.log('No matching recipes');
