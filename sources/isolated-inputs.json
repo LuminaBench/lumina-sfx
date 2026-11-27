@@ -630,6 +630,80 @@
         "frames": 51840,
         "sha256": "7b811d129a38dab184a1ce09d0061e3809f7e0cd05197ebaa417b61b23c32cd4"
       }
+    ],
+    "coasting-freehub": [
+      {
+        "startSec": 6.13,
+        "frames": 126000,
+        "sha256": "4af13d36a732b8dd62f5b83b6e5151048b2f2f356f9859e61e37b3e42f4b4dd2"
+      },
+      {
+        "startSec": 10.08,
+        "frames": 107520,
+        "sha256": "2444b09e38677137d137231ba8088e92682d9e658dff23370e9cbd3af75ba238"
+      }
+    ],
+    "breaking-shore": [
+      {
+        "startSec": 25.14,
+        "frames": 152400,
+        "sha256": "7d7725a64320d9dd6ab7a01c9d176bb8ae3e548490febb7bf4530c5b474d8121"
+      },
+      {
+        "startSec": 41.03,
+        "frames": 154080,
+        "sha256": "1c8815c726c4657f959b812fce1a79d78c36306cf165ec19b8e7bac8822bb663"
+      }
+    ],
+    "shutting-latch": [
+      {
+        "startSec": 0.146,
+        "frames": 2848,
+        "sha256": "15b6ea62a166f905e7b2f548942acbcbc586fa85d8e4b8ef1a23ce6a7b18cc3b"
+      }
+    ],
+    "keys-on-table": [
+      {
+        "startSec": 2.627,
+        "frames": 12768,
+        "sha256": "012da1a3b376896b0d39607211915d0d8e4d4868eaa35282b5e539aef554aee0"
+      },
+      {
+        "startSec": 14.727,
+        "frames": 13792,
+        "sha256": "6d97c47327c6edd1ae3b0c60d922ef61d5413e0c50e6f3b4bef8da3f6722d4c3"
+      }
+    ],
+    "finger-on-phone": [
+      {
+        "startSec": 4.76925,
+        "frames": 1472,
+        "sha256": "6fd5d43bdfaf4c1da9275ca9fcd599363c6e8d0cbd3954e1c4db5ff3c5d42821"
+      },
+      {
+        "startSec": 9.55125,
+        "frames": 1600,
+        "sha256": "869a8c1a546c59c334faccae0f57ffc9e71fc623eca66a65d2ddd1c4ea7b9c5c"
+      },
+      {
+        "startSec": 10.427,
+        "frames": 1536,
+        "sha256": "8d7d7b38e398020e8b9a72755cae8f72aca09cebb178b0eb3722083d89efba38"
+      }
+    ],
+    "linear-mechanical-spacebar": [
+      {
+        "startSec": 0.006,
+        "frames": 6848,
+        "sha256": "1be2d677bf83393827d9287e93370d502fe26b6646125014e22a458ed938d607"
+      }
+    ],
+    "laptop-scissor-spacebar": [
+      {
+        "startSec": 0,
+        "frames": 5184,
+        "sha256": "000a52f078f40f2822c11cc992bf1415b20e825e1f7d8c1ab114324ea078e4e0"
+      }
     ]
   }
 }

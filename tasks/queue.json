@@ -26816,7 +26816,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-return",
@@ -27344,7 +27344,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "laptop-scissor-keyboard-return",
@@ -29151,7 +29151,7 @@
       "category": "Footsteps & UI",
       "durationSec": 0.062,
       "loopable": false,
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "paper-title-card-seat",
@@ -29161,7 +29161,7 @@
       "category": "Footsteps & UI",
       "durationSec": 0.12,
       "loopable": false,
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "desk-telephone-bell-ring",
@@ -29210,6 +29210,83 @@
       "category": "Footsteps & UI",
       "durationSec": 0.1,
       "loopable": false,
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "soft-touch-acknowledgement",
+      "brief": "One rounded electronic acknowledgement for a deliberately audible phone or tablet control.",
+      "collection": "Launch video · Device clicks",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.072,
+      "loopable": false,
+      "revision": 1,
+      "acceptance": "One soft pulse on the marked input, a short decay and audible body in a mono phone mix."
+    },
+    {
+      "id": "linear-mechanical-keyboard-spacebar-down",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Launch video · Keyboards",
+      "durationSec": 0.106,
+      "loopable": false,
+      "brief": "Linear mechanical keyboard spacebar downstroke",
+      "acceptance": "Match the named action, timing and material at edit gain.",
+      "revision": 1
+    },
+    {
+      "id": "laptop-scissor-keyboard-spacebar-down",
+      "category": "Footsteps & UI",
+      "status": "review",
+      "collection": "Launch video · Keyboards",
+      "durationSec": 0.083,
+      "loopable": false,
+      "brief": "Laptop scissor keyboard spacebar downstroke",
+      "acceptance": "Match the named action, timing and material at edit gain.",
+      "revision": 1
+    },
+    {
+      "id": "bicycle-coasting-freewheel",
+      "category": "Vehicles & Engines",
+      "collection": "Motion · Road and workshop",
+      "durationSec": 6.3,
+      "loopable": true,
+      "brief": "Coasting bike freewheel",
+      "acceptance": "A continuous freewheel mechanism; an emitter carries travel and distance.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "small-door-latch-close",
+      "category": "Props & Interactions",
+      "collection": "Props · Doors & Storage",
+      "durationSec": 0.103,
+      "loopable": false,
+      "brief": "Small door latch closes",
+      "acceptance": "One short closing catch without a door slam or a second handle action.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "keys-set-down-on-wood",
+      "category": "Props & Interactions",
+      "collection": "Foley · Hands and equipment",
+      "durationSec": 0.47,
+      "loopable": false,
+      "brief": "Set a keyring down on wood",
+      "acceptance": "One placement with the wooden contact and settling metal in the source performance.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "ocean-shore-break-loop",
+      "category": "Water & Fire",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 8.5,
+      "loopable": true,
+      "brief": "Breaking surf at the shore",
+      "acceptance": "Continuous natural wash, breaking crest and recession, at neutral world position.",
       "status": "review",
       "revision": 1
     }

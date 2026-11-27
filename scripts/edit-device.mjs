@@ -52,7 +52,7 @@ export function silentTouchRequest(query) {
   return (
     deviceKind(query) === 'touch' &&
     /\b(tap(?:ping)?|typ(?:e|es|ing)|key(?:board|press)|press(?:ing)?)\b/i.test(query) &&
-    !/\b(closeup|close|glass|feedback|tick|audible|chime|confirmation|foley|recorded|haptic|toggle|tab switch)\b/i.test(
+    !/\b(closeup|close|glass|feedback|tick|audible|chime|confirmation|acknowledg(?:e)?ment|foley|recorded|haptic|toggle|tab switch)\b/i.test(
       query,
     )
   );
@@ -63,7 +63,7 @@ export function contactQuery(raw) {
   // For composite briefs or qualifiers outside this vocabulary the full retrieval
   // path can explain any unfulfilled terms, including a requested recording.
   const simple =
-    /^(?:a|an|the|on|of|to|from|at|in|with|for|one|single|my|some|please|sound|sfx|physical|close|up|quiet|soft|subtle|short|tactile|foley|glass|display|tablet|phone|smartphone|touchscreen|touch|screen|pen|pencil|tip|nib|stylus|finger|fingertip|pad|tap|taps|tapping|contact|press|typing|feedback|tick|button|control)$/;
+    /^(?:a|an|the|on|of|to|from|at|in|with|for|one|single|my|some|please|sound|sfx|physical|close|up|quiet|soft|subtle|short|tactile|foley|glass|display|tablet|phone|smartphone|touchscreen|touch|screen|pen|pencil|tip|nib|stylus|finger|fingertip|pad|tap|taps|tapping|contact|press|typing|feedback|tick|electronic|acknowledgment|acknowledgement|button|control)$/;
   if ((query.toLowerCase().match(/[a-z0-9]+/g) ?? []).some((w) => !simple.test(w))) return query;
   if (
     /\b(?:stylus|pen|pencil) (?:tip|nib)\b/i.test(query) &&
@@ -79,13 +79,13 @@ export function contactQuery(raw) {
     !/without|double|release|drag|recorded/i.test(query)
   )
     return 'fingertip-on-display-glass';
-  const phoneInput = deviceKind(query) === 'touch' && /\b(?:tap|typing|press)\b/i.test(query);
+  const phoneInput = deviceKind(query) === 'touch' && /\b(?:tap|typing|press|feedback|acknowledg(?:e)?ment)\b/i.test(query);
   if (
     phoneInput &&
-    /\b(?:subtle|quiet|soft|tactile|single|short) (?:feedback|tick)|\bfeedback (?:tick|tap)\b/i.test(query) &&
+    /\b(?:subtle|quiet|soft|tactile|single|short|electronic) (?:feedback|tick|acknowledg(?:e)?ment)|\bfeedback (?:tick|tap)\b/i.test(query) &&
     !/\b(?:no|not|without|chime|reverb|ringing|double|three)\b/i.test(query)
   )
-    return 'settings-focus-felt-tick';
+    return 'soft-touch-acknowledgement';
   return query;
 }
 
@@ -113,4 +113,14 @@ export function returnKeyDown(event) {
   const text = stripButtonLabel(event.brief ?? '');
   return /\b(?:enter|return) key\b|\b(?:press|hold|hit)(?:es|s|ing)? (?:the )?(?:enter|return)\b/i.test(text) &&
     !/\b(?:not|without|never|button|label|shortcut|chord)\b/i.test(text);
+}
+
+// A visible space in generated text does not imply a physical key-down.
+export function spacebarDown(event) {
+  if (!['keyboard', 'mechanical'].includes(event.deviceKind) ||
+      !['press', 'confirm', 'type'].includes(event.action) || event.keyFrames?.length > 1) return false;
+  if (event.key !== undefined) return /^(?: |space|spacebar)$/i.test(event.key);
+  const text = stripButtonLabel(event.brief ?? '');
+  return /\bspace[ -]?(?:bar|key)\b/i.test(text) &&
+    !/\b(?:no|not|without|never|button|label|chord|shortcut|instead)\b/i.test(text);
 }

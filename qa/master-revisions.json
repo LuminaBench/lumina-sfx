@@ -1677,8 +1677,8 @@
     },
     "linear-mechanical-keyboard-spacebar": {
       "previous": "994790b2cae1157114e7fc6db69eba4eb39e0d23d8afdbdd0cd7bd9223ae9192",
-      "current": "669e699c446d1ae63e83a5110bd0b36a3dd60d1bbc755a802e7ae6bfb84bf808",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "574e5597cf6208668a32d93b406ff997ff4fec7a8ef699a3ff36eeb15c56af91",
+      "reason": "Use the individual wide spacebar recorded on the matching physical keyboard."
     },
     "linear-mechanical-keyboard-shortcut": {
       "previous": "2f0daf27c09bf10774e2f09232e72f9fdaaa1a8761643797bd8c071c1c8cc2ea",
@@ -1744,6 +1744,11 @@
       "previous": "b4d04655666e318e41d469138a9fc4d5af2512dc28e9ec43f202e97d2e3a49d9",
       "current": "18e8781c3c837d51f9818a935993c8df4c5e2ce1be81cc424501d2dd122cc16a",
       "reason": "Retain the recorded shoe plant and bring out loose stones under the rolling boot."
+    },
+    "laptop-scissor-keyboard-spacebar": {
+      "previous": "14b1cc42b8daa45f128c6961463f6b223e12942e4d184f9a966fb0405c991614",
+      "current": "6accff191c7341e934257e51e6dcd3eb0fa90513f93fcf237ea7715a769f81f1",
+      "reason": "Use the individual wide spacebar recorded on the matching physical keyboard."
     }
   }
 }

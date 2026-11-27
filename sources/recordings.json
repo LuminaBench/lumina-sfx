@@ -3111,6 +3111,25 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-breaking-shore.ts",
+      "title": "Waves on beach natural sound.",
+      "author": "goochiano",
+      "url": "https://freesound.org/people/goochiano/sounds/623050/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 152400,
+          "sha256": "7d7725a64320d9dd6ab7a01c9d176bb8ae3e548490febb7bf4530c5b474d8121"
+        },
+        {
+          "frames": 154080,
+          "sha256": "1c8815c726c4657f959b812fce1a79d78c36306cf165ec19b8e7bac8822bb663"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-canopy-droplets.ts",
       "title": "08-24-rain-car-windscreen",
       "author": "DanielHren",
@@ -3261,6 +3280,25 @@
         {
           "frames": 3528,
           "sha256": "c70924f63445ad9c65131085455c02f63d2ee765ab2d1be31ba88862dd456065"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-coasting-freehub.ts",
+      "title": "freewheel.wav",
+      "author": "stib",
+      "url": "https://freesound.org/people/stib/sounds/494328/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 126000,
+          "sha256": "4af13d36a732b8dd62f5b83b6e5151048b2f2f356f9859e61e37b3e42f4b4dd2"
+        },
+        {
+          "frames": 107520,
+          "sha256": "2444b09e38677137d137231ba8088e92682d9e658dff23370e9cbd3af75ba238"
         }
       ]
     },
@@ -3458,6 +3496,29 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-finger-on-phone.ts",
+      "title": "Finger Tapping Phone",
+      "author": "jentlemen",
+      "url": "https://freesound.org/people/jentlemen/sounds/704862/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1472,
+          "sha256": "6fd5d43bdfaf4c1da9275ca9fcd599363c6e8d0cbd3954e1c4db5ff3c5d42821"
+        },
+        {
+          "frames": 1600,
+          "sha256": "869a8c1a546c59c334faccae0f57ffc9e71fc623eca66a65d2ddd1c4ea7b9c5c"
+        },
+        {
+          "frames": 1536,
+          "sha256": "8d7d7b38e398020e8b9a72755cae8f72aca09cebb178b0eb3722083d89efba38"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-garden-shower.ts",
       "title": "Light Rain",
       "author": "soundrecorder7",
@@ -3648,6 +3709,25 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-keys-on-table.ts",
+      "title": "Key placed on wooden table",
+      "author": "Joseph SARDIN",
+      "url": "https://bigsoundbank.com/key-placed-on-wooden-table-s0087.html",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 12768,
+          "sha256": "012da1a3b376896b0d39607211915d0d8e4d4868eaa35282b5e539aef554aee0"
+        },
+        {
+          "frames": 13792,
+          "sha256": "6d97c47327c6edd1ae3b0c60d922ef61d5413e0c50e6f3b4bef8da3f6722d4c3"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-lamb-call.ts",
       "title": "Lamb and Mother",
       "author": "swiftoid",
@@ -3659,6 +3739,21 @@
         {
           "frames": 22320,
           "sha256": "32169a6daf37824c1724d689f14f5c1ce73972491b2321fdcb02a83c353739d3"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-laptop-scissor-spacebar.ts",
+      "title": "MBA Space-bar mono",
+      "author": "Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/799113/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 5184,
+          "sha256": "000a52f078f40f2822c11cc992bf1415b20e825e1f7d8c1ab114324ea078e4e0"
         }
       ]
     },
@@ -3678,6 +3773,21 @@
         {
           "frames": 2056,
           "sha256": "ed7cf55df626a9875a9dc2939fb0a929031f12c9ca6cd4b07119189d352ee38c"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-linear-mechanical-spacebar.ts",
+      "title": "Keychron k10 space_bar",
+      "author": "Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/789630/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 6848,
+          "sha256": "1be2d677bf83393827d9287e93370d502fe26b6646125014e22a458ed938d607"
         }
       ]
     },
@@ -4182,6 +4292,21 @@
         {
           "frames": 85200,
           "sha256": "0475e24ec0031de3af8a7e673113c059c0605170def2cb48aab6944b2b7b14bb"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-shutting-latch.ts",
+      "title": "DoorLatchClick.wav",
+      "author": "chewiesmissus",
+      "url": "https://freesound.org/people/chewiesmissus/sounds/213394/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 2848,
+          "sha256": "15b6ea62a166f905e7b2f548942acbcbc586fa85d8e4b8ef1a23ce6a7b18cc3b"
         }
       ]
     },

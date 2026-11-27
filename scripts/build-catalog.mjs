@@ -43,7 +43,7 @@ const sounds = recipes.map(recipe => {
     id, name, category, revision: ticket?.revision, editorialAction: editorialAction(id, ticket?.collection),
     ...disposition, relatedTakes:relatedTakes.find(group=>group.includes(id))?.filter(other=>other!==id), isolation: recipe.isolation, backgroundChecked: current && !recipe.auditionNote && !entry.auditionNote && !disposition.cleanHold || undefined,
     auditionNote: recipe.auditionNote ?? (current ? entry.auditionNote : undefined), markers: recipe.markers, soloQueries:recipe.soloQueries, components:recipe.components, contains: recipe.contains, perspective: recipe.perspective, collection: ticket?.collection, tags, loopable, sustainMode:recipe.sustainMode, durationSec: renderDurationSec(recipe), macros, params, targetRmsDbfs, mixRole, recording,
-    additionalRecordings, takeCount: recipe.takeCount, spectrum, channels: renderStereo ? 2 : 1, file: `recipes/${id}.ts`,
+    additionalRecordings, takeCount: recipe.takeCount, spectrum, channels: renderStereo ? 2 : 1, gestureTiming: recipe.withGestureTiming ? 'native' : undefined, file: `recipes/${id}.ts`,
   };
 });
 await checkIsolatedRecipes(sounds.filter(sound => sound.isolation === 'isolated'));

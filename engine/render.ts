@@ -48,7 +48,12 @@ function taper(samples: Float32Array, sampleRate: number): void {
 
 // Align a genuine attack to the end of a 0.2 ms de-click ramp. Trimming the
 // attack to frame zero and then fading it can erase the only early contact.
-function alignAttack(raw: Float32Array, onset: number, sampleRate: number): Float32Array {
+function alignAttack(raw: Float32Array, onset: number, sampleRate: number, preserveAttack = false): Float32Array {
+  if (preserveAttack) {
+    const shot = raw.slice();
+    taper(shot, sampleRate);
+    return shot;
+  }
   const ramp = Math.max(1, Math.round(sampleRate * 0.0002));
   const start = Math.max(0, onset) - ramp;
   const shot = new Float32Array(raw.length);
@@ -59,11 +64,11 @@ function alignAttack(raw: Float32Array, onset: number, sampleRate: number): Floa
   return shot;
 }
 
-function prepareShot(raw: Float32Array, sampleRate: number): Float32Array {
+function prepareShot(raw: Float32Array, sampleRate: number, preserveAttack: boolean): Float32Array {
   let peak = 0;
   for (const sample of raw) peak = Math.max(peak, Math.abs(sample));
   const onset = raw.findIndex(sample => Math.abs(sample) >= peak * 0.035);
-  return alignAttack(raw, onset, sampleRate);
+  return alignAttack(raw, onset, sampleRate, preserveAttack);
 }
 
 function master(input: Float32Array, sampleRate: number, rmsDbfs: number): Float32Array {
@@ -128,7 +133,7 @@ export function renderSound(recipe: SoundRecipe, opts: RenderOptions = {}, sampl
   }
   if (recipe.preserveTimeline) return sceneCeiling([raw])[0];
   const target = targetRmsDb(recipe.loopable, recipe.targetRmsDbfs);
-  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate);
+  const prepared = recipe.loopable ? closeLoop(raw, frames, overlap) : prepareShot(raw, sampleRate, recipe.immediateOnset === false);
   const output = master(prepared, sampleRate, target);
   return opts.level === 'balanced' ? balanceLevels(output, sampleRate, resolveMixRole(recipe)) : output;
 }
@@ -152,7 +157,7 @@ export function renderChannels(recipe: SoundRecipe, opts: RenderOptions = {}, sa
   while (onset < frames && Math.max(Math.abs(raw[0][onset]), Math.abs(raw[1][onset])) < peak * 0.035) onset++;
   const channels = raw.map(c => recipe.loopable
     ? closeLoop(c, frames, overlap)
-    : alignAttack(c, onset, sampleRate));
+    : alignAttack(c, onset, sampleRate, recipe.immediateOnset === false));
   const interleaved = new Float32Array(frames*2);
   for (let i = 0; i < frames; i++) {
     interleaved[i*2] = channels[0][i];

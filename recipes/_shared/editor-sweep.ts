@@ -71,15 +71,28 @@ export function editorSweep(id: string, name: string, tags: string[], texture: S
     render(ctx, { params, seed }) { return sweepAudio(ctx, params.detail, seed, texture, gesture, friction); },
   };
   if (!gesture.direction) return recipe;
-  return { ...recipe, renderStereo(ctx, { params, seed }) {
-    const mono = sweepAudio(ctx, params.detail, seed, texture, gesture, friction);
-    const left = new Float32Array(mono.length), right = new Float32Array(mono.length);
-    for (let i = 0; i < mono.length; i++) {
-      const travel = Math.cos(Math.PI * i / Math.max(1, mono.length - 1));
-      const angle = Math.PI / 4 * (1 - gesture.direction * gesture.travel * travel);
-      left[i] = mono[i] * Math.cos(angle);
-      right[i] = mono[i] * Math.sin(angle);
-    }
-    return [left, right];
-  } };
+  const fitGesture: NonNullable<SoundRecipe['withGestureTiming']> = (durationSec, apexSec) => {
+    if (!Number.isFinite(durationSec) || durationSec < 0.01 || durationSec > 120 ||
+        !Number.isFinite(apexSec) || apexSec <= 0 || apexSec >= durationSec)
+      throw new RangeError('Put the swipe apex inside its 0.01–120 second duration');
+    // Always fit from the original texture, including when an editor revises a fitted take.
+    const moving = { ...texture, body: texture.body * 0.35, air: texture.air + 0.12 };
+    const fitted = editorSweep(id, name, tags, moving, {
+      ...gesture, duration: durationSec, apex: apexSec / durationSec,
+    }, friction);
+    return { ...fitted, withGestureTiming: fitGesture };
+  };
+  return { ...recipe, withGestureTiming: fitGesture,
+    renderStereo(ctx, { params, seed }) {
+      const mono = sweepAudio(ctx, params.detail, seed, texture, gesture, friction);
+      const left = new Float32Array(mono.length), right = new Float32Array(mono.length);
+      for (let i = 0; i < mono.length; i++) {
+        const travel = Math.cos(Math.PI * i / Math.max(1, mono.length - 1));
+        const angle = Math.PI / 4 * (1 - gesture.direction * gesture.travel * travel);
+        left[i] = mono[i] * Math.cos(angle);
+        right[i] = mono[i] * Math.sin(angle);
+      }
+      return [left, right];
+    },
+  };
 }

@@ -1,7 +1,7 @@
 import { editorialPicks, featuredLanding } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { chooseFamilies, familySlot } from './edit-family.mjs';
-import { deviceKind, feedbackFor, physicalSwitch, returnKeyDown, excludedTraits, stripButtonLabel } from './edit-device.mjs';
+import { deviceKind, feedbackFor, physicalSwitch, returnKeyDown, spacebarDown, excludedTraits, stripButtonLabel } from './edit-device.mjs';
 import {
   contextOrder,
   levelMatch,
@@ -117,6 +117,12 @@ function checkEvent(e, ids, durationFrames) {
       e.frame,
       e.endFrame === undefined ? durationFrames - 1 : Math.min(e.endFrame, durationFrames - 1),
     );
+  if (e.motion !== undefined &&
+      (e.action !== 'slide' || !['accent', 'follow'].includes(e.motion) || e.endFrame === undefined))
+    throw Error('Set motion to accent or follow on a slide with an end frame');
+  if (e.motion === 'follow' && (e.endFrame - e.frame < 2 ||
+      (e.syncFrame !== undefined && (e.syncFrame <= e.frame || e.syncFrame >= e.endFrame))))
+    throw Error('Place the sweep accent inside the visible motion');
   for (const field of ['accent', 'underSpeech', 'muted', 'physicalContact'])
     if (e[field] !== undefined && typeof e[field] !== 'boolean') throw Error('Expected boolean ' + field);
   if (e.gesture !== undefined && (typeof e.gesture !== 'string' || !e.gesture))
@@ -145,9 +151,11 @@ function optionsFor(e, palette, mode) {
   if (e.soundId) return [e.soundId];
   if (feedbackFor(e, e.deviceKind) === 'surface')
     return [e.deviceKind === 'touch' ? 'fingertip-on-display-glass' : 'stylus-tip-on-tablet-glass'];
-  if (feedbackFor(e, e.deviceKind) === 'digital') return ['settings-focus-felt-tick'];
+  if (feedbackFor(e, e.deviceKind) === 'digital') return ['soft-touch-acknowledgement'];
   const board = /gasket|thock/i.test(e.device ?? '') ? 'gasket-mount' : 'linear-mechanical';
   if (returnKeyDown(e)) return ['linear-mechanical-keyboard-return-down'];
+  if (spacebarDown(e)) return [e.deviceKind === 'keyboard'
+    ? 'laptop-scissor-keyboard-spacebar-down' : 'linear-mechanical-keyboard-spacebar-down'];
   const physical = {
     'pen-button': ['stylus-barrel-press'],
     trackball: ['trackball-press'],
@@ -195,9 +203,13 @@ function pick(e, profile, votes, bank, mode) {
   const baseIds = contextOrder(optionsFor(e, profile.palette, mode), mode);
   const saved = profile.signatures?.[familySlot(e, profile.signatures)];
   const preferred = profile.bindings?.[e.action];
+  const oldTouch = 'settings-focus-felt-tick';
+  if (baseIds[0] === 'soft-touch-acknowledgement' &&
+      (preferred === oldTouch || (saved?.id === oldTouch && saved.revision === bank.get(oldTouch)?.revision)))
+    baseIds.push(oldTouch);
   // Saved projects can continue using the old gasket board across future edits.
   const legacy = baseIds[0]?.replace('linear-mechanical-keyboard-', 'gasket-mount-keyboard-');
-  if (e.deviceKind === 'mechanical' && !e.soundId && !returnKeyDown(e) && legacy && !baseIds.includes(legacy) &&
+  if (e.deviceKind === 'mechanical' && !e.soundId && !returnKeyDown(e) && !spacebarDown(e) && legacy && !baseIds.includes(legacy) &&
       (preferred === legacy || (saved?.id === legacy && saved.revision === bank.get(legacy)?.revision)))
     baseIds.unshift(legacy);
   if (!e.soundId && preferred && baseIds.includes(preferred))
@@ -205,6 +217,7 @@ function pick(e, profile, votes, bank, mode) {
   const choices = baseIds
     .map((id) => bank.get(id))
     .filter(eligible)
+    .filter(s => e.motion !== 'follow' || s.gestureTiming === 'native')
     .filter(
       (s) =>
         !excludedTraits(e.avoid).some((word) =>
@@ -428,6 +441,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         ...(e.gesture ? { gesture: e.gesture } : {}),
         ...(e.target ? { target: e.target } : {}),
         ...(e.direction ? { direction: e.direction } : {}),
+        ...(e.motion ? { motion: e.motion } : {}),
         ...(e.label ? { label: e.label } : {}),
       };
       const navigation =
@@ -437,7 +451,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         e.muted ||
         policy === 'silence' ||
         quiet.has(e.action) ||
-        (optIn.has(e.action) && !navigation && !e.accent && !e.soundId);
+        (optIn.has(e.action) && !navigation && !e.accent && e.motion !== 'follow' && !e.soundId);
       if (existing)
         Object.assign(out, {
           decision: event === existing ? 'reuse' : 'silence',
@@ -476,7 +490,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
             decision: 'review',
             reason: sound
               ? 'Spot the visible key-down frames'
-              : 'Choose a clean match for this action or direction',
+              : e.motion === 'follow' ? 'Choose a directional sweep with native gesture timing'
+                : 'Choose a clean match for this action or direction',
           });
         } else {
           owner = e.id;
@@ -590,6 +605,19 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         });
       }
     }
+  }
+  // A finished stroke and its return belong to the same moving object. Let the sweep
+  // occupy the frames around each accent. A deliberate hold between them stays quiet.
+  const latestSlide = new Map();
+  for (const cue of [...cues].sort((a, b) => a.frame - b.frame)) {
+    if (cue.action !== 'slide' || !cue.target || cue.decision !== 'play') continue;
+    const prior = latestSlide.get(cue.target);
+    if (prior?.endFrame === cue.frame && prior.direction !== cue.direction &&
+        prior.soundId.replace(/-(left|right)$/, '') === cue.soundId.replace(/-(left|right)$/, '')) {
+      prior.motion ??= 'turn';
+      cue.motion ??= 'turn';
+    }
+    latestSlide.set(cue.target, cue);
   }
   return {
     schemaVersion: 1,
@@ -736,6 +764,8 @@ export function reviseEdit(plan, changes, catalog) {
     if (soundId !== undefined) {
       const sound = catalog.find((s) => s.id === soundId);
       if (!eligible(sound)) throw Error('Replacement needs a clean, reviewed source for ' + id);
+      if (cue.motion === 'follow' && sound.gestureTiming !== 'native')
+        throw Error('Choose a replacement that can follow the marked motion');
       if (cue.alternatives?.includes(sound.id)) {
         cue.gainDb = Math.max(-80, Math.min(12, cue.gainDb + levelMatch(cue.soundId, sound.id)));
         cue.alternatives = [cue.soundId, ...cue.alternatives.filter((id) => id !== sound.id)];

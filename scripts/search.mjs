@@ -7,23 +7,37 @@ import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 
 const { values, positionals } = parseArgs({
-  options: { 'all-takes':{type:'boolean'}, profile:{type:'string'}, 'use-case':{type:'string'}, palette:{type:'string'}, designs: { type: 'boolean' }, intent: { type: 'string' }, exclude: { type: 'string' }, limit: { type: 'string' }, 'background-checked': { type: 'boolean' }, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
+  options: { parts: { type: 'string' }, 'all-takes':{type:'boolean'}, profile:{type:'string'}, 'use-case':{type:'string'}, palette:{type:'string'}, designs: { type: 'boolean' }, intent: { type: 'string' }, exclude: { type: 'string' }, limit: { type: 'string' }, 'background-checked': { type: 'boolean' }, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, votes: { type: 'string' }, category: { type: 'string' }, collection: { type: 'string' }, loop: { type: 'boolean' }, json: { type: 'boolean' }, help: { type: 'boolean' } },
   allowPositionals: true,
 });
 
 if (values.help) {
-  console.log('Usage: node scripts/search.mjs [terms… | --intent "game event"] [--exclude "tags or words" (intent mode)] [--designs] [--limit N] [--category <name>] [--collection <name>] [--loop] [--clean] [--isolated] [--background-checked] [--votes listening-export.json] [--json]');
+  console.log('Usage: node scripts/search.mjs [terms… | --intent "game event"] [--exclude "tags or words" (intent mode)] [--designs | --parts source-id] [--limit N] [--category <name>] [--collection <name>] [--loop] [--clean] [--isolated] [--background-checked] [--votes listening-export.json] [--json]');
 } else {
-  const candidates = values.designs
+  if (values.parts && values.designs) throw Error('Use --parts with a catalog recipe ID');
+  let candidates = values.designs
     ? JSON.parse(await readFile(new URL('../references/scenes/index.json', import.meta.url), 'utf8'))
     : JSON.parse(await readFile(new URL('../catalog.json', import.meta.url), 'utf8')).sounds;
+  if (values.parts !== undefined) {
+    const parent = candidates.find(sound => sound.id === values.parts);
+    if (!parent) throw Error('Unknown source recipe: ' + values.parts);
+    const recordings = sound => [sound.recording, ...(sound.additionalRecordings ?? [])].filter(Boolean);
+    const sourceUrls = new Set(recordings(parent).map(credit => credit.url));
+    candidates = candidates.flatMap(sound => {
+      if (sound.isolation !== 'isolated' || sound.cleanHold || sound.auditionNote ||
+          sound.components?.length !== 1) return [];
+      const clips = recordings(sound);
+      if (!clips.length || !clips.every(credit => sourceUrls.has(credit.url))) return [];
+      return [{ ...sound, sharedRecordings: [...new Set(clips.map(credit => credit.title))] }];
+    });
+  }
   const terms = positionals.join(' ').toLowerCase().split(/\s+/).filter(Boolean);
   if (values.intent !== undefined && positionals.length) throw Error('Use search terms or --intent');
   if (values.exclude !== undefined && values.intent === undefined) throw Error('--exclude requires --intent');
   const limit = values.limit === undefined ? undefined : Number(values.limit);
   if (limit !== undefined && (!Number.isSafeInteger(limit) || limit < 1)) throw Error('--limit requires a positive integer');
   let sounds = candidates.filter((sound) => {
-    const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.fieldContents??[]), ...(sound.soloQueries ?? []), ...(sound.contains ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
+    const text = [sound.id, sound.name, sound.category, sound.collection, ...sound.tags, ...(sound.fieldContents??[]), ...(sound.soloQueries ?? []), ...(sound.contains ?? []), ...(sound.components ?? []), sound.perspective, sound.recording?.title, ...(sound.additionalRecordings ?? []).map(credit => credit.title), ...Object.keys(sound.markers ?? {})].join(' ').toLowerCase();
     return (!values.clean || (sound.isolation === 'isolated' && !sound.cleanHold && !sound.auditionNote)) && terms.every((term) => text.includes(term)) &&
       (!values.category || sound.category.toLowerCase().includes(values.category.toLowerCase())) &&
       (!values.collection || sound.collection?.toLowerCase().includes(values.collection.toLowerCase())) &&
@@ -49,6 +63,7 @@ if (values.help) {
     const rank = { yes: 0, approved: 0, no: 2, rejected: 2 };
     const matchesRevision = sound => (votes[sound.id]?.revision ?? 1) === (sound.revision ?? 1);
     const score = sound => matchesRevision(sound) && (!votes[sound.id]?.useCase || votes[sound.id].useCase===useCase) ? rank[votes[sound.id]?.decision] ?? 1 : 1;
+    if (values.parts !== undefined) sounds = sounds.filter(sound => score(sound) !== 2);
     if (values.intent === undefined) sounds.sort((a, b) => score(a) - score(b));
     for (const sound of sounds) if (Object.hasOwn(votes, sound.id)) {
       const v = votes[sound.id];

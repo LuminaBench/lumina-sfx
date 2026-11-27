@@ -29,7 +29,7 @@ test('one physical control keeps its take across changes of screen and narration
   assert.equal(b.soundId, c.soundId);
   assert.equal(a.seed, c.seed);
   assert.equal(b.gainDb, a.gainDb - 6);
-  assert.equal(phone.soundId, 'settings-focus-felt-tick');
+  assert.equal(phone.soundId, 'soft-touch-acknowledgement');
 });
 test('a project profile exported from an approval survives disk, recut and direct search', async () => {
   const tmp = await mkdtemp(join(tmpdir(), 'lumina-profile-test-'));
@@ -244,4 +244,44 @@ test('a gamepad confirmation is one contact on its input frame, and keeps an exp
   assert.equal(confirmation.markerSec, 0);
   const explicit = { ...events[2], soundId: 'settings-apply-overcentre-latch' };
   assert.equal(planEdit(cut([explicit]), bank).cues[0].soundId, explicit.soundId);
+});
+
+test('retiming an approved moving take starts from the original material on every edit', async () => {
+  const { default: swipe } = await import('../recipes/silk-swipe-right.ts');
+  const { renderChannels } = await import('../engine/render.ts');
+  const direct = swipe.withGestureTiming(0.4, 0.15);
+  const revised = swipe.withGestureTiming(0.5, 0.2).withGestureTiming(0.4, 0.15);
+  assert.deepEqual(renderChannels(revised, { seed: 31 }), renderChannels(direct, { seed: 31 }));
+});
+
+test('two lengths of a fixed swipe render their own stereo travel and keep the gap silent', async () => {
+  const { renderEdit } = await import('../scripts/edit-render.mjs');
+  const slide = (id, frame, syncFrame, endFrame) => event(id, 'slide', frame, {
+    syncFrame, endFrame, motion: 'follow', direction: 'right', target: 'ribbon', accent: true,
+  });
+  const plan = planEdit(cut([slide('slow', 12, 24, 36), slide('quick', 48, 54, 60)]), bank);
+  assert.deepEqual(plan.cues.map(c => c.decision), ['play', 'play']);
+  assert.equal(plan.cues[0].soundId, plan.cues[1].soundId);
+  assert.equal(plan.cues[0].seed, plan.cues[1].seed);
+  const dest = await mkdtemp(join(tmpdir(), 'lumina-swipe-fit-'));
+  try {
+    const wav = join(dest, 'follow.wav');
+    const report = await renderEdit(plan, bank, wav);
+    assert.equal(report.renderedTakes, 2);
+    const bytes = await readFile(wav);
+    const energy = (from, to) => {
+      const sum = [0, 0];
+      for (let i = Math.round(from * 44100 / 24); i < Math.round(to * 44100 / 24); i++) {
+        for (let ear = 0; ear < 2; ear++) sum[ear] += bytes.readInt16LE(44 + i * 4 + ear * 2) ** 2;
+      }
+      return sum;
+    };
+    for (const [start, end] of [[12, 36], [48, 60]]) {
+      const early = energy(start, start + 3), late = energy(end - 3, end);
+      assert.ok(early[0] > early[1] && late[1] > late[0]);
+    }
+    assert.deepEqual(energy(36, 48), [0, 0]);
+  } finally {
+    await rm(dest, { recursive: true, force: true });
+  }
 });

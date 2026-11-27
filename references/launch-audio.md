@@ -174,3 +174,9 @@ Mark narrated frame ranges and supply the original movie when planning. Around e
 For a held mechanical Return, mark one physical `press` with `key: "Enter"`. Use `keyFrames` for the visible letters and digits. The ordinary mechanical board uses recorded linear switch travel and a wider Return from the same keyboard model. A UI button labelled Return follows its input device. The trackpad contact and release use individual halves of a MacBook trackpad recording. A filmed tablet nib uses a drawing-tablet recording and a small panel resonance.
 
 The final `audit` groups audible cues by their saved signature and reports material or fixed-take changes with frame numbers. Left and right performances of the same swipe material can share a signature, as can fresh strokes on one keyboard. Mark a genuinely different control with its own `family`. Rapid mouse actions can cross tabs, confirmations and toggles while keeping one switch.
+
+### Moving surfaces and touch feedback
+
+Use the same `target` for both directions when a strip or drawer reverses. Supply each visible leg’s start, accent and end frames. A native sweep can spend longer around the turn while keeping its material and pitch. Set `motion: "follow"` for a continuously audible stroke across its full visible span, or `motion: "accent"` for a short independent accent. For full-span motion, put the sync frame inside the leg. A product demo can keep a long drag silent.
+
+An ordinary touchscreen can stay silent. `feedback: "subtle"` requests one local electronic pulse. `physicalContact: true` requests close Foley from the finger or pen in the shot. For a hardware keyboard, `key: "Space"` selects the wide key’s recorded downstroke. A printed “Space” label and an onscreen keyboard are different events.

@@ -129,3 +129,8 @@ assert.ok(movingFan.layers[0].placement.position[0] < 0 && movingFan.layers[0].p
 assert.ok(choose('a distant rolling jet flyby').cues[0].spatial.design.layers[0].placement.position[2] < -10);
 assert.match(choose('rain patter on a loose garage door').cues[0].id, /garage-door-downpour-recedes$/);
 assert.ok(!rankByIntent(bank, 'garage door rain').some(s => s.id.endsWith('garage-door-continuous-patter-loop')));
+
+const bikeParts = search('--parts', 'trail-mountain-bike-pedal-engagement');
+assert.ok(bikeParts.some(s => s.id === 'bicycle-coasting-freewheel' && s.sharedRecordings.includes('freewheel.wav')));
+assert.ok(bikeParts.every(s => s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote));
+assert.equal(search('--parts','ocean-breaker-at-a-rock-ledge','--intent','breaking surf')[0].id, 'ocean-shore-break-loop');

@@ -1,5 +1,6 @@
 import type { SoundRecipe } from '../engine/types.ts';
-import { scene } from './_shared/material-scenes.ts';
+import { renderRecording } from '../engine/recording.ts';
+import finger from './_recordings/isolated-finger-on-phone.ts';
 
 export default {
   id: 'fingertip-on-display-glass',
@@ -19,6 +20,7 @@ export default {
     'tap',
   ],
   mixRole: 'foley',
+  recording: finger.credit,
   isolation: 'isolated',
   loopable: false,
   durationSec: 0.062,
@@ -28,11 +30,10 @@ export default {
   markers: { contact: 0 },
   params: { pressure: { label: 'Finger pressure', min: 0, max: 1, default: 0.52 } },
   render(ctx, { seed, params }) {
-    const pressure = params.pressure;
-    return scene(ctx, seed, pressure, [
-      ['contact', 'rubber', 0, 0.039, 0.9, 345 + 105 * pressure, 0.0015],
-      ['brush', 'cloth', 0.0008, 0.018, 0.32, 1020 + 180 * pressure, 0.001],
-      ['contact', 'glass', 0.0014, 0.012, 0.07, 890, 0.0012],
-    ]);
+    return renderRecording(ctx, finger, {
+      seed,
+      speed: 0.96 + 0.08 * params.pressure,
+      cutoffHz: 4500 + 2500 * params.pressure,
+    });
   },
 } satisfies SoundRecipe;

@@ -71,13 +71,35 @@ export async function renderEdit(plan, catalog, out) {
       (!Number.isSafeInteger(cue.endFrame) || cue.endFrame <= cue.frame || cue.endFrame > durationFrames)
     )
       throw Error('Invalid visible accent span');
-    const { default: recipe } = await import('../recipes/' + s.id + '.ts');
+    const { default: base } = await import('../recipes/' + s.id + '.ts');
+    if (cue.motion === 'follow' && (!cue.fitMotion || !base.withGestureTiming ||
+        cue.syncFrame <= cue.frame || cue.syncFrame >= cue.endFrame))
+      throw Error('Place a native sweep accent inside the visible motion for ' + cue.id);
+    let recipe = base;
+    let marker = cue.markerSec / cue.speed;
+    let speed = cue.speed;
+    let exposureGain = 1;
+    if (['turn', 'follow'].includes(cue.motion) && cue.fitMotion && base.withGestureTiming) {
+      const before = (cue.syncFrame - cue.frame) / fps;
+      const after = (cue.endFrame - cue.syncFrame) / fps;
+      const rise = cue.motion === 'follow' ? before : Math.min(before, 0.26);
+      const fall = cue.motion === 'follow' ? after : Math.min(after, 0.22);
+      if (rise > 0 && fall > 0 && rise + fall >= 0.01) {
+        recipe = base.withGestureTiming(rise + fall, rise);
+        if (cue.motion === 'follow') recipe = { ...recipe, immediateOnset: false };
+        // Longer airflow occupies more of the edit. Keep its energy near the approved accent
+        // without pushing an intentionally long stroke below the surrounding soundtrack.
+        exposureGain = Math.max(0.60, Math.min(1, Math.sqrt(base.durationSec / recipe.durationSec)));
+        marker = rise;
+        speed = 1;
+      }
+    }
     for (const [i, frame] of (cue.keyFrames ?? [cue.syncFrame]).entries()) {
       if (!Number.isSafeInteger(frame) || frame < 0 || frame >= durationFrames)
         throw Error('Sync frame outside the edit: ' + cue.id);
       if (cue.keyDecisions && cue.keyDecisions[i] !== 'play') continue;
       events.push({
-        start: Math.round((frame / fps - cue.markerSec / cue.speed) * rate),
+        start: Math.round((frame / fps - marker) * rate),
         recipe,
         fixedTake: cue.fixedTake === true,
         ...(cue.fitMotion
@@ -87,9 +109,10 @@ export async function renderEdit(plan, catalog, out) {
             }
           : {}),
         seed: (cue.seed + Math.imul(i, 8191)) >>> 0,
-        speed: cue.speed,
+        speed,
+        marker,
         edgeDb: cue.edgeDb,
-        gain: 10 ** (Math.max(-80, Math.min(12, cue.gainDb + (cue.keyGainOffsets?.[i] ?? 0))) / 20),
+        gain: exposureGain * 10 ** (Math.max(-80, Math.min(12, cue.gainDb + (cue.keyGainOffsets?.[i] ?? 0))) / 20),
       });
     }
   }
@@ -117,7 +140,7 @@ export async function renderEdit(plan, catalog, out) {
           block = [new Float32Array(n), new Float32Array(n)];
         while (idx < events.length && events[idx].start < at + n) {
           const e = events[idx++];
-          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.edgeDb ?? 0]) : undefined;
+          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.recipe.durationSec, e.marker, e.edgeDb ?? 0]) : undefined;
           let pcm = key && takes.get(key);
           if (!pcm) {
             pcm = renderTake(e, rate);

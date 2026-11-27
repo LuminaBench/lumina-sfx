@@ -27,7 +27,7 @@ test('physical, glass and software inputs retain the observed mechanism', () => 
     [
       'silence',
       'silence',
-      'settings-focus-felt-tick',
+      'soft-touch-acknowledgement',
       'review',
       'stylus-barrel-press',
       'stylus-tip-on-tablet-glass',
@@ -45,7 +45,7 @@ test('physical, glass and software inputs retain the observed mechanism', () => 
     rankByIntent(bank, 'one discreet notification without a chime')[0].id,
     'menu-confirm-spring-detent',
   );
-  assert.equal(rankByIntent(bank, 'a tap on a phone with subtle feedback')[0].id, 'settings-focus-felt-tick');
+  assert.equal(rankByIntent(bank, 'a tap on a phone with subtle feedback')[0].id, 'soft-touch-acknowledgement');
   assert.equal(rankByIntent(bank, 'stylus tip tapping glass')[0].id, 'stylus-tip-on-tablet-glass');
 });
 test('gesture grouping respects the device, soundtrack and whole-edit contact limit', () => {
@@ -128,7 +128,7 @@ test('the scene resolver recognizes listener UI, an explicitly located keyboard,
   );
 });
 
-test('touch feedback retains one switch, honours quiet gaps and migrates an approved button', () => {
+test('touch feedback retains one pulse, honours quiet gaps and migrates an approved button', () => {
   const events = [mark('open', 'press', 20), mark('engage', 'toggle-on', 50), mark('accept', 'confirm', 90)];
   const input = timeline(events, { device: 'touchscreen', feedback: 'subtle' });
   const track = (energy) => ({ windowSec: .02, windows: Array.from({ length: 250 }, () => ({ energy, peak: Math.sqrt(energy) })) });
@@ -226,4 +226,28 @@ test('swapping a swipe family keeps the left and right performances at picture s
     assert.equal(c.syncFrame, original.cues[i].syncFrame);
     assert.equal(c.speed, Math.max(.85, Math.min(1.25, src(c.soundId).durationSec * 30 / 26)));
   }
+});
+
+test('the electronic phone default preserves an approved earlier felt tick and its seed', () => {
+  const input = timeline([mark('confirm', 'confirm', 24, { device:'phone', feedback:'subtle' })]);
+  const felt = bank.find(s => s.id === 'settings-focus-felt-tick');
+  const approved = { signatures: { confirm: {id:felt.id,revision:felt.revision,seed:810,trimDb:-2} } };
+  const [fresh] = planEdit(input, bank).cues;
+  const [kept] = planEdit(input, bank, approved).cues;
+  assert.equal(fresh.soundId, 'soft-touch-acknowledgement');
+  assert.equal(kept.soundId, felt.id);
+  assert.equal(kept.seed, 810);
+  assert.equal(kept.projectTrimDb, -2);
+});
+test('physical spacebars keep their mechanism and do not sound for virtual keys or printed labels', () => {
+  const [board, laptop, phone, letter] = plan([
+    mark('a','press',10,{device:'mechanical keyboard',key:' '}),
+    mark('b','press',30,{device:'laptop keyboard',brief:'Press the space bar once'}),
+    mark('c','press',50,{device:'onscreen keyboard',key:'Space'}),
+    mark('d','press',70,{device:'mechanical keyboard',label:'Space bar'}),
+  ]).cues;
+  assert.equal(board.soundId,'linear-mechanical-keyboard-spacebar-down');
+  assert.equal(laptop.soundId,'laptop-scissor-keyboard-spacebar-down');
+  assert.equal(phone.decision,'silence');
+  assert.equal(letter.soundId,'linear-mechanical-keyboard-key-down');
 });
