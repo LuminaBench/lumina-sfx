@@ -2,6 +2,7 @@
 // A stationary spectrum retains engine coloration while discarding the time sequence.
 import { readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
+import { verifyIntactTakes } from './install-files.mjs';
 import { fft, stationaryTexture } from './recording-texture.mjs';
 const folder = new URL('../recipes/_recordings/', import.meta.url);
 function transient(take, sampleRate) {
@@ -26,6 +27,7 @@ function transient(take, sampleRate) {
 }
 const inputs = JSON.parse(await readFile(new URL('../sources/isolated-inputs.json', import.meta.url), 'utf8'));
 const check = process.argv.includes('--check');
+await verifyIntactTakes(inputs.intactTakes ?? []);
 // Complete field gestures and longer ambience excerpts are packed once. Keep their
 // source offsets and digests so offline builds check the exact selected takes.
 for (const [name, cuts] of Object.entries(inputs.fieldTakes)) {

@@ -31,6 +31,7 @@
     "milestone-key-single",
     "hardwood-footstep"
   ],
+  "intactTakes": ["natural-gravel"],
   "windows": {
     "small-clapper-strike": {
       "source": "sheep-bell-jingle",

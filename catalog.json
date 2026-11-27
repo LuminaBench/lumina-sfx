@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2868,
+  "count": 2870,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -22180,6 +22180,55 @@
       "file": "recipes/corn-husk-peel.ts"
     },
     {
+      "id": "corrugated-metal-roof-rain-loop",
+      "name": "Rain on a corrugated metal roof",
+      "category": "Weather & Ambience",
+      "revision": 1,
+      "isolation": "isolated",
+      "components": [
+        "rain"
+      ],
+      "collection": "Weather",
+      "tags": [
+        "rain",
+        "corrugated",
+        "metal",
+        "roof",
+        "shelter",
+        "sheet",
+        "patter",
+        "aluminium"
+      ],
+      "loopable": true,
+      "sustainMode": "evolving",
+      "durationSec": 7.8,
+      "params": {
+        "tension": {
+          "label": "Sheet tension",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -29,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Rain hitting an aluminium roof",
+        "author": "florianreichelt",
+        "url": "https://freesound.org/people/florianreichelt/sounds/680152/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-25"
+      },
+      "spectrum": [
+        {
+          "band": "high",
+          "minShare": 0.05
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/corrugated-metal-roof-rain-loop.ts"
+    },
+    {
       "id": "countdown-beeps",
       "name": "Countdown Beeps",
       "category": "Sci-Fi & UI",
@@ -29840,6 +29889,50 @@
       },
       "channels": 1,
       "file": "recipes/dry-branch-snap.ts"
+    },
+    {
+      "id": "dry-grass-wind-loop",
+      "name": "Wind moving through dry grass",
+      "category": "Weather & Ambience",
+      "revision": 1,
+      "isolation": "isolated",
+      "components": [
+        "grass-rustle"
+      ],
+      "collection": "Weather",
+      "tags": [
+        "dry",
+        "grass",
+        "wind",
+        "breeze",
+        "meadow",
+        "field",
+        "blades",
+        "rustle",
+        "gust"
+      ],
+      "loopable": true,
+      "sustainMode": "evolving",
+      "durationSec": 6.5,
+      "params": {
+        "breeze": {
+          "label": "Breeze",
+          "min": 0,
+          "max": 1,
+          "default": 0.4
+        }
+      },
+      "targetRmsDbfs": -31,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "wind medium brisk breeze through stiff dry corn stalks or grass gusty rustling.flac",
+        "author": "kyles",
+        "url": "https://freesound.org/people/kyles/sounds/454363/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/dry-grass-wind-loop.ts"
     },
     {
       "id": "dry-leaves-footstep",
@@ -103207,9 +103300,13 @@
       "name": "Gravel alternating foot contact",
       "category": "Footsteps & UI",
       "revision": 1,
+      "isolation": "isolated",
       "markers": {
         "plant": 0
       },
+      "components": [
+        "footstep"
+      ],
       "contains": [
         "one shoe contact"
       ],
@@ -103225,6 +103322,9 @@
         "walk",
         "sprint",
         "gravel",
+        "shoe",
+        "boot",
+        "stones",
         "grit",
         "pebbles"
       ],
@@ -105016,8 +105116,15 @@
       "id": "survey-quadcopter-accelerate-away-from-camera",
       "name": "Survey quadcopter accelerate away from camera",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
+      "perspective": "authored pass-by perspective",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105070,8 +105177,15 @@
       "id": "survey-quadcopter-camera-approach-from-altitude",
       "name": "Survey quadcopter camera approach from altitude",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
+      "perspective": "authored pass-by perspective",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105123,8 +105237,14 @@
       "id": "survey-quadcopter-cut-thrust-for-descent",
       "name": "Survey quadcopter cut thrust for descent",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105177,8 +105297,14 @@
       "id": "survey-quadcopter-full-climb-rotor-loop",
       "name": "Survey quadcopter full climb rotor loop",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105231,8 +105357,14 @@
       "id": "survey-quadcopter-onboard-frame-vibration-loop",
       "name": "Survey quadcopter onboard frame vibration loop",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105285,8 +105417,14 @@
       "id": "survey-quadcopter-props-armed-idle-loop",
       "name": "Survey quadcopter props armed idle loop",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105338,8 +105476,14 @@
       "id": "survey-quadcopter-settle-onto-landing-marker",
       "name": "Survey quadcopter settle onto landing marker",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105391,8 +105535,20 @@
       "id": "survey-quadcopter-survey-cruise-loop",
       "name": "Survey quadcopter survey cruise loop",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
+      "perspective": "stationary exterior emitter",
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "small",
+        "electric",
+        "motor",
+        "steady",
+        "hover",
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105402,6 +105558,7 @@
         "loop"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 3.02,
       "params": {
         "rpm": {
@@ -105442,8 +105599,14 @@
       "id": "survey-quadcopter-two-altitude-corrections",
       "name": "Survey quadcopter two altitude corrections",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",
@@ -105495,8 +105658,14 @@
       "id": "survey-quadcopter-vertical-launch",
       "name": "Survey quadcopter vertical launch",
       "category": "Aircraft",
+      "isolation": "isolated",
+      "components": [
+        "electric-rotors"
+      ],
       "collection": "Propulsion · Aircraft and airfields",
       "tags": [
+        "drone",
+        "rotor",
         "aircraft",
         "fan",
         "engine",

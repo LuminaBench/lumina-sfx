@@ -29172,6 +29172,26 @@
       "durationSec": 2.68,
       "loopable": true,
       "revision": 2
+    },
+    {
+      "id": "dry-grass-wind-loop",
+      "brief": "Dry grass blades rubbing in a field breeze",
+      "collection": "Weather",
+      "category": "Weather & Ambience",
+      "durationSec": 6.5,
+      "loopable": true,
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "corrugated-metal-roof-rain-loop",
+      "brief": "Rain drops and damped panel resonance under a sheet roof",
+      "collection": "Weather",
+      "category": "Weather & Ambience",
+      "durationSec": 7.8,
+      "loopable": true,
+      "status": "review",
+      "revision": 1
     }
   ]
 }
