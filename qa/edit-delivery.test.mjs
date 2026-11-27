@@ -1,15 +1,62 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
 import { encodeWav } from '../engine/wav.ts';
+import { renderSound, SAMPLE_RATE } from '../engine/render.ts';
+import mouse from '../recipes/desktop-mouse-press.ts';
 import { ffmpegPath } from '../scripts/audio-export.mjs';
 import { auditDelivery, probeStereo } from '../scripts/edit-delivery.mjs';
 import { measureTrack } from '../scripts/edit-track.mjs';
 import { scoreGain } from '../scripts/edit-context.mjs';
 import { mixPicture } from '../scripts/edit-media.mjs';
+
+test('plain-language scoring reuses an existing wide click across a cut and respects device and family boundaries', async (t) => {
+  if (spawnSync(ffmpegPath(), ['-version']).error?.code === 'ENOENT') return t.skip('FFmpeg required');
+  const dir = await mkdtemp(join(tmpdir(), 'lumina-wide-contact-'));
+  try {
+    const path = name => join(dir, name);
+    const take = renderSound(mouse);
+    const left = new Float32Array(3 * SAMPLE_RATE), right = new Float32Array(left.length);
+    // In the reference both channels agree. In later shots the contact lives in the stereo difference.
+    for (const frame of [12, 24, 36, 48]) {
+      const start = Math.round(frame * SAMPLE_RATE / 24);
+      for (let i = 0; i < take.length; i++) {
+        left[start + i] = take[i] * 0.13;
+        right[start + i] = take[i] * (frame === 12 ? 0.13 : -0.10);
+      }
+    }
+    await writeFile(path('source.wav'), Buffer.from(encodeWav([left, right])));
+    const capture = spawnSync(ffmpegPath(), ['-v', 'error', '-i', path('source.wav'),
+      '-c:a', 'aac', '-b:a', '192k', path('recorded.m4a')]);
+    assert.equal(capture.status, 0, capture.stderr.toString());
+    const input = {
+      id: 'wide-source', fps: 24, durationFrames: 72, device: 'mouse',
+      events: [
+        { id: 'known', frame: 12, action: 'press', sourceContact: true },
+        { id: 'same', frame: 24, brief: 'a mouse press' },
+        { id: 'other-device', frame: 36, brief: 'a trackpad press' },
+        { id: 'other-switch', frame: 48, brief: 'a mouse press', family: 'second-switch' },
+        { id: 'missing', frame: 60, brief: 'a mouse press' },
+      ],
+    };
+    await writeFile(path('events.json'), JSON.stringify(input));
+    const run = spawnSync(process.execPath, [
+      '--experimental-strip-types', '--disable-warning=ExperimentalWarning',
+      fileURLToPath(new URL('../scripts/score-edit.mjs', import.meta.url)), 'plan', path('events.json'),
+      '--source', path('recorded.m4a'), '--out', path('plan.json'),
+    ], { encoding: 'utf8' });
+    assert.equal(run.status, 0, run.stderr);
+    const { cues } = JSON.parse(await readFile(path('plan.json'), 'utf8'));
+    assert.deepEqual(cues.map(c => c.decision), ['reuse', 'reuse', 'review', 'review', 'play']);
+    assert.equal(cues[1].sourceEvidence[0].matches, 'known');
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
+});
 
 test('decoded delivery audit finds a missing added stem, original clipping pressure and a mono cancellation', async (t) => {
   const ff = ffmpegPath(),

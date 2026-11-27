@@ -337,43 +337,49 @@ function interruptedSlides(events) {
   return events.map(e => replacements.get(e) ?? e);
 }
 
-export function planEdit(input, catalog, profile = {}, votes = {}, track) {
-  const { fps, durationFrames } = clock(input);
+export function observeEdit(input, catalog) {
   if (!Array.isArray(input.events))
     throw Error('Supply observed picture events; an empty list scores a silent edit.');
-  if (input.events.some((e) => e?.brief !== undefined)) {
-    input = {
-      ...input,
-      events: input.events.map((e) => {
-        if (e?.brief === undefined) return e;
-        if (typeof e.brief !== 'string' || !e.brief.trim()) throw Error('Supply a nonempty cue brief');
-        const style = unpackContext(e.brief);
-        const landing = !e.action && markedGraphicLanding(e);
-        const intent = landing ? 'land' : !e.action &&
-          rankByIntent(catalog, e.brief, '', true).find((x) => !x.missing.length)?.editorialAction;
-        const action =
-          e.action ??
-          { key: 'type', typing: 'type', grab: 'drag', close: 'logo' }[intent] ??
-          intent ??
-          'unresolved';
-        const describedDevice = stripButtonLabel(style.query);
-        return {
-          ...e,
-          action,
-          ...(e.physicalContact === undefined && describesSurfaceContact(action, e.brief) ? { physicalContact: true } : {}),
-          ...(landing && silentGesture(e.brief) ? { muted: true } : {}),
-          device: e.device ?? (deviceKind(describedDevice) !== 'unknown' ? describedDevice : undefined),
-          context: e.context ?? style.context,
-          underSpeech: e.underSpeech ?? (style.contexts.includes('speech') || undefined),
-          briefEdge: style.character === 'less-bright' ? -4 : undefined,
-          sourceContact: e.sourceContact ?? (observedOriginal(e.brief) || undefined),
-          ...(action === 'slide' && !e.direction && /\b(left|right)\b/i.test(style.query)
-            ? { direction: style.query.match(/\b(left|right)\b/i)[1].toLowerCase() }
-            : {}),
-        };
-      }),
-    };
-  }
+  if (!input.events.some((e) => e?.brief !== undefined)) return input;
+  return {
+    ...input,
+    events: input.events.map((e) => {
+      if (e?.brief === undefined) return e;
+      if (typeof e.brief !== 'string' || !e.brief.trim()) throw Error('Supply a nonempty cue brief');
+      const style = unpackContext(e.brief);
+      const landing = !e.action && markedGraphicLanding(e);
+      const intent = landing ? 'land' : !e.action &&
+        rankByIntent(catalog, e.brief, '', true).find((x) => !x.missing.length)?.editorialAction;
+      const action =
+        e.action ??
+        { key: 'type', typing: 'type', grab: 'drag', close: 'logo' }[intent] ??
+        intent ??
+        'unresolved';
+      const describedDevice = stripButtonLabel(style.query);
+      return {
+        ...e,
+        action,
+        ...(e.physicalContact === undefined && describesSurfaceContact(action, e.brief) ? { physicalContact: true } : {}),
+        ...(landing && silentGesture(e.brief) ? { muted: true } : {}),
+        device: e.device ?? (deviceKind(describedDevice) !== 'unknown' ? describedDevice : undefined),
+        context: e.context ?? style.context,
+        underSpeech: e.underSpeech ?? (style.contexts.includes('speech') || undefined),
+        briefEdge: style.character === 'less-bright' ? -4 : undefined,
+        sourceContact: e.sourceContact ?? (observedOriginal(e.brief) || undefined),
+        ...(action === 'slide' && !e.direction && /\b(left|right)\b/i.test(style.query)
+          ? { direction: style.query.match(/\b(left|right)\b/i)[1].toLowerCase() }
+          : {}),
+      };
+    }),
+  };
+}
+
+export function planEdit(input, catalog, profile = {}, votes = {}, track) {
+  return scoreObservedEdit(observeEdit(input, catalog), catalog, profile, votes, track);
+}
+
+export function scoreObservedEdit(input, catalog, profile, votes, track) {
+  const { fps, durationFrames } = clock(input);
   const bank = new Map(catalog.map((s) => [s.id, s])),
     ids = new Set(),
     groups = new Map();

@@ -1,3 +1,5 @@
+import { deviceKind } from './edit-device.mjs';
+
 // Inspect only the soundtrack around marked contacts. Never infer the meaning of a transient
 // from its loudness alone; an identical, editor-confirmed input can identify another take.
 const rate = 12000,
@@ -9,23 +11,30 @@ const physical = new Set([
   'toggle-on',
   'toggle-off',
   'confirm',
+  'commit',
   'back',
   'snap',
   'type',
   'paste', 'undo','redo','disabled',
 ]);
-export function contactProbes(events, fps) {
+export function contactProbes(events, fps, projectDevice) {
   const spans = [];
   for (const e of events) {
     if (!physical.has(e.action) || e.muted || e.sourceContact === false) continue;
     const keys = e.keyFrames ?? [e.syncFrame ?? e.frame];
+    const device = e.device ?? projectDevice;
+    const kind = deviceKind(typeof device === 'string' ? device : '');
+    let mechanism = kind;
+    if (kind === 'unspecified') mechanism = e.action;
+    if (kind === 'unknown') mechanism = device;
+    const group = JSON.stringify([mechanism, e.family]);
     for (const frame of keys) {
       const center = Math.round((frame / fps) * rate);
       spans.push({
         id: e.id,
         frame,
         center,
-        group: e.device ?? e.action,
+        group,
         known: e.sourceContact === true,
         first: center - pad,
         samples: new Float32Array(2 * pad),
@@ -36,26 +45,29 @@ export function contactProbes(events, fps) {
   let cursor = 0,
     active = [];
   return {
-    write(block, first) {
+    write(block, first, side) {
       const end = first + block.length;
       while (cursor < spans.length && spans[cursor].first < end) active.push(spans[cursor++]);
       for (const s of active) {
         const lo = Math.max(first, s.first),
           hi = Math.min(end, s.first + 2 * pad);
-        if (hi > lo) s.samples.set(block.subarray(lo - first, hi - first), lo - s.first);
+        if (hi <= lo) continue;
+        s.samples.set(block.subarray(lo - first, hi - first), lo - s.first);
+        if (side) {
+          s.side ??= new Float32Array(2 * pad);
+          s.side.set(side.subarray(lo - first, hi - first), lo - s.first);
+        }
       }
       active = active.filter((s) => s.first + 2 * pad > end);
     },
     finish() {
       const hits = spans
         .map((s) => {
-          let hit = impulse(s.samples, fps);
-          if (!hit) {
-            // A short switch can sit on a vowel. Look for a second, sharper onset
-            // in its own band; a novel transient still requires an editor's review.
-            const edge = s.samples.map((v, i) => (i ? v - s.samples[i - 1] : 0));
-            hit = impulse(edge, fps);
-          }
+          // A wide original may cancel in the middle. A side-only attack still
+          // needs a matching confirmed performance before it can be reused.
+          const middle = contactHit(s.samples, fps);
+          const side = s.side && contactHit(s.side, fps);
+          const hit = side && (!middle || side.power > middle.power) ? side : middle;
           return { ...s, hit };
         })
         .filter((s) => s.hit);
@@ -75,6 +87,13 @@ export function contactProbes(events, fps) {
       return contacts;
     },
   };
+}
+function contactHit(samples, fps) {
+  const hit = impulse(samples, fps);
+  if (hit) return hit;
+  // A short switch can still have a sharp edge above a vowel.
+  const edge = samples.map((v, i) => (i ? v - samples[i - 1] : 0));
+  return impulse(edge, fps);
 }
 function impulse(x, fps) {
   const hop = 24,
@@ -102,7 +121,7 @@ function impulse(x, fps) {
   const average=(from,to)=>bins.slice(from,to).reduce((sum,v)=>sum+v,0)/(to-from);
   if (power<10*Math.max(average(best-10,best-3),average(best+6,best+13)))return;
   const wave = x.subarray(Math.max(0, (left - 1) * hop), Math.min(x.length, (right + 3) * hop));
-  return { wave, offsetMs: (best - middle) * 2 };
+  return { wave, offsetMs: (best - middle) * 2, power };
 }
 function similar(a, b) {
   if (Math.min(a.length, b.length) / Math.max(a.length, b.length) < 0.65) return false;

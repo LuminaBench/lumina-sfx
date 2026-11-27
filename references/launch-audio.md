@@ -134,7 +134,7 @@ node scripts/score-edit.mjs recut new-timeline.json --previous approved.json --p
 
 The audition desk saves a revision ballot. On a source-transient review it can select the original or the added take. A project profile saves the material, source revision, tone and intended trim for locked playing cues. The new cut still measures its own soundtrack. Keep event IDs stable across edits. A renamed event can use `previousId`. An unambiguous action and target also match. Conflicting matches go to review. Picture offsets carry over in seconds when frame rate changes.
 
-Use `brief` for a frame-marked cue such as “mechanical keyboard click during a spoken walkthrough”. Use `keyFrames` for an observed word, `underSpeech` for an exact narration span, and `sourceContact: true` for a known original. Explicit timing and device observations take precedence.
+Use `brief` for a frame-marked cue such as “mechanical keyboard click during a spoken walkthrough”. Use `keyFrames` for an observed word, `underSpeech` for an exact narration span, and `sourceContact: true` for a known original. When a later press matches a confirmed take from the same device and family, the source scan can reuse it even if the stereo placement changes. Give distinct switches on the same device their own `family` when the difference matters. Explicit timing and device observations take precedence.
 
 ## Check the picture you will ship
 

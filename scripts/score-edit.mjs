@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { publishAsset } from './audio-export.mjs';
 import { selectionProfile, listeningVotes } from './selection-profile.mjs';
-import { clock, planEdit, reviseEdit } from './edit-score.mjs';
+import { clock, observeEdit, scoreObservedEdit, reviseEdit } from './edit-score.mjs';
 
 const usage =
   'score-edit.mjs inspect VIDEO --out DIR | plan TIMELINE --out PLAN [--profile FILE] [--source VIDEO] | audition PLAN --source VIDEO (--cue ID | --signature FAMILY) [--alternative ID | --quieter] [--source-frame FRAME] --out DIR | profile APPROVED_PLAN --out STYLE | recut TIMELINE --previous OLD_PLAN --source VIDEO --out PLAN | revise PLAN --changes FILE --out NEW_PLAN | render PLAN --out STEM.wav | mix VIDEO --stem STEM.wav --out PREVIEW.mp4 [--audio-stream 0] [--fit-picture] | audit PLAN --source SOURCE.mp4 --stem STEM.wav --mix SCORED.mp4 --out REPORT.json | probe MEDIA --at SECONDS[,SECONDS...] [--window-ms 180] --out REPORT.json | compare MIX_A.mp4 --against MIX_B.mp4 --out DESK.html';
@@ -123,12 +123,13 @@ async function main() {
   if (command === 'plan' || command === 'recut') {
     const profile = await selectionProfile(v.profile),
       { votes = {} } = await listeningVotes(profile.votes);
+    const observed = observeEdit(input, sounds);
     const track =
       v.source &&
       (await (
         await import('./edit-track.mjs')
-      ).measureTrack(v.source, Number(v['audio-stream'] ?? 0), input.events ?? [], clock(input).fps));
-    result = planEdit(input, sounds, profile, votes, track);
+      ).measureTrack(v.source, Number(v['audio-stream'] ?? 0), observed.events, clock(observed).fps, observed.device));
+    result = scoreObservedEdit(observed, sounds, profile, votes, track);
     if (command === 'recut') {
       if (!v.previous) throw Error('Supply --previous PLAN for the prior cut');
       const { reconform } = await import('./edit-recut.mjs');
