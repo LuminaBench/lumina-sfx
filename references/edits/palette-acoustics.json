@@ -9,7 +9,7 @@
   "aluminum-plate-keyboard-spacebar": {"peakDb":-10.85,"activeDb":-22.44,"tailMs":85,"bright":0.1798,"bursts":2},
   "aluminum-plate-keyboard-typed-word": {"peakDb":-10.45,"activeDb":-23.42,"tailMs":343.3,"bright":0.283,"bursts":4},
   "autumn-meadow-edge-scattered-rain-loop": {"peakDb":-16.71,"activeDb":-29.08,"tailMs":9703.6,"bright":0.126},
-  "basketball-hardwood-single-dribble": {"peakDb":-7.24,"activeDb":-23.21,"tailMs":25.1,"bright":0.0304,"bursts":1},
+  "basketball-hardwood-single-dribble": {"peakDb":-4.58,"activeDb":-19.06,"tailMs":140.2,"bright":0.0339,"bursts":2},
   "bicycle-coasting-freewheel": {"peakDb":-3,"activeDb":-25.72,"tailMs":6009.5,"bright":0.5238},
   "brushed-metal-match-cut": {"peakDb":-12.14,"activeDb":-24.03,"tailMs":53.3,"bright":0.3245,"bursts":1},
   "brushed-metal-page-wipe": {"peakDb":-14.39,"activeDb":-24.66,"tailMs":282.2,"bright":0.2893,"bursts":1},

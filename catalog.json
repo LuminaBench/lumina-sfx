@@ -5041,7 +5041,7 @@
       "id": "basketball-hardwood-single-dribble",
       "name": "Basketball bounce on hardwood",
       "category": "Impacts",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "impact": 0.004
@@ -5087,7 +5087,7 @@
           "default": 0.55
         }
       },
-      "targetRmsDbfs": -24,
+      "targetRmsDbfs": -29.9,
       "mixRole": "foley",
       "recording": {
         "title": "Boys shooting hoops on wood floor",

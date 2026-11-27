@@ -601,13 +601,13 @@
     "hardwood-basketball": [
       {
         "startSec": 9.697,
-        "frames": 5248,
-        "sha256": "2431a035edd79fcebfea784b542ca45428a4bbd1b3ccbd340c8aaf3f5b9f9487"
+        "frames": 10080,
+        "sha256": "351cf603db051686aed76eeb303f1c399a7da04a772966c665753beb363cab3d"
       },
       {
         "startSec": 18.358,
-        "frames": 5248,
-        "sha256": "fcc5203cf5939b1490ac78372257d67cb7c7ad85162cbe612a101bd07e3535e6"
+        "frames": 10080,
+        "sha256": "6a5062e84d4314dcb9b99dcb8d80cf314de4e16ee9df325cac60bb79e0de82ac"
       }
     ],
     "quad-hover-blades": [{"startSec":37.35,"frames":68400,"sha256":"a13babde93072b2852abf05d70a80dbbdf7afc4a524c3dd99fc6de0b90756dc0"}],

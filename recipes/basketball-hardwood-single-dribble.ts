@@ -15,7 +15,7 @@ export default {
   isolation: 'isolated',
   loopable: false,
   durationSec: 0.72,
-  targetRmsDbfs: -24,
+  targetRmsDbfs: -29.9,
   mixRole: 'foley',
   recording: bounce.credit,
   params: { intensity: { label: 'Intensity', min: 0, max: 1, default: 0.55 } },

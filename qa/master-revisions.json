@@ -1752,8 +1752,8 @@
     },
     "basketball-hardwood-single-dribble": {
       "previous": "f4f163f32175aaa661c5935cfc16e6e2c894b6cabbe2b06a40a799f7d0de4c81",
-      "current": "a37ddb5f6a4d875bcd428a022f7de502416fecf47a471fd36f43951aba2e5c8d",
-      "reason": "Use a basketball recorded on a wooden gym court. The original bounce was recorded on carpet."
+      "current": "4c81c9137adfaf46829e7d88ec1c649a2867cd5142c72c4af3ac9217913d8c39",
+      "reason": "Retain the shell, floor impact and short court reflections from a basketball recorded on hardwood. The original recording used carpet."
     }
   }
 }
