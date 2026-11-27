@@ -367,7 +367,7 @@
       "collection": "Alerts & phones",
       "durationSec": 2.1,
       "loopable": false,
-      "brief": "Phone Ring · Mechanical Bell",
+      "brief": "Phone Ring · Electronic Bell Cadence",
       "blueprint": "radar-warning-beep",
       "acceptance": "The pattern is recognizable at a comfortable level and the edges stay clean."
     },
@@ -29140,6 +29140,26 @@
       "status": "review",
       "category": "Footsteps & UI",
       "durationSec": 0.062,
+      "loopable": false,
+      "revision": 1
+    },
+    {
+      "id": "paper-title-card-seat",
+      "brief": "Restrained paperboard contact as a short title settles",
+      "collection": "Launch video · Titles",
+      "status": "review",
+      "category": "Footsteps & UI",
+      "durationSec": 0.12,
+      "loopable": false,
+      "revision": 1
+    },
+    {
+      "id": "desk-telephone-bell-ring",
+      "brief": "One mechanical clapper burst from a desk telephone",
+      "collection": "Alerts & phones",
+      "status": "review",
+      "category": "Props & Interactions",
+      "durationSec": 0.96,
       "loopable": false,
       "revision": 1
     }

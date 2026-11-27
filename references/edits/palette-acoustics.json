@@ -63,6 +63,7 @@
   "crosswind-at-a-bridge-flagstaff-sustained-current-loop": {"peakDb":-18.1,"activeDb":-28.65,"tailMs":6410.1,"bright":0.0097},
   "crosswind-at-a-bridge-flagstaff-wind-dying-away": {"peakDb":-20.27,"activeDb":-28.56,"tailMs":4156.6,"bright":0.0091,"bursts":1},
   "delicate-logo-close": {"peakDb":-8.34,"activeDb":-21.04,"tailMs":517.8,"bright":0.1027,"bursts":1},
+  "desk-telephone-bell-ring": {"peakDb":-13.39,"activeDb":-24.84,"tailMs":735.1,"bright":0.2837,"bursts":1},
   "desktop-mouse-double-click": {"peakDb":-11.53,"activeDb":-25.86,"tailMs":161.3,"bright":0.3203,"bursts":4},
   "desktop-mouse-press": {"peakDb":-12.17,"activeDb":-26.51,"tailMs":7.1,"bright":0.3117,"bursts":1},
   "desktop-mouse-press-and-hold": {"peakDb":-10.12,"activeDb":-24.15,"tailMs":495.6,"bright":0.3034,"bursts":2},

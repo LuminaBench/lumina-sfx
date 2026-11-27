@@ -175,3 +175,17 @@ test('world context supplies the mounted surface and short indoor return only wh
   assert.equal(run({...key,macros:{space:'dry'}},'Inside the office.').muffle,undefined);
   assert.equal(run({...key,placement:{...p,position:[.25,0,0]}},'Inside the booth.').macros,undefined);
 });
+
+test('clean world briefs recognize the contact material and a single located bell', () => {
+  const place = { kind: 'point', position: [3, 0, -2] };
+  const resolve = (query) => resolveListeningBrief({
+    id: 'room', schemaVersion: 2, scope: 'world', sourcePolicy: 'clean',
+    layers: [{ label: 'source', query, placement: place }],
+  }, bank).design?.layers[0];
+  const ring = resolve('one mechanical phone ring');
+  assert.equal(ring?.id, 'desk-telephone-bell-ring');
+  assert.equal(ring.placement, place);
+  assert.equal(resolve('mechanical telephone bell ringing')?.id, ring.id);
+  assert.equal(resolve('rainfall on leaves')?.id, resolve('rain on leaves')?.id);
+  assert.match(resolve('rainfall on leaves').id, /leaves/);
+});

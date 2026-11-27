@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2867,
+  "count": 2868,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -25867,6 +25867,54 @@
       },
       "channels": 1,
       "file": "recipes/desk-lamp-pivot-shade-settles.ts"
+    },
+    {
+      "id": "desk-telephone-bell-ring",
+      "name": "Mechanical desk telephone bell ringing",
+      "category": "Props & Interactions",
+      "revision": 1,
+      "isolation": "isolated",
+      "components": [
+        "bell"
+      ],
+      "contains": [
+        "one sustained mechanical ring and its decay"
+      ],
+      "perspective": "dry room source",
+      "collection": "Alerts & phones",
+      "tags": [
+        "phone",
+        "telephone",
+        "bell",
+        "mechanical",
+        "ring",
+        "desk",
+        "rotary",
+        "clapper",
+        "single",
+        "burst"
+      ],
+      "loopable": false,
+      "durationSec": 0.96,
+      "params": {
+        "spring": {
+          "label": "Clapper tension",
+          "min": 0,
+          "max": 1,
+          "default": 0.52
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "foley",
+      "recording": {
+        "title": "Sheep bells.wav",
+        "author": "banasz",
+        "url": "https://freesound.org/people/banasz/sounds/583809/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/desk-telephone-bell-ring.ts"
     },
     {
       "id": "desktop-mouse-double-click",
@@ -71787,6 +71835,7 @@
       "id": "paper-title-card-seat",
       "name": "Paper title card landing",
       "category": "Footsteps & UI",
+      "revision": 1,
       "editorialAction": "land",
       "isolation": "isolated",
       "markers": {
@@ -71797,6 +71846,7 @@
         "one short paperboard contact"
       ],
       "perspective": "close dry contact",
+      "collection": "Launch video · Titles",
       "tags": [
         "title",
         "card",
@@ -73926,7 +73976,7 @@
     },
     {
       "id": "phone-ring-bell",
-      "name": "Phone Ring · Mechanical Bell",
+      "name": "Phone Ring · Electronic Bell Cadence",
       "category": "Footsteps & UI",
       "collection": "Alerts & phones",
       "tags": [
