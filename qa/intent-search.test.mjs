@@ -61,7 +61,7 @@ for (const [prompt, expected] of [
   ['cinematic product trailer impact', 'clean-title-reveal-with-soft-hit'],
   ['trailer riser', 'silk-title-rise'],
   ['soft logo outro', 'delicate-logo-close'],
-  ['title card lands', 'clean-title-reveal-with-soft-hit'],
+  ['title card lands', 'paper-title-card-seat'],
   ['high energy product trailer transition', 'celluloid-whip-cut'],
   ['quick swish for a product demo', 'silk-whip-cut'],
   ['left to right swipe for a trailer', 'silk-swipe-right'],

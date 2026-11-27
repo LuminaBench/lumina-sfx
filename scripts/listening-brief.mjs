@@ -1,4 +1,4 @@
-import { geometryConflict, sourcePerspective } from './source-perspective.mjs';
+import { geometryConflict, sourcePerspective, mountedAmbience, roomForContact } from './source-perspective.mjs';
 // The coding agent supplies action, viewpoint and emphasis from the user's words.
 // Resolve requested performances against the installed catalog before rendering anything.
 import { silentGesture } from './editorial-intent.mjs';
@@ -50,6 +50,9 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     }
     // The distance model supplies the requested perspective for free-text sources.
     // Keep exact IDs literal so an incompatible authored performance goes to review.
+    const mounted = (design.scope === 'world' && !prefer && !exclude) ?
+      mountedAmbience(query, layer.label, design.viewpoint) : undefined;
+    const mountedTake = mounted && cleanBank.find(s => s.id === mounted);
     const hits = rankPerformance(
       cleanBank,
       query,
@@ -63,6 +66,10 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
       settings,
     ).filter((hit) => !hit.missing.length || hit.id === query);
     if (bank.some((s) => s.id === query) && !hits.some((s) => s.id === query)) hits.length = 0;
+    const ballot = mountedTake && profile.votes?.[mountedTake.id];
+    const vetoed = ballot && (ballot.revision ?? 1) === (mountedTake.revision ?? 1) &&
+      (!ballot.useCase || ballot.useCase === profile.useCase) && ['no', 'rejected'].includes(ballot.decision);
+    if (mountedTake && !vetoed && fitsPerformance(mountedTake, settings)) hits.unshift(mountedTake);
     const terms =
       String(prefer ?? '')
         .toLowerCase()
@@ -106,6 +113,10 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
       continue;
     }
     const hit = compatible[0];
+    if (design.scope === 'world' && hit.mixRole === 'vehicle' && settings.placement?.path?.length &&
+        settings.placement.kind !== 'listener' && settings.placement.doppler === undefined &&
+        !sourcePerspective(hit).motion)
+      settings.placement = { ...settings.placement, doppler: true };
     if (sourcePerspective(hit).local && !settings.placement && !settings.acoustics)
       settings.placement = { kind: 'listener' };
     if (sourcePerspective(hit).local) settings.placement ??= { kind: 'listener' };
@@ -127,6 +138,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
       else if (hit.tags.includes('rain') && hit.tags.includes('canopy'))
         settings.acoustics = { source: 'rainfall', distanceM: 1.4, bearingDeg: 8, elevationDeg: 39 };
     }
+    Object.assign(settings, roomForContact(hit, settings, design));
     const overlaps = resolved.find((other) => {
       if (other.event && settings.event && other.event !== settings.event) return false;
       if (other.afterLayer || other.atMarker || settings.afterLayer || settings.atMarker) return false;

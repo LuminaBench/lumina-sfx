@@ -1,4 +1,4 @@
-import { editorialPicks } from './editorial-intent.mjs';
+import { editorialPicks, featuredLanding } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { chooseFamilies, familySlot } from './edit-family.mjs';
 import { deviceKind, feedbackFor, physicalSwitch, excludedTraits, stripButtonLabel } from './edit-device.mjs';
@@ -141,7 +141,7 @@ function checkEvent(e, ids, durationFrames) {
     );
   }
 }
-function optionsFor(e, palette) {
+function optionsFor(e, palette, mode) {
   if (e.soundId) return [e.soundId];
   if (feedbackFor(e, e.deviceKind) === 'surface')
     return [e.deviceKind === 'touch' ? 'fingertip-on-display-glass' : 'stylus-tip-on-tablet-glass'];
@@ -177,12 +177,17 @@ function optionsFor(e, palette) {
   if (e.action === 'confirm') return [...basic.confirm, 'menu-confirm-spring-detent'];
   if (e.action === 'cut') return [...basic.cut, 'linen-match-cut'];
   if (e.action === 'logo') return [...basic.logo, 'delicate-logo-close'];
+  if (e.action === 'land') {
+    const featured = mode === 'hero' || featuredLanding(e.brief ?? '');
+    const seats = editorialPicks('land');
+    return featured ? [...seats].reverse() : seats;
+  }
   if (motionAccents.has(e.action) || ['scrub', 'drop'].includes(e.action))
     return editorialPicks(e.action) ?? [];
   return [...(basic[e.action] ?? (optional[e.action] ? [optional[e.action]] : []))];
 }
 function pick(e, profile, votes, bank, mode) {
-  const baseIds = contextOrder(optionsFor(e, profile.palette), mode);
+  const baseIds = contextOrder(optionsFor(e, profile.palette, mode), mode);
   const preferred = profile.bindings?.[e.action];
   if (!e.soundId && preferred && baseIds.includes(preferred))
     baseIds.splice(0, baseIds.length, preferred, ...baseIds.filter((id) => id !== preferred));
@@ -230,10 +235,14 @@ function performance(e, s, fps, project, mode, speechAt, track) {
     e.syncFrame ??
     (e.action === 'slide' && e.endFrame !== undefined ? Math.floor((e.frame + e.endFrame) / 2) : e.frame);
   const actionDb = familySlot(e).startsWith('press/') ? db.press : (db[e.action] ?? -2);
-  const base = actionDb + (e.deviceKind === 'touch' ? -4 : 0);
+  // Controller browsing has a lighter detent than the commit at the end of a menu run.
+  const browseTrim = e.deviceKind === 'controller' && e.action === 'focus' ? 3 : 0;
+  const base = actionDb - browseTrim + (e.deviceKind === 'touch' ? -4 : 0);
   // A chord exposes several switch transients where a normal selection exposes one.
   const compound = ordinaryShortcut(e, s, mode);
-  const gainAt = (f) => scoreGain(base, s.id, f, fps, mode, speechAt(f), track) - (compound ? 3.5 : 0);
+  const digital = feedbackFor(e, e.deviceKind) === 'digital';
+  const gainAt = (f) =>
+    scoreGain(base, s.id, f, fps, mode, speechAt(f), track, digital) - (compound ? 3.5 : 0);
   return {
     soundId: s.id,
     revision: s.revision ?? 1,
@@ -285,6 +294,23 @@ function inputOwners(events, fps) {
   for (const [state, presses] of matches) if (presses.length === 1) paired.set(presses[0], state);
   return paired;
 }
+function interruptedSlides(events) {
+  const previous = new Map(), replacements = new Map();
+  for (const event of [...events].sort((a, b) => a.frame - b.frame)) {
+    if (event.action !== 'slide' || !event.target || event.muted || !['left', 'right'].includes(event.direction))
+      continue;
+    const prior = previous.get(event.target);
+    if (prior && prior.endFrame > event.frame && prior.direction !== event.direction) {
+      const apex = prior.syncFrame ?? Math.floor((prior.frame + prior.endFrame) / 2);
+      replacements.set(prior, apex >= event.frame
+        ? { ...prior, muted: true, interrupted: true }
+        : { ...prior, endFrame: event.frame, syncFrame: apex });
+    }
+    previous.set(event.target, event);
+  }
+  return events.map(e => replacements.get(e) ?? e);
+}
+
 export function planEdit(input, catalog, profile = {}, votes = {}, track) {
   const { fps, durationFrames } = clock(input);
   if (!Array.isArray(input.events))
@@ -347,6 +373,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
   }
   if (input.maxAddedContacts !== undefined)
     integer(input.maxAddedContacts, 'added-contact budget', 0, Number.MAX_SAFE_INTEGER);
+  input = { ...input, events: interruptedSlides(input.events) };
   const paired = inputOwners(input.events, fps);
   for (const e of input.events) {
     const group = e.gesture ? 'gesture/' + e.gesture : 'cue/' + (paired.get(e.id) ?? e.id);
@@ -404,7 +431,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
           decision: event === existing ? 'reuse' : 'silence',
           reason: 'Original audio carries this gesture',
         });
-      else if (silent) Object.assign(out, { decision: 'silence', reason: 'Picture carries this beat' });
+      else if (silent) Object.assign(out, { decision: 'silence', reason: e.interrupted ? 'Motion reversed before the accent' : 'Picture carries this beat' });
       else if (uncertain || owner || policy === 'review')
         Object.assign(out, {
           decision: owner ? 'silence' : 'review',
@@ -444,7 +471,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
           pending.push({
             out,
             event: e,
-            slot: familySlot(e),
+            slot: familySlot(e, style.signatures),
             choices: [sound, ...alternatives],
             mode,
             speechAt,
@@ -480,10 +507,10 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       speech.some(([start]) => start > event.frame && (start - event.frame) / fps < 2);
     const compound = ordinaryShortcut(event, selected, mode);
     const edgeTrim = preference?.edgeDb ?? event.briefEdge ?? (inSpeechGap ? -3 : compound ? -2 : 0);
-    const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event);
+    const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event) || feedbackFor(event, event.deviceKind) === 'digital';
     Object.assign(out, perf, {
       ...(fixedTake ? { fixedTake: true } : {}),
-      ...(motionAccents.has(event.action) && event.endFrame !== undefined ? { fitMotion: true } : {}),
+      ...((motionAccents.has(event.action) || event.action === 'slide') && event.endFrame !== undefined ? { fitMotion: true } : {}),
       gainDb: Math.max(-80, Math.min(12, perf.gainDb + trim - (inSpeechGap ? 2 : 0))),
       projectTrimDb: trim,
       seed: fixedTake

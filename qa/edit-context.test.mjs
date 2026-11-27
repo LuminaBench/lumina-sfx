@@ -127,3 +127,51 @@ test('the scene resolver recognizes listener UI, an explicitly located keyboard,
     'review',
   );
 });
+
+test('touch feedback retains one switch, honours quiet gaps and migrates an approved button', () => {
+  const events = [mark('open', 'press', 20), mark('engage', 'toggle-on', 50), mark('accept', 'confirm', 90)];
+  const input = timeline(events, { device: 'touchscreen', feedback: 'subtle' });
+  const track = (energy) => ({ windowSec: .02, windows: Array.from({ length: 250 }, () => ({ energy, peak: Math.sqrt(energy) })) });
+  const quiet = planEdit(input, bank, {}, {}, track(0)).cues;
+  const bed = planEdit(input, bank, {}, {}, track(.002)).cues;
+  assert.equal(new Set(quiet.map(c => c.soundId + '/' + c.seed)).size, 1);
+  assert.ok(quiet.every((c, i) => c.fixedTake && c.gainDb <= bed[i].gainDb - 3));
+  const player = { signatures: { confirm: { id: quiet[2].soundId, revision: quiet[2].revision, seed: 123, trimDb: -1 } } };
+  assert.equal(planEdit(input, bank, player).cues[2].seed, 123);
+  assert.equal(planEdit(timeline(events, { device:'phone' }), bank).cues[2].decision, 'silence');
+});
+
+test('a reversal trims only the motion that was still running on the same surface', () => {
+  const move = (id, frame, apex, endFrame, direction, target='drawer') =>
+    mark(id, 'slide', frame, { target, endFrame, syncFrame: apex, direction, accent: true });
+  const cases = [move('out', 2, 18, 30, 'left'), move('back', 14, 22, 28, 'right'),
+    move('again', 38, 43, 59, 'left'), move('other', 40, 45, 62, 'right', 'strip'),
+    move('reverse', 49, 57, 75, 'right')];
+  const [early, back, late, other, reverse] = plan(cases).cues;
+  assert.equal(early.decision, 'silence');
+  assert.equal(back.decision, 'play');
+  assert.equal(late.endFrame, 49);
+  assert.equal(late.syncFrame, 43);
+  assert.equal(other.endFrame, 62);
+  assert.equal(reverse.soundId, back.soundId);
+  assert.equal(late.seed, reverse.seed);
+});
+
+test('world context supplies the mounted surface and short indoor return only when supported', () => {
+  const run = (layer, viewpoint, opts={}) => resolveListeningBrief({
+    id:'physical-sources', schemaVersion:2, scope:'world', viewpoint, layers:[layer], ...opts
+  }, bank).design.layers[0];
+  const p = {kind:'point',position:[4,0,-1],refDistance:2};
+  const glass = run({label:'roof',query:'steady rainfall',placement:p}, 'Rain streaks down the skylight.');
+  assert.equal(glass.id,'rain-on-window-loop');
+  assert.equal(run({label:'air',query:'steady rainfall',placement:p},'Rain streaks down the skylight.').id,'rainfall-open-air-clean-loop');
+  assert.equal(run({label:'roof',query:'rainfall-open-air-clean-loop',placement:p},'Rain streaks down the skylight.').id,'rainfall-open-air-clean-loop');
+  const key = { label:'key', query:'mechanical keyboard key down', placement:p };
+  const booth = run(key,'The viewer hears an operator in the booth.');
+  assert.equal(booth.macros.space,'small_room');
+  assert.ok(booth.muffle.cutoffHz < 7000);
+  assert.equal(booth.placement,p);
+  assert.equal(run(key,'The desk is outside.').muffle,undefined);
+  assert.equal(run({...key,macros:{space:'dry'}},'Inside the office.').muffle,undefined);
+  assert.equal(run({...key,placement:{...p,position:[.25,0,0]}},'Inside the booth.').macros,undefined);
+});

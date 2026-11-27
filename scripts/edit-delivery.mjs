@@ -1,5 +1,6 @@
 // Audit decoded picture, including the transport codec, against the source and authored stem.
-import { spawn } from 'node:child_process';
+import { execFile, spawn } from 'node:child_process';
+import { promisify } from 'node:util';
 import { once } from 'node:events';
 import { resolve } from 'node:path';
 import { ffmpegPath } from './audio-export.mjs';
@@ -202,4 +203,44 @@ export async function auditDelivery(plan, source, stem, mix, stream = 0) {
     ],
     cues,
   };
+}
+
+
+const decode = promisify(execFile);
+
+// Probe the delivered stereo pair at author-supplied times. Mono files decode to equal channels.
+export async function probeStereo(file, times, windowMs = 180, stream = 0) {
+  if (!Array.isArray(times) || !times.length || times.length > 64 ||
+      times.some(t => !Number.isFinite(t) || t < 0)) throw Error('Supply 1–64 nonnegative probe times in seconds');
+  if (!Number.isFinite(windowMs) || windowMs < 10 || windowMs > 500) throw Error('Use a 10–500 ms probe window');
+  const media = await mediaInfo(file, false);
+  if (!Number.isSafeInteger(stream) || stream < 0 || stream >= media.audioStreams) throw Error('Unknown audio stream');
+  const windows = [];
+  for (const atSec of times) {
+    if (atSec >= media.seconds) throw Error('Probe time falls outside the file: ' + atSec);
+    const { stdout } = await decode(ffmpegPath(), [
+      '-v', 'error', '-nostdin', '-ss', String(atSec), '-i', resolve(file),
+      '-map', '0:a:' + stream, '-t', String(windowMs / 1000), '-ac', '2', '-ar', String(rate), '-f', 'f32le', 'pipe:1',
+    ], { encoding: 'buffer', maxBuffer: rate * 8 });
+    const frames = stdout.length / 8;
+    if (!frames || !Number.isInteger(frames)) throw Error('Empty or incomplete decoded probe at ' + atSec);
+    let left = 0, right = 0, mono = 0, peak = 0;
+    for (let i = 0; i < stdout.length; i += 8) {
+      const l = stdout.readFloatLE(i), r = stdout.readFloatLE(i + 4);
+      left += l * l;
+      right += r * r;
+      mono += ((l + r) / 2) ** 2;
+      peak = Math.max(peak, Math.abs(l), Math.abs(r));
+    }
+    const total = left + right;
+    const rmsDbfs = db(total / (2 * frames));
+    const rightMinusLeftDb = left && right ? db(right / left) : null;
+    const side = (rmsDbfs ?? -Infinity) < -75 ? 'quiet' :
+      !left ? 'right' : !right ? 'left' :
+      rightMinusLeftDb > 1 ? 'right' : rightMinusLeftDb < -1 ? 'left' : 'center';
+    windows.push({ atSec, decodedMs: frames * 1000 / rate, side, rightMinusLeftDb,
+      leftDbfs: db(left / frames), rightDbfs: db(right / frames), stereoRmsDbfs: rmsDbfs,
+      monoRmsDbfs: db(mono / frames), peakDbfs: db(peak * peak) });
+  }
+  return { file: resolve(file), stream, windowMs, windows };
 }

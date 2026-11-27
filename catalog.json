@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2866,
+  "count": 2867,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -38174,7 +38174,7 @@
       "id": "fishing-skiff-tiller-motor-approach-from-open-water",
       "name": "Fishing skiff tiller motor approach from open water",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38215,6 +38215,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-approach-from-open-water.ts"
     },
@@ -38222,7 +38231,7 @@
       "id": "fishing-skiff-tiller-motor-channel-cruise-loop",
       "name": "Fishing skiff tiller motor channel cruise loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38262,6 +38271,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-channel-cruise-loop.ts"
     },
@@ -38269,7 +38287,7 @@
       "id": "fishing-skiff-tiller-motor-climb-onto-plane",
       "name": "Fishing skiff tiller motor climb onto plane",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38310,6 +38328,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-climb-onto-plane.ts"
     },
@@ -38317,7 +38344,7 @@
       "id": "fishing-skiff-tiller-motor-come-off-plane",
       "name": "Fishing skiff tiller motor come off plane",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38358,6 +38385,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-come-off-plane.ts"
     },
@@ -38365,7 +38401,7 @@
       "id": "fishing-skiff-tiller-motor-helm-shelter-vibration-loop",
       "name": "Fishing skiff tiller motor helm shelter vibration loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38407,6 +38443,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-helm-shelter-vibration-loop.ts"
     },
@@ -38414,7 +38459,7 @@
       "id": "fishing-skiff-tiller-motor-mooring-idle-loop",
       "name": "Fishing skiff tiller motor mooring idle loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38454,6 +38499,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-mooring-idle-loop.ts"
     },
@@ -38461,7 +38515,7 @@
       "id": "fishing-skiff-tiller-motor-planing-throttle-loop",
       "name": "Fishing skiff tiller motor planing throttle loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38502,6 +38556,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-planing-throttle-loop.ts"
     },
@@ -38509,7 +38572,7 @@
       "id": "fishing-skiff-tiller-motor-return-to-idle-at-pontoon",
       "name": "Fishing skiff tiller motor return to idle at pontoon",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38552,6 +38615,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-return-to-idle-at-pontoon.ts"
     },
@@ -38559,7 +38631,7 @@
       "id": "fishing-skiff-tiller-motor-two-throttle-corrections",
       "name": "Fishing skiff tiller motor two throttle corrections",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38600,6 +38672,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-two-throttle-corrections.ts"
     },
@@ -38607,7 +38688,7 @@
       "id": "fishing-skiff-tiller-motor-wake-recedes-past-dock",
       "name": "Fishing skiff tiller motor wake recedes past dock",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -38649,6 +38730,15 @@
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
+      "additionalRecordings": [
+        {
+          "title": "River boat with outboard engine (at changing speeds)",
+          "author": "nomadas",
+          "url": "https://freesound.org/people/nomadas/sounds/690160/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
       "channels": 1,
       "file": "recipes/fishing-skiff-tiller-motor-wake-recedes-past-dock.ts"
     },
@@ -71694,6 +71784,53 @@
       "file": "recipes/paper-storyboard-flip.ts"
     },
     {
+      "id": "paper-title-card-seat",
+      "name": "Paper title card landing",
+      "category": "Footsteps & UI",
+      "editorialAction": "land",
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0,
+        "settle": 0
+      },
+      "contains": [
+        "one short paperboard contact"
+      ],
+      "perspective": "close dry contact",
+      "tags": [
+        "title",
+        "card",
+        "land",
+        "settle",
+        "restrained",
+        "paper",
+        "contact",
+        "editorial",
+        "dry"
+      ],
+      "loopable": false,
+      "durationSec": 0.12,
+      "params": {
+        "weight": {
+          "label": "Card weight",
+          "min": 0,
+          "max": 1,
+          "default": 0.38
+        }
+      },
+      "targetRmsDbfs": -32,
+      "mixRole": "interface",
+      "recording": {
+        "title": "open-cardboard-box-compartment.wav",
+        "author": "newagesoup",
+        "url": "https://freesound.org/people/newagesoup/sounds/364740/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/paper-title-card-seat.ts"
+    },
+    {
       "id": "parachute-canopy-opening-crack",
       "name": "Parachute Canopy Opening Crack",
       "category": "Weather & Ambience",
@@ -82761,6 +82898,7 @@
       "id": "rain-on-window-loop",
       "name": "Rain on Window Glass",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "rain"
@@ -82768,11 +82906,15 @@
       "collection": "Weather",
       "tags": [
         "rain",
+        "rainfall",
         "glass",
         "window",
-        "inside"
+        "pane",
+        "inside",
+        "steady"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 7.2,
       "params": {
         "drops": {
@@ -82781,6 +82923,15 @@
           "max": 1,
           "default": 0.62
         }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "08-24-rain-car-windscreen",
+        "author": "DanielHren",
+        "url": "https://freesound.org/people/DanielHren/sounds/750219/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
       },
       "channels": 1,
       "file": "recipes/rain-on-window-loop.ts"

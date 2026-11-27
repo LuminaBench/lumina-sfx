@@ -192,7 +192,8 @@
       "loopable": true,
       "brief": "Rain on Window Glass",
       "blueprint": "light-rain-loop",
-      "acceptance": "Listen for the surface and natural variation across the loop."
+      "acceptance": "Listen for the surface and natural variation across the loop.",
+      "revision": 2
     },
     {
       "id": "rain-on-tin-roof-loop",
@@ -17194,7 +17195,7 @@
       "durationSec": 3.85,
       "loopable": false,
       "brief": "Fishing skiff tiller motor approach from open water",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-channel-cruise-loop",
@@ -17204,7 +17205,7 @@
       "durationSec": 3.98,
       "loopable": true,
       "brief": "Fishing skiff tiller motor channel cruise loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-climb-onto-plane",
@@ -17214,7 +17215,7 @@
       "durationSec": 2.84,
       "loopable": false,
       "brief": "Fishing skiff tiller motor climb onto plane",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-come-off-plane",
@@ -17224,7 +17225,7 @@
       "durationSec": 2.24,
       "loopable": false,
       "brief": "Fishing skiff tiller motor come off plane",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-helm-shelter-vibration-loop",
@@ -17234,7 +17235,7 @@
       "durationSec": 3.58,
       "loopable": true,
       "brief": "Fishing skiff tiller motor helm shelter vibration loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-mooring-idle-loop",
@@ -17244,7 +17245,7 @@
       "durationSec": 3.03,
       "loopable": true,
       "brief": "Fishing skiff tiller motor mooring idle loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-planing-throttle-loop",
@@ -17254,7 +17255,7 @@
       "durationSec": 3.33,
       "loopable": true,
       "brief": "Fishing skiff tiller motor planing throttle loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-return-to-idle-at-pontoon",
@@ -17264,7 +17265,7 @@
       "durationSec": 3.17,
       "loopable": false,
       "brief": "Fishing skiff tiller motor return to idle at pontoon",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-two-throttle-corrections",
@@ -17274,7 +17275,7 @@
       "durationSec": 3.11,
       "loopable": false,
       "brief": "Fishing skiff tiller motor two throttle corrections",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "fishing-skiff-tiller-motor-wake-recedes-past-dock",
@@ -17284,7 +17285,7 @@
       "durationSec": 3.55,
       "loopable": false,
       "brief": "Fishing skiff tiller motor wake recedes past dock",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "flames-behind-a-closed-workshop-door-fire-settling",

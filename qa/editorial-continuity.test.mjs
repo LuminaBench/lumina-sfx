@@ -153,7 +153,7 @@ test('one requested motion accent stays inside the visible seat and ordinary hol
     ).cues[0];
   const title = make(true);
   assert.equal(title.action, 'land');
-  assert.equal(title.soundId, 'clean-title-reveal-with-soft-hit');
+  assert.equal(title.soundId, 'paper-title-card-seat');
   assert.equal(title.syncFrame, 21);
   assert.equal(title.endFrame, 28);
   assert.equal(title.fitMotion, true);

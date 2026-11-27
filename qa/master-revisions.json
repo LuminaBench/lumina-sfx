@@ -425,6 +425,56 @@
       "current": "8e2acfe99d1451794375fe099469d9612183b2af1ebd151d48c722295b5b61f0",
       "reason": "Restore low wood-flame body and soften short bright snaps."
     },
+    "fishing-skiff-tiller-motor-approach-from-open-water": {
+      "previous": "6bc15f0c9520d29d1c00ba59a4ca0e17f7c130ffeca9ab140c10d571980a43cc",
+      "current": "fd2ed0ba6ae2dd13ea04051a4b0600afa8622fc3faf6bc60d219f4beb9e9b3a5",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-channel-cruise-loop": {
+      "previous": "20ffdc4ea97247716bbe3854b2d9f87150d479cc37501883ca268886d953711f",
+      "current": "bae570dbd740fd82c950bbbd3583b840afaa52f42a7875ff438b48e087b7cde5",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-climb-onto-plane": {
+      "previous": "8573c8a5731b0dfbd6c47031af8bba782b66f45de7aaa4e921a1ba7e50eddc2b",
+      "current": "f8ddf39fe5d3b19fe2687ced3ebf0e1f5c31928640b9b697bbe90cafa634e7fd",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-come-off-plane": {
+      "previous": "813519efaea0c6c0f62799ef4095b1c48279c1770b924a16aba50c3beaca871c",
+      "current": "8297f216137defc69842484cc33d04e47504ff8b8f1cd3267cffd96fffba39e0",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-helm-shelter-vibration-loop": {
+      "previous": "f7d8955b05aea3a0cf841754029dfa54523d385dcd62cfd63e933b8c5d7f8a2d",
+      "current": "2b6973501421fe525f2a478875a017eef9a651df3aecc6d010651982684bd356",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-mooring-idle-loop": {
+      "previous": "8f27c21e35e91f37fa6006891d7ad435edd4961c73bf04616e3e4ad773940992",
+      "current": "718d1b13453cd034a1d2c217d4351b5de2886c5bcbad37bbc202faaaddbd99fb",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-planing-throttle-loop": {
+      "previous": "f1d66ff909e0569bff8332dfc76d5133b58aa5a94d9fcb8066ddf13b2e8bfe8d",
+      "current": "81f40b24613e34099b9da70f28d44f97e819fe64b35ae8abdc7817254a5aa5fd",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-return-to-idle-at-pontoon": {
+      "previous": "89cb0b95d5b4b649bb8e7f1754439f09e51690dd4335c60cb889583e60e5cb14",
+      "current": "27a46aec1ef4dd566f5a68f3a824679fb738504523d493b45892eb0734930284",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-two-throttle-corrections": {
+      "previous": "c7dfa120c9288edaaf1e60e2d81f68b65061a692ebdfa51af3592380dfa76471",
+      "current": "2f0b74689fb50f4a5440b66e1e89147aa3416c1e2139110f555666a4db48d49d",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
+    "fishing-skiff-tiller-motor-wake-recedes-past-dock": {
+      "previous": "157db3a293b0f35cf12abc662bdd3fe1eaca5cd1bb4644fcc713f2b213bf08a4",
+      "current": "4efd14fec1bb25e2bef59742549fdfe583a699564bd8c47b0e86794ae95a1f6a",
+      "reason": "Carry the recorded outboard pulse through the maneuver at load."
+    },
     "flames-behind-a-closed-workshop-door-fire-settling": {
       "previous": "39330a32aff8adafb3a387ebc7ee4f93bf77e97aa0ed4129726e9b5cbebf3bad",
       "current": "b8b9cb218b2395c58204140ca8ed3671abf8d175d72052cece137bf395a1e638",
@@ -979,6 +1029,11 @@
       "previous": "3ebe17a9662a68dc5d111051c2273e9a38b8df5563e8fb33f39305a6d026c2e7",
       "current": "1bc30cc1ca6f55b5e76e0c6b9258393561bb9130b20ea0a14162d1ec7825556a",
       "reason": "Rebuilt the weather stem with individually timed isolated droplets."
+    },
+    "rain-on-window-loop": {
+      "previous": "4c5a11cb8886f971f6281958b8b00e888988ea453672a7bc3e056feae97712d1",
+      "current": "cdf91224304003f4205380cbc90dd5d71b1849ee2ce473e34ec53566e0b3d50a",
+      "reason": "Use close recorded impacts on glass and remove low-frequency mounting vibration."
     },
     "rain-under-a-farm-cart-loop": {
       "previous": "55430790478521422a36f8aa2a37dcb6cdf5c53f8bf33f8d76124d139be0b34b",

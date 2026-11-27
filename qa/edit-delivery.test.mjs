@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
 import { ffmpegPath } from '../scripts/audio-export.mjs';
-import { auditDelivery } from '../scripts/edit-delivery.mjs';
+import { auditDelivery, probeStereo } from '../scripts/edit-delivery.mjs';
 import { mixPicture } from '../scripts/edit-media.mjs';
 
 test('decoded delivery audit finds a missing added stem, original clipping pressure and a mono cancellation', async (t) => {
@@ -65,4 +65,23 @@ test('decoded delivery audit finds a missing added stem, original clipping press
   } finally {
     await rm(tmp, { recursive: true, force: true });
   }
+});
+
+
+test('the delivered stereo probe distinguishes left, silent, right and antiphase mono cancellation', async (t) => {
+  const ff = ffmpegPath();
+  if (spawnSync(ff, ['-version']).error?.code === 'ENOENT') return t.skip('FFmpeg required for stereo probes');
+  const dir = await mkdtemp(join(tmpdir(), 'lumina-pan-'));
+  try {
+    const file = join(dir, 'orbit.wav');
+    const l = '0.25*sin(2*PI*720*t)*(lt(t,0.2)+gte(t,0.7))';
+    const r = '0.25*sin(2*PI*720*t)*(between(t,0.4,0.6)-gte(t,0.7))';
+    const expression = "aevalsrc=exprs='" + l + "|" + r + "':s=48000:d=1";
+    const made = spawnSync(ff, ['-v','error','-f','lavfi','-i',expression,'-c:a','pcm_s16le',file]);
+    assert.equal(made.status, 0, made.stderr.toString());
+    const { windows } = await probeStereo(file, [0.03,0.25,0.42,0.8], 70);
+    assert.deepEqual(windows.map(w=>w.side), ['left','quiet','right','center']);
+    assert.ok(windows[3].stereoRmsDbfs > -20 && (windows[3].monoRmsDbfs ?? -Infinity) < -90);
+    await assert.rejects(probeStereo(file,[1.2]),/outside/);
+  } finally { await rm(dir,{recursive:true,force:true}); }
 });

@@ -71,24 +71,25 @@ export function contextOrder(ids, mode) {
   return ids.map((id) => (acoustics[id] ? measured.shift() : id));
 }
 
-export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track) {
+export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track, subtleDigital = false) {
   // Preserve impact on a featured reveal and a lower ceiling for everyday controls.
   const measured = acoustics[cue];
-  const peakCeiling = mode === 'hero' ? -10 : -13;
-  const activeCeiling = mode === 'hero' ? -21 : -25;
+  const peakCeiling = subtleDigital ? -23 : mode === 'hero' ? -10 : -13;
+  const activeCeiling = subtleDigital ? -36 : mode === 'hero' ? -21 : -25;
   const nominal = measured
     ? Math.min(actionDb, peakCeiling - measured.peakDb, activeCeiling - measured.activeDb)
     : actionDb;
   const base = nominal + (mode === 'rapid' ? -2 : 0);
-  if (!track?.windows.length) return base - (underSpeech ? 6 : 0);
+  if (!track?.windows.length) return base - (underSpeech ? 6 : 0) - (subtleDigital ? 4 : 0);
   const sec = frame / fps;
   const lo = Math.max(0, Math.floor((sec - 0.05) / track.windowSec));
   const hi = Math.ceil((sec + 0.12) / track.windowSec);
   const local = track.windows.slice(lo, hi);
-  if (!local.length) return base - (underSpeech ? 6 : 0);
+  if (!local.length) return base - (underSpeech ? 6 : 0) - (subtleDigital ? 4 : 0);
   const rms = 10 * Math.log10(Math.max(1e-12, local.reduce((v, x) => v + x.energy, 0) / local.length));
   const peak = Math.max(...local.map((x) => x.peak));
   const { activeDb, peakDb } = acoustics[cue] ?? { activeDb: -24, peakDb: -8 };
+  const quietTrim = subtleDigital ? clamp((-46 - rms) / 8, 0, 4) : 0;
   const adjustment = underSpeech
     ? clamp(rms - 6 - (activeDb + base), -4, 2)
     : rms > -32
@@ -96,5 +97,5 @@ export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track) {
       : 0;
   // Reserve headroom for the original on local peaks. Never turn down the source stream.
   const room = 20 * Math.log10(Math.max(0.015, 0.97 - peak)) - peakDb;
-  return Number(Math.min(base + adjustment, room, peakCeiling - peakDb).toFixed(2));
+  return Number(Math.min(base + adjustment - quietTrim, room, peakCeiling - peakDb).toFixed(2));
 }

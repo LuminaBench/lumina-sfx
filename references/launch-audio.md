@@ -151,3 +151,13 @@ node scripts/score-edit.mjs audition plan.json --source original.mp4 --cue name 
 The mixer reads the encoded true peak. If AAC overshoots, it applies a fixed delivery trim and encodes again. Its JSON reports the trim and final dBTP. For an independent world scene with a tail longer than the picture, pass `--fit-picture` to fade the stem at the cut. Ordinary edit stems must match the picture clock.
 
 The delivery audit reads the original, authored stem and finished audio together. For each planned contact it reports the measured change in level after encoding, the surrounding original level and a mono phone-band reading. Values in dBFS describe the digital signal. Listen to flagged windows against the picture for masking and excessive prominence. When an original tap falls on a word being typed, audition that frame on its own. The quieter choice trims only that key and retains all neighbouring strokes.
+
+
+### Reversals, scale and quiet feedback
+
+Use the same target ID for both directions of a panel. Score the visible motion interval for each direction. If the viewer reverses before the first apex, the edit suppresses its unplayed accent. A later reversal ends the previous accent at the turn. Different panels may move together.
+
+A restrained title landing has one recorded paperboard contact. A cinematic impact or hero reveal can use the wider swell and landing. A room full of short physical controls can keep one recognisable switch. For a controller, ordinary focus moves receive less emphasis than the final acceptance. On a phone, request subtle feedback on the specific deliberate action that warrants it. The scorer measures the local soundtrack to leave extra space around that tick in a quiet edit. Explicitly approved project trims take effect after this adjustment.
+
+
+Use the exported movie to check a claimed direction change or missing click. A listener or online audio preview may fold stereo to mono. Query the start of a pass, the outer marker and the return with `node scripts/score-edit.mjs probe scored.mp4 --at 0.2,3.5,7.3 --window-ms 180 --out stereo.json`. Each window reports decoded channel levels, right minus left in dB, stereo and mono RMS, and peak. In a mixed scene the readings describe everything audible in that window. Probe the positioned solo as well when another sound overlaps. A left/right energy difference cannot establish perceived elevation or front/back localization.

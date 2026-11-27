@@ -164,7 +164,7 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
     const matchingProfile=options.signatures && editorial?.action && Object.entries(options.signatures).some(([slot,v])=>
       (slot===editorial.action || slot===('press/'+deviceKind(query))) && v.id===sound.id && v.revision===(sound.revision??1));
     const signature = Number(terms.some(t=>t==='sting' || t==='stinger') && title.has('signature'));
-    const order = editorial ? listeningOrder(sound.id) : 0;
+    const order = editorial ? listeningOrder(sound.id, query) : 0;
     const character = editorial ? subject.filter(t => ['quiet','soft','warm','crisp','gentle','minimal','energetic','energy'].includes(t) && (title.has(t) || tags.has(t))).length : 0;
     scored.push({ sound: result, matchingProfile:Boolean(matchingProfile), solo, surfaceStep, continuous, familyFit, signature, hits, preference, order, character, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
   }

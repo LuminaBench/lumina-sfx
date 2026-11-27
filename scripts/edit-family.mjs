@@ -1,7 +1,15 @@
-import { physicalSwitch } from './edit-device.mjs';
+import { feedbackFor, physicalSwitch } from './edit-device.mjs';
 // One recurring screen gesture carries one identity throughout a cut. Direction is a
 // performance constraint on a swipe, while material is a property of the family.
-export function familySlot(e) {
+export function familySlot(e, signatures) {
+  if (feedbackFor(e, e.deviceKind) === 'digital') {
+    const shared = ['touch-feedback', e.family].filter(Boolean).join('/');
+    // Older profiles can intentionally bind a particular button to its original take.
+    const previous = [(['press', 'paste', 'type'].includes(e.action) ? e.action + '/touch' : e.action), e.family]
+      .filter(Boolean).join('/');
+    if (!signatures?.[shared] && signatures?.[previous]?.id === 'settings-focus-felt-tick') return previous;
+    return shared;
+  }
   if (physicalSwitch(e)) return ['press/' + e.deviceKind, e.family].filter(Boolean).join('/');
   const surface = e.physicalContact ? '/surface' : '';
   const physical = ['press', 'paste', 'type'].includes(e.action) ? '/' + e.deviceKind + surface : '';

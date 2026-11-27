@@ -22,7 +22,7 @@ const profiles = {
   cut: ['One short edit accent', 'transition cut whoosh match swipe slide', ['soft-air-match-cut','linen-match-cut']],
   whip: ['A fast picture cut', 'fast whip cut whoosh swipe transition', ['silk-whip-cut','soft-air-whip-cut']],
   reveal: ['A panel or logo comes into view', 'panel reveal entrance logo transition intro', ['silk-panel-reveal','soft-air-panel-reveal']],
-  land: ['A title card settles on frame', 'title card land settle hit impact reveal', ['clean-title-reveal-with-soft-hit']],
+  land: ['A title card settles on frame', 'title card land settle hit impact reveal', ['paper-title-card-seat','clean-title-reveal-with-soft-hit']],
   rise: ['A title rises into view', 'title card rise riser transition', ['silk-title-rise','linen-title-rise']],
   close: ['A logo or end card signs off', 'logo end card close outro finish sting stinger', ['delicate-logo-close','logo-felt-signature']],
   swell: ['A longer product reveal builds', 'wide product reveal swell build', ['wide-product-reveal-swell']],
@@ -109,7 +109,13 @@ export function editorialPurpose(action) {
   return profiles[action]?.[0];
 }
 
-export function listeningOrder(id) {
+export function featuredLanding(query) {
+  return /\b(?:cinematic|heavy|impact|swell|dramatic|hero)\b/i.test(query);
+}
+
+export function listeningOrder(id, query = '') {
+  if (curated.get(id)?.action === 'land' && featuredLanding(query))
+    return id === 'clean-title-reveal-with-soft-hit' ? 0 : 1;
   return curated.get(id)?.index ?? 100;
 }
 

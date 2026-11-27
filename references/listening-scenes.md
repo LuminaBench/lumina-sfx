@@ -107,3 +107,6 @@ For a stationary source, `"acoustics": {"distanceM": 12, "direction": "rear-left
 ### Check focus on the delivered mix
 
 The region report includes 100 ms windows measured in stereo, mono and a 300–3400 Hz phone proxy. Look at the tenth-percentile margin and the weakest window's time and masker. During a handoff, `views` includes the eased gain change and `planned` describes steady regional gains. A natural scene keeps its source levels. Directed balance trims an adjustable source where it helps meet the requested clearance. A locked background can make that clearance unreachable. Preserve the lock and audition the reported moment in the picture.
+
+
+For a generic field layer, name its emitting surface when the picture supports it. A stove with a roof window can use one steady hearth and one rain-on-glass performance. A layer named for the open air keeps its open-air recording. Put the listener and the physical keys in the same small room when a distant desk is visible. A located keyboard in a named booth or office can pick up short room reflections while its direct sound stays on the correct side. Use the dry space explicitly for a dry microphone perspective. Exact source IDs and explicit layer settings remain available for authored mixes.
