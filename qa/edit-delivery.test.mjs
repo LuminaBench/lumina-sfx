@@ -6,6 +6,8 @@ import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
 import { ffmpegPath } from '../scripts/audio-export.mjs';
 import { auditDelivery, probeStereo } from '../scripts/edit-delivery.mjs';
+import { measureTrack } from '../scripts/edit-track.mjs';
+import { scoreGain } from '../scripts/edit-context.mjs';
 import { mixPicture } from '../scripts/edit-media.mjs';
 
 test('decoded delivery audit finds a missing added stem, original clipping pressure and a mono cancellation', async (t) => {
@@ -84,4 +86,20 @@ test('the delivered stereo probe distinguishes left, silent, right and antiphase
     assert.ok(windows[3].stereoRmsDbfs > -20 && (windows[3].monoRmsDbfs ?? -Infinity) < -90);
     await assert.rejects(probeStereo(file,[1.2]),/outside/);
   } finally { await rm(dir,{recursive:true,force:true}); }
+});
+
+test('a key under a bright speech segment leaves space without dimming adjacent equal-level keys', async (t) => {
+  const ff = ffmpegPath();
+  if (spawnSync(ff, ['-version']).error?.code === 'ENOENT') return t.skip('FFmpeg required');
+  const dir = await mkdtemp(join(tmpdir(), 'lumina-speech-'));
+  try {
+    const file = join(dir, 'contrast.wav');
+    const expr = '0.08*sin(2*PI*if(lt(t,0.5),200,3100)*t)';
+    const made = spawnSync(ff, ['-v','error','-f','lavfi','-i', "aevalsrc=exprs='" + expr + "|-" + expr + "':s=48000:d=1",file]);
+    assert.equal(made.status, 0, made.stderr.toString());
+    const track = await measureTrack(file);
+    const at = (f, speech) => scoreGain(-4, 'laptop-scissor-keyboard-key-down', f, 30, 'normal', speech, track);
+    assert.ok(at(21,true) < at(6,true) - 3.5);
+    assert.ok(Math.abs(at(21,false) - at(6,false)) < 0.1);
+  } finally { await rm(dir, { recursive: true, force: true }); }
 });

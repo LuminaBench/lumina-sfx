@@ -95,7 +95,25 @@ export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track, s
     : rms > -32
       ? clamp(rms - 5 - (activeDb + base), -2, 3)
       : 0;
+  // Look at the attack itself. The broadband window can sound busy even when a key
+  // lands on an open vowel, or quiet when its attack covers a short consonant.
+  let speechTrim = 0;
+  if (underSpeech && measured) {
+    const end = sec + 0.025;
+    let power = 0, presence = 0;
+    for (let i = Math.floor(sec / track.windowSec); i < Math.ceil(end / track.windowSec); i++) {
+      const w = track.windows[i];
+      const overlap = Math.min(end, (i + 1) * track.windowSec) - Math.max(sec, i * track.windowSec);
+      if (w && overlap > 0) {
+        power += w.energy * overlap;
+        presence += (w.presenceEnergy ?? 0) * overlap;
+      }
+    }
+    const speechShare = clamp((presence / Math.max(power, 1e-15) - 0.04) / 0.26, 0, 1);
+    const audible = clamp((10 * Math.log10(Math.max(presence / 0.025, 1e-12)) + 57) / 15, 0, 1);
+    speechTrim = 4 * speechShare * audible * clamp(measured.bright / 0.26, 0, 1);
+  }
   // Reserve headroom for the original on local peaks. Never turn down the source stream.
   const room = 20 * Math.log10(Math.max(0.015, 0.97 - peak)) - peakDb;
-  return Number(Math.min(base + adjustment - quietTrim, room, peakCeiling - peakDb).toFixed(2));
+  return Number(Math.min(base + adjustment - quietTrim - speechTrim, room, peakCeiling - peakDb).toFixed(2));
 }

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { loadDesign } from '../scripts/remix-design.mjs';
 import { composeListeningScene } from '../engine/listening-scene.ts';
-import { relativePose, placeAudio, validatePlacement } from '../engine/spatial.ts';
+import { poseAt, relativePose, placeAudio, validatePlacement } from '../engine/spatial.ts';
 import { headphoneFilter } from '../engine/headphones.ts';
 import { renderChannels } from '../engine/render.ts';
 import { resolveListeningBrief } from '../scripts/listening-brief.mjs';
@@ -319,4 +319,33 @@ test('one event, vehicle state, exact ID and source markers survive free-text so
   assert.equal(choose('thunder-isolated-rolling-strike',{durationSec:30}).decision,'review');
   assert.equal(choose('hydrogen bus pneumatic door closing at highway speed').decision,'review');
   assert.equal(choose('one motorcycle engine',{durationSec:8}).design.layers[0].id,'motorcycle-steady-engine-loop');
+});
+
+test('a camera cut keeps a continuous source on its clock and never imparts a Doppler jump', () => {
+  const cut = 0.4276;
+  const listener = {position: [-2,0,0], path: [{at: cut, position:[18,0,0], cut: true}]};
+  assert.deepEqual(poseAt(listener, cut - .001).position, [-2,0,0]);
+  assert.deepEqual(poseAt(listener, cut).position, [18,0,0]);
+  const src = Float32Array.from({length:rate}, (_,i) => Math.sin(2 * Math.PI * 650 * i / rate));
+  const place = (doppler, observer) => placeAudio([src], {position:[0,0,-1], refDistance:2, doppler}, observer, 'stereo', rate, 0);
+  const expected = place(false, listener), actual = place(true, listener);
+  assert.deepEqual(actual, expected);
+  const boundary = Math.ceil(cut * rate);
+  const fixed = place(false, {position: listener.position});
+  for (let ch = 0; ch < 2; ch++) {
+    assert.deepEqual(actual[ch].subarray(0,boundary), fixed[ch].subarray(0,boundary));
+    assert.ok(energy(actual[ch].subarray(boundary + 200)) > 0);
+  }
+  assert.ok(energy(actual[1].subarray(0,boundary)) > 3 * energy(actual[0].subarray(0,boundary)));
+  assert.ok(energy(actual[0].subarray(boundary+200)) > 3 * energy(actual[1].subarray(boundary+200)));
+  assert.throws(() => validatePlacement({path:[{at:1, position:[1,0,1], cut:'yes'}]}));
+});
+
+test('the downloadable cut scene accepts both viewpoints through the public design loader', async () => {
+  const spec = await read('porch-to-roadside');
+  const { recipe } = await loadDesign(spec);
+  assert.equal(recipe.id, spec.id);
+  const bad = structuredClone(spec);
+  bad.listener.path[0].cut = 'off';
+  await assert.rejects(() => loadDesign(bad), /boolean cut/);
 });

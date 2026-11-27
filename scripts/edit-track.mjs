@@ -2,10 +2,10 @@ import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { resolve } from 'node:path';
 import { contactProbes } from './edit-contacts.mjs';
+import { biquad } from '../engine/dsp.ts';
 import { ffmpegPath } from './audio-export.mjs';
 
-// Stereo energy, including anti-phase content. Store a pair of numbers per 50 ms,
-// not decoded PCM for an entire movie. Frame zero uses the source presentation clock.
+// Measure both channels before summing energy so hard-panned or antiphase sources are retained.
 export async function measureTrack(file, stream = 0, events = [], fps = 30) {
   if (!Number.isSafeInteger(stream) || stream < 0) throw Error('Invalid original audio stream');
   const proc = spawn(
@@ -43,15 +43,22 @@ export async function measureTrack(file, stream = 0, events = [], fps = 30) {
     spare = Buffer.alloc(0),
     sum = 0,
     peak = 0,
+    presence = 0,
     count = 0;
   proc.stderr.on('data', (b) => {
     error = (error + b).slice(-1500);
   });
   const windows = [],
     probes = events.length ? contactProbes(events, fps) : null;
+  const bands = [0, 1].map(() => {
+    const high = biquad('highpass', 1800, Math.SQRT1_2, 12000);
+    const low = biquad('lowpass', 4700, Math.SQRT1_2, 12000);
+    return (x) => low(high(x));
+  });
   let at = 0;
   const flush = () => {
-    windows.push({ energy: sum / count, peak });
+    windows.push({ energy: sum / count, presenceEnergy: presence / count, peak });
+    presence = 0;
     sum = 0;
     peak = 0;
     count = 0;
@@ -67,6 +74,8 @@ export async function measureTrack(file, stream = 0, events = [], fps = 30) {
     }
     for (let i = 0; i < end; i += 2) {
       const x = buf.readInt16LE(i) / 32768;
+      const band = bands[(i >> 1) & 1](x);
+      presence += band * band;
       sum += x * x;
       peak = Math.max(peak, Math.abs(x));
       count++;

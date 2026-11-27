@@ -148,3 +148,21 @@ test('unambiguous input and state markers from an editor share one contact', () 
     ['b', 'd', 'e', 'f'],
   );
 });
+
+test('a minute of mouse navigation reuses its samples through level and timing edits', async () => {
+  const marks = Array.from({length:90}, (_, i) => event(i % 2 ? 'tab' : 'press', 3+i*19, 'nav-'+i, {device:'mouse'}));
+  const plan = planEdit({format:'product',fps:30,durationFrames:1800,events:marks}, sounds);
+  const dir = await mkdtemp(join(tmpdir(),'lumina-minute-'));
+  try {
+    const reference = structuredClone(plan);
+    for (const c of reference.cues) c.fixedTake = false;
+    const revised = reviseEdit(plan,[{id:'nav-10',trimDb:-3}],sounds);
+    reference.cues[10].gainDb -= 3;
+    const a = await renderEdit(revised,sounds,join(dir,'new.wav'));
+    const b = await renderEdit(reference,sounds,join(dir,'reference.wav'));
+    assert.equal(a.events,90);
+    assert.equal(a.renderedTakes,1);
+    assert.equal(b.renderedTakes,90);
+    assert.deepEqual(await readFile(a.file),await readFile(b.file));
+  } finally { await rm(dir,{recursive:true,force:true}); }
+});

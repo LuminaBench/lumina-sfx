@@ -212,11 +212,25 @@ try {
       return 10 * Math.log10(energy(1) / energy(0));
     };
     const turns = [0.08, 0.45, 0.85].map(sideDb);
+    const cutContext = new OfflineAudioContext(2, 44100, 44100);
+    const cutTime = 0.4276;
+    const cutPlayer = new ListeningPlayer(cutContext, {
+      schemaVersion: 2, frames: 44100, rate: 44100, output: 'stereo', regions: [],
+      listener: { position: [0,0,0], path:[{at:cutTime,position:[-6,0,0],cut:true}] },
+      sources: [{...source, placement:{...source.placement,doppler:true}}],
+    }, new Map([['bell', tone]]));
+    cutPlayer.play(0);
+    const film = await cutContext.startRendering();
+    function readCut(at) {
+      const power = [0,1].map(ch => film.getChannelData(ch).subarray(Math.round(at*44100),Math.round((at+.04)*44100)).reduce((sum,x)=>sum+x*x,0));
+      return 10*Math.log10(power[1]/power[0]);
+    }
+    const cutPanDb = [readCut(.15),readCut(cutTime-.05),readCut(cutTime+.04)];
     await ctx.close();
-    return { unlockMs, rate: ctx.sampleRate, result, pack, turns };
+    return { unlockMs, rate: ctx.sampleRate, result, pack, turns, cutPanDb };
   }, Boolean(prepared));
   const pass =
-    !errors.length &&
+    !errors.length && Math.abs(results.cutPanDb[0] - results.cutPanDb[1]) < 0.5 && results.cutPanDb[1] < -6 && results.cutPanDb[2] > 6 &&
     results.result.every((t) => t.peak > 0 && t.gapFrames === 0) &&
     results.turns[0] < -6 &&
     results.turns[1] > 6 &&

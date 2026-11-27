@@ -599,17 +599,33 @@ function addedContacts(cue) {
 export function reviseEdit(plan, changes, catalog) {
   const next = structuredClone(plan),
     seen = new Set(),
-    { durationFrames } = clock(plan);
+    { fps, durationFrames } = clock(plan);
   if (!Array.isArray(changes) || !changes.length) throw Error('Supply an array of cue changes');
   const expanded = changes.flatMap((change) => {
-    if (!change.action) return [change];
-    if (change.id) throw Error('Address a cue by id or action');
-    const { action, ...settings } = change;
-    const matches = next.cues.filter(
-      (c) => !c.locked && c.action === action && (c.decision === 'play' || c.muted),
-    );
-    if (!matches.length) throw Error('No scored cues for ' + action);
-    return matches.map((c) => ({ ...settings, id: c.id }));
+    if (!change.action && !change.signature) return [change];
+    if ([change.id, change.action, change.signature].filter(v => v !== undefined).length !== 1)
+      throw Error('Address a cue by id, action or signature');
+    const { action, signature, ...settings } = change;
+    const matches = next.cues.filter(c => !c.locked && (c.decision === 'play' || c.muted) &&
+      (signature ? c.signature === signature : c.action === action));
+    if (!matches.length) throw Error('No scored cues for ' + (signature ?? action));
+    return matches.map(c => {
+      const edit = { ...settings, id: c.id };
+      if (signature && edit.character === 'less-bright') {
+        if (edit.soundId !== undefined || edit.edgeTrimDb !== undefined)
+          throw Error('Choose a tone trim or a replacement take');
+        delete edit.character;
+        edit.edgeTrimDb = -4;
+      }
+      if (signature && edit.soundId) {
+        // Resolve the corresponding left/right performance of the same material.
+        if (c.action === 'slide' && c.direction)
+          edit.soundId = edit.soundId.replace(/-(left|right)$/, '-' + c.direction);
+        if (c.soundId !== edit.soundId && !c.alternatives?.includes(edit.soundId))
+          throw Error('The replacement is incompatible with ' + c.id);
+      }
+      return edit;
+    });
   });
   for (const change of expanded) {
     const {
@@ -617,6 +633,7 @@ export function reviseEdit(plan, changes, catalog) {
       mute,
       gainDb,
       trimDb,
+      edgeTrimDb,
       shiftFrames,
       soundId: requestedSound,
       lock,
@@ -631,7 +648,7 @@ export function reviseEdit(plan, changes, catalog) {
       !cue ||
       seen.has(id) ||
       Object.keys(other).length ||
-      [mute, gainDb, trimDb, shiftFrames, soundId, lock, character, sourceDecision].every(
+      [mute, gainDb, trimDb, edgeTrimDb, shiftFrames, soundId, lock, character, sourceDecision].every(
         (v) => v === undefined,
       )
     )
@@ -641,7 +658,7 @@ export function reviseEdit(plan, changes, catalog) {
     if (
       cue.locked &&
       lock !== false &&
-      [mute, gainDb, trimDb, shiftFrames, soundId, character, sourceDecision].some((x) => x !== undefined)
+      [mute, gainDb, trimDb, edgeTrimDb, shiftFrames, soundId, character, sourceDecision].some((x) => x !== undefined)
     )
       throw Error('Unlock the approved cue before revising ' + id);
     if (lock !== undefined) cue.locked = lock;
@@ -654,7 +671,7 @@ export function reviseEdit(plan, changes, catalog) {
       throw Error('Choose a frame with an observed source contact');
     if (
       sourceFrame !== undefined &&
-      [requestedSound, character, shiftFrames, mute].some((v) => v !== undefined)
+      [requestedSound, character, edgeTrimDb, shiftFrames, mute].some((v) => v !== undefined)
     )
       throw Error('Set sound, timing or mute on the complete cue');
     if (sourceDecision !== undefined) {
@@ -683,15 +700,20 @@ export function reviseEdit(plan, changes, catalog) {
       } else cue.sourceChoice = sourceDecision;
       if (
         sourceDecision === 'reuse' &&
-        [mute, gainDb, trimDb, shiftFrames, soundId, character].every((v) => v === undefined)
+        [mute, gainDb, trimDb, edgeTrimDb, shiftFrames, soundId, character].every((v) => v === undefined)
       )
         continue;
     }
-    if ([mute, gainDb, trimDb, shiftFrames, soundId, character, sourceDecision].every((x) => x === undefined))
+    if ([mute, gainDb, trimDb, edgeTrimDb, shiftFrames, soundId, character, sourceDecision].every((x) => x === undefined))
       continue;
     if (mute !== undefined && typeof mute !== 'boolean') throw Error('Expected boolean mute');
     if (cue.decision !== 'play' && !(cue.soundId && cue.muted))
       throw Error('Revise source observations before adding sound to ' + id);
+    if (edgeTrimDb !== undefined) {
+      if (!Number.isFinite(edgeTrimDb) || Math.abs(edgeTrimDb) > 12 || character !== undefined)
+        throw Error('Use one treble trim within 12 dB');
+      cue.edgeDb = Math.max(-12, Math.min(0, (cue.edgeDb ?? 0) + edgeTrimDb));
+    }
     if (character !== undefined) {
       if (character !== 'less-bright' || soundId !== undefined)
         throw Error('Specify less-bright or a replacement take');
@@ -709,7 +731,9 @@ export function reviseEdit(plan, changes, catalog) {
       cue.revision = sound.revision ?? 1;
       const m = sound.markers ?? {};
       cue.markerSec = m.seat ?? m.commit ?? m.apex ?? m.contact ?? m.step ?? m.release ?? 0;
-      cue.speed = 1;
+      if (cue.fitMotion && cue.action === 'slide')
+        cue.speed = Math.max(0.85, Math.min(1.25, sound.durationSec * fps / (cue.endFrame - cue.frame)));
+      else cue.speed = 1;
     }
     if (gainDb !== undefined || trimDb !== undefined) {
       if (gainDb !== undefined && trimDb !== undefined)

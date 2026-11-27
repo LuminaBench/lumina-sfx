@@ -153,9 +153,8 @@ export class ListeningPlayer {
     ] as const)
       ramp(param, value, t, initial);
   }
-  private place(v: LiveVoice, t: number, initial: boolean) {
-    const clock = t - this.epoch,
-      p = v.placement,
+  private place(v: LiveVoice, t: number, initial: boolean, clock = t - this.epoch) {
+    const p = v.placement,
       rel = relativePose(p, this.listener, clock),
       pos = poseAt(p, clock).position;
     const local = p.kind === 'listener',
@@ -179,31 +178,39 @@ export class ListeningPlayer {
     ] as const)
       ramp(param, value, t, initial);
     if (p.doppler && !local) {
+      const acrossCut = [p, this.listener].some(path =>
+        path.path?.some(key => key.cut && key.at > clock && key.at <= clock + 0.025));
       const next = relativePose(p, this.listener, clock + 0.025);
-      const vRad = Math.max(-170, Math.min(300, (next.distance - rel.distance) / 0.025));
+      const vRad = acrossCut ? 0 : Math.max(-170, Math.min(300, (next.distance - rel.distance) / 0.025));
       ramp(v.src.playbackRate, Math.min(1.8, Math.max(0.55, 343 / (343 + vRad))), t, initial);
     }
   }
   private schedule(start: number, voices: LiveVoice[], scheduleEar: boolean, until = Infinity) {
     const length = this.manifest.frames / this.manifest.rate,
       end = Math.min(until, this.epoch + length);
+    const cuts = new Set([this.listener, ...voices.map(v => v.placement)]
+      .flatMap(p => (p.path ?? []).filter(key => key.cut).map(key => this.epoch + key.at)));
     const movingUntil = Math.max(
-      this.listener.path?.at(-1)?.at ?? 0,
-      ...voices.map((v) => lastMove(v.placement)),
+      this.epoch + (this.listener.path?.at(-1)?.at ?? 0),
+      ...voices.map(v => this.epoch + lastMove(v.placement)),
+      ...[...cuts].map(t => t + 0.008),
     );
-    for (let n = 0; ; n++) {
-      const t = Math.min(end, start + n * 0.025);
-      if (scheduleEar && (n === 0 || this.listener.path?.length))
-        this.orient(poseAt(this.listener, t - this.epoch), t, n === 0);
+    const stop = Math.max(start, Math.min(end, movingUntil));
+    const times = new Set([start, stop]);
+    for (let t = start + 0.025; t < stop; t += 0.025) times.add(t);
+    for (const t of cuts) {
+      if (t > start && t < stop) times.add(t);
+      if (t + 0.008 > start && t + 0.008 < stop) times.add(t + 0.008);
+    }
+    for (const t of [...times].sort((a, b) => a - b)) {
+      // Hold the old ear until the cut. Web Audio ramps from there to the new pose.
+      const initial = t === start;
+      const clock = t - this.epoch - (!initial && cuts.has(t) ? 1e-8 : 0);
+      if (scheduleEar && (initial || this.listener.path?.length))
+        this.orient(poseAt(this.listener, clock), t, initial);
       for (const v of voices)
-        if (
-          n === 0 ||
-          this.listener.path?.length ||
-          v.placement.path?.length ||
-          Array.isArray(v.placement.obstruction)
-        )
-          this.place(v, t, n === 0);
-      if (t - this.epoch >= movingUntil || t >= end) break;
+        if (initial || this.listener.path?.length || v.placement.path?.length || Array.isArray(v.placement.obstruction))
+          this.place(v, t, initial, clock);
     }
   }
   play(when = this.context.currentTime + 0.035) {

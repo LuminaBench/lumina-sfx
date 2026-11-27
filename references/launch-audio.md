@@ -161,3 +161,9 @@ A restrained title landing has one recorded paperboard contact. A cinematic impa
 
 
 Use the exported movie to check a claimed direction change or missing click. A listener or online audio preview may fold stereo to mono. Query the start of a pass, the outer marker and the return with `node scripts/score-edit.mjs probe scored.mp4 --at 0.2,3.5,7.3 --window-ms 180 --out stereo.json`. Each window reports decoded channel levels, right minus left in dB, stereo and mono RMS, and peak. In a mixed scene the readings describe everything audible in that window. Probe the positioned solo as well when another sound overlaps. A left/right energy difference cannot establish perceived elevation or front/back localization.
+
+### Apply feedback to one device throughout a film
+
+Read the `signature` from a playing cue. To lower the mouse clicks across navigation and take the sharp edge off the same switch, pass `[{"signature":"press/mouse","trimDb":-3,"character":"less-bright"}]` to `revise --changes`. A family edit applies to unlocked additions. Original contacts, named exceptions and other input devices retain their own decisions. A replacement from the listed swipe alternatives uses the matching left or right take at the speed of the picture.
+
+Mark narrated frame ranges and supply the original movie when planning. Around each marked key the scorer measures how much of the soundtrack sits in the 1.8–4.7 kHz band and how bright the selected attack is. It can trim a competing key by up to a further 4 dB. Listen through the affected word at delivery level to judge intelligibility.

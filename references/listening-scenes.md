@@ -110,3 +110,7 @@ The region report includes 100 ms windows measured in stereo, mono and a 300–3
 
 
 For a generic field layer, name its emitting surface when the picture supports it. A stove with a roof window can use one steady hearth and one rain-on-glass performance. A layer named for the open air keeps its open-air recording. Put the listener and the physical keys in the same small room when a distant desk is visible. A located keyboard in a named booth or office can pick up short room reflections while its direct sound stays on the correct side. Use the dry space explicitly for a dry microphone perspective. Exact source IDs and explicit layer settings remain available for authored mixes.
+
+### Carry sound through a camera cut
+
+Keep each running motor or weather layer on the scene clock. Put `"cut": true` on a listener path keyframe to move the ear to a new shot at that time. The renderer holds the old viewpoint up to the marked frame and blends the acoustic change over at most 8 ms. The original sample keeps playing. Actual source travel still drives Doppler. For an [example with rain on a porch and a motorcycle at a gate](listening-scenes/porch-to-roadside.json), compare the source balance just before and after 4.15 seconds.

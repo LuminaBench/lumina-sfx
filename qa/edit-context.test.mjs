@@ -189,3 +189,41 @@ test('clean world briefs recognize the contact material and a single located bel
   assert.equal(resolve('rainfall on leaves')?.id, resolve('rain on leaves')?.id);
   assert.match(resolve('rainfall on leaves').id, /leaves/);
 });
+
+test('one project switch revision follows the hardware through different screen actions', () => {
+  const original = plan([
+    mark('open', 'press', 2, { device: 'mouse' }),
+    mark('select', 'tab', 15, { device: 'mouse' }),
+    mark('captured', 'press', 29, { device: 'mouse', sourceContact: true }),
+    mark('pad', 'press', 40, { device: 'trackpad' }),
+    mark('approved', 'back', 54, { device: 'mouse' }),
+  ]);
+  const locked = reviseEdit(original, [{ id: 'approved', lock: true }], bank);
+  const updated = reviseEdit(locked, [{ signature: 'press/mouse', trimDb: -3, character: 'less-bright' }], bank);
+  for (const [i, c] of updated.cues.entries()) {
+    if (i > 1) assert.deepEqual(c, locked.cues[i]);
+    else {
+      assert.equal(c.gainDb, locked.cues[i].gainDb - 3);
+      assert.equal(c.edgeDb, (locked.cues[i].edgeDb ?? 0) - 4);
+      assert.equal(c.soundId, locked.cues[i].soundId);
+      assert.equal(c.seed, locked.cues[i].seed);
+    }
+  }
+  assert.throws(() => reviseEdit(locked, [{ signature: 'press/mouse', soundId: 'rain-on-window-loop' }], bank));
+});
+
+test('swapping a swipe family keeps the left and right performances at picture speed', () => {
+  const original = plan([
+    mark('in', 'slide', 2, { direction: 'right', endFrame: 28, accent: true }),
+    mark('out', 'slide', 40, { direction: 'left', endFrame: 66, accent: true }),
+  ]);
+  const swap = original.cues[0].alternatives.find(id => id.endsWith('-right') &&
+    original.cues[1].alternatives.includes(id.replace(/-right$/, '-left')));
+  assert.ok(swap);
+  const updated = reviseEdit(original, [{ signature: original.cues[0].signature, soundId: swap }], bank);
+  for (const [i,c] of updated.cues.entries()) {
+    assert.equal(c.soundId, i ? swap.replace(/-right$/, '-left') : swap);
+    assert.equal(c.syncFrame, original.cues[i].syncFrame);
+    assert.equal(c.speed, Math.max(.85, Math.min(1.25, src(c.soundId).durationSec * 30 / 26)));
+  }
+});

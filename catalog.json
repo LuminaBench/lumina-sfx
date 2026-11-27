@@ -67411,6 +67411,7 @@
       "id": "motorcycle-steady-engine-loop",
       "name": "Steady road motorcycle engine",
       "category": "Vehicles & Engines",
+      "revision": 2,
       "isolation": "isolated",
       "soloQueries": [
         "motorcycle engine",
@@ -67420,6 +67421,7 @@
         "motorcycle-engine"
       ],
       "perspective": "stationary exterior emitter",
+      "collection": "Road engines",
       "tags": [
         "vehicle",
         "motorcycle",
@@ -67427,7 +67429,7 @@
         "piston",
         "engine",
         "cruise",
-        "twin",
+        "single",
         "cylinder",
         "road",
         "bike",
@@ -67454,9 +67456,9 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "motorbike throttling.1.wav",
-        "author": "overmedium",
-        "url": "https://freesound.org/people/overmedium/sounds/651750/",
+        "title": "Single Cylinder Motorcycle",
+        "author": "richwise",
+        "url": "https://freesound.org/people/richwise/sounds/361407/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },

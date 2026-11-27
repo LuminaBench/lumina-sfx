@@ -53,7 +53,7 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
       if(input.viewpoint!==undefined && typeof input.viewpoint!=='string') throw Error('Expected a viewpoint description');
       if(input.listener) {
         fields(input.listener,'listener',['position','path','yaw','pitch','roll']);
-        for(const pose of input.listener.path??[]) fields(pose,'listener key',['at','position','yaw','pitch','roll']);
+        for(const pose of input.listener.path??[]) fields(pose,'listener key',['at','position','yaw','pitch','roll','cut']);
       }
       spatial=true; headphones ||= input.output==='headphones';
       if(input.focus) {
@@ -74,7 +74,7 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
       if(layer.maskEq) fields(layer.maskEq,'mask EQ',['hz','cutDb','q']);
       if(layer.placement) {
         fields(layer.placement,'placement',['kind','position','path','yaw','pitch','roll','refDistance','rolloff','spread','innerAngle','outerAngle','outerGain','air','doppler','obstruction','room']);
-        for(const pose of layer.placement.path??[]) fields(pose,'source key',['at','position','yaw','pitch','roll']);
+        for(const pose of layer.placement.path??[]) fields(pose,'source key',['at','position','yaw','pitch','roll','cut']);
       }
       const { id, design: nested, ...settings } = layer;
       if ((id === undefined) === (nested === undefined)) throw Error('Each layer needs one id or design');

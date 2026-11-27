@@ -29162,6 +29162,16 @@
       "durationSec": 0.96,
       "loopable": false,
       "revision": 1
+    },
+    {
+      "id": "motorcycle-steady-engine-loop",
+      "brief": "One motorcycle under steady load for independent placement",
+      "collection": "Road engines",
+      "category": "Vehicles & Engines",
+      "status": "review",
+      "durationSec": 2.68,
+      "loopable": true,
+      "revision": 2
     }
   ]
 }

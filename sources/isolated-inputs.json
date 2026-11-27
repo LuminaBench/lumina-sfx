@@ -555,6 +555,18 @@
     }
   },
   "fieldTakes": {
+    "motorcycle-under-load": [
+      {
+        "startSec": 39.95,
+        "frames": 126000,
+        "sha256": "842560630b08c8b763174fcec28965a3ab94fc9c0d3745675395951814987a97"
+      },
+      {
+        "startSec": 50.45,
+        "frames": 124800,
+        "sha256": "ba17b1320430c2979cc64fa5b544379fd3fddc4ae362f6c91b1313f7f70070e8"
+      }
+    ],
     "wood-flame": [
       {
         "startSec": 37,

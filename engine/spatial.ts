@@ -7,7 +7,7 @@ export interface Pose {
   roll?: number;
 }
 export interface Trajectory extends Pose {
-  path?: readonly (Pose & { at: number })[];
+  path?: readonly (Pose & { at: number; cut?: boolean })[];
 }
 export interface Placement extends Partial<Trajectory> {
   kind?: 'point' | 'cone' | 'area' | 'listener';
@@ -44,6 +44,7 @@ export function validateTrajectory(p: Trajectory) {
   let last = 0;
   for (const key of p.path ?? []) {
     validatePose(key);
+    if (key.cut !== undefined && typeof key.cut !== 'boolean') throw Error('Expected a boolean cut');
     bounded(key.at, 0, 120, 'path time');
     if (key.at <= last) throw Error('Path times must increase from the initial pose at zero');
     last = key.at;
@@ -82,6 +83,7 @@ export function poseAt(p: Partial<Trajectory>, t: number): Pose {
     start = 0;
   for (const next of p.path ?? []) {
     if (t < next.at) {
+      if (next.cut) return prev;
       const u = clamp((t - start) / (next.at - start), 0, 1);
       const [x, y, z] = prev.position;
       return {
@@ -195,15 +197,27 @@ export function placeAudio(
   let read = 0,
     lp = 0,
     sideLP = 0;
-  for (let begin = 0; begin < n; begin += 256) {
-    const size = Math.min(256, n - begin),
-      next = moving ? relativePose(p, listener, offset + (begin + size) / rate) : state;
+  // Keep dry playback running across camera cuts. Stop the preceding interpolation at
+  // the picture boundary and crossfade the two acoustic states just after the cut.
+  const cuts = new Set([...p.path ?? [], ...listener.path ?? []]
+    .filter(key => key.cut && key.at > offset)
+    .map(key => Math.ceil((key.at - offset) * rate)));
+  const boundaries = [...cuts].filter(frame => frame < n).sort((a, b) => a - b);
+  let boundary = 0;
+  for (let begin = 0; begin < n;) {
+    const afterCut = cuts.has(begin);
+    if (afterCut) boundary++;
+    const end = Math.min(n, boundaries[boundary] ?? n, begin + (afterCut ? Math.min(256, Math.ceil(0.008 * rate)) : 256));
+    const size = end - begin;
+    const nextTime = offset + (cuts.has(end) ? end - 1 : end) / rate;
+    const next = moving ? relativePose(p, listener, nextTime) : state;
     const newFilters =
       moving &&
       (Math.abs(next.azimuth - state.azimuth) > 1e-5 || Math.abs(next.elevation - state.elevation) > 1e-5)
         ? head?.(next.azimuth, next.elevation, rate)
         : filters;
-    const velocity = ((next.distance - state.distance) * rate) / size;
+    const startDistance = afterCut ? relativePose(p, listener, offset + begin / rate).distance : state.distance;
+    const velocity = ((next.distance - startDistance) * rate) / size;
     const step = p.doppler ? clamp(343 / (343 + clamp(velocity, -170, 300)), 0.55, 1.8) : 1;
     for (let j = 0; j < size; j++) {
       const i = begin + j,
@@ -234,6 +248,7 @@ export function placeAudio(
     }
     state = next;
     filters = newFilters;
+    begin = end;
   }
   return output === 'mono' ? [out[0].map((v, i) => (v + out[1][i]) * 0.5)] : out;
 }

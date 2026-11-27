@@ -4,6 +4,21 @@ import { renderChannels, SAMPLE_RATE } from '../engine/render.ts';
 import { encodeWav } from '../engine/wav.ts';
 import { clock, eligible } from './edit-score.mjs';
 
+function renderTake(e, rate) {
+  const pcm = renderChannels(e.recipe, { seed: e.seed, level: 'balanced', macros: { speed: e.speed } });
+  if (e.edgeDb) {
+    const edge = 10 ** (e.edgeDb / 20), alpha = 1 - Math.exp(-2 * Math.PI * 2400 / rate);
+    for (const channel of pcm) {
+      let low = 0;
+      for (let i = 0; i < channel.length; i++) {
+        low += alpha * (channel[i] - low);
+        channel[i] = low + (channel[i] - low) * edge;
+      }
+    }
+  }
+  return pcm;
+}
+
 export async function renderEdit(plan, catalog, out) {
   if (plan.schemaVersion !== 1 || !Array.isArray(plan.cues)) throw Error('Expected a scored picture');
   const { fps, durationFrames } = clock(plan),
@@ -64,6 +79,7 @@ export async function renderEdit(plan, catalog, out) {
       events.push({
         start: Math.round((frame / fps - cue.markerSec / cue.speed) * rate),
         recipe,
+        fixedTake: cue.fixedTake === true,
         ...(cue.fitMotion
           ? {
               visibleStart: Math.round((cue.frame / fps) * rate),
@@ -82,7 +98,9 @@ export async function renderEdit(plan, catalog, out) {
   await mkdir(dirname(dest), { recursive: true });
   const temp = await mkdtemp(join(dirname(dest), '.lumina-stem-')),
     wav = join(temp, 'track.wav');
-  let peak = 0,
+  const takes = new Map();
+  let renderedTakes = 0,
+    peak = 0,
     idx = 0,
     active = [],
     energy = 0,
@@ -98,17 +116,15 @@ export async function renderEdit(plan, catalog, out) {
         const n = Math.min(16384, frames - at),
           block = [new Float32Array(n), new Float32Array(n)];
         while (idx < events.length && events[idx].start < at + n) {
-          const e = events[idx++],
-            pcm = renderChannels(e.recipe, { seed: e.seed, level: 'balanced', macros: { speed: e.speed } });
-          if (e.edgeDb) {
-            const edge = 10 ** (e.edgeDb / 20),
-              alpha = 1 - Math.exp((-2 * Math.PI * 2400) / rate);
-            for (const channel of pcm) {
-              let low = 0;
-              for (let i = 0; i < channel.length; i++) {
-                low += alpha * (channel[i] - low);
-                channel[i] = low + (channel[i] - low) * edge;
-              }
+          const e = events[idx++];
+          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.edgeDb ?? 0]) : undefined;
+          let pcm = key && takes.get(key);
+          if (!pcm) {
+            pcm = renderTake(e, rate);
+            renderedTakes++;
+            if (key && pcm.reduce((bytes, ch) => bytes + ch.byteLength, 0) <= 2 * 1024 * 1024) {
+              if (takes.size === 4) takes.delete(takes.keys().next().value);
+              takes.set(key, pcm);
             }
           }
           active.push({ ...e, pcm, end: Math.min(e.visibleEnd ?? Infinity, e.start + pcm[0].length) });
@@ -157,6 +173,8 @@ export async function renderEdit(plan, catalog, out) {
     file: dest,
     frames,
     events: events.length,
+    renderedTakes,
+    reusedTakes: events.length - renderedTakes,
     review: plan.cues
       .filter((c) => c.decision === 'review' || c.keyDecisions?.includes('review'))
       .map((c) => c.id),
