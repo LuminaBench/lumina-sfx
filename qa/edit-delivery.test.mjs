@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm } from 'node:fs/promises';
+import { mkdtemp, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { spawnSync } from 'node:child_process';
+import { encodeWav } from '../engine/wav.ts';
 import { ffmpegPath } from '../scripts/audio-export.mjs';
 import { auditDelivery, probeStereo } from '../scripts/edit-delivery.mjs';
 import { measureTrack } from '../scripts/edit-track.mjs';
@@ -128,4 +129,32 @@ test('a second recorded attack is flagged on a single mouse press and allowed fo
     plan.cues.push({id:'existing',decision:'reuse',frame:13});
     assert.equal((await audit()).cues[0].secondAttack,undefined);
   } finally { await rm(dir,{recursive:true,force:true}); }
+});
+
+
+test('an all-reuse movie copies just the chosen original soundtrack, retaining a one-LSB added stem on the mix path', async (t) => {
+  const ff = ffmpegPath();
+  if (spawnSync(ff, ['-version']).error?.code === 'ENOENT') return t.skip('FFmpeg required');
+  const tmp = await mkdtemp(join(tmpdir(), 'lumina-original-only-'));
+  const file = name => join(tmp,name);
+  function run(...args) {
+    const result = spawnSync(ff,['-v','error','-nostdin',...args]);
+    assert.equal(result.status,0,result.stderr.toString());
+    return result.stdout.toString();
+  }
+  const streamHash = (name,stream) => run('-i',file(name),'-map',stream,'-c','copy','-f','hash','-');
+  try {
+    run('-f','lavfi','-i','color=size=48x48:rate=25:duration=1','-f','lavfi','-i','sine=f=850:d=1',
+      '-f','lavfi','-i','sine=f=300:d=1','-map','0:v','-map','1:a','-map','2:a','-c:v','libx264','-c:a','aac',file('source.mp4'));
+    const samples = new Float32Array(44100);
+    await writeFile(file('quiet.wav'), Buffer.from(encodeWav(samples)));
+    const kept = await mixPicture(file('source.mp4'),file('quiet.wav'),file('kept.mp4'),1);
+    assert.equal(kept.audioEncoding,'copy');
+    assert.equal(streamHash('kept.mp4','0:a:0'),streamHash('source.mp4','0:a:1'));
+    assert.equal(streamHash('kept.mp4','0:v:0'),streamHash('source.mp4','0:v:0'));
+    samples[samples.length-1]=1/32767;
+    await writeFile(file('faint.wav'), Buffer.from(encodeWav(samples)));
+    const mixed = await mixPicture(file('source.mp4'),file('faint.wav'),file('faint.mp4'),1);
+    assert.notEqual(mixed.audioEncoding,'copy');
+  } finally { await rm(tmp,{recursive:true,force:true}); }
 });

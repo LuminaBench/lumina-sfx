@@ -78,3 +78,13 @@ test('a partly supported commission can audition the independent sources, withou
   assert.equal(result.audition.focus, undefined);
   await loadDesign(result.audition);
 });
+
+
+test('a located real source uses the same matching rules in a mixed or inferred scene', () => {
+  const physical = { label:'leaves', query:'poplar leaves rustling outside the window', placement:obstacle };
+  const title = { label:'menu', query:'settings-tab-walnut-detent', placement:{kind:'listener'} };
+  const implicit = resolveListeningBrief({ schemaVersion:2, id:'window', layers:[physical] }, sounds);
+  assert.equal(implicit.design.scope, 'world');
+  const mixed = choose([physical, title], {scope:'mixed'});
+  assert.deepEqual(mixed.design.layers.map(l => l.id), ['poplar-canopy-rustle-loop','settings-tab-walnut-detent']);
+});

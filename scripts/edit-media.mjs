@@ -1,6 +1,6 @@
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { mkdir, mkdtemp, link, rm, readFile, writeFile, rename, stat } from 'node:fs/promises';
+import { mkdir, mkdtemp, link, rm, open, readFile, writeFile, rename, stat } from 'node:fs/promises';
 import { dirname, join, relative, resolve, sep } from 'node:path';
 import { ffmpegPath, publishAsset } from './audio-export.mjs';
 
@@ -121,8 +121,32 @@ function originalFirstMix(stream, conform) {
   ].join(';');
 }
 
-async function deliveryPeak(file) {
-  const { stderr } = await ff([
+// The editor writes canonical 16-bit PCM. Inspect exact sample bytes, so a very
+// quiet authored effect can never be mistaken for an instruction to keep the original.
+async function silentEditorStem(file) {
+  const handle = await open(file, 'r');
+  try {
+    const header = Buffer.alloc(44);
+    if ((await handle.read(header)).bytesRead !== 44 || header.toString('ascii', 0, 4) !== 'RIFF' ||
+        header.toString('ascii', 8, 16) !== 'WAVEfmt ' || header.readUInt32LE(16) !== 16 ||
+        header.readUInt16LE(20) !== 1 || header.readUInt16LE(34) !== 16 ||
+        header.toString('ascii', 36, 40) !== 'data') return false;
+    const size = (await handle.stat()).size, dataBytes = header.readUInt32LE(40);
+    if (!dataBytes || dataBytes + 44 !== size || header.readUInt32LE(4) + 8 !== size) return false;
+    const data = Buffer.alloc(65536), zero = Buffer.alloc(data.length);
+    let remaining = dataBytes;
+    while (remaining > 0) {
+      const {bytesRead} = await handle.read(data, 0, Math.min(remaining, data.length));
+      if (!bytesRead || data.compare(zero, 0, bytesRead, 0, bytesRead) !== 0) return false;
+      remaining -= bytesRead;
+    }
+    return true;
+  } finally { await handle.close(); }
+}
+
+async function deliveryLevel(file) {
+  const { stdout, stderr } = await ff([
+    '-progress', 'pipe:1',
     '-i',
     file,
     '-map',
@@ -136,7 +160,8 @@ async function deliveryPeak(file) {
   ]);
   const result = stderr.match(/True peak:\s*Peak:\s*(-inf|[-+\d.]+)\s*dBFS/i);
   if (!result) throw Error('Could not measure true peak of the encoded soundtrack');
-  return result[1] === '-inf' ? -Infinity : Number(result[1]);
+  const time = [...stdout.matchAll(/^out_time_us=(\d+)$/gm)].at(-1)?.[1];
+  return {peak: result[1] === '-inf' ? -Infinity : Number(result[1]), seconds: Number(time) / 1e6};
 }
 export async function mixPicture(file, stem, out, audioStream = 0, fitPicture = false) {
   const [picture, audio] = await Promise.all([mediaInfo(file, true), mediaInfo(stem, false)]);
@@ -156,6 +181,26 @@ export async function mixPicture(file, stem, out, audioStream = 0, fitPicture = 
   const stage = await mkdtemp(join(dirname(dest), '.lumina-mix-')),
     video = join(stage, 'preview.mp4');
   try {
+    if (picture.audioStreams && await silentEditorStem(stem)) {
+      let copied = true;
+      try {
+        await ff(['-v','error','-i',resolve(file),'-map','0:v:0','-map','0:a:' + audioStream,
+          '-c','copy','-movflags','+faststart',video]);
+      } catch (error) {
+        if (!/codec .*not currently supported|Could not find tag|incompatible with output codec/i.test(error.message)) throw error;
+        copied = false;
+      }
+      if (copied) {
+        const {peak, seconds} = await deliveryLevel(video);
+        if (peak <= -0.5 && Math.abs(seconds - picture.seconds) <= 0.055) {
+          await link(video, dest);
+          return { file: dest, pictureEncoding: 'copy', audioEncoding: 'copy', truePeakDbtp: Number.isFinite(peak) ? peak : null,
+            deliveryTrimDb: 0, ...(fitPicture ? {fittedStemSeconds: audio.seconds} : {}),
+            originalTracks: picture.audioStreams, usedAudioStream: audioStream, seconds: picture.seconds };
+        }
+      }
+      await rm(video, {force: true});
+    }
     let deliveryTrimDb = 0;
     const conform = fitPicture
       ? 'atrim=end=' +
@@ -206,7 +251,7 @@ export async function mixPicture(file, stem, out, audioStream = 0, fitPicture = 
       await encode(['-c:v', 'libx264', '-crf', '18', '-preset', 'fast', '-pix_fmt', 'yuv420p']);
       pictureEncoding = 'h264';
     }
-    let truePeakDbtp = await deliveryPeak(video);
+    let truePeakDbtp = (await deliveryLevel(video)).peak;
     // AAC can overshoot on a recording that was already hot. Make one static edit to
     // the delivery copy only, then measure the actual encode again before publishing.
     for (let attempt = 0; truePeakDbtp > -0.5 && attempt < 3; attempt++) {
@@ -217,7 +262,7 @@ export async function mixPicture(file, stem, out, audioStream = 0, fitPicture = 
           ? ['-c:v', 'copy']
           : ['-c:v', 'libx264', '-crf', '18', '-preset', 'fast', '-pix_fmt', 'yuv420p'],
       );
-      truePeakDbtp = await deliveryPeak(video);
+      truePeakDbtp = (await deliveryLevel(video)).peak;
     }
     if (truePeakDbtp > -0.5)
       throw Error('Encoded picture exceeds the true-peak ceiling after three delivery trims');

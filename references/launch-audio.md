@@ -198,3 +198,5 @@ A profile's `votes` field accepts one path or an ordered list of listening expor
 
 
 For a burst of physical selections, score each visible press and listen through the complete run. The planner can apply one additional trim of up to 3 dB across a rapid switch family. The number of audible presses in its busiest second sets the trim. Isolated presses keep their ordinary level. A featured close-up or marked speech passage keeps its own treatment. The plan reports `densityTrimDb` on affected contacts. When the exported movie has a second distinct attack 60–180 ms after an isolated physical press, its audit can flag `secondAttack` with the likely source. Play that moment in picture before deciding whether to reuse or soften it.
+
+A fully reused soundtrack can survive a final export without another generation of AAC compression. When the studio WAV is exactly silent, the selected original soundtrack spans the picture and the existing true peak is within the delivery ceiling, the mixer attempts to copy the original audio and video packets. The mix receipt reports `audioEncoding: "copy"` when this succeeds.

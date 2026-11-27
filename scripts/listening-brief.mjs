@@ -72,10 +72,12 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     }
     // The distance model supplies the requested perspective for free-text sources.
     // Keep exact IDs literal so an incompatible authored performance goes to review.
-    const mounted = (design.scope === 'world' && !prefer && !exclude) ?
+    const worldLayer = design.scope === 'world' || Boolean(settings.acoustics ||
+      (settings.placement && settings.placement.kind !== 'listener'));
+    const mounted = (worldLayer && !prefer && !exclude) ?
       mountedAmbience(query, layer.label, design.viewpoint) : undefined;
     const mountedTake = mounted && cleanBank.find(s => s.id === mounted);
-    const worldQuery = design.scope === 'world' && !bank.some(sound => sound.id === query.trim().toLowerCase());
+    const worldQuery = worldLayer && !bank.some(sound => sound.id === query.trim().toLowerCase());
     const intent = worldQuery ? worldPerformance(query, settings, design.viewpoint) : { query };
     if (intent.contradiction) {
       missing.push({ query, label: layer.label, reason: 'The requested source also excludes ' + intent.contradiction });
@@ -147,7 +149,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
       warnings.push({label:settings.label, decision:'natural-end', requestedWindowSec:settings.durationSec, naturalDurationSec:naturalDuration});
       delete settings.durationSec;
     }
-    if (design.scope === 'world' && hit.mixRole === 'vehicle' && settings.placement?.path?.length &&
+    if (worldLayer && hit.mixRole === 'vehicle' && settings.placement?.path?.length &&
         settings.placement.kind !== 'listener' && settings.placement.doppler === undefined &&
         !sourcePerspective(hit).motion)
       settings.placement = { ...settings.placement, doppler: true };
