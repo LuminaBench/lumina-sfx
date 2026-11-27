@@ -1,6 +1,6 @@
 {
   "name": "lumina-sfx-studio",
-  "version": "1.5.0-rc.15",
+  "version": "1.5.0-rc.16",
   "private": true,
   "type": "module",
   "engines": {
@@ -29,7 +29,7 @@
     "qa:selection": "node qa/selection-benchmark.mjs",
     "qa:repeats": "node --experimental-strip-types --disable-warning=ExperimentalWarning qa/repeated-use.mjs",
     "score:edit": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/score-edit.mjs",
-    "test:edit": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/edit-score.test.mjs qa/edit-context.test.mjs qa/editorial-continuity.test.mjs qa/editorial-family-review.test.mjs qa/editorial-contact-and-seat.test.mjs qa/ribbon-reversal.test.mjs qa/edit-delivery.test.mjs"
+    "test:edit": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test qa/edit-score.test.mjs qa/edit-context.test.mjs qa/editorial-continuity.test.mjs qa/editorial-family-review.test.mjs qa/editorial-contact-and-seat.test.mjs qa/ribbon-reversal.test.mjs qa/edit-travel.test.mjs qa/edit-delivery.test.mjs"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

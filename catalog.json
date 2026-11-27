@@ -26108,7 +26108,7 @@
       "id": "desktop-mouse-double-click",
       "name": "Desktop mouse double click",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -26141,11 +26141,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Mouse click and double clicks.wav",
+        "author": "5ro4",
+        "url": "https://freesound.org/people/5ro4/sounds/609533/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/desktop-mouse-double-click.ts"
@@ -26154,7 +26154,7 @@
       "id": "desktop-mouse-press-and-hold",
       "name": "Desktop mouse press, hold and release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -26188,11 +26188,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Mouse click and double clicks.wav",
+        "author": "5ro4",
+        "url": "https://freesound.org/people/5ro4/sounds/609533/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/desktop-mouse-press-and-hold.ts"
@@ -26201,7 +26201,7 @@
       "id": "desktop-mouse-press",
       "name": "Desktop mouse single press",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
@@ -26236,11 +26236,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Mouse click and double clicks.wav",
+        "author": "5ro4",
+        "url": "https://freesound.org/people/5ro4/sounds/609533/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/desktop-mouse-press.ts"
@@ -26249,7 +26249,7 @@
       "id": "desktop-mouse-release",
       "name": "Desktop mouse release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -26282,11 +26282,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Mouse click and double clicks.wav",
+        "author": "5ro4",
+        "url": "https://freesound.org/people/5ro4/sounds/609533/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/desktop-mouse-release.ts"
@@ -26295,7 +26295,7 @@
       "id": "desktop-mouse-three-taps",
       "name": "Desktop mouse three deliberate taps",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -26328,11 +26328,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Mouse click and double clicks.wav",
+        "author": "5ro4",
+        "url": "https://freesound.org/people/5ro4/sounds/609533/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/desktop-mouse-three-taps.ts"
@@ -60146,7 +60146,7 @@
       "id": "linear-mechanical-keyboard-backspace-pair",
       "name": "Linear mechanical keyboard two backspaces",
       "category": "Footsteps & UI",
-      "revision": 3,
+      "revision": 4,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -60180,9 +60180,9 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Key_Press",
-        "author": "Mediasaur",
-        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+        "title": "Keychron k10 A to + individual keys",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789628/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-27"
       },
@@ -60193,7 +60193,7 @@
       "id": "linear-mechanical-keyboard-command-line",
       "name": "Linear mechanical keyboard command then Return",
       "category": "Footsteps & UI",
-      "revision": 3,
+      "revision": 4,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -60228,9 +60228,9 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Key_Press",
-        "author": "Mediasaur",
-        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+        "title": "Keychron k10 A to + individual keys",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789628/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-27"
       },
@@ -60241,7 +60241,7 @@
       "id": "linear-mechanical-keyboard-key-down",
       "name": "Linear mechanical keyboard letter key down",
       "category": "Footsteps & UI",
-      "revision": 3,
+      "revision": 4,
       "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
@@ -60276,9 +60276,9 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Key_Press",
-        "author": "Mediasaur",
-        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+        "title": "Keychron k10 A to + individual keys",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789628/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-27"
       },
@@ -60289,7 +60289,7 @@
       "id": "linear-mechanical-keyboard-key-up",
       "name": "Linear mechanical keyboard letter key release",
       "category": "Footsteps & UI",
-      "revision": 3,
+      "revision": 4,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -60323,9 +60323,9 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Key_Press",
-        "author": "Mediasaur",
-        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+        "title": "Keychron k10 A to + individual keys",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789628/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-27"
       },
@@ -60434,7 +60434,7 @@
       "id": "linear-mechanical-keyboard-shortcut",
       "name": "Linear mechanical keyboard modifier and shortcut",
       "category": "Footsteps & UI",
-      "revision": 3,
+      "revision": 4,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -60468,9 +60468,9 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Key_Press",
-        "author": "Mediasaur",
-        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+        "title": "Keychron k10 A to + individual keys",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789628/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-27"
       },
@@ -60583,7 +60583,7 @@
       "id": "linear-mechanical-keyboard-typed-word",
       "name": "Linear mechanical keyboard four-letter word",
       "category": "Footsteps & UI",
-      "revision": 3,
+      "revision": 4,
       "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
@@ -60619,9 +60619,9 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Key_Press",
-        "author": "Mediasaur",
-        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+        "title": "Keychron k10 A to + individual keys",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789628/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-27"
       },
@@ -81186,7 +81186,7 @@
       "id": "quiet-mouse-double-click",
       "name": "Silent mouse double click",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -81219,11 +81219,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Computer Mouse Click Sound",
+        "author": "olehenriksen",
+        "url": "https://freesound.org/people/olehenriksen/sounds/771250/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/quiet-mouse-double-click.ts"
@@ -81232,7 +81232,7 @@
       "id": "quiet-mouse-press-and-hold",
       "name": "Silent mouse press, hold and release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -81266,11 +81266,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Computer Mouse Click Sound",
+        "author": "olehenriksen",
+        "url": "https://freesound.org/people/olehenriksen/sounds/771250/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/quiet-mouse-press-and-hold.ts"
@@ -81279,7 +81279,7 @@
       "id": "quiet-mouse-press",
       "name": "Silent mouse single press",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
@@ -81314,11 +81314,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Computer Mouse Click Sound",
+        "author": "olehenriksen",
+        "url": "https://freesound.org/people/olehenriksen/sounds/771250/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/quiet-mouse-press.ts"
@@ -81327,7 +81327,7 @@
       "id": "quiet-mouse-release",
       "name": "Silent mouse release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -81360,11 +81360,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Computer Mouse Click Sound",
+        "author": "olehenriksen",
+        "url": "https://freesound.org/people/olehenriksen/sounds/771250/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/quiet-mouse-release.ts"
@@ -81373,7 +81373,7 @@
       "id": "quiet-mouse-three-taps",
       "name": "Silent mouse three deliberate taps",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -81406,11 +81406,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "Computer Mouse Click Sound",
+        "author": "olehenriksen",
+        "url": "https://freesound.org/people/olehenriksen/sounds/771250/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/quiet-mouse-three-taps.ts"

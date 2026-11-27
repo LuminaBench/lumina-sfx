@@ -79,7 +79,7 @@ export interface SoundRecipe {
   /** Can generate a continuous performance for arbitrary frame counts. */
   readonly sustainMode?: 'evolving';
   /** Re-perform a directional gesture with its accent at a picture landmark, in seconds. */
-  withGestureTiming?(durationSec: number, apexSec: number, motion?: 'turn'): SoundRecipe;
+  withGestureTiming?(durationSec: number, apexSec: number, motion?: 'turn', screenPath?: readonly (readonly [time: number, progress: number])[]): SoundRecipe;
   readonly durationSec: number;
   readonly params: Readonly<Record<string, SoundParameter>>;
   readonly immediateOnset?: boolean;

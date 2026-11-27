@@ -88,7 +88,7 @@ export async function renderEdit(plan, catalog, out) {
       const rise = accentOnly ? Math.min(before, 0.26) : before;
       const fall = accentOnly ? Math.min(after, 0.22) : after;
       if (rise > 0 && fall > 0 && rise + fall >= 0.01) {
-        const fitted = base.withGestureTiming(rise + fall, rise, cue.motion === 'turn' ? 'turn' : undefined);
+        const fitted = base.withGestureTiming(rise + fall, rise, cue.motion === 'turn' ? 'turn' : undefined, cue.screenPath);
         recipe = { ...fitted, immediateOnset: false };
         // Longer airflow occupies more of the edit. Keep its energy near the approved accent
         // without pushing an intentionally long stroke below the surrounding soundtrack.
@@ -108,6 +108,7 @@ export async function renderEdit(plan, catalog, out) {
         recipe,
         fixedTake: cue.fixedTake === true,
         motion: cue.motion,
+        screenPath: cue.screenPath,
         ...(cue.fitMotion
           ? {
               visibleStart: Math.round((cue.frame / fps) * rate),
@@ -146,7 +147,7 @@ export async function renderEdit(plan, catalog, out) {
           block = [new Float32Array(n), new Float32Array(n)];
         while (idx < events.length && events[idx].start < at + n) {
           const e = events[idx++];
-          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.recipe.durationSec, e.marker, e.edgeDb ?? 0, e.motion]) : undefined;
+          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.recipe.durationSec, e.marker, e.edgeDb ?? 0, e.motion, e.screenPath]) : undefined;
           let pcm = key && takes.get(key);
           if (!pcm) {
             pcm = renderTake(e, rate);

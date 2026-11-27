@@ -123,12 +123,14 @@ async function main() {
   if (command === 'plan' || command === 'recut') {
     const profile = await selectionProfile(v.profile),
       { votes = {} } = await listeningVotes(profile.votes);
-    const observed = observeEdit(input, sounds);
+    const { fps, durationFrames } = clock(input);
+    const { withPictureTravel } = await import('./edit-region.mjs');
+    const observed = observeEdit(await withPictureTravel(input, v.source, fps, durationFrames), sounds);
     const track =
       v.source &&
       (await (
         await import('./edit-track.mjs')
-      ).measureTrack(v.source, Number(v['audio-stream'] ?? 0), observed.events, clock(observed).fps, observed.device));
+      ).measureTrack(v.source, Number(v['audio-stream'] ?? 0), observed.events, fps, observed.device));
     result = scoreObservedEdit(observed, sounds, profile, votes, track);
     if (command === 'recut') {
       if (!v.previous) throw Error('Supply --previous PLAN for the prior cut');

@@ -26795,7 +26795,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-key-up",
@@ -26806,7 +26806,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-spacebar",
@@ -26839,7 +26839,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-shortcut",
@@ -26850,7 +26850,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-typed-word",
@@ -26861,7 +26861,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "linear-mechanical-keyboard-command-line",
@@ -26872,7 +26872,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 3
+      "revision": 4
     },
     {
       "id": "tactile-mechanical-keyboard-key-down",
@@ -27675,7 +27675,7 @@
       "loopable": false,
       "brief": "Desktop mouse single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-release",
@@ -27686,7 +27686,7 @@
       "loopable": false,
       "brief": "Desktop mouse release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-double-click",
@@ -27697,7 +27697,7 @@
       "loopable": false,
       "brief": "Desktop mouse double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-press-and-hold",
@@ -27708,7 +27708,7 @@
       "loopable": false,
       "brief": "Desktop mouse press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "desktop-mouse-three-taps",
@@ -27719,7 +27719,7 @@
       "loopable": false,
       "brief": "Desktop mouse three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-press",
@@ -27730,7 +27730,7 @@
       "loopable": false,
       "brief": "Silent mouse single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-release",
@@ -27741,7 +27741,7 @@
       "loopable": false,
       "brief": "Silent mouse release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-double-click",
@@ -27752,7 +27752,7 @@
       "loopable": false,
       "brief": "Silent mouse double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-press-and-hold",
@@ -27763,7 +27763,7 @@
       "loopable": false,
       "brief": "Silent mouse press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "quiet-mouse-three-taps",
@@ -27774,7 +27774,7 @@
       "loopable": false,
       "brief": "Silent mouse three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "trackball-press",

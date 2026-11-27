@@ -18,6 +18,7 @@ export interface Gesture {
   reverse: boolean;
   echo: number;
   turn?: boolean;
+  screenPath?: readonly (readonly [number, number])[];
 }
 
 export function sweepAudio(ctx: RenderContext, detail: number, seed: number, texture: SweepTexture,
@@ -85,14 +86,18 @@ export function editorSweep(id: string, name: string, tags: string[], texture: S
     render(ctx, { params, seed }) { return sweepAudio(ctx, params.detail, seed, texture, gesture, friction); },
   };
   if (!gesture.direction) return recipe;
-  const fitGesture: NonNullable<SoundRecipe['withGestureTiming']> = (durationSec, apexSec, motion) => {
+  const fitGesture: NonNullable<SoundRecipe['withGestureTiming']> = (durationSec, apexSec, motion, screenPath) => {
     if (!Number.isFinite(durationSec) || durationSec < 0.01 || durationSec > 120 ||
         !Number.isFinite(apexSec) || apexSec <= 0 || apexSec >= durationSec)
       throw new RangeError('Put the swipe apex inside its 0.01–120 second duration');
+    if (screenPath && (screenPath.length < 2 || screenPath[0]?.[0] !== 0 || screenPath.at(-1)?.[0] !== 1 ||
+        screenPath.some(([time, progress], i) => !Number.isFinite(time) || !Number.isFinite(progress) ||
+          progress < 0 || progress > 1 || (i > 0 && time <= screenPath[i-1][0]))))
+      throw new RangeError('Screen travel must span normalized time 0–1 with finite positions in 0–1');
     // Always fit from the original texture, including when an editor revises a fitted take.
     const moving = { ...texture, body: texture.body * 0.35, air: texture.air + 0.12 };
     const fitted = editorSweep(id, name, tags, moving, {
-      ...gesture, duration: durationSec, apex: apexSec / durationSec,
+      ...gesture, screenPath, duration: durationSec, apex: apexSec / durationSec,
       turn: motion === 'turn', reverse: motion === 'turn' ? gesture.direction < 0 : gesture.reverse,
     }, friction);
     return { ...fitted, withGestureTiming: fitGesture };
@@ -101,8 +106,16 @@ export function editorSweep(id: string, name: string, tags: string[], texture: S
     renderStereo(ctx, { params, seed }) {
       const mono = sweepAudio(ctx, params.detail, seed, texture, gesture, friction);
       const left = new Float32Array(mono.length), right = new Float32Array(mono.length);
+      const path = gesture.screenPath;
+      let segment = 1;
       for (let i = 0; i < mono.length; i++) {
-        const travel = Math.cos(Math.PI * i / Math.max(1, mono.length - 1));
+        const at = i / Math.max(1, mono.length - 1);
+        let travel;
+        if (path) {
+          while (segment < path.length - 1 && at > path[segment][0]) segment++;
+          const [t0, x0] = path[segment-1], [t1, x1] = path[segment];
+          travel = 1 - 2 * (x0 + (x1-x0) * (at-t0)/(t1-t0));
+        } else travel = Math.cos(Math.PI * at);
         const angle = Math.PI / 4 * (1 - gesture.direction * gesture.travel * travel);
         left[i] = mono[i] * Math.cos(angle);
         right[i] = mono[i] * Math.sin(angle);

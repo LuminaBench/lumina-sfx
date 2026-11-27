@@ -1,3 +1,4 @@
+import { observedSlide, cropScreenPath } from './edit-travel.mjs';
 import { applicableVote } from './selection-profile.mjs';
 import { editorialPicks, featuredLanding, markedGraphicLanding, silentGesture } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
@@ -330,7 +331,7 @@ function interruptedSlides(events) {
       const apex = prior.syncFrame ?? Math.floor((prior.frame + prior.endFrame) / 2);
       replacements.set(prior, apex >= event.frame
         ? { ...prior, muted: true, interrupted: true }
-        : { ...prior, endFrame: event.frame, syncFrame: apex });
+        : { ...prior, endFrame: event.frame, syncFrame: apex, screenPath: cropScreenPath(prior.screenPath, (event.frame-prior.frame)/(prior.endFrame-prior.frame)) });
     }
     previous.set(event.target, event);
   }
@@ -340,11 +341,11 @@ function interruptedSlides(events) {
 export function observeEdit(input, catalog) {
   if (!Array.isArray(input.events))
     throw Error('Supply observed picture events; an empty list scores a silent edit.');
-  if (!input.events.some((e) => e?.brief !== undefined)) return input;
+  if (!input.events.some(e => e?.brief !== undefined || e?.travel !== undefined || e?.travelRegion !== undefined)) return input;
   return {
     ...input,
     events: input.events.map((e) => {
-      if (e?.brief === undefined) return e;
+      if (e?.brief === undefined) return observedSlide(e);
       if (typeof e.brief !== 'string' || !e.brief.trim()) throw Error('Supply a nonempty cue brief');
       const style = unpackContext(e.brief);
       const landing = !e.action && markedGraphicLanding(e);
@@ -356,7 +357,7 @@ export function observeEdit(input, catalog) {
         intent ??
         'unresolved';
       const describedDevice = stripButtonLabel(style.query);
-      return {
+      return observedSlide({
         ...e,
         action,
         ...(e.physicalContact === undefined && describesSurfaceContact(action, e.brief) ? { physicalContact: true } : {}),
@@ -369,7 +370,7 @@ export function observeEdit(input, catalog) {
         ...(action === 'slide' && !e.direction && /\b(left|right)\b/i.test(style.query)
           ? { direction: style.query.match(/\b(left|right)\b/i)[1].toLowerCase() }
           : {}),
-      };
+      });
     }),
   };
 }
@@ -453,6 +454,7 @@ export function scoreObservedEdit(input, catalog, profile, votes, track) {
         ...(e.target ? { target: e.target } : {}),
         ...(e.direction ? { direction: e.direction } : {}),
         ...(e.motion ? { motion: e.motion } : {}),
+        ...(e.screenPath && e.motion === 'follow' ? {screenPath: e.screenPath} : {}),
         ...(e.label ? { label: e.label } : {}),
       };
       const navigation =
@@ -472,6 +474,7 @@ export function scoreObservedEdit(input, catalog, profile, votes, track) {
           reason: 'Original audio carries this gesture',
         });
       else if (silent) Object.assign(out, { decision: 'silence', reason: projectQuiet ? 'This gesture is quiet in the project profile' : e.interrupted ? 'Motion reversed before the accent' : 'Picture carries this beat' });
+      else if (e.motionReview) Object.assign(out, { decision: 'review', reason: e.motionReview });
       else if (uncertain || owner || policy === 'review')
         Object.assign(out, {
           decision: owner ? 'silence' : 'review',
@@ -548,13 +551,15 @@ export function scoreObservedEdit(input, catalog, profile, votes, track) {
       speech.some(([, end]) => end <= event.frame && (event.frame - end) / fps < 2) &&
       speech.some(([start]) => start > event.frame && (start - event.frame) / fps < 2);
     const compound = ordinaryShortcut(event, selected, mode);
-    const edgeTrim = preference?.edgeDb ?? event.briefEdge ?? (inSpeechGap ? -3 : compound ? -2 : 0);
+    const softMouse = (style.palette ?? 'soft') === 'soft' && physicalSwitch(event) &&
+      event.deviceKind === 'mouse' && mode !== 'hero' && selected.id === 'desktop-mouse-press';
+    const edgeTrim = preference?.edgeDb ?? event.briefEdge ?? (softMouse ? -3 : inSpeechGap ? -3 : compound ? -2 : 0);
     const feedback = feedbackFor(event, event.deviceKind);
     const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event) || feedback === 'digital' || feedback === 'surface';
     Object.assign(out, perf, {
       ...(fixedTake ? { fixedTake: true } : {}),
       ...((motionAccents.has(event.action) || event.action === 'slide') && event.endFrame !== undefined ? { fitMotion: true } : {}),
-      gainDb: Math.max(-80, Math.min(12, perf.gainDb + trim - (inSpeechGap ? 2 : 0))),
+      gainDb: Math.max(-80, Math.min(12, perf.gainDb + trim - (inSpeechGap || softMouse ? 2 : 0))),
       projectTrimDb: trim,
       seed: fixedTake
         ? (preference?.seed ??

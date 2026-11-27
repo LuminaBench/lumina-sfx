@@ -106,7 +106,11 @@ export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track, s
   // Preserve impact on a featured reveal and a lower ceiling for everyday controls.
   const measured = acoustics[cue];
   const peakCeiling = subtleDigital ? -23 : mode === 'hero' ? -10 : -13;
-  const activeCeiling = subtleDigital ? -36 : mode === 'hero' ? -21 : -25;
+  let activeCeiling = subtleDigital ? -36 : mode === 'hero' ? -21 : -25;
+  // A quieter physical switch has a longer body. Match the whole rapid run by
+  // active level so a soft-sounding switch cannot become the louder performance.
+  if (mode === 'rapid' && ['desktop-mouse-press', 'quiet-mouse-press'].includes(cue)) activeCeiling = -36;
+  else if (cue === 'quiet-mouse-press' && mode !== 'hero') activeCeiling = -33;
   const nominal = measured
     ? Math.min(actionDb, peakCeiling - measured.peakDb, activeCeiling - measured.activeDb)
     : actionDb;

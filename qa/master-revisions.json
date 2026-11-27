@@ -1682,28 +1682,28 @@
     },
     "linear-mechanical-keyboard-shortcut": {
       "previous": "2f0daf27c09bf10774e2f09232e72f9fdaaa1a8761643797bd8c071c1c8cc2ea",
-      "current": "6486506ef6417a8f896c963d00c74080800767c65573ca57a0f2807d0a1b0300",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "18f81dfa6e7b20d745f941f45d0fff432c8dce239e0539edc929fdf690b1f1cb",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
     },
     "linear-mechanical-keyboard-backspace-pair": {
       "previous": "f284abf05efd012b701ab358035c4a7a40f98708aa7e0e570643db2e6d6158e4",
-      "current": "a27e18fc6cedc8706927227a62571dc55abc1217f55cc62e149a2700f27ac6b4",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "bf83dff356addf3301126e1f976b36e778979526e2deb394a0821146e2af30e4",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
     },
     "linear-mechanical-keyboard-typed-word": {
       "previous": "cb7a133b7701f1773f6275cf7cb4f37f278478588e23e5c7db21d28c26185dd6",
-      "current": "e96f9aff824bc83cd98a8c90f4a844a0dab04a547f713e9bb1b01180ea7f4449",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "90500478279be8a8a79c5e2d07d6e68afed958741e7e615daec70cbdac0607e7",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
     },
     "linear-mechanical-keyboard-key-up": {
       "previous": "c3579842e1fa10ef6a84dd2a1bfd976a63e45c1f7cecc2e237158f86d16c6115",
-      "current": "b7e22d4893f0a3f7c0022f0cbdc36fa5a758392eb2163b9f357f68f78823fc7f",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "64b2acc4e7605dc9f93e3941e80692a56ff638e570d3ed41bf88e31c2ae8259b",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
     },
     "linear-mechanical-keyboard-key-down": {
       "previous": "4ed70e8482a778087f9c43d6c0ae451c0b0c4c6a1e19a7f93c9849d3ae3c148b",
-      "current": "e5e8a472296478267c31a441648466bbf90ff74cf6adeab1fabaebc9c16c3418",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "7a9b5141f5c767d7f8ffe229a97ed74ff84180a885bb9feed5756f0199a76564",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
     },
     "linear-mechanical-keyboard-return": {
       "previous": "74fcd6660617f3f4480685cecc4fb039abd9a41f55f18a4cb646dcd910235b99",
@@ -1712,8 +1712,8 @@
     },
     "linear-mechanical-keyboard-command-line": {
       "previous": "eeabdd8182a779392b116b1ab6f7a76d61bc83a7e65ff55eeabc0511e95129eb",
-      "current": "a3edce4dff6fa64e8ae8e3438fa5a5fdae2c05e65fe7facc565528bc5a8488f5",
-      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+      "current": "a62614aa54e471704243df05d92f378e99560b6472deaaed011c52fe4563b47b",
+      "reason": "Use recorded letter downstrokes and releases from the same Keychron session as the wide keys."
     },
     "glass-trackpad-press-and-hold": {
       "previous": "cbff55fdd04b7e67972f45f5cd087d63c9a8c85aa048cb9bbec533d3eaede646",
@@ -1754,6 +1754,56 @@
       "previous": "f4f163f32175aaa661c5935cfc16e6e2c894b6cabbe2b06a40a799f7d0de4c81",
       "current": "4c81c9137adfaf46829e7d88ec1c649a2867cd5142c72c4af3ac9217913d8c39",
       "reason": "Retain the shell, floor impact and short court reflections from a basketball recorded on hardwood. The original recording used carpet."
+    },
+    "desktop-mouse-double-click": {
+      "previous": "2ca00dc2d56bcb6f8a2ac1b8fb53a278070065da83eef63f05b942d8ca7917aa",
+      "current": "a20d58b193f8c0422918830a8353380184bb247e947140ed74c26ff8f2f87302",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-press": {
+      "previous": "cf65166f656b9213278e5cc9cc9acb4e9b663a3fc1b755e375d1d6929e92fab9",
+      "current": "8d609081e548cdac64985c7cea72341abc39f423bbcc6da9c3d8869206e77347",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-press-and-hold": {
+      "previous": "cb7a052f178c67a8dac57b08be0f1173f3911cce9a9ea597452f4c7dc1b06da1",
+      "current": "4400cebf4977049f49ee4f8557b7f46804049b2097c5e350eeb004748cf3461e",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-release": {
+      "previous": "a4b4f6ce2de45357d4c7241f9f86ae68bbaeec4199136c6022c7cf7ec0d4c27b",
+      "current": "4c90b29941933d996ac6455a64d25e03d6028886e42bd2d593547cf6cedc62ec",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "desktop-mouse-three-taps": {
+      "previous": "7f468d410ec43a70aae7ad77c7a3d8982d5772c70a61a08afc3a89bfee39021e",
+      "current": "c13ed54a38a47f8593273709c6b5631cf24f06022a0d3a2d52ceb2eee0fa7241",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-double-click": {
+      "previous": "c826a9332a9df35be899656d8d6c9aaafc2ec8b0b48f927e783029f18a3b0e23",
+      "current": "1bee659eb25beece94397f0486c7d888e39798727e9944afcbda7aa98ca3f81c",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-press": {
+      "previous": "c7e2803f8b9e2300734059106e10cdbf4af69b83d982f3bfff34a4e28c544944",
+      "current": "9d3a66b4cb82eaa11bb0830bf32e7f0a32dfcbd0aacb2c00941fae92f29443d2",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-press-and-hold": {
+      "previous": "7960c7d6e9ccedca22ceea6c73f58d843e7762f4efe2dc20f7d6686cf8522f4e",
+      "current": "477d20d4d78745244a893802143623218d69ceb296c48ab746d8e70cf56f3060",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-release": {
+      "previous": "3d15b00351105b493b5ea27a450e939f6682edc9171e6590319b41d57e39e138",
+      "current": "1993e53b438ca2d58a0a7811e0797e2687571c687e2e086f2f3dcbd57e3f0987",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
+    },
+    "quiet-mouse-three-taps": {
+      "previous": "276e7db46032f0ec5658884eb2264bda79f2bfeef7042d34c251efeb7ea83291",
+      "current": "6aefa1dfea9aaa4b6101f337474b988dd2d48df79b03073d8cbd68eff5f9959e",
+      "reason": "Use the recorded switch-down and switch-up gestures from one mouse."
     }
   }
 }

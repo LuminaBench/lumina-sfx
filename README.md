@@ -4,6 +4,8 @@ An offline sound studio for coding agents. Find a sound among 2,882 editable eff
 
 Describe where the listener is and what they should hear first. A pilot can follow an engine through rain while someone on the beach hears the same aircraft pass overhead. Choose a speaker mix, binaural headphone WAV or independently moving game emitters. [Spatial audio and scene mixing](references/listening-scenes.md)
 
+The default install now includes the **v1.5 preview** on `main`. Try recorded mouse and keyboard gestures, picture-tracked page swipes, or a headphone walk around the player. [Preview notes](references/v1.5-release.md)
+
 ## Listen
 
 | Preview | In the mix |

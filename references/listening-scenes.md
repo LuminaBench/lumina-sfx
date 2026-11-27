@@ -48,6 +48,8 @@ For a revision, save a new scene ID and render to a new output path. A game-owne
 
 The report gives planned steady margins, actual delivered margins across transitions, mono phone-band margins and the weakest overlap time. Figures use the fifth percentile of active 50 ms windows, with windows gated relative to the subject. Isolated peaks can fall below that margin. Locked beds can make it unattainable. Inspect the audible result before increasing the target.
 
+For an outdoor-to-indoor transition, try the [walk under a steel roof](listening-scenes/rain-under-a-roof.json). The listener follows a continuous path. The exterior rain grows muffled in shelter while drops striking the overhead roof become distinct. Use this distinction for a doorway or a canopy and fit the obstruction curve to the game’s crossing.
+
 ## Playback and handoff
 
 For a fixed scene, use the delivered WAV. Apply spatialisation once. A positioned stereo mix already contains the authored camera movement. For an interactive scene, use the dry files and pose, gain and timing data in the manifest. The solo files in a review pack include each layer's spatialisation and focus automation. Place them at their manifest offsets to audition.

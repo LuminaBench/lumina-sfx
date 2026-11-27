@@ -200,3 +200,15 @@ A profile's `votes` field accepts one path or an ordered list of listening expor
 For a burst of physical selections, score each visible press and listen through the complete run. The planner can apply one additional trim of up to 3 dB across a rapid switch family. The number of audible presses in its busiest second sets the trim. Isolated presses keep their ordinary level. A featured close-up or marked speech passage keeps its own treatment. The plan reports `densityTrimDb` on affected contacts. When the exported movie has a second distinct attack 60–180 ms after an isolated physical press, its audit can flag `secondAttack` with the likely source. Play that moment in picture before deciding whether to reuse or soften it.
 
 A fully reused soundtrack can survive a final export without another generation of AAC compression. When the studio WAV is exactly silent, the selected original soundtrack spans the picture and the existing true peak is within the delivery ceiling, the mixer attempts to copy the original audio and video packets. The mix receipt reports `audioEncoding: "copy"` when this succeeds.
+
+### Follow a moving element
+
+Mark one horizontal leg with its first frame, end frame and a stable target. Use `accent: true` when the slide deserves sound. For a motion graphic or web animation, supply samples of the same element's x position in pixels or normalized coordinates. Include the start and end. The accent follows the fastest interval and the stereo image follows the measured travel, including asymmetric easing.
+
+```json
+{"id":"next-page","action":"slide","target":"gallery","accent":true,"frame":18,"endFrame":42,"travel":[{"frame":18,"x":600},{"frame":22,"x":480},{"frame":27,"x":180},{"frame":34,"x":40},{"frame":42,"x":0}]}
+```
+
+For a finished movie, replace `travel` with `"travelRegion":{"x":68,"y":241,"width":1144,"height":350}` using the viewport's coordinates in the decoded picture. Run the ordinary `plan --source` command. The tracker estimates horizontal shifts between frames inside that region. Choose an area that moves with the panel. A dissolve, untextured hold or conflicting direction can require review. Split a reversal into two legs. Mark an explicit `syncFrame` to seat a deliberately stylized cue. With `motion:"accent"` the designer can still use a short accent instead of following the whole movement.
+
+The desktop mouse performances have separately recorded downstrokes and releases. The linear mechanical letters, Space and Return use recordings of one Keychron K10 model from the same recordist. In a routine walkthrough, reuse one mouse take and vary the letters within the one keyboard.

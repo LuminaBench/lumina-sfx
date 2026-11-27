@@ -15,11 +15,15 @@ When several controls share a switch, audition their busiest passage with `score
 
 Use one switch for the same mouse, one digital tick for one touchscreen and one material for a panel in both directions. Identify a moving panel with the same `target` throughout a reversal and mark its visible `endFrame`. A short title settling can use a single paper contact. Reserve the swelling title hit for a visibly featured reveal. During a quiet screen recording, compare subtle digital feedback at delivered level against leaving it silent.
 
+For a deliberate horizontal panel swipe, pass the element’s frame-stamped x positions in `travel`, or mark its `travelRegion` in the finished picture and pass `--source`. The scorer aligns the swell to peak travel speed and follows the element across stereo. An ordinary unaccented page change stays quiet. [Motion tracking fields](references/launch-audio.md#follow-a-moving-element)
+
 ## Place the listener and choose what matters
 
 For a brief with perspective, masking or movement, translate the user's sentence into a version 2 listening scene. Name the listener, foreground, supports and event times. Give explicit descriptions such as “faint”, “equally clear” or “let the thunder cover it once” precedence over word order. “Bring it forward in the mix” changes emphasis. “Move it in front of me” changes position. State an assumed viewpoint in the scene. A menu press usually needs one listener-relative cue.
 
 Search for the source **as heard from this viewpoint**. A canopy-interior turbine suits a pilot. Exterior exhaust suits the listener below. Start from dry, isolated sources for moving emitters. Inspect recorded pass-bys for baked-in motion and `contains` for embedded weather. Make every extra layer justify itself.
+
+Choose the listener the player actually controls. In first person use the current head/camera pose. In third person use the active camera or the game’s chosen listening point. In a top-down game keep screen controls at the listener and place game objects in the world. A roof crossing can fade open rainfall behind the shelter while bringing up drops on the roof above. Use dry mono game inputs when the host engine already spatialises them. For a headphone walk around the player, use the [footstep route or live player](references/footsteps.md) with headphone output.
 
 For a single sound, start with `node scripts/choose.mjs "rain only" --clean`. Plain “rain”, “thunder”, “cockpit” and “fire” each resolve to one dry performance. A named location sets the listening position. Add another emitter when the brief calls for a second audible event. A steady loop supplies its own variation, and a recorded performance can already include a contact and its decay. Inspect `components`, `contains` and review flags before adding layers.
 
