@@ -384,3 +384,16 @@ test('local focus lowers a brief burst while leaving the quieter portions of the
   const locked = run({ balance:'directed', focus:{ ...focus, timing:'local' } }, [layers[0], {...layers[1], locked:true}]);
   assert.ok(locked.regions.every(r => r.gain.weather === 1));
 });
+
+test('the installable design reads local timing from a directed brief and its authored handoff', async () => {
+  const {sounds} = JSON.parse(await readFile(new URL('../catalog.json', import.meta.url)));
+  const brief = { schemaVersion:2, id:'brief-timing', focus:{subjects:['motor'],marginDb:4,
+    moments:[{from:0.4,to:0.8,subjects:['rain'],timing:'steady'}]},
+    layers:[{label:'motor',query:'interceptor-turbofan-dry-thrust-cruise-loop',durationSec:1},
+            {label:'rain',query:'rain-canopy-droplets-clean-loop',durationSec:1}] };
+  const {design} = resolveListeningBrief(brief,sounds);
+  assert.equal(design.focus.timing,'local');
+  const {recipe}=await loadDesign(design);
+  assert.ok(renderChannels(recipe,{},16000)[0].some(n=>n!==0));
+  await assert.rejects(()=>loadDesign({...design,focus:{...design.focus,timing:'bad'}}),/focus timing/);
+});

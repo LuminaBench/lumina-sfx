@@ -57,8 +57,8 @@ export async function loadDesign(input, directory = process.cwd(), mood, inspect
       }
       spatial=true; headphones ||= input.output==='headphones';
       if(input.focus) {
-        fields(input.focus,'focus',['subjects','marginDb','moments']);
-        for(const m of input.focus.moments??[]) fields(m,'focus moment',['from','to','subjects','marginDb']);
+        fields(input.focus,'focus',['subjects','marginDb','timing','moments']);
+        for(const m of input.focus.moments??[]) fields(m,'focus moment',['from','to','subjects','marginDb','timing']);
       }
     }
     const { layers, ...design } = input;
