@@ -12,6 +12,7 @@ import type { SoundRecipe } from './types.ts';
 export interface Focus {
   subjects: readonly string[];
   marginDb?: number;
+  timing?: 'steady' | 'local';
 }
 export interface Moment extends Focus {
   from: number;
@@ -106,11 +107,33 @@ interface WindowPower {
 function bedPower(w: WindowPower, trim: number) {
   return Math.max(0, w.locked + 2 * w.cross * trim + w.bed * trim * trim);
 }
-function measure(stems: Stem[], spec: Moment, rate: number): Region {
+// Identify isolated foreground masking on the original performance. Fixed lead and
+// recovery time keep the gain stable through a burst or group of closely spaced hits.
+function maskingCuts(active: WindowPower[], trims: number[], from: number, to: number) {
+  if (to - from < 2 || active.length < 20) return [];
+  const typical = quantile([...trims], 0.5);
+  const spans: { start: number; end: number }[] = [];
+  for (let i = 0; i < active.length; i++) {
+    if (trims[i] >= typical * 0.63 || trims[i] >= 0.71) continue;
+    const w = active[i];
+    const previous = spans.at(-1);
+    if (previous && w.start - previous.end < 0.55) previous.end = w.start + 0.05;
+    else spans.push({ start: w.start, end: w.start + 0.05 });
+  }
+  const bursts = spans.filter(s => s.end - s.start >= 0.09);
+  if (bursts.reduce((sum, s) => sum + s.end - s.start, 0) > (to - from) * 0.4) return [];
+  const cuts = [];
+  for (const s of bursts) {
+    if (s.start - from > 0.25) cuts.push(s.start - 0.12);
+    if (to - s.end > 0.25) cuts.push(s.end + 0.12);
+  }
+  return cuts;
+}
+function measure(stems: Stem[], spec: Moment, rate: number, cuts?: number[], prior?: Region): Region {
   const { from, to, subjects } = spec,
     marginDb = spec.marginDb ?? 8;
   const gain: Record<string, number> = Object.create(null);
-  for (const s of stems) gain[s.label] = 1;
+  for (const s of stems) gain[s.label] = prior && subjects.includes(s.label) ? prior.gain[s.label] : 1;
   const result: Region = {
     from,
     to,
@@ -131,7 +154,7 @@ function measure(stems: Stem[], spec: Moment, rate: number): Region {
     hop = Math.max(1, Math.round(rate * 0.05));
   const windows: (readonly [number, number])[] = [];
   for (let t = start; t < end; t += hop) windows.push([t, Math.min(t + hop, end)] as const);
-  if (foreground.length > 1) {
+  if (foreground.length > 1 && !prior) {
     // Shared subjects are matched on overlapping active windows only. A silent subject
     // never drags the rest of the scene down. Locked reference levels are authoritative.
     const levels = foreground.map((s) => windows.map(([a, b]) => powerAt(s, a, b)));
@@ -208,6 +231,7 @@ function measure(stems: Stem[], spec: Moment, rate: number): Region {
     const d = w.cross * w.cross + w.bed * (w.focus * requested - w.locked);
     return d < 0 || w.bed < 1e-16 ? 0 : Math.min(1, Math.max(0, (-w.cross + Math.sqrt(d)) / w.bed));
   });
+  if (cuts) cuts.push(...maskingCuts(active, trims, from, to));
   const trim = Math.max(10 ** (-30 / 20), quantile(trims, 0.05));
   for (const s of stems) if (!subjects.includes(s.label) && !s.locked) gain[s.label] = trim;
   const gap = (w: WindowPower, g: number) => levelDb(w.focus) - levelDb(bedPower(w, g));
@@ -361,6 +385,7 @@ export function composeListeningScene(
       f.subjects.some((s) => !labels.has(s))
     )
       throw Error('Focus subjects must name distinct scene layers');
+    if (f.timing !== undefined && !['steady', 'local'].includes(f.timing)) throw Error('Choose steady or local focus timing');
     bounded(f.marginDb ?? 8, 0, 30, 'focus marginDb');
   }
   validateFocus(focus);
@@ -427,18 +452,28 @@ export function composeListeningScene(
         }
       }
       const regions: Region[] = [];
-      function ambientRegion(from:number,to:number) {
-        const region=measure(stems,{...focus,subjects:balance==='natural'?[]:focus.subjects,from,to},rate);
-        if(balance==='natural'){region.subjects=focus.subjects;region.marginDb=null;}
-        return region;
+      function addRegion(spec: Moment) {
+        if (balance === 'natural') {
+          const region = measure(stems, { ...spec, subjects: [] }, rate);
+          regions.push({ ...region, subjects: spec.subjects, marginDb: null });
+          return;
+        }
+        const cuts: number[] = [];
+        const whole = measure(stems, spec, rate, spec.timing === 'local' ? cuts : undefined);
+        if (!cuts.length) { regions.push(whole); return; }
+        let from = spec.from;
+        for (const to of [...cuts, spec.to]) {
+          regions.push(measure(stems, { ...spec, from, to }, rate, undefined, whole));
+          from = to;
+        }
       }
       let t = 0;
       for (const m of moments) {
-        if (m.from > t) regions.push(ambientRegion(t,m.from));
-        regions.push(measure(stems, { ...m, marginDb: m.marginDb ?? focus.marginDb }, rate));
+        if (m.from > t) addRegion({ ...focus, from: t, to: m.from });
+        addRegion({ ...m, timing: m.timing ?? focus.timing, marginDb: m.marginDb ?? focus.marginDb });
         t = m.to;
       }
-      if(t<frames/rate)regions.push(ambientRegion(t,frames/rate));
+      if (t < frames / rate) addRegion({ ...focus, from: t, to: frames / rate });
       for(const r of regions){
         if(r.marginDb!==null || inspect)r.monitors=monitorFocus(stems,r,rate,r.marginDb!==null);
       }

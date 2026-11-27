@@ -1,3 +1,4 @@
+import { applicableVote, rejectedVote } from './selection-profile.mjs';
 import { deviceKind } from './edit-device.mjs';
 import { contextOrder, unpackContext } from './edit-context.mjs';
 import { contactQuery, excludedTraits, ambiguousPenRequest } from './edit-device.mjs';
@@ -154,13 +155,13 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
     if (!hits || !terms.some(t => title.has(t) || tags.has(t) || words((sound.contains ?? []).join(" ")).includes(t))) continue;
     const solo = aliases.some(a => a.length === terms.length && terms.every(t => a.includes(t)));
     const result = explain ? { ...sound, missing: terms.filter(t => !title.has(t) && !tags.has(t) && !context.has(t)) } : sound;
-    const ballot = votes[sound.id];
-    const fitsUse = !ballot?.useCase || ballot.useCase === (options.useCase ?? editorial?.action);
+    const ballot = applicableVote(votes, sound, options.useCase ?? editorial?.action, spotted.context);
+    if (options.respectVeto && rejectedVote(ballot)) continue;
     const familyFit = paletteAffinity(sound,options.palette);
     const surfaceStep = Number(foot && sound.id.startsWith('stride-') && terms.some(t=>sound.id.slice(7).split('-').includes(t)));
     const continuous = Number(!editorial && sound.loopable && terms.some(t=>['steady','cruise','hearth'].includes(t)));
 
-    const vote = fitsUse && (ballot?.revision ?? 1) === (sound.revision ?? 1) ? ballot?.decision : undefined;
+    const vote = ballot?.decision;
     const preference = vote === 'no' || vote === 'rejected' ? -1 : vote === 'yes' || vote === 'approved' ? 1 : 0;
     const matchingProfile=options.signatures && editorial?.action && Object.entries(options.signatures).some(([slot,v])=>
       (slot===editorial.action || slot===('press/'+deviceKind(query))) && v.id===sound.id && v.revision===(sound.revision??1));

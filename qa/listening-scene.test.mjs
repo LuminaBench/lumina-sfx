@@ -363,3 +363,24 @@ test('an unresolved brief preserves eligible siblings and explains the missing m
   const absent = resolveListeningBrief(make('gravel footstep through cellophane'),sounds);
   assert.equal(absent.design,null);assert.ok(absent.missing[0].candidates.some(c=>c.missingTerms.includes('cellophane')));
 });
+
+test('local focus lowers a brief burst while leaving the quieter portions of the same bed audible', () => {
+  const bed = { ...tone, id: 'long-running-bed', loopable: true, durationSec: 4 };
+  const layers = [
+    { recipe: { ...bed, id: 'motor-subject' }, label: 'motor', gain: 0.45 },
+    { recipe: bed, label: 'weather', envelope: [[0,0.07],[1.41,0.07],[1.46,1],[1.97,1],[2.02,0.07],[4,0.07]] },
+  ];
+  const focus = { subjects: ['motor'], marginDb: 6 };
+  const steady = run({ balance:'directed', focus }, layers);
+  const local = run({ balance:'directed', focus:{ ...focus, timing:'local' } }, layers);
+  assert.equal(steady.regions.length, 1);
+  assert.ok(local.regions.length >= 3);
+  const gainsAt = t => local.regions.find(r => r.from <= t && r.to > t).gain;
+  assert.equal(gainsAt(0.65).weather, 1);
+  assert.equal(gainsAt(3.1).weather, 1);
+  assert.ok(gainsAt(1.7).weather < 0.4);
+  assert.deepEqual(local.regions.map(r => r.gain.motor), local.regions.map(() => 1));
+  assert.deepEqual(local.stems.map(s => s.dry), steady.stems.map(s => s.dry));
+  const locked = run({ balance:'directed', focus:{ ...focus, timing:'local' } }, [layers[0], {...layers[1], locked:true}]);
+  assert.ok(locked.regions.every(r => r.gain.weather === 1));
+});

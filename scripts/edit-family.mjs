@@ -65,7 +65,9 @@ export function chooseFamilies(pending, profile) {
 
 export function approvedProfile(plan) {
   const signatures = Object.create(null);
+  const quiet = new Set(plan.quietSignatures ?? []);
   for (const c of plan.cues) {
+    if (c.locked && c.muted && c.projectQuiet && c.signature) quiet.add(c.signature);
     if (!c.locked || c.decision !== 'play' || !c.signature) continue;
     const prior = signatures[c.signature];
     const next = {
@@ -87,9 +89,10 @@ export function approvedProfile(plan) {
       );
     signatures[c.signature] = next;
   }
-  if (!Object.keys(signatures).length)
+  for (const slot of Object.keys(signatures)) quiet.delete(slot);
+  if (!Object.keys(signatures).length && !quiet.size)
     throw Error('Lock the chosen playing cues before exporting their project profile.');
-  return { useCase: plan.useCase, palette: plan.palette, signatures };
+  return { useCase: plan.useCase, palette: plan.palette, signatures, ...(quiet.size ? { quietSignatures: [...quiet] } : {}) };
 }
 
 // Compare audible identity across the delivered cut. Gain changes can follow narration or distance.

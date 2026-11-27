@@ -238,7 +238,7 @@ export async function mixPicture(file, stem, out, audioStream = 0, fitPicture = 
 }
 
 // One picture and a common transport, so an A/B switch never moves the viewer to another beat.
-export async function comparePictures(a, b, out, c, ballot) {
+export async function comparePictures(a, b, out, c, ballot, transport = {}) {
   const files = [a, b, ...(c ? [c] : [])];
   const [first, ...others] = await Promise.all(files.map((f) => mediaInfo(f, true)));
   if (others.some((x) => Math.abs(first.seconds - x.seconds) > 0.055))
@@ -254,6 +254,7 @@ export async function comparePictures(a, b, out, c, ballot) {
     resolve(out),
     Buffer.from(
       template
+        .replace('<!--TRANSPORT-->', JSON.stringify(transport).replaceAll('<', '\\u003c'))
         .replace('<!--BALLOT-->', JSON.stringify(ballot ?? null).replaceAll('<', '\\u003c'))
         .replace('<!--MIXES-->', JSON.stringify(files.map(local)).replaceAll('<', '\\u003c')),
     ),

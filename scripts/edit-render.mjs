@@ -82,14 +82,19 @@ export async function renderEdit(plan, catalog, out) {
     if (['turn', 'follow'].includes(cue.motion) && cue.fitMotion && base.withGestureTiming) {
       const before = (cue.syncFrame - cue.frame) / fps;
       const after = (cue.endFrame - cue.syncFrame) / fps;
-      const rise = cue.motion === 'follow' ? before : Math.min(before, 0.26);
-      const fall = cue.motion === 'follow' ? after : Math.min(after, 0.22);
+      // Very long edits exceed the native recipe's render limit. A paired turn
+      // can still use the original accent window around the marked frame.
+      const accentOnly = cue.motion === 'turn' && before + after > 120;
+      const rise = accentOnly ? Math.min(before, 0.26) : before;
+      const fall = accentOnly ? Math.min(after, 0.22) : after;
       if (rise > 0 && fall > 0 && rise + fall >= 0.01) {
-        recipe = base.withGestureTiming(rise + fall, rise);
-        if (cue.motion === 'follow') recipe = { ...recipe, immediateOnset: false };
+        const fitted = base.withGestureTiming(rise + fall, rise, cue.motion === 'turn' ? 'turn' : undefined);
+        recipe = { ...fitted, immediateOnset: false };
         // Longer airflow occupies more of the edit. Keep its energy near the approved accent
         // without pushing an intentionally long stroke below the surrounding soundtrack.
-        exposureGain = Math.max(0.60, Math.min(1, Math.sqrt(base.durationSec / recipe.durationSec)));
+        exposureGain = cue.motion === 'turn'
+          ? Math.max(0.35, Math.min(1, Math.sqrt(2 * base.durationSec / recipe.durationSec)))
+          : Math.max(0.60, Math.min(1, Math.sqrt(base.durationSec / recipe.durationSec)));
         marker = rise;
         speed = 1;
       }
@@ -102,6 +107,7 @@ export async function renderEdit(plan, catalog, out) {
         start: Math.round((frame / fps - marker) * rate),
         recipe,
         fixedTake: cue.fixedTake === true,
+        motion: cue.motion,
         ...(cue.fitMotion
           ? {
               visibleStart: Math.round((cue.frame / fps) * rate),
@@ -140,7 +146,7 @@ export async function renderEdit(plan, catalog, out) {
           block = [new Float32Array(n), new Float32Array(n)];
         while (idx < events.length && events[idx].start < at + n) {
           const e = events[idx++];
-          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.recipe.durationSec, e.marker, e.edgeDb ?? 0]) : undefined;
+          const key = e.fixedTake ? JSON.stringify([e.recipe.id, e.seed, e.speed, e.recipe.durationSec, e.marker, e.edgeDb ?? 0, e.motion]) : undefined;
           let pcm = key && takes.get(key);
           if (!pcm) {
             pcm = renderTake(e, rate);

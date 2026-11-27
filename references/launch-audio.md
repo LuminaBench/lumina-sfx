@@ -180,3 +180,18 @@ The final `audit` groups audible cues by their saved signature and reports mater
 Use the same `target` for both directions when a strip or drawer reverses. Supply each visible leg’s start, accent and end frames. A native sweep can spend longer around the turn while keeping its material and pitch. Set `motion: "follow"` for a continuously audible stroke across its full visible span, or `motion: "accent"` for a short independent accent. For full-span motion, put the sync frame inside the leg. A product demo can keep a long drag silent.
 
 An ordinary touchscreen can stay silent. `feedback: "subtle"` requests one local electronic pulse. `physicalContact: true` requests close Foley from the finger or pen in the shot. For a hardware keyboard, `key: "Space"` selects the wide key’s recorded downstroke. A printed “Space” label and an onscreen keyboard are different events.
+
+
+### Review a recurring sound in context
+
+Read the cue's `signature` from the plan. The desk opens on the five seconds with the most editable contacts from that family. The transport can also play the full cut. The three mixes share the original soundtrack's playback level. They contain the chosen take, the family omitted, and the family 4 dB lower. Locked exceptions and recorded contacts retain their decisions.
+
+```sh
+node scripts/score-edit.mjs audition score.json --source demo.mp4 --signature press/mouse --out mouse-review
+node scripts/score-edit.mjs revise score.json --changes cue-choice.json --out approved.json
+node scripts/score-edit.mjs profile approved.json --out project-audio.json
+```
+
+A saved family-wide mute appears in `quietSignatures` in the project profile. A mute on one cue applies to that edit. A later event with an explicitly requested sound can override the family default.
+
+A profile's `votes` field accepts one path or an ordered list of listening exports. Use `npm run audition -- … --use-case product --context speech` for a listening judgment specific to narration. The other contexts are `normal`, `rapid` and `hero`. Record why the take worked or failed in the desk. Search reports the applicable decision and reason. A current, more specific judgment wins, with later files breaking ties.

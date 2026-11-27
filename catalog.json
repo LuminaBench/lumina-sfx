@@ -5568,13 +5568,13 @@
       "id": "bicycle-coasting-freewheel",
       "name": "Coasting bicycle · freewheel pawls",
       "category": "Vehicles & Engines",
-      "revision": 1,
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "bicycle freewheel"
       ],
       "contains": [
-        "bicycle freehub ratchet turning under a stationary drivetrain"
+        "freehub pawls ticking at a steady wheel speed while the pedals stay still"
       ],
       "perspective": "close wheel hub",
       "collection": "Motion · Road and workshop",
@@ -5596,7 +5596,7 @@
       "durationSec": 6.3,
       "params": {
         "speed": {
-          "label": "Wheel speed",
+          "label": "Coasting wheel speed",
           "min": 0,
           "max": 1,
           "default": 0.45

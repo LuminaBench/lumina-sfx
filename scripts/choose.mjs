@@ -42,7 +42,7 @@ const requests = positionals.map(query => {
   const moving = passBy.test(query);
   const sourceQuery = moving ? query.replace(passBy,'') : query;
   const lookup = moving && /^(?:a |the )?bell$/i.test(sourceQuery.trim()) ? 'phone-ring-bell' : sourceQuery;
-  const ranked = rankPerformance(candidates, lookup, values.exclude, votes, {palette, signatures:profile.signatures, useCase:profile.useCase});
+  const ranked = rankPerformance(candidates, lookup, values.exclude, votes, {respectVeto:true, palette, signatures:profile.signatures, useCase:profile.useCase});
   const matches = ranked.filter(s => !s.missing.length || s.id === query);
   return { query, moving, matches: new Set(matches.map(s => s.id)), top: matches[0]?.id,
     missing: ranked[0]?.missing,

@@ -1,3 +1,4 @@
+import { applicableVote } from './selection-profile.mjs';
 import { editorialPicks, featuredLanding } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { chooseFamilies, familySlot } from './edit-family.mjs';
@@ -230,9 +231,8 @@ function pick(e, profile, votes, bank, mode) {
     );
   const use = profile.useCase;
   const preference = (s) => {
-    const ballot = votes[s.id];
-    if (!ballot || (ballot.revision ?? 1) !== (s.revision ?? 1) || (ballot.useCase && ballot.useCase !== use))
-      return 0;
+    const ballot = applicableVote(votes, s, use, mode);
+    if (!ballot) return 0;
     return ['no', 'rejected'].includes(ballot.decision)
       ? -1
       : ['yes', 'approved'].includes(ballot.decision)
@@ -447,7 +447,10 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       const navigation =
         ['controller', 'keyboard', 'mechanical'].includes(e.deviceKind) &&
         ['scroll', 'focus'].includes(e.action);
+      const slot = familySlot(e, style.signatures);
+      const projectQuiet = !e.soundId && style.quietSignatures?.includes(slot);
       const silent =
+        projectQuiet ||
         e.muted ||
         policy === 'silence' ||
         quiet.has(e.action) ||
@@ -457,7 +460,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
           decision: event === existing ? 'reuse' : 'silence',
           reason: 'Original audio carries this gesture',
         });
-      else if (silent) Object.assign(out, { decision: 'silence', reason: e.interrupted ? 'Motion reversed before the accent' : 'Picture carries this beat' });
+      else if (silent) Object.assign(out, { decision: 'silence', reason: projectQuiet ? 'This gesture is quiet in the project profile' : e.interrupted ? 'Motion reversed before the accent' : 'Picture carries this beat' });
       else if (uncertain || owner || policy === 'review')
         Object.assign(out, {
           decision: owner ? 'silence' : 'review',
@@ -625,6 +628,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
     fps: input.fps,
     durationFrames,
     useCase: style.useCase,
+    ...(style.quietSignatures?.length ? { quietSignatures: [...style.quietSignatures] } : {}),
     palette: style.palette ?? 'soft',
     ...(input.maxAddedContacts !== undefined ? { maxAddedContacts: input.maxAddedContacts } : {}),
     cues: cues.sort((a, b) => a.frame - b.frame || a.id.localeCompare(b.id)),
@@ -642,6 +646,7 @@ export function reviseEdit(plan, changes, catalog) {
     seen = new Set(),
     { fps, durationFrames } = clock(plan);
   if (!Array.isArray(changes) || !changes.length) throw Error('Supply an array of cue changes');
+  const familyMutes = new Set();
   const expanded = changes.flatMap((change) => {
     if (!change.action && !change.signature) return [change];
     if ([change.id, change.action, change.signature].filter(v => v !== undefined).length !== 1)
@@ -652,6 +657,7 @@ export function reviseEdit(plan, changes, catalog) {
     if (!matches.length) throw Error('No scored cues for ' + (signature ?? action));
     return matches.map(c => {
       const edit = { ...settings, id: c.id };
+      if (signature && settings.mute && settings.lock === true) familyMutes.add(c.id);
       if (signature && edit.character === 'less-bright') {
         if (edit.soundId !== undefined || edit.edgeTrimDb !== undefined)
           throw Error('Choose a tone trim or a replacement take');
@@ -811,6 +817,8 @@ export function reviseEdit(plan, changes, catalog) {
     }
     if (mute !== undefined) {
       cue.muted = mute;
+      if (familyMutes.has(id)) cue.projectQuiet = true;
+      else delete cue.projectQuiet;
       cue.decision = mute ? 'silence' : cue.keyDecisions ? wordDecision(cue.keyDecisions) : 'play';
     }
   }

@@ -17,10 +17,11 @@ export interface Gesture {
   travel: number;
   reverse: boolean;
   echo: number;
+  turn?: boolean;
 }
 
 export function sweepAudio(ctx: RenderContext, detail: number, seed: number, texture: SweepTexture,
-  gesture: Pick<Gesture, 'duration' | 'apex' | 'reverse' | 'echo'>, friction?: RecordedClip) {
+  gesture: Pick<Gesture, 'duration' | 'apex' | 'reverse' | 'echo' | 'turn'>, friction?: RecordedClip) {
   const colored = noise(ctx.random, 'pink');
   const body = biquad('bandpass', texture.lowHz * (.78 + .28 * detail), .72, ctx.sampleRate);
   const airLimit = biquad('lowpass', Math.min(12200, 2800 + texture.highHz * .88), .66, ctx.sampleRate);
@@ -28,6 +29,8 @@ export function sweepAudio(ctx: RenderContext, detail: number, seed: number, tex
   const rubbing = friction && renderRecording(ctx, friction, { seed, speed: .86 + .22 * ctx.random(),
     cutoffHz: Math.min(7600, texture.highHz * 1.22) });
   const rubStart = Math.max(0, Math.round((gesture.apex * gesture.duration - .069) * ctx.sampleRate));
+  const fadeIn = Math.min(.085, gesture.apex * gesture.duration) * ctx.sampleRate;
+  const fadeOut = Math.min(.12, (1 - gesture.apex) * gesture.duration) * ctx.sampleRate;
   let bandState = 0, lowState = 0, grain = 0, grainTarget = 0, remaining = 0, g = 0;
   const grainFollow = 1 - Math.exp(-texture.grainHz * 3 / ctx.sampleRate);
   const delay = Math.max(1, Math.round(.046 * ctx.sampleRate));
@@ -35,7 +38,13 @@ export function sweepAudio(ctx: RenderContext, detail: number, seed: number, tex
     const u = i / Math.max(1, signal.length - 1);
     const rise = Math.min(1, u / gesture.apex);
     const fall = Math.max(0, (u - gesture.apex) / (1 - gesture.apex));
-    const weight = (.04 + .96 * Math.sin(Math.PI * .5 * rise) ** 1.65) * (1 - fall) ** 2.45;
+    // A moving strip has a continuous friction bed. Its marked day gives it a
+    // broad crest, with a short ease to rest at each end of the actual stroke.
+    const weight = gesture.turn
+      ? Math.sin(Math.PI * .5 * Math.min(1, i / fadeIn)) *
+        Math.sin(Math.PI * .5 * Math.min(1, (signal.length - 1 - i) / fadeOut)) *
+        (.38 + .62 * Math.sin(Math.PI * .5 * rise) ** 1.4) * (1 - .64 * fall)
+      : (.04 + .96 * Math.sin(Math.PI * .5 * rise) ** 1.65) * (1 - fall) ** 2.45;
     const motion = gesture.reverse ? 1 - u : u;
     if (remaining-- <= 0) {
       grainTarget = ctx.random() * 2 - 1;
@@ -56,7 +65,7 @@ export function sweepAudio(ctx: RenderContext, detail: number, seed: number, tex
     const air = .67 * band + texture.air * .48 * excitation;
     const brush = rubbing && i >= rubStart ? rubbing[i-rubStart] : 0;
     signal[i] = weight * (textureLevel * (air + body(colored()) * texture.body * (.86-.33*motion)) +
-      brush * 1.35) + (i >= delay ? signal[i-delay] * gesture.echo * .65 : 0);
+      brush * (gesture.turn ? .065 : 1.35)) + (i >= delay ? signal[i-delay] * gesture.echo * .65 : 0);
   }
   return signal;
 }
@@ -71,7 +80,7 @@ export function editorSweep(id: string, name: string, tags: string[], texture: S
     render(ctx, { params, seed }) { return sweepAudio(ctx, params.detail, seed, texture, gesture, friction); },
   };
   if (!gesture.direction) return recipe;
-  const fitGesture: NonNullable<SoundRecipe['withGestureTiming']> = (durationSec, apexSec) => {
+  const fitGesture: NonNullable<SoundRecipe['withGestureTiming']> = (durationSec, apexSec, motion) => {
     if (!Number.isFinite(durationSec) || durationSec < 0.01 || durationSec > 120 ||
         !Number.isFinite(apexSec) || apexSec <= 0 || apexSec >= durationSec)
       throw new RangeError('Put the swipe apex inside its 0.01–120 second duration');
@@ -79,6 +88,7 @@ export function editorSweep(id: string, name: string, tags: string[], texture: S
     const moving = { ...texture, body: texture.body * 0.35, air: texture.air + 0.12 };
     const fitted = editorSweep(id, name, tags, moving, {
       ...gesture, duration: durationSec, apex: apexSec / durationSec,
+      turn: motion === 'turn', reverse: motion === 'turn' ? gesture.direction < 0 : gesture.reverse,
     }, friction);
     return { ...fitted, withGestureTiming: fitGesture };
   };

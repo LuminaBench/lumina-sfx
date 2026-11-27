@@ -1,6 +1,8 @@
+import { applicableVote, rejectedVote } from './selection-profile.mjs';
 import { geometryConflict, sourcePerspective, mountedAmbience, roomForContact } from './source-perspective.mjs';
 // The coding agent supplies action, viewpoint and emphasis from the user's words.
 // Resolve requested performances against the installed catalog before rendering anything.
+import { unpackContext } from './edit-context.mjs';
 import { silentGesture } from './editorial-intent.mjs';
 import { rankPerformance } from './intent-search.mjs';
 function fitsPerformance(sound, layer) {
@@ -50,6 +52,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     throw Error('Choose a soft or crisp palette');
   design.balance ??=
     design.focus?.marginDb !== undefined || design.focus?.moments?.length ? 'directed' : 'natural';
+  if (design.balance === 'directed' && design.focus) design.focus = { timing: 'local', ...design.focus };
   design.sourcePolicy ??= 'clean';
   const cleanBank = bank.filter(
     (s) => design.sourcePolicy !== 'clean' || (s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote),
@@ -73,11 +76,8 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     const rank = entries => rankPerformance(entries, query, exclude ?? '', profile.votes,
       { palette: palette ?? profile.palette, useCase: profile.useCase, signatures: profile.signatures }, settings);
     const exactId = bank.find(sound => sound.id === query.trim().toLowerCase())?.id;
-    const vetoedInProject = sound => {
-      const vote = profile.votes?.[sound.id];
-      return vote && (vote.revision ?? 1) === (sound.revision ?? 1) &&
-        (!vote.useCase || vote.useCase === profile.useCase) && ['no', 'rejected'].includes(vote.decision);
-    };
+    const context = unpackContext(query).context;
+    const vetoedInProject = sound => rejectedVote(applicableVote(profile.votes, sound, profile.useCase, context));
     const matches = rank(cleanBank).filter(hit => !vetoedInProject(hit));
     const hits = matches.filter(hit => exactId ? hit.id === exactId : !hit.missing.length);
     if (mountedTake && !vetoedInProject(mountedTake) && fitsPerformance(mountedTake, settings)) hits.unshift(mountedTake);

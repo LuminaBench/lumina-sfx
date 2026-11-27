@@ -7,7 +7,7 @@ import { selectionProfile, listeningVotes } from './selection-profile.mjs';
 import { clock, planEdit, reviseEdit } from './edit-score.mjs';
 
 const usage =
-  'score-edit.mjs inspect VIDEO --out DIR | plan TIMELINE --out PLAN [--profile FILE] [--source VIDEO] | audition PLAN --source VIDEO --cue ID [--alternative ID | --quieter] [--source-frame FRAME] --out DIR | profile APPROVED_PLAN --out STYLE | recut TIMELINE --previous OLD_PLAN --source VIDEO --out PLAN | revise PLAN --changes FILE --out NEW_PLAN | render PLAN --out STEM.wav | mix VIDEO --stem STEM.wav --out PREVIEW.mp4 [--audio-stream 0] [--fit-picture] | audit PLAN --source SOURCE.mp4 --stem STEM.wav --mix SCORED.mp4 --out REPORT.json | probe MEDIA --at SECONDS[,SECONDS...] [--window-ms 180] --out REPORT.json | compare MIX_A.mp4 --against MIX_B.mp4 --out DESK.html';
+  'score-edit.mjs inspect VIDEO --out DIR | plan TIMELINE --out PLAN [--profile FILE] [--source VIDEO] | audition PLAN --source VIDEO (--cue ID | --signature FAMILY) [--alternative ID | --quieter] [--source-frame FRAME] --out DIR | profile APPROVED_PLAN --out STYLE | recut TIMELINE --previous OLD_PLAN --source VIDEO --out PLAN | revise PLAN --changes FILE --out NEW_PLAN | render PLAN --out STEM.wav | mix VIDEO --stem STEM.wav --out PREVIEW.mp4 [--audio-stream 0] [--fit-picture] | audit PLAN --source SOURCE.mp4 --stem STEM.wav --mix SCORED.mp4 --out REPORT.json | probe MEDIA --at SECONDS[,SECONDS...] [--window-ms 180] --out REPORT.json | compare MIX_A.mp4 --against MIX_B.mp4 --out DESK.html';
 async function main() {
   const {
     values: v,
@@ -23,6 +23,7 @@ async function main() {
       previous: { type: 'string' },
       source: { type: 'string' },
       cue: { type: 'string' },
+      signature: { type: 'string' },
       alternative: { type: 'string' },
       against: { type: 'string' },
       out: { type: 'string' },
@@ -91,7 +92,7 @@ async function main() {
     return;
   }
   if (command === 'audition') {
-    if (!v.source || !v.cue) throw Error(usage);
+    if (!v.source || Boolean(v.cue) === Boolean(v.signature)) throw Error(usage);
     const { auditionCue } = await import('./edit-audition.mjs');
     console.log(
       JSON.stringify(
@@ -105,6 +106,7 @@ async function main() {
           Number(v['audio-stream'] ?? 0),
           {
             quieter: v.quieter,
+            signature: v.signature,
             sourceFrame: v['source-frame'] === undefined ? undefined : Number(v['source-frame']),
           },
         ),

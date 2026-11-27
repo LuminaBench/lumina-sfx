@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { listeningVotes, selectionProfile } from './selection-profile.mjs';
+import { applicableVote, listeningVotes, selectionProfile } from './selection-profile.mjs';
+import { unpackContext } from './edit-context.mjs';
 import { distinctChoices } from './related-takes.mjs';
 import { leafIds } from './scene-leaves.mjs';
 import { rankByIntent } from './intent-search.mjs';
@@ -58,17 +59,19 @@ if (values.help) {
   const profile=await selectionProfile(values.profile);
   const useCase=values['use-case']??profile.useCase, palette=values.palette??profile.palette;
   if(palette && !['soft','crisp'].includes(palette)) throw Error('Choose a soft or crisp palette');
-  const {votes,review}=await listeningVotes(values.votes??profile.votes);
+  const {votes}=await listeningVotes(values.votes??profile.votes);
   if(votes){
     const rank = { yes: 0, approved: 0, no: 2, rejected: 2 };
-    const matchesRevision = sound => (votes[sound.id]?.revision ?? 1) === (sound.revision ?? 1);
-    const score = sound => matchesRevision(sound) && (!votes[sound.id]?.useCase || votes[sound.id].useCase===useCase) ? rank[votes[sound.id]?.decision] ?? 1 : 1;
+    const context = unpackContext(values.intent ?? '').context;
+    const ballot = sound => applicableVote(votes, sound, useCase, context);
+    const score = sound => rank[ballot(sound)?.decision] ?? 1;
     if (values.parts !== undefined) sounds = sounds.filter(sound => score(sound) !== 2);
     if (values.intent === undefined) sounds.sort((a, b) => score(a) - score(b));
     for (const sound of sounds) if (Object.hasOwn(votes, sound.id)) {
-      const v = votes[sound.id];
-      sound.review = { useCase:v.useCase, currentRevision: matchesRevision(sound), decision: v.decision, reason: v.reason ?? v.note, heard: v.heard, phone: v.phone,
-        background: v.background ? review.bed : undefined };
+      const applicable = ballot(sound);
+      const v = applicable ?? [votes[sound.id]].flat().at(-1);
+      sound.review = { useCase:v.useCase, context:v.context, applies:Boolean(applicable), currentRevision: (v.revision ?? 1) === (sound.revision ?? 1), decision: v.decision, reason: v.reason ?? v.note, heard: v.heard, phone: v.phone,
+        background: v.background ? v.bed : undefined };
     }
   }
   if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude, false, votes, {palette,useCase,signatures:profile.signatures});
