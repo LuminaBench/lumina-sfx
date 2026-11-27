@@ -47,6 +47,10 @@ test('a marked ribbon reverses on its frame and carries audible travel on both s
       const mono = energies(wav, cue.frame, cue.endFrame);
       const peak = Math.max(...mono);
       assert.ok(peak > 0);
+      const marked = energies(wav, cue.syncFrame - 1, cue.syncFrame + 1);
+      const earlyTravel = energies(wav, cue.frame + 4, cue.syncFrame - 4);
+      const average = xs => xs.reduce((a, b) => a+b, 0) / xs.length;
+      assert.ok(average(marked) > average(earlyTravel) * 1.8, 'The marked day is audible above the travel in mono');
       assert.ok(mono.filter(p => p > peak * 10 ** (-18 / 10)).length > mono.length * 0.8);
       const left = energies(wav, cue.frame, cue.endFrame, 'left');
       const right = energies(wav, cue.frame, cue.endFrame, 'right');

@@ -71,6 +71,37 @@ export function contextOrder(ids, mode) {
   return ids.map((id) => (acoustics[id] ? measured.shift() : id));
 }
 
+// Group actual rapid switches after reuse, silence and contact-budget decisions.
+// Use one trim throughout the run so an identical switch never pulses up and down.
+export function balanceRapidPresses(cues, fps) {
+  const runs = new Map();
+  function finish(run) {
+    if (run.length < 4) return;
+    let first = 0, busiest = 0;
+    for (let i = 0; i < run.length; i++) {
+      while (run[i].syncFrame - run[first].syncFrame > fps) first++;
+      busiest = Math.max(busiest, i - first + 1);
+    }
+    const trim = Math.min(3, Math.max(0, busiest - 3));
+    if (!trim) return;
+    for (const cue of run) {
+      cue.densityTrimDb = -trim;
+      cue.gainDb = Math.max(-80, cue.gainDb - trim);
+    }
+  }
+  const presses = cues.filter(cue => cue.decision === 'play' && cue.signature?.startsWith('press/') && !cue.keyFrames);
+  for (const cue of presses.sort((a, b) => a.syncFrame - b.syncFrame)) {
+    const run = runs.get(cue.signature) ?? [];
+    if (cue.context !== 'rapid' || (run.length && cue.syncFrame - run.at(-1).syncFrame >= 0.45 * fps)) {
+      finish(run);
+      run.length = 0;
+    }
+    if (cue.context === 'rapid') run.push(cue);
+    runs.set(cue.signature, run);
+  }
+  for (const run of runs.values()) finish(run);
+}
+
 export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track, subtleDigital = false) {
   // Preserve impact on a featured reveal and a lower ceiling for everyday controls.
   const measured = acoustics[cue];

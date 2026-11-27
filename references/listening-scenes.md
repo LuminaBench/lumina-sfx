@@ -119,3 +119,14 @@ Keep each running motor or weather layer on the scene clock. Put `"cut": true` o
 ### Preserve the mix around a masking sound
 
 A directed brief with an explicit focus uses `focus.timing: "local"`. A brief burst of interference can have its own mix region. The surrounding rain or room tone recovers after the burst. An agent can use a focus moment to bring the thunder itself forward when the picture calls for it. Locked layers retain their gains. Existing authored designs can opt into local timing, or use `"steady"` to hold one trim per authored region. Listen to the delivered scene on each side of the overlap. The inspection report gives the interval, per-stem trims and playback margins.
+
+
+## Resolving a written brief
+
+Give each layer a descriptive name. The chooser converts it to a safe ID and updates focus, marker and level references together. Use the output IDs if you edit the design afterward.
+
+For a van passing behind a window, request the van and tire roll as one emitter, then describe the path and obstruction on that layer. A short single call can finish naturally inside its available time window. An explicit fit or exact catalog ID retains its duration constraints. A quiet layer receives a suggested gain when you have left its gain and relative level open.
+
+Check each `warnings` entry in the chooser output. If a source is identified and a secondary detail is undocumented, a catalog-authorized approximation identifies that detail and the evidence. For example, the basketball recording captures the ball striking a wooden court. Its cover material is undocumented. Set `exactSource: true` on the layer to require a complete source match. Even with approximate matching, a request for the wrong surface goes to review.
+
+A partly resolved brief returns exit code 2 and `design: null`. When independent layers are playable, `audition` is a separate natural-balance design you can pass to the remix command to hear those layers. The preview omits layers whose timing or gain depends on an unresolved source. Complete the original brief before installing the scene.

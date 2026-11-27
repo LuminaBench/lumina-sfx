@@ -195,3 +195,6 @@ node scripts/score-edit.mjs profile approved.json --out project-audio.json
 A saved family-wide mute appears in `quietSignatures` in the project profile. A mute on one cue applies to that edit. A later event with an explicitly requested sound can override the family default.
 
 A profile's `votes` field accepts one path or an ordered list of listening exports. Use `npm run audition -- … --use-case product --context speech` for a listening judgment specific to narration. The other contexts are `normal`, `rapid` and `hero`. Record why the take worked or failed in the desk. Search reports the applicable decision and reason. A current, more specific judgment wins, with later files breaking ties.
+
+
+For a burst of physical selections, score each visible press and listen through the complete run. The planner can apply one additional trim of up to 3 dB across a rapid switch family. The number of audible presses in its busiest second sets the trim. Isolated presses keep their ordinary level. A featured close-up or marked speech passage keeps its own treatment. The plan reports `densityTrimDb` on affected contacts. When the exported movie has a second distinct attack 60–180 ms after an isolated physical press, its audit can flag `secondAttack` with the likely source. Play that moment in picture before deciding whether to reuse or soften it.

@@ -44,6 +44,30 @@ function levels(a) {
   };
 }
 
+// Inspect an isolated physical press in the finished movie. A second discrete
+// attack can come from the supplied soundtrack, the added take, or both.
+function secondContact(bins, frame, fps) {
+  const at = Math.floor((frame / fps) * rate / window);
+  const energy = (i, column) => (bins[i]?.[column] ?? 0) / Math.max(1, 2 * (bins[i]?.[7] ?? 0));
+  const strongest = choices => choices.reduce((a, b) => energy(a, 2) > energy(b, 2) ? a : b);
+  const first = strongest([at - 1, at, at + 1]);
+  const initial = energy(first, 2);
+  if (initial < 1e-7) return;
+  for (let i = first + 3; i <= first + 9 && i + 2 < bins.length; i++) {
+    const next = energy(i, 2);
+    if (next < initial * 0.16 || next < energy(i - 1, 2) || next < energy(i + 1, 2)) continue;
+    const floor = Math.min(initial, next) * 0.063;
+    if (!Array.from({ length: i - first - 1 }, (_, k) => energy(first + k + 1, 2)).some(v => v < floor) ||
+        energy(first - 2, 2) > floor || energy(i + 2, 2) > floor) continue;
+    const original = energy(i, 0), added = energy(i, 1);
+    return {
+      separationMs: Math.round((i - first) * window * 1000 / rate),
+      relativeDb: db(next / initial),
+      source: original > added * 4 ? 'original' : added > original * 4 ? 'added' : 'both',
+    };
+  }
+}
+
 export async function auditDelivery(plan, source, stem, mix, stream = 0) {
   const { fps, durationFrames } = clock(plan);
   const [picture, delivered, authored] = await Promise.all([
@@ -162,6 +186,9 @@ export async function auditDelivery(plan, source, stem, mix, stream = 0) {
     bins.push(block);
   }
   const cues = [];
+  const inputFrames = plan.cues.filter(c => c.decision !== 'silence')
+    .flatMap(c => c.keyFrames ?? [c.syncFrame ?? c.frame]).filter(Number.isFinite).sort((a, b) => a - b);
+  const adjacent = new Map(inputFrames.map((f, i) => [f, [inputFrames[i - 1], inputFrames[i + 1]]]));
   for (const cue of plan.cues) {
     if (cue.decision !== 'play') continue;
     for (const [i, f] of (cue.keyFrames ?? [cue.syncFrame]).entries()) {
@@ -186,7 +213,13 @@ export async function auditDelivery(plan, source, stem, mix, stream = 0) {
         if (cue.context !== 'hero' && level.phoneMarginDb > 8)
           warnings.push('Audition this ordinary contact for prominence over the original');
       }
-      cues.push({ id: cue.id, frame: f, ...level, warnings });
+      const [prior, next] = adjacent.get(f) ?? [];
+      const isSingleSwitch = /^press\/(?:mouse|trackpad|trackball|pen-button|touch\/surface)(?:\/|$)/.test(cue.signature ?? '') &&
+        !/double|triple|hold|release/.test(cue.soundId ?? '') && !cue.keyFrames;
+      const isolated = !(prior >= f - 0.2 * fps || next <= f + 0.2 * fps);
+      const extra = isSingleSwitch && isolated ? secondContact(bins, f, fps) : undefined;
+      if (extra) warnings.push('Listen for a second attack after this single physical press');
+      cues.push({ id: cue.id, frame: f, ...level, ...(extra ? { secondAttack: extra } : {}), warnings });
     }
   }
   const mixPeakDbfs = db(peak * peak),

@@ -9701,14 +9701,15 @@
     },
     {
       "id": "basketball-hardwood-single-dribble",
-      "brief": "Basketball Hardwood Single Dribble",
+      "brief": "Basketball hits a hardwood gym floor",
       "collection": "Sport · Contacts and feedback",
       "category": "Impacts",
       "blueprint": "porcelain-lid-skitter",
       "status": "review",
       "durationSec": 0.72,
       "loopable": false,
-      "acceptance": "A clean initial contact reads as the named material before its short tail."
+      "acceptance": "One contact and short natural ring from a basketball on an actual wood court.",
+      "revision": 2
     },
     {
       "id": "basketball-two-dribbles-and-a-catch",
@@ -29287,6 +29288,50 @@
       "loopable": true,
       "brief": "Breaking surf at the shore",
       "acceptance": "Continuous natural wash, breaking crest and recession, at neutral world position.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "diesel-van-road-loop",
+      "category": "Vehicles & Engines",
+      "collection": "Motion · Road and workshop",
+      "durationSec": 2.1,
+      "loopable": true,
+      "brief": "Van engine and tire roll",
+      "acceptance": "A steady diesel cargo van engine and tire wash share a single spatial emitter.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "desk-fan-running-loop",
+      "category": "Props & Interactions",
+      "collection": "Foley · Hands and equipment",
+      "durationSec": 5.8,
+      "loopable": true,
+      "brief": "Running table fan",
+      "acceptance": "A sustained tabletop fan motor and its natural airflow.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "poplar-canopy-rustle-loop",
+      "category": "Weather & Ambience",
+      "collection": "Physics · Water, weather and impacts",
+      "durationSec": 6.4,
+      "loopable": true,
+      "brief": "Breeze in a poplar canopy",
+      "acceptance": "Retain the natural rustles of a living broadleaf canopy under a light breeze.",
+      "status": "review",
+      "revision": 1
+    },
+    {
+      "id": "house-sparrow-contact-call",
+      "category": "Animals",
+      "collection": "Animals",
+      "durationSec": 0.34,
+      "loopable": false,
+      "brief": "Single house sparrow call",
+      "acceptance": "One naturally timed sung chirp from the recorded sparrow, followed by quiet.",
       "status": "review",
       "revision": 1
     }

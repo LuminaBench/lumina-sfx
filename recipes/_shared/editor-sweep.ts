@@ -31,6 +31,8 @@ export function sweepAudio(ctx: RenderContext, detail: number, seed: number, tex
   const rubStart = Math.max(0, Math.round((gesture.apex * gesture.duration - .069) * ctx.sampleRate));
   const fadeIn = Math.min(.085, gesture.apex * gesture.duration) * ctx.sampleRate;
   const fadeOut = Math.min(.12, (1 - gesture.apex) * gesture.duration) * ctx.sampleRate;
+  const accentFrame = gesture.apex * gesture.duration * ctx.sampleRate;
+  const accentWidth = Math.min(0.085, gesture.duration * 0.15) * ctx.sampleRate;
   let bandState = 0, lowState = 0, grain = 0, grainTarget = 0, remaining = 0, g = 0;
   const grainFollow = 1 - Math.exp(-texture.grainHz * 3 / ctx.sampleRate);
   const delay = Math.max(1, Math.round(.046 * ctx.sampleRate));
@@ -40,10 +42,13 @@ export function sweepAudio(ctx: RenderContext, detail: number, seed: number, tex
     const fall = Math.max(0, (u - gesture.apex) / (1 - gesture.apex));
     // A moving strip has a continuous friction bed. Its marked day gives it a
     // broad crest, with a short ease to rest at each end of the actual stroke.
+    // Shape the existing stream of friction around the visible accent. A soft
+    // 170 ms crest remains apparent when opposite stereo strokes fold to mono.
+    const crest = gesture.turn ? 1 + 0.85 * Math.exp(-0.5 * ((i - accentFrame) / accentWidth) ** 2) : 1;
     const weight = gesture.turn
       ? Math.sin(Math.PI * .5 * Math.min(1, i / fadeIn)) *
         Math.sin(Math.PI * .5 * Math.min(1, (signal.length - 1 - i) / fadeOut)) *
-        (.38 + .62 * Math.sin(Math.PI * .5 * rise) ** 1.4) * (1 - .64 * fall)
+        crest * (.38 + .62 * Math.sin(Math.PI * .5 * rise) ** 1.4) * (1 - .64 * fall)
       : (.04 + .96 * Math.sin(Math.PI * .5 * rise) ** 1.65) * (1 - fall) ** 2.45;
     const motion = gesture.reverse ? 1 - u : u;
     if (remaining-- <= 0) {
@@ -65,7 +70,7 @@ export function sweepAudio(ctx: RenderContext, detail: number, seed: number, tex
     const air = .67 * band + texture.air * .48 * excitation;
     const brush = rubbing && i >= rubStart ? rubbing[i-rubStart] : 0;
     signal[i] = weight * (textureLevel * (air + body(colored()) * texture.body * (.86-.33*motion)) +
-      brush * (gesture.turn ? .065 : 1.35)) + (i >= delay ? signal[i-delay] * gesture.echo * .65 : 0);
+      brush * (gesture.turn ? .18 : 1.35)) + (i >= delay ? signal[i-delay] * gesture.echo * .65 : 0);
   }
   return signal;
 }

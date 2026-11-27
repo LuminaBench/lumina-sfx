@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2878,
+  "count": 2882,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -5039,14 +5039,43 @@
     },
     {
       "id": "basketball-hardwood-single-dribble",
-      "name": "Basketball Hardwood Single Dribble",
+      "name": "Basketball bounce on hardwood",
       "category": "Impacts",
+      "revision": 2,
+      "isolation": "isolated",
+      "markers": {
+        "impact": 0.004
+      },
+      "closeMatches": [
+        {
+          "phrases": [
+            "leather basketball",
+            "leather ball"
+          ],
+          "term": "leather",
+          "note": "The basketball and wooden court are recorded together. The ball cover is undocumented."
+        }
+      ],
+      "components": [
+        "basketball bounce"
+      ],
+      "contains": [
+        "inflated basketball striking a wooden gym floor"
+      ],
+      "perspective": "indoor court",
       "collection": "Sport · Contacts and feedback",
       "tags": [
         "basketball",
+        "ball",
+        "inflated",
+        "wood",
         "hardwood",
+        "court",
+        "floor",
+        "bounce",
         "single",
-        "dribble"
+        "dribble",
+        "gym"
       ],
       "loopable": false,
       "durationSec": 0.72,
@@ -5061,11 +5090,11 @@
       "targetRmsDbfs": -24,
       "mixRole": "foley",
       "recording": {
-        "title": "basketball bounce.wav",
-        "author": "toddcircle",
-        "url": "https://freesound.org/people/toddcircle/sounds/451642/",
+        "title": "Boys shooting hoops on wood floor",
+        "author": "SoundsLikeYukon",
+        "url": "https://freesound.org/people/SoundsLikeYukon/sounds/720961/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/basketball-hardwood-single-dribble.ts"
@@ -25913,6 +25942,53 @@
       "file": "recipes/derelict-boxcar-two-stage-pressure-burst.ts"
     },
     {
+      "id": "desk-fan-running-loop",
+      "name": "Table fan running",
+      "category": "Props & Interactions",
+      "revision": 1,
+      "isolation": "isolated",
+      "components": [
+        "desk fan"
+      ],
+      "contains": [
+        "small electric fan motor and moving air"
+      ],
+      "perspective": "close appliance",
+      "collection": "Foley · Hands and equipment",
+      "tags": [
+        "desk",
+        "table",
+        "fan",
+        "electric",
+        "air",
+        "blades",
+        "motor",
+        "steady",
+        "appliance"
+      ],
+      "loopable": true,
+      "durationSec": 5.8,
+      "params": {
+        "speed": {
+          "label": "Fan speed",
+          "min": 0,
+          "max": 1,
+          "default": 0.36
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "table fan.wav",
+        "author": "Cambra",
+        "url": "https://freesound.org/people/Cambra/sounds/102710/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-27"
+      },
+      "channels": 1,
+      "file": "recipes/desk-fan-running-loop.ts"
+    },
+    {
       "id": "desk-lamp-pivot-adjust-the-neck",
       "name": "Desk Lamp Pivot Adjust the Neck",
       "category": "Props & Interactions",
@@ -26602,6 +26678,75 @@
       },
       "channels": 1,
       "file": "recipes/diesel-v6-under-open-hood-loop.ts"
+    },
+    {
+      "id": "diesel-van-road-loop",
+      "name": "Delivery van rolling on asphalt",
+      "category": "Vehicles & Engines",
+      "revision": 1,
+      "isolation": "isolated",
+      "closeMatches": [
+        {
+          "phrases": [
+            "compact delivery van",
+            "compact van"
+          ],
+          "term": "compact",
+          "note": "The recording identifies a diesel van. Its dimensions are undocumented."
+        }
+      ],
+      "components": [
+        "van engine",
+        "tire roll"
+      ],
+      "contains": [
+        "running diesel van engine",
+        "dry road tire noise"
+      ],
+      "perspective": "stationary exterior emitter",
+      "collection": "Motion · Road and workshop",
+      "tags": [
+        "van",
+        "delivery",
+        "diesel",
+        "engine",
+        "rolling",
+        "tires",
+        "pavement",
+        "asphalt",
+        "road",
+        "steady"
+      ],
+      "loopable": true,
+      "durationSec": 2.1,
+      "params": {
+        "speed": {
+          "label": "Road speed",
+          "min": 0,
+          "max": 1,
+          "default": 0.43
+        }
+      },
+      "targetRmsDbfs": -25,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Motor Loop.wav",
+        "author": "soundjoao",
+        "url": "https://freesound.org/people/soundjoao/sounds/325808/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-27"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Car rolling on asphalt .wav",
+          "author": "orlandorizo",
+          "url": "https://freesound.org/people/orlandorizo/sounds/591079/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-27"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/diesel-van-road-loop.ts"
     },
     {
       "id": "diesel-yard-loader-approach-to-loading-apron",
@@ -29959,6 +30104,16 @@
       "category": "Weather & Ambience",
       "revision": 2,
       "isolation": "isolated",
+      "closeMatches": [
+        {
+          "phrases": [
+            "grass reeds",
+            "reed grass"
+          ],
+          "term": "reed",
+          "note": "Wind in dry grass supplies the rustle. The grass species is undocumented."
+        }
+      ],
       "components": [
         "grass-rustle"
       ],
@@ -53525,6 +53680,53 @@
       "targetRmsDbfs": -25,
       "channels": 1,
       "file": "recipes/hose-nozzle-short-spray.ts"
+    },
+    {
+      "id": "house-sparrow-contact-call",
+      "name": "House sparrow · single chirp",
+      "category": "Animals",
+      "revision": 1,
+      "isolation": "isolated",
+      "components": [
+        "sparrow call"
+      ],
+      "contains": [
+        "one short natural house sparrow call"
+      ],
+      "perspective": "nearby perched bird",
+      "collection": "Animals",
+      "tags": [
+        "small",
+        "bird",
+        "songbird",
+        "sparrow",
+        "call",
+        "chirp",
+        "single",
+        "short",
+        "perched"
+      ],
+      "loopable": false,
+      "durationSec": 0.34,
+      "params": {
+        "pace": {
+          "label": "Call pace",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "voice",
+      "recording": {
+        "title": "House sparrow.wav",
+        "author": "straget",
+        "url": "https://freesound.org/people/straget/sounds/404663/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/house-sparrow-contact-call.ts"
     },
     {
       "id": "howling-wind-loop",
@@ -78413,6 +78615,55 @@
       },
       "channels": 1,
       "file": "recipes/pool-practice-board-small-pool-landing.ts"
+    },
+    {
+      "id": "poplar-canopy-rustle-loop",
+      "name": "Breeze in poplar leaves",
+      "category": "Weather & Ambience",
+      "revision": 1,
+      "isolation": "isolated",
+      "components": [
+        "leaf rustle"
+      ],
+      "contains": [
+        "wind rustling the broad leaves of a poplar"
+      ],
+      "perspective": "close tree canopy",
+      "collection": "Physics · Water, weather and impacts",
+      "tags": [
+        "poplar",
+        "tree",
+        "leaves",
+        "leaf",
+        "broadleaf",
+        "foliage",
+        "rustle",
+        "wind",
+        "breeze",
+        "gentle"
+      ],
+      "loopable": true,
+      "sustainMode": "evolving",
+      "durationSec": 6.4,
+      "params": {
+        "breeze": {
+          "label": "Breeze strength",
+          "min": 0,
+          "max": 1,
+          "default": 0.38
+        }
+      },
+      "targetRmsDbfs": -30,
+      "mixRole": "ambience",
+      "recording": {
+        "title": "Wind in a tree, close to the foliage. (Anatolia-Turkey)",
+        "author": "felix.blume",
+        "url": "https://freesound.org/people/felix.blume/sounds/167434/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-27"
+      },
+      "channels": 1,
+      "file": "recipes/poplar-canopy-rustle-loop.ts"
     },
     {
       "id": "porcelain-lid-skitter",

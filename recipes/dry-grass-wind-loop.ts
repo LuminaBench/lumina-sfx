@@ -6,6 +6,7 @@ import { biquad } from '../engine/dsp.ts';
 export default {
   id: 'dry-grass-wind-loop', name: 'Wind moving through dry grass', category: 'Weather & Ambience',
   tags: ['dry', 'grass', 'wind', 'breeze', 'meadow', 'field', 'blades', 'rustle', 'gust'],
+  closeMatches: [{ phrases: ['grass reeds', 'reed grass'], term: 'reed', note: 'Wind in dry grass supplies the rustle. The grass species is undocumented.' }],
   isolation: 'isolated', components: ['grass-rustle'], recording: blades.credit,
   loopable: true, sustainMode: 'evolving', durationSec: 6.5, mixRole: 'ambience', targetRmsDbfs: -31,
   params: { breeze: {label: 'Breeze', min: 0, max: 1, default: 0.4} },

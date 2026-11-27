@@ -1749,6 +1749,11 @@
       "previous": "14b1cc42b8daa45f128c6961463f6b223e12942e4d184f9a966fb0405c991614",
       "current": "6accff191c7341e934257e51e6dcd3eb0fa90513f93fcf237ea7715a769f81f1",
       "reason": "Use the individual wide spacebar recorded on the matching physical keyboard."
+    },
+    "basketball-hardwood-single-dribble": {
+      "previous": "f4f163f32175aaa661c5935cfc16e6e2c894b6cabbe2b06a40a799f7d0de4c81",
+      "current": "a37ddb5f6a4d875bcd428a022f7de502416fecf47a471fd36f43951aba2e5c8d",
+      "reason": "Use a basketball recorded on a wooden gym court. The original bounce was recorded on carpet."
     }
   }
 }

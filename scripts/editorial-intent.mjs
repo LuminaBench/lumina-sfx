@@ -1,4 +1,4 @@
-import { silentTouchRequest, stripButtonLabel } from './edit-device.mjs';
+import { silentTouchRequest, stripButtonLabel, withoutQuotedCopy } from './edit-device.mjs';
 // Action families describe what is visible at the edit. The ordered picks are
 // listening references; material, direction, input device and timing stay searchable.
 const profiles = {
@@ -113,6 +113,20 @@ export function featuredLanding(query) {
   return /\b(?:cinematic|heavy|impact|swell|dramatic|hero)\b/i.test(query);
 }
 
+// In an edit timeline a marked beat may describe the graphic itself, rather
+// than ask for a sound. Keep the moving subject attached to its verb.
+export function markedGraphicLanding(event) {
+  if (!event.accent || !Number.isInteger(event.syncFrame)) return false;
+  const description = withoutQuotedCopy(event.brief);
+  const graphic = /^(?:(?:the|a|an|its|our) )?(?:(?:printed|animated|small|final) )?(?:wordmark|logotype|logo|monogram|masthead|letterform|title card|(?:printer['’]s|publisher['’]s|registration|brand|typographic|graphic) (?:(?:square|round|small|printed) )?mark)\b/i;
+  const movement = /^\s+(?:(?:finally|gently|lightly|softly|quietly)\s+)?(?:lands?|seats?|settles?|comes? to rest|drops? into place)\b/i;
+  return description.split(/[.,;!?]|\b(?:then|when|once|while)\b/i).some(clause => {
+    const words = clause.trimStart();
+    const subject = words.match(graphic);
+    return subject && movement.test(words.slice(subject[0].length));
+  });
+}
+
 export function listeningOrder(id, query = '') {
   if (curated.get(id)?.action === 'land' && featuredLanding(query))
     return id === 'clean-title-reveal-with-soft-hit' ? 0 : 1;
@@ -125,6 +139,7 @@ export function silentGesture(query) {
   query = stripButtonLabel(query);
   if (silentTouchRequest(query) || /\b(?:no|without) (?:added |audio |audible )?feedback\b/i.test(query)) return true;
   if (/\b(?:no (?:added sound|sound|feedback)|in silence|leave .{0,32}silent|keep .{0,32}silent)\b/i.test(query)) return true;
+  if (/\b(?:without (?:a|any) (?:added )?sound|(?:lands?|settles?|seats?|comes? to rest) silently)\b/i.test(query)) return true;
   return /\b(?:cursor|pointer)\b.*\b(?:static text|empty space|blank canvas)\b/i.test(query)
     && !/\b(?:click|hover feedback|press|tick|swipe)\b/i.test(query);
 }

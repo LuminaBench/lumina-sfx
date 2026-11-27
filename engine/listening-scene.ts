@@ -482,7 +482,9 @@ export function composeListeningScene(
         for (const [k, r] of regions.entries()) {
           const from = Math.max(s.offset, Math.round(r.from * rate)),
             to = Math.min(s.offset + s.ears[0].length, Math.round(r.to * rate));
-          const transitionEnd = k ? Math.min(to, Math.ceil((r.from + 0.1) * rate)) : from;
+          if (from >= to) continue;
+          // A source can start after this region's handoff ramp has already finished.
+          const transitionEnd = k ? Math.max(from, Math.min(to, Math.ceil((r.from + 0.1) * rate))) : from;
           for (let ch = 0; ch < mix.length; ch++) {
             const src = s.ears[ch],
               out = mix[ch];

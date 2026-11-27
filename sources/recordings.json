@@ -3066,6 +3066,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-asphalt-tire-texture.ts",
+      "title": "Car rolling on asphalt .wav",
+      "author": "orlandorizo",
+      "url": "https://freesound.org/people/orlandorizo/sounds/591079/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 96000,
+          "sha256": "37d1fdde0ba6f649235dfeaf82c1f3bd87b05ec0f902adb2dc819a695757decd"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-atlas-firecracker.ts",
       "title": "Firecracker Explosion",
       "author": "unfa",
@@ -3408,6 +3423,25 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-desk-fan-air.ts",
+      "title": "table fan.wav",
+      "author": "Cambra",
+      "url": "https://freesound.org/people/Cambra/sounds/102710/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 175200,
+          "sha256": "3c54f6c5e674904a3c5a9f8036b80931a6ddaee591005b501a4530c9ca40b693"
+        },
+        {
+          "frames": 175200,
+          "sha256": "84b8f57b15497628fd27c5ee2b7e26925913b24a8f82c5923e21b72f79773666"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-drawing-pen-tip.ts",
       "title": "Drawing with Pen on a Drawing Tablet",
       "author": "Freen0",
@@ -3569,6 +3603,25 @@
         {
           "frames": 1404,
           "sha256": "8332fd11ebf83964f13cb6084fe6b3edf1057bbf9e62fe340b8a3cfd17fe96dd"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-hardwood-basketball.ts",
+      "title": "Boys shooting hoops on wood floor",
+      "author": "SoundsLikeYukon",
+      "url": "https://freesound.org/people/SoundsLikeYukon/sounds/720961/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 5248,
+          "sha256": "2431a035edd79fcebfea784b542ca45428a4bbd1b3ccbd340c8aaf3f5b9f9487"
+        },
+        {
+          "frames": 5248,
+          "sha256": "fcc5203cf5939b1490ac78372257d67cb7c7ad85162cbe612a101bd07e3535e6"
         }
       ]
     },
@@ -3992,6 +4045,25 @@
         {
           "frames": 816,
           "sha256": "bd9806d3b64e861ec30dab11727c4ac1c4da361fe4cc4a199fadb55cf813eb3a"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-poplar-leaves.ts",
+      "title": "Wind in a tree, close to the foliage. (Anatolia-Turkey)",
+      "author": "felix.blume",
+      "url": "https://freesound.org/people/felix.blume/sounds/167434/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 121200,
+          "sha256": "529a80beac9a491144d0c7f0359b1886ade5d01f11278f32d7f27d962ea1fd09"
+        },
+        {
+          "frames": 123600,
+          "sha256": "2b349d573b2816ec2544a18f802819f7a76baa08967ed4a9e6ff1ad3de8e3017"
         }
       ]
     },
@@ -4439,6 +4511,21 @@
         {
           "frames": 36720,
           "sha256": "461282df37c07459bc335dac8a88e8f14bd105fe77a256ed3a015adfada47313"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-van-engine-running.ts",
+      "title": "Motor Loop.wav",
+      "author": "soundjoao",
+      "url": "https://freesound.org/people/soundjoao/sounds/325808/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 58800,
+          "sha256": "eec437ff123fc3495c3733a549522a60f4fcd69a64b23894264e688559db7aba"
         }
       ]
     },

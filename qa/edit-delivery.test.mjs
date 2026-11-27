@@ -103,3 +103,29 @@ test('a key under a bright speech segment leaves space without dimming adjacent 
     assert.ok(Math.abs(at(21,false) - at(6,false)) < 0.1);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
+
+test('a second recorded attack is flagged on a single mouse press and allowed for two observed contacts', async (t) => {
+  const ff = ffmpegPath();
+  if (spawnSync(ff, ['-version']).error?.code === 'ENOENT') return t.skip('FFmpeg required for this picture test');
+  const dir = await mkdtemp(join(tmpdir(), 'lumina-two-attacks-'));
+  const file = name => join(dir, name);
+  const tone = (time, level) => "aevalsrc='sin(2*PI*900*t)*" + level + "*between(t," + time + "," + (time + 0.012) + ")':s=48000:d=1";
+  function encode(...args) {
+    const run = spawnSync(ff, ['-v', 'error', '-nostdin', ...args]);
+    assert.equal(run.status, 0, run.stderr.toString());
+  }
+  try {
+    encode('-f','lavfi','-i','color=size=48x48:rate=25:duration=1','-f','lavfi','-i',tone(0.52,0.21),
+      '-c:v','libx264','-c:a','aac',file('source.mp4'));
+    encode('-f','lavfi','-i',tone(0.4,0.25),'-c:a','pcm_s16le',file('press.wav'));
+    await mixPicture(file('source.mp4'),file('press.wav'),file('cut.mp4'));
+    const press = {id:'tap', decision:'play', signature:'press/mouse', soundId:'desktop-mouse-press', syncFrame:10};
+    const plan = {id:'switch',fps:25,durationFrames:25,cues:[press]};
+    const audit = () => auditDelivery(plan,file('source.mp4'),file('press.wav'),file('cut.mp4'));
+    const result = await audit();
+    assert.equal(result.cues[0].secondAttack.source,'original');
+    assert.equal(result.cues[0].secondAttack.separationMs,120);
+    plan.cues.push({id:'existing',decision:'reuse',frame:13});
+    assert.equal((await audit()).cues[0].secondAttack,undefined);
+  } finally { await rm(dir,{recursive:true,force:true}); }
+});

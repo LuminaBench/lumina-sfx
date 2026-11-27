@@ -1,9 +1,10 @@
 import { applicableVote } from './selection-profile.mjs';
-import { editorialPicks, featuredLanding } from './editorial-intent.mjs';
+import { editorialPicks, featuredLanding, markedGraphicLanding, silentGesture } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { chooseFamilies, familySlot } from './edit-family.mjs';
-import { deviceKind, feedbackFor, physicalSwitch, returnKeyDown, spacebarDown, excludedTraits, stripButtonLabel } from './edit-device.mjs';
+import { deviceKind, describesSurfaceContact, feedbackFor, physicalSwitch, returnKeyDown, spacebarDown, excludedTraits, stripButtonLabel } from './edit-device.mjs';
 import {
+  balanceRapidPresses,
   contextOrder,
   levelMatch,
   scoreGain,
@@ -292,6 +293,7 @@ function inputOwners(events, fps) {
     'toggle-on',
     'toggle-off',
     'confirm',
+    'commit',
     'back',
     'snap',
     'undo',
@@ -346,8 +348,9 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         if (e?.brief === undefined) return e;
         if (typeof e.brief !== 'string' || !e.brief.trim()) throw Error('Supply a nonempty cue brief');
         const style = unpackContext(e.brief);
-        const winner = !e.action && rankByIntent(catalog, e.brief, '', true).find((x) => !x.missing.length);
-        const intent = winner?.editorialAction;
+        const landing = !e.action && markedGraphicLanding(e);
+        const intent = landing ? 'land' : !e.action &&
+          rankByIntent(catalog, e.brief, '', true).find((x) => !x.missing.length)?.editorialAction;
         const action =
           e.action ??
           { key: 'type', typing: 'type', grab: 'drag', close: 'logo' }[intent] ??
@@ -357,6 +360,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         return {
           ...e,
           action,
+          ...(e.physicalContact === undefined && describesSurfaceContact(action, e.brief) ? { physicalContact: true } : {}),
+          ...(landing && silentGesture(e.brief) ? { muted: true } : {}),
           device: e.device ?? (deviceKind(describedDevice) !== 'unknown' ? describedDevice : undefined),
           context: e.context ?? style.context,
           underSpeech: e.underSpeech ?? (style.contexts.includes('speech') || undefined),
@@ -538,7 +543,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       speech.some(([start]) => start > event.frame && (start - event.frame) / fps < 2);
     const compound = ordinaryShortcut(event, selected, mode);
     const edgeTrim = preference?.edgeDb ?? event.briefEdge ?? (inSpeechGap ? -3 : compound ? -2 : 0);
-    const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event) || feedbackFor(event, event.deviceKind) === 'digital';
+    const feedback = feedbackFor(event, event.deviceKind);
+    const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event) || feedback === 'digital' || feedback === 'surface';
     Object.assign(out, perf, {
       ...(fixedTake ? { fixedTake: true } : {}),
       ...((motionAccents.has(event.action) || event.action === 'slide') && event.endFrame !== undefined ? { fitMotion: true } : {}),
@@ -609,6 +615,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       }
     }
   }
+  balanceRapidPresses(cues, fps);
   // A finished stroke and its return belong to the same moving object. Let the sweep
   // occupy the frames around each accent. A deliberate hold between them stays quiet.
   const latestSlide = new Map();

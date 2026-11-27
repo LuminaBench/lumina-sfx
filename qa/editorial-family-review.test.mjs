@@ -50,3 +50,22 @@ test('compatible listening sessions retain contrary opinions about the same take
     assert.equal(applicableVote(revised,sound,'product','speech').decision,'yes');
   } finally {await rm(d,{recursive:true,force:true});}
 });
+
+
+test('rapidly cycling through a walkthrough lowers a whole run once and restores the isolated switch', () => {
+  const frames = [10, 51, 55, 59, 63, 67, 72, 78, 83, 185];
+  const events = frames.map((frame, i) => ({ id: 'choice-' + i, frame, action: 'tab', device: 'mouse' }));
+  const basic = { id: 'one-switch', fps: 25, durationFrames: 200, events };
+  const plan = planEdit(basic, sounds);
+  const cues = plan.cues;
+  assert.equal(new Set(cues.map(c => c.seed)).size, 1);
+  assert.equal(new Set(cues.map(c => c.soundId)).size, 1);
+  assert.deepEqual(cues.slice(1, -1).map(c => c.densityTrimDb), Array(8).fill(-3));
+  assert.equal(new Set(cues.slice(1, -1).map(c => c.gainDb)).size, 1);
+  assert.equal(cues[0].gainDb, cues.at(-1).gainDb);
+  assert.equal(cues[0].densityTrimDb, undefined);
+  const sparse = planEdit({ ...basic, maxAddedContacts: 2 }, sounds);
+  assert.ok(sparse.cues.every(c => c.densityTrimDb === undefined));
+  const hero = planEdit({ ...basic, context: 'hero' }, sounds);
+  assert.ok(hero.cues.every(c => c.densityTrimDb === undefined));
+});

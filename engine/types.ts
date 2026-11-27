@@ -64,6 +64,8 @@ export interface SoundRecipe {
   readonly auditionNote?: string;
   readonly isolation?: 'isolated';
   readonly markers?: Readonly<Record<string, number>>;
+  /** Optional audition substitutes. The named trait is unverified and must be disclosed. */
+  readonly closeMatches?: readonly { phrases: readonly string[]; term: string; note: string }[];
   readonly soloQueries?: readonly string[];
   readonly components?:readonly string[];
   readonly contains?: readonly string[];

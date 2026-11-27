@@ -1,3 +1,4 @@
+import { auditionSubstitutions, worldPerformance, namedLayers } from './world-brief.mjs';
 import { applicableVote, rejectedVote } from './selection-profile.mjs';
 import { geometryConflict, sourcePerspective, mountedAmbience, roomForContact } from './source-perspective.mjs';
 // The coding agent supplies action, viewpoint and emphasis from the user's words.
@@ -5,7 +6,7 @@ import { geometryConflict, sourcePerspective, mountedAmbience, roomForContact } 
 import { unpackContext } from './edit-context.mjs';
 import { silentGesture } from './editorial-intent.mjs';
 import { rankPerformance } from './intent-search.mjs';
-function fitsPerformance(sound, layer) {
+function fitsPerformance(sound, layer, single = false) {
   const start = layer.fromMarker === undefined ? 0 : sound.markers?.[layer.fromMarker];
   if (!Number.isFinite(start) || start < 0 || start >= sound.durationSec) return false;
   if (layer.fitSec !== undefined) {
@@ -17,7 +18,7 @@ function fitsPerformance(sound, layer) {
     }
   }
   return (
-    !layer.durationSec ||
+    !layer.durationSec || (single && !sound.loopable) ||
     sound.loopable ||
     layer.durationSec <= (sound.durationSec - start) / (layer.macros?.speed ?? 1) + 1e-8
   );
@@ -47,7 +48,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     brief.layers.length > 32
   )
     throw Error('Expected a version 2 brief with 1–32 named layers');
-  const { layers, palette, ...design } = brief;
+  const { layers, palette, ...design } = namedLayers(brief);
   if ((palette ?? profile.palette) && !['soft', 'crisp'].includes(palette ?? profile.palette))
     throw Error('Choose a soft or crisp palette');
   design.balance ??=
@@ -61,7 +62,8 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     warnings = [],
     missing = [];
   for (const layer of layers) {
-    const { query, prefer, exclude, ...settings } = layer;
+    const { query, prefer, exclude, exactSource = false, ...settings } = layer;
+    if (typeof exactSource !== 'boolean') throw Error('exactSource must be true or false');
     if (typeof query !== 'string' || !query.trim() || settings.id !== undefined)
       throw Error('Use one audible query per brief layer');
     if (silentGesture(query)) {
@@ -73,13 +75,24 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     const mounted = (design.scope === 'world' && !prefer && !exclude) ?
       mountedAmbience(query, layer.label, design.viewpoint) : undefined;
     const mountedTake = mounted && cleanBank.find(s => s.id === mounted);
-    const rank = entries => rankPerformance(entries, query, exclude ?? '', profile.votes,
+    const worldQuery = design.scope === 'world' && !bank.some(sound => sound.id === query.trim().toLowerCase());
+    const intent = worldQuery ? worldPerformance(query, settings, design.viewpoint) : { query };
+    if (intent.contradiction) {
+      missing.push({ query, label: layer.label, reason: 'The requested source also excludes ' + intent.contradiction });
+      continue;
+    }
+    if (intent.quiet && settings.gain === undefined && !settings.under) settings.gain = 0.56;
+    const rank = entries => rankPerformance(entries, intent.query, exclude ?? '', profile.votes,
       { palette: palette ?? profile.palette, useCase: profile.useCase, signatures: profile.signatures }, settings);
     const exactId = bank.find(sound => sound.id === query.trim().toLowerCase())?.id;
     const context = unpackContext(query).context;
     const vetoedInProject = sound => rejectedVote(applicableVote(profile.votes, sound, profile.useCase, context));
     const matches = rank(cleanBank).filter(hit => !vetoedInProject(hit));
-    const hits = matches.filter(hit => exactId ? hit.id === exactId : !hit.missing.length);
+    const matchesSource = hit => exactId ? hit.id === exactId :
+      !hit.missing.length || (worldQuery && auditionSubstitutions(hit, query, exactSource) !== undefined);
+    const hits = matches.filter(hit => matchesSource(hit) &&
+      (!intent.discrete || !hit.loopable) && (!intent.continuous || hit.loopable || hit.durationSec >= (settings.durationSec ?? 0)) &&
+      (!intent.lowSpeed || hit.params?.speed));
     if (mountedTake && !vetoedInProject(mountedTake) && fitsPerformance(mountedTake, settings)) hits.unshift(mountedTake);
     const terms =
       String(prefer ?? '')
@@ -101,7 +114,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     }
     const conflict = hits.length && geometryConflict(hits[0], settings);
     // Match source duration and time controls before committing to a take.
-    const compatible = hits.filter((s) => !geometryConflict(s, settings) && fitsPerformance(s, settings));
+    const compatible = hits.filter((s) => !geometryConflict(s, settings) && fitsPerformance(s, settings, intent.discrete));
     if (settings.durationSec && settings.placement?.path?.length)
       compatible.sort((a, b) => Number(b.loopable) - Number(a.loopable));
     if (!compatible.length) {
@@ -121,7 +134,19 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
       });
       continue;
     }
-    const hit = compatible[0];
+    // A precise material/size match wins even when a nearby take has preferred tags.
+    const hit = compatible.find(sound => !sound.missing?.length) ?? compatible[0];
+    for (const item of hit.missing?.length ? auditionSubstitutions(hit, query, exactSource) ?? [] : [])
+      warnings.push({ label: settings.label, decision: 'approximation', unverified: item.term, note: item.note });
+    if (intent.lowSpeed && settings.params?.speed === undefined) {
+      const { min, max } = hit.params.speed;
+      settings.params = { ...settings.params, speed: min + (max - min) * 0.2 };
+    }
+    const naturalDuration = (hit.durationSec - (hit.markers?.[settings.fromMarker] ?? 0)) / (settings.macros?.speed ?? 1);
+    if (intent.discrete && !hit.loopable && naturalDuration < settings.durationSec && settings.fitSec === undefined) {
+      warnings.push({label:settings.label, decision:'natural-end', requestedWindowSec:settings.durationSec, naturalDurationSec:naturalDuration});
+      delete settings.durationSec;
+    }
     if (design.scope === 'world' && hit.mixRole === 'vehicle' && settings.placement?.path?.length &&
         settings.placement.kind !== 'listener' && settings.placement.doppler === undefined &&
         !sourcePerspective(hit).motion)
@@ -179,9 +204,26 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     design.scope = resolved.some((l) => cleanBank.find((s) => s.id === l.id)?.mixRole === 'interface')
       ? 'mixed'
       : 'world';
+  // A partial audition lets an agent hear useful evidence before refining a missing source.
+  // Keep relative offsets and gains only when their named predecessors are present.
+  let audition;
+  if (missing.length && resolved.length) {
+    const names = new Set();
+    const playable = resolved.filter(layer => {
+      const anchors = [layer.under, layer.afterLayer, layer.atMarker].filter(Boolean);
+      if (anchors.some(anchor => !names.has(anchor.layer))) return false;
+      names.add(layer.label ?? layer.id);
+      return true;
+    });
+    if (playable.length) {
+      const { focus, ...base } = design;
+      audition = { ...base, balance: 'natural', layers: playable };
+    }
+  }
   return {
     decision: missing.length ? 'review' : 'resolved',
     ...(missing.length ? { resolvedLayers: resolved.map(({label, id}) => ({label, id})) } : {}),
+    ...(audition ? { audition } : {}),
     missing,
     warnings,
     design: missing.length ? null : { ...design, layers: resolved },

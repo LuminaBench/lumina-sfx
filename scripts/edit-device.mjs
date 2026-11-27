@@ -6,7 +6,7 @@ export function deviceKind(value = '') {
   if (/\b(stylus|pencil|pen)\b/.test(text))
     return /\b(barrel|side button)\b/.test(text) ? 'pen-button' : 'pen-tip';
   if (
-    /\b(touch|touchscreen|screen keyboard|onscreen|virtual keyboard|soft keyboard|software keyboard|phone|iphone|ipad|tablet|mobile|android|finger)\b/.test(
+    /\b(touch|touchscreen|screen keyboard|onscreen|virtual keyboard|soft keyboard|software keyboard|phone|iphone|ipad|tablet|mobile|android|finger|fingertip)\b/.test(
       text,
     )
   )
@@ -20,17 +20,35 @@ export function deviceKind(value = '') {
   return 'unknown';
 }
 
-const switchActions = new Set(['press','paste','tab','back','confirm','toggle-on','toggle-off','undo','redo','disabled']);
+const switchActions = new Set(['press','paste','tab','back','confirm','commit','toggle-on','toggle-off','undo','redo','disabled']);
 const pointers = new Set(['mouse','trackpad','trackball','pen-button']);
 export function physicalSwitch(event) {
   return pointers.has(event.deviceKind) && switchActions.has(event.action) && !event.soundId && event.feedback !== 'subtle';
 }
+
+export function withoutQuotedCopy(text) {
+  return text.replace(/"[^"]*"|“[^”]*”|‘[^’]*’|(?<!\w)'[^']*'(?!\w)/g, '');
+}
+
+// The finger must actually meet the surface. Screen copy and a finger hovering
+// above a display are insufficient to add Foley.
+export function describesSurfaceContact(action, brief) {
+  if (!switchActions.has(action)) return false;
+  const description = withoutQuotedCopy(stripButtonLabel(brief));
+  const contact = /\b(?:finger(?:tip| pad)?|stylus(?: tip)?|pen (?:tip|nib))\s+(?:(?:lightly|gently|softly|physically)\s+)?(?:contact(?:s|ing)?|tap(?:s|ping)?|touch(?:es|ing)?|press(?:es|ing)?|meets?)\s+(?:(?:the|a|on|against|phone|tablet|display)\s+)*(?:glass|display|screen|touchscreen)\b/i;
+  return description.split(/[.;!?]/).some(clause => {
+    const match = contact.exec(clause);
+    return match && !/\b(?:no|not|never|without|instead|avoid|label|reads?|says?|caption)\b/i.test(clause.slice(0, match.index));
+  });
+}
+
 export function feedbackFor(event, device) {
   const contact = ['press','type','paste'].includes(event.action);
   if (event.feedback === 'none') return 'silence';
   if (event.soundId) return;
-  if (event.physicalContact && event.action === 'press' && ['touch','pen-tip'].includes(device)) return 'surface';
-  if (device === 'touch' && (contact || switchActions.has(event.action))) return event.feedback === 'subtle' || event.accent ? 'digital' : 'silence';
+  if (device === 'touch' && event.feedback === 'subtle' && (contact || switchActions.has(event.action))) return 'digital';
+  if (event.physicalContact && switchActions.has(event.action) && ['touch','pen-tip'].includes(device)) return 'surface';
+  if (device === 'touch' && (contact || switchActions.has(event.action))) return event.accent ? 'digital' : 'silence';
   if (!contact) return;
   if (device === 'pen-tip' || device === 'unknown') return 'review';
   if (event.action === 'paste' && device === 'unspecified') return 'silence';

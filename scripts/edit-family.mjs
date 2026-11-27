@@ -2,7 +2,9 @@ import { feedbackFor, physicalSwitch, returnKeyDown, spacebarDown } from './edit
 // One recurring screen gesture carries one identity throughout a cut. Direction is a
 // performance constraint on a swipe, while material is a property of the family.
 export function familySlot(e, signatures) {
-  if (feedbackFor(e, e.deviceKind) === 'digital') {
+  const feedback = feedbackFor(e, e.deviceKind);
+  if (feedback === 'surface') return ['press/' + e.deviceKind + '/surface', e.family].filter(Boolean).join('/');
+  if (feedback === 'digital') {
     const shared = ['touch-feedback', e.family].filter(Boolean).join('/');
     // Older profiles can intentionally bind a particular button to its original take.
     const previous = [(['press', 'paste', 'type'].includes(e.action) ? e.action + '/touch' : e.action), e.family]

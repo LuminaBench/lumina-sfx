@@ -8,6 +8,7 @@ import { editorialBrief, editorialTerms, listeningOrder, paletteAffinity, silent
 // Offline retrieval over the catalog. Keep exact search available for asset IDs and scripts.
 const stopWords = new Set('a an the of to for from with at that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more only solo alone'.split(' '));
 const vocabulary = {
+  rustling:'rustle', reeds:'reed', leaves:'leaf', tires:'tire', tyres:'tire', tyre:'tire', indoors:'indoor', outdoors:'outdoor', chirping:'chirp',
   rainfall: 'rain', telephone: 'phone', ringing: 'ring',
   taxiing:'taxi', idling:'idle', cruises:'cruise', throttling:'throttle', changes:'change', rises:'rise', gains:'gain', arrives:'arrive', goes:'go', grabs:'grab', grabbing:'grab', releases:'release', snaps:'snap',
   rolls:'roll', rolling:'roll', hitting:'hit', cruising:'cruise', clucking:'cluck', clucks:'cluck',
