@@ -229,3 +229,19 @@ test('repeat context follows a physical switch across actions and ignores contac
   assert.deepEqual(p.cues.slice(0,3).map(c=>c.context),['rapid','rapid','normal']);
   assert.equal(p.cues[3].decision,'silence');
 });
+
+test('a gamepad confirmation is one contact on its input frame, and keeps an explicit two-stage choice', () => {
+  const controller = { device: 'gamepad' };
+  const events = [
+    event('focus-a', 'focus', 10, controller),
+    event('focus-b', 'focus', 40, controller),
+    event('commit', 'confirm', 70, controller),
+  ];
+  const [a, b, confirmation] = planEdit(cut(events), bank).cues;
+  assert.equal(a.soundId, b.soundId);
+  assert.equal(a.seed, b.seed);
+  assert.equal(confirmation.soundId, 'menu-confirm-spring-detent');
+  assert.equal(confirmation.markerSec, 0);
+  const explicit = { ...events[2], soundId: 'settings-apply-overcentre-latch' };
+  assert.equal(planEdit(cut([explicit]), bank).cues[0].soundId, explicit.soundId);
+});

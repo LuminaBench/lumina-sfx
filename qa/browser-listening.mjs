@@ -78,8 +78,8 @@ try {
     await ctx.audioWorklet.addModule('/meter.js');
     const unlockMs = performance.now() - start;
     let time = 1.15;
-    for (const mode of ['headlocked', 'stereo', 'headphones'])
-      for (const count of [1, 8, 32]) {
+    for (const mode of ['headlocked', 'stereo', 'headphones', 'directed-game'])
+      for (const count of mode === 'directed-game' ? [32] : [1, 8, 32]) {
         const meter = new AudioWorkletNode(ctx, 'scene-meter');
         meter.connect(ctx.destination);
         let stats;
@@ -103,9 +103,10 @@ try {
           rate: r,
           frames: pcm.length,
           listener: { position: [0, 0, 0] },
-          output: mode === 'headphones' ? mode : 'stereo',
+          output: ['headphones', 'directed-game'].includes(mode) ? 'headphones' : 'stereo',
+          balance: mode === 'directed-game' ? 'directed' : 'natural',
           sources,
-          regions: [{ from: 0, to: time, gain: gains }],
+          regions: [{ from: 0, to: time, gain: gains, subjects: ['s0'], marginDb: 6 }],
         };
         const player = new ListeningPlayer(ctx, manifest, new Map(sources.map((s) => [s.label, b])), meter);
         const warmStart = performance.now();
@@ -115,12 +116,17 @@ try {
           when = ctx.currentTime + 0.035;
         player.play(when);
         const setupMs = performance.now() - before;
-        const frames = [];
+        const frames = [], updateMs = [];
         let prev = performance.now(),
           raf;
         const tick = (t) => {
           frames.push(t - prev);
           prev = t;
+          if (mode === 'directed-game' && ctx.currentTime >= when && ctx.currentTime < when + time) {
+            const beforeMove = performance.now();
+            player.setListener({position: [Math.sin(4 * (ctx.currentTime - when)), 0, 0]});
+            updateMs.push(performance.now() - beforeMove);
+          }
           raf = requestAnimationFrame(tick);
         };
         raf = requestAnimationFrame(tick);
@@ -133,6 +139,8 @@ try {
         result.push({
           mode,
           count,
+          ...(updateMs.length ? { cameraUpdates: updateMs.length,
+            cameraUpdateP95ms: updateMs.sort((a,b) => a-b)[Math.floor(updateMs.length*.95)] } : {}),
           warmupMs,
           setupMs,
           latencyAfterScheduledMs: stats?.first == null ? null : 1000 * (stats.first / r - when),
@@ -226,11 +234,73 @@ try {
       return 10*Math.log10(power[1]/power[0]);
     }
     const cutPanDb = [readCut(.15),readCut(cutTime-.05),readCut(cutTime+.04)];
+    // Inspect delivered tone energy after a game moves the listening camera during playback.
+    async function changedCamera(balance, locked, moveSources = false) {
+      const rate = 44100;
+      const context = new OfflineAudioContext(2, 2 * rate, rate);
+      const tones = new Map();
+      for (const [label, hz] of [['motor', 500], ['weather', 1800]]) {
+        const buffer = context.createBuffer(1, 2 * rate, rate);
+        const channel = buffer.getChannelData(0);
+        const length = label === 'motor' ? Math.round(1.35 * rate) : channel.length;
+        for (let i = 0; i < length; i++) channel[i] = 0.12 * Math.sin(2 * Math.PI * hz * i / rate);
+        tones.set(label, buffer);
+      }
+      const point = z => ({ kind: 'point', position: [0, 0, z], air: 0 });
+      const source = (label, z) => ({
+        label, offsetSec: 0, dry: { file: 'tone.wav', restoreGain: 1 },
+        locked: label === 'weather' && locked, placement: point(z),
+      });
+      const player = new ListeningPlayer(context, {
+        schemaVersion: 2, output: 'stereo', balance, rate, frames: 2 * rate,
+        listener: { position: [0, 0, 0] }, sources: [source('motor', -1), source('weather', -5)],
+        regions: [{ from: 0, to: 2, gain: { motor: 1, weather: 1 }, subjects: ['motor'], marginDb: 6 }],
+      }, tones);
+      player.play(0);
+      const moved = context.suspend(0.35);
+      const done = context.startRendering();
+      await moved;
+      if (moveSources) {
+        player.setPlacement('motor', point(-3));
+        player.setPlacement('weather', point(-1));
+      } else {
+        player.setListener({ position: [0, 0, -4] });
+      }
+      await context.resume();
+      const audio = (await done).getChannelData(0);
+      function toneDb(sec, hz) {
+        let real = 0, imaginary = 0;
+        const count = rate / 10;
+        const start = Math.round(sec * rate);
+        for (let i = 0; i < count; i++) {
+          const angle = 2 * Math.PI * hz * i / rate;
+          real += audio[start + i] * Math.cos(angle);
+          imaginary += audio[start + i] * Math.sin(angle);
+        }
+        return 20 * Math.log10(Math.max(1e-10, 2 * Math.hypot(real, imaginary) / count));
+      }
+      const motor = toneDb(1, 500);
+      const bed = toneDb(1, 1800);
+      return { first: toneDb(0.15, 500) - toneDb(0.15, 1800), shifted: motor - bed,
+        motor, bed, after: toneDb(1.84, 1800) };
+    }
+    const focusMove = {
+      natural: await changedCamera('natural', false),
+      directed: await changedCamera('directed', false),
+      locked: await changedCamera('directed', true),
+      emitters: await changedCamera('directed', false, true),
+    };
     await ctx.close();
-    return { unlockMs, rate: ctx.sampleRate, result, pack, turns, cutPanDb };
+    return { unlockMs, rate: ctx.sampleRate, result, pack, turns, cutPanDb, focusMove };
   }, Boolean(prepared));
   const pass =
     !errors.length && Math.abs(results.cutPanDb[0] - results.cutPanDb[1]) < 0.5 && results.cutPanDb[1] < -6 && results.cutPanDb[2] > 6 &&
+    results.focusMove.emitters.shifted > 5 && results.result.some(t => t.cameraUpdates >= 10) &&
+    results.focusMove.natural.shifted < -6 && results.focusMove.directed.shifted > 5 &&
+    Math.abs(results.focusMove.natural.first - results.focusMove.directed.first) < .1 &&
+    Math.abs(results.focusMove.natural.motor - results.focusMove.directed.motor) < .1 &&
+    Math.abs(results.focusMove.locked.bed - results.focusMove.natural.bed) < .1 &&
+    Math.abs(results.focusMove.directed.after - results.focusMove.natural.after) < 1 &&
     results.result.every((t) => t.peak > 0 && t.gapFrames === 0) &&
     results.turns[0] < -6 &&
     results.turns[1] > 6 &&

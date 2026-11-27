@@ -176,6 +176,9 @@ function optionsFor(e, palette, mode) {
       : [];
   if (e.action === 'tab' && palette === 'crisp') return [...basic.tab].reverse();
   if (e.action === 'notice') return ['menu-confirm-pluck', 'menu-confirm-spring-detent'];
+  // A controller confirmation lands at button-down. A two-stage settings latch has a quieter
+  // second contact and its louder pre-travel can fall several frames before the visible input.
+  if (e.action === 'confirm' && e.deviceKind === 'controller') return ['menu-confirm-spring-detent', ...basic.confirm];
   if (e.action === 'confirm') return [...basic.confirm, 'menu-confirm-spring-detent'];
   if (e.action === 'cut') return [...basic.cut, 'linen-match-cut'];
   if (e.action === 'logo') return [...basic.logo, 'delicate-logo-close'];

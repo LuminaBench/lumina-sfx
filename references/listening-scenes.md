@@ -68,7 +68,7 @@ playButton.onclick = async () => {
 player.setListener({ position: [0, 0, 0], yaw: 90 });
 ```
 
-Call `setPlacement(label, pose)` on an active emitter and `stop()` to end playback. Equal-power speaker pan and native HRTF are selectable via the scene output. Browser and offline headphone filters have different timbres. Live focus automation follows the authored mix. Re-render the policy for a substantially different perspective, or drive the game's bus gains explicitly.
+Call `setPlacement(label, pose)` on an active emitter and `stop()` to end playback. Equal-power speaker pan and native HRTF are selectable via the scene output. Browser and offline headphone filters have different timbres. Natural balance follows the moving camera. With directed balance, moving the listener or an emitter also updates the level of adjustable backgrounds when they begin to mask an active subject. The estimate uses dry signal power and direct-path gain. Source locks, the subject level and the authored focus timeline still apply. The background recovers as the subject falls silent. Audition the actual scene to check frequency masking and reflections.
 
 | Delivery | Direction and distance |
 | --- | --- |

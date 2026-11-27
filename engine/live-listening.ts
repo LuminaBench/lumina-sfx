@@ -4,6 +4,7 @@ import type { OutputMode, Placement, Pose, Trajectory } from './spatial.ts';
 
 interface Source {
   label: string;
+  locked?: boolean;
   offsetSec: number;
   dry: { file: string; restoreGain: number };
   placement: Placement;
@@ -12,10 +13,13 @@ interface Segment {
   from: number;
   to: number;
   gain: Record<string, number>;
+  subjects?: readonly string[];
+  marginDb?: number | null;
 }
 export interface ListeningManifest {
   schemaVersion: 2;
   masterGain?: number;
+  balance?: 'natural' | 'directed';
   frames: number;
   rate: number;
   output: OutputMode;
@@ -33,6 +37,7 @@ type LiveVoice = {
   wide: GainNode;
   panner: PannerNode;
   focus: GainNode;
+  cameraTrim?: GainNode;
   placement: Placement;
 };
 const rad = Math.PI / 180;
@@ -83,6 +88,32 @@ function lastMove(p: Placement) {
   const end = Array.isArray(curve) ? (curve.at(-1)?.[0] ?? 0) : 0;
   return Math.max(end, p.path?.at(-1)?.at ?? 0);
 }
+// Compare changes in direct sound at the live and authored camera positions. Reusing the same dry
+// sample window in both estimates keeps the original mix when the game follows the authored path.
+function localPower(buffer: AudioBuffer, seconds: number) {
+  if (seconds < 0 || seconds >= buffer.duration) return 0;
+  const first = Math.floor(seconds * buffer.sampleRate);
+  const count = Math.min(Math.round(0.075 * buffer.sampleRate), buffer.length - first);
+  let power = 0;
+  let samples = 0;
+  for (let c = 0; c < buffer.numberOfChannels; c++) {
+    const pcm = buffer.getChannelData(c);
+    // Stagger samples within successive blocks to avoid sitting on a tone's zero crossings.
+    const end = first + count;
+    let offset = 0;
+    for (let block = first; block < end; block += 17) {
+      const index = Math.min(block + offset, end - 1);
+      power += pcm[index] * pcm[index];
+      samples++;
+      offset = (offset + 7) % 17;
+    }
+  }
+  return power / Math.max(1, samples);
+}
+function availableBedGain(focus: number, fixed: number, bed: number, marginDb: number) {
+  const budget = focus * 10 ** (-marginDb / 10) - fixed;
+  return focus > 1e-10 && bed > 1e-12 && budget > 0 ? Math.min(1, Math.sqrt(budget / bed)) : 1;
+}
 export class ListeningPlayer {
   readonly context: BaseAudioContext;
   readonly manifest: ListeningManifest;
@@ -94,6 +125,9 @@ export class ListeningPlayer {
   private running = false;
   private timer?: ReturnType<typeof setInterval>;
   private scheduledUntil = 0;
+  private liveFocus = false;
+  private lastFocusUpdate = -Infinity;
+  private focusPending = false;
   constructor(
     context: BaseAudioContext,
     manifest: ListeningManifest,
@@ -185,6 +219,50 @@ export class ListeningPlayer {
       ramp(v.src.playbackRate, Math.min(1.8, Math.max(0.55, 343 / (343 + vRad))), t, initial);
     }
   }
+  private scheduleCameraTrim(start: number, until: number, rewind = false) {
+    if (!this.liveFocus || this.manifest.balance !== 'directed') return;
+    // Games often move the camera and several emitters in the same animation frame.
+    // Coalesce the focus estimates while scheduling their spatial positions immediately.
+    if (rewind && this.timer && start - this.lastFocusUpdate < 0.05) {
+      this.focusPending = true;
+      return;
+    }
+    if (rewind) {
+      this.lastFocusUpdate = start;
+      this.focusPending = false;
+    }
+    const end = Math.min(until, this.epoch + this.manifest.frames / this.manifest.rate);
+    if (rewind) {
+      for (const v of this.voices) v.cameraTrim?.gain.cancelScheduledValues(start);
+    }
+    for (let t = start; t < end; t += 0.075) {
+      const clock = t - this.epoch;
+      const region = this.manifest.regions.find(r => r.from <= clock && clock < r.to);
+      let change = 1;
+      if (region?.subjects?.length && region.marginDb != null) {
+        const authored = { subject: 0, locked: 0, adjustable: 0 };
+        const live = { ...authored };
+        for (const v of this.voices) {
+          const power = localPower(v.src.buffer!, clock - v.s.offsetSec) *
+            (v.s.dry.restoreGain * (region.gain[v.s.label] ?? 1)) ** 2;
+          if (power < 1e-12) continue;
+          const group = region.subjects.includes(v.s.label) ? 'subject' : v.s.locked ? 'locked' : 'adjustable';
+          const prior = v.s.placement.kind === 'listener' ? 1 : relativePose(v.s.placement, this.manifest.listener, clock).gain;
+          const now = v.placement.kind === 'listener' ? 1 : relativePose(v.placement, this.listener, clock).gain;
+          authored[group] += power * prior * prior;
+          live[group] += power * now * now;
+        }
+        const baseline = availableBedGain(authored.subject, authored.locked, authored.adjustable, region.marginDb);
+        const needed = availableBedGain(live.subject, live.locked, live.adjustable, region.marginDb);
+        change = Math.min(1, needed / Math.max(1e-6, baseline));
+      }
+      for (const v of this.voices) {
+        if (!v.cameraTrim) continue;
+        const gain = region?.subjects?.includes(v.s.label) ? 1 : change;
+        v.cameraTrim.gain.setTargetAtTime(gain, t, 0.085);
+      }
+    }
+  }
   private schedule(start: number, voices: LiveVoice[], scheduleEar: boolean, until = Infinity) {
     const length = this.manifest.frames / this.manifest.rate,
       end = Math.min(until, this.epoch + length);
@@ -244,7 +322,13 @@ export class ListeningPlayer {
         focus.channelCount = 1;
         focus.channelCountMode = 'explicit';
       }
-      focus.connect(this.destination);
+      const cameraTrim = this.manifest.balance === 'directed' && !s.locked ? ctx.createGain() : undefined;
+      if (cameraTrim) {
+        focus.connect(cameraTrim);
+        cameraTrim.connect(this.destination);
+      } else {
+        focus.connect(this.destination);
+      }
       for (const [i, r] of this.manifest.regions.entries()) {
         const gain = r.gain[s.label],
           t = when + r.from;
@@ -284,12 +368,14 @@ export class ListeningPlayer {
         focus,
         echo,
         reflectionNodes,
+        cameraTrim,
         placement: s.placement,
       };
       this.voices.push(voice);
       src.onended = () => {
         for (const node of [src, filter, panner, direct, wide, focus, echo, ...reflectionNodes])
           node.disconnect();
+        cameraTrim?.disconnect();
         this.voices = this.voices.filter((v) => v !== voice);
         if (!this.voices.length) this.running = false;
       };
@@ -299,7 +385,11 @@ export class ListeningPlayer {
     const live = 'resume' in this.context && !('startRendering' in this.context);
 
     this.scheduledUntil = live ? when + 0.35 : Infinity;
+    this.liveFocus = this.listener !== this.manifest.listener;
+    this.lastFocusUpdate = -Infinity;
+    this.focusPending = false;
     this.schedule(when, this.voices, true, this.scheduledUntil);
+    this.scheduleCameraTrim(when, this.scheduledUntil);
     if (live)
       this.timer = setInterval(() => {
         const now = this.context.currentTime,
@@ -316,6 +406,8 @@ export class ListeningPlayer {
             this.voices.some((v) => lastMove(v.placement) > start - this.epoch)
           )
             this.schedule(start, this.voices, true, next);
+          if (this.focusPending) this.scheduleCameraTrim(now, next, true);
+          else this.scheduleCameraTrim(start, next);
           this.scheduledUntil = next;
         }
       }, 100);
@@ -343,7 +435,10 @@ export class ListeningPlayer {
     ])
       a.cancelScheduledValues(now);
     for (const v of this.voices) this.cancelPlacement(v, now);
-    this.schedule(now, this.voices, true, this.timer ? Math.max(now + 0.1, this.scheduledUntil) : Infinity);
+    const until = this.timer ? Math.max(now + 0.1, this.scheduledUntil) : Infinity;
+    this.liveFocus = true;
+    this.schedule(now, this.voices, true, until);
+    this.scheduleCameraTrim(now, until, true);
   }
   private cancelPlacement(v: LiveVoice, t: number) {
     for (const a of [
@@ -369,7 +464,10 @@ export class ListeningPlayer {
     const now = Math.max(this.context.currentTime, this.epoch);
     if (now >= this.epoch + this.manifest.frames / this.manifest.rate) return;
     this.cancelPlacement(v, now);
-    this.schedule(now, [v], false, this.timer ? Math.max(now + 0.1, this.scheduledUntil) : Infinity);
+    const until = this.timer ? Math.max(now + 0.1, this.scheduledUntil) : Infinity;
+    this.liveFocus = true;
+    this.schedule(now, [v], false, until);
+    this.scheduleCameraTrim(now, until, true);
   }
   stop() {
     clearInterval(this.timer);
