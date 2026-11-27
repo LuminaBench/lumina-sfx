@@ -8,6 +8,8 @@
     "motion-flatboat-throttle",
     "motion-outboard-cranking",
     "response-diesel-loaded",
+    "tractor-diesel-idle-loop",
+    "demo-rotor-bed",
     "demo-carriage-bed",
     "milestone-train",
     "demo-sheltered-wind",

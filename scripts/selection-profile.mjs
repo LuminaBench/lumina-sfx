@@ -15,6 +15,14 @@ export async function selectionProfile(path) {
   if (profile.keyboard !== undefined && !['mechanical','laptop'].includes(profile.keyboard)) throw Error('Choose a mechanical or laptop keyboard');
   if (profile.bindings !== undefined && (!profile.bindings || typeof profile.bindings!=='object' || Array.isArray(profile.bindings) ||
       Object.values(profile.bindings).some(v=>typeof v!=='string'))) throw Error('Expected action-to-recipe bindings');
+  if(profile.signatures!==undefined) {
+    if(!profile.signatures || typeof profile.signatures!=='object' || Array.isArray(profile.signatures))throw Error('Expected project signatures');
+    for(const choice of Object.values(profile.signatures)){
+      if(!choice || typeof choice.id!=='string' || !Number.isInteger(choice.revision) || choice.revision<1 ||
+        (choice.trimDb!==undefined && (!Number.isFinite(choice.trimDb)||choice.trimDb < -92||choice.trimDb>92)) ||
+        (choice.edgeDb!==undefined && (!Number.isFinite(choice.edgeDb)||choice.edgeDb < -12||choice.edgeDb>0))) throw Error('Invalid saved cue signature');
+    }
+  }
   return { ...profile, votes: profile.votes && resolve(dirname(path), profile.votes) };
 }
 

@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2861,
+  "count": 2863,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -50847,6 +50847,58 @@
       },
       "channels": 1,
       "file": "recipes/helicopter-hover-beyond-a-ridge-loop.ts"
+    },
+    {
+      "id": "helicopter-rotor-steady-emitter",
+      "name": "Helicopter main rotor at steady collective",
+      "category": "Aircraft",
+      "isolation": "isolated",
+      "soloQueries": [
+        "helicopter rotor"
+      ],
+      "components": [
+        "helicopter"
+      ],
+      "perspective": "stationary exterior emitter",
+      "tags": [
+        "aircraft",
+        "rotor",
+        "engine",
+        "cruise",
+        "rescue",
+        "helicopter",
+        "forward",
+        "flight",
+        "loop"
+      ],
+      "loopable": true,
+      "sustainMode": "evolving",
+      "durationSec": 4.03,
+      "params": {
+        "rpm": {
+          "label": "Normalized shaft speed",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "intensity": {
+          "label": "Power demand",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Helicopter Flyby",
+        "author": "m_cel",
+        "url": "https://freesound.org/people/m_cel/sounds/534855/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "channels": 1,
+      "file": "recipes/helicopter-rotor-steady-emitter.ts"
     },
     {
       "id": "helicopter-tail-away-over-water",
@@ -110579,6 +110631,68 @@
       },
       "channels": 1,
       "file": "recipes/tractor-diesel-pullaway.ts"
+    },
+    {
+      "id": "tractor-diesel-steady-emitter",
+      "name": "Tractor diesel under a steady field load",
+      "category": "Vehicles & Engines",
+      "isolation": "isolated",
+      "soloQueries": [
+        "tractor engine"
+      ],
+      "components": [
+        "tractor"
+      ],
+      "perspective": "stationary exterior emitter",
+      "tags": [
+        "vehicle",
+        "diesel",
+        "engine",
+        "cruise",
+        "orchard",
+        "tractor",
+        "farm",
+        "lane",
+        "transit",
+        "loop"
+      ],
+      "loopable": true,
+      "sustainMode": "evolving",
+      "durationSec": 3.54,
+      "params": {
+        "rpm": {
+          "label": "Normalized shaft speed",
+          "min": 0,
+          "max": 1,
+          "default": 0.5
+        },
+        "intensity": {
+          "label": "Power demand",
+          "min": 0,
+          "max": 1,
+          "default": 0.55
+        }
+      },
+      "targetRmsDbfs": -24,
+      "mixRole": "vehicle",
+      "recording": {
+        "title": "Tractor Engine",
+        "author": "lucasfuchs",
+        "url": "https://freesound.org/people/lucasfuchs/sounds/518294/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-21"
+      },
+      "additionalRecordings": [
+        {
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
+          "license": "CC0-1.0",
+          "verifiedOn": "2026-11-21"
+        }
+      ],
+      "channels": 1,
+      "file": "recipes/tractor-diesel-steady-emitter.ts"
     },
     {
       "id": "tractor-hitch-pin-dropped-into-hole",

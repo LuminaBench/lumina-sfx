@@ -1,5 +1,14 @@
-import { deviceKind, feedbackFor, excludedTraits } from './edit-device.mjs';
-import { contextOrder, levelMatch, scoreGain, softerEdge } from './edit-context.mjs';
+import { rankByIntent } from './intent-search.mjs';
+import { chooseFamilies, familySlot } from './edit-family.mjs';
+import { deviceKind, feedbackFor, excludedTraits, stripButtonLabel } from './edit-device.mjs';
+import {
+  contextOrder,
+  levelMatch,
+  scoreGain,
+  softerEdge,
+  unpackContext,
+  observedOriginal,
+} from './edit-context.mjs';
 
 // A picture event owns its sound. Words printed inside the interface do not describe the source.
 const basic = {
@@ -112,6 +121,8 @@ function checkEvent(e, ids, durationFrames) {
     throw Error('Supply a gesture ID');
   for (const field of ['device', 'target', 'label'])
     if (e[field] !== undefined && typeof e[field] !== 'string') throw Error('Expected text for ' + field);
+  if (e.family !== undefined && (typeof e.family !== 'string' || !namePattern.test(e.family)))
+    throw Error('Invalid cue family');
   if (e.priority !== undefined && !Number.isFinite(e.priority)) throw Error('Expected numeric priority');
   if (e.sourceContact !== undefined && ![true, false, 'uncertain'].includes(e.sourceContact))
     throw Error('Expected an observed sourceContact');
@@ -147,6 +158,12 @@ function optionsFor(e, palette) {
     return [
       e.deviceKind === 'mechanical' ? 'gasket-mount-keyboard-shortcut' : 'laptop-scissor-keyboard-shortcut',
     ];
+  if (
+    ['tab', 'confirm', 'back', 'toggle-on', 'toggle-off'].includes(e.action) &&
+    ['mouse', 'trackpad', 'trackball', 'pen-button'].includes(e.deviceKind) &&
+    e.feedback !== 'subtle'
+  )
+    return physical[e.deviceKind];
   if (e.action === 'press' || e.action === 'paste') return physical[e.deviceKind] ?? [];
   if (e.action === 'type')
     return e.deviceKind === 'mechanical'
@@ -208,13 +225,15 @@ function performance(e, s, fps, project, mode, speechAt, track) {
   const frame =
     e.syncFrame ??
     (e.action === 'slide' && e.endFrame !== undefined ? Math.floor((e.frame + e.endFrame) / 2) : e.frame);
-  const base = (db[e.action] ?? -2) + (e.deviceKind === 'touch' ? -4 : 0);
+  const actionDb = familySlot(e).startsWith('press/') ? db.press : (db[e.action] ?? -2);
+  const base = actionDb + (e.deviceKind === 'touch' ? -4 : 0);
   const gainAt = (f) => scoreGain(base, s.id, f, fps, mode, speechAt(f), track);
   return {
     soundId: s.id,
     revision: s.revision ?? 1,
     seed: stableSeed(project + '/' + e.id),
     syncFrame: frame,
+    pictureSyncFrame: frame,
     markerSec,
     speed,
     gainDb: gainAt(e.keyFrames?.[0] ?? frame),
@@ -254,6 +273,36 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
   const { fps, durationFrames } = clock(input);
   if (!Array.isArray(input.events))
     throw Error('Supply observed picture events; an empty list scores a silent edit.');
+  if (input.events.some((e) => e?.brief !== undefined)) {
+    input = {
+      ...input,
+      events: input.events.map((e) => {
+        if (e?.brief === undefined) return e;
+        if (typeof e.brief !== 'string' || !e.brief.trim()) throw Error('Supply a nonempty cue brief');
+        const style = unpackContext(e.brief);
+        const winner = !e.action && rankByIntent(catalog, e.brief, '', true).find((x) => !x.missing.length);
+        const intent = winner?.editorialAction;
+        const action =
+          e.action ??
+          { key: 'type', typing: 'type', grab: 'drag', close: 'logo' }[intent] ??
+          intent ??
+          'unresolved';
+        const describedDevice = stripButtonLabel(style.query);
+        return {
+          ...e,
+          action,
+          device: e.device ?? (deviceKind(describedDevice) !== 'unknown' ? describedDevice : undefined),
+          context: e.context ?? style.context,
+          underSpeech: e.underSpeech ?? (style.contexts.includes('speech') || undefined),
+          briefEdge: style.character === 'less-bright' ? -4 : undefined,
+          sourceContact: e.sourceContact ?? (observedOriginal(e.brief) || undefined),
+          ...(action === 'slide' && !e.direction && /\b(left|right)\b/i.test(style.query)
+            ? { direction: style.query.match(/\b(left|right)\b/i)[1].toLowerCase() }
+            : {}),
+        };
+      }),
+    };
+  }
   const bank = new Map(catalog.map((s) => [s.id, s])),
     ids = new Set(),
     groups = new Map();
@@ -288,7 +337,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
     if (!groups.has(group)) groups.set(group, []);
     groups.get(group).push(e);
   }
-  const cues = [];
+  const cues = [],
+    pending = [];
   const priority = new Map(input.events.map((e) => [e.id, eventPriority(e)]));
   for (const events of groups.values()) {
     const ranked = [...events].sort((a, b) => eventPriority(b) - eventPriority(a) || a.frame - b.frame);
@@ -319,6 +369,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         frame: e.frame,
         action: e.action,
         ...(e.gesture ? { gesture: e.gesture } : {}),
+        ...(e.target ? { target: e.target } : {}),
+        ...(e.direction ? { direction: e.direction } : {}),
         ...(e.label ? { label: e.label } : {}),
       };
       const navigation =
@@ -370,18 +422,71 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
           });
         } else {
           owner = e.id;
-          Object.assign(out, {
-            decision: 'play',
-            ...performance(e, sound, fps, project, mode, speechAt, track),
-            perspective: 'listener',
-            device: e.deviceKind,
-            context: mode ?? 'normal',
-            alternatives: alternatives.map((s) => s.id),
+          out.decision = 'play';
+          pending.push({
+            out,
+            event: e,
+            slot: familySlot(e),
+            choices: [sound, ...alternatives],
+            mode,
+            speechAt,
           });
         }
       }
       cues.push(out);
     }
+  }
+  const families = chooseFamilies(pending, style);
+  for (const { out, event, slot, choices, mode, speechAt } of pending) {
+    const { selected, preference } = families.get(event.id);
+    const perf = performance(event, selected, fps, project, mode, speechAt, track);
+    const trim = preference?.trimDb ?? 0;
+    const fixed = [
+      'slide',
+      'cut',
+      'tab',
+      'focus',
+      'scroll',
+      'toggle-on',
+      'toggle-off',
+      'back',
+      'confirm',
+      'notice',
+      'logo',
+    ].includes(event.action);
+    Object.assign(out, perf, {
+      gainDb: Math.max(-80, Math.min(12, perf.gainDb + trim)),
+      projectTrimDb: trim,
+      seed:
+        fixed || ['mouse', 'trackpad', 'trackball', 'pen-button'].includes(event.deviceKind)
+          ? stableSeed(project + '/' + slot + '/' + selected.id.replace(/-(left|right)$/, ''))
+          : perf.seed,
+      ...((preference?.edgeDb ?? event.briefEdge) ? { edgeDb: preference?.edgeDb ?? event.briefEdge } : {}),
+      signature: slot,
+      perspective: 'listener',
+      device: event.deviceKind,
+      context: mode ?? 'normal',
+      alternatives: choices.filter((s) => s.id !== selected.id).map((s) => s.id),
+    });
+  }
+  const cuesById = new Map(cues.map((c) => [c.id, c]));
+  // An observed press and its state change may be marked a frame apart.
+  for (const events of groups.values()) {
+    const possible = events
+      .filter((e) => e.sourceContact !== false)
+      .flatMap((e) => track?.contacts?.[e.id] ?? []);
+    if (!possible.length || events.some((e) => e.sourceContact !== undefined)) continue;
+    const playing = events.map((e) => cuesById.get(e.id)).find((c) => c.decision === 'play');
+    if (!playing) continue;
+    if (playing.keyFrames?.length > 1 && possible.length < playing.keyFrames.length) {
+      // A partially recorded word needs spotting per key before adding another performance.
+      playing.decision = 'review';
+    } else playing.decision = possible.every((x) => x.decision === 'reuse') ? 'reuse' : 'review';
+    playing.sourceEvidence = possible;
+    playing.reason =
+      playing.decision === 'reuse'
+        ? 'Matches a confirmed original contact'
+        : 'A short original transient coincides with the input. Audition original and added contact.';
   }
   if (input.maxAddedContacts !== undefined) {
     let remaining = input.maxAddedContacts;
@@ -420,6 +525,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
     durationFrames,
     useCase: style.useCase,
     palette: style.palette ?? 'soft',
+    ...(input.maxAddedContacts !== undefined ? { maxAddedContacts: input.maxAddedContacts } : {}),
     cues: cues.sort((a, b) => a.frame - b.frame || a.id.localeCompare(b.id)),
   };
 }
@@ -448,6 +554,7 @@ export function reviseEdit(plan, changes, catalog) {
       soundId: requestedSound,
       lock,
       character,
+      sourceDecision,
       ...other
     } = change;
     let soundId = requestedSound;
@@ -456,7 +563,9 @@ export function reviseEdit(plan, changes, catalog) {
       !cue ||
       seen.has(id) ||
       Object.keys(other).length ||
-      [mute, gainDb, trimDb, shiftFrames, soundId, lock, character].every((v) => v === undefined)
+      [mute, gainDb, trimDb, shiftFrames, soundId, lock, character, sourceDecision].every(
+        (v) => v === undefined,
+      )
     )
       throw Error('Invalid edit for ' + id);
     seen.add(id);
@@ -464,11 +573,23 @@ export function reviseEdit(plan, changes, catalog) {
     if (
       cue.locked &&
       lock !== false &&
-      [mute, gainDb, trimDb, shiftFrames, soundId, character].some((x) => x !== undefined)
+      [mute, gainDb, trimDb, shiftFrames, soundId, character, sourceDecision].some((x) => x !== undefined)
     )
       throw Error('Unlock the approved cue before revising ' + id);
     if (lock !== undefined) cue.locked = lock;
-    if ([mute, gainDb, trimDb, shiftFrames, soundId, character].every((x) => x === undefined)) continue;
+    if (sourceDecision !== undefined) {
+      if (!cue.sourceEvidence || !['reuse', 'add'].includes(sourceDecision))
+        throw Error('Expected an observed original contact');
+      cue.decision = sourceDecision === 'add' ? 'play' : 'reuse';
+      cue.sourceChoice = sourceDecision;
+      if (
+        sourceDecision === 'reuse' &&
+        [mute, gainDb, trimDb, shiftFrames, soundId, character].every((v) => v === undefined)
+      )
+        continue;
+    }
+    if ([mute, gainDb, trimDb, shiftFrames, soundId, character, sourceDecision].every((x) => x === undefined))
+      continue;
     if (mute !== undefined && typeof mute !== 'boolean') throw Error('Expected boolean mute');
     if (cue.decision !== 'play' && !(cue.soundId && cue.muted))
       throw Error('Revise source observations before adding sound to ' + id);
@@ -496,6 +617,7 @@ export function reviseEdit(plan, changes, catalog) {
         throw Error('Specify absolute gain or a relative trim');
       const gain = trimDb === undefined ? gainDb : cue.gainDb + trimDb;
       if (!Number.isFinite(gain) || gain < -80 || gain > 12) throw Error('Invalid gainDb');
+      cue.projectTrimDb = (cue.projectTrimDb ?? 0) + gain - cue.gainDb;
       cue.gainDb = gain;
     }
     if (shiftFrames !== undefined) {
@@ -512,6 +634,12 @@ export function reviseEdit(plan, changes, catalog) {
       cue.decision = mute ? 'silence' : 'play';
     }
   }
+  if (
+    next.maxAddedContacts !== undefined &&
+    next.cues.reduce((n, c) => n + (c.decision === 'play' ? (c.keyFrames?.length ?? 1) : 0), 0) >
+      next.maxAddedContacts
+  )
+    throw Error('Revision exceeds the contact budget. Mute another cue in the same edit.');
   next.cues.sort((a, b) => a.frame - b.frame || a.id.localeCompare(b.id));
   return next;
 }

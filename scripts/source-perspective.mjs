@@ -1,11 +1,11 @@
 // Catalog evidence only, independent of the user's proposed trajectory.
 export function sourcePerspective(s) {
-  const words = (s.id.replaceAll('-', ' ') + ' ' + (s.perspective ?? '')).toLowerCase();
+  const words = [s.id, s.perspective, ...(s.contains??[]), ...(s.components??[])].filter(Boolean).join(' ').replaceAll('-', ' ').toLowerCase();
   return {
     local: s.mixRole === 'interface' || (s.tags ?? []).includes('cursor'),
     physicalInput:
       (s.tags ?? []).some((t) => t === 'keyboard' || t === 'device') && (s.tags ?? []).includes('launch'),
-    motion: /\b(fly ?by|pass by|passby|drive by|passes|climbout beyond runway)\b/.test(words),
+    motion: s.perspective!=='stationary exterior emitter' && /\b(fly ?by|pass by|passby|drive by|passes|climbout beyond runway)\b/.test(words),
     distance: /\b(distant|far away|far field)\b/.test(words),
     room: /\b(canyon echo|room tail|hangar echo|corridor echo|room reverb|church reverb)\b/.test(words),
   };

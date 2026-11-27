@@ -103,3 +103,7 @@ If a distant subject disappears, solo it and check for a recording that already 
 | [Last departure in the rain](listening-scenes/last-departure-in-the-rain.json) | Rain stays overhead as one turbine approaches, crosses the hangar and falls away. Its motion drives Doppler and distance. |
 
 For a stationary source, `"acoustics": {"distanceM": 12, "direction": "rear-left"}` measures direction from the listener at emission. The eight horizontal choices run from `front` clockwise through `front-right`, `right`, `rear-right`, `rear`, `rear-left`, `left` and `front-left`. Use `overhead` or `below` for vertical placement. For other angles, provide `bearingDeg` and `elevationDeg` together with the distance. A changing listener pose rotates the heard direction. A source path supplies the changing world position of a moving object.
+
+### Check focus on the delivered mix
+
+The region report includes 100 ms windows measured in stereo, mono and a 300–3400 Hz phone proxy. Look at the tenth-percentile margin and the weakest window's time and masker. During a handoff, `views` includes the eased gain change and `planned` describes steady regional gains. A natural scene keeps its source levels. Directed balance trims an adjustable source where it helps meet the requested clearance. A locked background can make that clearance unreachable. Preserve the lock and audition the reported moment in the picture.

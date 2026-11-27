@@ -92,7 +92,7 @@ export function editorialBrief(terms) {
   else if (has('swipe','slide')) action = has('left','right','panel','screen') ? 'slide' : 'cut';
   else if (has('cut','transition','whoosh')) action = 'cut';
   if (!action) return loneMedium ? {terms:[], needsGesture:true} : undefined;
-  const qualifiers = terms.filter(t => !(t === 'fast' && ['press','tab','focus','toggle'].includes(action)) && !medium.has(t) && !presentation.has(t) &&
+  const qualifiers = terms.filter(t => !(action==='tab' && ['tick','settle','seat','becomes','active','switch','through'].includes(t)) && !(t === 'fast' && ['press','tab','focus','toggle'].includes(action)) && !medium.has(t) && !presentation.has(t) &&
     !['high','energy','energetic','controller','go','short','visual','frame','turn','motion','single','between','into','view','graphic','sci','fi','scifi','futuristic','fantasy'].includes(t));
   return {action, terms:[...new Set([...qualifiers, action])]};
 }

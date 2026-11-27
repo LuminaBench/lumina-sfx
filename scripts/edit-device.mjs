@@ -22,7 +22,14 @@ export function deviceKind(value = '') {
 export function feedbackFor(event, device) {
   const contact = ['press', 'paste', 'type'].includes(event.action);
   if (event.feedback === 'none') return 'silence';
-  if (event.soundId || !contact) return;
+  if (event.soundId) return;
+  if (
+    device === 'touch' &&
+    event.feedback === 'subtle' &&
+    ['tab', 'back', 'confirm', 'notice', 'toggle-on', 'toggle-off'].includes(event.action)
+  )
+    return 'digital';
+  if (!contact) return;
   if (event.physicalContact && event.action === 'press' && ['touch', 'pen-tip'].includes(device))
     return 'surface';
   if (device === 'touch') return event.feedback === 'subtle' || event.accent ? 'digital' : 'silence';

@@ -28,7 +28,7 @@ export function resolveListeningBrief(brief, bank, profile={}) {
     if (typeof query !== 'string' || !query.trim() || settings.id !== undefined)
       throw Error('Use one audible query per brief layer');
     if(silentGesture(query)){warnings.push({label:layer.label, decision:'silence'});continue;}
-    const hits = rankByIntent(cleanBank, query, exclude ?? '', true, profile.votes, {palette:palette??profile.palette,useCase:profile.useCase}).filter(
+    const hits = rankByIntent(cleanBank, query, exclude ?? '', true, profile.votes, {palette:palette??profile.palette,useCase:profile.useCase,signatures:profile.signatures}).filter(
       (hit) => hit.id === query || !hit.missing.length,
     );
     const terms =

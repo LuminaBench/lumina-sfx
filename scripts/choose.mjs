@@ -3,6 +3,7 @@ import { parseArgs } from 'node:util';
 import { readFile } from 'node:fs/promises';
 import { selectionProfile, listeningVotes } from './selection-profile.mjs';
 import {eligibleForIntent} from './source-policy.mjs';
+import { observedOriginal, unpackContext } from './edit-context.mjs';
 import { ambiguousPenRequest } from './edit-device.mjs';
 import { cuePlacement } from './cue-placement.mjs';
 import { leafIds } from './scene-leaves.mjs';
@@ -26,12 +27,13 @@ const bank = catalog.sounds.filter(s => (!values.isolated || s.isolation === 'is
 if(values.brief){
   if(positionals.length || values.scene || values.exclude || values.palette) throw Error('Supply queries and exclusions inside --brief');
   const {resolveListeningBrief}=await import('./listening-brief.mjs');
-  const decision=resolveListeningBrief(JSON.parse(await readFile(values.brief,'utf8')),bank,{palette,votes,useCase:profile.useCase});
+  const decision=resolveListeningBrief(JSON.parse(await readFile(values.brief,'utf8')),bank,{palette,votes,useCase:profile.useCase,signatures:profile.signatures});
   console.log(JSON.stringify(decision,null,2));
   process.exit(decision.design || decision.decision==='silence'?0:2);
 }
 const passBy = /\s+(?:passing|moving|travelling|traveling|flying)\s+(?:past\s+)?(?:the\s+)?listener$/i;
 const requests = positionals.map(query => {
+  if (observedOriginal(query))return {query,silent:true,reuse:true,matches:new Set()};
   if (silentGesture(query)) return {query, silent:true, matches:new Set()};
   if (ambiguousPenRequest(query))
     return {query,matches:new Set(),missing:['tip contact or barrel button']};
@@ -40,7 +42,7 @@ const requests = positionals.map(query => {
   const moving = passBy.test(query);
   const sourceQuery = moving ? query.replace(passBy,'') : query;
   const lookup = moving && /^(?:a |the )?bell$/i.test(sourceQuery.trim()) ? 'phone-ring-bell' : sourceQuery;
-  const ranked = rankByIntent(candidates, lookup, values.exclude, true, votes, {palette, useCase:profile.useCase});
+  const ranked = rankByIntent(candidates, lookup, values.exclude, true, votes, {palette, signatures:profile.signatures, useCase:profile.useCase});
   const matches = ranked.filter(s => !s.missing.length || s.id === query);
   return { query, moving, matches: new Set(matches.map(s => s.id)), top: matches[0]?.id,
     missing: ranked[0]?.missing,
@@ -83,16 +85,20 @@ function completePerformance() {
 }
 const shared = unresolved || hasSilence ? undefined : completePerformance();
 const scene = unresolved || shared || hasSilence ? undefined : await savedScene();
-const decision = requests.every(r=>r.silent) ? 'silence' : unresolved ? 'review' : scene ? 'authored-scene' : shared || requests.length === 1 ? 'single-cue' : 'individual-cues';
+const decision = requests.every(r=>r.reuse) ? 'reuse' : requests.every(r=>r.silent) ? (requests.some(r=>r.reuse)?'individual-cues':'silence') : unresolved ? 'review' : scene ? 'authored-scene' : shared || requests.length === 1 ? 'single-cue' : 'individual-cues';
 const cues = shared ? [{ id:shared.id, covers:positionals, contains:shared.contains }] :
   requests.map((r,i) => r.top ? { request:r.query, id:scene?.sources[i] ?? r.top } :
-    r.silent ? {request:r.query, decision:'silence'} : {request:r.query, closest:null, unmatchedWords:r.missing ?? []});
+    r.silent ? {request:r.query, decision:r.reuse?'reuse':'silence'} : {request:r.query, closest:null, unmatchedWords:r.missing ?? []});
 for(const cue of cues) {
   const request=requests.find(r=>r.query===cue.request);
   if (cue.id?.endsWith('mouse-press') && /\bhold\b/i.test(cue.request)) {
     cue.input = { trigger: 'pointerdown', repeatWhileHeld: false };
   }
   const source = bank.find(sound => sound.id === cue.id);
+  if(source && request){
+    const brief=unpackContext(request.query);
+    if(brief.contexts.length || brief.character)cue.performance={contexts:brief.contexts,...(brief.character?{character:brief.character}:{})};
+  }
   if (source && request) cue.spatial = cuePlacement(source, request.query, request.moving);
 
 }

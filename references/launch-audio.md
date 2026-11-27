@@ -117,3 +117,21 @@ The votes path is relative to the profile. Omit it until you have votes. Use `sc
 Use one accepted input event for a timeline tick. Pair grab with release, and choose a snap only when the object actually seats. `silence` skips an uneventful gesture. `review` carries the words that still need a performance. For a version 2 scene, run `npm run compare -- /path/to/scene.json --omit wind --clean --out /tmp/without-wind.html` to hear whether the named support layer improves the mix. The level-matched blind desk compares both renders.
 
 Intent search groups close takes that were checked in listening pairs. Pass `--all-takes` when choosing round-robin variants. Left and right swipes remain available independently. Field ambience can surface when its incidental birds or insects are requested. The clean source policy continues to require isolated inputs.
+
+## Carry an approved sound into the next edit
+
+Pick one click for the physical device and one swipe material for the edit. Opposite swipe directions can use paired takes. Give a particular control its own `family` only when it needs a distinct identity. A held control produces one contact. A typed word uses its observed key-down frames and a little variation from one key to the next.
+
+Pass the source movie when planning. The scorer checks short windows around marked inputs. An identical waveform from the same mechanism can reuse a confirmed original contact. An isolated impulse can also be speech or percussion. A `review` cue stays quiet until you compare the original and added versions. An explicit source observation overrides the detector.
+
+```sh
+node scripts/score-edit.mjs plan timeline.json --source cut.mp4 --out score.json
+node scripts/score-edit.mjs audition score.json --source cut.mp4 --cue apply --out audition
+node scripts/score-edit.mjs revise score.json --changes approved-changes.json --out approved.json
+node scripts/score-edit.mjs profile approved.json --out project-audio.json
+node scripts/score-edit.mjs recut new-timeline.json --previous approved.json --profile project-audio.json --source new-cut.mp4 --out recut-score.json
+```
+
+The audition desk saves a revision ballot. On a source-transient review it can select the original or the added take. A project profile saves the material, source revision, tone and intended trim for locked playing cues. The new cut still measures its own soundtrack. Keep event IDs stable across edits. A renamed event can use `previousId`. An unambiguous action and target also match. Conflicting matches go to review. Picture offsets carry over in seconds when frame rate changes.
+
+Use `brief` for a frame-marked cue such as “mechanical keyboard click during a spoken walkthrough”. Use `keyFrames` for an observed word, `underSpeech` for an exact narration span, and `sourceContact: true` for a known original. Explicit timing and device observations take precedence.

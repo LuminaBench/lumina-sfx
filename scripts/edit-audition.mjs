@@ -5,6 +5,9 @@ import { reviseEdit } from './edit-score.mjs';
 import { mixPicture, comparePictures } from './edit-media.mjs';
 
 export async function auditionCue(plan, catalog, source, id, alternate, out, stream = 0) {
+  const original=plan;
+  const review=plan.cues.some(c=>c.id===id && c.sourceEvidence && c.decision!=='play');
+  if(review)plan=reviseEdit(plan,[{id,sourceDecision:'add',lock:false}],catalog);
   const cue = plan.cues.find((c) => c.id === id);
   if (cue?.decision !== 'play') throw Error('Choose a playing cue to audition');
   const other = alternate ?? cue.alternatives?.[0];
@@ -22,7 +25,7 @@ export async function auditionCue(plan, catalog, source, id, alternate, out, str
   try {
     const variants = [
       ['selected', plan],
-      ['without', reviseEdit(plan, [{ id, lock: false, mute: true }], catalog)],
+      ['without', review ? original : reviseEdit(plan, [{ id, lock: false, mute: true }], catalog)],
     ];
     if (other) variants.push(['alternate', reviseEdit(plan, [{ id, lock: false, soundId: other }], catalog)]);
     for (const [label, score] of variants) {
@@ -37,9 +40,9 @@ export async function auditionCue(plan, catalog, source, id, alternate, out, str
       join(stage, 'listen.html'),
       other ? join(stage, 'alternate.mp4') : undefined,
       {
-        'selected.mp4': [{ id, lock: true }],
-        'without.mp4': [{ id, mute: true, lock: true }],
-        ...(other && { 'alternate.mp4': [{ id, soundId: other, lock: true }] }),
+        'selected.mp4': [{ id, ...(review?{sourceDecision:'add'}:{}),lock: true }],
+        'without.mp4': [{ id, ...(review?{sourceDecision:'reuse'}:{mute:true}), lock: true }],
+        ...(other && { 'alternate.mp4': [{ id, ...(review?{sourceDecision:'add'}:{}),soundId: other, lock: true }] }),
       },
     );
     await rename(stage, dest);

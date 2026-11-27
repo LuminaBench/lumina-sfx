@@ -1,11 +1,12 @@
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
 import { resolve } from 'node:path';
+import { contactProbes } from './edit-contacts.mjs';
 import { ffmpegPath } from './audio-export.mjs';
 
 // Stereo energy, including anti-phase content. Store a pair of numbers per 50 ms,
 // not decoded PCM for an entire movie. Frame zero uses the source presentation clock.
-export async function measureTrack(file, stream = 0) {
+export async function measureTrack(file, stream = 0, events = [], fps = 30) {
   if (!Number.isSafeInteger(stream) || stream < 0) throw Error('Invalid original audio stream');
   const proc = spawn(
     ffmpegPath(),
@@ -46,7 +47,9 @@ export async function measureTrack(file, stream = 0) {
   proc.stderr.on('data', (b) => {
     error = (error + b).slice(-1500);
   });
-  const windows = [];
+  const windows = [],
+    probes = events.length ? contactProbes(events, fps) : null;
+  let at = 0;
   const flush = () => {
     windows.push({ energy: sum / count, peak });
     sum = 0;
@@ -55,7 +58,13 @@ export async function measureTrack(file, stream = 0) {
   };
   for await (const chunk of proc.stdout) {
     const buf = spare.length ? Buffer.concat([spare, chunk]) : chunk;
-    const end = buf.length - (buf.length % 2);
+    const end = buf.length - (buf.length % 4);
+    if (probes) {
+      const mono = new Float32Array(end / 4);
+      for (let i = 0; i < end; i += 4) mono[i / 4] = (buf.readInt16LE(i) + buf.readInt16LE(i + 2)) / 65536;
+      probes.write(mono, at);
+      at += mono.length;
+    }
     for (let i = 0; i < end; i += 2) {
       const x = buf.readInt16LE(i) / 32768;
       sum += x * x;
@@ -73,5 +82,5 @@ export async function measureTrack(file, stream = 0) {
     throw Error(error || 'Original audio decode failed');
   }
   if (count) flush();
-  return { windowSec: 0.05, windows };
+  return { windowSec: 0.05, windows, contacts: probes?.finish() };
 }

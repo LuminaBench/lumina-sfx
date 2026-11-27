@@ -56,7 +56,7 @@ if (values.help) {
         background: v.background ? review.bed : undefined };
     }
   }
-  if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude, false, votes, {palette,useCase});
+  if (values.intent !== undefined) sounds = rankByIntent(sounds, values.intent, values.exclude, false, votes, {palette,useCase,signatures:profile.signatures});
   if(values.intent && !values.designs && !values['all-takes']) sounds=distinctChoices(sounds);
   if (limit !== undefined) sounds = sounds.slice(0, limit);
   if (values.json) console.log(JSON.stringify(sounds, null, 2));

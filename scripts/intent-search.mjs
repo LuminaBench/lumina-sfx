@@ -1,3 +1,4 @@
+import { deviceKind } from './edit-device.mjs';
 import { contextOrder, unpackContext } from './edit-context.mjs';
 import { contactQuery, excludedTraits, ambiguousPenRequest } from './edit-device.mjs';
 import {eligibleForIntent} from './source-policy.mjs';
@@ -160,10 +161,12 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
 
     const vote = fitsUse && (ballot?.revision ?? 1) === (sound.revision ?? 1) ? ballot?.decision : undefined;
     const preference = vote === 'no' || vote === 'rejected' ? -1 : vote === 'yes' || vote === 'approved' ? 1 : 0;
+    const matchingProfile=options.signatures && editorial?.action && Object.entries(options.signatures).some(([slot,v])=>
+      (slot===editorial.action || slot===('press/'+deviceKind(query))) && v.id===sound.id && v.revision===(sound.revision??1));
     const signature = Number(terms.some(t=>t==='sting' || t==='stinger') && title.has('signature'));
     const order = editorial ? listeningOrder(sound.id) : 0;
     const character = editorial ? subject.filter(t => ['quiet','soft','warm','crisp','gentle','minimal','energetic','energy'].includes(t) && (title.has(t) || tags.has(t))).length : 0;
-    scored.push({ sound: result, solo, surfaceStep, continuous, familyFit, signature, hits, preference, order, character, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
+    scored.push({ sound: result, matchingProfile:Boolean(matchingProfile), solo, surfaceStep, continuous, familyFit, signature, hits, preference, order, character, score: score * hits / terms.length * (1 + Math.min(2, affinity) * 0.10), exact: query.trim().toLowerCase() === sound.id });
   }
   if (spotted.context && editorial) {
     const familiar=scored.filter(x=>x.order<100 || /quiet-mouse-press|velvet-swipe|linen-match-cut/.test(x.sound.id));
@@ -171,7 +174,7 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
     for (const x of familiar) x.order=order.indexOf(x.sound.id);
   }
   return scored.sort((a, b) => Number(b.exact) - Number(a.exact) || Number(b.solo) - Number(a.solo) ||
-    b.hits - a.hits || b.surfaceStep-a.surfaceStep || b.continuous-a.continuous || Number(a.preference < 0) - Number(b.preference < 0) || b.familyFit-a.familyFit || b.signature - a.signature || b.character - a.character ||
+    b.hits - a.hits || b.surfaceStep-a.surfaceStep || b.continuous-a.continuous || Number(a.preference < 0) - Number(b.preference < 0) || Number(b.matchingProfile)-Number(a.matchingProfile) || b.familyFit-a.familyFit || b.signature - a.signature || b.character - a.character ||
     (editorial ? a.order - b.order : 0) || b.score - a.score || b.preference - a.preference ||
     a.sound.id.localeCompare(b.sound.id)).map(item => mood ? { ...item.sound, suggestedMood: mood } : item.sound);
 }

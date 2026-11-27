@@ -1,4 +1,5 @@
 // Scene time is in seconds. The focus policy only changes gain; movement belongs to placement.
+import {monitorFocus, type FocusMonitor} from './focus-monitor.ts';
 import { biquad } from './dsp.ts';
 import { composeRecipe, sceneStyles } from './remix.ts';
 import type { RemixDesign, RemixLayer, TimedStem } from './remix.ts';
@@ -57,6 +58,7 @@ export interface Region {
   overlapWindows: number;
   transientWindows: number;
   conflicts: string[];
+  monitors?: FocusMonitor;
   delivered?: {
     activeWindows: number;
     focusDbfs: number;
@@ -282,6 +284,7 @@ function auditRegion(stems: Stem[], regions: Region[], k: number, rate: number) 
     r.measuredBeforeDb=r.measuredAfterDb=quantile(active.map(w=>gap(w.f,w.b)),.05);
     r.worstTimeSec=worst.t;
   }
+  r.measuredAfterDb=quantile(active.map(w=>gap(w.f,w.b)),.05);
   r.delivered = {
     activeWindows: active.length,
     focusDbfs: levelDb(worst.f),
@@ -424,16 +427,20 @@ export function composeListeningScene(
         }
       }
       const regions: Region[] = [];
+      function ambientRegion(from:number,to:number) {
+        const region=measure(stems,{...focus,subjects:balance==='natural'?[]:focus.subjects,from,to},rate);
+        if(balance==='natural'){region.subjects=focus.subjects;region.marginDb=null;}
+        return region;
+      }
       let t = 0;
       for (const m of moments) {
-        if (m.from > t) regions.push(measure(stems, { ...focus, from: t, to: m.from }, rate));
+        if (m.from > t) regions.push(ambientRegion(t,m.from));
         regions.push(measure(stems, { ...m, marginDb: m.marginDb ?? focus.marginDb }, rate));
         t = m.to;
       }
-      if(t<frames/rate){
-        const region=measure(stems,{...focus,subjects:balance==='natural'?[]:focus.subjects,from:t,to:frames/rate},rate);
-        if(balance==='natural'){region.subjects=focus.subjects;region.marginDb=null;}
-        regions.push(region);
+      if(t<frames/rate)regions.push(ambientRegion(t,frames/rate));
+      for(const r of regions){
+        if(r.marginDb!==null || inspect)r.monitors=monitorFocus(stems,r,rate,r.marginDb!==null);
       }
       const mix = Array.from({ length: output === 'mono' ? 1 : 2 }, () => new Float32Array(frames));
       for (const s of stems) {
@@ -451,7 +458,13 @@ export function composeListeningScene(
         }
       }
       if (inspect) {
-        regions.forEach((_, i) => auditRegion(stems, regions, i, rate));
+        regions.forEach((r,i)=>{
+          auditRegion(stems,regions,i,rate);
+          if(i && r.monitors && stems.some(s=>regions[i-1].gain[s.label]!==r.gain[s.label])){
+            const audible=monitorFocus(stems,r,rate,false,(label,time)=>regionGain(regions,i,time,label));
+            if(audible){r.monitors.planned=r.monitors.views;r.monitors.views=audible.views;}
+          }
+        });
         let peak = 0;
         for (const channel of mix) for (const x of channel) peak = Math.max(peak, Math.abs(x));
         const masterGain = Math.min(1, 10 ** (-0.58 / 20) / Math.max(peak, 1e-12));

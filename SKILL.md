@@ -25,6 +25,8 @@ For long rain, flame or a steady motor, prefer a catalog loop with `sustainMode:
 
 Use the [listening scene guide](references/listening-scenes.md) to resolve a brief, render headphones/stereo/mono, inspect the combined bed at the listener, or install independent live emitters. Name each layer once and keep its label across edits. Choose and save the simplest scene that meets the brief. For “a jet in a storm” start with the engine as the subject. For “a storm with a barely audible jet” prioritise the weather, set the jet's distance from the viewpoint and audition its quiet level. Preserve locks and report audible conflicts.
 
+For a series of demos, save the approved click and transition with `score-edit.mjs profile`. Give each input mechanism one recognizable sound across the edit. Use the same project profile on the next episode. A phone confirmation can use a light digital tick. A filmed mouse or trackpad gets its physical contact. On a revised cut, use `score-edit.mjs recut` with the previous score and the new source. Audition an ambiguous original transient in context before adding a second contact. [Profiles, source contacts and recuts](references/launch-audio.md#carry-an-approved-sound-into-the-next-edit)
+
 ## 1. Search for the closest performance
 
 For footsteps, choose the delivery first. One plant, a timed walk and a live animation marker use the same recorded takes. Use the [movement guide](references/footsteps.md) for surface selection, alternating feet, turns, wetness and listener direction. A change of ground keeps the character’s stride history. For a walk that breaks into a run, use a route with `transitionSteps` to let pace and effort change together.

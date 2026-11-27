@@ -286,3 +286,24 @@ test('named directions use the listener orientation at emission and retain dista
     assert.throws(() => sound({direction,bearingDeg}), /direction or numeric/);
   }
 });
+
+test('phone monitoring distinguishes an immovable masker from an adjustable contributor', async () => {
+  const { monitorFocus } = await import('../engine/focus-monitor.ts');
+  const make = (label, hz, amplitude, locked = false) => {
+    const signal = Float32Array.from({length: rate}, (_,i) => amplitude * Math.sin(2*Math.PI*hz*i/rate));
+    return {label, locked, offset:0, ears:[signal,signal]};
+  };
+  for (const reachable of [false,true]) {
+    const stems = [make('subject',845,.1),make('fixed',610,reachable ? .064 : .35,true),make('secondary',1090,.055)];
+    const region = {from:0,to:1,subjects:['subject'],marginDb:3,gain:{subject:1,fixed:1,secondary:1}};
+    const result = monitorFocus(stems,region,rate,true);
+    assert.equal(region.gain.fixed,1);
+    if (reachable) {
+      assert.ok(region.gain.secondary<1);
+      assert.ok(result.views.phone.p10Db >= 3);
+    } else {
+      assert.equal(region.gain.secondary,1);
+      assert.equal(result.views.phone.worst.masker,'fixed');
+    }
+  }
+});
