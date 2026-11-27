@@ -203,6 +203,10 @@ export function rankPerformance(bank, query, exclude, votes, options, layer = {}
   const request = editorial ? {text:query, single:false} : worldRequest(query,layer);
   const ranked = rankByIntent(bank,request.text,exclude,true,votes,options);
   if (!request.single) return ranked;
-  return ranked.filter(s => !s.loopable &&
-    !/\b(?:burst|double|triple|sequence|volley|series|pair)\b/i.test(s.id.replaceAll('-', ' ')));
+  const gesture=/\b(?:strike|clap|crack|tap|knock|hit|step|splash|shot|snap|slam|ping|blast)\b/i.test(request.text);
+  const compound=/\b(?:burst|double|triple|sequence|volley|series|pair)\b/i;
+  return ranked.filter(sound =>
+    (!gesture || !sound.loopable) &&
+    (compound.test(request.text) || !compound.test(sound.id.replaceAll('-', ' '))));
+
 }

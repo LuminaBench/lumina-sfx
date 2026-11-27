@@ -215,6 +215,56 @@
       "current": "5403bd822046287ad753fb1440403c076c0eb2ae69185340c73b1b369488813a",
       "reason": "Use an airy picture transition and a short physical resolve for product edits."
     },
+    "displacement-cargo-vessel-approach-to-breakwater": {
+      "previous": "daee200ea4aa32211ddf7165650d91543a59924bb76bf7feeb50f53d5ae11f69",
+      "current": "7a9d61c93e44c8c3620eea100353eef2e9911a76a750cc90c8843f92baf0213e",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-departure-beyond-harbor-mouth": {
+      "previous": "fd7326f7af772a9c5b79a59eb61d883efb8ae2a0cbaa3a37a14f9a787cba1787",
+      "current": "def9e50cc6bac9507504c08c34d64d44cdfb0e81c7c6277e852dbc8463f23bad",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop": {
+      "previous": "50fa2ed810db55945852246fcba5af87a1167bb960550418117a8170f00929ea",
+      "current": "2156cadb9f9b6d20579180c458ce26a5e200db441618c7cb64cd10e7fdf0df02",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-harbor-idle-machinery-loop": {
+      "previous": "06ab6459c563253af94d52da1fda1c374a31852e733a1e7a98a86dd5d85d0150",
+      "current": "dbe3ca33429dfcbf9f1443ce61b9bb5d28646738a6486520fafddfb48dc74927",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-loaded-shaft-propulsion-loop": {
+      "previous": "99c63d91c70606ae885ef82d4ea6b20d0948c5e6b406af4fb7a149cc3fb374c3",
+      "current": "00a2873335799dc6b56b691f2f6e3b7383fbeae33044098f88f10efba43b65ea",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-passage-cruise-loop": {
+      "previous": "9f7ae862ffa3c965dd07f2db1f589da4a9cc921baf05128c6b264dccad1f0d74",
+      "current": "b7dfc37825111f6238ee6c37972a46f9d111adfda249da33cdfad926c948cfb2",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-reduce-to-harbor-speed": {
+      "previous": "dbd7770b64d726d3aa4a80f1abd240b340ecee716281b1d23a0789fac3a5b750",
+      "current": "54d848e832acd6fdb3d31cf336ac55abf23c64da7a90aab1a957a8eff4ce42e4",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-ring-up-full-ahead": {
+      "previous": "62d89fdb3a31abfa531ca7a229cc0def769426629384e31dca6b6127f5e832ad",
+      "current": "7489bc0ea010a115c6676bc483e00afb19a61e56655aaef88f58f05420f0d6b3",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-settle-alongside-berth": {
+      "previous": "9f148c1982b2316ed4f7770af3df1a5f924ddcd648dad0689b67ef5664caaf0e",
+      "current": "9bd8431c39585d63ca8c75831ff5be39744702b93b2ebac68bc6489b7a8138f2",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
+    "displacement-cargo-vessel-two-docking-throttle-corrections": {
+      "previous": "5b8c5391a9d103b8ef679e7bf189b767f9b2780cb897920fc3887bb3b9cd8d75",
+      "current": "0e7ebe20bde81600fb9e405487d6bf649c6fbb499adf8772f53d1bbb13abe0b3",
+      "reason": "Use above-water marine engine and diesel shaft textures for the vessel."
+    },
     "distant-rolling-thunder": {
       "previous": "dd620fbaef2114f69fca3157b2b5d8a9a040d2931ce5d7c6369cd5aab10884c0",
       "current": "61aa0bc5a7f89c8938c1aa360844820afefd2361f71c0b97be3a07e341869d61",
@@ -532,8 +582,8 @@
     },
     "gusts-pushing-through-dry-maize-intermittent-lulls-loop": {
       "previous": "668835ac7fdae7027a580beef4b7f71bd528a95fe4618b5fd0b5656fd2531747",
-      "current": "2061c2b1178db60c79b92c641d5d0d2ea8eade04a687a9b3402c646863e040fb",
-      "reason": "Remove unrelated field or mechanical events from the wind performance."
+      "current": "1b49395b30d574ee5fd0cb71026cf92d6f09eedd9e79a1ddc31201e905070cd5",
+      "reason": "Retain individual dry leaf rubs in the recorded maize gust."
     },
     "gusts-pushing-through-dry-maize-sustained-current-loop": {
       "previous": "2866929a8d00d0a3f746f1cf4610f5d97678c5e4b07d732514d94992ea2e2a14",
@@ -630,6 +680,11 @@
       "current": "beeda970f24c88090cff289b3f91c0e57fa98e161c2ee6355ddb723d7db83873",
       "reason": "Replace the misidentified film-winding source with wind."
     },
+    "indoor-floorboard-brief-flex": {
+      "previous": "2f5bec95cd6776a8eff9904f893b94aa68039e5eaf08bee8bbd8cf38faf7cb35",
+      "current": "3b2d18131a102e141cd06deee97e489f30bb31413eba17b36e139a6f5c751992",
+      "reason": "Carry board strain through loading and release with coupled timber resonances."
+    },
     "interceptor-turbofan-canopy-interior-cruise-loop": {
       "previous": "bf7f8ac08a137f7cfa39b932660250b0783bc988d9dd96eb1a7ab5d78ff7a4ff",
       "current": "c7884b706b6509317f2957552cdfe6321bf9f6177d3b8afea215f57832a3c813",
@@ -664,6 +719,11 @@
       "previous": "fc73ea07a6689a6b4998d71433fcf7d7e6b86f92db01a9b5efba1840a518a0fb",
       "current": "e584b7112311760b3358c0757ca98f7395bb11907943a918efd3ebb9898536b5",
       "reason": "Use species-specific takes and remove competing background events."
+    },
+    "laptop-scissor-keyboard-shortcut": {
+      "previous": "eeb9438ae97137e2a6c540c1cde1cf065fcc9afe72fdcf074dbdc2af814de1f1",
+      "current": "80c7997ce76c4d10471edee205b839812f366044ff32e33efaea8e8ada370f76",
+      "reason": "Keep the modifier and letter together with lighter key returns."
     },
     "light-propeller-plane-cockpit-loop": {
       "previous": "54b2cee489070ea610b56e7f993febff52f4248d67f4f9494028a8d6af26ace6",

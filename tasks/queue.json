@@ -16041,7 +16041,7 @@
       "durationSec": 2.85,
       "loopable": false,
       "brief": "Displacement cargo vessel approach to breakwater",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-departure-beyond-harbor-mouth",
@@ -16051,7 +16051,7 @@
       "durationSec": 2.63,
       "loopable": false,
       "brief": "Displacement cargo vessel departure beyond harbor mouth",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop",
@@ -16061,7 +16061,7 @@
       "durationSec": 2.65,
       "loopable": true,
       "brief": "Displacement cargo vessel enclosed wheelhouse vibration loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-harbor-idle-machinery-loop",
@@ -16071,7 +16071,7 @@
       "durationSec": 2.24,
       "loopable": true,
       "brief": "Displacement cargo vessel harbor idle machinery loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-loaded-shaft-propulsion-loop",
@@ -16081,7 +16081,7 @@
       "durationSec": 2.47,
       "loopable": true,
       "brief": "Displacement cargo vessel loaded shaft propulsion loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-passage-cruise-loop",
@@ -16091,7 +16091,7 @@
       "durationSec": 2.95,
       "loopable": true,
       "brief": "Displacement cargo vessel passage cruise loop",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-reduce-to-harbor-speed",
@@ -16101,7 +16101,7 @@
       "durationSec": 1.66,
       "loopable": false,
       "brief": "Displacement cargo vessel reduce to harbor speed",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-ring-up-full-ahead",
@@ -16111,7 +16111,7 @@
       "durationSec": 2.11,
       "loopable": false,
       "brief": "Displacement cargo vessel ring up full ahead",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-settle-alongside-berth",
@@ -16121,7 +16121,7 @@
       "durationSec": 2.35,
       "loopable": false,
       "brief": "Displacement cargo vessel settle alongside berth",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "displacement-cargo-vessel-two-docking-throttle-corrections",
@@ -16131,7 +16131,7 @@
       "durationSec": 2.3,
       "loopable": false,
       "brief": "Displacement cargo vessel two docking throttle corrections",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "distant-impact-through-a-floor",
@@ -18175,7 +18175,8 @@
       "collection": "Field ambiences — wind",
       "durationSec": 6.99,
       "loopable": true,
-      "brief": "Gusts pushing through dry maize — intermittent lulls"
+      "brief": "Gusts pushing through dry maize — intermittent lulls",
+      "revision": 2
     },
     {
       "id": "gusts-pushing-through-dry-maize-sustained-current-loop",
@@ -27365,7 +27366,7 @@
       "loopable": false,
       "brief": "Laptop scissor keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "laptop-scissor-keyboard-typed-word",
@@ -28989,11 +28990,11 @@
       "category": "Props & Interactions",
       "status": "review",
       "collection": "Household · Floors",
-      "durationSec": 0.212,
+      "durationSec": 0.34,
       "loopable": false,
       "brief": "Brief flex of a domestic floorboard",
       "acceptance": "One isolated action, suitable for close indoor use.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stride-hardwood",
@@ -29129,7 +29130,7 @@
       "category": "Footsteps & UI",
       "durationSec": 0.054,
       "loopable": false,
-      "revision": 2
+      "revision": 1
     },
     {
       "id": "fingertip-on-display-glass",

@@ -27458,7 +27458,7 @@
       "id": "displacement-cargo-vessel-approach-to-breakwater",
       "name": "Displacement cargo vessel approach to breakwater",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27491,17 +27491,17 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27513,7 +27513,7 @@
       "id": "displacement-cargo-vessel-departure-beyond-harbor-mouth",
       "name": "Displacement cargo vessel departure beyond harbor mouth",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27548,17 +27548,17 @@
       "targetRmsDbfs": -23,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27570,7 +27570,7 @@
       "id": "displacement-cargo-vessel-enclosed-wheelhouse-vibration-loop",
       "name": "Displacement cargo vessel enclosed wheelhouse vibration loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27605,17 +27605,17 @@
       "targetRmsDbfs": -28,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27627,7 +27627,7 @@
       "id": "displacement-cargo-vessel-harbor-idle-machinery-loop",
       "name": "Displacement cargo vessel harbor idle machinery loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27661,17 +27661,17 @@
       "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27683,7 +27683,7 @@
       "id": "displacement-cargo-vessel-loaded-shaft-propulsion-loop",
       "name": "Displacement cargo vessel loaded shaft propulsion loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27718,17 +27718,17 @@
       "targetRmsDbfs": -21,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27740,7 +27740,7 @@
       "id": "displacement-cargo-vessel-passage-cruise-loop",
       "name": "Displacement cargo vessel passage cruise loop",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27773,17 +27773,17 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27795,7 +27795,7 @@
       "id": "displacement-cargo-vessel-reduce-to-harbor-speed",
       "name": "Displacement cargo vessel reduce to harbor speed",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27830,17 +27830,17 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27852,7 +27852,7 @@
       "id": "displacement-cargo-vessel-ring-up-full-ahead",
       "name": "Displacement cargo vessel ring up full ahead",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27887,17 +27887,17 @@
       "targetRmsDbfs": -22,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27909,7 +27909,7 @@
       "id": "displacement-cargo-vessel-settle-alongside-berth",
       "name": "Displacement cargo vessel settle alongside berth",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27942,17 +27942,17 @@
       "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -27964,7 +27964,7 @@
       "id": "displacement-cargo-vessel-two-docking-throttle-corrections",
       "name": "Displacement cargo vessel two docking throttle corrections",
       "category": "Vehicles & Engines",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "collection": "Propulsion · Watercraft",
       "tags": [
@@ -27999,17 +27999,17 @@
       "targetRmsDbfs": -23,
       "mixRole": "vehicle",
       "recording": {
-        "title": "140816_Brela_HarborSub2.wav",
-        "author": "blaukreuz",
-        "url": "https://freesound.org/people/blaukreuz/sounds/249755/",
+        "title": "Boat engine.wav",
+        "author": "XiiiSamples",
+        "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
         "license": "CC0-1.0",
         "verifiedOn": "2026-11-21"
       },
       "additionalRecordings": [
         {
-          "title": "Boat engine.wav",
-          "author": "XiiiSamples",
-          "url": "https://freesound.org/people/XiiiSamples/sounds/382002/",
+          "title": "Diesel engine idle and gas",
+          "author": "Iridiuss",
+          "url": "https://freesound.org/people/Iridiuss/sounds/399773/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -46478,6 +46478,7 @@
       "id": "gusts-pushing-through-dry-maize-intermittent-lulls-loop",
       "name": "Gusts pushing through dry maize — intermittent lulls",
       "category": "Weather & Ambience",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "wind"
@@ -46494,6 +46495,7 @@
         "dry"
       ],
       "loopable": true,
+      "sustainMode": "evolving",
       "durationSec": 6.99,
       "params": {
         "intensity": {
@@ -46514,9 +46516,9 @@
       },
       "additionalRecordings": [
         {
-          "title": "Whistling wind at marina",
-          "author": "richwise",
-          "url": "https://freesound.org/people/richwise/sounds/796396/",
+          "title": "Rustling Leaves.wav",
+          "author": "FunWithSound",
+          "url": "https://freesound.org/people/FunWithSound/sounds/406099/",
           "license": "CC0-1.0",
           "verifiedOn": "2026-11-21"
         }
@@ -54161,7 +54163,7 @@
       "id": "indoor-floorboard-brief-flex",
       "name": "Quiet indoor floorboard creak under weight",
       "category": "Props & Interactions",
-      "revision": 1,
+      "revision": 2,
       "isolation": "isolated",
       "contains": [
         "brief wood flex"
@@ -54178,7 +54180,7 @@
         "quiet"
       ],
       "loopable": false,
-      "durationSec": 0.212,
+      "durationSec": 0.34,
       "params": {
         "load": {
           "label": "Board load",
@@ -57113,7 +57115,7 @@
       "id": "laptop-scissor-keyboard-shortcut",
       "name": "Laptop scissor keyboard modifier and shortcut",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -103805,7 +103807,7 @@
       "id": "stylus-tip-on-tablet-glass",
       "name": "Polymer pen tip on tablet glass",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 1,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -103840,13 +103842,6 @@
       },
       "targetRmsDbfs": -30,
       "mixRole": "foley",
-      "recording": {
-        "title": "Ceramic_Mug_Cup.wav",
-        "author": "Jamitch2",
-        "url": "https://freesound.org/people/Jamitch2/sounds/344704/",
-        "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
-      },
       "channels": 1,
       "file": "recipes/stylus-tip-on-tablet-glass.ts"
     },

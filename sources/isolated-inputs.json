@@ -20,7 +20,6 @@
     "milestone-prop-steady"
   ],
   "transient": [
-    "ceramic-mug-set-down",
     "clarity-pistol",
     "atlas-firecracker",
     "response-microclick",
@@ -33,6 +32,10 @@
     "hardwood-footstep"
   ],
   "windows": {
+    "dry-maize-leaf": {
+      "source": "field-corn-rustle",
+      "cuts": [[0, 4.66, 0.86], [0, 7.72, 1.08], [0, 11.67, 0.94], [0, 17.21, 1.03]]
+    },
     "key-firm": {
       "source": "milestone-key-single",
       "cuts": [

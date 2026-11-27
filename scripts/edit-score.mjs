@@ -212,6 +212,11 @@ function pick(e, profile, votes, bank, mode) {
   };
   return choices.filter((s) => preference(s) >= 0).sort((a, b) => preference(b) - preference(a));
 }
+function ordinaryShortcut(e, sound, mode) {
+  return (
+    e.action === 'paste' && sound.tags.includes('keyboard') && sound.tags.includes('chord') && mode !== 'hero'
+  );
+}
 function performance(e, s, fps, project, mode, speechAt, track) {
   const speed =
     e.action === 'slide' && e.endFrame !== undefined
@@ -226,7 +231,9 @@ function performance(e, s, fps, project, mode, speechAt, track) {
     (e.action === 'slide' && e.endFrame !== undefined ? Math.floor((e.frame + e.endFrame) / 2) : e.frame);
   const actionDb = familySlot(e).startsWith('press/') ? db.press : (db[e.action] ?? -2);
   const base = actionDb + (e.deviceKind === 'touch' ? -4 : 0);
-  const gainAt = (f) => scoreGain(base, s.id, f, fps, mode, speechAt(f), track);
+  // A chord exposes several switch transients where a normal selection exposes one.
+  const compound = ordinaryShortcut(e, s, mode);
+  const gainAt = (f) => scoreGain(base, s.id, f, fps, mode, speechAt(f), track) - (compound ? 3.5 : 0);
   return {
     soundId: s.id,
     revision: s.revision ?? 1,
@@ -471,6 +478,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       !mode &&
       speech.some(([, end]) => end <= event.frame && (event.frame - end) / fps < 2) &&
       speech.some(([start]) => start > event.frame && (start - event.frame) / fps < 2);
+    const compound = ordinaryShortcut(event, selected, mode);
+    const edgeTrim = preference?.edgeDb ?? event.briefEdge ?? (inSpeechGap ? -3 : compound ? -2 : 0);
     const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event);
     Object.assign(out, perf, {
       ...(fixedTake ? { fixedTake: true } : {}),
@@ -481,9 +490,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         ? (preference?.seed ??
           stableSeed(project + '/' + slot + '/' + selected.id.replace(/-(left|right)$/, '')))
         : perf.seed,
-      ...((preference?.edgeDb ?? event.briefEdge ?? inSpeechGap)
-        ? { edgeDb: preference?.edgeDb ?? event.briefEdge ?? -3 }
-        : {}),
+      ...(edgeTrim ? { edgeDb: edgeTrim } : {}),
       signature: slot,
       perspective: 'listener',
       device: event.deviceKind,

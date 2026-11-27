@@ -318,4 +318,5 @@ test('one event, vehicle state, exact ID and source markers survive free-text so
   assert.equal(choose('light-jet-taxi-thrust-loop',{fromMarker:'not-a-marker'}).decision,'review');
   assert.equal(choose('thunder-isolated-rolling-strike',{durationSec:30}).decision,'review');
   assert.equal(choose('hydrogen bus pneumatic door closing at highway speed').decision,'review');
+  assert.equal(choose('one motorcycle engine',{durationSec:8}).design.layers[0].id,'motorcycle-steady-engine-loop');
 });
