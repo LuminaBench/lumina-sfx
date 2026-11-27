@@ -1,10 +1,10 @@
 import { editorContact } from './_shared/editor-contact.ts';
-import attack from './_recordings/isolated-key-firm.ts';
+import attack from './_recordings/isolated-linear-key-travel.ts';
 
 export default editorContact(
   "linear-mechanical-keyboard-command-line", "Linear mechanical keyboard command then Return",
   ["keyboard", "key", "launch", "video", "mechanical", "smooth", "typing", "terminal", "command", "phrase"], 0.837, attack,
-  {"bodyHz": 390, "decayMs": 12, "cutoffHz": 6200, "snap": 1.0, "rattle": 0.025},
+  { captured: true, pairedTakes: true, cutoffHz: 11500 },
   [
     {"at": 0, "weight": 0.73, "pitch": 1.08},
     {"at": 0.088, "weight": 0.94, "pitch": 0.9},

@@ -1,5 +1,5 @@
 import type { SoundRecipe } from '../engine/types.ts';
-import sheet from './_recordings/isolated-aluminium-roof-shower.ts';
+import sheet from './_recordings/isolated-shelter-roof-patter.ts';
 import { sustain } from './_shared/field-layers.ts';
 import { biquad } from '../engine/dsp.ts';
 
@@ -8,7 +8,7 @@ export default {
   tags: ['rain', 'corrugated', 'metal', 'roof', 'shelter', 'sheet', 'patter', 'aluminium'],
   isolation: 'isolated', components: ['rain'], recording: sheet.credit,
   loopable: true, sustainMode: 'evolving', durationSec: 7.8, mixRole: 'ambience', targetRmsDbfs: -29,
-  // The three dry shower takes have 5.5–7% high-band energy. Keep the drop attacks audible.
+  // Keep the fine attacks of nearby drops above the damped roof resonance.
   spectrum: [{ band: 'high', minShare: 0.05 }],
   params: { tension: {label: 'Sheet tension', min: 0, max: 1, default: 0.5} },
   render(ctx, {seed, params}) {

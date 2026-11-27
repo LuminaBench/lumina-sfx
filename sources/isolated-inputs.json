@@ -31,7 +31,7 @@
     "milestone-key-single",
     "hardwood-footstep"
   ],
-  "intactTakes": ["natural-gravel"],
+  "intactTakes": ["natural-gravel", "natural-gravel-drag"],
   "windows": {
     "small-clapper-strike": {
       "source": "sheep-bell-jingle",
@@ -556,6 +556,14 @@
     }
   },
   "fieldTakes": {
+    "quad-hover-blades": [{"startSec":37.35,"frames":68400,"sha256":"a13babde93072b2852abf05d70a80dbbdf7afc4a524c3dd99fc6de0b90756dc0"}],
+    "quad-loaded-blades": [{"startSec":40.0,"frames":69600,"sha256":"f9d8198cfd772f84c7ddc91ca2a0403f859898920fd757846b74933ef8580817"}],
+    "shelter-roof-patter": [{"startSec":2,"frames":80400,"sha256":"d2fa343e1311d41a7280cf9bda3070e16dca352e92fe7cb1dd2d474424b04583"},{"startSec":11.8,"frames":85200,"sha256":"0475e24ec0031de3af8a7e673113c059c0605170def2cb48aab6944b2b7b14bb"}],
+    "dry-meadow-breeze": [{"startSec":18.8,"frames":61200,"sha256":"db1dc55829fcaa888fe52c8b3366c7132b738f630e77bada7291b3078ef834ca"},{"startSec":21.4,"frames":62400,"sha256":"c265c20b769505dacfde9c34b72c54a72155f67b40be41a2e2c0331e1e871746"}],
+    "glass-trackpad": [{"startSec":0.6244063,"frames":2003,"sha256":"2fdc4a8b6c38e737ff138dfc4b58e8d7d94968dd23c219906fedc11a7d7b1f55"},{"startSec":1.070875,"frames":2084,"sha256":"93e447c24d21380aabd6b41e7b6ac8663bc0aa749422b46f2cbd785577971e5d"},{"startSec":2.6514062,"frames":2099,"sha256":"3a0ca6b025dbb9db2a6cecf333bcb7c68d08354e20258411ac358d678dc31913"},{"startSec":0.7810625,"frames":1374,"sha256":"29ae0e6a726ada5f667dc01a746d383baa92ca08345fcc26a4efe6d69dbb95fa"},{"startSec":1.245125,"frames":1276,"sha256":"03acb31ef6b85ecbf62e7a621f6c63305227e2e1afd6c5ca944a09dbe7328689"},{"startSec":2.801125,"frames":1404,"sha256":"8332fd11ebf83964f13cb6084fe6b3edf1057bbf9e62fe340b8a3cfd17fe96dd"}],
+    "drawing-pen-tip": [{"startSec":4.3494062,"frames":1139,"sha256":"ba20248013b855f095b8f61269bcff195cf013e7b7bd2c7a3341994d89339f28"},{"startSec":4.8194688,"frames":1137,"sha256":"e06b05de5b51c4b6aa4e9a3ed3663c20ac8f70219975495ea4849bbf8e58aab7"},{"startSec":5.0174375,"frames":1234,"sha256":"fb360dee16751a35d566445f148f9d0e846a55b442c2c66b058edf43166a5e3d"},{"startSec":6.9066562,"frames":1227,"sha256":"0bd82225164fd16ae70c05541818629305af9e9902f94c0becbeb5cab85def0f"}],
+    "linear-key-travel": [{"startSec":0.02825,"frames":2840,"sha256":"7b793ed11efa5a5ff3e2d1a0949e11425ebd1a8c2b8cb17bfe7233903e066706"},{"startSec":0.13275,"frames":2056,"sha256":"ed7cf55df626a9875a9dc2939fb0a929031f12c9ca6cd4b07119189d352ee38c"}],
+    "wide-return-travel": [{"startSec":0.0158125,"frames":2886,"sha256":"f0ffcbc6ef9c229355ea9971bc033e28efa27625f27968582ef19582c7582c7b"},{"startSec":0.1129375,"frames":1954,"sha256":"3ddcca27098907bdb425df3071d2503f652204a5f25ce6f38eba980c3837cae3"}],
     "motorcycle-under-load": [
       {
         "startSec": 39.95,

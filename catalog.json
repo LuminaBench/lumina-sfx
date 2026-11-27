@@ -108,7 +108,7 @@
       ]
     }
   },
-  "count": 2870,
+  "count": 2871,
   "sounds": [
     {
       "id": "a-page-corner-unfolded",
@@ -22183,7 +22183,7 @@
       "id": "corrugated-metal-roof-rain-loop",
       "name": "Rain on a corrugated metal roof",
       "category": "Weather & Ambience",
-      "revision": 1,
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "rain"
@@ -22213,11 +22213,11 @@
       "targetRmsDbfs": -29,
       "mixRole": "ambience",
       "recording": {
-        "title": "Rain hitting an aluminium roof",
-        "author": "florianreichelt",
-        "url": "https://freesound.org/people/florianreichelt/sounds/680152/",
+        "title": "rain water drops on metal roof.wav",
+        "author": "mdsn",
+        "url": "https://freesound.org/people/mdsn/sounds/322579/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-25"
+        "verifiedOn": "2026-11-27"
       },
       "spectrum": [
         {
@@ -29894,7 +29894,7 @@
       "id": "dry-grass-wind-loop",
       "name": "Wind moving through dry grass",
       "category": "Weather & Ambience",
-      "revision": 1,
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "grass-rustle"
@@ -29925,11 +29925,11 @@
       "targetRmsDbfs": -31,
       "mixRole": "ambience",
       "recording": {
-        "title": "wind medium brisk breeze through stiff dry corn stalks or grass gusty rustling.flac",
-        "author": "kyles",
-        "url": "https://freesound.org/people/kyles/sounds/454363/",
+        "title": "Dry Grasses in Wind",
+        "author": "flumpytripod",
+        "url": "https://freesound.org/people/flumpytripod/sounds/845415/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/dry-grass-wind-loop.ts"
@@ -43979,7 +43979,7 @@
       "id": "glass-trackpad-double-click",
       "name": "Glass trackpad double click",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -44013,11 +44013,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "MacBook Pro trackpad (48/24)",
+        "author": "neilraouf",
+        "url": "https://freesound.org/people/neilraouf/sounds/467490/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/glass-trackpad-double-click.ts"
@@ -44026,7 +44026,7 @@
       "id": "glass-trackpad-press-and-hold",
       "name": "Glass trackpad press, hold and release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -44061,11 +44061,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "MacBook Pro trackpad (48/24)",
+        "author": "neilraouf",
+        "url": "https://freesound.org/people/neilraouf/sounds/467490/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/glass-trackpad-press-and-hold.ts"
@@ -44074,7 +44074,7 @@
       "id": "glass-trackpad-press",
       "name": "Glass trackpad single press",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "press",
       "isolation": "isolated",
       "markers": {
@@ -44110,11 +44110,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "MacBook Pro trackpad (48/24)",
+        "author": "neilraouf",
+        "url": "https://freesound.org/people/neilraouf/sounds/467490/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/glass-trackpad-press.ts"
@@ -44123,7 +44123,7 @@
       "id": "glass-trackpad-release",
       "name": "Glass trackpad release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -44157,11 +44157,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "MacBook Pro trackpad (48/24)",
+        "author": "neilraouf",
+        "url": "https://freesound.org/people/neilraouf/sounds/467490/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/glass-trackpad-release.ts"
@@ -44170,7 +44170,7 @@
       "id": "glass-trackpad-three-taps",
       "name": "Glass trackpad three deliberate taps",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -44204,11 +44204,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Normal click",
-        "author": "Breviceps",
-        "url": "https://freesound.org/people/Breviceps/sounds/448086/",
+        "title": "MacBook Pro trackpad (48/24)",
+        "author": "neilraouf",
+        "url": "https://freesound.org/people/neilraouf/sounds/467490/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/glass-trackpad-three-taps.ts"
@@ -59756,7 +59756,7 @@
       "id": "linear-mechanical-keyboard-backspace-pair",
       "name": "Linear mechanical keyboard two backspaces",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59790,11 +59790,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-backspace-pair.ts"
@@ -59803,7 +59803,7 @@
       "id": "linear-mechanical-keyboard-command-line",
       "name": "Linear mechanical keyboard command then Return",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59838,11 +59838,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-command-line.ts"
@@ -59851,7 +59851,7 @@
       "id": "linear-mechanical-keyboard-key-down",
       "name": "Linear mechanical keyboard letter key down",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "key",
       "isolation": "isolated",
       "markers": {
@@ -59886,11 +59886,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-key-down.ts"
@@ -59899,7 +59899,7 @@
       "id": "linear-mechanical-keyboard-key-up",
       "name": "Linear mechanical keyboard letter key release",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59933,20 +59933,72 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-key-up.ts"
     },
     {
+      "id": "linear-mechanical-keyboard-return-down",
+      "name": "Mechanical keyboard Return key down",
+      "category": "Footsteps & UI",
+      "revision": 1,
+      "isolation": "isolated",
+      "markers": {
+        "contact": 0
+      },
+      "contains": [
+        "device contact"
+      ],
+      "perspective": "close and dry",
+      "collection": "Launch video · Keyboards",
+      "tags": [
+        "keyboard",
+        "mechanical",
+        "return",
+        "enter",
+        "key",
+        "single",
+        "press",
+        "down",
+        "wide",
+        "held",
+        "recorded",
+        "hardware",
+        "launch",
+        "video"
+      ],
+      "loopable": false,
+      "durationSec": 0.1,
+      "params": {
+        "pressure": {
+          "label": "Contact pressure",
+          "min": 0,
+          "max": 1,
+          "default": 0.45
+        }
+      },
+      "targetRmsDbfs": -26,
+      "mixRole": "interface",
+      "recording": {
+        "title": "Keychron k10 Enter",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789629/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-27"
+      },
+      "channels": 1,
+      "file": "recipes/linear-mechanical-keyboard-return-down.ts"
+    },
+    {
       "id": "linear-mechanical-keyboard-return",
       "name": "Linear mechanical keyboard Return key",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -59979,11 +60031,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Keychron k10 Enter",
+        "author": "Sadiquecat",
+        "url": "https://freesound.org/people/Sadiquecat/sounds/789629/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-return.ts"
@@ -59992,7 +60044,7 @@
       "id": "linear-mechanical-keyboard-shortcut",
       "name": "Linear mechanical keyboard modifier and shortcut",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -60026,11 +60078,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-shortcut.ts"
@@ -60039,7 +60091,7 @@
       "id": "linear-mechanical-keyboard-spacebar",
       "name": "Linear mechanical keyboard spacebar tap",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -60073,11 +60125,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-spacebar.ts"
@@ -60086,7 +60138,7 @@
       "id": "linear-mechanical-keyboard-typed-word",
       "name": "Linear mechanical keyboard four-letter word",
       "category": "Footsteps & UI",
-      "revision": 2,
+      "revision": 3,
       "editorialAction": "typing",
       "isolation": "isolated",
       "markers": {
@@ -60122,11 +60174,11 @@
       "targetRmsDbfs": -26,
       "mixRole": "interface",
       "recording": {
-        "title": "Keyboard Typing 001.wav",
-        "author": "ristooooo1",
-        "url": "https://freesound.org/people/ristooooo1/sounds/539146/",
+        "title": "Key_Press",
+        "author": "Mediasaur",
+        "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
       "channels": 1,
       "file": "recipes/linear-mechanical-keyboard-typed-word.ts"
@@ -103299,7 +103351,7 @@
       "id": "stride-gravel",
       "name": "Gravel alternating foot contact",
       "category": "Footsteps & UI",
-      "revision": 1,
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "plant": 0
@@ -104110,7 +104162,7 @@
       "id": "stylus-tip-on-tablet-glass",
       "name": "Polymer pen tip on tablet glass",
       "category": "Footsteps & UI",
-      "revision": 1,
+      "revision": 2,
       "isolation": "isolated",
       "markers": {
         "contact": 0
@@ -104145,6 +104197,13 @@
       },
       "targetRmsDbfs": -30,
       "mixRole": "foley",
+      "recording": {
+        "title": "Drawing with Pen on a Drawing Tablet",
+        "author": "Freen0",
+        "url": "https://freesound.org/people/Freen0/sounds/754298/",
+        "license": "CC0-1.0",
+        "verifiedOn": "2026-11-27"
+      },
       "channels": 1,
       "file": "recipes/stylus-tip-on-tablet-glass.ts"
     },
@@ -105116,6 +105175,7 @@
       "id": "survey-quadcopter-accelerate-away-from-camera",
       "name": "Survey quadcopter accelerate away from camera",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105155,21 +105215,12 @@
       "targetRmsDbfs": -23,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-accelerate-away-from-camera.ts"
     },
@@ -105177,6 +105228,7 @@
       "id": "survey-quadcopter-camera-approach-from-altitude",
       "name": "Survey quadcopter camera approach from altitude",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105215,21 +105267,12 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-camera-approach-from-altitude.ts"
     },
@@ -105237,6 +105280,7 @@
       "id": "survey-quadcopter-cut-thrust-for-descent",
       "name": "Survey quadcopter cut thrust for descent",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105275,21 +105319,12 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-cut-thrust-for-descent.ts"
     },
@@ -105297,6 +105332,7 @@
       "id": "survey-quadcopter-full-climb-rotor-loop",
       "name": "Survey quadcopter full climb rotor loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105335,21 +105371,12 @@
       "targetRmsDbfs": -21,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-full-climb-rotor-loop.ts"
     },
@@ -105357,6 +105384,7 @@
       "id": "survey-quadcopter-onboard-frame-vibration-loop",
       "name": "Survey quadcopter onboard frame vibration loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105395,21 +105423,12 @@
       "targetRmsDbfs": -28,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-onboard-frame-vibration-loop.ts"
     },
@@ -105417,6 +105436,7 @@
       "id": "survey-quadcopter-props-armed-idle-loop",
       "name": "Survey quadcopter props armed idle loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105454,21 +105474,12 @@
       "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-props-armed-idle-loop.ts"
     },
@@ -105476,6 +105487,7 @@
       "id": "survey-quadcopter-settle-onto-landing-marker",
       "name": "Survey quadcopter settle onto landing marker",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105513,21 +105525,12 @@
       "targetRmsDbfs": -25,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-settle-onto-landing-marker.ts"
     },
@@ -105535,6 +105538,7 @@
       "id": "survey-quadcopter-survey-cruise-loop",
       "name": "Survey quadcopter survey cruise loop",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105577,21 +105581,12 @@
       "targetRmsDbfs": -24,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-survey-cruise-loop.ts"
     },
@@ -105599,6 +105594,7 @@
       "id": "survey-quadcopter-two-altitude-corrections",
       "name": "Survey quadcopter two altitude corrections",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105636,21 +105632,12 @@
       "targetRmsDbfs": -23,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-two-altitude-corrections.ts"
     },
@@ -105658,6 +105645,7 @@
       "id": "survey-quadcopter-vertical-launch",
       "name": "Survey quadcopter vertical launch",
       "category": "Aircraft",
+      "revision": 2,
       "isolation": "isolated",
       "components": [
         "electric-rotors"
@@ -105694,21 +105682,12 @@
       "targetRmsDbfs": -22,
       "mixRole": "vehicle",
       "recording": {
-        "title": "Quadrocopter Take-Off And Landing",
-        "author": "Alcappuccino",
-        "url": "https://freesound.org/people/Alcappuccino/sounds/263022/",
+        "title": "Drone taking off and landing",
+        "author": "hoshisato",
+        "url": "https://freesound.org/people/hoshisato/sounds/822500/",
         "license": "CC0-1.0",
-        "verifiedOn": "2026-11-21"
+        "verifiedOn": "2026-11-27"
       },
-      "additionalRecordings": [
-        {
-          "title": "Drone taking off and landing",
-          "author": "hoshisato",
-          "url": "https://freesound.org/people/hoshisato/sounds/822500/",
-          "license": "CC0-1.0",
-          "verifiedOn": "2026-11-21"
-        }
-      ],
       "channels": 1,
       "file": "recipes/survey-quadcopter-vertical-launch.ts"
     },

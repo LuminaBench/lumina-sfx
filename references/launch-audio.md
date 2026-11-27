@@ -167,3 +167,10 @@ Use the exported movie to check a claimed direction change or missing click. A l
 Read the `signature` from a playing cue. To lower the mouse clicks across navigation and take the sharp edge off the same switch, pass `[{"signature":"press/mouse","trimDb":-3,"character":"less-bright"}]` to `revise --changes`. A family edit applies to unlocked additions. Original contacts, named exceptions and other input devices retain their own decisions. A replacement from the listed swipe alternatives uses the matching left or right take at the speed of the picture.
 
 Mark narrated frame ranges and supply the original movie when planning. Around each marked key the scorer measures how much of the soundtrack sits in the 1.8–4.7 kHz band and how bright the selected attack is. It can trim a competing key by up to a further 4 dB. Listen through the affected word at delivery level to judge intelligibility.
+
+
+### Match the actual hardware
+
+For a held mechanical Return, mark one physical `press` with `key: "Enter"`. Use `keyFrames` for the visible letters and digits. The ordinary mechanical board uses recorded linear switch travel and a wider Return from the same keyboard model. A UI button labelled Return follows its input device. The trackpad contact and release use individual halves of a MacBook trackpad recording. A filmed tablet nib uses a drawing-tablet recording and a small panel resonance.
+
+The final `audit` groups audible cues by their saved signature and reports material or fixed-take changes with frame numbers. Left and right performances of the same swipe material can share a signature, as can fresh strokes on one keyboard. Mark a genuinely different control with its own `family`. Rapid mouse actions can cross tabs, confirmations and toggles while keeping one switch.

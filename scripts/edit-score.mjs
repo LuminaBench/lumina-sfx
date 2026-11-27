@@ -1,7 +1,7 @@
 import { editorialPicks, featuredLanding } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { chooseFamilies, familySlot } from './edit-family.mjs';
-import { deviceKind, feedbackFor, physicalSwitch, excludedTraits, stripButtonLabel } from './edit-device.mjs';
+import { deviceKind, feedbackFor, physicalSwitch, returnKeyDown, excludedTraits, stripButtonLabel } from './edit-device.mjs';
 import {
   contextOrder,
   levelMatch,
@@ -121,7 +121,7 @@ function checkEvent(e, ids, durationFrames) {
     if (e[field] !== undefined && typeof e[field] !== 'boolean') throw Error('Expected boolean ' + field);
   if (e.gesture !== undefined && (typeof e.gesture !== 'string' || !e.gesture))
     throw Error('Supply a gesture ID');
-  for (const field of ['device', 'target', 'label'])
+  for (const field of ['device', 'target', 'label', 'key'])
     if (e[field] !== undefined && typeof e[field] !== 'string') throw Error('Expected text for ' + field);
   if (e.family !== undefined && (typeof e.family !== 'string' || !namePattern.test(e.family)))
     throw Error('Invalid cue family');
@@ -146,6 +146,8 @@ function optionsFor(e, palette, mode) {
   if (feedbackFor(e, e.deviceKind) === 'surface')
     return [e.deviceKind === 'touch' ? 'fingertip-on-display-glass' : 'stylus-tip-on-tablet-glass'];
   if (feedbackFor(e, e.deviceKind) === 'digital') return ['settings-focus-felt-tick'];
+  const board = /gasket|thock/i.test(e.device ?? '') ? 'gasket-mount' : 'linear-mechanical';
+  if (returnKeyDown(e)) return ['linear-mechanical-keyboard-return-down'];
   const physical = {
     'pen-button': ['stylus-barrel-press'],
     trackball: ['trackball-press'],
@@ -153,18 +155,18 @@ function optionsFor(e, palette, mode) {
     mouse: [basic.press[0], 'quiet-mouse-press'],
     unspecified: [basic.press[0], 'quiet-mouse-press'],
     keyboard: [basic.type[0]],
-    mechanical: [basic.type[1]],
+    mechanical: [board + '-keyboard-key-down'],
     controller: ['settings-focus-felt-tick'],
   };
   if (e.action === 'paste' && ['keyboard', 'mechanical'].includes(e.deviceKind))
     return [
-      e.deviceKind === 'mechanical' ? 'gasket-mount-keyboard-shortcut' : 'laptop-scissor-keyboard-shortcut',
+      e.deviceKind === 'mechanical' ? board + '-keyboard-shortcut' : 'laptop-scissor-keyboard-shortcut',
     ];
   if (physicalSwitch(e)) return physical[e.deviceKind];
   if (e.action === 'press' || e.action === 'paste') return physical[e.deviceKind] ?? [];
   if (e.action === 'type')
     return e.deviceKind === 'mechanical'
-      ? [basic.type[1]]
+      ? physical.mechanical
       : ['unspecified', 'keyboard'].includes(e.deviceKind)
         ? [basic.type[0]]
         : [];
@@ -188,7 +190,13 @@ function optionsFor(e, palette, mode) {
 }
 function pick(e, profile, votes, bank, mode) {
   const baseIds = contextOrder(optionsFor(e, profile.palette, mode), mode);
+  const saved = profile.signatures?.[familySlot(e, profile.signatures)];
   const preferred = profile.bindings?.[e.action];
+  // Saved projects can continue using the old gasket board across future edits.
+  const legacy = baseIds[0]?.replace('linear-mechanical-keyboard-', 'gasket-mount-keyboard-');
+  if (e.deviceKind === 'mechanical' && !e.soundId && !returnKeyDown(e) && legacy && !baseIds.includes(legacy) &&
+      (preferred === legacy || (saved?.id === legacy && saved.revision === bank.get(legacy)?.revision)))
+    baseIds.unshift(legacy);
   if (!e.soundId && preferred && baseIds.includes(preferred))
     baseIds.splice(0, baseIds.length, preferred, ...baseIds.filter((id) => id !== preferred));
   const choices = baseIds
@@ -403,6 +411,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
         ...event,
         device,
         deviceKind: deviceKind(device),
+        key: event.key ?? contact?.key,
         feedback: quietGesture ? 'none' : (event.feedback ?? contact?.feedback ?? input.feedback),
         avoid,
       };
@@ -446,16 +455,17 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
           event.underSpeech ??
           (events.some((x) => x.underSpeech) || speech.some(([lo, hi]) => lo <= f && f < hi));
         const underSpeech = (e.keyFrames ?? [e.syncFrame ?? e.frame]).some(speechAt);
-        const nearby =
-          ['tab', 'focus', 'scroll', 'press'].includes(e.action) &&
-          input.events.some(
-            (x) =>
-              x.action === e.action &&
-              x.id !== e.id &&
-              !events.includes(x) &&
-              !x.muted &&
-              Math.abs(x.frame - e.frame) / fps < 0.45,
-          );
+        const nearby = ['tab', 'focus', 'scroll', 'press', 'confirm', 'back', 'toggle-on', 'toggle-off'].includes(e.action) &&
+          input.events.some(x => {
+            if (events.includes(x) || x.muted || x.sourceContact === 'uncertain' ||
+                Math.abs(x.frame - e.frame) / fps >= 0.45) return false;
+            const peer = { ...x, deviceKind: deviceKind(x.device ?? input.device), feedback: x.feedback ?? input.feedback };
+            if (feedbackFor(peer, peer.deviceKind) === 'silence') return false;
+            // A mouse can open, confirm and close three different states with the same physical switch.
+            return physicalSwitch(e) && physicalSwitch(peer)
+              ? familySlot(e) === familySlot(peer)
+              : x.action === e.action && peer.deviceKind === e.deviceKind && x.family === e.family;
+          });
         const mode = e.context ?? input.context ?? (underSpeech ? 'speech' : nearby ? 'rapid' : undefined);
         const [sound, ...alternatives] = pick(e, style, votes, bank, mode === 'normal' ? undefined : mode);
         if (!sound || (e.action === 'type' && !e.keyFrames && e.endFrame !== undefined)) {

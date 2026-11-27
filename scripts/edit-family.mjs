@@ -1,4 +1,4 @@
-import { feedbackFor, physicalSwitch } from './edit-device.mjs';
+import { feedbackFor, physicalSwitch, returnKeyDown } from './edit-device.mjs';
 // One recurring screen gesture carries one identity throughout a cut. Direction is a
 // performance constraint on a swipe, while material is a property of the family.
 export function familySlot(e, signatures) {
@@ -11,6 +11,7 @@ export function familySlot(e, signatures) {
     return shared;
   }
   if (physicalSwitch(e)) return ['press/' + e.deviceKind, e.family].filter(Boolean).join('/');
+  if (returnKeyDown(e)) return ['press/mechanical/return', e.family].filter(Boolean).join('/');
   const surface = e.physicalContact ? '/surface' : '';
   const physical = ['press', 'paste', 'type'].includes(e.action) ? '/' + e.deviceKind + surface : '';
   return [e.action + physical, e.family].filter(Boolean).join('/');
@@ -88,4 +89,21 @@ export function approvedProfile(plan) {
   if (!Object.keys(signatures).length)
     throw Error('Lock the chosen playing cues before exporting their project profile.');
   return { useCase: plan.useCase, palette: plan.palette, signatures };
+}
+
+// Compare audible identity across the delivered cut. Gain changes can follow narration or distance.
+export function signatureChanges(cues) {
+  const families = new Map();
+  for (const cue of cues) {
+    if (cue.decision !== 'play' || !cue.signature || !cue.soundId) continue;
+    const name = material(cue.soundId, cue.action);
+    const group = families.get(cue.signature) ?? new Map();
+    const key = cue.fixedTake ? name + '#' + cue.seed : name;
+    const take = group.get(key) ?? { material: name, frames: [] };
+    take.frames.push(cue.syncFrame);
+    group.set(key, take);
+    families.set(cue.signature, group);
+  }
+  return [...families].filter(([, variants]) => variants.size > 1)
+    .map(([signature, variants]) => ({ signature, variants: [...variants.values()] }));
 }

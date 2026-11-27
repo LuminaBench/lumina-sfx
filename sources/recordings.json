@@ -3196,6 +3196,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-city-bus-engine-idle-loop.ts",
+      "title": "Bus Engine Idling",
+      "author": "bikesnbassboi",
+      "url": "https://freesound.org/people/bikesnbassboi/sounds/540398/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "8addfd96c8d6d2fd297f3ae771ce9b91b54380f0b121aca9ae5d185fd2228546"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-clarity-pistol.ts",
       "title": "Baretta_22_ pistol _shots_1",
       "author": "TheGreenEyedGhost",
@@ -3310,6 +3325,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-demo-rotor-bed.ts",
+      "title": "Helicopter Flyby",
+      "author": "m_cel",
+      "url": "https://freesound.org/people/m_cel/sounds/534855/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "be01441f3603bb5c047c51505f72048fc8e6620e50f540bfc6e9945806592208"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-demo-sheltered-wind.ts",
       "title": "Whistling wind at marina",
       "author": "richwise",
@@ -3336,6 +3366,79 @@
         {
           "frames": 65536,
           "sha256": "3f26c3da21e010ac94d46d2cd0b268ff26b9c23ab9709f9c29849a8293711322"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-drawing-pen-tip.ts",
+      "title": "Drawing with Pen on a Drawing Tablet",
+      "author": "Freen0",
+      "url": "https://freesound.org/people/Freen0/sounds/754298/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 1139,
+          "sha256": "ba20248013b855f095b8f61269bcff195cf013e7b7bd2c7a3341994d89339f28"
+        },
+        {
+          "frames": 1137,
+          "sha256": "e06b05de5b51c4b6aa4e9a3ed3663c20ac8f70219975495ea4849bbf8e58aab7"
+        },
+        {
+          "frames": 1234,
+          "sha256": "fb360dee16751a35d566445f148f9d0e846a55b442c2c66b058edf43166a5e3d"
+        },
+        {
+          "frames": 1227,
+          "sha256": "0bd82225164fd16ae70c05541818629305af9e9902f94c0becbeb5cab85def0f"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-dry-maize-leaf.ts",
+      "title": "wind medium brisk breeze through stiff dry corn stalks or grass gusty rustling.flac",
+      "author": "kyles",
+      "url": "https://freesound.org/people/kyles/sounds/454363/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 18000,
+      "takes": [
+        {
+          "frames": 15480,
+          "sha256": "d610223c4a15e2619300e9493812246f73d33c02a321295386e5fbb4b8a66131"
+        },
+        {
+          "frames": 19440,
+          "sha256": "0a4b024d6f22aeedba093e2c41db8d3080c7c828d90109f2063f8b4ef02764c5"
+        },
+        {
+          "frames": 16920,
+          "sha256": "400b9d789a257b4fc95ad6ec0e21b1adcf81d25905fdabe66f64fdac038988dd"
+        },
+        {
+          "frames": 18540,
+          "sha256": "b939230e9a389d81a65e05fc4f07148d2cf64d30c747fb6f1996468e0042914d"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-dry-meadow-breeze.ts",
+      "title": "Dry Grasses in Wind",
+      "author": "flumpytripod",
+      "url": "https://freesound.org/people/flumpytripod/sounds/845415/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 61200,
+          "sha256": "db1dc55829fcaa888fe52c8b3366c7132b738f630e77bada7291b3078ef834ca"
+        },
+        {
+          "frames": 62400,
+          "sha256": "c265c20b769505dacfde9c34b72c54a72155f67b40be41a2e2c0331e1e871746"
         }
       ]
     },
@@ -3370,6 +3473,41 @@
         {
           "frames": 288000,
           "sha256": "0f3ed1bea33e1edee16a4ee16c5be88cd4f8ef7e0bf49effc2af162b596177ac"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-glass-trackpad.ts",
+      "title": "MacBook Pro trackpad (48/24)",
+      "author": "neilraouf",
+      "url": "https://freesound.org/people/neilraouf/sounds/467490/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 2003,
+          "sha256": "2fdc4a8b6c38e737ff138dfc4b58e8d7d94968dd23c219906fedc11a7d7b1f55"
+        },
+        {
+          "frames": 2084,
+          "sha256": "93e447c24d21380aabd6b41e7b6ac8663bc0aa749422b46f2cbd785577971e5d"
+        },
+        {
+          "frames": 2099,
+          "sha256": "3a0ca6b025dbb9db2a6cecf333bcb7c68d08354e20258411ac358d678dc31913"
+        },
+        {
+          "frames": 1374,
+          "sha256": "29ae0e6a726ada5f667dc01a746d383baa92ca08345fcc26a4efe6d69dbb95fa"
+        },
+        {
+          "frames": 1276,
+          "sha256": "03acb31ef6b85ecbf62e7a621f6c63305227e2e1afd6c5ca944a09dbe7328689"
+        },
+        {
+          "frames": 1404,
+          "sha256": "8332fd11ebf83964f13cb6084fe6b3edf1057bbf9e62fe340b8a3cfd17fe96dd"
         }
       ]
     },
@@ -3525,6 +3663,25 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-linear-key-travel.ts",
+      "title": "Key_Press",
+      "author": "Mediasaur",
+      "url": "https://freesound.org/people/Mediasaur/sounds/788932/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 2840,
+          "sha256": "7b793ed11efa5a5ff3e2d1a0949e11425ebd1a8c2b8cb17bfe7233903e066706"
+        },
+        {
+          "frames": 2056,
+          "sha256": "ed7cf55df626a9875a9dc2939fb0a929031f12c9ca6cd4b07119189d352ee38c"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-milestone-key-single.ts",
       "title": "Keyboard Typing 001.wav",
       "author": "ristooooo1",
@@ -3668,6 +3825,40 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-motorcycle-under-load.ts",
+      "title": "Single Cylinder Motorcycle",
+      "author": "richwise",
+      "url": "https://freesound.org/people/richwise/sounds/361407/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 126000,
+          "sha256": "842560630b08c8b763174fcec28965a3ab94fc9c0d3745675395951814987a97"
+        },
+        {
+          "frames": 124800,
+          "sha256": "ba17b1320430c2979cc64fa5b544379fd3fddc4ae362f6c91b1313f7f70070e8"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-paperboard-seat.ts",
+      "title": "open-cardboard-box-compartment.wav",
+      "author": "newagesoup",
+      "url": "https://freesound.org/people/newagesoup/sounds/364740/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 2520,
+          "sha256": "14eb2131a9d57fe40cd2399f72635163d0d7a9c488d6e935a513689dccf878c6"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-physical-light-switch.ts",
       "title": "Light Switch On Off.flac",
       "author": "qubodup",
@@ -3691,6 +3882,36 @@
         {
           "frames": 816,
           "sha256": "bd9806d3b64e861ec30dab11727c4ac1c4da361fe4cc4a199fadb55cf813eb3a"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-quad-hover-blades.ts",
+      "title": "Drone taking off and landing",
+      "author": "hoshisato",
+      "url": "https://freesound.org/people/hoshisato/sounds/822500/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 68400,
+          "sha256": "a13babde93072b2852abf05d70a80dbbdf7afc4a524c3dd99fc6de0b90756dc0"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-quad-loaded-blades.ts",
+      "title": "Drone taking off and landing",
+      "author": "hoshisato",
+      "url": "https://freesound.org/people/hoshisato/sounds/822500/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 69600,
+          "sha256": "f9d8198cfd772f84c7ddc91ca2a0403f859898920fd757846b74933ef8580817"
         }
       ]
     },
@@ -3908,6 +4129,25 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-running-outboard.ts",
+      "title": "River boat with outboard engine (at changing speeds)",
+      "author": "nomadas",
+      "url": "https://freesound.org/people/nomadas/sounds/690160/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 54720,
+          "sha256": "627e82f210376a96ea6154efb4a049ebe1ced4b5a1202f86e651a17fff3c75ee"
+        },
+        {
+          "frames": 59040,
+          "sha256": "cbf2dae4f71a5fae67952d11984f9ae36287f983e3fdbae20ae385c2fa52b1ff"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-sheep-voice.ts",
       "title": "sheep bleat outdoors",
       "author": "Yuval",
@@ -3923,6 +4163,44 @@
         {
           "frames": 35200,
           "sha256": "2aa3babc370f7a31383884a99ae58101902f56be1ee2d719bcfe8f30c90a6112"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-shelter-roof-patter.ts",
+      "title": "rain water drops on metal roof.wav",
+      "author": "mdsn",
+      "url": "https://freesound.org/people/mdsn/sounds/322579/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 24000,
+      "takes": [
+        {
+          "frames": 80400,
+          "sha256": "d2fa343e1311d41a7280cf9bda3070e16dca352e92fe7cb1dd2d474424b04583"
+        },
+        {
+          "frames": 85200,
+          "sha256": "0475e24ec0031de3af8a7e673113c059c0605170def2cb48aab6944b2b7b14bb"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-small-clapper-strike.ts",
+      "title": "Sheep bells.wav",
+      "author": "banasz",
+      "url": "https://freesound.org/people/banasz/sounds/583809/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 2912,
+          "sha256": "bd0887ac82734c45275bdd2b26f3742cefdfffede7759a2534d49aa6f73284f7"
+        },
+        {
+          "frames": 3392,
+          "sha256": "8a20d9ee6cfb7cb8628bfeaab2a4dfc60296f3eea5fcaf50f71b70b61dc42d4d"
         }
       ]
     },
@@ -4010,6 +4288,21 @@
       ]
     },
     {
+      "file": "recipes/_recordings/isolated-tractor-diesel-idle-loop.ts",
+      "title": "Tractor Engine",
+      "author": "lucasfuchs",
+      "url": "https://freesound.org/people/lucasfuchs/sounds/518294/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-21",
+      "sampleRate": 22050,
+      "takes": [
+        {
+          "frames": 65536,
+          "sha256": "c6eb7cff380c106ea74578f4b24d9da25388b194a6777f0e7dfdd8f358f2c007"
+        }
+      ]
+    },
+    {
       "file": "recipes/_recordings/isolated-turbine-core.ts",
       "title": "F16 takeoff 1.WAV",
       "author": "Sandermotions",
@@ -4036,6 +4329,25 @@
         {
           "frames": 51840,
           "sha256": "7b811d129a38dab184a1ce09d0061e3809f7e0cd05197ebaa417b61b23c32cd4"
+        }
+      ]
+    },
+    {
+      "file": "recipes/_recordings/isolated-wide-return-travel.ts",
+      "title": "Keychron k10 Enter",
+      "author": "Sadiquecat",
+      "url": "https://freesound.org/people/Sadiquecat/sounds/789629/",
+      "license": "CC0-1.0",
+      "verifiedOn": "2026-11-27",
+      "sampleRate": 32000,
+      "takes": [
+        {
+          "frames": 2886,
+          "sha256": "f0ffcbc6ef9c229355ea9971bc033e28efa27625f27968582ef19582c7582c7b"
+        },
+        {
+          "frames": 1954,
+          "sha256": "3ddcca27098907bdb425df3071d2503f652204a5f25ce6f38eba980c3837cae3"
         }
       ]
     },

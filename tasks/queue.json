@@ -23885,7 +23885,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.69,
       "loopable": false,
-      "brief": "Survey quadcopter accelerate away from camera"
+      "brief": "Survey quadcopter accelerate away from camera",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-camera-approach-from-altitude",
@@ -23894,7 +23895,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.92,
       "loopable": false,
-      "brief": "Survey quadcopter camera approach from altitude"
+      "brief": "Survey quadcopter camera approach from altitude",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-cut-thrust-for-descent",
@@ -23903,7 +23905,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 1.7,
       "loopable": false,
-      "brief": "Survey quadcopter cut thrust for descent"
+      "brief": "Survey quadcopter cut thrust for descent",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-full-climb-rotor-loop",
@@ -23912,7 +23915,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.52,
       "loopable": true,
-      "brief": "Survey quadcopter full climb rotor loop"
+      "brief": "Survey quadcopter full climb rotor loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-onboard-frame-vibration-loop",
@@ -23921,7 +23925,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.71,
       "loopable": true,
-      "brief": "Survey quadcopter onboard frame vibration loop"
+      "brief": "Survey quadcopter onboard frame vibration loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-props-armed-idle-loop",
@@ -23930,7 +23935,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.29,
       "loopable": true,
-      "brief": "Survey quadcopter props armed idle loop"
+      "brief": "Survey quadcopter props armed idle loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-settle-onto-landing-marker",
@@ -23939,7 +23945,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.4,
       "loopable": false,
-      "brief": "Survey quadcopter settle onto landing marker"
+      "brief": "Survey quadcopter settle onto landing marker",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-survey-cruise-loop",
@@ -23948,7 +23955,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 3.02,
       "loopable": true,
-      "brief": "Survey quadcopter survey cruise loop"
+      "brief": "Survey quadcopter survey cruise loop",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-two-altitude-corrections",
@@ -23957,7 +23965,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.35,
       "loopable": false,
-      "brief": "Survey quadcopter two altitude corrections"
+      "brief": "Survey quadcopter two altitude corrections",
+      "revision": 2
     },
     {
       "id": "survey-quadcopter-vertical-launch",
@@ -23966,7 +23975,8 @@
       "collection": "Propulsion · Aircraft and airfields",
       "durationSec": 2.16,
       "loopable": false,
-      "brief": "Survey quadcopter vertical launch"
+      "brief": "Survey quadcopter vertical launch",
+      "revision": 2
     },
     {
       "id": "swarm-recedes-into-blossom",
@@ -26784,7 +26794,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key down",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-key-up",
@@ -26795,7 +26805,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard letter key release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-spacebar",
@@ -26806,7 +26816,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard spacebar tap",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-return",
@@ -26817,7 +26827,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard Return key",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-backspace-pair",
@@ -26828,7 +26838,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard two backspaces",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-shortcut",
@@ -26839,7 +26849,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard modifier and shortcut",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-typed-word",
@@ -26850,7 +26860,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard four-letter word",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "linear-mechanical-keyboard-command-line",
@@ -26861,7 +26871,7 @@
       "loopable": false,
       "brief": "Linear mechanical keyboard command then Return",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "tactile-mechanical-keyboard-key-down",
@@ -27829,7 +27839,7 @@
       "loopable": false,
       "brief": "Glass trackpad single press",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-release",
@@ -27840,7 +27850,7 @@
       "loopable": false,
       "brief": "Glass trackpad release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-double-click",
@@ -27851,7 +27861,7 @@
       "loopable": false,
       "brief": "Glass trackpad double click",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-press-and-hold",
@@ -27862,7 +27872,7 @@
       "loopable": false,
       "brief": "Glass trackpad press, hold and release",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "glass-trackpad-three-taps",
@@ -27873,7 +27883,7 @@
       "loopable": false,
       "brief": "Glass trackpad three deliberate taps",
       "acceptance": "Match the named action, timing and material at edit gain.",
-      "revision": 2
+      "revision": 3
     },
     {
       "id": "stylus-barrel-press",
@@ -29028,7 +29038,7 @@
       "loopable": false,
       "brief": "One recorded gravel foot plant with gait and sole controls.",
       "acceptance": "One trigger per plant, distinct side pools, clean in mono.",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "stride-grass",
@@ -29126,17 +29136,17 @@
     {
       "id": "stylus-tip-on-tablet-glass",
       "brief": "Close tablet pen tip contact",
-      "collection": "Launch video \u00b7 Device clicks",
+      "collection": "Launch video · Device clicks",
       "status": "review",
       "category": "Footsteps & UI",
       "durationSec": 0.054,
       "loopable": false,
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "fingertip-on-display-glass",
       "brief": "Close finger pad contact on glass",
-      "collection": "Launch video \u00b7 Device clicks",
+      "collection": "Launch video · Device clicks",
       "status": "review",
       "category": "Footsteps & UI",
       "durationSec": 0.062,
@@ -29181,7 +29191,7 @@
       "durationSec": 6.5,
       "loopable": true,
       "status": "review",
-      "revision": 1
+      "revision": 2
     },
     {
       "id": "corrugated-metal-roof-rain-loop",
@@ -29190,6 +29200,16 @@
       "category": "Weather & Ambience",
       "durationSec": 7.8,
       "loopable": true,
+      "status": "review",
+      "revision": 2
+    },
+    {
+      "id": "linear-mechanical-keyboard-return-down",
+      "brief": "A recorded wide Return key pressed once, independent of release",
+      "collection": "Launch video · Keyboards",
+      "category": "Footsteps & UI",
+      "durationSec": 0.1,
+      "loopable": false,
       "status": "review",
       "revision": 1
     }

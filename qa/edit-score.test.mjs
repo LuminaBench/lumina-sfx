@@ -53,9 +53,9 @@ test('cause, device, current project votes and screen text have independent mean
     p.cues.map((c) => c.soundId ?? c.decision),
     [
       'desktop-mouse-press',
-      'gasket-mount-keyboard-shortcut',
+      'linear-mechanical-keyboard-shortcut',
       'silence',
-      'gasket-mount-keyboard-key-down',
+      'linear-mechanical-keyboard-key-down',
       cool,
       'settings-focus-felt-tick',
       'silence',

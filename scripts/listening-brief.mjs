@@ -20,6 +20,23 @@ function fitsPerformance(sound, layer) {
     layer.durationSec <= (sound.durationSec - start) / (layer.macros?.speed ?? 1) + 1e-8
   );
 }
+function worldCompatible(sound, placement) {
+  const view = sourcePerspective(sound);
+  if (!view.local && !sound.tags.includes('menu')) return true;
+  return view.physicalInput && (placement.acoustics || (placement.placement && placement.placement.kind !== 'listener'));
+}
+
+function reviewReason(sound, settings, design) {
+  if (design.sourcePolicy === 'clean') {
+    if (sound.cleanHold || sound.auditionNote) return 'needs-audition';
+    if (sound.isolation !== 'isolated') return 'needs-isolation';
+  }
+  if (sound.missing.length) return 'missing-terms';
+  if (design.scope === 'world' && !worldCompatible(sound, settings)) return 'interface-only';
+  if (geometryConflict(sound, settings)) return 'perspective-conflict';
+  if (!fitsPerformance(sound, settings)) return 'marker-or-duration';
+}
+
 export function resolveListeningBrief(brief, bank, profile = {}) {
   if (
     brief.schemaVersion !== 2 ||
@@ -53,23 +70,17 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     const mounted = (design.scope === 'world' && !prefer && !exclude) ?
       mountedAmbience(query, layer.label, design.viewpoint) : undefined;
     const mountedTake = mounted && cleanBank.find(s => s.id === mounted);
-    const hits = rankPerformance(
-      cleanBank,
-      query,
-      exclude ?? '',
-      profile.votes,
-      {
-        palette: palette ?? profile.palette,
-        useCase: profile.useCase,
-        signatures: profile.signatures,
-      },
-      settings,
-    ).filter((hit) => !hit.missing.length || hit.id === query);
-    if (bank.some((s) => s.id === query) && !hits.some((s) => s.id === query)) hits.length = 0;
-    const ballot = mountedTake && profile.votes?.[mountedTake.id];
-    const vetoed = ballot && (ballot.revision ?? 1) === (mountedTake.revision ?? 1) &&
-      (!ballot.useCase || ballot.useCase === profile.useCase) && ['no', 'rejected'].includes(ballot.decision);
-    if (mountedTake && !vetoed && fitsPerformance(mountedTake, settings)) hits.unshift(mountedTake);
+    const rank = entries => rankPerformance(entries, query, exclude ?? '', profile.votes,
+      { palette: palette ?? profile.palette, useCase: profile.useCase, signatures: profile.signatures }, settings);
+    const exactId = bank.find(sound => sound.id === query.trim().toLowerCase())?.id;
+    const vetoedInProject = sound => {
+      const vote = profile.votes?.[sound.id];
+      return vote && (vote.revision ?? 1) === (sound.revision ?? 1) &&
+        (!vote.useCase || vote.useCase === profile.useCase) && ['no', 'rejected'].includes(vote.decision);
+    };
+    const matches = rank(cleanBank).filter(hit => !vetoedInProject(hit));
+    const hits = matches.filter(hit => exactId ? hit.id === exactId : !hit.missing.length);
+    if (mountedTake && !vetoedInProject(mountedTake) && fitsPerformance(mountedTake, settings)) hits.unshift(mountedTake);
     const terms =
       String(prefer ?? '')
         .toLowerCase()
@@ -86,14 +97,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     hits.sort((a, b) => Number(b.id === query) - Number(a.id === query) || preference(b) - preference(a));
     if (design.scope === 'world') {
       for (let i = hits.length - 1; i >= 0; i--)
-        if (
-          (sourcePerspective(hits[i]).local || hits[i].tags.includes('menu')) &&
-          !(
-            sourcePerspective(hits[i]).physicalInput &&
-            (settings.acoustics || (settings.placement && settings.placement.kind !== 'listener'))
-          )
-        )
-          hits.splice(i, 1);
+        if (!worldCompatible(hits[i], settings)) hits.splice(i, 1);
     }
     const conflict = hits.length && geometryConflict(hits[0], settings);
     // Match source duration and time controls before committing to a take.
@@ -101,7 +105,12 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
     if (settings.durationSec && settings.placement?.path?.length)
       compatible.sort((a, b) => Number(b.loopable) - Number(a.loopable));
     if (!compatible.length) {
+      // Evidence for repairing the brief. A held recording never becomes a playable substitute.
+      const candidates = (design.sourcePolicy === 'clean' ? rank(bank) : matches)
+        .filter(hit => !exactId || hit.id === exactId).slice(0, 3)
+        .map(hit => ({ id: hit.id, issue: vetoedInProject(hit) ? 'project-rejected' : reviewReason(hit, settings, design), missingTerms: hit.missing }));
       missing.push({
+        candidates,
         query,
         label: layer.label,
         reason:
@@ -172,6 +181,7 @@ export function resolveListeningBrief(brief, bank, profile = {}) {
       : 'world';
   return {
     decision: missing.length ? 'review' : 'resolved',
+    ...(missing.length ? { resolvedLayers: resolved.map(({label, id}) => ({label, id})) } : {}),
     missing,
     warnings,
     design: missing.length ? null : { ...design, layers: resolved },

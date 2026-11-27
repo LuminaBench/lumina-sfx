@@ -109,7 +109,7 @@ test('plain brief qualifiers survive into the performance, including speech and 
     ]),
     bank,
   );
-  assert.equal(p.cues[0].soundId, 'gasket-mount-keyboard-key-down');
+  assert.equal(p.cues[0].soundId, 'linear-mechanical-keyboard-key-down');
   assert.equal(p.cues[0].context, 'speech');
   assert.equal(p.cues[1].decision, 'reuse');
 });
@@ -192,4 +192,40 @@ test('a recut retains the approved quieter key; a missing original asks for a fr
       .keyDecisions,
     ['play', 'play', 'play'],
   );
+});
+
+test('a held physical Return is one distinct wide key and an approved board remains available', () => {
+  const timeline = cut([
+    event('number', 'type', 10, { device: 'desktop mechanical keyboard', keyFrames: [10, 28] }),
+    event('submit', 'press', 60, { device: 'desktop mechanical keyboard', key: 'Enter', endFrame: 95 }),
+    event('release-hold', 'hold', 80),
+    event('caption', 'press', 122, { device: 'desktop mouse', label: 'Return' }),
+  ]);
+  const p = planEdit(timeline, bank);
+  assert.deepEqual(p.cues.map(c => c.soundId ?? c.decision), ['linear-mechanical-keyboard-key-down',
+    'linear-mechanical-keyboard-return-down', 'silence', 'desktop-mouse-press']);
+  const previous = bank.find(s => s.id === 'gasket-mount-keyboard-key-down');
+  const profile = {signatures: {'type/mechanical': { id: previous.id, revision: previous.revision }}};
+  assert.equal(planEdit(timeline, bank, profile).cues[0].soundId, previous.id);
+});
+
+test('delivery flags material drift within one device and accepts mirrored swipes and varying typing takes', async () => {
+  const { signatureChanges } = await import('../scripts/edit-family.mjs');
+  const base = {decision:'play', signature:'slide', action:'slide', fixedTake:true, seed:32};
+  const swipes = [{...base, soundId:'silk-swipe-right', syncFrame:20},{...base, soundId:'silk-swipe-left',syncFrame:45}];
+  const keys = [81,97].map((seed,i) => ({ decision:'play', soundId:'linear-mechanical-keyboard-key-down',
+    seed, signature:'type/mechanical', action:'type',syncFrame:50+i*8 }));
+  assert.deepEqual(signatureChanges([...swipes, ...keys]), []);
+  const change = signatureChanges([...swipes, {...base, soundId:'velvet-swipe-right',syncFrame:110}]);
+  assert.deepEqual(change[0].variants.map(s=>s.frames),[[20,45],[110]]);
+});
+
+
+test('repeat context follows a physical switch across actions and ignores contacts on a different device', () => {
+  const p = planEdit(cut([
+    event('open', 'tab', 10, {device:'mouse'}), event('dismiss', 'back', 16, {device:'mouse'}),
+    event('desk', 'press', 100, {device:'mouse'}), event('tablet', 'press', 106, {device:'touch'}),
+  ]),bank);
+  assert.deepEqual(p.cues.slice(0,3).map(c=>c.context),['rapid','rapid','normal']);
+  assert.equal(p.cues[3].decision,'silence');
 });

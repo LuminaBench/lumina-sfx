@@ -349,3 +349,17 @@ test('the downloadable cut scene accepts both viewpoints through the public desi
   bad.listener.path[0].cut = 'off';
   await assert.rejects(() => loadDesign(bad), /boolean cut/);
 });
+
+test('an unresolved brief preserves eligible siblings and explains the missing material or policy', async () => {
+  const {sounds} = JSON.parse(await readFile(new URL('../catalog.json', import.meta.url)));
+  const key = 'stride-gravel', roof = 'corrugated-metal-roof-rain-loop';
+  const make = query => ({ schemaVersion:2, scope:'world', layers:[{label:'roof',query:roof},{label:'walker',query}] });
+  const cut = resolveListeningBrief(make(key),sounds,{useCase:'shelter',votes:{[key]:{decision:'no',
+    revision:sounds.find(s=>s.id===key).revision, useCase:'shelter'}}});
+  assert.equal(cut.decision,'review');assert.equal(cut.design,null);
+  assert.deepEqual(cut.resolvedLayers,[{label:'roof',id:roof}]);assert.equal(cut.missing[0].candidates[0].issue,'project-rejected');
+  const held = resolveListeningBrief(make(key),sounds.map(s=>s.id===key?{...s,isolation:undefined}:s));
+  assert.equal(held.missing[0].candidates[0].issue,'needs-isolation');
+  const absent = resolveListeningBrief(make('gravel footstep through cellophane'),sounds);
+  assert.equal(absent.design,null);assert.ok(absent.missing[0].candidates.some(c=>c.missingTerms.includes('cellophane')));
+});

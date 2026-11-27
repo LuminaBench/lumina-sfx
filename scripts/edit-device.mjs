@@ -12,10 +12,11 @@ export function deviceKind(value = '') {
   )
     return 'touch';
   if (/trackball/.test(text)) return 'trackball';
-  if (/\b(mouse|desktop|pointer)\b/.test(text)) return 'mouse';
-  if (/mechanical/.test(text)) return 'mechanical';
+  if (/\b(mouse|pointer)\b/.test(text)) return 'mouse';
+  if (/mechanical|keychron|gasket[ -]mount/.test(text)) return 'mechanical';
   if (/\b(keyboard|laptop|notebook)\b/.test(text)) return 'keyboard';
   if (/controller|gamepad/.test(text)) return 'controller';
+  if (/\bdesktop\b/.test(text)) return 'mouse';
   return 'unknown';
 }
 
@@ -103,4 +104,13 @@ export function ambiguousPenRequest(query) {
     deviceKind(subject) === 'pen-tip' &&
     /\b(?:press|tap|click)\b/i.test(subject)
   );
+}
+
+// A Return printed on a button is UI copy. Recognize the key from hardware or a physical-key brief.
+export function returnKeyDown(event) {
+  if (event.deviceKind !== 'mechanical' || !['press', 'confirm', 'type'].includes(event.action)) return false;
+  if (event.key !== undefined) return /^(enter|return)$/i.test(event.key);
+  const text = stripButtonLabel(event.brief ?? '');
+  return /\b(?:enter|return) key\b|\b(?:press|hold|hit)(?:es|s|ing)? (?:the )?(?:enter|return)\b/i.test(text) &&
+    !/\b(?:not|without|never|button|label|shortcut|chord)\b/i.test(text);
 }

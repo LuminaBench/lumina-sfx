@@ -1,3 +1,4 @@
+import { signatureChanges } from './edit-family.mjs';
 // Audit decoded picture, including the transport codec, against the source and authored stem.
 import { execFile, spawn } from 'node:child_process';
 import { promisify } from 'node:util';
@@ -190,12 +191,15 @@ export async function auditDelivery(plan, source, stem, mix, stream = 0) {
   }
   const mixPeakDbfs = db(peak * peak),
     overall = levels(total);
+  const changes = signatureChanges(plan.cues);
   return {
     seconds: frame / rate,
     mixPeakDbfs,
     peakAtSec: Math.round(1000 * peakAt) / 1000,
     ...overall,
+    signatureChanges: changes,
     warnings: [
+      ...changes.map(change => 'Audition the change of material or fixed take for ' + change.signature),
       ...(peak >= 1 ? ['Decoded sample reaches full scale'] : []),
       ...(overall.originalGainDb !== null && Math.abs(overall.originalGainDb) > 1
         ? ['Check original soundtrack level']

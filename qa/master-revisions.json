@@ -1237,53 +1237,53 @@
     },
     "survey-quadcopter-accelerate-away-from-camera": {
       "previous": "7af72a3365d70b24fb1f24d7d5ec64bcc56b81fac86e9d74982bb817ea429e1c",
-      "current": "49891aef2cad8ca2da9a3313fbe3966aec0a5b901b01ed7c165eab9073807b2a",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "e03d21e272a4676c659e52f52c1f54d9879bdf7b966597b1f166023f779e55b5",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-camera-approach-from-altitude": {
       "previous": "c5eb93943b2b1b0abfab71b7020b5ecd5abe8cda5c652c6a4451b889d09de123",
-      "current": "c908d823d25c0495154fd0db0a00118d6e172c0fe8b4d7fc549709a6c2ebc8b1",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "ad2aef981ebf2acc338bd2371d394912c80adc0160b37a5e6e337191292bbd65",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-cut-thrust-for-descent": {
       "previous": "a7ed6f8d00375215bb9484a3c7703a1456d5de1248861b9af4025866b56d9907",
-      "current": "d4eb9a90508e0580a29b10d797da3f975ef1b270bacad0aa11a7978acbfbcc29",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "76c4a7ca4442ff2ac812fe2bacdb1d613ad2fe600267a2a74ed76c3b20a1dd97",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-full-climb-rotor-loop": {
       "previous": "8c638d2e3eeafa0ea3918709c1df9a989f7b1b71e45101fdd4679ee079a84e29",
-      "current": "106a5dfd991566724b31cdbe5830291aebe365317a50d6bf2e13cb1c7d0d31e3",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "7ecdfc604c2199f74be2787ea0442265eb50da55e8cce15aad70b4c1e047b174",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-onboard-frame-vibration-loop": {
       "previous": "b696a4a905d97b95dae367010f015f590ae424cf3f2c6996949903b3e9de4aaa",
-      "current": "4c8d4272b74213f20f3f17552d7c17b9c78fc3f9db8240a39836846560de4d6d",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "2629efd6763e5752400d784e0877254f29fcebb36c7d8166cb146b563658ab2e",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-props-armed-idle-loop": {
       "previous": "b0dfb0d662a27cd9ee95941e2381704ee5ad8348ceece4b8e908d2c294f79d13",
-      "current": "042566f9aeb891e803e210ad7803107db7756b5e629a27bd57921b3a8057bca4",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "00a5f07d96c5b11a3492cc28691c76123afa3e21582748e9ca2d2196f7a782a3",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-settle-onto-landing-marker": {
       "previous": "5fcb3c2535ea45e925f4ac0c5d809d3a8111053d80858a1aae30825603559a6d",
-      "current": "8c1b9f88fc21d734161c09f2b689f04b7c9b838d2e272aa8fbb8bd3858ff407c",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "4c16940a58648312736c6bfb9bbb8a5e63a371cf9fa7a1daf8d5c369b1d68305",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-survey-cruise-loop": {
       "previous": "e322d754f53fb6a602d293c49f2c4bc507fd3a0e0ebd3ab7f3a8749d79a2e03a",
-      "current": "833d729e93117478b3d75d096bf66ddc512b19fe70002061b18e8bd0c379d975",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "8e2c89629261628a2e7bf6d06cf458a0d1d20a55f34a1ed556f0e913a12a1c83",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-two-altitude-corrections": {
       "previous": "d91933147e24347e2f8f51fdaae282f91ef2b2136838c4fa66bcc8b14614b1d1",
-      "current": "4fc3e28362b3bf7e8241807ddb448760d8425c962d06cbf0b75c686314501564",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "022ff881d86097ddd3c445e075ae74918e9ff4f9d1b18fcc3e6746b1431d47b7",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "survey-quadcopter-vertical-launch": {
       "previous": "4b68537fb7536212273b593b50ff1fd4a666a9d24cad080c65b18862507b4c7f",
-      "current": "efc7a0c4b4cd988f02906924a91299c3531b07c3fea6c6d062ff4b34b06b8efa",
-      "reason": "Rebuild propulsion from the intended motor texture and motion."
+      "current": "42be8baa62619f1ae713669361b058faa246485154eebd0375d6dd313fcba733",
+      "reason": "Retain the real changing blade harmonics of the electric rotors in each maneuver."
     },
     "swimmer-breaks-into-air": {
       "previous": "57495e7efdc66ac2259333dcaa8ce55414b26c36835a4e5ef51b9980eccd3783",
@@ -1674,6 +1674,76 @@
       "previous": "75ff98d2f90cb51ad8ef2db2da690f0efda16d0c220166cc6f4e35100de8734b",
       "current": "55be90d88c5a636fbcb47d5dd630f7b21eb34a411a8aafd8b0c3b08bf2c6bbed",
       "reason": "Replace the tonal or incidental transient with an action-matched physical recording or shaped air gesture."
+    },
+    "linear-mechanical-keyboard-spacebar": {
+      "previous": "994790b2cae1157114e7fc6db69eba4eb39e0d23d8afdbdd0cd7bd9223ae9192",
+      "current": "669e699c446d1ae63e83a5110bd0b36a3dd60d1bbc755a802e7ae6bfb84bf808",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-shortcut": {
+      "previous": "2f0daf27c09bf10774e2f09232e72f9fdaaa1a8761643797bd8c071c1c8cc2ea",
+      "current": "6486506ef6417a8f896c963d00c74080800767c65573ca57a0f2807d0a1b0300",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-backspace-pair": {
+      "previous": "f284abf05efd012b701ab358035c4a7a40f98708aa7e0e570643db2e6d6158e4",
+      "current": "a27e18fc6cedc8706927227a62571dc55abc1217f55cc62e149a2700f27ac6b4",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-typed-word": {
+      "previous": "cb7a133b7701f1773f6275cf7cb4f37f278478588e23e5c7db21d28c26185dd6",
+      "current": "e96f9aff824bc83cd98a8c90f4a844a0dab04a547f713e9bb1b01180ea7f4449",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-key-up": {
+      "previous": "c3579842e1fa10ef6a84dd2a1bfd976a63e45c1f7cecc2e237158f86d16c6115",
+      "current": "b7e22d4893f0a3f7c0022f0cbdc36fa5a758392eb2163b9f357f68f78823fc7f",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-key-down": {
+      "previous": "4ed70e8482a778087f9c43d6c0ae451c0b0c4c6a1e19a7f93c9849d3ae3c148b",
+      "current": "e5e8a472296478267c31a441648466bbf90ff74cf6adeab1fabaebc9c16c3418",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-return": {
+      "previous": "74fcd6660617f3f4480685cecc4fb039abd9a41f55f18a4cb646dcd910235b99",
+      "current": "32f68aeac0244c5d177d1ad6609f3460d44e533ce31e8173612a40eaf9aa6e8c",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "linear-mechanical-keyboard-command-line": {
+      "previous": "eeabdd8182a779392b116b1ab6f7a76d61bc83a7e65ff55eeabc0511e95129eb",
+      "current": "a3edce4dff6fa64e8ae8e3438fa5a5fdae2c05e65fe7facc565528bc5a8488f5",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-press-and-hold": {
+      "previous": "cbff55fdd04b7e67972f45f5cd087d63c9a8c85aa048cb9bbec533d3eaede646",
+      "current": "c4f3b3382ec6344b6b50e724f22d35083d47b55971f9a37e65b3112bf112eb7e",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-double-click": {
+      "previous": "a149654092f00d2a0d223cdcd4c1f209dc3892e8df7ae78ff4181f65f01c1e43",
+      "current": "023fbc1bb6b3b0412281d3a05f9ee9d2f8ab27ef17e915c4845dbed37c229094",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-three-taps": {
+      "previous": "7cadced8452c5e4a5484399c59820cafc5dc965022d6ffbb6729d5c1948d5711",
+      "current": "048e0bdcd792a59f5640cd3e5d76a3a15739e1dfebfe204bdcdcde2a8b1e859d",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-release": {
+      "previous": "ec689a02fb1aea817188f09fdb738916b14db11dd1e42e8b1bcb36ad6acd02ad",
+      "current": "a3df1ee55910912bc016ffcd4ce448920e8d2d1062fc1912f7807e98796827da",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "glass-trackpad-press": {
+      "previous": "a65896a2e9d75e4b36fffa7035f101fc9ac446c8192572c61b8ffd790f64a275",
+      "current": "f1b94242bb25738a4369928128bd15cb290214a684ce368f6fad802375a06428",
+      "reason": "Use a cropped recording of the physical input and retain its contact and natural body."
+    },
+    "stride-gravel": {
+      "previous": "b4d04655666e318e41d469138a9fc4d5af2512dc28e9ec43f202e97d2e3a49d9",
+      "current": "18e8781c3c837d51f9818a935993c8df4c5e2ce1be81cc424501d2dd122cc16a",
+      "reason": "Retain the recorded shoe plant and bring out loose stones under the rolling boot."
     }
   }
 }
