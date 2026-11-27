@@ -19,20 +19,18 @@ export function deviceKind(value = '') {
   return 'unknown';
 }
 
+const switchActions = new Set(['press','paste','tab','back','confirm','toggle-on','toggle-off','undo','redo','disabled']);
+const pointers = new Set(['mouse','trackpad','trackball','pen-button']);
+export function physicalSwitch(event) {
+  return pointers.has(event.deviceKind) && switchActions.has(event.action) && !event.soundId && event.feedback !== 'subtle';
+}
 export function feedbackFor(event, device) {
-  const contact = ['press', 'paste', 'type'].includes(event.action);
+  const contact = ['press','type','paste'].includes(event.action);
   if (event.feedback === 'none') return 'silence';
   if (event.soundId) return;
-  if (
-    device === 'touch' &&
-    event.feedback === 'subtle' &&
-    ['tab', 'back', 'confirm', 'notice', 'toggle-on', 'toggle-off'].includes(event.action)
-  )
-    return 'digital';
+  if (event.physicalContact && event.action === 'press' && ['touch','pen-tip'].includes(device)) return 'surface';
+  if (device === 'touch' && (contact || switchActions.has(event.action))) return event.feedback === 'subtle' || event.accent ? 'digital' : 'silence';
   if (!contact) return;
-  if (event.physicalContact && event.action === 'press' && ['touch', 'pen-tip'].includes(device))
-    return 'surface';
-  if (device === 'touch') return event.feedback === 'subtle' || event.accent ? 'digital' : 'silence';
   if (device === 'pen-tip' || device === 'unknown') return 'review';
   if (event.action === 'paste' && device === 'unspecified') return 'silence';
 }

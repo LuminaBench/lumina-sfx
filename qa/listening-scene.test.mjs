@@ -307,3 +307,15 @@ test('phone monitoring distinguishes an immovable masker from an adjustable cont
     }
   }
 });
+
+test('one event, vehicle state, exact ID and source markers survive free-text source selection',async()=>{
+  const {sounds}=JSON.parse(await readFile(new URL('../catalog.json',import.meta.url),'utf8'));
+  const choose=(query,extra={})=>resolveListeningBrief({schemaVersion:2,scope:'world',layers:[{query,label:'source',...extra}]},sounds);
+  const single=choose('one thunder strike');
+  assert.equal(single.design.layers[0].id,'thunder-isolated-rolling-strike');
+  assert.equal(choose('city bus diesel engine cruising at constant speed',{durationSec:8}).design.layers[0].id,'transit-bus-steady-cruise-loop');
+  assert.equal(choose('jet turbine at steady low throttle taxiing on an airfield',{durationSec:8}).design.layers[0].id,'light-jet-taxi-thrust-loop');
+  assert.equal(choose('light-jet-taxi-thrust-loop',{fromMarker:'not-a-marker'}).decision,'review');
+  assert.equal(choose('thunder-isolated-rolling-strike',{durationSec:30}).decision,'review');
+  assert.equal(choose('hydrogen bus pneumatic door closing at highway speed').decision,'review');
+});

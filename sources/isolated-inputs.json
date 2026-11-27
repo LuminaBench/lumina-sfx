@@ -1,5 +1,6 @@
 {
   "stationaryTexture": [
+    "city-bus-engine-idle-loop",
     "motion-marine-engine",
     "motion-outboard-aeration",
     "motion-harbor-hydrophone",
@@ -19,6 +20,7 @@
     "milestone-prop-steady"
   ],
   "transient": [
+    "ceramic-mug-set-down",
     "clarity-pistol",
     "atlas-firecracker",
     "response-microclick",

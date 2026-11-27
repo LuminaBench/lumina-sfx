@@ -135,3 +135,19 @@ node scripts/score-edit.mjs recut new-timeline.json --previous approved.json --p
 The audition desk saves a revision ballot. On a source-transient review it can select the original or the added take. A project profile saves the material, source revision, tone and intended trim for locked playing cues. The new cut still measures its own soundtrack. Keep event IDs stable across edits. A renamed event can use `previousId`. An unambiguous action and target also match. Conflicting matches go to review. Picture offsets carry over in seconds when frame rate changes.
 
 Use `brief` for a frame-marked cue such as “mechanical keyboard click during a spoken walkthrough”. Use `keyFrames` for an observed word, `underSpeech` for an exact narration span, and `sourceContact: true` for a known original. Explicit timing and device observations take precedence.
+
+## Check the picture you will ship
+
+Use the same approved project profile when cutting a second video. It carries the selected take, seed for repeated switches and transitions, gain trim and treble trim. Let keyboard letters vary within the selected keyboard. A single tap on a phone defaults to silence unless the picture or brief calls for physical or audible feedback.
+
+Align an accented title landing to its visible seat with `syncFrame`. Set `endFrame` to the end of its motion so its fade ends before the following reading hold. Set `accent: true` for a title, wipe, reveal or rise you want to hear. Keep quiet movement explicit.
+
+```sh
+node scripts/score-edit.mjs mix original.mp4 --stem sound.wav --out scored.mp4
+node scripts/score-edit.mjs audit plan.json --source original.mp4 --stem sound.wav --mix scored.mp4 --out levels.json
+node scripts/score-edit.mjs audition plan.json --source original.mp4 --cue name --source-frame 87 --quieter --out listen-to-key
+```
+
+The mixer reads the encoded true peak. If AAC overshoots, it applies a fixed delivery trim and encodes again. Its JSON reports the trim and final dBTP. For an independent world scene with a tail longer than the picture, pass `--fit-picture` to fade the stem at the cut. Ordinary edit stems must match the picture clock.
+
+The delivery audit reads the original, authored stem and finished audio together. For each planned contact it reports the measured change in level after encoding, the surrounding original level and a mono phone-band reading. Values in dBFS describe the digital signal. Listen to flagged windows against the picture for masking and excessive prominence. When an original tap falls on a word being typed, audition that frame on its own. The quieter choice trims only that key and retains all neighbouring strokes.

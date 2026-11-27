@@ -1,6 +1,7 @@
+import { editorialPicks } from './editorial-intent.mjs';
 import { rankByIntent } from './intent-search.mjs';
 import { chooseFamilies, familySlot } from './edit-family.mjs';
-import { deviceKind, feedbackFor, excludedTraits, stripButtonLabel } from './edit-device.mjs';
+import { deviceKind, feedbackFor, physicalSwitch, excludedTraits, stripButtonLabel } from './edit-device.mjs';
 import {
   contextOrder,
   levelMatch,
@@ -46,7 +47,8 @@ const quiet = new Set([
   'animation',
   'auto-reveal',
 ]);
-const optIn = new Set(['slide', 'cut', 'logo', 'focus', 'scroll']);
+const motionAccents = new Set(['wipe', 'whip', 'land', 'rise', 'swell', 'reveal']);
+const optIn = new Set(['slide', 'cut', 'logo', 'focus', 'scroll', 'scrub', ...motionAccents]);
 const weight = {
   snap: 8,
   'toggle-on': 7,
@@ -158,12 +160,7 @@ function optionsFor(e, palette) {
     return [
       e.deviceKind === 'mechanical' ? 'gasket-mount-keyboard-shortcut' : 'laptop-scissor-keyboard-shortcut',
     ];
-  if (
-    ['tab', 'confirm', 'back', 'toggle-on', 'toggle-off'].includes(e.action) &&
-    ['mouse', 'trackpad', 'trackball', 'pen-button'].includes(e.deviceKind) &&
-    e.feedback !== 'subtle'
-  )
-    return physical[e.deviceKind];
+  if (physicalSwitch(e)) return physical[e.deviceKind];
   if (e.action === 'press' || e.action === 'paste') return physical[e.deviceKind] ?? [];
   if (e.action === 'type')
     return e.deviceKind === 'mechanical'
@@ -180,6 +177,8 @@ function optionsFor(e, palette) {
   if (e.action === 'confirm') return [...basic.confirm, 'menu-confirm-spring-detent'];
   if (e.action === 'cut') return [...basic.cut, 'linen-match-cut'];
   if (e.action === 'logo') return [...basic.logo, 'delicate-logo-close'];
+  if (motionAccents.has(e.action) || ['scrub', 'drop'].includes(e.action))
+    return editorialPicks(e.action) ?? [];
   return [...(basic[e.action] ?? (optional[e.action] ? [optional[e.action]] : []))];
 }
 function pick(e, profile, votes, bank, mode) {
@@ -248,7 +247,17 @@ function inputOwners(events, fps) {
   const states = new Map(),
     matches = new Map(),
     paired = new Map();
-  const transitions = new Set(['tab', 'toggle-on', 'toggle-off', 'confirm', 'back', 'snap']);
+  const transitions = new Set([
+    'tab',
+    'toggle-on',
+    'toggle-off',
+    'confirm',
+    'back',
+    'snap',
+    'undo',
+    'redo',
+    'disabled',
+  ]);
   for (const e of events) {
     if (e.gesture || !transitions.has(e.action)) continue;
     if (!states.has(e.frame)) states.set(e.frame, []);
@@ -367,7 +376,9 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       const out = {
         id: e.id,
         frame: e.frame,
+        ...(e.endFrame !== undefined ? { endFrame: e.endFrame } : {}),
         action: e.action,
+        ...(e.deviceKind !== 'unspecified' ? { device: e.deviceKind } : {}),
         ...(e.gesture ? { gesture: e.gesture } : {}),
         ...(e.target ? { target: e.target } : {}),
         ...(e.direction ? { direction: e.direction } : {}),
@@ -454,14 +465,25 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       'notice',
       'logo',
     ].includes(event.action);
+    // A multi-contact hotkey in a short narration break can jump out between words.
+    const inSpeechGap =
+      event.action === 'paste' &&
+      !mode &&
+      speech.some(([, end]) => end <= event.frame && (event.frame - end) / fps < 2) &&
+      speech.some(([start]) => start > event.frame && (start - event.frame) / fps < 2);
+    const fixedTake = fixed || motionAccents.has(event.action) || physicalSwitch(event);
     Object.assign(out, perf, {
-      gainDb: Math.max(-80, Math.min(12, perf.gainDb + trim)),
+      ...(fixedTake ? { fixedTake: true } : {}),
+      ...(motionAccents.has(event.action) && event.endFrame !== undefined ? { fitMotion: true } : {}),
+      gainDb: Math.max(-80, Math.min(12, perf.gainDb + trim - (inSpeechGap ? 2 : 0))),
       projectTrimDb: trim,
-      seed:
-        fixed || ['mouse', 'trackpad', 'trackball', 'pen-button'].includes(event.deviceKind)
-          ? stableSeed(project + '/' + slot + '/' + selected.id.replace(/-(left|right)$/, ''))
-          : perf.seed,
-      ...((preference?.edgeDb ?? event.briefEdge) ? { edgeDb: preference?.edgeDb ?? event.briefEdge } : {}),
+      seed: fixedTake
+        ? (preference?.seed ??
+          stableSeed(project + '/' + slot + '/' + selected.id.replace(/-(left|right)$/, '')))
+        : perf.seed,
+      ...((preference?.edgeDb ?? event.briefEdge ?? inSpeechGap)
+        ? { edgeDb: preference?.edgeDb ?? event.briefEdge ?? -3 }
+        : {}),
       signature: slot,
       perspective: 'listener',
       device: event.deviceKind,
@@ -478,9 +500,11 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
     if (!possible.length || events.some((e) => e.sourceContact !== undefined)) continue;
     const playing = events.map((e) => cuesById.get(e.id)).find((c) => c.decision === 'play');
     if (!playing) continue;
-    if (playing.keyFrames?.length > 1 && possible.length < playing.keyFrames.length) {
-      // A partially recorded word needs spotting per key before adding another performance.
-      playing.decision = 'review';
+    if (playing.keyFrames?.length) {
+      playing.keyDecisions = playing.keyFrames.map(
+        (frame) => possible.find((hit) => hit.frame === frame)?.decision ?? 'play',
+      );
+      playing.decision = wordDecision(playing.keyDecisions);
     } else playing.decision = possible.every((x) => x.decision === 'reuse') ? 'reuse' : 'review';
     playing.sourceEvidence = possible;
     playing.reason =
@@ -494,7 +518,7 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
       .filter((c) => c.decision === 'play')
       .sort((a, b) => priority.get(b.id) - priority.get(a.id) || a.frame - b.frame);
     for (const cue of ordered) {
-      const count = cue.keyFrames?.length ?? 1;
+      const count = addedContacts(cue);
       if (count <= remaining) remaining -= count;
       else {
         // A typed phrase is one observed performance. Keep its timing intact when the budget is too small.
@@ -508,6 +532,8 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
           'gainDb',
           'keyFrames',
           'keyGainOffsets',
+          'keyDecisions',
+          'sourceEvidence',
           'alternatives',
         ])
           delete cue[field];
@@ -528,6 +554,13 @@ export function planEdit(input, catalog, profile = {}, votes = {}, track) {
     ...(input.maxAddedContacts !== undefined ? { maxAddedContacts: input.maxAddedContacts } : {}),
     cues: cues.sort((a, b) => a.frame - b.frame || a.id.localeCompare(b.id)),
   };
+}
+function wordDecision(keys) {
+  return keys.includes('play') ? 'play' : keys.includes('review') ? 'review' : 'reuse';
+}
+function addedContacts(cue) {
+  if (cue.decision !== 'play') return 0;
+  return cue.keyDecisions?.filter((d) => d === 'play').length ?? cue.keyFrames?.length ?? 1;
 }
 export function reviseEdit(plan, changes, catalog) {
   const next = structuredClone(plan),
@@ -555,6 +588,7 @@ export function reviseEdit(plan, changes, catalog) {
       lock,
       character,
       sourceDecision,
+      sourceFrame,
       ...other
     } = change;
     let soundId = requestedSound;
@@ -577,11 +611,42 @@ export function reviseEdit(plan, changes, catalog) {
     )
       throw Error('Unlock the approved cue before revising ' + id);
     if (lock !== undefined) cue.locked = lock;
+    if (
+      sourceFrame !== undefined &&
+      (!cue.keyFrames?.includes(sourceFrame) ||
+        !sourceDecision ||
+        !cue.sourceEvidence?.some((x) => x.frame === sourceFrame))
+    )
+      throw Error('Choose a frame with an observed source contact');
+    if (
+      sourceFrame !== undefined &&
+      [requestedSound, character, shiftFrames, mute].some((v) => v !== undefined)
+    )
+      throw Error('Set sound, timing or mute on the complete cue');
     if (sourceDecision !== undefined) {
       if (!cue.sourceEvidence || !['reuse', 'add'].includes(sourceDecision))
         throw Error('Expected an observed original contact');
-      cue.decision = sourceDecision === 'add' ? 'play' : 'reuse';
-      cue.sourceChoice = sourceDecision;
+      const decision = sourceDecision === 'add' ? 'play' : 'reuse';
+      if (cue.keyDecisions) {
+        cue.keyDecisions = cue.keyDecisions.map((old, i) =>
+          cue.sourceEvidence.some(
+            (x) => x.frame === cue.keyFrames[i] && (sourceFrame === undefined || x.frame === sourceFrame),
+          )
+            ? decision
+            : old,
+        );
+        cue.decision = wordDecision(cue.keyDecisions);
+      } else cue.decision = decision;
+      if (cue.keyFrames && cue.keyDecisions) {
+        cue.keyApprovals ??= cue.keyFrames.map(() => null);
+        for (const [i, frame] of cue.keyFrames.entries()) {
+          if (
+            (sourceFrame === undefined || frame === sourceFrame) &&
+            cue.sourceEvidence.some((x) => x.frame === frame)
+          )
+            cue.keyApprovals[i] = { decision: sourceDecision, trimDb: cue.keyApprovals[i]?.trimDb ?? 0 };
+        }
+      } else cue.sourceChoice = sourceDecision;
       if (
         sourceDecision === 'reuse' &&
         [mute, gainDb, trimDb, shiftFrames, soundId, character].every((v) => v === undefined)
@@ -615,15 +680,29 @@ export function reviseEdit(plan, changes, catalog) {
     if (gainDb !== undefined || trimDb !== undefined) {
       if (gainDb !== undefined && trimDb !== undefined)
         throw Error('Specify absolute gain or a relative trim');
-      const gain = trimDb === undefined ? gainDb : cue.gainDb + trimDb;
-      if (!Number.isFinite(gain) || gain < -80 || gain > 12) throw Error('Invalid gainDb');
-      cue.projectTrimDb = (cue.projectTrimDb ?? 0) + gain - cue.gainDb;
-      cue.gainDb = gain;
+      if (sourceFrame !== undefined) {
+        if (gainDb !== undefined) throw Error('Use a relative trim for one observed key');
+        const index = cue.keyFrames.indexOf(sourceFrame);
+        const offsets = cue.keyGainOffsets ?? cue.keyFrames.map(() => 0);
+        const nextOffset = offsets[index] + trimDb;
+        if (!Number.isFinite(nextOffset) || Math.abs(nextOffset) > 60) throw Error('Invalid key trim');
+        cue.keyGainOffsets = offsets.map((value, i) => (i === index ? nextOffset : value));
+        cue.keyApprovals[index].trimDb += trimDb;
+      } else {
+        const gain = trimDb === undefined ? gainDb : cue.gainDb + trimDb;
+        if (!Number.isFinite(gain) || gain < -80 || gain > 12) throw Error('Invalid gainDb');
+        cue.projectTrimDb = (cue.projectTrimDb ?? 0) + gain - cue.gainDb;
+        cue.gainDb = gain;
+      }
     }
     if (shiftFrames !== undefined) {
       integer(shiftFrames, 'frame shift', -durationFrames, durationFrames);
       cue.frame = integer(cue.frame + shiftFrames, 'frame', 0, durationFrames - 1);
       cue.syncFrame = integer(cue.syncFrame + shiftFrames, 'sync frame', 0, durationFrames - 1);
+      if (cue.endFrame !== undefined)
+        cue.endFrame = integer(cue.endFrame + shiftFrames, 'end frame', cue.frame + 1, durationFrames);
+      if (cue.sourceEvidence)
+        cue.sourceEvidence = cue.sourceEvidence.map((e) => ({ ...e, frame: e.frame + shiftFrames }));
       if (cue.keyFrames)
         cue.keyFrames = cue.keyFrames.map((f) =>
           integer(f + shiftFrames, 'key frame', 0, durationFrames - 1),
@@ -631,13 +710,12 @@ export function reviseEdit(plan, changes, catalog) {
     }
     if (mute !== undefined) {
       cue.muted = mute;
-      cue.decision = mute ? 'silence' : 'play';
+      cue.decision = mute ? 'silence' : cue.keyDecisions ? wordDecision(cue.keyDecisions) : 'play';
     }
   }
   if (
     next.maxAddedContacts !== undefined &&
-    next.cues.reduce((n, c) => n + (c.decision === 'play' ? (c.keyFrames?.length ?? 1) : 0), 0) >
-      next.maxAddedContacts
+    next.cues.reduce((n, c) => n + addedContacts(c), 0) > next.maxAddedContacts
   )
     throw Error('Revision exceeds the contact budget. Mute another cue in the same edit.');
   next.cues.sort((a, b) => a.frame - b.frame || a.id.localeCompare(b.id));

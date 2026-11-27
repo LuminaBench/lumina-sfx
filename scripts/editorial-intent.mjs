@@ -101,6 +101,10 @@ export function editorialTerms(action) {
   return [action, ...profiles[action][1].split(' ')];
 }
 
+export function editorialPicks(action) {
+  return Object.hasOwn(profiles,action) ? profiles[action][2] : undefined;
+}
+
 export function editorialPurpose(action) {
   return profiles[action]?.[0];
 }

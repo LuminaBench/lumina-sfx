@@ -113,3 +113,83 @@ test('plain brief qualifiers survive into the performance, including speech and 
   assert.equal(p.cues[0].context, 'speech');
   assert.equal(p.cues[1].decision, 'reuse');
 });
+
+test('a questionable original key does not erase its neighbours or lower the whole word', () => {
+  const word = event('word', 'type', 18, { device: 'laptop', keyFrames: [18, 23, 29, 37, 46] });
+  const cutaway = cut([word]);
+  const original = { windows: [], contacts: { word: [{ frame: 29, decision: 'review' }] } };
+  const p = planEdit(cutaway, bank, {}, {}, original);
+  const before = p.cues[0];
+  assert.deepEqual(before.keyDecisions, ['play', 'play', 'review', 'play', 'play']);
+  const approved = reviseEdit(p, [{ id: 'word', sourceFrame: 29, sourceDecision: 'add', trimDb: -4 }], bank)
+    .cues[0];
+  assert.deepEqual(approved.keyDecisions, Array(5).fill('play'));
+  assert.equal(approved.gainDb, before.gainDb);
+  assert.equal(approved.keyGainOffsets[2], (before.keyGainOffsets?.[2] ?? 0) - 4);
+  for (const i of [0, 1, 3, 4]) assert.equal(approved.keyGainOffsets[i], before.keyGainOffsets?.[i] ?? 0);
+  assert.throws(() => reviseEdit(p, [{ id: 'word', sourceFrame: 23, sourceDecision: 'reuse' }], bank));
+  const reuse = reviseEdit(p, [{ id: 'word', sourceFrame: 29, sourceDecision: 'reuse' }], bank).cues[0];
+  assert.deepEqual(reuse.keyDecisions, ['play', 'play', 'reuse', 'play', 'play']);
+});
+
+test('a saved physical take retains its seed when the next episode has a different project ID', () => {
+  const first = planEdit(cut([event('one', 'press', 10, { device: 'mouse' })]), bank);
+  const accepted = reviseEdit(first, [{ id: 'one', lock: true }], bank);
+  const second = planEdit(
+    cut([event('undo', 'undo', 20, { device: 'mouse' }), event('pick', 'tab', 60, { device: 'mouse' })], {
+      id: 'episode-two',
+    }),
+    bank,
+    approvedProfile(accepted),
+  );
+  assert.ok(second.cues.every((c) => c.soundId === first.cues[0].soundId && c.seed === first.cues[0].seed));
+});
+
+test('one requested motion accent stays inside the visible seat and ordinary holds stay quiet', () => {
+  const make = (accent) =>
+    planEdit(
+      cut([{ id: 'title', frame: 10, endFrame: 28, syncFrame: 21, brief: 'title card lands', accent }]),
+      bank,
+    ).cues[0];
+  const title = make(true);
+  assert.equal(title.action, 'land');
+  assert.equal(title.soundId, 'clean-title-reveal-with-soft-hit');
+  assert.equal(title.syncFrame, 21);
+  assert.equal(title.endFrame, 28);
+  assert.equal(title.fitMotion, true);
+  assert.equal(make(false).decision, 'silence');
+});
+
+test('a recut retains the approved quieter key; a missing original asks for a fresh listen on that key', () => {
+  const word = (frame) =>
+    event('line', 'type', frame, {
+      label: 'air',
+      device: 'laptop',
+      keyFrames: [frame, frame + 5, frame + 12],
+    });
+  const track = (frame) => ({ windows: [], contacts: { line: [{ frame, decision: 'review' }] } });
+  const original = planEdit(cut([word(18)]), bank, {}, {}, track(23));
+  const next = cut([word(40)]);
+  const score = () => planEdit(next, bank, {}, {}, track(45));
+  const quiet = reviseEdit(
+    original,
+    [{ id: 'line', sourceFrame: 23, sourceDecision: 'add', trimDb: -4, lock: true }],
+    bank,
+  );
+  const now = reconform(quiet, score(), next, bank).cues[0];
+  assert.deepEqual(now.keyDecisions, ['play', 'play', 'play']);
+  assert.equal(now.keyGainOffsets[1], (score().cues[0].keyGainOffsets?.[1] ?? 0) - 4);
+  const reused = reviseEdit(
+    original,
+    [{ id: 'line', sourceFrame: 23, sourceDecision: 'reuse', lock: true }],
+    bank,
+  );
+  const replacement = reconform(reused, planEdit(next, bank), next, bank);
+  assert.deepEqual(replacement.cues[0].keyDecisions, ['play', 'review', 'play']);
+  assert.deepEqual(replacement.recut.review, ['line']);
+  assert.deepEqual(
+    reviseEdit(replacement, [{ id: 'line', sourceFrame: 45, sourceDecision: 'add' }], bank).cues[0]
+      .keyDecisions,
+    ['play', 'play', 'play'],
+  );
+});

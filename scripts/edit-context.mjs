@@ -90,7 +90,7 @@ export function scoreGain(actionDb, cue, frame, fps, mode, underSpeech, track) {
   const peak = Math.max(...local.map((x) => x.peak));
   const { activeDb, peakDb } = acoustics[cue] ?? { activeDb: -24, peakDb: -8 };
   const adjustment = underSpeech
-    ? clamp(rms - 8 - (activeDb + base), -13, -3)
+    ? clamp(rms - 6 - (activeDb + base), -4, 2)
     : rms > -32
       ? clamp(rms - 5 - (activeDb + base), -2, 3)
       : 0;

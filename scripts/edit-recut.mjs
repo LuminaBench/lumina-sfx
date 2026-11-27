@@ -67,6 +67,47 @@ export function reconform(old, next, timeline, catalog) {
       review(c, 'An approved cue now describes a different input or target.');
       continue;
     }
+    if (prior.keyApprovals?.some(Boolean)) {
+      const sameWord =
+        c.keyFrames?.length === prior.keyFrames.length &&
+        c.label === prior.label &&
+        c.soundId === prior.soundId &&
+        c.revision === prior.revision;
+      if (!sameWord) {
+        review(c, 'The approved typing performance changed. Check its new key marks.');
+        continue;
+      }
+      const decisions = c.keyDecisions ?? c.keyFrames.map(() => 'play');
+      const offsets = c.keyGainOffsets ?? c.keyFrames.map(() => 0);
+      c.keyApprovals = c.keyFrames.map(() => null);
+      let unresolved = false;
+      for (const [i, choice] of prior.keyApprovals.entries()) {
+        if (!choice) continue;
+        const observed = c.sourceEvidence?.some((x) => x.frame === c.keyFrames[i]);
+        if (!observed && choice.decision === 'reuse') {
+          decisions[i] = 'review';
+          c.sourceEvidence ??= [];
+          c.sourceEvidence.push({
+            frame: c.keyFrames[i],
+            decision: 'review',
+            reason: 'Previously reused contact absent from the new source scan',
+          });
+          unresolved = true;
+        } else {
+          decisions[i] = choice.decision === 'add' ? 'play' : 'reuse';
+          offsets[i] += choice.trimDb;
+          c.keyApprovals[i] = { ...choice };
+        }
+      }
+      c.keyDecisions = decisions;
+      c.keyGainOffsets = offsets;
+      c.decision = decisions.includes('play') ? 'play' : decisions.includes('review') ? 'review' : 'reuse';
+      if (unresolved) {
+        c.reason = 'Verify the previously reused keys against the new original.';
+        ambiguous.push(c.id);
+        continue;
+      }
+    }
     if (c.decision === 'reuse') {
       c.locked = true;
       retained.push(c.id);

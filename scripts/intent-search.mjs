@@ -5,9 +5,9 @@ import {eligibleForIntent} from './source-policy.mjs';
 import { editorialBrief, editorialTerms, listeningOrder, paletteAffinity, silentGesture } from './editorial-intent.mjs';
 
 // Offline retrieval over the catalog. Keep exact search available for asset IDs and scripts.
-const stopWords = new Set('a an the of to for from with that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more only solo alone'.split(' '));
+const stopWords = new Set('a an the of to for from with at that when my me you i want need please sound sounds effect effects sfx something scene setting feeling mood by near make like as and in it is through going really very just feels more only solo alone'.split(' '));
 const vocabulary = {
-  changes:'change', rises:'rise', gains:'gain', arrives:'arrive', goes:'go', grabs:'grab', grabbing:'grab', releases:'release', snaps:'snap',
+  taxiing:'taxi', idling:'idle', cruises:'cruise', throttling:'throttle', changes:'change', rises:'rise', gains:'gain', arrives:'arrive', goes:'go', grabs:'grab', grabbing:'grab', releases:'release', snaps:'snap',
   rolls:'roll', rolling:'roll', hitting:'hit', cruising:'cruise', clucking:'cluck', clucks:'cluck',
   blocks:'block', collapses:'collapse', starts:'start', ignition:'start', flyover:'flyby',
   strokes:'stroke', breaks:'break', breaking:'break', livestock:'farm',
@@ -177,4 +177,32 @@ export function rankByIntent(sounds, query, exclude = '', explain = false, votes
     b.hits - a.hits || b.surfaceStep-a.surfaceStep || b.continuous-a.continuous || Number(a.preference < 0) - Number(b.preference < 0) || Number(b.matchingProfile)-Number(a.matchingProfile) || b.familyFit-a.familyFit || b.signature - a.signature || b.character - a.character ||
     (editorial ? a.order - b.order : 0) || b.score - a.score || b.preference - a.preference ||
     a.sound.id.localeCompare(b.sound.id)).map(item => mood ? { ...item.sound, suggestedMood: mood } : item.sound);
+}
+
+// A layer is one performance. Strip only instructions the renderer actually owns.
+function worldRequest(query, layer) {
+  let text = query.trim();
+  if (Number.isFinite(layer.acoustics?.distanceM) && layer.acoustics.distanceM > 0)
+    text = text.replace(/\b(?:distant|far[- ]away|far[- ]field)\b/gi, ' ');
+  const single = /^(?:one|a single|single|1)\s+/i.test(text.trim());
+  if (single) text = text.trim().replace(/^(?:one|a single|single|1)\s+/i, '');
+  // A location after a vehicle performance sets the scene, not the engine type.
+  if (/\b(?:taxi(?:ing)?|cruis(?:e|ing)|idling|driving)\b/i.test(text)) {
+    text = text.replace(/\s+(?:on|at|along) (?:an? |the )?(?:airfield|apron|taxiway|highway|road|street)\s*$/i, '')
+      .replace(/\bat (?:a )?(?:constant|steady|even) speed\b/gi, 'steady');
+  }
+  return {text: text.trim(), single};
+}
+
+// Ordinary editorial queries keep their press/word and family semantics. World-layer
+// timing words may be satisfied by one isolated performance on the placement clock.
+export function rankPerformance(bank, query, exclude, votes, options, layer = {}) {
+  const exact = bank.find(s => s.id === query.trim().toLowerCase());
+  if (exact) return rankByIntent([exact],query,exclude,true,votes,options);
+  const editorial = /\b(?:key|keycap|keyboard|keypress|mouse|trackpad|button|menu|swipe|tab|logo|ui|transition)\b/i.test(query);
+  const request = editorial ? {text:query, single:false} : worldRequest(query,layer);
+  const ranked = rankByIntent(bank,request.text,exclude,true,votes,options);
+  if (!request.single) return ranked;
+  return ranked.filter(s => !s.loopable &&
+    !/\b(?:burst|double|triple|sequence|volley|series|pair)\b/i.test(s.id.replaceAll('-', ' ')));
 }

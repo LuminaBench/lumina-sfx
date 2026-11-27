@@ -19,6 +19,7 @@ export async function selectionProfile(path) {
     if(!profile.signatures || typeof profile.signatures!=='object' || Array.isArray(profile.signatures))throw Error('Expected project signatures');
     for(const choice of Object.values(profile.signatures)){
       if(!choice || typeof choice.id!=='string' || !Number.isInteger(choice.revision) || choice.revision<1 ||
+        (choice.seed!==undefined && (!Number.isSafeInteger(choice.seed) || choice.seed<0 || choice.seed>0xffffffff)) ||
         (choice.trimDb!==undefined && (!Number.isFinite(choice.trimDb)||choice.trimDb < -92||choice.trimDb>92)) ||
         (choice.edgeDb!==undefined && (!Number.isFinite(choice.edgeDb)||choice.edgeDb < -12||choice.edgeDb>0))) throw Error('Invalid saved cue signature');
     }

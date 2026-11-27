@@ -44,13 +44,32 @@ export async function renderEdit(plan, catalog, out) {
         cue.keyGainOffsets.some((v) => !Number.isFinite(v) || Math.abs(v) > 60))
     )
       throw Error('Invalid per-key gain offsets');
+    if (
+      cue.keyDecisions &&
+      (!Array.isArray(cue.keyDecisions) ||
+        cue.keyDecisions.length !== cue.keyFrames?.length ||
+        cue.keyDecisions.some((d) => !['play', 'reuse', 'review'].includes(d)))
+    )
+      throw Error('Invalid per-key decisions');
+    if (
+      cue.fitMotion &&
+      (!Number.isSafeInteger(cue.endFrame) || cue.endFrame <= cue.frame || cue.endFrame > durationFrames)
+    )
+      throw Error('Invalid visible accent span');
     const { default: recipe } = await import('../recipes/' + s.id + '.ts');
     for (const [i, frame] of (cue.keyFrames ?? [cue.syncFrame]).entries()) {
       if (!Number.isSafeInteger(frame) || frame < 0 || frame >= durationFrames)
         throw Error('Sync frame outside the edit: ' + cue.id);
+      if (cue.keyDecisions && cue.keyDecisions[i] !== 'play') continue;
       events.push({
         start: Math.round((frame / fps - cue.markerSec / cue.speed) * rate),
         recipe,
+        ...(cue.fitMotion
+          ? {
+              visibleStart: Math.round((cue.frame / fps) * rate),
+              visibleEnd: Math.round((cue.endFrame / fps) * rate),
+            }
+          : {}),
         seed: (cue.seed + Math.imul(i, 8191)) >>> 0,
         speed: cue.speed,
         edgeDb: cue.edgeDb,
@@ -92,12 +111,24 @@ export async function renderEdit(plan, catalog, out) {
               }
             }
           }
-          active.push({ ...e, pcm, end: e.start + pcm[0].length });
+          active.push({ ...e, pcm, end: Math.min(e.visibleEnd ?? Infinity, e.start + pcm[0].length) });
         }
         for (const e of active) {
-          for (let i = Math.max(0, e.start - at); i < Math.min(n, e.end - at); i++) {
+          for (
+            let i = Math.max(0, e.start - at, (e.visibleStart ?? 0) - at);
+            i < Math.min(n, e.end - at);
+            i++
+          ) {
             const sample = at + i;
-            const fade = e.end > frames ? Math.min(1, (frames - 1 - sample) / (rate * 0.005)) : 1;
+            const fadeOut =
+              e.visibleEnd !== undefined || e.end > frames
+                ? Math.min(1, (Math.min(e.end, frames) - 1 - sample) / (rate * 0.015))
+                : 1;
+            const fadeIn =
+              e.visibleStart !== undefined && e.start < e.visibleStart
+                ? Math.min(1, (sample - e.visibleStart) / (rate * 0.005))
+                : 1;
+            const fade = fadeIn * fadeOut;
             for (let ch = 0; ch < 2; ch++)
               block[ch][i] += (e.pcm[ch] ?? e.pcm[0])[sample - e.start] * e.gain * fade;
           }
@@ -126,7 +157,9 @@ export async function renderEdit(plan, catalog, out) {
     file: dest,
     frames,
     events: events.length,
-    review: plan.cues.filter((c) => c.decision === 'review').map((c) => c.id),
+    review: plan.cues
+      .filter((c) => c.decision === 'review' || c.keyDecisions?.includes('review'))
+      .map((c) => c.id),
     peakDbfs: peak ? 20 * Math.log10(peak) : null,
     monoEnergyRatio: energy ? monoEnergy / energy : null,
   };

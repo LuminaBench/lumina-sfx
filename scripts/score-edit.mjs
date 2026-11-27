@@ -7,7 +7,7 @@ import { selectionProfile, listeningVotes } from './selection-profile.mjs';
 import { clock, planEdit, reviseEdit } from './edit-score.mjs';
 
 const usage =
-  'score-edit.mjs inspect VIDEO --out DIR | plan TIMELINE --out PLAN [--profile FILE] [--source VIDEO] | audition PLAN --source VIDEO --cue ID [--alternative ID] --out DIR | profile APPROVED_PLAN --out STYLE | recut TIMELINE --previous OLD_PLAN --source VIDEO --out PLAN | revise PLAN --changes FILE --out NEW_PLAN | render PLAN --out STEM.wav | mix VIDEO --stem STEM.wav --out PREVIEW.mp4 [--audio-stream 0] | compare MIX_A.mp4 --against MIX_B.mp4 --out DESK.html';
+  'score-edit.mjs inspect VIDEO --out DIR | plan TIMELINE --out PLAN [--profile FILE] [--source VIDEO] | audition PLAN --source VIDEO --cue ID [--alternative ID | --quieter] [--source-frame FRAME] --out DIR | profile APPROVED_PLAN --out STYLE | recut TIMELINE --previous OLD_PLAN --source VIDEO --out PLAN | revise PLAN --changes FILE --out NEW_PLAN | render PLAN --out STEM.wav | mix VIDEO --stem STEM.wav --out PREVIEW.mp4 [--audio-stream 0] [--fit-picture] | audit PLAN --source SOURCE.mp4 --stem STEM.wav --mix SCORED.mp4 --out REPORT.json | compare MIX_A.mp4 --against MIX_B.mp4 --out DESK.html';
 async function main() {
   const {
     values: v,
@@ -15,7 +15,10 @@ async function main() {
   } = parseArgs({
     allowPositionals: true,
     options: {
-      previous:{type:'string'},
+      'fit-picture': { type: 'boolean' },
+      quieter: { type: 'boolean' },
+      'source-frame': { type: 'string' },
+      previous: { type: 'string' },
       source: { type: 'string' },
       cue: { type: 'string' },
       alternative: { type: 'string' },
@@ -24,6 +27,7 @@ async function main() {
       profile: { type: 'string' },
       changes: { type: 'string' },
       stem: { type: 'string' },
+      mix: { type: 'string' },
       'audio-stream': { type: 'string' },
       help: { type: 'boolean' },
     },
@@ -46,18 +50,34 @@ async function main() {
       JSON.stringify(
         command === 'inspect'
           ? await inspectPicture(file, v.out)
-          : await mixPicture(file, v.stem, v.out, Number(v['audio-stream'] ?? 0)),
+          : await mixPicture(file, v.stem, v.out, Number(v['audio-stream'] ?? 0), v['fit-picture']),
       ),
     );
     return;
   }
   const read = async (f) => JSON.parse(await readFile(f, 'utf8'));
   const input = await read(file);
+  if (command === 'audit') {
+    if (!v.source || !v.stem || !v.mix) throw Error(usage);
+    const { auditDelivery } = await import('./edit-delivery.mjs');
+    const result = await auditDelivery(input, v.source, v.stem, v.mix, Number(v['audio-stream'] ?? 0));
+    await publishAsset(resolve(v.out), Buffer.from(JSON.stringify(result, null, 2) + '\n'));
+    console.log(
+      JSON.stringify({
+        file: resolve(v.out),
+        mixPeakDbfs: result.mixPeakDbfs,
+        markedContacts: result.cues.length,
+        warnings: result.warnings,
+      }),
+    );
+    return;
+  }
   const { sounds } = await read(new URL('../catalog.json', import.meta.url));
-  if(command==='profile'){
-    const {approvedProfile}=await import('./edit-family.mjs');
-    await publishAsset(resolve(v.out),Buffer.from(JSON.stringify(approvedProfile(input),null,2)+'\n'));
-    console.log(JSON.stringify({file:resolve(v.out)}));return;
+  if (command === 'profile') {
+    const { approvedProfile } = await import('./edit-family.mjs');
+    await publishAsset(resolve(v.out), Buffer.from(JSON.stringify(approvedProfile(input), null, 2) + '\n'));
+    console.log(JSON.stringify({ file: resolve(v.out) }));
+    return;
   }
   if (command === 'audition') {
     if (!v.source || !v.cue) throw Error(usage);
@@ -72,6 +92,10 @@ async function main() {
           v.alternative,
           v.out,
           Number(v['audio-stream'] ?? 0),
+          {
+            quieter: v.quieter,
+            sourceFrame: v['source-frame'] === undefined ? undefined : Number(v['source-frame']),
+          },
         ),
       ),
     );
@@ -83,17 +107,19 @@ async function main() {
     return;
   }
   let result;
-  if (command === 'plan' || command==='recut') {
+  if (command === 'plan' || command === 'recut') {
     const profile = await selectionProfile(v.profile),
       { votes = {} } = await listeningVotes(profile.votes);
     const track =
       v.source &&
-      (await (await import('./edit-track.mjs')).measureTrack(v.source, Number(v['audio-stream'] ?? 0),input.events??[],clock(input).fps));
+      (await (
+        await import('./edit-track.mjs')
+      ).measureTrack(v.source, Number(v['audio-stream'] ?? 0), input.events ?? [], clock(input).fps));
     result = planEdit(input, sounds, profile, votes, track);
-    if(command==='recut'){
-      if(!v.previous)throw Error('Supply --previous PLAN for the prior cut');
-      const {reconform}=await import('./edit-recut.mjs');
-      result=reconform(await read(v.previous),result,input,sounds);
+    if (command === 'recut') {
+      if (!v.previous) throw Error('Supply --previous PLAN for the prior cut');
+      const { reconform } = await import('./edit-recut.mjs');
+      result = reconform(await read(v.previous), result, input, sounds);
     }
   } else if (command === 'revise' && v.changes) result = reviseEdit(input, await read(v.changes), sounds);
   else throw Error(usage);

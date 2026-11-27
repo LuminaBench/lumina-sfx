@@ -1,0 +1,205 @@
+// Audit decoded picture, including the transport codec, against the source and authored stem.
+import { spawn } from 'node:child_process';
+import { once } from 'node:events';
+import { resolve } from 'node:path';
+import { ffmpegPath } from './audio-export.mjs';
+import { mediaInfo } from './edit-media.mjs';
+import { clock } from './edit-score.mjs';
+
+const rate = 48000,
+  window = 960;
+const db = (ratio) => (ratio > 0 ? Math.round(1000 * Math.log10(ratio)) / 100 : null);
+const add = (a, b) => {
+  for (let i = 0; i < a.length; i++) a[i] += b[i];
+  return a;
+};
+const empty = () => new Float64Array(10);
+// Sufficient statistics for regressing the delivered samples on BOTH input stems.
+// This factors out narration correlated with a short cue. A quiet or collinear
+// reference supplies too little evidence, so leave that gain unreported.
+function levels(a) {
+  const [ss, xx, yy, sx, sy, xy, phone, frames, sourcePhone, addedPhone] = a;
+  const conditional = xx - (ss ? (sx * sx) / ss : 0);
+  const gain =
+    conditional > Math.max(1e-9, xx * 0.04) ? (xy - (ss ? (sx * sy) / ss : 0)) / conditional : null;
+  const sourceEnergy = ss - (xx ? (sx * sx) / xx : 0);
+  const original =
+    sourceEnergy > Math.max(1e-9, ss * 0.04) ? (sy - (xx ? (sx * xy) / xx : 0)) / sourceEnergy : null;
+  const phoneMargin =
+    sourcePhone > 1e-10 && addedPhone > 1e-10 && gain > 0
+      ? db((addedPhone * gain * gain) / sourcePhone)
+      : null;
+  return {
+    phoneMarginDb: phoneMargin,
+    monoPhoneSourceDbfs: db(sourcePhone / frames),
+    monoPhoneAddedDbfs: gain > 0 ? db((addedPhone * gain * gain) / frames) : null,
+    originalGainDb: original > 0 ? db(original * original) : null,
+    addedGainDb: gain > 0 ? db(gain * gain) : null,
+    addedRmsDbfs: db(xx / (2 * frames)),
+    sourceRmsDbfs: db(ss / (2 * frames)),
+    mixRmsDbfs: db(yy / (2 * frames)),
+    monoPhoneMixDbfs: db(phone / frames),
+  };
+}
+
+export async function auditDelivery(plan, source, stem, mix, stream = 0) {
+  const { fps, durationFrames } = clock(plan);
+  const [picture, delivered, authored] = await Promise.all([
+    mediaInfo(source, true),
+    mediaInfo(mix, true),
+    mediaInfo(stem, false),
+  ]);
+  const length = durationFrames / fps,
+    tolerance = Math.max(0.055, 1.1 / fps);
+  if ([picture, delivered, authored].some((info) => Math.abs(info.seconds - length) > tolerance))
+    throw Error('Use a plan, original, stem and delivered picture from the same edit');
+  if (!Number.isSafeInteger(stream) || stream < 0 || stream >= Math.max(1, picture.audioStreams))
+    throw Error('Unknown original audio stream');
+  const args = [
+    '-v',
+    'error',
+    '-nostdin',
+    '-copyts',
+    '-start_at_zero',
+    '-i',
+    resolve(mix),
+    '-i',
+    resolve(stem),
+  ];
+  if (picture.audioStreams) args.push('-i', resolve(source));
+  else args.push('-f', 'lavfi', '-i', 'anullsrc=r=48000:cl=stereo');
+  const fmt = 'aresample=48000:async=1:first_pts=0,aformat=sample_fmts=fltp:channel_layouts=stereo,apad';
+  const maps = '0.0-FL|0.1-FR|1.0-FC|1.1-LFE|2.0-BL|2.1-BR';
+  args.push(
+    '-filter_complex',
+    '[2:a:' +
+      stream +
+      ']' +
+      fmt +
+      '[src];[1:a:0]' +
+      fmt +
+      '[stem];[0:a:0]' +
+      fmt +
+      '[mix];[src][stem][mix]join=inputs=3:channel_layout=5.1:map=' +
+      maps +
+      '[bundle]',
+    '-map',
+    '[bundle]',
+    '-t',
+    String(length),
+    '-f',
+    'f32le',
+    'pipe:1',
+  );
+  const proc = spawn(ffmpegPath(), args, { stdio: ['ignore', 'pipe', 'pipe'] });
+  const done = once(proc, 'close').then(
+    ([status]) => ({ status }),
+    (error) => ({ error }),
+  );
+  let stderr = '',
+    spare = Buffer.alloc(0),
+    frame = 0,
+    peak = 0,
+    peakAt = 0,
+    block = empty();
+  const low = new Float64Array(3),
+    high = new Float64Array(3);
+  proc.stderr.on('data', (b) => {
+    stderr = (stderr + b).slice(-1500);
+  });
+  const bins = [],
+    total = empty();
+  const smoothLow = 1 - Math.exp((-2 * Math.PI * 300) / rate),
+    smoothHigh = 1 - Math.exp((-2 * Math.PI * 3600) / rate);
+  for await (const chunk of proc.stdout) {
+    const data = spare.length ? Buffer.concat([spare, chunk]) : chunk;
+    const end = data.length - (data.length % 24);
+    for (let i = 0; i < end; i += 24) {
+      let originalMono = 0,
+        stemMono = 0,
+        mixMono = 0;
+      for (let ear = 0; ear < 2; ear++) {
+        const s = data.readFloatLE(i + 4 * ear),
+          x = data.readFloatLE(i + 8 + 4 * ear),
+          y = data.readFloatLE(i + 16 + 4 * ear);
+        block[0] += s * s;
+        block[1] += x * x;
+        block[2] += y * y;
+        block[3] += s * x;
+        block[4] += s * y;
+        block[5] += x * y;
+        originalMono += s * 0.5;
+        stemMono += x * 0.5;
+        mixMono += y * 0.5;
+        if (Math.abs(y) > peak) {
+          peak = Math.abs(y);
+          peakAt = frame / rate;
+        }
+      }
+      for (let k = 0; k < 3; k++) {
+        const mono = k === 0 ? originalMono : k === 1 ? stemMono : mixMono;
+        low[k] += smoothLow * (mono - low[k]);
+        high[k] += smoothHigh * (mono - low[k] - high[k]);
+        block[k === 2 ? 6 : 8 + k] += high[k] * high[k];
+      }
+      block[7]++;
+      frame++;
+      if (frame % window === 0) {
+        add(total, block);
+        bins.push(block);
+        block = empty();
+      }
+    }
+    spare = data.subarray(end);
+  }
+  const closed = await done;
+  if (closed.error) throw closed.error;
+  if (closed.status || !frame) throw Error(stderr || 'No delivered audio');
+  if (block[7]) {
+    add(total, block);
+    bins.push(block);
+  }
+  const cues = [];
+  for (const cue of plan.cues) {
+    if (cue.decision !== 'play') continue;
+    for (const [i, f] of (cue.keyFrames ?? [cue.syncFrame]).entries()) {
+      if (cue.keyDecisions && cue.keyDecisions[i] !== 'play') continue;
+      const at = f / fps,
+        lo = Math.max(0, Math.floor(((at - 0.02) * rate) / window)),
+        hi = Math.min(bins.length, Math.ceil(((at + 0.085) * rate) / window));
+      const stats = empty();
+      for (let k = lo; k < hi; k++) add(stats, bins[k]);
+      const level = levels(stats),
+        warnings = [];
+      if (level.addedRmsDbfs === null) warnings.push('No authored contact in this window');
+      else if (level.addedGainDb === null || level.addedGainDb < -6)
+        warnings.push('Audition contact against the delivered original');
+      if (
+        level.monoPhoneSourceDbfs !== null &&
+        level.monoPhoneSourceDbfs > -40 &&
+        level.phoneMarginDb !== null
+      ) {
+        if (level.phoneMarginDb < -18)
+          warnings.push('Audition this contact for masking on a quiet mono speaker');
+        if (cue.context !== 'hero' && level.phoneMarginDb > 8)
+          warnings.push('Audition this ordinary contact for prominence over the original');
+      }
+      cues.push({ id: cue.id, frame: f, ...level, warnings });
+    }
+  }
+  const mixPeakDbfs = db(peak * peak),
+    overall = levels(total);
+  return {
+    seconds: frame / rate,
+    mixPeakDbfs,
+    peakAtSec: Math.round(1000 * peakAt) / 1000,
+    ...overall,
+    warnings: [
+      ...(peak >= 1 ? ['Decoded sample reaches full scale'] : []),
+      ...(overall.originalGainDb !== null && Math.abs(overall.originalGainDb) > 1
+        ? ['Check original soundtrack level']
+        : []),
+    ],
+    cues,
+  };
+}

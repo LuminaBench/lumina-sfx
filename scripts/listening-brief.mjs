@@ -2,8 +2,25 @@ import { geometryConflict, sourcePerspective } from './source-perspective.mjs';
 // The coding agent supplies action, viewpoint and emphasis from the user's words.
 // Resolve requested performances against the installed catalog before rendering anything.
 import { silentGesture } from './editorial-intent.mjs';
-import { rankByIntent } from './intent-search.mjs';
-export function resolveListeningBrief(brief, bank, profile={}) {
+import { rankPerformance } from './intent-search.mjs';
+function fitsPerformance(sound, layer) {
+  const start = layer.fromMarker === undefined ? 0 : sound.markers?.[layer.fromMarker];
+  if (!Number.isFinite(start) || start < 0 || start >= sound.durationSec) return false;
+  if (layer.fitSec !== undefined) {
+    // The renderer computes the exact fit with its reverb tail. Leave room effects to it.
+    if (layer.durationSec !== undefined || layer.macros?.speed !== undefined) return false;
+    if (!layer.macros?.space || layer.macros.space === 'dry') {
+      const rate = (sound.durationSec - start) / layer.fitSec;
+      if (!(rate >= 0.25 && rate <= 4)) return false;
+    }
+  }
+  return (
+    !layer.durationSec ||
+    sound.loopable ||
+    layer.durationSec <= (sound.durationSec - start) / (layer.macros?.speed ?? 1) + 1e-8
+  );
+}
+export function resolveListeningBrief(brief, bank, profile = {}) {
   if (
     brief.schemaVersion !== 2 ||
     !Array.isArray(brief.layers) ||
@@ -12,13 +29,13 @@ export function resolveListeningBrief(brief, bank, profile={}) {
   )
     throw Error('Expected a version 2 brief with 1–32 named layers');
   const { layers, palette, ...design } = brief;
-  if ((palette??profile.palette) && !['soft','crisp'].includes(palette??profile.palette)) throw Error('Choose a soft or crisp palette');
+  if ((palette ?? profile.palette) && !['soft', 'crisp'].includes(palette ?? profile.palette))
+    throw Error('Choose a soft or crisp palette');
   design.balance ??=
     design.focus?.marginDb !== undefined || design.focus?.moments?.length ? 'directed' : 'natural';
   design.sourcePolicy ??= 'clean';
   const cleanBank = bank.filter(
-    (s) =>
-      design.sourcePolicy !== 'clean' || (s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote),
+    (s) => design.sourcePolicy !== 'clean' || (s.isolation === 'isolated' && !s.cleanHold && !s.auditionNote),
   );
   const resolved = [],
     warnings = [],
@@ -27,10 +44,25 @@ export function resolveListeningBrief(brief, bank, profile={}) {
     const { query, prefer, exclude, ...settings } = layer;
     if (typeof query !== 'string' || !query.trim() || settings.id !== undefined)
       throw Error('Use one audible query per brief layer');
-    if(silentGesture(query)){warnings.push({label:layer.label, decision:'silence'});continue;}
-    const hits = rankByIntent(cleanBank, query, exclude ?? '', true, profile.votes, {palette:palette??profile.palette,useCase:profile.useCase,signatures:profile.signatures}).filter(
-      (hit) => hit.id === query || !hit.missing.length,
-    );
+    if (silentGesture(query)) {
+      warnings.push({ label: layer.label, decision: 'silence' });
+      continue;
+    }
+    // The distance model supplies the requested perspective for free-text sources.
+    // Keep exact IDs literal so an incompatible authored performance goes to review.
+    const hits = rankPerformance(
+      cleanBank,
+      query,
+      exclude ?? '',
+      profile.votes,
+      {
+        palette: palette ?? profile.palette,
+        useCase: profile.useCase,
+        signatures: profile.signatures,
+      },
+      settings,
+    ).filter((hit) => !hit.missing.length || hit.id === query);
+    if (bank.some((s) => s.id === query) && !hits.some((s) => s.id === query)) hits.length = 0;
     const terms =
       String(prefer ?? '')
         .toLowerCase()
@@ -47,25 +79,36 @@ export function resolveListeningBrief(brief, bank, profile={}) {
     hits.sort((a, b) => Number(b.id === query) - Number(a.id === query) || preference(b) - preference(a));
     if (design.scope === 'world') {
       for (let i = hits.length - 1; i >= 0; i--)
-        if ((sourcePerspective(hits[i]).local || hits[i].tags.includes('menu')) &&
-            !(sourcePerspective(hits[i]).physicalInput && (settings.acoustics ||
-              (settings.placement && settings.placement.kind !== 'listener'))))
+        if (
+          (sourcePerspective(hits[i]).local || hits[i].tags.includes('menu')) &&
+          !(
+            sourcePerspective(hits[i]).physicalInput &&
+            (settings.acoustics || (settings.placement && settings.placement.kind !== 'listener'))
+          )
+        )
           hits.splice(i, 1);
     }
-    const conflict = hits.length && geometryConflict(hits[0],settings);
-    const compatible = hits.filter(s=>!geometryConflict(s,settings));
+    const conflict = hits.length && geometryConflict(hits[0], settings);
+    // Match source duration and time controls before committing to a take.
+    const compatible = hits.filter((s) => !geometryConflict(s, settings) && fitsPerformance(s, settings));
+    if (settings.durationSec && settings.placement?.path?.length)
+      compatible.sort((a, b) => Number(b.loopable) - Number(a.loopable));
     if (!compatible.length) {
       missing.push({
         query,
         label: layer.label,
-        reason: conflict || 'No eligible source matched the requested action and source policy',
+        reason:
+          conflict ||
+          (hits.length && hits.every((s) => !fitsPerformance(s, settings))
+            ? 'Available performances do not cover the requested marker or duration'
+            : 'No eligible source matched the requested action and source policy'),
       });
       continue;
     }
     const hit = compatible[0];
-    if(sourcePerspective(hit).local && !settings.placement && !settings.acoustics)
-      settings.placement={kind:'listener'};
-    if(sourcePerspective(hit).local) settings.placement ??= {kind:'listener'};
+    if (sourcePerspective(hit).local && !settings.placement && !settings.acoustics)
+      settings.placement = { kind: 'listener' };
+    if (sourcePerspective(hit).local) settings.placement ??= { kind: 'listener' };
     if (
       !settings.placement &&
       !settings.acoustics &&
@@ -88,8 +131,7 @@ export function resolveListeningBrief(brief, bank, profile={}) {
       if (other.event && settings.event && other.event !== settings.event) return false;
       if (other.afterLayer || other.atMarker || settings.afterLayer || settings.atMarker) return false;
       const already = cleanBank.find((s) => s.id === other.id);
-      if (hit.id !== other.id && !hit.components?.some((c) => already.components?.includes(c)))
-        return false;
+      if (hit.id !== other.id && !hit.components?.some((c) => already.components?.includes(c))) return false;
       const a = other.offsetSec ?? 0,
         b = settings.offsetSec ?? 0;
       return (
@@ -111,7 +153,7 @@ export function resolveListeningBrief(brief, bank, profile={}) {
     resolved.push({ id: hit.id, ...settings });
     if (hit.contains?.length) warnings.push({ label: layer.label, alreadyContains: hit.contains });
   }
-  if (!resolved.length && !missing.length) return {decision:'silence', design:null, warnings, missing};
+  if (!resolved.length && !missing.length) return { decision: 'silence', design: null, warnings, missing };
   if (!design.scope)
     design.scope = resolved.some((l) => cleanBank.find((s) => s.id === l.id)?.mixRole === 'interface')
       ? 'mixed'

@@ -8,7 +8,7 @@ import { ambiguousPenRequest } from './edit-device.mjs';
 import { cuePlacement } from './cue-placement.mjs';
 import { leafIds } from './scene-leaves.mjs';
 import { editorialPurpose, silentGesture } from './editorial-intent.mjs';
-import { rankByIntent } from './intent-search.mjs';
+import { rankByIntent, rankPerformance } from './intent-search.mjs';
 
 const { positionals, values } = parseArgs({ allowPositionals: true, options: {
   profile:{type:'string'}, brief:{type:'string'}, palette:{type:'string'}, clean: { type: 'boolean' }, isolated: { type: 'boolean' }, scene: { type: 'boolean' }, exclude: { type: 'string' }, help: { type: 'boolean' },
@@ -42,7 +42,7 @@ const requests = positionals.map(query => {
   const moving = passBy.test(query);
   const sourceQuery = moving ? query.replace(passBy,'') : query;
   const lookup = moving && /^(?:a |the )?bell$/i.test(sourceQuery.trim()) ? 'phone-ring-bell' : sourceQuery;
-  const ranked = rankByIntent(candidates, lookup, values.exclude, true, votes, {palette, signatures:profile.signatures, useCase:profile.useCase});
+  const ranked = rankPerformance(candidates, lookup, values.exclude, votes, {palette, signatures:profile.signatures, useCase:profile.useCase});
   const matches = ranked.filter(s => !s.missing.length || s.id === query);
   return { query, moving, matches: new Set(matches.map(s => s.id)), top: matches[0]?.id,
     missing: ranked[0]?.missing,

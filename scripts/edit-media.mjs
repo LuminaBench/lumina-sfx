@@ -16,7 +16,7 @@ async function ff(args) {
     );
   }
 }
-async function mediaInfo(file, video) {
+export async function mediaInfo(file, video) {
   const { stderr } = await ff([
     '-i',
     resolve(file),
@@ -105,9 +105,45 @@ export async function inspectPicture(file, out) {
     await rm(stage, { recursive: true, force: true });
   }
 }
-export async function mixPicture(file, stem, out, audioStream = 0) {
+// Preserve the original sample even at a full-level accent. Use one gain for both
+// sides of the added stem and recover over 20 ms to preserve its stereo image.
+function originalFirstMix(stream, conform) {
+  const stereo = 'aresample=48000:async=1:first_pts=0,aformat=sample_fmts=fltp:channel_layouts=stereo';
+  const room = (original, added) =>
+    `if(gt(abs(${added}),0.000001),max(0,0.97-${original}*sgn(${added}))/abs(${added}),1)`;
+  const gain = `min(1,min(${room('val(0)', 'val(2)')},${room('val(1)', 'val(3)')}))`;
+  const smooth = `st(0,min(${gain},if(eq(n,0),1,1-(1-ld(0))*exp(-1/960))))`;
+  const channel = (i) => `val(${i})+val(${2 + i})*${smooth}`;
+  return [
+    `[0:a:${stream}]${stereo},apad[original]`,
+    `[1:a:0]${stereo}${conform ? ',' + conform : ''}[stem]`,
+    `[original][stem]amerge=inputs=2,aeval=exprs='${channel(0)}|${channel(1)}':c=stereo,pan=stereo|c0=c0|c1=c1[mix]`,
+  ].join(';');
+}
+
+async function deliveryPeak(file) {
+  const { stderr } = await ff([
+    '-i',
+    file,
+    '-map',
+    '0:a:0',
+    '-vn',
+    '-af',
+    'ebur128=peak=true:framelog=verbose',
+    '-f',
+    'null',
+    '-',
+  ]);
+  const result = stderr.match(/True peak:\s*Peak:\s*(-inf|[-+\d.]+)\s*dBFS/i);
+  if (!result) throw Error('Could not measure true peak of the encoded soundtrack');
+  return result[1] === '-inf' ? -Infinity : Number(result[1]);
+}
+export async function mixPicture(file, stem, out, audioStream = 0, fitPicture = false) {
   const [picture, audio] = await Promise.all([mediaInfo(file, true), mediaInfo(stem, false)]);
-  if (Math.abs(picture.seconds - audio.seconds) > Math.max(0.055, 1.1 / (picture.nominalFps || 24)))
+  if (
+    !fitPicture &&
+    Math.abs(picture.seconds - audio.seconds) > Math.max(0.055, 1.1 / (picture.nominalFps || 24))
+  )
     throw Error('Stem and picture duration differ. Check the project frame rate.');
   if (
     !Number.isSafeInteger(audioStream) ||
@@ -120,19 +156,29 @@ export async function mixPicture(file, stem, out, audioStream = 0) {
   const stage = await mkdtemp(join(dirname(dest), '.lumina-mix-')),
     video = join(stage, 'preview.mp4');
   try {
-    const args = ['-v', 'error', '-i', resolve(file), '-i', resolve(stem), '-map', '0:v:0'];
-    if (picture.audioStreams) {
-      args.push(
-        '-filter_complex',
-        '[0:a:' +
-          audioStream +
-          ']aresample=48000:async=1:first_pts=0,apad[original];[original][1:a:0]amix=inputs=2:normalize=0:duration=shortest,alimiter=limit=0.97:level=false:latency=true[mix]',
-        '-map',
-        '[mix]',
-      );
-    } else args.push('-map', '1:a:0');
-    const encode = (codec) =>
-      ff([
+    let deliveryTrimDb = 0;
+    const conform = fitPicture
+      ? 'atrim=end=' +
+        picture.seconds +
+        (audio.seconds > picture.seconds
+          ? ',afade=t=out:st=' + Math.max(0, picture.seconds - 0.035) + ':d=0.035'
+          : '') +
+        ',apad,atrim=end=' +
+        picture.seconds
+      : '';
+    const encode = (codec) => {
+      const args = ['-v', 'error', '-i', resolve(file), '-i', resolve(stem), '-map', '0:v:0'];
+      let chain = picture.audioStreams ? originalFirstMix(audioStream, conform) : '';
+      if (!chain && conform) chain = '[1:a:0]' + conform + '[mix]';
+      if (chain) {
+        const output = deliveryTrimDb ? '[delivered]' : '[mix]';
+        if (deliveryTrimDb) chain += ';[mix]volume=' + deliveryTrimDb + 'dB[delivered]';
+        args.push('-filter_complex', chain, '-map', output);
+      } else {
+        args.push('-map', '1:a:0');
+        if (deliveryTrimDb) args.push('-af', 'volume=' + deliveryTrimDb + 'dB');
+      }
+      return ff([
         ...args,
         '-t',
         String(picture.seconds),
@@ -145,6 +191,7 @@ export async function mixPicture(file, stem, out, audioStream = 0) {
         '+faststart',
         video,
       ]);
+    };
     let pictureEncoding = 'copy';
     try {
       await encode(['-c:v', 'copy']);
@@ -159,10 +206,28 @@ export async function mixPicture(file, stem, out, audioStream = 0) {
       await encode(['-c:v', 'libx264', '-crf', '18', '-preset', 'fast', '-pix_fmt', 'yuv420p']);
       pictureEncoding = 'h264';
     }
+    let truePeakDbtp = await deliveryPeak(video);
+    // AAC can overshoot on a recording that was already hot. Make one static edit to
+    // the delivery copy only, then measure the actual encode again before publishing.
+    for (let attempt = 0; truePeakDbtp > -0.5 && attempt < 3; attempt++) {
+      deliveryTrimDb = Number((deliveryTrimDb - (truePeakDbtp + 0.8)).toFixed(2));
+      await rm(video);
+      await encode(
+        pictureEncoding === 'copy'
+          ? ['-c:v', 'copy']
+          : ['-c:v', 'libx264', '-crf', '18', '-preset', 'fast', '-pix_fmt', 'yuv420p'],
+      );
+      truePeakDbtp = await deliveryPeak(video);
+    }
+    if (truePeakDbtp > -0.5)
+      throw Error('Encoded picture exceeds the true-peak ceiling after three delivery trims');
     await link(video, dest);
     return {
       file: dest,
       pictureEncoding,
+      truePeakDbtp: Number.isFinite(truePeakDbtp) ? truePeakDbtp : null,
+      deliveryTrimDb,
+      ...(fitPicture ? { fittedStemSeconds: audio.seconds } : {}),
       originalTracks: picture.audioStreams,
       usedAudioStream: picture.audioStreams ? audioStream : null,
       seconds: picture.seconds,

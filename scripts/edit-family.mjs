@@ -1,13 +1,8 @@
+import { physicalSwitch } from './edit-device.mjs';
 // One recurring screen gesture carries one identity throughout a cut. Direction is a
 // performance constraint on a swipe, while material is a property of the family.
 export function familySlot(e) {
-  if (
-    !e.soundId &&
-    ['mouse', 'trackpad', 'trackball', 'pen-button'].includes(e.deviceKind) &&
-    e.feedback !== 'subtle' &&
-    ['press', 'tab', 'back', 'confirm', 'toggle-on', 'toggle-off'].includes(e.action)
-  )
-    return ['press/' + e.deviceKind, e.family].filter(Boolean).join('/');
+  if (physicalSwitch(e)) return ['press/' + e.deviceKind, e.family].filter(Boolean).join('/');
   const surface = e.physicalContact ? '/surface' : '';
   const physical = ['press', 'paste', 'type'].includes(e.action) ? '/' + e.deviceKind + surface : '';
   return [e.action + physical, e.family].filter(Boolean).join('/');
@@ -63,7 +58,13 @@ export function approvedProfile(plan) {
   for (const c of plan.cues) {
     if (!c.locked || c.decision !== 'play' || !c.signature) continue;
     const prior = signatures[c.signature];
-    const next = { id: c.soundId, revision: c.revision, trimDb: c.projectTrimDb ?? 0, edgeDb: c.edgeDb ?? 0 };
+    const next = {
+      id: c.soundId,
+      revision: c.revision,
+      trimDb: c.projectTrimDb ?? 0,
+      ...(c.fixedTake && Number.isInteger(c.seed) ? { seed: c.seed } : {}),
+      edgeDb: c.edgeDb ?? 0,
+    };
     if (
       prior &&
       (material(prior.id, c.action) !== material(next.id, c.action) ||

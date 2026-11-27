@@ -12,7 +12,7 @@ const physical = new Set([
   'back',
   'snap',
   'type',
-  'paste',
+  'paste', 'undo','redo','disabled',
 ]);
 export function contactProbes(events, fps) {
   const spans = [];
@@ -97,6 +97,10 @@ function impulse(x, fps) {
   while (left > 0 && bins[left - 1] > power * 0.055) left--;
   while (right < bins.length - 1 && bins[right + 1] > power * 0.055) right++;
   if (right - left > 17 || best - left > 8) return;
+  // A speech harmonic can peak sharply inside a syllable while its neighbours
+  // remain loud. A physical switch has a brief attack above its immediate bed.
+  const average=(from,to)=>bins.slice(from,to).reduce((sum,v)=>sum+v,0)/(to-from);
+  if (power<10*Math.max(average(best-10,best-3),average(best+6,best+13)))return;
   const wave = x.subarray(Math.max(0, (left - 1) * hop), Math.min(x.length, (right + 3) * hop));
   return { wave, offsetMs: (best - middle) * 2 };
 }
