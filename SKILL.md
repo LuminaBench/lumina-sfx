@@ -1,5 +1,7 @@
 ---
 name: lumina-sfx
+metadata:
+  version: "1.5.0"
 description: Find, sculpt, layer, invent and verify offline game sound effects. Use for picture-synced demo edits, screen recordings, launch videos, keyboards, swipes, tactile menus, non-vocal alerts, scene focus, listener perspective, 3D headphone audio, moving emitters, timed focus handoffs, mood-aware scene mixing, crossfades, timed audio chains, Web Audio and Three.js, Godot, Unity, Unreal, Pygame, WAV or Opus delivery, animation-driven footsteps, recorded Foley, weather, vehicles, impacts, farming, animals, reactive UI, and custom audio recipes.
 ---
 
