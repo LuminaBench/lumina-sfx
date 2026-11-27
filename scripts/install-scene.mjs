@@ -5,9 +5,18 @@ import { checkIsolatedRecipes, installRecipes, selectRecipes } from './install-f
 import { loadRecipes } from './recipes.mjs';
 import { validateScene } from '../engine/scene.ts';
 
-const { values, positionals } = parseArgs({ allowPositionals: true, options: { clean: { type:'boolean' }, isolated: { type: 'boolean' }, dest: { type: 'string' } } });
-if (positionals.length !== 1 || !values.dest)
-  throw Error('npm run scene:install -- <scene.json> --dest /game/src/audio');
+const { values, positionals } = parseArgs({ allowPositionals: true, options: {
+  clean: { type: 'boolean' }, isolated: { type: 'boolean' }, dest: { type: 'string' }, help: { type: 'boolean' },
+} });
+const usage = 'npm run scene:install -- <scene.json> --dest /game/src/audio [--clean | --isolated]';
+if (values.help) {
+  console.log(usage);
+  process.exit(0);
+}
+if (positionals.length !== 1 || !values.dest) {
+  console.error(usage);
+  process.exit(1);
+}
 const scene = JSON.parse(await readFile(positionals[0], 'utf8'));
 const name = basename(positionals[0], '.json');
 if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(name)) throw Error('Use a lowercase hyphenated scene filename');

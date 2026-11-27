@@ -2,10 +2,22 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { join, basename } from 'node:path';
+import { parseArgs } from 'node:util';
 import ts from 'typescript';
 const { chromium } = await import(process.env.LUMINA_PLAYWRIGHT ?? 'playwright');
 const root = new URL('../engine/', import.meta.url);
-const prepared = process.argv[2];
+const { values, positionals } = parseArgs({ allowPositionals: true, options: { windows: {type:'string'} } });
+const [prepared] = positionals;
+if (positionals.length > 1 || (values.windows && !prepared)) throw Error('Supply a scene pack and optionally --windows expected.json');
+const checkedWindows = values.windows ? JSON.parse(await readFile(values.windows, 'utf8')) : [
+  {from:0.15,to:0.5,side:'left'}, {from:2.3,to:2.6,side:'right'},
+];
+if (!Array.isArray(checkedWindows) || !checkedWindows.length || checkedWindows.some(w =>
+  !Number.isFinite(w.from) || !Number.isFinite(w.to) || w.from < 0 || w.to <= w.from ||
+  !['left','right','quiet','audible'].includes(w.side))) throw Error('Supply expected windows with from, to and side');
+const manifest = prepared && JSON.parse(await readFile(join(prepared,'scene.json'),'utf8'));
+const packFrames = manifest ? Math.ceil(manifest.frames / manifest.rate * 44100) : 0;
+if (prepared && checkedWindows.some(w => w.to > packFrames / 44100)) throw Error('Probe window exceeds scene duration');
 const meter = `class SceneMeter extends AudioWorkletProcessor {
   constructor(){super();this.first=null;this.last=null;this.gaps=0;this.zeroFrames=0;this.sum=0;this.peak=0;}
   process(inputs,outputs){
@@ -69,7 +81,7 @@ try {
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
   await page.goto('http://127.0.0.1:' + server.address().port);
-  const results = await page.evaluate(async (prepared) => {
+  const results = await page.evaluate(async ({prepared, checkedWindows, packFrames}) => {
     const { ListeningPlayer, prepareHeadphones } = await import('/live-listening.js');
     const result = [];
     const ctx = new AudioContext({ sampleRate: 44100, latencyHint: 'interactive' });
@@ -154,7 +166,7 @@ try {
     const pack = [];
     if (prepared)
       for (let i = 0; i < 2; i++) {
-        const offline = new OfflineAudioContext(2, 44100 * 7, 44100),
+        const offline = new OfflineAudioContext(2, packFrames, 44100),
           a = performance.now();
         const player = await ListeningPlayer.preload(offline, new URL('/pack/scene.json', location.href));
         const preloadMs = performance.now() - a;
@@ -170,10 +182,12 @@ try {
           preloadMs,
           renderMs: performance.now() - renderStart,
           frames: buffer.length,
-          leftStart: energy(0, 0.15, 0.5),
-          rightStart: energy(1, 0.15, 0.5),
-          leftAcross: energy(0, 2.3, 2.6),
-          rightAcross: energy(1, 2.3, 2.6),
+          windows: checkedWindows.map(({from,to,side}) => {
+            const left = energy(0,from,to), right = energy(1,from,to);
+            const power = (left + right) / (2 * (to-from) * 44100);
+            return {from, to, side, left, right, pass: side === 'quiet' ? power < 1e-9 :
+              power > 1e-10 && (side === 'audible' || (side === 'left' ? left > right : right > left))};
+          }),
         });
       }
     const sim = new OfflineAudioContext(2, 44100, 44100),
@@ -292,7 +306,7 @@ try {
     };
     await ctx.close();
     return { unlockMs, rate: ctx.sampleRate, result, pack, turns, cutPanDb, focusMove };
-  }, Boolean(prepared));
+  }, {prepared:Boolean(prepared),checkedWindows,packFrames});
   const pass =
     !errors.length && Math.abs(results.cutPanDb[0] - results.cutPanDb[1]) < 0.5 && results.cutPanDb[1] < -6 && results.cutPanDb[2] > 6 &&
     results.focusMove.emitters.shifted > 5 && results.result.some(t => t.cameraUpdates >= 10) &&
@@ -305,7 +319,7 @@ try {
     results.turns[0] < -6 &&
     results.turns[1] > 6 &&
     results.turns[2] < -6 &&
-    results.pack.every((t) => t.leftStart > t.rightStart && t.rightAcross > t.leftAcross);
+    results.pack.every(t => t.windows.every(w => w.pass));
   console.log(JSON.stringify({ pass, errors, ...results }, null, 2));
   process.exitCode = Number(!pass);
 } finally {
