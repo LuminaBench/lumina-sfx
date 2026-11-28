@@ -35,10 +35,23 @@ export function ffmpegPath() {
 // Frames an Ogg Vorbis stream declares: the granule position of its last page.
 // Players trim to it. FFmpeg's decoder does not always do so on short streams.
 export function oggFinalGranule(bytes) {
-  for (let at = bytes.lastIndexOf('OggS'); at >= 0; at = at ? bytes.lastIndexOf('OggS', at - 1) : -1) {
-    if (at + 14 > bytes.length || bytes[at + 4] !== 0) continue;
-    const granule = bytes.readBigInt64LE(at + 6);
-    if (granule >= 0n) return Number(granule);
+  // FFmpeg produces one logical stream. Follow each page's segment table so
+  // bytes in a compressed packet cannot be mistaken for a page header.
+  let at = 0;
+  while (at + 27 <= bytes.length) {
+    if (bytes.toString('latin1', at, at + 4) !== 'OggS' || bytes[at + 4] !== 0) break;
+    const segments = bytes[at + 26];
+    const body = at + 27 + segments;
+    if (body > bytes.length) break;
+    let end = body;
+    for (let i = at + 27; i < body; i++) end += bytes[i];
+    if (end > bytes.length) break;
+    if (bytes[at + 5] & 4) {
+      const frames = bytes.readBigInt64LE(at + 6);
+      if (end === bytes.length && frames >= 0n && frames <= BigInt(Number.MAX_SAFE_INTEGER)) return Number(frames);
+      break;
+    }
+    at = end;
   }
   throw Error('Ogg stream has no final granule position');
 }

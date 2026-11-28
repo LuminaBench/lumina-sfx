@@ -26,3 +26,17 @@ test('Opus delivery still passes for a short cue', async () => {
   const opus = await encodeDelivery(sineWav(8820, 440), 'opus');
   assert.equal(opus.subarray(0, 4).toString(), 'OggS');
 });
+
+test('reads the final page header even when the packet contains OggS', () => {
+  const page = Buffer.alloc(48);
+  page.write('OggS');
+  page[5] = 4;
+  page.writeBigInt64LE(9173n, 6);
+  page[26] = 1;
+  page[27] = 20;
+  page.write('OggS', 28);
+  assert.equal(oggFinalGranule(page), 9173);
+  assert.throws(() => oggFinalGranule(page.subarray(0, -1)));
+  page[5] = 0;
+  assert.throws(() => oggFinalGranule(page));
+});
