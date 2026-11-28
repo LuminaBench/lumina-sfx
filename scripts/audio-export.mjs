@@ -32,6 +32,16 @@ export function ffmpegPath() {
   const local = join(homedir(), '.local/share/lumina-sfx/tools/ffmpeg');
   return process.env.FFMPEG_PATH || (existsSync(local) ? local : 'ffmpeg');
 }
+// Frames an Ogg Vorbis stream declares: the granule position of its last page.
+// Players trim to it. FFmpeg's decoder does not always do so on short streams.
+export function oggFinalGranule(bytes) {
+  for (let at = bytes.lastIndexOf('OggS'); at >= 0; at = at ? bytes.lastIndexOf('OggS', at - 1) : -1) {
+    if (at + 14 > bytes.length || bytes[at + 4] !== 0) continue;
+    const granule = bytes.readBigInt64LE(at + 6);
+    if (granule >= 0n) return Number(granule);
+  }
+  throw Error('Ogg stream has no final granule position');
+}
 export async function encodeDelivery(wav, format) {
   if (format === 'wav') return wav;
   if (!['opus', 'ogg'].includes(format)) throw Error('Unknown audio format: ' + format);
@@ -48,9 +58,10 @@ export async function encodeDelivery(wav, format) {
         '-fflags', '+bitexact', '-flags:a', '+bitexact', output]);
       const { stdout } = await run(ffmpeg, ['-v','error','-i',output,'-ar',String(rate),'-f','f32le','pipe:1'],
         { encoding: 'buffer', maxBuffer: (frames + 8192) * channels * 4 });
-      // Vorbis encoders can pad/trim a transform block; Opus signals its exact end.
-      const tolerance = format === 'opus' ? 2 : 256;
-      if (Math.abs(stdout.length / (4 * channels) - frames) > tolerance) throw Error('Decoded duration differs from master');
+      // Opus signals its exact end to the decoder. For Vorbis, check the length the stream
+      // declares: FFmpeg can drop the first block or skip the end trim of a short stream.
+      const declared = format === 'ogg' ? oggFinalGranule(await readFile(output)) : stdout.length / (4 * channels);
+      if (Math.abs(declared - frames) > 2) throw Error('Decoded duration differs from master');
       let peak = 0;
       for (let i = 0; i < stdout.length; i += 4) peak = Math.max(peak, Math.abs(stdout.readFloatLE(i)));
       if (peak > 0 && peak <= 10 ** (-0.5/20)) return await readFile(output);
